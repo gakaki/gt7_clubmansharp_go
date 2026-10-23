@@ -311,18 +311,8 @@ def make_avatar(image: Image.Image) -> Image.Image:
     in the compact speaker filters.
     """
 
-    face = image.crop((64, 0, 168, 64)).convert("RGB")
-    scale = min(128 / face.width, 128 / face.height)
-    resized = face.resize(
-        (round(face.width * scale), round(face.height * scale)),
-        Image.Resampling.LANCZOS,
-    )
-    canvas = Image.new("RGB", (128, 128), (232, 235, 240))
-    canvas.paste(
-        resized,
-        ((128 - resized.width) // 2, (128 - resized.height) // 2),
-    )
-    return canvas
+    face = image.crop((84, 0, 148, 64)).convert("RGB")
+    return face.resize((128, 128), Image.Resampling.LANCZOS)
 
 
 def main() -> None:
@@ -367,7 +357,7 @@ def main() -> None:
                 "characterId": character.character_id,
                 "output": str(output),
                 "avatarOutput": str(avatar_output),
-                "avatarCrop": [64, 0, 168, 64],
+                "avatarCrop": [84, 0, 148, 64],
             }
         )
         manifest.append(meta)

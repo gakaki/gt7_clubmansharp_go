@@ -424,6 +424,9 @@ function avatarColor(name) {
   for (const ch of name) h = (h * 31 + ch.charCodeAt(0)) >>> 0
   return `hsl(${h % 360} 42% 46%)`
 }
+function avatarUrl(path) {
+  return path ? `${base}${path}?v=20261023c` : ''
+}
 
 const letters = computed(() => {
   const set = new Set(brands.value.map((b) => b.name[0].toUpperCase()))
@@ -497,7 +500,7 @@ function yearOf(name) {
     </p>
     <section class="castbar" aria-label="咖啡屋主要角色">
       <div v-for="person in cast" :key="person.id" class="cast-person">
-        <img :src="base + person.avatar" :alt="person.en" loading="eager" />
+        <img :src="avatarUrl(person.avatar)" :alt="person.en" loading="eager" />
         <span>
           <b>{{ speakerLabel(person) }}</b>
           <small>{{ speakerRole(person) }}</small>
@@ -537,7 +540,7 @@ function yearOf(name) {
         :class="{ on: speakerFilter === s.id }"
         @click="speakerFilter = s.id"
       >
-        <img :src="base + s.avatar" :alt="s.en" loading="lazy" />
+        <img :src="avatarUrl(s.avatar)" :alt="s.en" loading="lazy" />
         {{ speakerLabel(s) }} <small>{{ s.count }}</small>
       </button>
     </nav>
@@ -646,7 +649,7 @@ function yearOf(name) {
           </div>
           <div v-for="d in filteredUnmatched" :key="d.id" class="entry">
             <div class="speaker">
-              <img v-if="d.avatar" class="avatar photo" :src="base + d.avatar" :alt="d.speaker" loading="lazy" />
+              <img v-if="d.avatar" class="avatar photo" :src="avatarUrl(d.avatar)" :alt="d.speaker" loading="lazy" />
               <span
                 v-else
                 class="avatar"
@@ -690,7 +693,7 @@ function yearOf(name) {
             class="cast-card"
             @click="filterBySpeaker(person)"
           >
-            <img :src="base + person.avatar" :alt="person.en" />
+            <img :src="avatarUrl(person.avatar)" :alt="person.en" />
             <span class="cast-card-name">{{ speakerLabel(person) }}</span>
             <span class="cast-card-role">{{ speakerRole(person) }}</span>
             <span class="cast-card-count">
@@ -760,7 +763,7 @@ function yearOf(name) {
                 class="dialogue"
               >
                 <div class="speaker">
-                  <img v-if="d.avatar" class="avatar photo" :src="base + d.avatar" :alt="d.speaker" loading="lazy" />
+                  <img v-if="d.avatar" class="avatar photo" :src="avatarUrl(d.avatar)" :alt="d.speaker" loading="lazy" />
                   <span v-else class="avatar" :style="{ background: avatarColor(d.speaker) }">
                     {{ initials(d.speaker) }}
                   </span>
@@ -778,7 +781,7 @@ function yearOf(name) {
           <template v-else>
             <article v-for="d in activeCar.conversation" :key="d.id" class="dialogue">
               <div class="speaker">
-                <img v-if="d.avatar" class="avatar photo" :src="base + d.avatar" :alt="d.speaker" loading="lazy" />
+                <img v-if="d.avatar" class="avatar photo" :src="avatarUrl(d.avatar)" :alt="d.speaker" loading="lazy" />
                 <span v-else class="avatar" :style="{ background: avatarColor(d.speaker) }">
                   {{ initials(d.speaker) }}
                 </span>
@@ -800,7 +803,7 @@ function yearOf(name) {
         <div v-else class="text-panel" role="tabpanel">
           <template v-if="activeText()">
             <div v-if="activeMerchant()" class="text-merchant">
-              <img :src="base + activeMerchant().avatar" :alt="activeMerchant().nameEn" loading="lazy" />
+              <img :src="avatarUrl(activeMerchant().avatar)" :alt="activeMerchant().nameEn" loading="eager" />
               <span>
                 <b>{{ lang === 'zh' ? activeMerchant().nameZh : activeMerchant().nameEn }}</b>
                 <small>{{ lang === 'zh' ? activeMerchant().roleZh : activeMerchant().roleEn }}</small>

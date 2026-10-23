@@ -470,9 +470,10 @@ fn extract_one(
     let atlas_path = atlas_dir.join(format!("{}.png", spec.key));
     save_png(&atlas, &atlas_path)?;
 
-    // Every retail face atlas places the standard full-face portrait in this
-    // 80x80 region.  The remaining pixels are alternate expressions/body parts.
-    let portrait = atlas.crop(64, 0, 80, 80).resize_bilinear(192, 192);
+    // The primary 4x5 atlas cell contains a postage-stamp face image with the
+    // useful silhouette inside this 64x64 inset.  Keeping the inset avoids the
+    // neighbouring expression strip that otherwise cuts across the hair.
+    let portrait = atlas.crop(84, 0, 64, 64).resize_bilinear(192, 192);
     let portrait_path = portrait_dir.join(format!("{}.png", spec.key));
     save_png(&portrait, &portrait_path)?;
 
