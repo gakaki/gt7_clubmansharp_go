@@ -96,8 +96,28 @@ const carTextTabs = [
   { id: 'cafe', labelZh: '咖啡屋对话', labelEn: 'Cafe dialogue' },
   { id: 'brandCentral', labelZh: '品牌购物', labelEn: 'Brand Central' },
   { id: 'vehicleCollection', labelZh: '车辆收藏', labelEn: 'Car Collection' },
+  { id: 'garageSpecs', labelZh: '车库数据', labelEn: 'Garage Specs' },
   { id: 'usedCar', labelZh: '二手车', labelEn: 'Used Cars' },
   { id: 'collection', labelZh: '收藏馆', labelEn: 'Hagerty Collection' },
+]
+const garageSpecFields = [
+  { key: 'performancePoint', labelZh: '性能点', labelEn: 'Performance points' },
+  { key: 'maxPower', labelZh: '最大功率 / 转速', labelEn: 'Max power / rpm' },
+  { key: 'maxTorque', labelZh: '最大扭矩 / 转速', labelEn: 'Max torque / rpm' },
+  { key: 'weight', labelZh: '车重', labelEn: 'Weight' },
+  { key: 'driveTrain', labelZh: '驱动形式', labelEn: 'Drivetrain' },
+  { key: 'aspirationLong', labelZh: '进气形式', labelEn: 'Aspiration' },
+  { key: 'displacement', labelZh: '排量', labelEn: 'Displacement' },
+  { key: 'carClass', labelZh: '车辆级别', labelEn: 'Car class' },
+  { key: 'length', labelZh: '长度', labelEn: 'Length' },
+  { key: 'width', labelZh: '宽度', labelEn: 'Width' },
+  { key: 'height', labelZh: '高度', labelEn: 'Height' },
+]
+const headerSpecFields = [
+  garageSpecFields[0],
+  garageSpecFields[1],
+  garageSpecFields[3],
+  garageSpecFields[4],
 ]
 const sourceFilters = [
   { id: 'all', labelZh: '全部', labelEn: 'All' },
@@ -211,7 +231,7 @@ function onKey(e) {
   } else if (activeCar.value && e.key === 'Tab') {
     e.preventDefault()
     cycleTab(e.shiftKey ? -1 : 1)
-  } else if (activeCar.value && ['1', '2', '3', '4', '5'].includes(e.key)) {
+  } else if (activeCar.value && ['1', '2', '3', '4', '5', '6'].includes(e.key)) {
     e.preventDefault()
     setActiveTab(carTextTabs[Number(e.key) - 1].id)
   } else if (e.key === 'Enter') {
@@ -426,6 +446,12 @@ watch(navigable, (list) => {
   if (!activeCar.value) return
   activeIndex.value = list.findIndex((car) => car.id === activeCar.value.id)
 })
+watch(activeTab, async (tab) => {
+  await nextTick()
+  document
+    .querySelector(`.car-tabs button[data-tab="${tab}"]`)
+    ?.scrollIntoView({ block: 'nearest', inline: 'center' })
+})
 
 function move(delta, openIfClosed = false) {
   const list = navigable.value
@@ -522,6 +548,14 @@ const copyState = ref('复制链接')
 
 function tabHasContent(car, tabId) {
   if (tabId === 'cafe') return Boolean(car?.conversation?.length || car?.dialogues?.length)
+  if (tabId === 'garageSpecs') {
+    return Boolean(
+      car?.specs?.en?.performancePoint
+      || car?.specs?.zh?.performancePoint
+      || car?.specs?.en?.power
+      || car?.specs?.zh?.power,
+    )
+  }
   return Boolean(car?.texts?.[tabId]?.en || car?.texts?.[tabId]?.zh)
 }
 
@@ -605,6 +639,27 @@ function sceneTitle(scene) {
 function activeText() {
   if (!activeCar.value || activeTab.value === 'cafe') return null
   return activeCar.value.texts?.[activeTab.value] || null
+}
+function specValue(locale, key) {
+  return activeCar.value?.specs?.[locale]?.[key] || ''
+}
+function compactSpecValue(key) {
+  const zh = specValue('zh', key)
+  const en = specValue('en', key)
+  if (showZhContent.value && showEnContent.value) {
+    return zh && en && zh !== en ? `${zh} · ${en}` : (zh || en)
+  }
+  return showZhContent.value ? zh : en
+}
+function specLabel(field) {
+  return detailCopy(field.labelZh, field.labelEn)
+}
+function activeSpecsSourceUrl() {
+  const specs = activeCar.value?.specs
+  if (!specs) return ''
+  return showZhContent.value
+    ? (specs.sourceUrlZh || specs.sourceUrlEn || '')
+    : (specs.sourceUrlEn || specs.sourceUrlZh || '')
 }
 function activeOffer() {
   if (!activeCar.value || activeTab.value === 'cafe') return null
@@ -977,15 +1032,22 @@ function yearOf(name) {
     <div v-if="activeCar" class="modal" @click.self="closeCar">
       <div class="dialog">
         <header>
-          <div class="headmain">
+          <div class="headmain" :class="{ 'no-car-image': !activeCar.image }">
             <img v-if="activeCar.image" class="modalcar" :src="base + activeCar.image" :alt="activeCar.nameEn" />
-            <div>
+            <div class="headcopy">
               <h3>{{ displayName(activeCar) }}</h3>
               <p>{{ isChineseLocale(primaryLang) ? `${activeCar.nameEn} · ${activeCar.brand}` : activeCar.brand }}</p>
+              <div v-if="activeCar.specs" class="head-specs" aria-label="车辆核心规格">
+                <span v-for="field in headerSpecFields" :key="field.key">
+                  <small>{{ specLabel(field) }}</small>
+                  <b>{{ compactSpecValue(field.key) || '—' }}</b>
+                </span>
+              </div>
               <p class="note">
                 咖啡屋 {{ tabHasContent(activeCar, 'cafe') ? '有' : '无' }}对白
                 · 品牌购物 {{ tabHasContent(activeCar, 'brandCentral') ? '有' : '无' }}
                 · 车辆收藏 {{ tabHasContent(activeCar, 'vehicleCollection') ? '有' : '无' }}
+                · 车库规格 {{ tabHasContent(activeCar, 'garageSpecs') ? '有' : '无' }}
                 · 二手车 {{ tabHasContent(activeCar, 'usedCar') ? '有' : '无' }}
                 · 收藏馆 {{ tabHasContent(activeCar, 'collection') ? '有' : '无' }}
               </p>
@@ -1036,6 +1098,7 @@ function yearOf(name) {
           <button
             v-for="tab in carTextTabs"
             :key="tab.id"
+            :data-tab="tab.id"
             role="tab"
             :aria-selected="activeTab === tab.id"
             :class="{ on: activeTab === tab.id, muted: !tabHasContent(activeCar, tab.id) }"
@@ -1116,6 +1179,72 @@ function yearOf(name) {
           <div v-if="!activeCar.conversation.length" class="no-dialogue">
             <strong>没有找到这辆车的咖啡屋场景</strong>
             <span>已按 RT2 消息键和 DMS 场景表核对，未借用相邻车辆对白。</span>
+          </div>
+        </div>
+        <div
+          v-else-if="activeTab === 'garageSpecs'"
+          class="garage-specs-panel"
+          role="tabpanel"
+        >
+          <template v-if="activeCar.specs">
+            <div class="specs-heading">
+              <div>
+                <span class="specs-eyebrow">{{ detailCopy('官方车库数据', 'Official garage data') }}</span>
+                <h4>{{ detailCopy('车辆规格', 'Vehicle specifications') }}</h4>
+                <p>
+                  {{ detailCopy(
+                    '动力、底盘尺寸与性能点来自 Gran Turismo 7 官方车表，中英文单位分别保留。',
+                    'Power, dimensions and performance points come from the official Gran Turismo 7 car list; source units are preserved.',
+                  ) }}
+                </p>
+              </div>
+              <a
+                v-if="activeSpecsSourceUrl()"
+                class="spec-source-link"
+                :href="activeSpecsSourceUrl()"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                {{ detailCopy('查看官方车表', 'Official car entry') }} ↗
+              </a>
+            </div>
+            <section class="specs-grid" aria-label="车辆详细规格">
+              <article
+                v-for="field in garageSpecFields"
+                :key="field.key"
+                class="spec-card"
+                :class="`spec-${field.key}`"
+              >
+                <small>{{ specLabel(field) }}</small>
+                <div v-if="showZhContent" class="spec-value">
+                  <span v-if="bilingual" class="spec-locale">中文</span>
+                  <b>{{ specValue('zh', field.key) || '—' }}</b>
+                </div>
+                <div v-if="showEnContent" class="spec-value en">
+                  <span v-if="bilingual" class="spec-locale">EN</span>
+                  <b>{{ specValue('en', field.key) || '—' }}</b>
+                </div>
+              </article>
+            </section>
+            <p v-if="activeCar.specs.match === 'variant-base-alias'" class="spec-note">
+              {{ detailCopy(
+                '该特别版未单独列入官方车表，此处显示其明确对应基础车型的机械规格。',
+                'This special variant is not listed separately in the official car list; the mechanical specifications shown here belong to its explicitly mapped base car.',
+              ) }}
+            </p>
+            <div class="specs-meta">
+              <span>{{ activeCar.specs.officialId }}</span>
+              <span>{{ activeCar.specs.source }}</span>
+            </div>
+          </template>
+          <div v-else class="no-dialogue text-empty">
+            <strong>{{ detailCopy('这辆车没有官方车库规格', 'No official garage specifications are available for this car') }}</strong>
+            <span>
+              {{ detailCopy(
+                '已按官方车辆 ID、完整车型名称和明确变体别名核对；没有借用其他车辆的数据。',
+                'The official car ID, full model name and explicit variant aliases were checked; no other vehicle’s data was substituted.',
+              ) }}
+            </span>
           </div>
         </div>
         <div v-else class="text-panel" role="tabpanel">
@@ -1248,7 +1377,7 @@ function yearOf(name) {
             </span>
           </div>
         </div>
-        <div class="keyhint">← → / ↑ ↓ 切换车辆 · 1–5 或 Tab 切换资料页签 · Esc 关闭</div>
+        <div class="keyhint">← → / ↑ ↓ 切换车辆 · 1–6 或 Tab 切换资料页签 · Esc 关闭</div>
       </div>
     </div>
 
@@ -1260,6 +1389,7 @@ function yearOf(name) {
       · <a :href="base + 'data/unmatched_dialogues.md'" download>人工判定清单 MD</a>
       · <a :href="base + 'data/car_texts.csv'" download>品牌购物/二手车/收藏馆说明 CSV</a>
       · <a :href="base + 'data/vehicle_collection_texts.csv'" download>车辆收藏中英文 CSV</a>
+      · <a :href="base + 'data/garage_specs.csv'" download>车库规格中英文 CSV</a>
       · <a :href="base + 'data/dealer_offers.csv'" download>当前车商报价 CSV</a>
       · <a :href="base + 'data/car_text_orphans.csv'" download>未归属说明文本 CSV</a>
       · 数据来源：Gran Turismo 7 (PS5, PPSA01317) 本地化文本 · 仅供研究使用

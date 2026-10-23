@@ -100,6 +100,7 @@ pub fn run(options: &Options) -> Result<Value> {
         .into_iter()
         .collect();
     let mut collection = 0usize;
+    let mut spec_cars = 0usize;
     let mut text_count = 0usize;
     let mut dialogue_cars = 0usize;
     let mut dialogue_lines = HashSet::new();
@@ -150,6 +151,29 @@ pub fn run(options: &Options) -> Result<Value> {
                 }
             }
         }
+        if let Some(specs) = car.get("specs") {
+            let en = specs.get("en").and_then(Value::as_object);
+            let zh = specs.get("zh").and_then(Value::as_object);
+            if en.map(|value| value.is_empty()).unwrap_or(true)
+                || zh.map(|value| value.is_empty()).unwrap_or(true)
+            {
+                bail!("{id}: incomplete bilingual garage specifications");
+            }
+            for key in [
+                "performancePoint",
+                "power",
+                "torque",
+                "weight",
+                "driveTrain",
+            ] {
+                if en.and_then(|value| value.get(key)).is_none()
+                    || zh.and_then(|value| value.get(key)).is_none()
+                {
+                    bail!("{id}: missing garage specification {key}");
+                }
+            }
+            spec_cars += 1;
+        }
         if car
             .get("dialogues")
             .and_then(Value::as_array)
@@ -177,6 +201,9 @@ pub fn run(options: &Options) -> Result<Value> {
     }
     if collection != 580 {
         bail!("expected 580 Car Collection cars, got {collection}");
+    }
+    if spec_cars != 580 {
+        bail!("expected 580 cars with garage specifications, got {spec_cars}");
     }
     if dialogue_cars != 332 {
         bail!("expected 332 cars with cafe content, got {dialogue_cars}");
@@ -255,6 +282,7 @@ pub fn run(options: &Options) -> Result<Value> {
         "cafe_variants.csv",
         "car_texts.csv",
         "vehicle_collection_texts.csv",
+        "garage_specs.csv",
         "dealer_offers.csv",
         "menu_books.csv",
         "unmatched_dialogues.csv",
@@ -296,6 +324,7 @@ pub fn run(options: &Options) -> Result<Value> {
         "translationCells": translation_cells,
         "carTextEntries": text_count,
         "vehicleCollectionCars": collection,
+        "garageSpecCars": spec_cars,
         "dealerOffers": dealer.len(),
         "menuBooks": 108,
         "extraMenus": 57,

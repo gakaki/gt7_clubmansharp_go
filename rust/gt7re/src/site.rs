@@ -273,6 +273,22 @@ const OFFICIAL_ID_ALIASES: &[(&str, &str)] = &[
     ("Škoda Vision Gran Turismo", "car3542"),
 ];
 
+// Gift, livery and tuned variants are absent from the official car-list
+// roster, but they share the mechanical specification of their base car.
+// Keep these as explicit aliases so an unrelated vehicle can never inherit
+// another car's garage data through fuzzy matching.
+const OFFICIAL_SPEC_ID_ALIASES: &[(&str, &str)] = &[
+    ("De Tomaso Mangusta (Christian Dior)", "car3437"),
+    ("Gran Turismo Red Bull X2019 25th Anniversary", "car3374"),
+    ("MAZDA RX-VISION GT3 CONCEPT Stealth Model", "car3419"),
+    (
+        "Mercedes-Benz AMG Vision Gran Turismo LH Edition",
+        "car2055",
+    ),
+    ("Nissan Skyline GT-R GP-Tuned (KPGC10)", "car837"),
+    ("Porsche 911 Turbo Rally (930)", "car3385"),
+];
+
 fn norm_words(value: &str) -> Vec<String> {
     value
         .replace(['’', '‘'], "'")
@@ -580,23 +596,70 @@ fn attach_collection(
     car: &mut Value,
     official_descriptions: &[Value],
     official_by_name: &HashMap<String, &Value>,
+    official_by_id: &HashMap<String, &Value>,
     fallback_by_id: &HashMap<String, Value>,
 ) {
     let object = car.as_object_mut().expect("car object");
-    let id = object.get("id").and_then(Value::as_str).unwrap_or("");
-    let name_en = object.get("nameEn").and_then(Value::as_str).unwrap_or("");
-    let name_zh = object.get("nameZh").and_then(Value::as_str).unwrap_or("");
-    let record = [name_en, name_zh]
+    let id = object
+        .get("id")
+        .and_then(Value::as_str)
+        .unwrap_or("")
+        .to_string();
+    let name_en = object
+        .get("nameEn")
+        .and_then(Value::as_str)
+        .unwrap_or("")
+        .to_string();
+    let name_zh = object
+        .get("nameZh")
+        .and_then(Value::as_str)
+        .unwrap_or("")
+        .to_string();
+    let record = [name_en.as_str(), name_zh.as_str()]
         .into_iter()
         .find_map(|name| official_by_name.get(&official_key(name)).copied())
         .or_else(|| {
-            let key = official_key(name_en);
+            let key = official_key(&name_en);
             official_descriptions.iter().find(|item| {
                 official_key(item.get("nameEn").and_then(Value::as_str).unwrap_or("")) == key
             })
         });
+    let spec_alias_id = OFFICIAL_SPEC_ID_ALIASES
+        .iter()
+        .find(|(name, _)| official_key(name) == official_key(&name_en))
+        .map(|(_, id)| *id);
+    let spec_record = spec_alias_id
+        .and_then(|id| official_by_id.get(id).copied())
+        .or_else(|| {
+            object
+                .get("officialId")
+                .and_then(Value::as_str)
+                .and_then(|id| official_by_id.get(id).copied())
+        })
+        .or(record);
+    if let Some(record) = spec_record {
+        if record.get("specsEn").is_some() || record.get("specsZh").is_some() {
+            let match_kind = if spec_alias_id.is_some() {
+                "variant-base-alias"
+            } else {
+                "official-car-id"
+            };
+            object.insert(
+                "specs".into(),
+                json!({
+                    "officialId": record.get("id").cloned().unwrap_or(json!("")),
+                    "en": record.get("specsEn").cloned().unwrap_or(json!({})),
+                    "zh": record.get("specsZh").cloned().unwrap_or(json!({})),
+                    "source": "official-gt7-carlist",
+                    "match": match_kind,
+                    "sourceUrlEn": record.get("sourceUrlEn").cloned().unwrap_or(json!("")),
+                    "sourceUrlZh": record.get("sourceUrlZh").cloned().unwrap_or(json!("")),
+                }),
+            );
+        }
+    }
     let collection = if let Some(record) = record {
-        let fallback = fallback_by_id.get(id);
+        let fallback = fallback_by_id.get(&id);
         let car_key = fallback
             .and_then(|value| value.get("carKey"))
             .and_then(Value::as_str)
@@ -646,7 +709,7 @@ fn attach_collection(
                 "zh": clean_text(record.get("descZh").and_then(Value::as_str).unwrap_or("")),
             },
         })
-    } else if let Some(fallback) = fallback_by_id.get(id) {
+    } else if let Some(fallback) = fallback_by_id.get(&id) {
         fallback.clone()
     } else {
         return;
@@ -797,6 +860,10 @@ pub fn build(options: &Options) -> Result<Value> {
             .flatten()
             .map(move |name| (official_key(name), item))
         })
+        .collect();
+    let official_by_id: HashMap<String, &Value> = official_descriptions
+        .iter()
+        .filter_map(|item| Some((item.get("id").and_then(Value::as_str)?.to_string(), item)))
         .collect();
 
     let text_entries = research
@@ -962,6 +1029,7 @@ pub fn build(options: &Options) -> Result<Value> {
             car,
             &official_descriptions,
             &official_by_name,
+            &official_by_id,
             &fallback_by_id,
         );
     });
@@ -1026,6 +1094,7 @@ pub fn build(options: &Options) -> Result<Value> {
             car,
             &official_descriptions,
             &official_by_name,
+            &official_by_id,
             &fallback_by_id,
         );
     });
@@ -1327,6 +1396,7 @@ pub fn build(options: &Options) -> Result<Value> {
     write_dialogue_csvs(&cars_value, &options.site_data, &options.report_dir)?;
     write_scene_csvs(&cars_value, &options.site_data, &options.report_dir)?;
     write_text_csvs(&cars_value, &options.site_data, &options.report_dir)?;
+    write_garage_spec_csvs(&cars_value, &options.site_data, &options.report_dir)?;
     eprintln!("site: CSV exports complete");
     atomic_write(
         &options.site_data.join("unmatched_dialogues.csv"),
@@ -1650,6 +1720,116 @@ fn write_text_csvs(cars: &[Value], site: &Path, report: &Path) -> Result<()> {
         report.join("vehicle_collection_texts.csv"),
     ] {
         write_csv(&path, &headers, csv_rows.clone())?;
+    }
+    Ok(())
+}
+
+fn write_garage_spec_csvs(cars: &[Value], site: &Path, report: &Path) -> Result<()> {
+    let headers = [
+        "carId",
+        "nameEn",
+        "nameZh",
+        "brand",
+        "officialId",
+        "source",
+        "match",
+        "sourceUrlEn",
+        "sourceUrlZh",
+        "performancePoint_en",
+        "performancePoint_zh",
+        "maxPower_en",
+        "maxPower_zh",
+        "maxTorque_en",
+        "maxTorque_zh",
+        "power_en",
+        "power_zh",
+        "torque_en",
+        "torque_zh",
+        "weight_en",
+        "weight_zh",
+        "driveTrain_en",
+        "driveTrain_zh",
+        "aspiration_en",
+        "aspiration_zh",
+        "displacement_en",
+        "displacement_zh",
+        "carClass_en",
+        "carClass_zh",
+        "length_en",
+        "length_zh",
+        "width_en",
+        "width_zh",
+        "height_en",
+        "height_zh",
+        "powerValue_zh",
+        "torqueValue_zh",
+        "weightValue_zh",
+        "lengthValue_zh",
+        "widthValue_zh",
+        "heightValue_zh",
+    ];
+    let rows = cars.iter().filter_map(|car| {
+        let specs = car.get("specs")?;
+        let en = specs.get("en").and_then(Value::as_object);
+        let zh = specs.get("zh").and_then(Value::as_object);
+        let text = |locale: Option<&serde_json::Map<String, Value>>, key: &str| {
+            locale
+                .and_then(|value| value.get(key))
+                .map(|value| match value {
+                    Value::String(text) => text.clone(),
+                    other => other.to_string(),
+                })
+                .unwrap_or_default()
+        };
+        Some(vec![
+            text(car.as_object(), "id"),
+            text(car.as_object(), "nameEn"),
+            text(car.as_object(), "nameZh"),
+            text(car.as_object(), "brand"),
+            text(specs.as_object(), "officialId"),
+            text(specs.as_object(), "source"),
+            text(specs.as_object(), "match"),
+            text(specs.as_object(), "sourceUrlEn"),
+            text(specs.as_object(), "sourceUrlZh"),
+            text(en, "performancePoint"),
+            text(zh, "performancePoint"),
+            text(en, "maxPower"),
+            text(zh, "maxPower"),
+            text(en, "maxTorque"),
+            text(zh, "maxTorque"),
+            text(en, "power"),
+            text(zh, "power"),
+            text(en, "torque"),
+            text(zh, "torque"),
+            text(en, "weight"),
+            text(zh, "weight"),
+            text(en, "driveTrain"),
+            text(zh, "driveTrain"),
+            text(en, "aspirationLong"),
+            text(zh, "aspirationLong"),
+            text(en, "displacement"),
+            text(zh, "displacement"),
+            text(en, "carClass"),
+            text(zh, "carClass"),
+            text(en, "length"),
+            text(zh, "length"),
+            text(en, "width"),
+            text(zh, "width"),
+            text(en, "height"),
+            text(zh, "height"),
+            text(zh, "power_v"),
+            text(zh, "torque_v"),
+            text(zh, "weight_v"),
+            text(zh, "length_v"),
+            text(zh, "width_v"),
+            text(zh, "height_v"),
+        ])
+    });
+    for path in [
+        site.join("garage_specs.csv"),
+        report.join("garage_specs.csv"),
+    ] {
+        write_csv(&path, &headers, rows.clone())?;
     }
     Ok(())
 }

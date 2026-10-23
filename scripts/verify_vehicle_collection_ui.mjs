@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-/** Verify the five-tab car detail page and mobile navigation over CDP. */
+/** Verify the six-tab car detail page and mobile navigation over CDP. */
 
 import fs from 'node:fs/promises'
 import path from 'node:path'
@@ -119,6 +119,23 @@ const desktop = await evaluate(`(() => {
 })()`)
 await screenshot('vehicle-collection-desktop.png')
 
+await navigate(`${base}?lang=both&l1=zh&l2=us&car=0x0000D1BB&tab=garageSpecs`)
+const garageDesktop = await evaluate(`(() => {
+  const tabs = [...document.querySelectorAll('.car-tabs button')]
+  const panel = document.querySelector('.garage-specs-panel')
+  return {
+    title: document.querySelector('.dialog h3')?.textContent?.trim() || '',
+    tabs: tabs.map((node) => node.textContent.trim()),
+    active: document.querySelector('.car-tabs button.on')?.textContent?.trim() || '',
+    panel: panel?.innerText || '',
+    cards: panel?.querySelectorAll('.spec-card').length || 0,
+    headerSpecs: document.querySelector('.head-specs')?.innerText || '',
+    bodyWidth: document.documentElement.scrollWidth,
+    viewportWidth: document.documentElement.clientWidth,
+  }
+})()`)
+await screenshot('garage-specs-desktop.png')
+
 async function pressDigit(digit) {
   const code = 48 + Number(digit)
   await cdp.call('Input.dispatchKeyEvent', {
@@ -146,12 +163,23 @@ await pressDigit('3')
 const collection = await evaluate(
   `document.querySelector('.car-tabs button.on')?.textContent?.trim() || ''`,
 )
-const keyboard = { brand, collection }
+await pressDigit('4')
+const garage = await evaluate(
+  `document.querySelector('.car-tabs button.on')?.textContent?.trim() || ''`,
+)
+const keyboard = { brand, collection, garage }
 
 await navigate(`${base}?lang=en&l1=us&l2=zh&car=0x0000D1BB&tab=vehicleCollection`)
 const english = await evaluate(`(() => ({
   title: document.querySelector('.dialog h3')?.textContent?.trim() || '',
   panel: document.querySelector('.text-panel')?.innerText || '',
+}))()`)
+
+await navigate(`${base}?lang=en&l1=us&l2=zh&car=0x0000D1BB&tab=garageSpecs`)
+const garageEnglish = await evaluate(`(() => ({
+  title: document.querySelector('.dialog h3')?.textContent?.trim() || '',
+  panel: document.querySelector('.garage-specs-panel')?.innerText || '',
+  tabs: [...document.querySelectorAll('.car-tabs button')].map((node) => node.textContent.trim()),
 }))()`)
 
 await navigate(`${base}?lang=en&l1=us&l2=zh&car=0x00009D5B&tab=vehicleCollection`)
@@ -169,6 +197,29 @@ const peugeot = await evaluate(`(() => ({
   panel: document.querySelector('.text-panel')?.innerText || '',
 }))()`)
 await screenshot('vehicle-collection-peugeot.png')
+
+await navigate(`${base}?lang=zh&l1=zh&car=0x00008200&tab=garageSpecs`)
+const garagePeugeot = await evaluate(`(() => ({
+  title: document.querySelector('.dialog h3')?.textContent?.trim() || '',
+  panel: document.querySelector('.garage-specs-panel')?.innerText || '',
+  cards: document.querySelectorAll('.spec-card').length,
+}))()`)
+
+await navigate(`${base}?lang=zh&l1=zh&car=0x00009D62&tab=garageSpecs`)
+const garageVariant = await evaluate(`(() => ({
+  title: document.querySelector('.dialog h3')?.textContent?.trim() || '',
+  panel: document.querySelector('.garage-specs-panel')?.innerText || '',
+  cards: document.querySelectorAll('.spec-card').length,
+}))()`)
+
+await navigate(`${base}?lang=zh&l1=zh&car=0x00007600&tab=garageSpecs`)
+const garageMissing = await evaluate(`(() => ({
+  title: document.querySelector('.dialog h3')?.textContent?.trim() || '',
+  panel: document.querySelector('.garage-specs-panel')?.innerText || '',
+  muted: [...document.querySelectorAll('.car-tabs button')]
+    .find((node) => node.dataset.tab === 'garageSpecs')
+    ?.classList.contains('muted') || false,
+}))()`)
 
 await cdp.call('Emulation.setDeviceMetricsOverride', {
   width: 390,
@@ -199,6 +250,23 @@ const mobileBefore = await evaluate(`(() => ({
   viewportWidth: document.documentElement.clientWidth,
 }))()`)
 await screenshot('vehicle-collection-mobile.png')
+await navigate(`${base}?lang=zh&l1=zh&car=0x0000D1BB&tab=garageSpecs`)
+const mobileGarage = await evaluate(`(() => {
+  const panel = document.querySelector('.garage-specs-panel')
+  const grid = panel?.querySelector('.specs-grid')
+  return {
+    title: document.querySelector('.dialog h3')?.textContent?.trim() || '',
+    tabs: [...document.querySelectorAll('.car-tabs button')].map((node) => node.textContent.trim()),
+    panel: panel?.innerText || '',
+    cards: panel?.querySelectorAll('.spec-card').length || 0,
+    columns: grid ? getComputedStyle(grid).gridTemplateColumns : '',
+    bodyWidth: document.documentElement.scrollWidth,
+    viewportWidth: document.documentElement.clientWidth,
+    fixedNav: getComputedStyle(document.querySelector('.mobile-car-nav')).position,
+  }
+})()`)
+await screenshot('garage-specs-mobile.png')
+await navigate(`${base}?lang=zh&l1=zh&car=0x0000D1BB&tab=vehicleCollection`)
 await evaluate(`document.querySelector('.mobile-car-step:last-child')?.click()`)
 await sleep(700)
 const mobileAfter = await evaluate(`(() => ({
@@ -208,9 +276,11 @@ const mobileAfter = await evaluate(`(() => ({
 }))()`)
 
 const checks = {
-  fiveTabs: desktop.tabs.length === 5,
+  sixTabs: desktop.tabs.length === 6 &&
+    desktop.tabs.some((text) => text.includes('车库数据')),
   splitLabels: desktop.tabs.some((text) => text.includes('品牌购物')) &&
     desktop.tabs.some((text) => text.includes('车辆收藏')) &&
+    desktop.tabs.some((text) => text.includes('车库数据')) &&
     !desktop.tabs.some((text) => text.includes('品牌购物 / 车库')),
   xiaomiBilingual: desktop.title.includes('SU7') &&
     desktop.panel.includes('智能手机巨头') &&
@@ -227,7 +297,25 @@ const checks = {
     missingCollection.muted &&
     missingCollection.panel.includes('No Car Collection entry is available'),
   keyboardTabs: keyboard.brand.includes('品牌购物') &&
-    keyboard.collection.includes('车辆收藏'),
+    keyboard.collection.includes('车辆收藏') &&
+    keyboard.garage.includes('车库数据'),
+  xiaomiGarageBilingual: garageDesktop.title.includes('SU7') &&
+    garageDesktop.active.includes('车库数据') &&
+    garageDesktop.panel.includes('PP 681.42') &&
+    garageDesktop.panel.includes('1,548 PS') &&
+    garageDesktop.panel.includes('2,360 公斤') &&
+    garageDesktop.panel.includes('四驱') &&
+    garageDesktop.panel.includes('1526 HP') &&
+    garageDesktop.panel.includes('5203 lbs.') &&
+    garageDesktop.panel.includes('4WD') &&
+    garageDesktop.cards === 11 &&
+    garageDesktop.headerSpecs.includes('681.42'),
+  garageEnglishHeadings: garageEnglish.panel.includes('PERFORMANCE POINTS') &&
+    garageEnglish.panel.includes('MAX POWER / RPM') &&
+    garageEnglish.panel.includes('WEIGHT') &&
+    garageEnglish.panel.includes('1526 HP') &&
+    !garageEnglish.panel.includes('最大功率 / 转速') &&
+    garageEnglish.tabs.length === 6,
   peugeotCollection: peugeot.title.includes('205 Turbo 16 Evolution 2') &&
     peugeot.panel.includes('Group B racing world by storm') &&
     peugeot.panel.includes('B组别') &&
@@ -236,8 +324,29 @@ const checks = {
   mobileNoOverflow: mobileBefore.bodyWidth <= mobileBefore.viewportWidth,
   mobileFixedNav: mobileBefore.fixedNav === 'fixed',
   mobileSwitchedCar: mobileBefore.title !== mobileAfter.title,
-  mobileCollection: mobileBefore.tabs.length === 5 &&
+  mobileCollection: mobileBefore.tabs.length === 6 &&
     mobileBefore.panel.includes('智能手机巨头'),
+  mobileGarage: mobileGarage.title.includes('SU7') &&
+    mobileGarage.tabs.length === 6 &&
+    mobileGarage.cards === 11 &&
+    mobileGarage.panel.includes('PP 681.42') &&
+    mobileGarage.panel.includes('1,548 PS') &&
+    mobileGarage.fixedNav === 'fixed' &&
+    mobileGarage.bodyWidth <= mobileGarage.viewportWidth,
+  peugeotGarage: garagePeugeot.title.includes('205 Turbo 16 Evolution 2') &&
+    garagePeugeot.panel.includes('PP 671.14') &&
+    garagePeugeot.panel.includes('455 PS') &&
+    garagePeugeot.panel.includes('910 公斤') &&
+    garagePeugeot.panel.includes('四驱') &&
+    garagePeugeot.cards === 11,
+  variantGarageAlias: garageVariant.title.includes('Mangusta') &&
+    garageVariant.panel.includes('PP 461.13') &&
+    garageVariant.panel.includes('305 PS') &&
+    garageVariant.panel.includes('该特别版未单独列入官方车表') &&
+    garageVariant.cards === 11,
+  missingGarageState: garageMissing.title.includes('F1 W08') &&
+    garageMissing.muted &&
+    garageMissing.panel.includes('这辆车没有官方车库规格'),
   fiveSourceFilters: filterLabels.length === 5 &&
     filterLabels.some((label) => label.includes('品牌店')) &&
     filterLabels.some((label) => label.includes('二手车')) &&
@@ -255,11 +364,17 @@ const report = {
   filterLabels,
   mobileFilters,
   desktop,
+  garageDesktop,
   english,
+  garageEnglish,
   missingCollection,
   keyboard,
   peugeot,
+  garagePeugeot,
+  garageVariant,
+  garageMissing,
   mobileBefore,
+  mobileGarage,
   mobileAfter,
   checks,
 }

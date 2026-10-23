@@ -312,9 +312,40 @@ button { font-family: inherit; cursor: pointer; }
 }
 .dialog h3 { margin: 0; font-size: 21px; }
 .headmain { display: flex; gap: 14px; align-items: center; }
+.headcopy { min-width: 0; }
 .modalcar { width: 190px; height: 100px; object-fit: contain; background: #f2f2f5; border-radius: 8px; }
 .dialog header p { margin: 4px 0 0; color: var(--muted); font-size: 13px; }
 .dialog header .note { margin-top: 6px; color: #a0a0ab; font-size: 11px; }
+.head-specs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+  margin-top: 9px;
+}
+.head-specs span {
+  display: flex;
+  align-items: baseline;
+  gap: 5px;
+  max-width: 100%;
+  padding: 4px 7px;
+  border: 1px solid #e3e5eb;
+  border-radius: 6px;
+  background: #f8f9fb;
+}
+.head-specs small {
+  flex: 0 0 auto;
+  color: #8b8d97;
+  font-size: 8px;
+  font-weight: 700;
+  letter-spacing: .04em;
+  text-transform: uppercase;
+}
+.head-specs b {
+  color: #33343a;
+  font-size: 10px;
+  font-weight: 650;
+  overflow-wrap: anywhere;
+}
 .detail-controls { display: flex; align-items: center; gap: 8px; flex: 0 0 auto; }
 .detail-lang { padding: 2px; }
 .detail-lang select { padding-block: 6px; }
@@ -381,7 +412,7 @@ button { font-family: inherit; cursor: pointer; }
 .review-open:hover { border-color: var(--accent); }
 .car-tabs {
   display: grid;
-  grid-template-columns: repeat(5, minmax(105px, 1fr));
+  grid-template-columns: repeat(6, minmax(94px, 1fr));
   gap: 6px;
   padding: 10px 22px;
   background: #f7f7fa;
@@ -403,6 +434,119 @@ button { font-family: inherit; cursor: pointer; }
 .car-tabs button.on { color: #fff; background: #17171c; border-color: #17171c; }
 .car-tabs button.muted:not(.on) { opacity: .52; }
 .text-panel { padding: 20px 22px 26px; min-height: 260px; }
+.garage-specs-panel { padding: 22px 22px 28px; min-height: 280px; }
+.specs-heading {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 20px;
+  margin-bottom: 18px;
+}
+.specs-eyebrow {
+  display: block;
+  margin-bottom: 5px;
+  color: var(--accent);
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: .13em;
+  text-transform: uppercase;
+}
+.specs-heading h4 {
+  margin: 0;
+  font-size: 20px;
+  line-height: 1.2;
+}
+.specs-heading p {
+  max-width: 700px;
+  margin: 7px 0 0;
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.6;
+}
+.spec-source-link {
+  flex: 0 0 auto;
+  border: 1px solid #dfe2e8;
+  border-radius: 999px;
+  padding: 7px 11px;
+  color: #464751;
+  font-size: 10px;
+  font-weight: 700;
+  text-decoration: none;
+}
+.spec-source-link:hover { border-color: #b9bdc6; color: var(--text); }
+.specs-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 8px;
+}
+.spec-card {
+  min-width: 0;
+  min-height: 98px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 12px 13px;
+  border: 1px solid #e5e6eb;
+  border-radius: 10px;
+  background: linear-gradient(145deg, #fff, #f8f9fb);
+}
+.spec-card > small {
+  color: #858791;
+  font-size: 9px;
+  font-weight: 750;
+  letter-spacing: .06em;
+  line-height: 1.4;
+  text-transform: uppercase;
+}
+.spec-value {
+  min-width: 0;
+  display: flex;
+  align-items: baseline;
+  gap: 6px;
+}
+.spec-value + .spec-value {
+  margin-top: auto;
+  padding-top: 6px;
+  border-top: 1px dashed #e2e4e9;
+}
+.spec-value b {
+  min-width: 0;
+  color: #202126;
+  font-size: 15px;
+  font-weight: 700;
+  line-height: 1.35;
+  overflow-wrap: anywhere;
+}
+.spec-value.en b { color: #61636c; font-size: 12px; font-weight: 600; }
+.spec-locale {
+  flex: 0 0 auto;
+  color: #a1a3ac;
+  font-size: 8px;
+  font-weight: 800;
+  letter-spacing: .06em;
+}
+.spec-note {
+  margin: 14px 0 0;
+  padding: 10px 12px;
+  border-left: 3px solid #d7a700;
+  background: #fffaf0;
+  color: #756329;
+  font-size: 11px;
+  line-height: 1.55;
+}
+.specs-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 14px;
+}
+.specs-meta span {
+  border-radius: 999px;
+  padding: 4px 8px;
+  background: #f1f2f5;
+  color: #858792;
+  font-size: 9px;
+}
 .text-merchant {
   display: flex; align-items: center; gap: 10px; margin-bottom: 14px;
 }
@@ -614,10 +758,19 @@ button { font-family: inherit; cursor: pointer; }
     align-items: start;
     gap: 10px;
   }
+  .headmain.no-car-image { grid-template-columns: minmax(0, 1fr); }
   .modalcar { width: 96px; height: 64px; }
   .dialog h3 { font-size: 19px; line-height: 1.25; }
   .dialog header p { font-size: 12px; line-height: 1.45; }
   .dialog header .note { font-size: 10px; }
+  .head-specs { gap: 4px; margin-top: 7px; }
+  .head-specs span {
+    flex: 1 1 calc(50% - 4px);
+    justify-content: space-between;
+    padding: 4px 6px;
+  }
+  .head-specs small { font-size: 7px; }
+  .head-specs b { font-size: 9px; }
   .detail-controls {
     width: 100%;
     justify-content: space-between;
@@ -649,6 +802,28 @@ button { font-family: inherit; cursor: pointer; }
   .review-open { margin-left: 0; }
   .dialogues { padding: 4px 14px 20px; }
   .text-panel { padding: 16px 14px 22px; }
+  .garage-specs-panel { padding: 16px 14px 22px; }
+  .specs-heading {
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 14px;
+  }
+  .specs-heading h4 { font-size: 18px; }
+  .specs-heading p { font-size: 11px; }
+  .spec-source-link { padding: 6px 10px; }
+  .specs-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 6px;
+  }
+  .spec-card {
+    min-height: 88px;
+    gap: 6px;
+    padding: 10px;
+  }
+  .spec-card > small { font-size: 8px; }
+  .spec-value b { font-size: 13px; }
+  .spec-value.en b { font-size: 11px; }
+  .spec-note { margin-top: 10px; padding: 9px 10px; }
   .entry-meta { margin-left: 0; }
   .review-dialog { max-height: calc(100vh - 24px); }
   .review-list { padding: 0 12px 18px; }

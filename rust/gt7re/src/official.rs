@@ -78,8 +78,9 @@ fn parse_cars(source: &str) -> Result<HashMap<String, Value>> {
             ))
         })
         .collect::<Vec<_>>();
-    let name = Regex::new(r"nameLong:`(.*?)`").expect("name regex");
-    let manufacturer = Regex::new(r"manufacturerId:`(.*?)`").expect("manufacturer regex");
+    let field =
+        Regex::new(r"(?s)([A-Za-z][A-Za-z0-9_]*):(?:`([^`]*)`|(-?\d+(?:\.\d+)?)|(true|false))")
+            .expect("car field regex");
     let mut result = HashMap::new();
     for (index, (_, start, number)) in found.iter().enumerate() {
         let end = found
@@ -93,14 +94,23 @@ fn parse_cars(source: &str) -> Result<HashMap<String, Value>> {
             .unwrap_or(source.len());
         let body = &source[*start..end];
         let id = format!("car{number}");
-        result.insert(
-            id.clone(),
-            json!({
-                "id": id,
-                "name": name.captures(body).map(|v| v[1].to_string()).unwrap_or_default(),
-                "manufacturerId": manufacturer.captures(body).map(|v| v[1].to_string()).unwrap_or_default(),
-            }),
-        );
+        let mut fields = serde_json::Map::new();
+        fields.insert("id".into(), Value::String(id.clone()));
+        for capture in field.captures_iter(body) {
+            let value = if let Some(text) = capture.get(2) {
+                Value::String(text.as_str().to_string())
+            } else if let Some(number) = capture.get(3) {
+                number
+                    .as_str()
+                    .parse::<f64>()
+                    .map(|value| json!(value))
+                    .unwrap_or(Value::Null)
+            } else {
+                Value::Bool(&capture[4] == "true")
+            };
+            fields.insert(capture[1].to_string(), value);
+        }
+        result.insert(id, Value::Object(fields));
     }
     Ok(result)
 }
@@ -164,9 +174,11 @@ pub fn descriptions(out: &Path, proxy: Option<&str>) -> Result<()> {
             let (desc_en, hero_en) = &us_desc[id];
             json!({
                 "id": id,
-                "nameEn": us_cars.get(id).and_then(|v| v.get("name")).and_then(Value::as_str).unwrap_or(""),
-                "nameZh": cn_cars.get(id).and_then(|v| v.get("name")).and_then(Value::as_str).unwrap_or(""),
+                "nameEn": us_cars.get(id).and_then(|v| v.get("nameLong")).and_then(Value::as_str).unwrap_or(""),
+                "nameZh": cn_cars.get(id).and_then(|v| v.get("nameLong")).and_then(Value::as_str).unwrap_or(""),
                 "manufacturerId": us_cars.get(id).and_then(|v| v.get("manufacturerId")).and_then(Value::as_str).unwrap_or(""),
+                "specsEn": us_cars.get(id).cloned().unwrap_or(Value::Null),
+                "specsZh": cn_cars.get(id).cloned().unwrap_or(Value::Null),
                 "heroEn": hero_en,
                 "descEn": desc_en,
                 "heroZh": hero_zh,
