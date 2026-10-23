@@ -16,8 +16,8 @@ The public research browser is deployed at <https://gt7.gakaki.com>.
 | Matched official thumbnails | 582 |
 | Unique CarDetail records | 444 |
 | Car-scene dialogue lines | 2,614 |
-| Dealer/garage descriptions | 630 |
-| Cars with at least one description | 577 |
+| Dealer/garage descriptions | 634 |
+| Cars with at least one description | 581 |
 | Legacy 253 ambiguity review | 253 / 253 resolved |
 
 The vehicle descriptions cover three independent game sources:

@@ -194,6 +194,7 @@ fn clean_text(value: &str) -> String {
         rest = rest[end + 1..].to_string();
     }
     out.push_str(&rest);
+    out.retain(|c| !c.is_control() || matches!(c, '\n' | '\t'));
     while out.contains("\n\n\n") {
         out = out.replace("\n\n\n", "\n\n");
     }
@@ -224,6 +225,20 @@ fn normalize_car_name(value: &str, known: &HashSet<String>) -> String {
         }
     }
     name = name.trim().to_string();
+    for (suffix, replacement) in [
+        ("Road Car8", "Road Car"),
+        ("Road Cara", "Road Car"),
+        ("Vantage Gr.4a", "Vantage Gr.4"),
+        ("KATANA Edition Gr.47", "KATANA Edition Gr.4"),
+        ("Anniversary[", "Anniversary"),
+        ("Stealth ModelX", "Stealth Model"),
+    ] {
+        if name.ends_with(suffix) {
+            name.truncate(name.len() - suffix.len());
+            name.push_str(replacement);
+            break;
+        }
+    }
     if known.contains(&norm(&name)) {
         return name;
     }
@@ -239,6 +254,21 @@ fn normalize_car_name(value: &str, known: &HashSet<String>) -> String {
         }
     }
     name
+}
+
+fn orphan_text_id(message_key: &str) -> Option<u32> {
+    match message_key {
+        "Buddy_ContentCar_BrandCentralOwner_normal_caterham_seven_sl_r500_12_1020041" => Some(0x00004F02),
+        "Buddy_ContentCar_BrandCentralOwner_normal_pininfarina_vision_gt_17_1020365" => Some(0x00005046),
+        "Buddy_ContentCar_BrandCentralOwner_normal_f1_w08_eq_17_1020376" => Some(0x00005051),
+        "Buddy_ContentCar_BrandCentralOwner_normal_f1_w08_eq_17_le_1020388" => Some(0x0000505D),
+        "Buddy_ContentCar_BrandCentralOwner_normal_mercedes_amg_vision_gt_race_13_lhc_1020404" => Some(0x0000506D),
+        "Buddy_ContentCar_BrandCentralOwner_normal_ioniq_6_n_25_1020780" => Some(0x0000D4C2),
+        "Buddy_ContentCar_Hagerty_normal_rally_037_evo_2_84_1030455" => Some(0x00008E8E),
+        "Buddy_ContentCar_UsedCarOwner_normal_chaser_v_97_1000555" => Some(0x00005495),
+        "Buddy_ContentCar_UsedCarOwner_normal_mark_2_v_97_1000781" => Some(0x0000D4C3),
+        _ => None,
+    }
 }
 
 fn token_overlap(a: &str, b: &str) -> f32 {
@@ -277,7 +307,7 @@ fn local_override(car_key: &str) -> &'static [&'static str] {
         "peugeot_vision_gt_14" => &["PEUGEOT Vision Gran Turismo8"],
         "bugatti_vision_gt_15" => &["Bugatti Vision Gran Turismo8"],
         "porsche_vision_gt_coupe_21" => &["Porsche Vision Gran Turismo8"],
-        "v8_vantage_gt4m_xx" => &["Aston Martin Vantage Gr.4a"],
+        "v8_vantage_gt4m_xx" => &["Aston Martin Vantage Gr.4"],
         "vw3_vgt_gt3m_xx" => &["Volkswagen GTI Vision Gran Turismo (Gr.3)X"],
         "toyota_ft1_vgt_gt3m_xx" => &["Toyota FT-1 Vision Gran Turismo (Gr.3)7"],
         "peugeot_l500r_hv_vision_gt_race_17" => &["Peugeot L750R HYbrid Vision Gran Turismo, 2017"],
@@ -285,7 +315,7 @@ fn local_override(car_key: &str) -> &'static [&'static str] {
         "bruce_levens_ford_gt51_coupe_xx" => &["Wicked Fabrication GT 51"],
         "rcr_civic_xx" => &["Garage RCR CivicX"],
         "roadster_shop_rampage_xx" => &["Roadster Shop Rampage"],
-        "swift_sports_gt4m_xx" => &["Suzuki Swift Sport KATANA Edition Gr.47"],
+        "swift_sports_gt4m_xx" => &["Suzuki Swift Sport KATANA Edition Gr.4"],
         "mercedes_amg_gt_gt3_16" => &["Mercedes-AMG GT3 '16"],
         "mercedes_amg_gt_s_14_sc" => &["Mercedes-AMG GT Safety Car"],
         "gtr_17_sc" => &["Nissan GT-R Safety Car"],
@@ -769,7 +799,6 @@ struct CafeMessage {
     id: u32,
     message_id: u32,
     message_key: String,
-    label: String,
     car_key: String,
     raw: String,
     en: String,
@@ -816,6 +845,45 @@ fn targets(raw: &str) -> Vec<u32> {
             }
             offset = start + keyword.len();
         }
+    }
+    out
+}
+
+fn recover_partial_next_targets(
+    raw: &str,
+    current_message_id: u32,
+    car_key: &str,
+    messages: &HashMap<u32, CafeMessage>,
+) -> Vec<u32> {
+    let lower = raw.to_ascii_lowercase();
+    let mut out = Vec::new();
+    let mut offset = 0;
+    while let Some(rel) = lower[offset..].find("next") {
+        let start = offset + rel;
+        let segment = lower[start..].split('>').next().unwrap_or(&lower[start..]);
+        let Some(id_pos) = segment.find("id=") else {
+            offset = start + 4;
+            continue;
+        };
+        let prefix: String = segment[id_pos + 3..]
+            .chars()
+            .take_while(|c| c.is_ascii_digit())
+            .collect();
+        if (2..7).contains(&prefix.len()) {
+            let matches: Vec<u32> = messages
+                .values()
+                .filter(|message| {
+                    message.car_key == car_key
+                        && message.message_id > current_message_id
+                        && message.message_id.to_string().starts_with(&prefix)
+                })
+                .map(|message| message.message_id)
+                .collect();
+            if matches.len() == 1 {
+                out.push(matches[0]);
+            }
+        }
+        offset = start + 4;
     }
     out
 }
@@ -921,7 +989,10 @@ pub fn build(options: &Options) -> Result<Research> {
     for (category, title_zh, title_en, section, message_key, car_name) in
         ORPHAN_TEXT_OVERRIDES
     {
-        let Some(text_id) = us_labels.get(&((*section).to_string(), (*message_key).to_string()))
+        let Some(text_id) = us_labels
+            .get(&((*section).to_string(), (*message_key).to_string()))
+            .copied()
+            .or_else(|| orphan_text_id(message_key))
         else {
             continue;
         };
@@ -945,13 +1016,13 @@ pub fn build(options: &Options) -> Result<Research> {
             source_name: cars[car_index].name_en.clone(),
             en: clean_text(
                 us_texts
-                    .get(&((*section).into(), *text_id))
+                    .get(&((*section).into(), text_id))
                     .map(String::as_str)
                     .unwrap_or(""),
             ),
             zh: clean_text(
                 zh_texts
-                    .get(&((*section).into(), *text_id))
+                    .get(&((*section).into(), text_id))
                     .map(String::as_str)
                     .unwrap_or(""),
             ),
@@ -986,11 +1057,12 @@ pub fn build(options: &Options) -> Result<Research> {
     ] {
         let source_text = cars
             .iter()
-            .find(|car| car.name_en == source_name)
+            .find(|car| norm(&car.name_en) == norm(source_name))
             .and_then(|car| car.texts.get("brandCentral").cloned());
         if let (Some(text), Some(target)) = (
             source_text,
-            cars.iter_mut().find(|car| car.name_en == target_name),
+            cars.iter_mut()
+                .find(|car| norm(&car.name_en) == norm(target_name)),
         ) {
             target.texts.insert("brandCentral".into(), text);
         }
@@ -1025,7 +1097,6 @@ pub fn build(options: &Options) -> Result<Research> {
             id: text_id,
             message_id,
             message_key,
-            label: label.clone(),
             car_key: car_key.clone(),
             raw,
             en,
@@ -1069,7 +1140,6 @@ pub fn build(options: &Options) -> Result<Research> {
             id: *text_id,
             message_id,
             message_key: label.clone(),
-            label: label.clone(),
             car_key: car_key.to_string(),
             raw,
             en,
@@ -1172,7 +1242,21 @@ pub fn build(options: &Options) -> Result<Research> {
                     scene_order: turns.len() + 1,
                     variant: variant_from_key(key),
                 });
-                for target in targets(&message.raw) {
+                let mut next_targets = targets(&message.raw);
+                next_targets.extend(recover_partial_next_targets(
+                    &message.raw,
+                    message.message_id,
+                    &message.car_key,
+                    &messages_by_id,
+                ));
+                if message.raw.to_ascii_lowercase().contains("next") {
+                    if let Some(next) = messages_by_id.get(&(message.message_id + 1)) {
+                        if next.car_key == message.car_key {
+                            next_targets.push(message.message_id + 1);
+                        }
+                    }
+                }
+                for target in next_targets {
                     queue.push_back(target);
                 }
             }
@@ -1372,4 +1456,60 @@ pub fn build(options: &Options) -> Result<Research> {
     fs::write(&options.out, serde_json::to_vec(&research)?)?;
     write_csvs(&options.out, &research.text_entries, &research.detail_rows)?;
     Ok(research)
+}
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    #[test]
+    fn inline_placeholders_survive_text_cleanup() {
+        let text = "<sseq scmd=\"GTCafe_Test\">Engine <660cc> and <1548PS>.<p/>Done";
+        assert_eq!(
+            clean_text(text),
+            "Engine 660cc and 1548PS.\nDone"
+        );
+    }
+
+    #[test]
+    fn message_targets_support_next_and_yesno() {
+        let targets = targets(
+            "Continue<next id=1702206 type=9>\\n<yesno msgid=1702207 nmsgid=1702208>",
+        );
+        assert_eq!(targets, vec![1702206, 1702207, 1702208]);
+    }
+
+    #[test]
+    fn car_name_cleanup_uses_known_display_names() {
+        let known = HashSet::from([
+            norm("Gran Turismo Red Bull X2019 25th Anniversary"),
+            norm("Suzuki Swift Sport KATANA Edition Gr.4"),
+        ]);
+        assert_eq!(
+            normalize_car_name(
+                "Gran Turismo Red Bull X2019 25th Anniversary[",
+                &known
+            ),
+            "Gran Turismo Red Bull X2019 25th Anniversary"
+        );
+        assert_eq!(
+            normalize_car_name(
+                "Suzuki Swift Sport KATANA Edition Gr.47",
+                &known
+            ),
+            "Suzuki Swift Sport KATANA Edition Gr.4"
+        );
+    }
+
+    #[test]
+    fn cafe_family_and_variant_decode_exactly() {
+        assert_eq!(
+            family_key("Harada_014_sileighty_xx_Repeat_Win"),
+            "Harada_014_sileighty_xx"
+        );
+        assert_eq!(variant_from_key("Harada_014_sileighty_xx_Repeat_Win"), 1);
+        assert_eq!(variant_from_key("Harada_014_sileighty_xx_1st_Win"), 2);
+        assert_eq!(variant_from_key("Harada_014_sileighty_xx_Repeat"), 3);
+        assert_eq!(variant_from_key("Harada_014_sileighty_xx_1st"), 4);
+    }
 }

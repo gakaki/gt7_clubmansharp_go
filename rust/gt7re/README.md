@@ -64,6 +64,26 @@ $files = Get-ChildItem C:\gt7\gt7\_re\extracted\text\rtext\common\*.rt2 | % Full
 & $exe rt2 decode @files --out C:\gt7\gt7\_re\extracted\text_decoded `
     --keystream C:\gt7\gt7\_re\keys\us.ks.bin
 
+# 车商说明与咖啡屋精确场景
+
+```powershell
+.\target\release\gt7re.exe research `
+  --legacy-review C:\gt7\gt7\_re\reports\legacy_review_ids.json `
+  --out C:\gt7\gt7\_re\reports\research_rust.json
+```
+
+该命令直接并行解析 DMSB + RT2，不使用前后文窗口：
+
+- `BrandCentralOwnerCarDescriptionMessages.dmsb`
+- `UsedCarOwnerCarDescriptionMessages.dmsb`
+- `HagertyCarDescriptionMessages.dmsb`
+- `GTCafeMessages.dmsb`
+- `ConversationGTCafeMsg.dmsb`
+
+输出包含 591 辆去重车型、634 条车商说明、444 条 CarDetail、
+1698 个咖啡屋场景变体、2620 条去重场景对白、253 条人工复核记录，
+并生成 `car_texts_rust.csv` 与 `cafe_car_detail_rust.csv`。
+
 # UDP 遥测
 & $exe udp layout
 & $exe udp parse capture.bin
@@ -138,6 +158,7 @@ src/census.rs    类型识别、普查 CSV、分类清单
 src/discover.rs  候选路径生成、并行验真、字符串挖掘
 src/extract.rs   并行复制/硬链接提取
 src/rt2.rs       rt2 解析、密钥流恢复、JSON/CSV 导出
+src/research.rs  DMSB + RT2 并行车商说明/咖啡屋场景解析
 src/udp.rs       GT7 UDP 遥测解析
 src/mdl5.rs      MDL5 头部与标识符（骨骼/材质/着色器参数名）索引
 src/rada.rs      RADA (course_line) 分块、逐点向量与弧长解析

@@ -33,7 +33,7 @@ These are the 253 records that could not be safely assigned by the previous heur
 
 ## Records grouped by exact car
 
-### 1932 Ford Roadster · 1932福特Roadster
+### 1932 Ford Roadster · 1932 Ford Roadster
 
 #### `0x0000A22F`
 
@@ -76,7 +76,7 @@ These are the 253 records that could not be safely assigned by the previous heur
 > 对于'32 而言，
 > 这台引擎是其浑然天成的整体中的神来之笔。
 
-### Abarth 500 '09 · 阿巴斯500 '09
+### Abarth 500 '09 · Abarth 500 '09
 
 #### `0x000072BD`
 
@@ -131,7 +131,7 @@ These are the 253 records that could not be safely assigned by the previous heur
 > 甚至能够和价格是自己两倍的跑车比拼速度。
 > 它是阿巴斯传统的真正继承者。
 
-### Alpine A110 1600S '72 · 阿尔派A110 1600S '72
+### Alpine A110 1600S '72 · Alpine A110 1600S '72
 
 #### `0x00009C12`
 
@@ -222,7 +222,7 @@ These are the 253 records that could not be safely assigned by the previous heur
 > 但这些“简陋”的呈现反而成了萌点，
 > 使它成为了一头可爱的怪兽。<next id=2001006 type
 
-### Aston Martin DB3S '53 · 阿斯顿·马丁DB3S '53
+### Aston Martin DB3S '53 · Aston Martin DB3S '53
 
 #### `0x0000BAE1`
 
@@ -256,7 +256,7 @@ These are the 253 records that could not be safely assigned by the previous heur
 > 和赛百灵非常类似。
 > 换句话说，就是经典的英式车身风格。/
 
-### Aston Martin DB5 '64 · 阿斯顿·马丁DB5 '64
+### Aston Martin DB5 '64 · Aston Martin DB5 '64
 
 #### `0x000071E9`
 
@@ -295,7 +295,7 @@ These are the 253 records that could not be safely assigned by the previous heur
 > 虽说成为“邦德”车令它名声大噪，但它本身也不失为一
 > 款经典车型。
 
-### Aston Martin V12 Vantage GT3 '12 · 阿斯顿·马丁V12 Vantage GT3 '12
+### Aston Martin V12 Vantage GT3 '12 · Aston Martin V12 Vantage GT3 '12
 
 #### `0x00009B57`
 
@@ -337,7 +337,7 @@ These are the 253 records that could not be safely assigned by the previous heur
 > 这辆了不起的赛车将其漫长的职业生涯都献给了GT赛事
 > 的最前线。
 
-### Audi R18 '16 · 奥迪R18 '16
+### Audi R18 '16 · Audi R18 '16
 
 #### `0x00009600`
 
@@ -378,7 +378,7 @@ These are the 253 records that could not be safely assigned by the previous heur
 > 最终，由于奥迪宣布从那年的勒芒赛事中退出，
 > 他们的连胜纪录�v就此终结。j
 
-### Audi R18 TDI '11 · 奥迪R18 TDI '11
+### Audi R18 TDI '11 · Audi R18 TDI '11
 
 #### `0x0000A29E`
 
@@ -417,7 +417,7 @@ These are the 253 records that could not be safely assigned by the previous heur
 > 所以，单圈时间极其优秀的奥迪始终没能将标致甩开。
 > 但最终，还是奥迪的速度胜出，惊险击败了对手。
 
-### Audi R8 LMS Evo '19 · 奥迪R8 LMS Evo '19
+### Audi R8 LMS Evo '19 · Audi R8 LMS Evo '19
 
 #### `0x00007218`
 
@@ -489,7 +489,7 @@ These are the 253 records that could not be safely assigned by the previous heur
 > 总而言之，R8 LMS Evo从一开始就完全展示了它的肌肉。
 > 之后也继续在世界各地的超级跑车比赛中再创佳绩。
 
-### Audi Sport quattro S1 Pikes Peak '87 · 奥迪Sport quattro S1派克峰'87
+### Audi Sport quattro S1 Pikes Peak '87 · Audi Sport quattro S1 Pikes Peak '87
 
 #### `0x000095FA`
 
@@ -566,7 +566,7 @@ These are the 253 records that could not be safely assigned by the previous heur
 > 然而，作为一款专为比赛设计的汽车，
 > 它以极其出色的成绩做出了回应。R
 
-### BMW M3 Coupé '07 · 宝马M3 Coupé '07
+### BMW M3 Coupé '07 · BMW M3 Coupé '07
 
 #### `0x000095A6`
 
@@ -639,7 +639,7 @@ These are the 253 records that could not be safely assigned by the previous heur
 > 即便从现在的眼光来看也丝毫不过时。
 > 可以说，这是一台反映了宝马设计思路演变的车。p
 
-### BMW M3 Sport Evolution '89 · 宝马M3 Sport Evolution '89
+### BMW M3 Sport Evolution '89 · BMW M3 Sport Evolution '89
 
 #### `0x0000958E`
 
@@ -709,7 +709,7 @@ These are the 253 records that could not be safely assigned by the previous heur
 > 粗看下，这台车像是一团被捏合而成的无机物，
 > 呈现出相对抢眼的最终效果。~
 
-### BMW M4 Coupé '14 · 宝马M4 Coupé '14
+### BMW M4 Coupé '14 · BMW M4 Coupé '14
 
 #### `0x00009CC3`
 
@@ -750,7 +750,7 @@ These are the 253 records that could not be safely assigned by the previous heur
 > 仿佛一位穿上设计师品牌运动外套的运动员，
 > 集运动和时尚优雅于一身。�
 
-### BMW M6 GT3 Sprint Model '16 · 宝马M6 GT3竞速型'16
+### BMW M6 GT3 Sprint Model '16 · BMW M6 GT3 Sprint Model '16
 
 #### `0x00009B63`
 
@@ -795,7 +795,7 @@ These are the 253 records that could not be safely assigned by the previous heur
 > 取得了一场辉煌的胜利……
 > 这是一场令人难以置信的比赛，精彩程度令人叹为观止！A
 
-### BMW Z4 GT3 '11 · 宝马Z4 GT3 '11
+### BMW Z4 GT3 '11 · BMW Z4 GT3 '11
 
 #### `0x00009B69`
 
@@ -835,7 +835,7 @@ These are the 253 records that could not be safely assigned by the previous heur
 > 在比赛方面，宝马从来只用事实说话，
 > 那自然流露的自信而不自负的气质显得尤为卓尔不群。
 
-### BMW Z8 '01 · 宝马Z8 '01
+### BMW Z8 '01 · BMW Z8 '01
 
 #### `0x00009FCE`
 
@@ -871,7 +871,7 @@ These are the 253 records that could not be safely assigned by the previous heur
 > 接纳不完美，并把它转化为车的个性！
 > 倒不如说，这台Z8全身上下都散发着强烈的个性！g
 
-### BMW i3 '15 · 宝马i3 '15
+### BMW i3 '15 · BMW i3 '15
 
 #### `0x0000A75E`
 
@@ -916,7 +916,7 @@ These are the 253 records that could not be safely assigned by the previous heur
 > 正因如此，这份独到的设计才显得至关重要。
 > 值得给它颁发一颗金星勋章！�
 
-### Bugatti Chiron '16 · 布加迪Chiron '16
+### Bugatti Chiron '16 · Bugatti Chiron '16
 
 #### `0x0000A7B6`
 
@@ -957,7 +957,7 @@ These are the 253 records that could not be safely assigned by the previous heur
 > 在此致以我最美好的愿望，希望他们可以
 > 永远保持卓越和纯粹。�
 
-### Bugatti Veyron 16.4 '13 · 布加迪Veryron 16.4 '13
+### Bugatti Veyron 16.4 '13 · Bugatti Veyron 16.4 '13
 
 #### `0x0000A7A4`
 
@@ -1007,7 +1007,7 @@ These are the 253 records that could not be safely assigned by the previous heur
 > 这种造型风格表达了一种幸福、陶醉感的新艺术派理念。
 > 也让我对让·布加迪更加肃然起敬。�
 
-### Chevrolet Camaro SS '16 · 雪佛兰科迈罗SS '16
+### Chevrolet Camaro SS '16 · Chevrolet Camaro SS '16
 
 #### `0x0000957C`
 
@@ -1066,7 +1066,7 @@ These are the 253 records that could not be safely assigned by the previous heur
 > 车身部位的许多形状，尤其是引擎盖、车头和车尾，
 > 灵感其实都来源于科尔维特。
 
-### Chevrolet Camaro Z28 '69 · 雪佛兰科迈罗Z28 '69
+### Chevrolet Camaro Z28 '69 · Chevrolet Camaro Z28 '69
 
 #### `0x00009582`
 
@@ -1143,7 +1143,7 @@ These are the 253 records that could not be safely assigned by the previous heur
 > 提升到赛车水准的好车。
 > 相信我，我知道自己在说什么。
 
-### Chevrolet Camaro ZL1 1LE Package '18 · 雪佛兰科迈罗ZL1 1LE Package '18
+### Chevrolet Camaro ZL1 1LE Package '18 · Chevrolet Camaro ZL1 1LE Package '18
 
 #### `0x00009588`
 
@@ -1210,7 +1210,7 @@ These are the 253 records that could not be safely assigned by the previous heur
 > 让它显得更狰狞、更具威胁性。
 > 它还通过这种撞色设计表明了态度——不废话，只为胜利！
 
-### Chevrolet Corvette C7 Gr.3 · 雪佛兰科尔维特C7组别3
+### Chevrolet Corvette C7 Gr.3 · Chevrolet Corvette C7 Gr.3
 
 #### `0x00007498`
 
@@ -1245,7 +1245,7 @@ These are the 253 records that could not be safely assigned by the previous heur
 > 选手的“折磨”。
 > 可以肯定，科尔维特C7组别3在性能方面很有一套。
 
-### Chevrolet Corvette C7 Stingray '14 · 雪佛兰科尔维特C7 Stingray '14
+### Chevrolet Corvette C7 Stingray '14 · Chevrolet Corvette C7 Stingray '14
 
 #### `0x000095D0`
 
@@ -1315,7 +1315,7 @@ These are the 253 records that could not be safely assigned by the previous heur
 > 而无处不在的进气口和风道则巧妙地将气流
 > 导向纤细流畅的车身四周。
 
-### Chevrolet Corvette C7 ZR1 '19 · 雪佛兰科尔维特C7 ZR1 '19
+### Chevrolet Corvette C7 ZR1 '19 · Chevrolet Corvette C7 ZR1 '19
 
 #### `0x0000A81A`
 
@@ -1351,7 +1351,7 @@ These are the 253 records that could not be safely assigned by the previous heur
 > 许多人都很喜欢它的尾翼。
 > 不过我个人更喜欢配备尺寸更小的后扰流板。Q
 
-### Chevrolet Corvette Sting Ray Sport Coupe (C2) '63 · 雪佛兰科尔维特Sting Ray Sport Coupe (C2) '63
+### Chevrolet Corvette Sting Ray Sport Coupe (C2) '63 · Chevrolet Corvette Sting Ray Sport Coupe (C2) '63
 
 #### `0x00009F97`
 
@@ -1397,7 +1397,7 @@ These are the 253 records that could not be safely assigned by the previous heur
 > ……我就不由想起那条生活在水底的流线型生物。
 > 没错，那就是这辆车名字的来源，魔鬼鱼。�
 
-### Chevrolet Corvette Stingray Racer Concept '59 · 雪佛兰科尔维特Stingray Racer Concept '59
+### Chevrolet Corvette Stingray Racer Concept '59 · Chevrolet Corvette Stingray Racer Concept '59
 
 #### `0x00009FB2`
 
@@ -1433,7 +1433,7 @@ These are the 253 records that could not be safely assigned by the previous heur
 > 另外，得益于围绕车身一周的“折缝线”设计，
 > 令它多出了几分速度感。.
 
-### Chevrolet Corvette Z06 (C5) '01 · 雪佛兰科尔维特Z06 (C5) '01
+### Chevrolet Corvette Z06 (C5) '01 · Chevrolet Corvette Z06 (C5) '01
 
 #### `0x0000C565`
 
@@ -1469,7 +1469,7 @@ These are the 253 records that could not be safely assigned by the previous heur
 > 这台深受车迷爱戴的C5-R，至今仍是
 > 全球最快的超级跑车之一。
 
-### Chevrolet Corvette ZR-1 (C4) '89 · 雪佛兰科尔维特ZR-1 (C4) '89
+### Chevrolet Corvette ZR-1 (C4) '89 · Chevrolet Corvette ZR-1 (C4) '89
 
 #### `0x000072D9`
 
@@ -1536,7 +1536,7 @@ These are the 253 records that could not be safely assigned by the previous heur
 > 比标准版的动力提高了不止。
 > 我要说的是，它的售价远远不能代表其真正的价值。
 
-### Citroën BX 19 TRS '87 · 雪铁龙BX 19 TRS '87
+### Citroën BX 19 TRS '87 · Citroën BX 19 TRS '87
 
 #### `0x0000C915`
 
@@ -1571,7 +1571,7 @@ These are the 253 records that could not be safely assigned by the previous heur
 > 横跨十余载……
 > 全系产量约达230万台！
 
-### Citroën DS 21 Pallas '70 · 雪铁龙DS 21 Pallas '70
+### Citroën DS 21 Pallas '70 · Citroën DS 21 Pallas '70
 
 #### `0x0000A6CF`
 
@@ -1613,7 +1613,7 @@ These are the 253 records that could not be safely assigned by the previous heur
 > 1955 DS的设计师是一位意大利人，弗拉米尼奥·贝托尼。
 > 令人扼腕的是，他的声名在故去之后才广泛地为人所知。�
 
-### Dallara SF19 Super Formula / Honda '19 · 达拉拉SF19超级方程式 / 本田'19
+### Dallara SF19 Super Formula / Honda '19 · Dallara SF19 Super Formula / Honda '19
 
 #### `0x0000A2C2`
 
@@ -1657,7 +1657,7 @@ These are the 253 records that could not be safely assigned by the previous heur
 > 在那之后，帕卢又转战印地系列赛，
 > 那是在美国举办的另一项方程式赛车系列赛。�
 
-### Dallara SF19 Super Formula / Toyota '19 · 达拉拉SF19超级方程式 / 丰田'19
+### Dallara SF19 Super Formula / Toyota '19 · Dallara SF19 Super Formula / Toyota '19
 
 #### `0x0000A2C8`
 
@@ -1699,7 +1699,7 @@ These are the 253 records that could not be safely assigned by the previous heur
 > 得益于两位车手的F1经验，能将此车的潜能发挥到极限。
 > 在SF19亮相的2019年，尼克·卡西迪赢得了当年的系列赛冠军。�
 
-### Dallara SF23 Super Formula/Honda '23 · 达拉拉SF23超级方程式 / 本田'23
+### Dallara SF23 Super Formula / Honda '23 · Dallara SF23 Super Formula / Honda '23
 
 #### `0x0000ABA4`
 
@@ -1743,7 +1743,7 @@ These are the 253 records that could not be safely assigned by the previous heur
 > 学成归来后，他们便与日本汽车工程师们合作，
 > 打造出了日本的第一款方程式赛车。
 
-### Dallara SF23 Super Formula/Toyota '23 · 达拉拉SF23超级方程式 / 丰田'23
+### Dallara SF23 Super Formula / Toyota '23 · Dallara SF23 Super Formula / Toyota '23
 
 #### `0x0000AB98`
 
@@ -1795,7 +1795,7 @@ These are the 253 records that could not be safely assigned by the previous heur
 > 到了今年，这款SF23又将这一理^��拔高到了全新高度，
 > 保证可以为车迷们带来更激动人心的白刃战场面！"
 
-### De Tomaso Mangusta '69 · 德托马索Mangusta '69
+### De Tomaso Mangusta '69 · De Tomaso Mangusta '69
 
 #### `0x0000A1D8`
 
@@ -1832,7 +1832,7 @@ These are the 253 records that could not be safely assigned by the previous heur
 > 掀开鸥翼式的后备箱盖，就可以看到这台中置引擎。
 > 这个细节特别有趣味。我很喜欢。P
 
-### Dodge Challenger R/T '70 · 道奇Challenger R/T '70
+### Dodge Challenger R/T '70 · Dodge Challenger R/T '70
 
 #### `0x0000A063`
 
@@ -1875,7 +1875,7 @@ These are the 253 records that could not be safely assigned by the previous heur
 > 如果再装配上车尾扰流板，
 > Chal�enger R/T必定会吸引所有人的目光。�
 
-### Dodge Charger SRT Hellcat '15 · 道奇Charger SRT Hellcat '15
+### Dodge Charger SRT Hellcat '15 · Dodge Charger SRT Hellcat '15
 
 #### `0x0000B92D`
 
@@ -1912,7 +1912,7 @@ These are the 253 records that could not be safely assigned by the previous heur
 > 宽广的扭矩范围让我能够在赛道上畅快驾驶而无需频繁换挡。
 > 那种驾驶体验如同梦幻。
 
-### Dodge Viper GTS '02 · 道奇Viper GTS'02
+### Dodge Viper GTS '02 · Dodge Viper GTS '02
 
 #### `0x0000728D`
 
@@ -2052,7 +2052,7 @@ These are the 253 records that could not be safely assigned by the previous heur
 > 在车尾，两侧的双圆形尾灯首次亮相……
 > 这种设计后来也出现在F430及其他后续车型上。<next id=2202009 type=9׾
 
-### FIAT 500 F '68 · 菲亚特500 F '68
+### FIAT 500 F '68 · FIAT 500 F '68
 
 #### `0x0000A051`
 
@@ -2096,7 +2096,7 @@ These are the 253 records that could not be safely assigned by the previous heur
 > 它宽大的引擎盖也拥有一种慵懒闲适的吸引力，而性能
 > 自然也不容小觑。�
 
-### Ferrari 250 GTO '62 · 法拉利250 GTO '62
+### Ferrari 250 GTO '62 · Ferrari 250 GTO '62
 
 #### `0x0000A21D`
 
@@ -2142,7 +2142,7 @@ These are the 253 records that could not be safely assigned by the previous heur
 > 也正是这份平衡感让这款经典法拉利车型充满魅力，
 > 人气爆棚。�
 
-### Ferrari 296 GTB '22 · 法拉利296 GTB '22
+### Ferrari 296 GTB '22 · Ferrari 296 GTB '22
 
 #### `0x0000CFCC`
 
@@ -2174,7 +2174,7 @@ These are the 253 records that could not be safely assigned by the previous heur
 > 还以类似的方式命名了其他车型。
 > 具体数量我一时说不上来，但我一定会查个明白！
 
-### Ferrari 308 GTB '75 · 法拉利308 GTB '75
+### Ferrari 308 GTB '75 · Ferrari 308 GTB '75
 
 #### `0x00009D09`
 
@@ -2221,7 +2221,7 @@ These are the 253 records that could not be safely assigned by the previous heur
 > 当然，所有这些元素都经过改良，
 > 以适应更加现代化的设计理念。*
 
-### Ferrari 330 P4 '67 · 法拉利330 P4 '67
+### Ferrari 330 P4 '67 · Ferrari 330 P4 '67
 
 #### `0x00009F20`
 
@@ -2262,7 +2262,7 @@ These are the 253 records that could not be safely assigned by the previous heur
 > 不那么重视美感，而是将优先级放在性能和功能上。
 > 这款杰作代表了那个赛车也可以很美的时代。�
 
-### Ferrari 365 GTB4 '71 · 法拉利365 GTB4 '71
+### Ferrari 365 GTB4 '71 · Ferrari 365 GTB4 '71
 
 #### `0x00009CE3`
 
@@ -2359,7 +2359,7 @@ These are the 253 records that could not be safely assigned by the previous heur
 > 事实上，这种轮毂样式源于20世纪60年代设计……
 > 并在戴通纳比赛中投入使用的一台原型跑车。9
 
-### Ferrari 430 Scuderia '07 · 法拉利430 Scuderia '07
+### Ferrari 430 Scuderia '07 · Ferrari 430 Scuderia '07
 
 #### `0x0000C011`
 
@@ -2395,7 +2395,7 @@ These are the 253 records that could not be safely assigned by the previous heur
 > 为了突出其赛车基因，后视镜采用了碳纤维材质……
 > 此外，还提供了双色条纹涂装作为可选项�k�
 
-### Ferrari 458 Italia '09 · 法拉利458 Italia '09
+### Ferrari 458 Italia '09 · Ferrari 458 Italia '09
 
 #### `0x0000A016`
 
@@ -2441,7 +2441,7 @@ These are the 253 records that could not be safely assigned by the previous heur
 > 如果完美的设计是增之则长，减之则短……
 > ……那么458已经非常接近于这个境界了。�
 
-### Ferrari 500 Mondial Pinin Farina Coupe '54 · 法拉利500 Mondial Pinin Farina Coupe '54
+### Ferrari 500 Mondial Pinin Farina Coupe '54 · Ferrari 500 Mondial Pinin Farina Coupe '54
 
 #### `0x0000A755`
 
@@ -2478,7 +2478,7 @@ These are the 253 records that could not be safely assigned by the previous heur
 > 因此可以采用更长的引擎罩，
 > 座舱则恰到好处地位于后轮的前方。
 
-### Ferrari 512 BB '76 · 法拉利512 BB '76
+### Ferrari 512 BB '76 · Ferrari 512 BB '76
 
 #### `0x0000AA40`
 
@@ -2523,7 +2523,7 @@ These are the 253 records that could not be safely assigned by the previous heur
 > 小型NACA侧面进气口……
 > 以及哑光黑色的下部车身。�
 
-### Ferrari F12berlinetta '12 · 法拉利F12berlinetta '12
+### Ferrari F12berlinetta '12 · Ferrari F12berlinetta '12
 
 #### `0x0000B564`
 
@@ -2563,7 +2563,7 @@ These are the 253 records that could not be safely assigned by the previous heur
 > 它将引擎盖上的空气引导到车身侧面，从而提高了
 > 整体的空气动力学效率。
 
-### Ferrari F40 '92 · 法拉利F40 '92
+### Ferrari F40 '92 · Ferrari F40 '92
 
 #### `0x00009FFE`
 
@@ -2616,7 +2616,7 @@ These are the 253 records that could not be safely assigned by the previous heur
 > ……大到夸张的尾翼。
 > 在尾翼的右侧面还有一个大大的“F40”]��雕标志。�
 
-### Ferrari F430 '06 · 法拉利F430 '06
+### Ferrari F430 '06 · Ferrari F430 '06
 
 #### `0x0000B570`
 
@@ -2652,7 +2652,7 @@ These are the 253 records that could not be safely assigned by the previous heur
 > 灵感来源于1961年的法拉利156 F1上的“鲨鱼鼻”。
 > 四个Enzo风格的环形尾灯则进一步地强化了它的进攻性。$
 
-### Ferrari LaFerrari '13 · 法拉利 LaFerrari '13
+### Ferrari LaFerrari '13 · Ferrari LaFerrari '13
 
 #### `0x00009F83`
 
@@ -2683,7 +2683,7 @@ These are the 253 records that could not be safely assigned by the previous heur
 > 摒弃一切花哨的装饰曲面或细节，
 > 在众多外观更加“唬人”的超级跑车中显得鹤立鸡群。
 
-### Ferrari Testarossa '91 · 法拉利Testarossa'91
+### Ferrari Testarossa '91 · Ferrari Testarossa '91
 
 #### `0x0000B16F`
 
@@ -2729,7 +2729,7 @@ These are the 253 records that could not be safely assigned by the previous heur
 > 另一个令人过目不忘的奇特设计……
 > 是最早期版本中悬挂在A柱中央的单个侧后视镜。�
 
-### Ford F-150 SVT Raptor '11 · 福特F-150 SVT猛禽'11
+### Ford F-150 SVT Raptor '11 · Ford F-150 SVT Raptor '11
 
 #### `0x000095CA`
 
@@ -2797,7 +2797,7 @@ These are the 253 records that could not be safely assigned by the previous heur
 > 另外，这辆初代猛禽搭载的可是一台V8引擎，
 > 无论是个性还是侵略性，都更上一层楼！L
 
-### Ford GT '06 · 福特GT '06
+### Ford GT '06 · Ford GT '06
 
 #### `0x00009DAD`
 
@@ -2838,7 +2838,7 @@ These are the 253 records that could not be safely assigned by the previous heur
 > 这辆车的设计都经受得起时间的考验。
 > 这是一辆真正的车迷会选择收藏的好车。<next id=2400808 typ�=9�A
 
-### Ford Mustang GT Premium Fastback '15 · 福特Mustang GT Premium Fastback '15
+### Ford Mustang GT Premium Fastback '15 · Ford Mustang GT Premium Fastback '15
 
 #### `0x0000B126`
 
@@ -2941,7 +2941,7 @@ These are the 253 records that could not be safely assigned by the previous heur
 > 在Fugu Z的身上得到了灿烂重现。
 > 姜成镐，谢谢你的付出！)
 
-### Honda Civic Si Extra (EF) '87 · 本田思域Si Extra (EF) '87
+### Honda Civic Si Extra (EF) '87 · Honda Civic Si Extra (EF) '87
 
 #### `0x0000C56B`
 
@@ -2972,7 +2972,7 @@ These are the 253 records that could not be safely assigned by the previous heur
 > 到造型独特的穿梭机五门瓦罐车，应有尽有。
 > 每款车型都绽放着独特的美！%
 
-### Honda Civic SiR･II (EG) '93 · 本田思域SiR･II (EG) '93
+### Honda Civic SiR･II (EG) '93 · Honda Civic SiR･II (EG) '93
 
 #### `0x0000BBB9`
 
@@ -3015,7 +3015,7 @@ These are the 253 records that could not be safely assigned by the previous heur
 > 虽然动力不如K-引擎，但它的咆哮声绝对令人
 > 终生难忘！X
 
-### Honda Civic Type R (EK) '97 · 本田思域Type R (EK) '97
+### Honda Civic Type R (EK) '97 · Honda Civic Type R (EK) '97
 
 #### `0x0000C462`
 
@@ -3042,7 +3042,7 @@ These are the 253 records that could not be safely assigned by the previous heur
 > 它展示了过去20年间的车型变化。就像
 > 运动鞋设计的演变一样。!
 
-### Honda Civic Type R Limited Edition (FK8) '20 · 本田思域Type R限定版 (FK8) '20
+### Honda Civic Type R Limited Edition (FK8) '20 · Honda Civic Type R Limited Edition (FK8) '20
 
 #### `0x0000C477`
 
@@ -3080,7 +3080,7 @@ These are the 253 records that could not be safely assigned by the previous heur
 > 你还会注意到闪亮黑色轮毂后的大红色
 > 布雷博刹车卡钳。它一点也不适合那些想低调的人！_
 
-### Honda Integra Type R (DC2) '95 · 本田形格Type R (DC2) '95
+### Honda Integra Type R (DC2) '95 · Honda Integra Type R (DC2) '95
 
 #### `0x0000C005`
 
@@ -3114,7 +3114,7 @@ These are the 253 records that could not be safely assigned by the previous heur
 > 更重要的是，它比后续其他车型都更好地
 > 诠释了日本国内改装车（JDM）文化的精髓。
 
-### Honda N-ONE RS '22 · 本田N-ONE RS '22
+### Honda N-ONE RS '22 · Honda N-ONE RS '22
 
 #### `0x0000C966`
 
@@ -3148,7 +3148,7 @@ These are the 253 records that could not be safely assigned by the previous heur
 > 光是看着这些身披五颜六色涂装的赛车进入赛场
 > 就足够让人心潮澎湃！
 
-### Honda NSX CONCEPT-GT '16 · 本田NSX CONCEPT-GT '16
+### Honda NSX CONCEPT-GT '16 · Honda NSX CONCEPT-GT '16
 
 #### `0x00009612`
 
@@ -3192,7 +3192,7 @@ These are the 253 records that could not be safely assigned by the previous heur
 > 作为概念时代的最后一款特规车型，
 > 这款车在日本Super GT第五轮比赛中获得了第三名。�
 
-### Honda NSX GT500 '08 · 本田NSX GT500 '08
+### Honda NSX GT500 '08 · Honda NSX GT500 '08
 
 #### `0x00009B87`
 
@@ -3272,7 +3272,7 @@ These are the 253 records that could not be safely assigned by the previous heur
 > 在接下来的2008年，NSX最亮眼的表现则出现在
 > 奥托波里斯赛道，它在赛季的第八场比赛中以第二名完赛。�
 
-### Honda RA272 '65 · 本田RA272 '65
+### Honda RA272 '65 · Honda RA272 '65
 
 #### `0x0000A8E3`
 
@@ -3352,7 +3352,7 @@ These are the 253 records that could not be safely assigned by the previous heur
 > 所有的致胜因素在本田的第一个F1冠军头衔中
 > 汇集到了一起。就这样，一段光辉的历史诞生了！�
 
-### Honda S660 '15 · 本田S660 '15
+### Honda S660 '15 · Honda S660 '15
 
 #### `0x0000A7EA`
 
@@ -3376,7 +3376,7 @@ These are the 253 records that could not be safely assigned by the previous heur
 > 它只会让我想要钻进车里，
 > 在崎岖的道路上风驰电掣。
 
-### Honda S800 '66 · 本田S800 '66
+### Honda S800 '66 · Honda S800 '66
 
 #### `0x00009CCC`
 
@@ -3470,7 +3470,7 @@ These are the 253 records that could not be safely assigned by the previous heur
 > 可以这么说，S系列是本田和日本赛车历史中
 > 不可缺少的一部分！�
 
-### Hyundai ELANTRA N TC '24 · 现代伊兰特N TC '24
+### Hyundai ELANTRA N TC '24 · Hyundai ELANTRA N TC '24
 
 #### `0x0000D219`
 
@@ -3507,7 +3507,7 @@ These are the 253 records that could not be safely assigned by the previous heur
 > 此外，这也是现代在这项传奇赛事中
 > 获得该组别的第五次连胜。
 
-### Hyundai Genesis Coupe 3.8 Track '13 · 现代捷尼赛思Coupe 3.8 Track '13
+### Hyundai Genesis Coupe 3.8 Track '13 · Hyundai Genesis Coupe 3.8 Track '13
 
 #### `0x0000B12F`
 
@@ -3552,7 +3552,7 @@ These are the 253 records that could not be safely assigned by the previous heur
 > 在某种程度上，它是素描这一经典画技的延伸……
 > 并加入了以毛笔笔触带来的、意想不到的视觉效果。n
 
-### Jaguar E-type Coupé '61 · 捷豹E-type Coupé '61
+### Jaguar E-type Coupé '61 · Jaguar E-type Coupé '61
 
 #### `0x0000AF3F`
 
@@ -3584,7 +3584,7 @@ These are the 253 records that could not be safely assigned by the previous heur
 > 仍然是一台彻头彻尾的现代赛车。
 > 它真是一件无与伦比美丽的造物！`
 
-### Jaguar XJ13 '66 · 捷豹XJ13 '66
+### Jaguar XJ13 '66 · Jaguar XJ13 '66
 
 #### `0x0000B45C`
 
@@ -3628,7 +3628,7 @@ These are the 253 records that could not be safely assigned by the previous heur
 > 尽管从未参加过任何比赛，但它无疑
 > �SE-Type的开发提供了大量的思路。4
 
-### Jaguar XJR-9 '88 · 捷豹XJR-9 '88
+### Jaguar XJR-9 '88 · Jaguar XJR-9 '88
 
 #### `0x00009630`
 
@@ -3667,7 +3667,7 @@ These are the 253 records that could not be safely assigned by the previous heur
 > 都一直面临着身后保时捷的压力！
 > 光是想想那场景就让我背脊发凉！0
 
-### Jeep Willys MB '45 · Jeep威利斯MB '45
+### Jeep Willys MB '45 · Jeep Willys MB '45
 
 #### `0x00009F7A`
 
@@ -3709,7 +3709,7 @@ These are the 253 records that could not be safely assigned by the previous heur
 > 以削减板材厚度，达到减重的效果。
 > 光凭这一点，就值得我们向那些早期设计者们脱帽致敬。
 
-### Lamborghini Aventador LP 750-4 Superveloce '15 · 兰博基尼Aventador LP 750-4 Superveloce  '15
+### Lamborghini Aventador LP 750-4 Superveloce '15 · Lamborghini Aventador LP 750-4 Superveloce '15
 
 #### `0x0000A7D8`
 
@@ -3743,7 +3743,7 @@ These are the 253 records that could not be safely assigned by the previous heur
 > 并加入了全新的外观和细节设计语言……
 > 将鲜明的兰博基尼风格带入了全新的时代。
 
-### Lamborghini Countach LP400 '74 · 兰博基尼Countach LP400 '74
+### Lamborghini Countach LP400 '74 · Lamborghini Countach LP400 '74
 
 #### `0x00009FC4`
 
@@ -3782,7 +3782,7 @@ These are the 253 records that could not be safely assigned by the previous heur
 > 这条折痕线来自于车身表面的高差——
 > 每个表面都经过精心设计，呈现不同程度的拱起。
 
-### Lamborghini Gallardo LP 560-4 '08 · 兰博基尼Gallardo LP 560-4 '08
+### Lamborghini Gallardo LP 560-4 '08 · Lamborghini Gallardo LP 560-4 '08
 
 #### `0x0000BFF3`
 
@@ -3812,7 +3812,7 @@ These are the 253 records that could not be safely assigned by the previous heur
 > Gallard就是一个很好的例子，从任何角度看都能展现
 > 出简洁而精致的设计，没有任何多余的元素。
 
-### Lamborghini Huracán GT3 '15 · 兰博基尼Huracán GT3 '15
+### Lamborghini Huracán GT3 '15 · Lamborghini Huracán GT3 '15
 
 #### `0x000074A2`
 
@@ -3845,7 +3845,7 @@ These are the 253 records that could not be safely assigned by the previous heur
 > 定他们的加油设备出现了违规。
 > 但是他们的上诉成功了，最终在首秀中就赢得了冠军。@
 
-### Lamborghini Huracán LP 610-4 '15 · 兰博基尼Huracán LP 610-4 '15
+### Lamborghini Huracán LP 610-4 '15 · Lamborghini Huracán LP 610-4 '15
 
 #### `0x0000B54F`
 
@@ -3872,7 +3872,7 @@ These are the 253 records that could not be safely assigned by the previous heur
 > 和设计语言上的革命。
 > 它采用的六角形元素至今可以在现款兰博基尼上看到。
 
-### Lancia Delta HF Integrale Rally Car '92 · 蓝旗亚Delta HF Integrale Rally Car '92
+### Lancia Delta HF Integrale Rally Car '92 · Lancia Delta HF Integrale Rally Car '92
 
 #### `0x0000C909`
 
@@ -3910,7 +3910,7 @@ These are the 253 records that could not be safely assigned by the previous heur
 > 量产版车型……
 > 也令全球汽车藏家艳羡不已！
 
-### Lancia Stratos '73 · 蓝旗亚Stratos '73
+### Lancia Stratos '73 · Lancia Stratos '73
 
 #### `0x00009636`
 
@@ -3990,7 +3990,7 @@ These are the 253 records that could not be safely assigned by the previous heur
 > 我是真的很想把这辆车纳入我的收藏，
 > 不过恐怕它现在已经是我负担不起的天价了。<
 
-### Lexus LC500 '17 · 雷克萨斯LC500 '17
+### Lexus LC500 '17 · Lexus LC500 '17
 
 #### `0x0000AF7E`
 
@@ -4024,7 +4024,7 @@ These are the 253 records that could not be safely assigned by the previous heur
 > 整体的造型都在告诉你——我的引擎盖下面安装了一颗
 > 非常先进的引擎。这是我非常非常喜欢的一台车！"
 
-### Lexus SC430 GT500 '08 · 雷克萨斯SC430 GT500 '08
+### Lexus SC430 GT500 '08 · Lexus SC430 GT500 '08
 
 #### `0x0000AF63`
 
@@ -4060,7 +4060,7 @@ These are the 253 records that could not be safely assigned by the previous heur
 > 其在2008赛季得到了空气动力学升级……
 > 也因此，它在高速赛道上交出了极其出色的答卷。|
 
-### MAZDA3 Gr.4 · 马自达3组别4v
+### MAZDA3 Gr.4 · MAZDA3 Gr.4
 
 #### `0x0000B89B`
 
@@ -4104,7 +4104,7 @@ These are the 253 records that could not be safely assigned by the previous heur
 > 所以呢，要是哪天你在赛道上碰到我，可得乖乖让道。
 > 然后你就知道它的超车有多帅气了！
 
-### MAZDA3 X Burgundy Selection '19 · 马自达3 X Burgundy Selection '19
+### MAZDA3 X Burgundy Selection '19 · MAZDA3 X Burgundy Selection '19
 
 #### `0x0000AA74`
 
@@ -4211,7 +4211,7 @@ These are the 253 records that could not be safely assigned by the previous heur
 > 制造商的变动，在其响应迅速的转向及
 > 卓越的刚性上得到淋漓尽致的体现。
 
-### Maserati A6GCS/53 Spyder '54 · 玛莎拉蒂A6GCS/53 Spyder '54
+### Maserati A6GCS/53 Spyder '54 · Maserati A6GCS/53 Spyder '54
 
 #### `0x0000A1C6`
 
@@ -4257,7 +4257,7 @@ These are the 253 records that could not be safely assigned by the previous heur
 > 你可以明显看到它的设计语言和Type 61鸟笼一脉相承。
 > 看到这样的设计，让人从内心深处受到震撼！�
 
-### Mazda 787B '91 · 马自达787B '91
+### Mazda 787B '91 · Mazda 787B '91
 
 #### `0x00009606`
 
@@ -4338,7 +4338,7 @@ These are the 253 records that could not be safely assigned by the previous heur
 > 时至今日，我依然无法忘怀那部比赛机器
 > 的橙绿色涂装。
 
-### Mazda Atenza Sedan XD L Package '15 · 马自达阿特兹轿车XD L Package '15
+### Mazda Atenza Sedan XD L Package '15 · Mazda Atenza Sedan XD L Package '15
 
 #### `0x0000B8AD`
 
@@ -4459,7 +4459,7 @@ These are the 253 records that could not be safely assigned by the previous heur
 > 在马自达的不同广告宣传中，经常以红车示人。>
 > 这并非偶然，红色唤起了某种充满情绪和动感的极致激情意象。@
 
-### Mazda Demio XD Touring '15 · 马自达Demio XD Touring '15
+### Mazda Demio XD Touring '15 · Mazda Demio XD Touring '15
 
 #### `0x00009831`
 
@@ -4521,7 +4521,7 @@ These are the 253 records that could not be safely assigned by the previous heur
 > 这辆车就好比是以“米老鼠”角色特点对
 > 初代菲亚特500的现代化演绎。`
 
-### Mazda Eunos Roadster (NA Special Package) '89 · 马自达Eunos Roadster(NA Special Package) '89
+### Mazda Eunos Roadster (NA Special Package) '89 · Mazda Eunos Roadster (NA Special Package) '89
 
 #### `0x000072A7`
 
@@ -4629,7 +4629,7 @@ These are the 253 records that could not be safely assigned by the previous heur
 > 在当时已几近消亡。
 > 这款车可以说是以一己之力挽救了所有同类车型的救星。s
 
-### Mazda LM55 Vision Gran Turismo (Gr.1) · 马自达LM55 Vision Gran Turismo（组别1）
+### Mazda LM55 Vision Gran Turismo (Gr.1) · Mazda LM55 Vision Gran Turismo (Gr.1)
 
 #### `0x0000B8B6`
 
@@ -4677,7 +4677,7 @@ These are the 253 records that could not be safely assigned by the previous heur
 > 所以，要是我们真能造出这样一辆车去参赛，嘿，说不
 > 定真能捧回^��军奖杯呢！�
 
-### Mazda RX-7 Spirit R Type A (FD) '02 · 马自达RX-7 Spirit R Type A (FD) '02
+### Mazda RX-7 Spirit R Type A (FD) '02 · Mazda RX-7 Spirit R Type A (FD) '02
 
 #### `0x0000B8BF`
 
@@ -4731,7 +4731,7 @@ These are the 253 records that could not be safely assigned by the previous heur
 > 当时马自达处理三维形状的能力确实是世界一流的。
 > 正好也赶上了马自达的设计理念刚开始成型的时候。C
 
-### Mazda RX-8 Spirit R '12 · 马自达RX-8 Spirit R '12
+### Mazda RX-8 Spirit R '12 · Mazda RX-8 Spirit R '12
 
 #### `0x00009CD5`
 
@@ -4824,7 +4824,7 @@ These are the 253 records that could not be safely assigned by the previous heur
 > 我看到好多人都是开着RX-8来的。这么多年过去了，这
 > 款车还是很有人气，真令人开心。C
 
-### Mazda RX-VISION '15 · 马自达RX-VISION '15
+### Mazda RX-VISION '15 · Mazda RX-VISION '15
 
 #### `0x0000B889`
 
@@ -4904,7 +4904,7 @@ These are the 253 records that could not be safely assigned by the previous heur
 > 我开始实验光线在车身上的反射效果。
 > 就这样，RX-VISION活灵活现地呈现在了大家面前！X
 
-### Mazda RX-VISION GT3 CONCEPT · 马自达RX-VISION GT3概念
+### Mazda RX-VISION GT3 CONCEPT · MAZDA RX-VISION GT3 CONCEPT8
 
 #### `0x00007225`
 
@@ -5016,7 +5016,7 @@ These are the 253 records that could not be safely assigned by the previous heur
 > 可是发动机的声音真的是让人大吃一惊！
 > 我从来不知道发动机也可以发出如此清脆的声音！%
 
-### Mazda RX500 '70 · 马自达RX500 '70
+### Mazda RX500 '70 · Mazda RX500 '70
 
 #### `0x0000B8EA`
 
@@ -5088,7 +5088,7 @@ These are the 253 records that could not be safely assigned by the previous heur
 > 这一术语源自于德国空气动力学家乌尼巴尔·卡姆，
 > 他在上世纪30年代提出了这种设计理念。!
 
-### Mazda Roadster S (ND) '15 · 马自达Roadster S (ND) '15
+### Mazda Roadster S (ND) '15 · Mazda Roadster S (ND) '15
 
 #### `0x00009CBA`
 
@@ -5167,7 +5167,7 @@ These are the 253 records that could not be safely assigned by the previous heur
 > 他们这才让我看到了新车，你猜怎么着？
 > 第四代的设计方向走得很踏实。V
 
-### Mercedes-AMG C 63 S '15 · 梅赛德斯-AMG C 63 S '15
+### Mercedes-AMG C 63 S '15 · Mercedes-AMG C 63 S '15
 
 #### `0x0000A7E1`
 
@@ -5202,7 +5202,7 @@ These are the 253 records that could not be safely assigned by the previous heur
 > 在懂行的人眼里，这些特点让AMG版本与
 > 基础的C级双门跑车有了明显的区分。s
 
-### Mercedes-AMG GT S '15 · 梅赛德斯-AMG GT S '15
+### Mercedes-AMG GT S '15 · Mercedes-AMG GT S '15
 
 #### `0x0000BA72`
 
@@ -5245,7 +5245,7 @@ These are the 253 records that could not be safely assigned by the previous heur
 > 各取一个首字母，为公司起名为“AMG”。
 > 那是在1967年！2
 
-### Mercedes-AMG GT3 '16 · 梅赛德斯-AMG GT3 '16
+### Mercedes-AMG GT3 '16 · Mercedes-AMG GT3 '16
 
 #### `0x0000A2B0`
 
@@ -5284,7 +5284,7 @@ These are the 253 records that could not be safely assigned by the previous heur
 > SLS AMG GT3是首款配备了一台经过比赛考验的
 > 6.3升自然吸气引擎的车型。
 
-### Mercedes-AMG GT3 '20 · 梅赛德斯-AMG GT3 '20
+### Mercedes-AMG GT3 '20 · Mercedes-AMG GT3 '20
 
 #### `0x0000AB9E`
 
@@ -5330,7 +5330,7 @@ These are the 253 records that could not be safely assigned by the previous heur
 > 一套大幅升级的零部件管理系统……
 > 以及多项精细调整，从而帮助车队在赛道上更加风驰电掣。
 
-### Mercedes-Benz 300 SEL 6.8 AMG '71 · 梅赛德斯-奔驰300 SEL 6.8 AMG '71
+### Mercedes-Benz 300 SEL 6.8 AMG '71 · Mercedes-Benz 300 SEL 6.8 AMG '71
 
 #### `0x00009642`
 
@@ -5403,7 +5403,7 @@ These are the 253 records that could not be safely assigned by the previous heur
 > 它拥有恰到好处的车身比例。
 > 全套赛车饰条与配件加身后，更显动态十足。:
 
-### Mercedes-Benz 300 SL (W194) '52 · 梅赛德斯-奔驰300 SL (W194) '52
+### Mercedes-Benz 300 SL (W194) '52 · Mercedes-Benz 300 SL (W194) '52
 
 #### `0x0000A1EE`
 
@@ -5440,7 +5440,7 @@ These are the 253 records that could not be safely assigned by the previous heur
 > 由此，“鸥翼”也成为了本车的绰号。
 > 其实，如此设计是为了避免车门与空间车架结构的底部发生冲突。
 
-### Mercedes-Benz A 45 AMG 4MATIC '13 · 梅赛德斯-奔驰A 45 AMG 4MATIC '13
+### Mercedes-Benz A 45 AMG 4MATIC '13 · Mercedes-Benz A 45 AMG 4MATIC '13
 
 #### `0x00009FA9`
 
@@ -5475,7 +5475,7 @@ These are the 253 records that could not be safely assigned by the previous heur
 > 绝无任何花哨的设计，只用实力说话。
 > 这样的车，连我也想买一辆！
 
-### Mercedes-Benz S Barker Tourer '29 · 梅赛德斯-奔驰S Barker Tourer '29
+### Mercedes-Benz S Barker Tourer '29 · Mercedes-Benz S Barker Tourer '29
 
 #### `0x0000B7F8`
 
@@ -5518,7 +5518,7 @@ These are the 253 records that could not be safely assigned by the previous heur
 > 除了由梅赛德斯-奔驰打造的原厂车身外，这辆S型还可以采用
 > 法国和意大利车身制造厂推出的车身。�
 
-### Mercedes-Benz SLR McLaren '09 · 梅赛德斯-奔驰SLR迈凯伦'09
+### Mercedes-Benz SLR McLaren '09 · Mercedes-Benz SLR McLaren '09
 
 #### `0x0000B153`
 
@@ -5550,7 +5550,7 @@ These are the 253 records that could not be safely assigned by the previous heur
 > 总体而言，SLR迈凯伦展现出了速度、优雅
 > 和风度兼具的外观。
 
-### Mercedes-Benz SLS AMG '10 · 梅赛德斯-奔驰SLS AMG '10
+### Mercedes-Benz SLS AMG '10 · Mercedes-Benz SLS AMG '10
 
 #### `0x000095E2`
 
@@ -5594,7 +5594,7 @@ These are the 253 records that could not be safely assigned by the previous heur
 > 作为300 SL的后继者，这辆车的价值
 > 肯定会水涨船高吧。Y
 
-### Mercedes-Benz SLS AMG GT3 '11 · 梅赛德斯-奔驰SLS AMG GT3 '11
+### Mercedes-Benz SLS AMG GT3 '11 · Mercedes-Benz SLS AMG GT3 '11
 
 #### `0x00009B8D`
 
@@ -5630,7 +5630,7 @@ These are the 253 records that could not be safely assigned by the previous heur
 > 中最强力的武器。
 > 这款SLS AMG GT3参加过的超跑比赛数不胜数！
 
-### Mercedes-Benz Unimog Type 411 '62 · 梅赛德斯-奔驰Unimog Type411 '62
+### Mercedes-Benz Unimog Type 411 '62 · Mercedes-Benz Unimog Type 411 '62
 
 #### `0x0000C553`
 
@@ -5667,7 +5667,7 @@ These are the 253 records that could not be safely assigned by the previous heur
 > 作为早期Unimog家族最全能的成员，其独特设计
 > 征服了无数拖拉机爱好者。
 
-### Mine's BNR34 GT-R N1 base · 迈恩斯BNR34 GT-R N1 base8
+### Mine's BNR34 GT-R N1 base · Mine's BNR34 GT-R N1 base
 
 #### `0x0000CFC6`
 
@@ -5739,7 +5739,7 @@ These are the 253 records that could not be safely assigned by the previous heur
 > MINI的历史性前轮驱动布局现在被广泛称为“伊斯戈尼斯”布局。
 > 这并不奇怪。毕竟它就是由这位杰出的工程师设计的！
 
-### Mitsubishi Lancer Evolution IX MR GSR '06 · 三菱蓝瑟翼豪陆神IX MR GSR '06
+### Mitsubishi Lancer Evolution IX MR GSR '06 · Mitsubishi Lancer Evolution IX    MR GSR '06
 
 #### `0x0000B912`
 
@@ -5790,7 +5790,7 @@ These are the 253 records that could not be safely assigned by the previous heur
 > 从这个意义上说，它们就像�生物一样在不断演变进化。
 > 这正是车迷们一直对翼豪陆神怀有深厚感情的众多原因之一。�
 
-### Mitsubishi Lancer Evolution V GSR '98 · 三菱蓝瑟翼豪陆神V GSR '98
+### Mitsubishi Lancer Evolution V GSR '98 · Mitsubishi Lancer Evolution V GSR '98
 
 #### `0x00007396`
 
@@ -5844,7 +5844,7 @@ These are the 253 records that could not be safely assigned by the previous heur
 > 全世界都很受欢迎。
 > 这真是一辆好车呀。希望你能好好照顾它哦。
 
-### Mitsubishi Lancer Evolution VI GSR T.M. EDITION Special Color Package '99 · 三菱蓝瑟翼豪陆神VI GSR T.M. EDITION Special Color Package '99
+### Mitsubishi Lancer Evolution VI GSR T.M. EDITION Special Color Package '99 · Mitsubishi Lancer Evolution VI GSR T.M. EDITION Special Color Package '99
 
 #### `0x0000B77D`
 
@@ -5878,7 +5878,7 @@ These are the 253 records that could not be safely assigned by the previous heur
 > 前格栅就能充分回答这个问题了！
 > 所有这一切都让人不由得联想到日本武士的盔甲。\
 
-### Mitsubishi Lancer Evolution VIII MR GSR '04 · 三菱蓝瑟翼豪陆神VIII MR GSR '04
+### Mitsubishi Lancer Evolution VIII MR GSR '04 · Mitsubishi Lancer Evolution VIII MR GSR '04
 
 #### `0x0000C026`
 
@@ -5996,7 +5996,7 @@ These are the 253 records that could not be safely assigned by the previous heur
 > 收藏珍品。
 > 而其中最珍贵的莫过于Z-tune�h�
 
-### Nissan 180SX Type X '96 · 日产180SX X型'96
+### Nissan 180SX Type X '96 · Nissan 180SX Type X '96
 
 #### `0x00009F29`
 
@@ -6030,7 +6030,7 @@ These are the 253 records that could not be safely assigned by the previous heur
 > 现在看来，这种设计欠缺些魄力，
 > 不过的确传达出积极求变的信息。
 
-### Nissan Fairlady 240ZG (HS30) '71 · 日产Fairlady 240ZG (HS30) '71
+### Nissan Fairlady 240ZG (HS30) '71 · Nissan Fairlady 240ZG (HS30) '71
 
 #### `0x00009654`
 
@@ -6102,7 +6102,7 @@ These are the 253 records that could not be safely assigned by the previous heur
 > 一种更具“攻击性”的魅力，
 > 同时也没有忘记为它配上一套更宽的车轮！
 
-### Nissan Fairlady Z (Z34) '08 · 日产Fairlady Z (Z34) '08
+### Nissan Fairlady Z (Z34) '08 · Nissan Fairlady Z (Z34) '08
 
 #### `0x00009BEA`
 
@@ -6146,7 +6146,7 @@ These are the 253 records that could not be safely assigned by the previous heur
 > Z34则更像是一款地道的前置后驱跑车，
 > 而且更具攻击性。
 
-### Nissan Fairlady Z 300ZX TwinTurbo 2seater (Z32) '89 · 日产Fairlady Z 300ZX TwinTurbo 2seater (Z32) '89
+### Nissan Fairlady Z 300ZX TwinTurbo 2seater (Z32) '89 · Nissan Fairlady Z 300ZX TwinTurbo 2seater (Z32) '89
 
 #### `0x0000A210`
 
@@ -6194,7 +6194,7 @@ These are the 253 records that could not be safely assigned by the previous heur
 > 另外，后备箱盖开合线附近区域的设计在
 > 后续车型Z33中也得到了沿用。�
 
-### Nissan Fairlady Z 432 '69 · 日产Fairlady Z 432 '69
+### Nissan Fairlady Z 432 '69 · Nissan Fairlady Z 432 '69
 
 #### `0x00009C1B`
 
@@ -6255,7 +6255,7 @@ These are the 253 records that could not be safely assigned by the previous heur
 > 这些设计师都值得我们尊敬。
 > 尤其值得一提的一位，便是最近去世的松尾良彦。
 
-### Nissan Fairlady Z Version S (Z33) '07 · 日产Fairlady Z Version S (Z33) '07
+### Nissan Fairlady Z Version S (Z33) '07 · Nissan Fairlady Z Version S (Z33) '07
 
 #### `0x00009BE1`
 
@@ -6300,7 +6300,7 @@ These are the 253 records that could not be safely assigned by the previous heur
 > 这些设计元素都使得Z33在比例和主题方面较S30更加现代。
 > 但你还是一眼就能看出，这是一辆Z系车。�
 
-### Nissan GT-R GT500 '08 · 日产GT-R GT500 '08
+### Nissan GT-R GT500 '08 · Nissan GT-R GT500 '08
 
 #### `0x00009F5F`
 
@@ -6350,7 +6350,7 @@ These are the 253 records that could not be safely assigned by the previous heur
 > 看上去都一个样。”
 > 所以，我才会在S��计R35 GT-R的时候赋予驾驶舱独特的风格！�
 
-### Nissan GT-R GT500 '99 · 日产GT-R GT500 '99
+### Nissan GT-R GT500 '99 · Nissan GT-R GT500 '99
 
 #### `0x000073AA`
 
@@ -6414,7 +6414,7 @@ These are the 253 records that could not be safely assigned by the previous heur
 > 23作为号码的……
 > 没错，就是1998年的这辆Pennzoil！.
 
-### Nissan GT-R NISMO (R32) '90 · 日产GT-R NISMO (R32) '90
+### Nissan GT-R NISMO (R32) '90 · Nissan GT-R NISMO (R32) '90
 
 #### `0x0000ADC3`
 
@@ -6453,7 +6453,7 @@ These are the 253 records that could not be safely assigned by the previous heur
 > 只要了解NISMO在这台GT-R中倾注的努力，你就知道
 > 它是一台不折不扣的传奇！�
 
-### Nissan GT-R NISMO GT3 '13 · 日产GT-R NISMO GT3 '13
+### Nissan GT-R NISMO GT3 '13 · Nissan GT-R NISMO GT3 '13
 
 #### `0x0000964E`
 
@@ -6491,7 +6491,7 @@ These are the 253 records that could not be safely assigned by the previous heur
 > 而且，就连这位通过终点线的车手也因为没有完成足够
 > 的圈数而被判定为未完成比赛！
 
-### Nissan GT-R NISMO GT500 '16 · 日产GT-R NISMO GT500 '16
+### Nissan GT-R NISMO GT500 '16 · Nissan GT-R NISMO GT500 '16
 
 #### `0x0000961E`
 
@@ -6540,7 +6540,7 @@ These are the 253 records that could not be safely assigned by the previous heur
 > 不过，松田次生和罗尼·昆塔雷利的老司机团队无疑是非常快的！
 > 他们俩现在�8�已步入四十，但却依然没有一丝慢下来的迹象！ �
 
-### Nissan GT-R Premium edition '17 · 日产GT-R Premium edition '17
+### Nissan GT-R Premium edition '17 · Nissan GT-R Premium edition '17
 
 #### `0x00009C09`
 
@@ -6578,7 +6578,7 @@ These are the 253 records that could not be safely assigned by the previous heur
 > 我也非常喜欢现代感十足的新内饰，
 > 我们对材质的应用很到位。
 
-### Nissan Sileighty '98 · 日产Sileighty '98
+### Nissan Sileighty '98 · Nissan Sileighty '98
 
 #### `0x00009C9C`
 
@@ -6622,7 +6622,7 @@ These are the 253 records that could not be safely assigned by the previous heur
 > 这种风潮代表了定制和汽车文化的多样性和成熟化……
 > 它是以消费者的热情为第一驱动力的。
 
-### Nissan Silvia Q's (S13) '88 · 日产Silvia Q's (S13) '88
+### Nissan Silvia Q's (S13) '88 · Nissan Silvia Q's (S13) '88
 
 #### `0x00009564`
 
@@ -6652,7 +6652,7 @@ These are the 253 records that could not be safely assigned by the previous heur
 > 现如今，这款车确实非同寻常。
 > 老实说，S13本身就是无价之宝！9
 
-### Nissan Silvia spec-R Aero (S15) '02 · 日产Silvia spec-R Aero (S15) '02
+### Nissan Silvia spec-R Aero (S15) '02 · Nissan Silvia spec-R Aero (S15) '02
 
 #### `0x000073B4`
 
@@ -6707,7 +6707,7 @@ These are the 253 records that could not be safely assigned by the previous heur
 > 哦哦，所以他们为涡轮增压表特意找了一个位置。
 > 像这样把仪表装在你面前，大概会让你想要开得更快吧！9
 
-### Nissan Skyline 2000GT-R (KPGC110) '73 · 日产Skyline 2000GT-R (KPGC110) '73
+### Nissan Skyline 2000GT-R (KPGC110) '73 · Nissan Skyline 2000GT-R (KPGC110) '73
 
 #### `0x0000CC71`
 
@@ -6760,7 +6760,7 @@ These are the 253 records that could not be safely assigned by the previous heur
 > 但悲情的命运与��有的产量，反而成就了
 > 其独特的传奇地位。�
 
-### Nissan Skyline GT-R V･spec (R33) '97 · 日产Skyline GT-R V･spec (R33) '97
+### Nissan Skyline GT-R V･spec (R33) '97 · Nissan Skyline GT-R V･spec (R33) '97
 
 #### `0x00007266`
 
@@ -6868,7 +6868,7 @@ These are the 253 records that could not be safely assigned by the previous heur
 > 由此可见，这辆GT-R的研发主管渡边衡三
 > 让其参加勒芒24小时耐力赛的意愿是何等强烈！o
 
-### Nissan Skyline GT-R V･spec II (R32) '94 · 日产Skyline GT-R V･spec II (R32) '94
+### Nissan Skyline GT-R V･spec II (R32) '94 · Nissan Skyline GT-R V･spec II (R32) '94
 
 #### `0x00009CB1`
 
@@ -6912,7 +6912,7 @@ These are the 253 records that could not be safely assigned by the previous heur
 > 和其他高性能附加套件的时代揭开了序幕。
 > 这一切都足以证明这台R32 GT-R正是当代GT-R系列的鼻祖。l
 
-### Nissan Skyline GT-R V･spec II Nür (R34) '02 · 日产Skyline GT-R V･spec II Nür (R34) '02
+### Nissan Skyline GT-R V･spec II Nür (R34) '02 · Nissan Skyline GT-R V･spec II Nür (R34) '02
 
 #### `0x000095F4`
 
@@ -7005,7 +7005,7 @@ These are the 253 records that could not be safely assigned by the previous heur
 > 展现出Skyline GT-R的背景故事。
 > 我只能说，这绝对是真爱了。@
 
-### Nissan Skyline GTS-R (R31) '87 · 日产Skyline GTS-R (R31) '87
+### Nissan Skyline GTS-R (R31) '87 · Nissan Skyline GTS-R (R31) '87
 
 #### `0x0000BBC5`
 
@@ -7043,7 +7043,7 @@ These are the 253 records that could not be safely assigned by the previous heur
 > 更不必说它勇敢挑战那些强大欧洲赛车的英姿——
 > 真是太酷了！<p scmd="GTCafe_Top"
 
-### Nissan Skyline Hard Top 2000GT-R (KPGC10) '70 · 日产Skyline Hard Top 2000GT-R (KPGC10) '70
+### Nissan Skyline Hard Top 2000GT-R (KPGC10) '70 · Nissan Skyline Hard Top 2000GT-R (KPGC10) '70
 
 #### `0x00009F32`
 
@@ -7091,7 +7091,7 @@ These are the 253 records that could not be safely assigned by the previous heur
 > �;�…但与KPGC进行比较之后你就会发现
 > 两者C柱窗户的线条呈现的角度其实是一模一样的。�
 
-### Pagani Zonda R '09 · 帕加尼Zonda R '09
+### Pagani Zonda R '09 · Pagani Zonda R '09
 
 #### `0x00009C8A`
 
@@ -7135,7 +7135,7 @@ These are the 253 records that could not be safely assigned by the previous heur
 > 装入具有吸引力、同时又不会过于喧宾夺主的车身当中。
 > 这也造就了帕加尼设计特有的平衡感。�
 
-### Peugeot 208 GTi by Peugeot Sport '14 · 标致208 GTi by Peugeot Sport '14
+### Peugeot 208 GTi by Peugeot Sport '14 · Peugeot 208 GTi by Peugeot Sport '14
 
 #### `0x0000956A`
 
@@ -7169,7 +7169,7 @@ These are the 253 records that could not be safely assigned by the previous heur
 > 老实说，仅凭其优秀的底盘，
 > 就值得你去收藏这辆车了。
 
-### Peugeot SUV 2008 Allure '21 · 标致SUV 2008 Allure '21
+### Peugeot SUV 2008 Allure '21 · Peugeot SUV 2008 Allure '21
 
 #### `0x0000C90F`
 
@@ -7203,7 +7203,7 @@ These are the 253 records that could not be safely assigned by the previous heur
 > 与其他标致车型相似，这台车活力十足，灵活敏捷，
 > 一切都恰到好处！Q
 
-### Plymouth Superbird '70 · 普利茅斯Superbird '70
+### Plymouth Superbird '70 · Plymouth Superbird '70
 
 #### `0x0000BA6C`
 
@@ -7246,7 +7246,7 @@ These are the 253 records that could not be safely assigned by the previous heur
 > 的确，这款车来自于那个公路车和赛车
 > 相似度极高的时代。�
 
-### Porsche 356 A/1500 GS Carrera '56 · 保时捷356 A/1500 GS Carrera '56
+### Porsche 356 A/1500 GS Carrera '56 · Porsche 356 A/1500 GS Carrera '56
 
 #### `0x0000B114`
 
@@ -7295,7 +7295,7 @@ These are the 253 records that could not be safely assigned by the previous heur
 > 你会发现，四凸轮轴“Carrera”引擎简直是一件美妙的艺术品！
 > 连风扇罩和总成��打造得异常精美！K
 
-### Porsche 356 A/1500 GS GT Carrera Speedster '56 · 保时捷356 A/1500 GS GT Carrera Speedster '56
+### Porsche 356 A/1500 GS GT Carrera Speedster '56 · Porsche 356 A/1500 GS GT Carrera Speedster '56
 
 #### `0x0000B10B`
 
@@ -7350,7 +7350,7 @@ These are the 253 records that could not be safely assigned by the previous heur
 > 保]��捷的车总是需要你仔细观察才能分辨出它与
 > 普通“推杆”车型的各种差异！这一台也不例外。�
 
-### Porsche 911 Carrera RS (964) '92 · 保时捷911 Carrera RS (964) '92
+### Porsche 911 Carrera RS (964) '92 · Porsche 911 Carrera RS (964) '92
 
 #### `0x00007207`
 
@@ -7460,7 +7460,7 @@ These are the 253 records that could not be safely assigned by the previous heur
 > 这款车的价值无疑会持续攀高，
 > 因为它绝对是一辆好车中的好车。
 
-### Porsche 911 Carrera RS (993) '95 · 保时捷911 Carrera RS (993) '95
+### Porsche 911 Carrera RS (993) '95 · Porsche 911 Carrera RS (993) '95
 
 #### `0x0000BFD1`
 
@@ -7494,7 +7494,7 @@ These are the 253 records that could not be safely assigned by the previous heur
 > 后溜背的车尾和椭圆形侧窗……
 > 这些都是典型的“贾雷式气动设计”风格的体现。_
 
-### Porsche 911 Carrera RS Clubsport (993) '95 · 保时捷911 Carrera RS Clubsport (993) '95
+### Porsche 911 Carrera RS Clubsport (993) '95 · Porsche 911 Carrera RS Clubsport (993) '95
 
 #### `0x00009FE0`
 
@@ -7540,7 +7540,7 @@ These are the 253 records that could not be safely assigned by the previous heur
 > ……想必这位车主需要和车管部门费好大一番口舌了。
 > 不过我“听说”还真的有人成功了！�
 
-### Porsche 911 GT3 (996) '01 · 保时捷911 GT3 (996) '01
+### Porsche 911 GT3 (996) '01 · Porsche 911 GT3 (996) '01
 
 #### `0x00009D83`
 
@@ -7626,7 +7626,7 @@ These are the 253 records that could not be safely assigned by the previous heur
 > 尽管自996之后，911的引擎都换成了水冷……
 > 但梅茨格的设计理念依然根植于GT2，GT3以及911 Turbo之中。
 
-### Porsche 911 GT3 (997) '09 · 保时捷911 GT3 (997) '09
+### Porsche 911 GT3 (997) '09 · Porsche 911 GT3 (997) '09
 
 #### `0x0000729A`
 
@@ -7710,7 +7710,7 @@ These are the 253 records that could not be safely assigned by the previous heur
 > 懂车的人才能分辨出来，是不是？
 > 没有那么拉风，但开起来像真的赛车一样，非常酷！
 
-### Porsche 911 RSR (991) '17 · 保时捷911 RSR (991) '17
+### Porsche 911 RSR (991) '17 · Porsche 911 RSR (991) '17
 
 #### `0x00009B51`
 
@@ -7804,7 +7804,7 @@ These are the 253 records that could not be safely assigned by the previous heur
 > 就像是汽车行业内一句俗话说的那样……
 > “周日一胜，周一大卖！”
 
-### Porsche 911 Turbo (930) '81 · 保时捷911 Turbo (930) '81
+### Porsche 911 Turbo (930) '81 · Porsche 911 Turbo (930) '81
 
 #### `0x000095D6`
 
@@ -7895,7 +7895,7 @@ These are the 253 records that could not be safely assigned by the previous heur
 > 事实上，保时捷直到今天还在沿用，
 > 并推出了许多款后续的“Turbo”车型！�
 
-### Porsche 917 LIVING LEGEND · 保时捷917 LIVING LEGEND
+### Porsche 917 LIVING LEGEND · Porsche 917 LIVING LEGEND
 
 #### `0x0000B79B`
 
@@ -7944,7 +7944,7 @@ These are the 253 records that could not be safely assigned by the previous heur
 > 车队经营，并在勒芒取得胜利的……
 > “保时捷·萨尔茨堡�&917K。
 
-### Porsche 917K '70 · 保时捷917K '70
+### Porsche 917K '70 · Porsche 917K '70
 
 #### `0x0000A1CF`
 
@@ -7988,7 +7988,7 @@ These are the 253 records that could not be safely assigned by the previous heur
 > 例如在高速赛道上采用长车尾，
 > 在塔格·佛罗热耐力赛这样的蜿蜒赛道上则换上短车尾。�
 
-### Porsche 918 Spyder '13 · 保时捷918 Spyder '13
+### Porsche 918 Spyder '13 · Porsche 918 Spyder '13
 
 #### `0x0000A226`
 
@@ -8043,7 +8043,7 @@ These are the 253 records that could not be safely assigned by the previous heur
 > 但爱好者们对918的接受度从未减少分毫。它永远是
 > 所有超级跑车收藏者心目中的人气之选。�
 
-### Porsche 962 C '88 · 保时捷962 C '88
+### Porsche 962 C '88 · Porsche 962 C '88
 
 #### `0x0000960C`
 
@@ -8085,7 +8085,7 @@ These are the 253 records that could not be safely assigned by the previous heur
 > 据说，在保时捷的赛车生涯期间，�
 > 他们一共生产了150辆956和962。�
 
-### Porsche Carrera GT '04 · 保时捷Carrera GT '04
+### Porsche Carrera GT '04 · Porsche Carrera GT '04
 
 #### `0x00009D99`
 
@@ -8143,7 +8143,7 @@ These are the 253 records that could not be safely assigned by the previous heur
 > 保时捷在这台车上还加入了很多巧思……
 > 例如中央锁止轮毂和空气动力学后视镜等等。�
 
-### Porsche Cayman GT4 Clubsport '16 · 保时捷Cayman GT4 Clubsport '16
+### Porsche Cayman GT4 Clubsport '16 · Porsche Cayman GT4 Clubsport '16
 
 #### `0x0000BFFC`
 
@@ -8178,7 +8178,7 @@ These are the 253 records that could not be safely assigned by the previous heur
 > 它已经从一款休闲性能车升级为能够与更高级别对手
 > 竞争的真正赛道利器。k
 
-### Porsche Taycan Turbo S '19 · 保时捷Taycan Turbo S '19
+### Porsche Taycan Turbo S '19 · Porsche Taycan Turbo S '19
 
 #### `0x0000B765`
 
@@ -8266,7 +8266,7 @@ These are the 253 records that could not be safely assigned by the previous heur
 > 那就是成为独一无二、让你爱不释手的一_��老朋友。
 > 这类车可以让你的人生充满乐趣，你觉得呢？�
 
-### Renault Avantime 3.0 V6 24V '02 · 雷诺Avantime 3.0 V6 24V '02
+### Renault Avantime 3.0 V6 24V '02 · Renault Avantime 3.0 V6 24V '02
 
 #### `0x0000CB14`
 
@@ -8306,7 +8306,7 @@ These are the 253 records that could not be safely assigned by the previous heur
 > 难怪它至今仍吸引着世界各地的车迷。
 > 这又是雷诺悠久历史中的一项辉煌成就。
 
-### Renault Kangoo 1.4 '01 · 雷诺Kangoo 1.4 '01
+### Renault Kangoo 1.4 '01 · Renault Kangoo 1.4 '01
 
 #### `0x0000CB20`
 
@@ -8346,7 +8346,7 @@ These are the 253 records that could not be safely assigned by the previous heur
 > 其中就包括1960年代雷诺4的商用版本。
 > 还有一款是Express，它是基于第二代雷诺5打造的！
 
-### Renault R4 GTL '85 · 雷诺R4 GTL '85
+### Renault R4 GTL '85 · Renault R4 GTL '85
 
 #### `0x0000CB1A`
 
@@ -8387,7 +8387,7 @@ These are the 253 records that could not be safely assigned by the previous heur
 > 作为一款畅销车型，它的生产周期超过了30年，
 > 全球销量突破了800万辆！�
 
-### Renault R5 Turbo '80 · 雷诺R5 Turbo'80
+### Renault R5 Turbo '80 · Renault R5 Turbo '80
 
 #### `0x00009648`
 
@@ -8478,7 +8478,7 @@ These are the 253 records that could not be safely assigned by the previous heur
 > 哦，天呐！我想我已经爱上了这辆疯狂的小“5”。
 > 事实上，我愿意接受它的一切！s
 
-### Renault R8 Gordini '66 · 雷诺R8 Gordini '66
+### Renault R8 Gordini '66 · Renault R8 Gordini '66
 
 #### `0x0000965A`
 
@@ -8516,7 +8516,7 @@ These are the 253 records that could not be safely assigned by the previous heur
 > 梅戴·戈迪尼一手创办。
 > R8 Gordini就是其与雷诺合作的产物。;
 
-### Renault Sport Clio R.S. 220 EDC Trophy '16 · 雷诺运动Clio R.S. 220 EDC Trophy '16
+### Renault Sport Clio R.S. 220 EDC Trophy '16 · Renault Sport Clio R.S. 220 EDC Trophy '16
 
 #### `0x0000B789`
 
@@ -8560,7 +8560,7 @@ These are the 253 records that could not be safely assigned by the previous heur
 > 足以在视觉上将它充分改造成一款赛道小钢炮！
 > j
 
-### Renault Sport Clio V6 24V '00 · 雷诺运动Clio V6 24V '00
+### Renault Sport Clio V6 24V '00 · Renault Sport Clio V6 24V '00
 
 #### `0x0000AA1C`
 
@@ -8597,7 +8597,7 @@ These are the 253 records that could not be safely assigned by the previous heur
 > 后轮的“管装”风道线条……
 > 和前后格栅采用的几何分割设计就是最显而易见的证明！
 
-### Renault Sport Mégane R.S. Trophy '11 · 雷诺运动梅甘娜R.S. Trophy '11
+### Renault Sport Mégane R.S. Trophy '11 · Renault Sport Mégane R.S. Trophy '11
 
 #### `0x00009CFD`
 
@@ -8638,7 +8638,7 @@ These are the 253 records that could not be safely assigned by the previous heur
 > 无疑是前格栅里受F1赛车启发的悬浮翼片，
 > 我们将它直接与日间行车灯整合到了一起。
 
-### Renault Sport Mégane Trophy '11 · 雷诺运动梅甘娜Trophy '11
+### Renault Sport Mégane Trophy '11 · Renault Sport Mégane Trophy '11
 
 #### `0x0000A2B6`
 
@@ -8681,7 +8681,7 @@ These are the 253 records that could not be safely assigned by the previous heur
 > 另外，这台车原本打算参加的是在欧洲举办的高人气比赛
 > ——雷诺运�A�S�|赛。z
 
-### Renault Sport R.S.01 '16 · 雷诺运动R.S.01 '16
+### Renault Sport R.S.01 '16 · Renault Sport R.S.01 '16
 
 #### `0x0000B19F`
 
@@ -8716,7 +8716,7 @@ These are the 253 records that could not be safely assigned by the previous heur
 > 保持“家族传承”……
 > 因此借鉴了量产版梅甘娜的车灯和进气格栅的设计风格。o
 
-### Sauber Mercedes C9 '89 · 索伯梅赛德斯C9 '89
+### Sauber Mercedes C9 '89 · Sauber Mercedes C9 '89
 
 #### `0x00009B94`
 
@@ -8761,7 +8761,7 @@ These are the 253 records that could not be safely assigned by the previous heur
 > 不过，如果你对F1的历史感兴趣，
 > 不妨多了解一下其他国家的官方配色！
 
-### Subaru Impreza Rally Car '98 · 斯巴鲁翼豹拉力车'98
+### Subaru Impreza Rally Car '98 · Subaru Impreza Rally Car '98
 
 #### `0x0000C431`
 
@@ -8815,7 +8815,7 @@ These are the 253 records that could not be safely assigned by the previous heur
 > 这款车定义了它所处的时代，至今仍被视为
 > 世界拉力锦标赛历史的重要组成部分。�
 
-### Subaru Impreza Sedan WRX STi '04 · 斯巴鲁翼豹轿车WRX STi '04
+### Subaru Impreza Sedan WRX STi '04 · Subaru Impreza Sedan WRX STi '04
 
 #### `0x0000AF75`
 
@@ -8858,7 +8858,7 @@ These are the 253 records that could not be safely assigned by the previous heur
 > 那么内饰朴实简洁，且没有配备�`角形后车窗的
 > 第二代WRX将是你的不二选择。�
 
-### Suzuki Swift Sport '07 · 铃木雨燕运动型'07
+### Suzuki Swift Sport '07 · Suzuki Swift Sport '07
 
 #### `0x0000A2CE`
 
@@ -8933,7 +8933,7 @@ These are the 253 records that could not be safely assigned by the previous heur
 > 如果在狭窄的意大利街道看到它驶过，你可能
 > 会觉得它和当地的环境浑然一体。\
 
-### Suzuki Swift Sport '17 · 铃木雨燕运动型'17
+### Suzuki Swift Sport '17 · Suzuki Swift Sport '17
 
 #### `0x0000A770`
 
@@ -9019,7 +9019,7 @@ These are the 253 records that could not be safely assigned by the previous heur
 > 这是一款必然引发争议的设计，只对那些懂它的人
 > 散发无穷魅力。
 
-### Toyota 2000GT '67 · 丰田2000GT '67
+### Toyota 2000GT '67 · Toyota 2000GT '67
 
 #### `0x0000C960`
 
@@ -9059,7 +9059,7 @@ These are the 253 records that could not be safely assigned by the previous heur
 > 驾驶这辆车的车手是传奇的双人组，
 > 细谷四方洋和领航员大坪善男。
 
-### Toyota Aqua S '11 · 丰田致享S '11
+### Toyota Aqua S '11 · Toyota Aqua S '11
 
 #### `0x0000A048`
 
@@ -9093,7 +9093,7 @@ These are the 253 records that could not be safely assigned by the previous heur
 > 还是向后延、并在车尾收束下坠的利落侧面轮廓线，
 > 都让人有耳目一新的良好感受。
 
-### Toyota Corolla Levin 3door 1600GT APEX (AE86) '83 · 丰田卡罗拉Levin 3door 1600GT APEX (AE86) '83
+### Toyota Corolla Levin 3door 1600GT APEX (AE86) '83 · Toyota Corolla Levin 3door 1600GT APEX (AE86) '83
 
 #### `0x000073DC`
 
@@ -9130,7 +9130,7 @@ These are the 253 records that could not be safely assigned by the previous heur
 > 配有固定头灯的雷凌要比Trueno轻。
 > 在这么轻的车头上多出的，会带来天差地别的影响。O
 
-### Toyota GR Supra Race Car '19 · 丰田GR Supra Race Car '19
+### Toyota GR Supra Race Car '19 · Toyota GR Supra Race Car '19
 
 #### `0x000074C0`
 
@@ -9166,7 +9166,7 @@ These are the 253 records that could not be safely assigned by the previous heur
 > 这样的成绩完全显示出了
 > GR Supra的卓越性能。
 
-### Toyota GR Supra Racing Concept '18 · 丰田GR Supra Racing Concept '18
+### Toyota GR Supra Racing Concept '18 · Toyota GR Supra Racing Concept '18
 
 #### `0x0000A2D4`
 
@@ -9203,7 +9203,7 @@ These are the 253 records that could not be safely assigned by the previous heur
 > 举行的2020 Super GT第一轮。
 > 六辆参赛的Supra中，就有五辆车包揽了完赛前五名的名次！
 
-### Toyota GR Yaris 1st Edition RZ "High performance" '20 · 丰田GR雅力士第一版RZ "高性能" '20
+### Toyota GR Yaris 1st Edition RZ "High performance" '20 · Toyota GR Yaris 1st Edition RZ "High performance" '20
 
 #### `0x000073F0`
 
@@ -9295,7 +9295,7 @@ These are the 253 records that could not be safely assigned by the previous heur
 > 不管怎么说，对于一个真正的赛车迷来说，这是少数几
 > 辆能令人兴奋到不能自己的公路车！
 
-### Toyota MR2 GT-S '97 · 丰田MR2 GT-S '97
+### Toyota MR2 GT-S '97 · Toyota MR2 GT-S '97
 
 #### `0x00007280`
 
@@ -9402,7 +9402,7 @@ These are the 253 records that could not be safely assigned by the previous heur
 > 所以发动机放在后面？这是部两座车，里面很紧凑。
 > 哇喔，但是后备箱还是挺大的，不错！
 
-### Toyota Prius G '09 · 丰田普锐斯G '09
+### Toyota Prius G '09 · Toyota Prius G '09
 
 #### `0x0000B7EF`
 
@@ -9433,7 +9433,7 @@ These are the 253 records that could not be safely assigned by the previous heur
 > 这随后就成为了普锐斯产品系列的标准设计，
 > 你在这款外形美观的第三代车型中也能看到。[
 
-### Toyota Sports 800 '65 · 丰田Sports 800 '65
+### Toyota Sports 800 '65 · Toyota Sports 800 '65
 
 #### `0x00009678`
 
@@ -9473,7 +9473,7 @@ These are the 253 records that could not be safely assigned by the previous heur
 > 歌猛进，最终取得了第一名的好成绩
 > 他在那天表现出的速度简直如有神助！�
 
-### Toyota Supra 3.0GT Turbo A '88 · 丰田Supra 3.0GT Turbo A '88
+### Toyota Supra 3.0GT Turbo A '88 · Toyota Supra 3.0GT Turbo A '88
 
 #### `0x000095DC`
 
@@ -9544,7 +9544,7 @@ These are the 253 records that could not be safely assigned by the previous heur
 > 横向加宽，也呈现出更豪迈的视觉风格。
 > 最终的造型也更接近一辆性能强大的豪华旅行车。
 
-### Toyota Supra GT500 '97 · 丰田Supra GT500 '97
+### Toyota Supra GT500 '97 · Toyota Supra GT500 '97
 
 #### `0x0000723F`
 
@@ -9616,7 +9616,7 @@ These are the 253 records that could not be safely assigned by the previous heur
 > 兼具辉煌的赛史和极高的历史价值，这辆车必定是一笔
 > 珍贵财富。
 
-### Toyota Supra RZ '97 · 丰田Supra RZ '97
+### Toyota Supra RZ '97 · Toyota Supra RZ '97
 
 #### `0x00007232`
 
@@ -9658,7 +9658,7 @@ These are the 253 records that could not be safely assigned by the previous heur
 > 那种心灵的震撼和耳目一新的感觉就和我小时候在东京
 > 麻布区看到一辆有巨大尾鳍的克莱斯勒时几乎一模一样。�
 
-### Toyota TS050 - Hybrid '16 · 丰田TS050 - Hybrid '16
+### Toyota TS050 - Hybrid '16 · Toyota TS050 - Hybrid '16
 
 #### `0x00009672`
 
@@ -9698,7 +9698,7 @@ These are the 253 records that could not be safely assigned by the previous heur
 > 更激动人心的是，丰田在之后的五年里连战连捷，
 > 其中也包括2022年新鲜出炉的一胜！�
 
-### Toyota Tundra TRD Pro '19 · 丰田坦途TRD Pro '19
+### Toyota Tundra TRD Pro '19 · Toyota Tundra TRD Pro '19
 
 #### `0x0000967E`
 
@@ -9740,7 +9740,7 @@ These are the 253 records that could not be safely assigned by the previous heur
 > 2019年，它参加了在戴通纳举行的生存赛，在一场32辆
 > 汽车中只有9辆完赛的比赛中取得最终的胜利。
 
-### Volkswagen 1200 '66 · 大众1200 '66
+### Volkswagen 1200 '66 · Volkswagen 1200 '66
 
 #### `0x00009546`
 
@@ -9813,7 +9813,7 @@ These are the 253 records that could not be safely assigned by the previous heur
 > 这是多么漫长的生命周期啊。而且直到现在，
 > 甲壳虫都还很有人气！%
 
-### Volkswagen Beetle Gr.3 · 大众甲壳虫组别3
+### Volkswagen Beetle Gr.3 · Volkswagen Beetle Gr.3
 
 #### `0x0000BAFC`
 
@@ -9856,7 +9856,7 @@ These are the 253 records that could not be safely assigned by the previous heur
 > 车身上各种鲜艳显眼的几何图案更是为
 > 整体外观锦上添花！
 
-### Volkswagen Golf I GTI '83 · 大众高尔夫I GTI '83
+### Volkswagen Golf I GTI '83 · Volkswagen Golf I GTI '83
 
 #### `0x0000A1E5`
 
@@ -9888,7 +9888,7 @@ These are the 253 records that could not be safely assigned by the previous heur
 > 在高性能掀背车中，
 > 这是我一直想要收藏的一辆车。
 
-### Volkswagen Golf VII GTI '14 · 大众高尔夫VII GTI '14
+### Volkswagen Golf VII GTI '14 · Volkswagen Golf VII GTI '14
 
 #### `0x00009F71`
 
@@ -9926,7 +9926,7 @@ These are the 253 records that could not be safely assigned by the previous heur
 > 它们的结合形成了运动的姿态，强大的气势和灵活性，
 > 同时还散发出一种和谐感与力量感。
 
-### Volkswagen Sambabus Typ 2 (T1) '62 · 大众Sambabus Typ 2 (T1) '62
+### Volkswagen Sambabus Typ 2 (T1) '62 · Volkswagen Sambabus Typ 2 (T1) '62
 
 #### `0x0000B58E`
 

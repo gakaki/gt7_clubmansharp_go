@@ -115,6 +115,30 @@ def _message_targets(text: str) -> list[int]:
     return targets
 
 
+def _recover_partial_next_targets(
+    text: str,
+    current_message_id: int,
+    car_key: str,
+    messages: dict[int, dict],
+) -> list[int]:
+    """Recover a next id when one middle digit was lost by RT2 decoding."""
+
+    recovered = []
+    for value in re.findall(r"next\s+id=(\d+)", text, re.IGNORECASE):
+        if not 2 <= len(value) < 7:
+            continue
+        candidates = sorted(
+            message_id
+            for message_id, message in messages.items()
+            if message["carKey"] == car_key
+            and message_id > current_message_id
+            and str(message_id).startswith(value)
+        )
+        if len(candidates) == 1:
+            recovered.append(candidates[0])
+    return recovered
+
+
 def _scene_title(turns: list[dict]) -> tuple[str, str]:
     speakers = []
     for turn in turns:
@@ -302,7 +326,20 @@ def build_exact_cafe(cars: list[dict], legacy_items: list[dict] | None = None) -
                 "variantEn": VARIANT_NAMES[variant["variant"]][1],
             })
             turns.append(turn)
-            for target in _message_targets(message["raw"]):
+            targets = set(_message_targets(message["raw"]))
+            targets.update(_recover_partial_next_targets(
+                message["raw"],
+                message_id,
+                message["carKey"],
+                messages,
+            ))
+            if (
+                "next" in message["raw"].lower()
+                and message_id + 1 in messages
+                and messages[message_id + 1]["carKey"] == message["carKey"]
+            ):
+                targets.add(message_id + 1)
+            for target in targets:
                 if target not in visited:
                     queue.append(target)
 
