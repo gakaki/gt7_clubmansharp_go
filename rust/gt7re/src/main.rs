@@ -126,6 +126,14 @@ enum Cmd {
         avatars_out: PathBuf,
         #[arg(long, default_value = r"C:\gt7\gt7\_re\site\public\avatars\extracted")]
         portraits_out: PathBuf,
+        #[arg(long, default_value = r"C:\gt7\gt7\_re\reports\store_census_rust.csv")]
+        census_csv: PathBuf,
+        #[arg(long, default_value = r"C:\gt7\gt7\_re\reports\mdl5_index.json")]
+        mdl5_out: PathBuf,
+        #[arg(long, default_value = r"C:\gt7\gt7\_re\reports\jxl_index.json")]
+        jxl_out: PathBuf,
+        #[arg(long, default_value = r"C:\gt7\gt7\_re\reports\sndz_index.json")]
+        sndz_out: PathBuf,
     },
     /// Unpack a Polyphony PackedFile
     Packed {
@@ -494,9 +502,15 @@ fn run() -> Result<()> {
             avatars_out,
             portraits_out,
             dealer_data,
+            census_csv,
+            mdl5_out,
+            jxl_out,
+            sndz_out,
         } => {
             let started = std::time::Instant::now();
             let store = Store::scan(&cli.store)?;
+            let census = census::write_census(&store, &census_csv)?;
+            let catalog = census::read_catalog(&census_csv)?;
             let (archive, dmsb_files) = gpb4::extract(&gpb4_file, &dmsb_dir)?;
             let report = research::build(&research::Options {
                 rt2_dir,
@@ -509,12 +523,51 @@ fn run() -> Result<()> {
             let entries = avatar::extract_all(&store, &avatars_out, &portraits_out)?;
             let avatar_manifest = avatars_out.join("manifest.json");
             avatar::write_manifest(&entries, &avatar_manifest)?;
+
+            let mdl5_entries = catalog
+                .iter()
+                .filter(|(_, _, kind)| kind == "model-3d (MDL5)")
+                .map(|(rel, size, _)| (rel.clone(), *size))
+                .collect::<Vec<_>>();
+            let mdl5_infos = mdl5::index_many(&mdl5_entries, &cli.store, 2 << 20, 2000);
+            if let Some(parent) = mdl5_out.parent() {
+                fs::create_dir_all(parent)?;
+            }
+            fs::write(&mdl5_out, serde_json::to_vec(&mdl5_infos)?)?;
+
+            let jxl_entries = catalog
+                .iter()
+                .filter(|(_, _, kind)| kind == "jpeg-xl")
+                .map(|(rel, _, _)| rel.clone())
+                .collect::<Vec<_>>();
+            let jxl_infos = jxl::index_many(&jxl_entries, &store.root);
+            if let Some(parent) = jxl_out.parent() {
+                fs::create_dir_all(parent)?;
+            }
+            fs::write(&jxl_out, serde_json::to_vec(&jxl_infos)?)?;
+
+            let sndz_entries = catalog
+                .iter()
+                .filter(|(_, _, kind)| kind == "sound (SNDZ)")
+                .map(|(rel, _, _)| rel.clone())
+                .collect::<Vec<_>>();
+            let sndz_infos = sndz::index_many(&sndz_entries, &store.root);
+            if let Some(parent) = sndz_out.parent() {
+                fs::create_dir_all(parent)?;
+            }
+            fs::write(&sndz_out, serde_json::to_vec(&sndz_infos)?)?;
+
             println!(
-                "{} gpb4Entries={} dmsbFiles={} avatars={} research={} avatarsManifest={} portraits={} ({:.2}s)",
+                "{} gpb4Entries={} dmsbFiles={} avatars={} censusFiles={} mdl5={} submodels={} jxl={} sndz={} research={} avatarsManifest={} portraits={} ({:.2}s)",
                 serde_json::to_string(&report.stats)?,
                 archive.count,
                 dmsb_files,
                 entries.len(),
+                census.files,
+                mdl5_infos.len(),
+                mdl5_infos.iter().map(|model| model.model_count as usize).sum::<usize>(),
+                jxl_infos.len(),
+                sndz_infos.len(),
                 out.display(),
                 avatar_manifest.display(),
                 portraits_out.display(),

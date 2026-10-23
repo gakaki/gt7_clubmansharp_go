@@ -108,6 +108,9 @@ This runs the complete native Rust path:
 5. Preserve the 253-row historical ambiguity review with exact resolution.
 6. Decode all 19 GT Cafe/dealer BC7 face atlases using the exact AMD GFX10
    GNM swizzle mode 9 equation and emit portrait PNGs.
+7. Classify all 95,339 content-store files using parallel workers.
+8. Index 8,149 MDL5 files, 59,498 submodel records and 6.2M identifiers.
+9. Index all 4,074 JPEG XL box containers and 860 SNDZ section maps.
 
 Individual commands:
 
@@ -125,6 +128,9 @@ Individual commands:
 
 & $exe sndz-index `
   --out C:\gt7\gt7\_re\reports\sndz_index.json
+
+& $exe mdl5-index `
+  --out C:\gt7\gt7\_re\reports\mdl5_index.json
 ```
 
 Parity check:

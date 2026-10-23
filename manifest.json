@@ -193,7 +193,7 @@
   "desc": "Rust 并行解析器源码与二进制",
   "exists": true,
   "files": 2967,
-  "bytes": 864596725
+  "bytes": 864618816
  },
  {
   "path": "report/FORMATS.md",
