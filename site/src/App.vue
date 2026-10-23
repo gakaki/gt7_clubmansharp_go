@@ -475,6 +475,7 @@ function yearOf(name) {
           <p>Gran Turismo 7 · GT Café Dialogues</p>
         </div>
       </div>
+      <a class="menu-archive-link" href="/menus_cafe">菜单书档案</a>
       <div class="lang" role="group" aria-label="language">
         <button :class="{ on: lang === 'zh' }" @click="setLang('zh')">中文</button>
         <button :class="{ on: lang === 'en' }" @click="setLang('en')">English</button>

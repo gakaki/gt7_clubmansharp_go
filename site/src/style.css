@@ -60,6 +60,22 @@ button { font-family: inherit; cursor: pointer; }
 }
 .lang button.on { background: var(--text); color: #fff; }
 
+.menu-archive-link {
+  margin-left: auto;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  padding: 8px 14px;
+  color: var(--muted);
+  font-size: 12px;
+  font-weight: 700;
+  transition: 150ms ease;
+}
+
+.menu-archive-link:hover {
+  border-color: var(--accent);
+  color: var(--text);
+}
+
 .summary {
   display: flex; gap: 34px; padding: 18px 28px 6px;
   max-width: 1440px; width: 100%; margin: 0 auto;
