@@ -89,7 +89,7 @@ cargo test --release:
 ```
 
 The production Worker `gt7-cafe-edge` deployment
-`b959bbe0-3576-4f70-82c4-b0aabcecf412` serves
+`64386d12-8604-4448-a335-b5b42de43447` serves
 <https://gt7.gakaki.com>.
 
 The complete project-owned Python pipeline (63 scripts and the local virtual

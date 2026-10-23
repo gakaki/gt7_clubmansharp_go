@@ -11,7 +11,11 @@ function arg(name, fallback) {
 
 const base = arg('--base', 'http://127.0.0.1:4174/')
 const cdpRoot = arg('--cdp', 'http://127.0.0.1:9333')
-const outDir = path.resolve(arg('--out-dir', '../site'))
+const outRoot = path.resolve(arg('--out-dir', '../site'))
+const outDir = path.join(
+  outRoot,
+  `run-${new Date().toISOString().replace(/[-:.TZ]/g, '')}`,
+)
 const sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms))
 await fs.mkdir(outDir, { recursive: true })
 
