@@ -247,7 +247,7 @@ function CarTile({ car, lang }) {
 }
 
 function MenuCoverSkeleton() {
-  return <div className="aspect-[4/3] animate-pulse rounded-[22px] bg-white/[0.05]" />
+  return <div className="menu-cover-skeleton aspect-[4/3] animate-pulse rounded-[22px] bg-white/[0.05]" />
 }
 
 function MenuBookDialog({
@@ -418,6 +418,28 @@ function MenuBookDialog({
                         en={record.descriptionEn}
                         className="mt-3 block text-sm leading-7 text-white/72"
                       />
+                    </article>
+                    <article className="menu-copy-card menu-story-card md:col-span-2">
+                      <div className="menu-story-heading">
+                        <div className="menu-section-kicker">
+                          <BookOpen size={14} />
+                          {lang === 'zh' ? '菜单书故事' : 'Menu Book story'}
+                        </div>
+                        <span>
+                          {record.storyTextIdZh || record.storyTextIdEn ||
+                            (lang === 'zh' ? '更新摘要' : 'Update summary')}
+                        </span>
+                      </div>
+                      <div className="menu-story-copy">
+                        {lang !== 'en' && (
+                          <p className="whitespace-pre-line">{record.storyZh || record.descriptionZh}</p>
+                        )}
+                        {lang !== 'zh' && (
+                          <p className="menu-story-en whitespace-pre-line">
+                            {record.storyEn || record.descriptionEn}
+                          </p>
+                        )}
+                      </div>
                     </article>
                     <article className="menu-copy-card">
                       <div className="menu-section-kicker">
@@ -646,6 +668,8 @@ export default function MenuBooksApp() {
           record.collectionNameZh,
           record.descriptionEn,
           record.descriptionZh,
+          record.storyEn,
+          record.storyZh,
           record.rewardEn,
           record.rewardZh,
           record.internalCode,
@@ -774,10 +798,10 @@ export default function MenuBooksApp() {
     records[activeIndex]
 
   return (
-    <div className="min-h-screen bg-[#05070b] text-white selection:bg-cyan-300/25">
+    <div className="menu-page min-h-screen bg-[#f5f5f7] text-[#17171a] selection:bg-cyan-300/25">
       <div className="pointer-events-none fixed inset-0 menu-page-atmosphere" />
       <div className="relative mx-auto min-h-screen max-w-[1500px] px-4 pb-32 sm:px-6 lg:px-10">
-        <header className="sticky top-0 z-40 -mx-4 border-b border-white/[0.07] bg-[#05070b]/82 px-4 py-3 backdrop-blur-xl sm:-mx-6 sm:px-6 lg:-mx-10 lg:px-10">
+        <header className="sticky top-0 z-40 -mx-4 border-b border-black/[0.07] bg-white/90 px-4 py-3 backdrop-blur-xl sm:-mx-6 sm:px-6 lg:-mx-10 lg:px-10">
           <div className="mx-auto flex max-w-[1420px] items-center gap-3">
             <a
               href="/"

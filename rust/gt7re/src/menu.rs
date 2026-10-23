@@ -15,6 +15,7 @@ use std::fs;
 use std::path::Path;
 use std::sync::OnceLock;
 
+use crate::research::{self, LocalisationLabels, LocalisationTexts};
 use crate::store::{cache_key, fnv1a};
 
 fn atomic_write(path: &Path, data: &[u8]) -> Result<()> {
@@ -209,6 +210,119 @@ fn load_template(data_dir: &Path) -> Vec<Value> {
         .unwrap_or_default()
 }
 
+fn clean_story(value: &str) -> String {
+    static SEQUENCE: OnceLock<Regex> = OnceLock::new();
+    static PARAGRAPH: OnceLock<Regex> = OnceLock::new();
+    static MALFORMED_PARAGRAPH: OnceLock<Regex> = OnceLock::new();
+    static UNTERMINATED_PARAGRAPH: OnceLock<Regex> = OnceLock::new();
+    static TAG: OnceLock<Regex> = OnceLock::new();
+    let mut text = value.replace("\r\n", "\n").replace('\r', "\n");
+    let sequence = SEQUENCE.get_or_init(|| {
+        Regex::new(r"(?is)^(?:\u{FFFD}|\s)*(?:sseq|ssq|seq)\b[^>]*>").expect("story sequence regex")
+    });
+    text = sequence.replace(&text, "").into_owned();
+    let paragraph = PARAGRAPH.get_or_init(|| {
+        Regex::new(r"(?is)(?:<|;|\u{FFFD})\s*p\b[^>]*?/?>").expect("story paragraph regex")
+    });
+    text = paragraph.replace_all(&text, "\n\n").into_owned();
+    let malformed = MALFORMED_PARAGRAPH.get_or_init(|| {
+        Regex::new(r#"(?is)[A-Za-z0-9=;:?]{0,3}p\s+[^<>]{0,100}scmd\s*=[^>]*(?:>|$)"#)
+            .expect("malformed paragraph regex")
+    });
+    text = malformed.replace_all(&text, "\n\n").into_owned();
+    let unterminated = UNTERMINATED_PARAGRAPH.get_or_init(|| {
+        Regex::new(r"(?is)<p\b[^>]*(?:>|$)").expect("unterminated paragraph regex")
+    });
+    text = unterminated.replace_all(&text, "\n\n").into_owned();
+    let tag = TAG.get_or_init(|| Regex::new(r"(?is)<[^>]+>").expect("story tag regex"));
+    text = tag.replace_all(&text, " ").into_owned();
+    text = text
+        .replace('\u{FFFD}', "")
+        .chars()
+        .filter(|ch| {
+            !('\u{E000}'..='\u{F8FF}').contains(ch)
+                && (!ch.is_control() || matches!(ch, '\n' | '\r' | '\t'))
+        })
+        .collect();
+    text = sequence.replace(&text, "").into_owned();
+    text = text
+        .replace("法拉^就", "法拉利就")
+        .replace("为z将", "为了将")
+        .replace("就(其实力", "就是其实力")
+        .replace("品ތ", "品牌");
+    text.split("\n\n")
+        .map(|paragraph| paragraph.split_whitespace().collect::<Vec<_>>().join(" "))
+        .filter(|paragraph| !paragraph.is_empty())
+        .collect::<Vec<_>>()
+        .join("\n\n")
+}
+
+fn story_id_from_rt2(code: &str, labels: &LocalisationLabels) -> Option<u32> {
+    let prefix = format!("Buddy_Quest_CafeMaster_normal_{code}_");
+    labels
+        .iter()
+        .filter(|((section, value), _)| section == "BuddyQuest" && value.starts_with(&prefix))
+        .max_by(|a, b| a.0 .1.cmp(&b.0 .1))
+        .map(|(_, id)| *id)
+}
+
+fn story_text_from_rt2(id: u32, texts: &LocalisationTexts) -> Option<String> {
+    let raw = texts.get(&("BuddyQuest".to_string(), id))?;
+    let cleaned = clean_story(raw);
+    if cleaned.is_empty() {
+        return None;
+    }
+    Some(cleaned)
+}
+
+fn merge_story_text_cache(rt2_dir: &Path, cache_language: &str, texts: &mut LocalisationTexts) {
+    let Some(extracted) = rt2_dir
+        .parent()
+        .and_then(Path::parent)
+        .and_then(Path::parent)
+    else {
+        return;
+    };
+    let quality = |value: &str| -> i64 {
+        let readable = value.chars().filter(|ch| ch.is_alphanumeric()).count() as i64;
+        let replacement = value.matches('\u{FFFD}').count() as i64;
+        let controls = value
+            .chars()
+            .filter(|ch| ch.is_control() && !matches!(ch, '\n' | '\r' | '\t'))
+            .count() as i64;
+        readable - replacement * 100 - controls * 80 + value.len() as i64 / 100
+    };
+    for directory in ["text_all", "text_pooled", "text_hybrid", "text_decoded"] {
+        let path = extracted
+            .join(directory)
+            .join(format!("{cache_language}.json"));
+        let Ok(bytes) = fs::read(&path) else {
+            continue;
+        };
+        let Ok(Value::Object(sections)) = serde_json::from_slice::<Value>(&bytes) else {
+            continue;
+        };
+        for (section, values) in sections {
+            let Some(values) = values.as_object() else {
+                continue;
+            };
+            for (id, value) in values {
+                let Some(value) = value.as_str() else {
+                    continue;
+                };
+                let Ok(id) = u32::from_str_radix(id.trim_start_matches("0x"), 16) else {
+                    continue;
+                };
+                let key = (section.clone(), id);
+                let entry = texts.entry(key).or_default();
+                if quality(value) > quality(entry) {
+                    *entry = value.to_string();
+                }
+            }
+        }
+    }
+}
+
 fn find_dms_dir(root: &Path) -> Result<std::path::PathBuf> {
     if root.join("Quests.dmsb").is_file() {
         return Ok(root.to_path_buf());
@@ -339,6 +453,8 @@ fn join_names(values: Option<&Vec<Value>>, key: &str) -> String {
 pub fn build(
     data_dir: &Path,
     dmsb_dir: &Path,
+    rt2_dir: &Path,
+    key_dir: &Path,
     contents: &Path,
     report_dir: &Path,
 ) -> Result<Value> {
@@ -350,6 +466,13 @@ pub fn build(
         .cloned()
         .context("cars.json has no cars")?;
     let mut records = load_template(data_dir);
+    let (english, chinese) = rayon::join(
+        || research::load_localisation("us", rt2_dir, key_dir),
+        || research::load_localisation("cn", rt2_dir, key_dir),
+    );
+    let (us_texts, us_labels) = english?;
+    let (mut zh_texts, _) = chinese?;
+    merge_story_text_cache(rt2_dir, "zh", &mut zh_texts);
     let existing: HashSet<String> = records
         .iter()
         .filter_map(|row| row.get("id")?.as_str().map(str::to_string))
@@ -387,6 +510,37 @@ pub fn build(
                 let (rel, status) = asset_source(contents, cover_asset);
                 object.insert("coverRel".into(), json!(rel));
                 object.insert("coverContainerStatus".into(), json!(status));
+            }
+        }
+        let code = object
+            .get("internalCode")
+            .and_then(Value::as_str)
+            .unwrap_or("")
+            .to_string();
+        let story_id = story_id_from_rt2(&code, &us_labels);
+        let story_en = story_id.and_then(|id| story_text_from_rt2(id, &us_texts));
+        let story_zh = story_id.and_then(|id| story_text_from_rt2(id, &zh_texts));
+        let has_story_en = story_en.is_some();
+        let has_story_zh = story_zh.is_some();
+        if let Some(text) = story_en {
+            object.insert("storyEn".into(), json!(text));
+            if let Some(id) = story_id {
+                object.insert("storyTextIdEn".into(), json!(format!("0x{id:08X}")));
+            }
+        }
+        if let Some(text) = story_zh {
+            object.insert("storyZh".into(), json!(text));
+            if let Some(id) = story_id {
+                object.insert("storyTextIdZh".into(), json!(format!("0x{id:08X}")));
+            }
+        }
+        if has_story_en || has_story_zh {
+            if let Some(sources) = object.get_mut("sources").and_then(Value::as_object_mut) {
+                sources.insert("story".into(), json!("BuddyQuest CafeMaster dialogue"));
+                sources.insert(
+                    "storyLabel".into(),
+                    json!(format!("Buddy_Quest_CafeMaster_normal_{code}_*99")),
+                );
             }
         }
     });
@@ -459,6 +613,13 @@ pub fn build(
         "main": count_category("main"),
         "bonus": count_category("bonus"),
         "extra": count_category("extra"),
+        "withStory": records.iter().filter(|r| {
+            r.get("storyZh").and_then(Value::as_str).map(|v| !v.is_empty()).unwrap_or(false)
+                || r.get("storyEn").and_then(Value::as_str).map(|v| !v.is_empty()).unwrap_or(false)
+        }).count(),
+        "withLocalStory": records.iter().filter(|r| {
+            r.get("storyTextIdEn").and_then(Value::as_str).map(|v| !v.is_empty()).unwrap_or(false)
+        }).count(),
         "withCars": records.iter().filter(|r| r.get("cars").and_then(Value::as_array).map(|v| !v.is_empty()).unwrap_or(false)).count(),
         "withCoverContainer": records.iter().filter(|r| r.get("coverContainerStatus").and_then(Value::as_str) == Some("present")).count(),
         "withScreenshot": records.iter().filter(|r| r.get("coverStatus").and_then(Value::as_str) == Some("screenshot")).count(),
@@ -501,6 +662,10 @@ pub fn build(
         "coverStatus",
         "descriptionEn",
         "descriptionZh",
+        "storyTextIdEn",
+        "storyTextIdZh",
+        "storyEn",
+        "storyZh",
     ])?;
     for record in payload["records"].as_array().into_iter().flatten() {
         writer.write_record([
@@ -557,6 +722,16 @@ pub fn build(
                 .get("descriptionZh")
                 .and_then(Value::as_str)
                 .unwrap_or(""),
+            record
+                .get("storyTextIdEn")
+                .and_then(Value::as_str)
+                .unwrap_or(""),
+            record
+                .get("storyTextIdZh")
+                .and_then(Value::as_str)
+                .unwrap_or(""),
+            record.get("storyEn").and_then(Value::as_str).unwrap_or(""),
+            record.get("storyZh").and_then(Value::as_str).unwrap_or(""),
         ])?;
     }
     writer.flush()?;
@@ -574,4 +749,22 @@ pub fn build(
         started.elapsed().as_secs_f64()
     );
     Ok(payload)
+}
+
+#[cfg(test)]
+mod tests {
+    use super::clean_story;
+
+    #[test]
+    fn story_cleanup_removes_sequence_commands_and_keeps_paragraphs() {
+        let raw = "\u{FFFD}sseq car0=\"1\" scmd=\"Reward_Test_01\">First line\r\ncontinues.<p scmd=\"Reward_Test_02\" />\r\nSecond paragraph.";
+        assert_eq!(
+            clean_story(raw),
+            "First line continues.\n\nSecond paragraph."
+        );
+        assert_eq!(
+            clean_story("ssq car0=\"1\" scmd=\"Reward_Test_01\">Story."),
+            "Story."
+        );
+    }
 }

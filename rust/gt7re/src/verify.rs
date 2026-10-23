@@ -277,8 +277,39 @@ pub fn run(options: &Options) -> Result<Value> {
     if menu_counts.get("extra").and_then(Value::as_u64) != Some(57) {
         bail!("expected 57 Extra Menus");
     }
+    if menu_counts.get("withLocalStory").and_then(Value::as_u64) != Some(105) {
+        bail!("expected 105 locally extracted menu stories");
+    }
     if menu.get("records").and_then(Value::as_array).map(Vec::len) != Some(108) {
         bail!("menu_books.json record count mismatch");
+    }
+    let ferrari_story = menu
+        .get("records")
+        .and_then(Value::as_array)
+        .into_iter()
+        .flatten()
+        .find(|record| record.get("id").and_then(Value::as_str) == Some("main-038"))
+        .and_then(|record| record.get("storyZh"))
+        .and_then(Value::as_str)
+        .context("Menu Book No.38 Ferrari story")?;
+    if !ferrari_story.contains("拥有一辆法拉利是一种非常特别的体验") {
+        bail!("Menu Book No.38 Ferrari story mismatch");
+    }
+    for record in menu
+        .get("records")
+        .and_then(Value::as_array)
+        .into_iter()
+        .flatten()
+    {
+        for key in ["storyEn", "storyZh"] {
+            let story = record.get(key).and_then(Value::as_str).unwrap_or("");
+            if story.contains("<sseq") || story.contains("scmd=") || story.contains("<p") {
+                bail!(
+                    "{}: uncleaned story markup",
+                    record.get("id").and_then(Value::as_str).unwrap_or("")
+                );
+            }
+        }
     }
     let avatar_dir = options.data_dir.join("../avatars/extracted");
     let avatars = fs::read_dir(&avatar_dir)
@@ -350,6 +381,7 @@ pub fn run(options: &Options) -> Result<Value> {
         "dealerOffers": dealer.len(),
         "menuBooks": 108,
         "extraMenus": 57,
+        "menuStories": menu_counts.get("withLocalStory").cloned().unwrap_or(Value::Null),
         "avatars": avatars,
         "reportsDir": options.reports_dir,
     });

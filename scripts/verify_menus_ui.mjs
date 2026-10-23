@@ -122,11 +122,25 @@ async function main() {
     )].filter((node) => node.naturalWidth > 0).length,
     navDisplay: getComputedStyle(document.querySelector('.menu-mobile-nav')).display,
     hasReplacementGlyph: document.body.innerText.includes('\\uFFFD'),
+    bodyBackground: getComputedStyle(document.body).backgroundColor,
+    rootColor: getComputedStyle(document.querySelector('.menu-page')).color,
     online57: [...document.querySelectorAll('.menu-book-card')]
       .some((node) => node.innerText.includes('EM 57')),
     width: document.documentElement.scrollWidth,
     viewport: innerWidth
   }))()`)
+  const storyData = await evaluate(`(async () => {
+    const payload = await (await fetch('/data/menu_books.json')).json()
+    const ferrari = payload.records.find((record) => record.id === 'main-038')
+    return {
+      withLocalStory: payload.counts.withLocalStory,
+      ferrariId: ferrari?.storyTextIdZh || '',
+      ferrariZh: ferrari?.storyZh || '',
+      badMarkup: payload.records.filter((record) =>
+        /<sseq|<p\\b|scmd=|\\uFFFD/.test((record.storyZh || '') + (record.storyEn || ''))
+      ).length,
+    }
+  })()`)
   await screenshot('menus_cafe_desktop.png')
 
   await navigate(`${base}/menus_cafe?book=extra-052&lang=both`)
@@ -137,7 +151,9 @@ async function main() {
       '.menu-dialog-header .menu-language-switch button'
     ).length,
     coverLoaded: [...document.querySelectorAll('.menu-dialog-shell img')]
-      .some((node) => node.naturalWidth > 0)
+      .some((node) => node.naturalWidth > 0),
+    shellBackground: getComputedStyle(document.querySelector('.menu-dialog-shell')).backgroundColor,
+    storyCards: document.querySelectorAll('.menu-story-card').length
   }))()`)
   await evaluate(`window.dispatchEvent(
     new KeyboardEvent('keydown', { key: 'ArrowRight', bubbles: true })
@@ -156,6 +172,19 @@ async function main() {
     heading: document.querySelector('.menu-dialog-shell')?.innerText.slice(0, 220) || ''
   }))()`)
   await evaluate(`document.querySelector('.menu-switch')?.click()`)
+
+  await navigate(`${base}/menus_cafe?book=main-038&lang=both`)
+  const story = await evaluate(`(() => {
+    const panel = document.querySelector('.menu-story-card')
+    return {
+      text: panel?.innerText || '',
+      heading: document.querySelector('.menu-dialog-shell')?.innerText.slice(0, 220) || '',
+      bodyBackground: getComputedStyle(document.body).backgroundColor,
+      shellBackground: getComputedStyle(document.querySelector('.menu-dialog-shell')).backgroundColor,
+      hasCommandMarkup: /<sseq|scmd=|<p\\b/.test(panel?.innerText || '')
+    }
+  })()`)
+  await screenshot('menus_cafe_ferrari_story.png')
 
   await metrics(390, 844, true)
   await navigate(`${base}/menus_cafe?book=extra-052&lang=zh`)
@@ -197,11 +226,24 @@ async function main() {
     desktopCovers: desktop.covers === 74 && desktop.loadedVisibleCovers > 0,
     desktopNoMobileNav: desktop.navDisplay === 'none',
     desktopNoMojibakeBox: !desktop.hasReplacementGlyph,
+    desktopLightTheme: /245, 245, 247/.test(desktop.bodyBackground) &&
+      /23, 23, 26/.test(desktop.rootColor),
+    allLocalStoriesExtracted: storyData.withLocalStory === 105 &&
+      storyData.ferrariId === '0x0000823B' &&
+      storyData.ferrariZh.includes('拥有一辆法拉利是一种非常特别的体验') &&
+      storyData.badMarkup === 0,
     online57Present: desktop.online57,
     dialogOpened: dialog.open,
     dialogHyundai: /Hyundai|现代/.test(dialog.heading),
     dialogLanguageControls: dialog.languageButtons === 3,
     dialogCoverLoaded: dialog.coverLoaded,
+    dialogStoryCard: dialog.storyCards === 1,
+    dialogLightTheme: /255, 255, 255/.test(dialog.shellBackground),
+    ferrariStoryComplete: story.heading.includes('Ferrari') &&
+      story.text.includes('拥有一辆法拉利是一种非常特别的体验') &&
+      story.text.includes('something very special about driving a Ferrari'),
+    storyHasNoCommandMarkup: !story.hasCommandMarkup,
+    storyLightTheme: /255, 255, 255/.test(story.shellBackground),
     keyboardTargetStepped:
       stepped.url.includes('book=extra-053') && /Muscle|肌肉/.test(stepped.heading),
     autoplayAdvanced:
@@ -217,7 +259,9 @@ async function main() {
   }
   const report = {
     desktop,
+    storyData,
     dialog,
+    story,
     stepped,
     autoplay,
     fixedBefore,

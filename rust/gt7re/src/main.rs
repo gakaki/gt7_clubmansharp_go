@@ -324,6 +324,10 @@ enum Cmd {
         data_dir: PathBuf,
         #[arg(long, default_value = r"C:\gt7\gt7\_re\reports\dms_rust\dmsdata")]
         dmsb_dir: PathBuf,
+        #[arg(long, default_value = r"C:\gt7\gt7\_re\extracted\text\rtext\common")]
+        rt2_dir: PathBuf,
+        #[arg(long, default_value = r"C:\gt7\gt7\_re\keys\rt2_rust")]
+        key_dir: PathBuf,
         #[arg(long, default_value = r"C:\gt7\gt7\_re\reports")]
         report_dir: PathBuf,
     },
@@ -793,6 +797,8 @@ fn run() -> Result<()> {
             let gpb4_file = PathBuf::from(r"C:\gt7\gt7\contents\3\S\PRPYS");
             let census_csv = reports.join("store_census_rust.csv");
             let research_json = reports.join("research_rust.json");
+            let rt2_dir = repo.join("extracted/text/rtext/common");
+            let key_dir = repo.join("keys/rt2_rust");
 
             let store = Store::scan(&cli.store)?;
             eprintln!(
@@ -810,9 +816,9 @@ fn run() -> Result<()> {
                 )?;
             }
             research::build(&research::Options {
-                rt2_dir: repo.join("extracted/text/rtext/common"),
+                rt2_dir: rt2_dir.clone(),
                 dmsb_dir: dmsb_dir.clone(),
-                key_dir: repo.join("keys/rt2_rust"),
+                key_dir: key_dir.clone(),
                 out: research_json.clone(),
                 legacy_review: Some(reports.join("legacy_review_ids.json")),
                 dealer_data: Some(PathBuf::from(r"C:\gt7\gt7\cs")),
@@ -826,8 +832,11 @@ fn run() -> Result<()> {
                 ..site::Options::default()
             };
             let site_result = site::build(&site_options);
-            let menu_result =
-                site_result.and_then(|_| menu::build(&data_dir, &dmsb_dir, &cli.store, &reports));
+            let menu_result = site_result.and_then(|_| {
+                menu::build(
+                    &data_dir, &dmsb_dir, &rt2_dir, &key_dir, &cli.store, &reports,
+                )
+            });
 
             // Independent binary indexes and avatar decoding share the same
             // immutable content store and run concurrently with the site pass.
@@ -957,9 +966,18 @@ fn run() -> Result<()> {
         Cmd::MenuBuild {
             data_dir,
             dmsb_dir,
+            rt2_dir,
+            key_dir,
             report_dir,
         } => {
-            let payload = menu::build(&data_dir, &dmsb_dir, &cli.store, &report_dir)?;
+            let payload = menu::build(
+                &data_dir,
+                &dmsb_dir,
+                &rt2_dir,
+                &key_dir,
+                &cli.store,
+                &report_dir,
+            )?;
             println!(
                 "{}",
                 serde_json::to_string(payload.get("counts").unwrap_or(&serde_json::Value::Null))?

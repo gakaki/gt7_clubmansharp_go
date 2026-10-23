@@ -39,26 +39,43 @@
       "COVER SOURCE FOUND"
     ],
     "online57Cover": true,
-    "loadedVisibleCovers": 1,
+    "loadedVisibleCovers": 2,
     "navDisplay": "none",
     "hasReplacementGlyph": false,
+    "bodyBackground": "rgb(245, 245, 247)",
+    "rootColor": "rgb(23, 23, 26)",
     "online57": true,
     "width": 1425,
     "viewport": 1440
   },
+  "storyData": {
+    "withLocalStory": 105,
+    "ferrariId": "0x0000823B",
+    "ferrariZh": "拥有一辆法拉利是一种非常特别的体验。\n\n这辆来自1970年代的308GTB是该公司的第一款 两座中置V8引擎车型。\n\n它的继任者之一是458 Italia，另一台备受喜爱的V8车款。\n\n法拉利以在其高端车型中使用V12引擎而闻名……\n\n而且相信你一定已经听到过了F12berlinetta咆哮的声音！\n\n它听起来就像一辆法拉利车队的赛车！\n\n法拉利的创始人恩佐·法拉利在年轻时曾是一名赛车手……\n\n而且他也证明了自己善于管理车队。\n\n1947年，他成立了自己的汽车公司，并以自己的名字命名……\n\n自从1950年一级方程式锦标赛创办以来，法拉利就一直参与其 中，从未离开！\n\n这是其他汽车制造商能没能做到的！\n\n法拉利专注于生产F1车、赛车……\n\n和极致性能的跑车。\n\n这些车的生产数量有限，而且远远称不上便宜…… 所以我才说，拥有一辆法拉利是一种非常特别的体验！",
+    "badMarkup": 0
+  },
   "dialog": {
     "open": true,
-    "heading": "EM52\nEXTRA MENU\nCC082\n收藏：Hyundai N · Collection: Hyundai N\n中\nEN\n双\nIN-GAME COVER\nEXTRA MENU\nEM 52 / CC082\nHyundai N\n\nHyundai N\n\n收藏：Hyundai N\nCollection: Hyundai N\nHyundai\n3\nCARS\n58\nCOLLECTOR\nEM\nTYPE\nOverview\nCars & makes\nGame text\nSources\nMENU BOOK DESCRIPTION\n收藏几辆以字母“N”标志为傲的Hyundai高性能系列车型。\nCollect some high-performance Hyundai cars significantly marked by the letter 'N.'\nREWARD\n\n5★ 轮盘奖券\n5★ Roulette Ticket\n\nCOLLECTION REQUIREMENT\n\n收集：Hyundai IONIQ 5 N '24、Hyundai ELANTRA N '23、HYUNDAI N 2025 Vision Gran Turismo\nCollect: Hyundai IONIQ 5 N '24, Hyundai ELANTRA N '23, HYUNDAI N 2025 Vision Gran Turismo\n\nPrevious\nHyundai N\n103 / 108\nNext",
+    "heading": "EM52\nEXTRA MENU\nCC082\n收藏：Hyundai N · Collection: Hyundai N\n中\nEN\n双\nIN-GAME COVER\nEXTRA MENU\nEM 52 / CC082\nHyundai N\n\nHyundai N\n\n收藏：Hyundai N\nCollection: Hyundai N\nHyundai\n3\nCARS\n58\nCOLLECTOR\nEM\nTYPE\nOverview\nCars & makes\nGame text\nSources\nMENU BOOK DESCRIPTION\n收藏几辆以字母“N”标志为傲的Hyundai高性能系列车型。\nCollect some high-performance Hyundai cars significantly marked by the letter 'N.'\nMENU BOOK STORY\n0x0000D1DE\n\n这个星辉闪耀的收藏充分体现了 现代在高性能汽车制造领域的执著追求。\n\n自1967年创立以来，现代已经 成长为享誉全球的汽车制造商。\n\n在赛车运动领域，现代同样作为中坚力量，长期活跃 在国际拉力赛与房车赛的赛场上。\n\n为了将竞速运动和量产车两方面的经验相融合， 现代于2015年正式推出了高性能“N”品牌。\n\n该品牌名称取自现代的两大研发基地， 南阳研究所和纽博格林赛道的首字母。\n\n源自赛道的基因，令现代“N”系车型 展现出令人血脉偾张的高性能驾驶体验。\n\n艾尼氪5 N是一款灵巧的全驱动车型， 虽然重量超过两吨，仍然能轻松施展漂移。\n\n其动力输出高达 ，而且能够模拟再现 传统燃油车的引擎轰鸣和",
     "languageButtons": 3,
-    "coverLoaded": true
+    "coverLoaded": true,
+    "shellBackground": "rgb(255, 255, 255)",
+    "storyCards": 1
+  },
+  "story": {
+    "text": "MENU BOOK STORY\n0x0000823B\n\n拥有一辆法拉利是一种非常特别的体验。\n\n这辆来自1970年代的308GTB是该公司的第一款 两座中置V8引擎车型。\n\n它的继任者之一是458 Italia，另一台备受喜爱的V8车款。\n\n法拉利以在其高端车型中使用V12引擎而闻名……\n\n而且相信你一定已经听到过了F12berlinetta咆哮的声音！\n\n它听起来就像一辆法拉利车队的赛车！\n\n法拉利的创始人恩佐·法拉利在年轻时曾是一名赛车手……\n\n而且他也证明了自己善于管理车队。\n\n1947年，他成立了自己的汽车公司，并以自己的名字命名……\n\n自从1950年一级方程式锦标赛创办以来，法拉利就一直参与其 中，从未离开！\n\n这是其他汽车制造商能没能做到的！\n\n法拉利专注于生产F1车、赛车……\n\n和极致性能的跑车。\n\n这些车的生产数量有限，而且远远称不上便宜…… 所以我才说，拥有一辆法拉利是一种非常特别的体验！\n\nAsk anyone who owns one, there's something very special about driving a Ferrari.\n\nThis 308GTB from the 1970s was the company's first mid-engine sports car.\n\nOne of its successors was the 458 Italia, another much-loved V-8-powered machine.\n\nFerrari is also reputed for equipping its high-end cars with V-12 engines. Perhaps you've heard the sound of one before?\n\nOne of them is in the F12berlinetta.\n\nFerrari's founder, Enzo Ferrari, was a race driver before he founded his company.\n\nDuring his race career, he also ran his own race team, identified by a prancing horse logo.\n\nIn 1947, he established his own car company that's still recognized by that famous emblem.\n\nFerrari cars have been competing in Formula 1 ever since the series was established in 1950.\n\nNo other car manufacturer has managed that!\n\nFerrari focus on producing F1 cars, racing cars...\n\n...and extremely high-performance sports cars.\n\nThey're produced in limited numbers, and are quite expensive, which is why getting your hands on one is special!",
+    "heading": "38\nMAIN MENU BOOK\nMB693\n收集：Ferrari · Collection: Ferrari\n中\nEN\n双\nIN-GAME COVER\nMAIN MENU BOOK\nNo.38 / MB693\nFerrari\n\nFerrari\n\n收集：Ferrari\nCollection: Ferrari\nFerrari\n3\nCARS\n—\nCOLLECTOR\nMB\nTYPE\nOverview\nCars & makes\nGame te",
+    "bodyBackground": "rgb(245, 245, 247)",
+    "shellBackground": "rgb(255, 255, 255)",
+    "hasCommandMarkup": false
   },
   "stepped": {
     "url": "?book=extra-053&lang=both",
-    "heading": "EM53\nEXTRA MENU\nCC083\n收藏：肌肉车 · Collection: Muscle Cars\n中\nEN\n双\nIN-GAME COVER\nEXTRA MENU\nEM 53 / CC083\n肌肉车\n\nMuscle Cars\n\n收藏：肌肉车\nCollection: Muscle Cars\nChevrolet\nDodge\nPontiac\n3\nCARS\n55\nCOLLECTOR\nEM\nTYPE\nOverview\nCars & makes\nGame text\nSources\nMENU BOOK DESCRIPTION\n来收集几辆纯正的美国赛车吧，它们是这个自由与勇气之国的典范。\nCollect some American-born cars that capture the raw power, big engines, and bold spirit of the open road.\nREWARD\n\n5★ 轮盘奖券\n5★ Roulette Ticket\n\nCOLLECTION REQUIREMENT\n\n收集：Chevrolet Chevelle SS 454 Sport Cou"
+    "heading": "EM53\nEXTRA MENU\nCC083\n收藏：肌肉车 · Collection: Muscle Cars\n中\nEN\n双\nIN-GAME COVER\nEXTRA MENU\nEM 53 / CC083\n肌肉车\n\nMuscle Cars\n\n收藏：肌肉车\nCollection: Muscle Cars\nChevrolet\nDodge\nPontiac\n3\nCARS\n55\nCOLLECTOR\nEM\nTYPE\nOverview\nCars & makes\nGame text\nSources\nMENU BOOK DESCRIPTION\n来收集几辆纯正的美国赛车吧，它们是这个自由与勇气之国的典范。\nCollect some American-born cars that capture the raw power, big engines, and bold spirit of the open road.\nMENU BOOK STORY\n0x0000D33D\n\n眼前的这套收藏捕捉ሰ了 美固汽车设詡的熵魂——雄壮、张扬以及自由奔擾！\n\n20世纪50年伣是美国汽车的黄金岁月。 但进入20世纪60年代后，"
   },
   "autoplay": {
     "url": "?book=extra-057&lang=zh",
-    "heading": "EM57\n追加菜单 / 收藏菜单\nCC115\n收藏：勒芒冠军赛车\n中\nEN\n双\n游戏内封面\n1.72 新增\n追加菜单 / 收藏菜单\nEM 57 / CC115\n勒芒冠军赛车\n收藏：勒芒冠军赛车\nFerrari\nFord\nMcLaren\n3\n车辆\n90\n收藏等级\nEM\n分类\n概览\n车辆与厂商\n游戏文字\n数据来源\n菜单书说明\n收集指定三款勒芒冠军赛车，完成这本追加菜单。\n完成奖励\n\n6★ 轮盘奖券\n\n收藏条件\n\n收集：Ferrari 499"
+    "heading": "EM57\n追加菜单 / 收藏菜单\nCC115\n收藏：勒芒冠军赛车\n中\nEN\n双\n游戏内封面\n1.72 新增\n追加菜单 / 收藏菜单\nEM 57 / CC115\n勒芒冠军赛车\n收藏：勒芒冠军赛车\nFerrari\nFord\nMcLaren\n3\n车辆\n90\n收藏等级\nEM\n分类\n概览\n车辆与厂商\n游戏文字\n数据来源\n菜单书说明\n收集指定三款勒芒冠军赛车，完成这本追加菜单。\n菜单书故事\n更新摘要\n\n收集指定三款勒芒冠军赛车，完成这本追加菜单。\n"
   },
   "fixedBefore": {
     "top": 770,
@@ -79,11 +96,18 @@
     "desktopCovers": true,
     "desktopNoMobileNav": true,
     "desktopNoMojibakeBox": true,
+    "desktopLightTheme": true,
+    "allLocalStoriesExtracted": true,
     "online57Present": true,
     "dialogOpened": true,
     "dialogHyundai": true,
     "dialogLanguageControls": true,
     "dialogCoverLoaded": true,
+    "dialogStoryCard": true,
+    "dialogLightTheme": true,
+    "ferrariStoryComplete": true,
+    "storyHasNoCommandMarkup": true,
+    "storyLightTheme": true,
     "keyboardTargetStepped": true,
     "autoplayAdvanced": true,
     "mobileNavVisible": true,

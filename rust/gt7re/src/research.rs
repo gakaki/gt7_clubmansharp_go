@@ -16,8 +16,8 @@ use walkdir::WalkDir;
 
 use crate::rt2::{self, Rt2File};
 
-type LocalisationTexts = HashMap<(String, u32), String>;
-type LocalisationLabels = HashMap<(String, String), u32>;
+pub type LocalisationTexts = HashMap<(String, u32), String>;
+pub type LocalisationLabels = HashMap<(String, String), u32>;
 
 pub const LANGUAGE_CODES: &[&str] = &[
     "ar", "cn", "cz", "de", "es", "fr", "gb", "it", "jp", "kr", "nl", "pl", "pt", "ru", "th", "tr",
@@ -725,7 +725,7 @@ fn resolve_cars(
     (Vec::new(), "unresolved")
 }
 
-fn load_localisation(
+pub fn load_localisation(
     lang: &str,
     rt2_dir: &Path,
     key_dir: &Path,
@@ -764,8 +764,7 @@ fn load_localisation(
     {
         let cache_path = extracted.join("text_decoded").join(format!("{lang}.json"));
         if let Ok(bytes) = fs::read(&cache_path) {
-            if let Ok(Value::Object(sections)) = serde_json::from_slice::<serde_json::Value>(&bytes)
-            {
+            if let Ok(Value::Object(sections)) = serde_json::from_slice::<Value>(&bytes) {
                 for (section, values) in sections {
                     let Some(values) = values.as_object() else {
                         continue;
