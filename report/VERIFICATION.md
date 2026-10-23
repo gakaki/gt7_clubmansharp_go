@@ -45,3 +45,6 @@ images=582 speakers=14 car_texts=634 text_cars=581 review=253
 ```text
 PASS avatars=19 cafe=15 unique_hashes=19 min_pair_distance=5
 ```
+
+Two consecutive `gt7re pipeline` runs produced identical SHA-256 hashes for
+the research JSON, dealer/vehicle/cafe CSV files and avatar manifest.

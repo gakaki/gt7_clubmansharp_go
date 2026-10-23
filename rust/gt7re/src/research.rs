@@ -1052,7 +1052,7 @@ fn recover_partial_next_targets(
     raw: &str,
     current_message_id: u32,
     car_key: &str,
-    messages: &HashMap<u32, CafeMessage>,
+    messages: &BTreeMap<u32, CafeMessage>,
 ) -> Vec<u32> {
     let lower = raw.to_ascii_lowercase();
     let mut out = Vec::new();
@@ -1295,6 +1295,11 @@ pub fn build(options: &Options) -> Result<Research> {
             target.texts.insert("brandCentral".into(), text);
         }
     }
+    text_entries.sort_by(|a, b| {
+        a.category
+            .cmp(&b.category)
+            .then_with(|| a.text_id.cmp(&b.text_id))
+    });
     let dealer_offers =
         attach_dealer_offers(options.dealer_data.as_deref(), &mut cars, &text_entries)?;
 
@@ -1304,7 +1309,7 @@ pub fn build(options: &Options) -> Result<Research> {
         .map(|((_, label), id)| (label.clone(), *id))
         .collect();
     let messages_table = Dmsb::parse(&dmsb_dir.join("GTCafeMessages.dmsb"))?;
-    let mut messages_by_id = HashMap::new();
+    let mut messages_by_id = BTreeMap::new();
     let mut dms_labels = HashSet::new();
     for row in &messages_table.rows {
         let message_id = u32le(row, 0)?;
@@ -1386,7 +1391,7 @@ pub fn build(options: &Options) -> Result<Research> {
     for message in messages_by_id.values_mut() {
         message.is_detail = message.raw.to_ascii_lowercase().contains("cardetail");
     }
-    let mut orphan_by_car: HashMap<String, Vec<u32>> = HashMap::new();
+    let mut orphan_by_car: BTreeMap<String, Vec<u32>> = BTreeMap::new();
     for message in messages_by_id.values() {
         if matches!(
             message.car_key.as_str(),
@@ -1551,6 +1556,11 @@ pub fn build(options: &Options) -> Result<Research> {
             }
         }
     }
+    cafe_scenes.sort_by(|a, b| {
+        a.conversation_key
+            .cmp(&b.conversation_key)
+            .then_with(|| a.car_key.cmp(&b.car_key))
+    });
 
     let mut detail_rows: Vec<Turn> = messages_by_id
         .values()
@@ -1600,6 +1610,7 @@ pub fn build(options: &Options) -> Result<Research> {
             variant: 0,
         });
     }
+    detail_rows.sort_by(|a, b| a.id.cmp(&b.id));
     for row in &detail_rows {
         let source_name = display.get(&row.car_key).cloned().unwrap_or_default();
         let indices = if let Some((ids, _)) = detail_override(&row.id) {
@@ -1628,6 +1639,13 @@ pub fn build(options: &Options) -> Result<Research> {
         car.conversation.retain(|turn| seen_turns.insert(turn.id.clone()));
         let mut seen_dialogues = HashSet::new();
         car.dialogues.retain(|row| seen_dialogues.insert(row.id.clone()));
+        car.conversation.sort_by(|a, b| {
+            a.scene_key
+                .cmp(&b.scene_key)
+                .then_with(|| a.scene_order.cmp(&b.scene_order))
+                .then_with(|| a.id.cmp(&b.id))
+        });
+        car.dialogues.sort_by(|a, b| a.id.cmp(&b.id));
     }
 
     let legacy_ids: HashSet<String> = options

@@ -284,6 +284,26 @@ that pumps out 760ps!
 
 As its name suggests, production of the car was limited to
 77 units, making it a highly sought collector's item.i",
+brandCentral,0x00004F02,0,,Caterham Seven Superlight R500 '08,0x0000D4C5,message-key-override,"Carving through a corner with absolute precision
+captures the very essence of driving.
+
+Few automakers have pursued that sensation with as
+much single-minded determination as Caterham.
+
+Introduced in 1999, the Superlight R500 represented
+the most extreme expression of the iconic Seven.
+
+With extensive use of lightweight materials, the R500
+tipped the scales at a mere 500kg.
+
+In 2008, it was refitted with a 2-liter Ford Duratec engine
+producing 266ps and ample torque in the low-to-mid rpm range.
+
+The R500 name reflected its remarkable
+500-horsepower-per-ton power-to-weight ratio.
+
+Free of electronic driver aids and unnecessary comforts, it
+remains a vivid reminder of what a pure sports car can be.",
 brandCentral,0x00004F03,1020042,corvette_zr1_09,Corvette ZR1 (C6) '09,0x000084CB,brand-prefix-display-name,"This ZR1 is the most potent version of the sixth-generation
 Corvette.
 
@@ -2914,6 +2934,23 @@ its mid-mounted engine.
 
 Considerable aerodynamic improvements were also implemented, 
 making this machine stable at high speeds.",
+brandCentral,0x00005046,0,,Fittipaldi EF7 Vision Gran Turismo by Pininfarina,0x0000763D,message-key-override,"Emerson Fittipaldi is one of the true legends of motorsports.
+His credentials include...
+
+...two-time Formula 1 champion...
+
+...two-time Indy 500 winner...
+
+...and now, car designer. This Vision Gran Turismo model is
+his take on the perfect race car.
+
+Its official name is the Fittipaldi EF7 VGT by Pininfarina.
+
+The concept was to create a car that anyone could drive,
+but one that could also be a serious racing contender.
+
+And as anyone taking the wheel will see, that concept
+has become reality.=",
 brandCentral,0x00005047,1020366,tt_cup_16,TT Cup '16,0x00006F6A,brand-prefix-display-name,"This race car, based on the third-generation Audi TT, was
 designed to compete in a one-make race.
 
@@ -2992,6 +3029,23 @@ the chassis for serious track sessions.
 
 According to Wicked Fabrication, more than 10,000 hours
 were spent in building this special car.",
+brandCentral,0x00005051,0,,Mercedes-AMG F1 W08 EQ Power+ 2017,0x00007600,message-key-override,"The AMG F1 W08 EQ Power+ dominated the 
+2017 Formula 1 season.
+
+The engine was a turbocharged 1.6-liter V-6 with a 
+unique integrated hybrid energy recovery unit.
+
+The car was driven by Lewis Hamilton and 
+Valtteri Bottas.
+
+Between the two of them, they notched up an 
+impressive 12 victories in 20 races.
+
+This performance earned Hamilton his fourth 
+World Drivers Championship.
+
+Mercedes AMG also claimed its
+fourth consecutive Constructors Championship.",
 brandCentral,0x00005052,1020377,f1500t_a_xx,F1500T-A,0x00004222,brand-prefix-display-name,"There's nothing quite like a 1980s Formula 1 car.
 
 They were stylish, powerful and downright raw, with 
@@ -3056,6 +3110,17 @@ The name ""Athlete"" was chosen to represent its
 distinctively sporty nature.
 
 It's a shame that the car has never been marketed worldwide.",
+brandCentral,0x0000505D,0,,Mercedes-AMG F1 W08 EQ Power+ (Color Variation) 2017,0x00007601,message-key-override,"AMG's W08 EQ Power+ was an unstoppable force in the 2017
+Formula 1 season.
+
+This particular version features an all-new color scheme
+that gives the dominant race car some flash.
+
+Like the previous year, the AMG F1 team dominated in 2017 taking
+its fourth straight Constructors Championship.
+
+Ace driver Lewis Hamilton also had a stellar year,
+winning his fourth Drivers Championship.",
 brandCentral,0x0000505E,1020389,dallara_sf19_toyota_19,Dallara SF19 Super Formula / Toyota '19,0x000075F6,exact-display-name,"The Dallara SF19 Super Formula was built for Japan's
 top-level formula racing series.
 
@@ -3183,6 +3248,13 @@ from the marque's rich motorsports history.
 
 The past, the present and future;
 they're all are here in this one exquisite vehicle.",
+brandCentral,0x0000506D,0,,Mercedes-Benz AMG Vision Gran Turismo LH Edition,0x00007630,message-key-override,"This special edition of the Mercedes-Benz AMG Vision Gran
+Turismo is named for racing legend Lewis Hamilton.
+
+Key differences from the base model include the rich
+Bordeaux bodywork and the large fixed rear wing,
+
+Also, the power of the engine has been increased to 600ps.",
 brandCentral,0x0000506E,1020405,_917_ll_14,917 LIVING LEGEND,0x00008050,brand-prefix-display-name,"How much do you know about Porsche's legendary 917 race car?
 
 It brought the company its first ever overall victory at 
@@ -4189,29 +4261,6 @@ to greater power and torque.
 
 And tweaks to the inertia and friction of its moving parts
 have made for better driving in the high RPM range.",
-brandCentral,0x0000A5C8,1020643,ferrari_vision_gt_22,Ferrari Vision Gran Turismo,0x0000A5CD,verified-car-key-alias,"�his is the Ferrari Vision Gran Turismo.
-
-It's a single-seat concept car with a futuristic design—
-Ferrari's first foray into the virtual motorsports world.
-
-This model is inspired by sports prototypes from the
-1960s and 1970s...
-
-...and it shares some of its DNA with legendary race cars,
-such as the Ferrari 330 P3 and the 512S.
-
-This is a car that builds on Ferrari's racing pedigree to 
-make its mark in the endurance races of the future.
-
-The Ferrari VGT's body construction...
-It stands to reason, therefore, that its aerodynamic
-properties are cutting-edge.
-
-Its powertrain is a turbocharged 3.0-liter V6 hybrid, just like
-the one used in Ferrari's LMH.
-
-Because the FIA's regulations don't actually apply to the
-VGT, it is in fact more powerful than the LMH!J",
 brandCentral,0x000082A1,1020653,kangoo_01,Renault Kangoo 2001,0x0000C4BE,verified-car-key-alias,"Are you familiar with the term ""fourgonnette?""
 It’s a French word that means a light van.
 
@@ -4646,6 +4695,29 @@ and a specially calibrated suspension.
 
 These advancements elevate the GT-R to new heights in the 
 evolution of the touring car.",
+brandCentral,0x0000A5C8,1020643,ferrari_vision_gt_22,Ferrari Vision Gran Turismo,0x0000A5CD,verified-car-key-alias,"�his is the Ferrari Vision Gran Turismo.
+
+It's a single-seat concept car with a futuristic design—
+Ferrari's first foray into the virtual motorsports world.
+
+This model is inspired by sports prototypes from the
+1960s and 1970s...
+
+...and it shares some of its DNA with legendary race cars,
+such as the Ferrari 330 P3 and the 512S.
+
+This is a car that builds on Ferrari's racing pedigree to 
+make its mark in the endurance races of the future.
+
+The Ferrari VGT's body construction...
+It stands to reason, therefore, that its aerodynamic
+properties are cutting-edge.
+
+Its powertrain is a turbocharged 3.0-liter V6 hybrid, just like
+the one used in Ferrari's LMH.
+
+Because the FIA's regulations don't actually apply to the
+VGT, it is in fact more powerful than the LMH!J",
 brandCentral,0x0000AAF3,1020745,mercedes_amg_gt3_evo_19, Mercedes-AMG GT3  (2020),0x0000AB4E,dms-car-key-override,"The AMG GT3 is a popular race car that has competed
 in GT3 races all over the world.
 
@@ -5271,6 +5343,2305 @@ giving it the speed to handle safety car duties with authority.
 
 The roof-mounted light bar may go unnoticed, but it remains
 essential for maintaining order and safety on the circuit.�",
+brandCentral,0x0000D4C2,0,,Hyundai IONIQ 6 N '25,0x0000D4C8,message-key-override,"There is a question looming over the modern age: Is the
+sports car destined to go the way of the dodo?
+
+The IONIQ 6 N is Hyundai N’s answer to that question,
+redefining the sports car for the EV era.
+
+Its sleek streamliner silhouette boasts a Cd of 0.27, blending
+aerodynamic efficiency with striking design.
+
+Beneath that shape is 609ps and 740 Nm of torque.
+But there is more here than mere brute force.
+
+When N Grin Boost is activated, the IONIQ 6 N’s
+0-100km/h sprint drops to just 3.2 seconds.
+
+Its N e-Shift simulates a physical gearbox, backed
+by the roar of its N Active Sound+ system.
+
+Crowned 2026 World Performance Car, this machine
+proves the electric sports car’s future has arrived.",
+collection,0x00008CCE,1030007,_300sl_coupe_54,300 SL Coupé '54,0x000075D2,brand-prefix-display-name,"The Mercedes-Benz 300 SL Coupe is a classic car 
+with a real racing pedigree.
+
+It was based on the legendary W194 racing coupe,
+which won races all over the world,
+
+including the 24 hours of Le Mans, and the 
+Carrera Panamericana,
+
+a victory which really turned heads in North America.
+
+East coast importer Max Hoffman asked the German manufacturer
+to produce a road version of the W194.
+
+Some dealers claimed to have a hundred orders waiting
+
+Mercedes-Benz relented, and the 300 SL “Gullwing” Coupe resulted.
+
+It's undoubtedly one of the most important models in the
+company's history!&",
+collection,0x00008CD1,1030010,f40_92,F40 '92,0x00007602,brand-prefix-display-name,"The F40 was the last Ferrari to have been personally
+approved by the company's founder, Enzo Ferrari.
+
+The development codename of the F40 was ""LM,"" 
+standing for ""Le Mans"".
+
+You can see that it was designed as a road car, while
+it has the appearance of a serious race car.
+
+Some say that the F40 suffers from
+turbo lag and a peaky engine...
+
+...but I consider it to be a very refined example
+of Ferrari engineering.
+
+Many professional drivers maintain that the the engine
+has very few shortcomings if it is properly controlled. 
+
+That means, if you have the driving skill,
+you can handle it.&",
+collection,0x00008CE8,1030033,castrol_toms_supra_97,Supra GT500 '97,0x0000427E,brand-prefix-display-name,"The 1997 Castrol TOM'S Supra is one of the most famous
+race cars in the history of Japanese motorsports.
+
+The All Japan Grand Touring Championship was a very popular
+event in Japan from the late 1990s to the early 2000s.
+
+It featured cars like the Nissan Skyline GT-R, the Honda NSX,
+and of course, the Toyota Supra.
+
+Nissan's GT-Rs dominated the series 
+in the beginning.
+
+But the first car that challenged its dominance 
+was this 1997 Castrol TOM'S Supra.
+
+The Supra would go on to win the All Japan GT Championship
+four times.
+
+But it's this iconic TOM's Supra that I remember most fondly.",
+collection,0x00008CE9,1030034,_787b_91,787B '91,0x0000426E,brand-prefix-display-name,"�o you know about the 1991 Le Mans 24 Hours?
+
+In the final year that rotary engines were allowed to compete,
+Mazda defied the odds and won in miraculous fashion.
+
+The winning race car was the 787B, powered by 4-rotor engine,
+which outlasted powerhouse rivals like Jaguar and Porsche.
+
+The victory was made even sweeter by the fact that Mazda
+became the only Japanese company to win the historic race.
+
+After a bad showing the previous year, no one expected the
+787B to do well in 1991, quali�ying in 19th position.
+
+However, the Mazda team was undeterred and ran a strategic
+and consistent race, taking the checkered flag.
+
+The drivers who accomplished the impossible were Volker Weidler,
+Johnny Herbert and Bertrand Gachot.
+
+After the race, the now-historic No. 55 car was safely stowed
+away to be preserved forever.
+
+Then, in 2011, the car was restored and returned to Le Mans for a
+demo run celebrating the 20th anniversary of its victory.",
+collection,0x00008CF2,1030043,challenger_rt_70,Challenger R/T '70,0x0000420E,brand-prefix-display-name,"This is a 1970 model, first-generation Dodge Challenger.
+
+And it happens to be an R/T series, powered by a 426 Hemi
+engine, which features hemispherical combustion chambers.
+
+The 1970 models debuted in 1969, and customers had a choice
+between the basic straight-six model and this R/T.
+
+The basic model was classified as a ""pony car,"" while the R/T
+was considered a true muscle car.
+
+Relatively few Dodge Challenger R/Ts were produced,
+so today they are worth quite a lot.
+
+In fact, I'd go so far as to say that this Hemi R/T is a true
+collector's item.",
+collection,0x00008CF3,1030044,_330_p4_67,330 P4 '67,0x000075D5,brand-prefix-display-name,"The Ferrari 330 P4 is, without a doubt, one of the 
+most beautiful race cars in the world.
+
+And one of the rarest also.
+
+The Ferrari P series are sports cars with a mid-mounted
+V-12 engine.
+
+First developed in 1963, they have an amazing track record,
+with many historic wins over the years.
+
+The development of the P series was stepped up
+to challenge Ford at Le Mans...
+
+...and it reached its pinnacle with the P4 in 1967.
+
+At the 1967 Daytona 24-hour race, two 330 P4s and one 412P
+pulled off a spectacular 1-2-3 finish.
+
+Even if you include the P3 modified to P4 specifications,
+only four 330 P4s were ever produced.U",
+collection,0x00008CF5,1030046,_365_gtb4_71,365 GTB4 '71,0x000075D6,brand-prefix-display-name,"�he 365 GTB4 remains one of the most memorable Ferraris.
+
+It made its debut in 1968...
+
+...as the successor to iconic 1960s Ferraris
+like the 250 GT Lusso and the 275 GTB.
+
+It is a front engine/rear-wheel-drive model,
+powered by a 4-cam 4390cc V-12.
+
+Like all Ferraris of the period, the first number indicated
+the displacement per cylinder.
+
+The ""GT"" stood for ""Gran Turismo.""
+
+The ""B"" designated it as a ""Berlinetta,"" 
+meaning that it was a coupe.
+
+And the ""4"" represented th� 4-cam engine with 
+double overhead cams on each cylinder bank.
+
+Most people know this car as the 
+Ferrari Daytona.
+
+A name inspired by the company's historic 1-2-3 finish at
+the Daytona 24 Hours in '67, a year prior to its release.
+
+A major achievement indeed!�",
+collection,0x00008CF8,1030049,gt40_mk1_66,GT40 Mark I '66,0x0000422E,brand-prefix-display-name,"When most people think of the Ford GT40, they think of
+Carroll Shelby, and they wouldn't be wrong.
+
+But it's worth mentioning that Shelby wasn't actually involved
+with the first GT40 Mark I, which appeared in 1964.
+
+The Mark I was a car with a fantastic concept.
+
+I think the way it retains the look of a classic GT car
+makes it especially beautiful.
+
+The only thing the Mark I was missing was the reliability
+required for endurance racing.
+
+That's why Ford decided to hand a large part of its
+racing program over to Shelby.
+
+And, the rest is history.
+
+But the GT40 Mark I is where it all began, and because of that, 
+it's considered a prized collector's item.",
+collection,0x00008CFA,1030051,gt350_65,G.T.350 '65,0x0000422D,brand-prefix-display-name,"�he 1965 Shelby GT350 is a variant of the Mustang
+that debuted in 1964.
+
+It was a model that was born from the collaboration between
+Ford and Carroll Shelby,
+
+and has a fantastic history of successes 
+in the world of racing.
+
+Ford's then General Manager, Lee Iacocca, is generally 
+regarded as the man behind the Mustang.
+
+In addition to knowing how to build cars people wanted. 
+Iacocca understood the value of motorsport,
+
+which is why he entrusted the Mustang's
+racing project to Sh�lby.
+
+The result of this new collaboration was the GT350.
+
+Being made specifically for racing, it's very spartan
+compared to the standard Mustang,
+
+its light, 2-seat setup and high-performance 289 engine 
+ensured success in SCCA and other competition races.�",
+collection,0x00008CFB,1030052,miura_p400_proto_67,Miura P400 Bertone Prototype '67,0x00004237,brand-prefix-display-name,"�he legendary Miura supercar was actually Lamborghini's
+first midship design.
+
+This car is chassis 0706—the second of the first five cars
+built—and is the oldest Miura in existence
+
+Even for a brand as storied as Lamborghini, 
+the Miura is especially legendary.
+
+Its chassis—designed by Gian Paolo Dallara—was displayed 
+without a body, at the 1965 Turin Salon.
+
+Those who saw it thought it was a sure sign that Lamborghini
+was going to start racing!
+
+The reaction was enough to�persuade company founder
+Ferruccio Lamborghini to greenlight its development,
+
+and the first prototype Miura was completed the
+following year in 1966.
+
+This chassis number 0706 has miraculously survived the years
+without any restoration work,
+
+and it was entered in the Pebble Beach Concours d'Elegance
+in 2008, where it won the Gran Turismo Trophy.�",
+collection,0x00008CFE,1030055,mclaren_f1_94,McLaren F1 '94,0x00007622,exact-display-name,"Is the McLaren F1 the greatest supercar of them all?
+Quite possibly.
+
+McLaren's founder, Bruce McLaren, had always wanted to
+enter the road car business,
+
+but died in 1970 before a true production car
+could be developed.
+
+The company would not start working on road cars again
+until the late 1980s.
+
+And this 3 seater ""McLaren F1"" was finally born in 1992.
+
+Conceived and engineered by Gordon Murray, the exterior and
+Interior were designed by Peter Stevens.
+
+Many aspects of this car, including the weight balance
+and distribution, are close to perfection.
+
+Needless to say with only 106 built, they're not easy to get.
+
+It’s little wonder that the McLaren F1 is one of the most
+desirable supercars ever.",
+collection,0x00008CFF,1030056,mclaren_f1_gtr_lemans_95,McLaren F1 GTR - BMW '95,0x00007623,exact-display-name,"This McLaren F1 GTR is the overall winner
+of the 1995 Le Mans 24 Hour race.
+
+The drivers in the race were Masanori Sekiya, J.J. Lehto,
+and Yannick Dalmas,
+
+and Sekiya was the first Japanese driver to win the famed race,
+
+and Lehto was also the first Finn to claim this honor.
+
+Although design engineer Gordon Murray was not
+keen on entering it in races,
+
+he agreed to make some aerodynamic alterations,
+and the result was a win at its first race,
+
+which happened to be at Le Mans!
+
+ Following the Le Mans victory, McLaren resolved to
+continue developing the GTR as a race car,
+
+making this a crucial icon in both the history
+of McLaren and in the history of Le Mans.i",
+collection,0x00008D06,1030063,cobra_67,Cobra 427 '66,0x00004211,brand-prefix-display-name,"�arroll Shelby, who won at Le Mans and even competed in
+Formula 1, was one of America's greatest car enthusiasts……
+
+who has a permanent place in automotive history.
+
+After he retired from driving, Shelby became a constructor,
+with a focus on developing road cars that could win races.
+
+The 'Cobra' is one of the iconic cars produced by Shelby.
+
+First production lots were shipped out in the spring of 1963,
+
+ and were initially powered by Ford’s 260 CID engine, which
+were soon repl�ced by the 289 CID unit.
+
+And the legendary Cobra 427 was introduced in 1964.
+
+The Cobra 427 was powered by a 7L Ford 427,
+
+which was an engine selected by Shelby with the aim to
+defeat Ferrari in competition.
+
+With their proven competition pedigree and aggressive looks,
+
+big block Cobras are sought after by car enthusiasts
+all over the world.�",
+collection,0x00008D09,1030066,_250_gto_62,250 GTO '62,0x000075D0,brand-prefix-display-name,"�his 250 GTO is one of the last Ferraris to combine 
+the characteristics of road cars and racing cars.
+
+It's not the rarest Ferrari of them all, and maybe
+there are fairer models around.
+
+But if you like good stories, I'm sure you'll become
+fond of this car!
+
+Even if you include the 330 GT and the series 2 cars, 
+only 39 of these 250 GTOs were built in total.
+
+and each one of them has its own unique tale.
+
+This car, chassis number 3729GT, is a right-hand drive
+built for the UK.
+�
+It was purchased by Jaguar dealer
+and race car driver John Coombs,
+
+and it was originally white but painted red in 1966.
+
+Really famous drivers including Graham Hill, Richie Ginther
+and Mike Parkes, drove this car in the UK during the 1960s.
+
+It was later owned and raced by the British racing driver
+Jack Sears for several years.
+
+Since 1999 it's been owned by former Microsoft President
+and chief operating officer, John Shirley.
+
+The price of this particular car takes this long stor�ed
+history into account.E",
+collection,0x00008D0E,1030071,xj13_66,XJ13 '66,0x0000765E,brand-prefix-display-name,"Jaguar played a huge part in the history of the
+24 Hours of Le Mans,
+
+winning this famous race five times in the 1950s with the
+C-Type and D-Type.
+
+However Jaguar withdrew from competition at Le Mans after 1956,
+and didn't show interest in racing again until the 1960s.
+
+But development of a sports car to succeed the D-Type 
+had been secretly underway.
+
+That successor of the D-Type, is the car you see before you, 
+the XJ13 with a midship mounted V12.
+
+But unfortunately, this XJ13 never made it to Le Mans. 
+
+By the time the car was ready, management's priorities
+had changed again.
+
+We can only imagine what might have happened,
+
+had Jaguar been part of the legendary Ford-Ferrari tussle
+at the '67 Le Mans.",
+collection,0x00008D0F,1030072,_155_v6ti_dtm_93,155 2.5 V6 TI '93,0x000075CE,brand-prefix-display-name,"This is one of the most recognizable cars from the 1990s
+German touring car championship known as the DTM.
+
+After regulations were loosened in 1993, the DTM became a
+platform for developing some very powerful cars.
+
+One of these was the Alfa 155 2.5 V6 TI, which was fielded
+by the Alfa Romeo works team.
+
+Winning 12 out of 20 races in 1993...
+
+...it secured the championship title for both
+driver Nicola Larini and the manufacturer.
+
+The DTM later became a more international competition
+before being discontinued in 1996.
+
+This meant that Alfa Romeo would go down in history as the
+only non-German manufacturer to win the series.
+
+It's one of the most significant DTM cars whose uniqueness
+lies in its heritage.",
+collection,0x00008D12,1030075,camaro_z28_302_69,Camaro Z28 '69,0x0000420B,brand-prefix-display-name,"�he 1969 Z28 was the last of the first-generation Camaros
+and is considered one of the greatest of them all.
+
+After only three years of production, 700,000 units were sold.
+
+The lineup included 12 different engines, 
+including inline-6- and V-8-powered variants.
+
+This Z28 represented the top-of-the-line version of
+that first-generation model.
+
+It came with a high-revving 5.0-liter V-8,
+a 4-speed manual gearbox and power disc brakes.
+
+And the car was distinguished as a Z28 by two wid� stripes
+that ran the length of its body.
+
+There's an interesting backstory to the Z28's engine, too.
+
+It was actually based on a race engine. The 5.0-liter V-8
+was essentially a de-tuned version of the engine...
+
+...originally developed for the Penske Camaro
+that competed in the SCCA Trans Am Series.
+
+The Penske Camaro was driven by the legendary American
+race driver Mark Donahue.
+
+He won the Trans Am series in both 1968 and 1969.%",
+collection,0x00008D13,1030076,chaparral_2j_race_70,2J '70,0x0000428D,brand-prefix-display-name,"�ave you ever considered who had the most influence over
+modern racing car technology?
+
+For me, that would be either Colin Chapman or Jim Hall. 
+
+Chapman, of course, was the founder of Lotus.
+But do you know Jim Hall?
+
+He is the founder of Chaparral Cars, 
+
+but also a driver who competed in Formula 1,
+as well as being a brilliant engineer.
+
+The most innovative of all the Chaparral cars was
+this 1970 2J, aka the “sucker” car.
+
+It featured two fans at the rear of the chassis, �hich were
+a part of a suction system that produced downforce.
+
+Other innovations included an adjustable spoiler and a
+two-pedal semi-automatic transmission...
+
+All in all, it’s one of the most outlandish and imaginative
+race cars ever produced.
+
+The 2J was undoubtedly Chaparral's greatest achievement,
+and lives on in motorsport legend to this day.�",
+collection,0x00008D1A,1030083,kpgc10_skyline_gtr_70,Skyline Hard Top 2000GT-R (KPGC10) '70,0x00006F56,brand-prefix-display-name,"The ""Hakosuka"" Skyline has become a cult classic for
+Japanese car enthusiasts.
+
+Of the various models, this 2-door hardtop GT-R,
+known by its model number, KPGC10, stands out.
+
+This car remains on the most-wanted list for many collectors.
+
+Among the car's many charms was its engine.
+
+It was the direct descendent of the high-performance engine
+in Japan’s first prototype race car, the Prince R380.
+
+Fewer than 1200 KPGC10s coupes were produced. Including
+the 4-door models, the total is still only around 2000 cars.
+
+This car made a name for itself by winning 49 consecutive races
+in the Japanese Touring Car Championship.
+
+Owning it means owning a piece of that
+incredible history.",
+collection,0x00008D1D,1030086,mclaren_f1_gtr_long_97,McLaren F1 GTR Race Car '97,0x00007624,brand-prefix-display-name,"�cLaren's founder, Bruce McLaren, always wanted to produce 
+a road car that would rival the best in the world.
+
+In 1969, he drew up plans to produce road-going cars that 
+were essentially slightly modified Can-Am race machines.
+
+These were called the M6GT and M12GT.
+
+However, they never amounted to much... 
+
+...with only a few prototypes created.
+
+His dream was finally realized in the 1990s with perhaps the 
+greatest sports car of all time.
+
+Designed by Gordon Murray and equipped�with the company's 
+racing know-how, the McLaren F1 road car was born.
+
+The car shown here is the McLaren F1 GTR, a race version of 
+the legendary road car.
+　
+The stock F1 was so powerful that for Le Mans, the engine had to 
+be detuned from 618 HP to 592 HP to comply with regulations.
+
+The McLaren F1 powerplant was built by BMW...
+
+...which allowed the F1 GTR to also be raced by 
+BMW's works teams.
+
+It has become one of the most popular of the F1 collection
+of BMW works racers.�",
+collection,0x00008D20,1030089,penzoil_gtr_99,GT-R GT500 '99,0x00006F59,brand-prefix-display-name,"�he Nissan Skyline GT-R has a storied racing history.
+
+It established a tradition that was carried on by the 
+second-generation GT-R.
+
+The 1999 Pennzoil Nismo GT-R was powered by
+the RB26DETT, an inline-6 engine.
+
+It won the All Japan Grand Touring Championship.
+ 
+It remains one of the most consistent race cars to
+ever wage war in the competitive series.
+
+While the R34 GT-R took the title again
+in 2003, which was its final year...
+
+...the battle-tested engine under its hood had �lready
+been swapped in favor of a V-6 powerplant.
+
+This means that this 1999 Pennzoil was the last GT-R 
+to win the series title with the iconic inline-6.
+
+There's just something special about this inline-6-powered model.
+For me, its achievements are nothing short of legendary.�",
+collection,0x00008D2B,1030100,gt40_mk4_race_67,Mark IV Race Car '67,0x0000422F,brand-prefix-display-name,"�he Ford Mark IV dominated the 1967 Le Mans 24 hour race,
+
+and it was a momentous achievement for Ford, 
+which had also won the prior year.
+
+The car was powered by the 7L V8 engine that Carroll Shelby
+had chosen for the Mark II, 
+
+But its chassis was completely different.
+
+This chassis was based on the J-car that was under development
+to meet new regulations…
+ 
+incorporating cutting edge aerodynamic innovations.
+
+As a result, the Mark IV was incredibly quick.
+
+So quick in f�ct, that it finished a full four laps ahead of 
+the second-placed Ferrari 330 P4 at Le Mans in 1967.
+
+It's also worth noting that the drivers Dan Gurney and
+A.J. Foyt were both American,
+
+making this the first victory for an all-American team 
+in the history of the 24 hours of Le Mans.
+
+And it's because of these facts that the Ford Mark IV
+has a special place in motorsport history. j",
+collection,0x00008D2D,1030102,tz2_1965,GIULIA TZ2 carrozzata da ZAGATO '65,0x0000428B,brand-prefix-display-name,"You'd be hard pressed to find a wilder, more bewitching
+street-legal car than the Alfa Romeo Giulia TZ.
+
+It's also incredibly rare, with only around
+12 ever built.
+
+And what’s truly noteworthy is that this race car...
+
+...has no history of crashes and has never undergone 
+any restoration work.
+
+You can see why it has become a collector's item.
+
+It should come as no surprise that this TZ2 won the Gran Turismo 
+Trophy at the 2009 Pebble Beach Concours d'Elegance.",
+collection,0x00008D30,1030105,xjr9_race_88,XJR-9 '88,0x0000765F,brand-prefix-display-name,"�espite their early success in the 1950s, Jaguar didn't enter
+a works team at Le Mans again for almost 30 years.
+
+In fact, they wouldn't return to the race until 1986, 
+when they entered the XJR-6.
+
+The XJR-6 was designed by Tony Southgate, 
+who had made his name in Formula 1,
+
+and it was powered by a naturally aspirated V12 engine.
+
+It was the heyday of turbocharged cars, and the XJR-6's uniquely
+high-pitched exhaust note was instantly recognizable.
+
+The sight and sound of a Jaguar�tearing around the track
+once more certainly got the fans excited!
+
+Two years later, Jaguar entered the XJR-9 
+and finally won at Le Mans,
+
+ for their first new victory at the 24 Hours of Le Mans since an
+Ecurie Ecose D-Type won in 1957.
+
+It had been more than thirty years since their last win!
+
+That alone is enough to secure this iconic car's
+place in the annals of racing history!�",
+collection,0x00008D31,1030106,r92cp_92,R92CP '92,0x00006F64,brand-prefix-display-name,"�his Nissan R92CP is the fastest Group C racing car of them all.
+
+It really is an absolute beast, reaching over 400km/h
+on Fuji Speedway's long straight.
+
+Group C races used to be extremely popular in Japan in their day,
+
+The year after the FIA World Endurance Championship was created,
+Japan had already set up its own endurance racing series.
+
+This series was initially dominated by Porsche, 
+
+but Nissan and Toyota quickly grew stronger to become
+its top contenders.
+
+The R92CP -�designed by Nissan's Kazutoshi Mizuno and built
+entirely in-house, was developed for the former C1 class,
+
+and its level of maturity as well as its speed
+were way ahead of its competition.
+
+Even legendary drivers of Japan such as Kazuyoshi Hoshino and
+Masahiro Hasemi spoke of R92CP's acceleration with dread.c",
+collection,0x00008D35,1030110,ford_roadster_1932_xx,1932 Ford Roadster Hot Rod,0x00009D57,verified-car-key-alias,"If you're looking for a car that will really give you a
+taste of traditional American hot rod culture...
+
+Then the 1932 Ford Model B, or ""Deuce"", as it is
+affectionately called, is a great place to start.
+
+The name ""Deuce"" comes from its two-door
+configuration.
+
+Popular as a base for customization...
+
+It is a prime example of a custom hot rod.",
+collection,0x00008D37,1030112,abarth_1500_biposto_bertone_52,1500 Biposto Bertone B.A.T 1 '52,0x00004284,brand-prefix-display-name,"�ranco Scaglione was a designer who applied the principles of
+aeronautical engineering to car design during his career.
+
+He is perhaps best known for his B.A.T. design concept cars.
+
+B.A.T. stands for ""Berlina Aerodinamica Tecnica,"" and these were 
+experimental vehicles designed for aerodynamic testing.
+
+This car predates B.A.T. 5, which is usually considered
+the first of the B.A.T series.
+
+But the owner Chris Drake and many historians believe
+that this car spawned the B.A.T. series...�/
+...and should be considered to be B.A.T.1.
+
+First presented at the 1952 Turin Motor Show, it was later
+owned by the Packard Motor Car Company.
+
+Lovingly restored over a period of seven years,
+Drake's hard work paid off in 2010...
+
+...when, at the famous Pebble Beach Concours 
+d'Elegance...
+
+...it won the Gran Turismo Trophy!a",
+collection,0x00008D39,1030114,_288_gto_84,GTO '84,0x00004261,brand-prefix-display-name,"To me, when Leonardo Fioravanti was at Pininfarina
+and designing for Ferrari...
+
+..remains one of the greatest periods in the company's history.
+
+Starting with the Dino 246 and culminating with this 288 GTO,
+most cars featured mid-mounted V-8 engines.
+
+Although its styling may appear sleek and feminine, the rear
+fenders are an indication of its mighty power.
+
+Only Fioravanti could craft such a beautiful mid-engine car!
+Some would say that the GTO is the epitome of his genius.
+
+The 288 GTO’s model name is derived from its twin-turbocharged
+2.8-liter V-8 powerplant.
+
+Only 270 were ever made, so they're not that easy to find.
+Still, it's a must-have for any serious Ferrari collection.S",
+collection,0x00008D3A,1030115,countach_lp400_74,Countach LP400 '74,0x00004218,brand-prefix-display-name,"The Countach had a huge impact on the motor industry, and
+plotted the course Lamborghini has followed ever since.
+
+Its development was headed up by the brilliant engineer
+Paolo Stanzani...
+
+Who, together with designer Marcello Gandini, 
+produced this scissor-doored masterpiece.
+
+Although Countachs were produced for over 25 years,
+the first generation LP400 remains the most popular.
+
+There's just something different about the way it drives.
+The fact only 150 were made adds scarcity value, too.
+
+You can be certain these Countach LP400s are only going to
+become more popular in the years to come.Q",
+collection,0x00008D3B,1030116,sauber_mercedes_c9_89,Sauber Mercedes C9 '89,0x0000764C,exact-display-name,"�f I were to ask you to think of Swiss F1 team,
+chances are you'd think of Sauber,
+
+which was founded by Peter Sauber, a keen amateur race driver.
+
+Sauber built his first race car in 1970,
+and drove it in hill climbs.
+
+Sauber then focused on the management side of things, and the
+team experienced early success with the BMW-engined C5.
+
+In many ways, that success was the launchpad which propelled
+the team all the way to Formula 1 in 1993.
+
+Prior to its F1 involvement, Sauber's greate�t achievement
+was the C9, a Group C race car developed with Mercedes.
+
+The C9 made its racing debut in 1987, and soon tasted victory.
+
+In the 1989 season it was virtually unrivaled,
+
+becoming the winner of the World Sports Car Championship 
+and winning the 24 Hours of Le Mans!�",
+collection,0x00008D45,1030126,cobra_coupe_64,Cobra Daytona Coupe '64,0x00004212,brand-prefix-display-name,"The Shelby Cobra Daytona Coupe may be the most 
+valuable Shelby Cobra of them all.
+
+Carroll Shelby was determined to win Le Mans for Ford...
+
+...so he asked his friend Pete Brock to design a coupe body 
+for the Cobra.
+
+Its specs are almost exactly the same as the 289 Cobra,
+but its top speed was 30km/h faster.
+
+Having won class races at Le Mans and Daytona, this Cobra 
+claimed the 1965 FIA GT Class championship.
+
+Only six examples were ever produced, including prototypes,
+therefore, the car has become the stuff of legends.",
+collection,0x00008D46,1030127,xnr_ghia_roadster_60,XNR Ghia Roadster '60,0x00004258,brand-prefix-display-name,"This unique Plymouth roadster is best known for having been
+designed by Carrozzeria Ghia.
+
+But do you know where the ""XNR"" name comes from?
+
+If you try to read “XNR” out loud, it sounds just like
+""Exner,"" doesn't it?
+ 
+It's the name of the legendary American designer 
+Virgil Max Exner...
+
+...who led Chrysler's design for much of the 1950s and 1960s.
+
+He developed various designs in conjunction with
+Luigi Segre of Carrozzeria Ghia.
+
+Many innovative and interesting designs
+resulted from this collaboration.
+
+And this XNR Ghia Roadster was one of them.
+
+The XNR also made waves in 2011 when it claimed the Gran Turismo
+Trophy at the Pebble Beach Concours d'Elegance.",
+collection,0x00008D49,1030130,_250_gt_berlinetta_swb_61,250 GT Berlinetta passo corto '61,0x0000425C,brand-prefix-display-name,"Ferrari's 250 GT series owes much of its renown to this car,
+the 250 GT Berlinetta.
+
+The model was announced by Ferrari in 1959, and marked a
+decisive shift away from previous 250s.
+
+One of the most notable differences was the 2400mm wheelbase,
+which was 200mm shorter than its predecessors.
+
+This gave the car better handling, and led to the name
+""SWB,"" which stands for ""short wheelbase.""
+
+The V12 engine was also more powerful,
+
+and driven by great drivers including Stirling Moss� Graham Hill,
+and Carroll Shelby,
+
+ the model proved to be an outstanding success.
+
+The total production of the Ferrari 250 Berlinetta was
+around 160 cars in total.
+
+Some of these featured an aluminum body for racing, while
+others like this one�had steel bodies for street use.�",
+collection,0x00008D4A,1030131,corvette_coupe_63,Corvette Sting Ray Sport Coupe (C2) '63,0x00005601,brand-prefix-display-name,"No sports car says ""America"" quite like
+the Chevrolet Corvette!
+
+This second generation model, also known as the Sting Ray
+was especially popular.
+
+Later versions featuring the L88 racing engine are very
+collectable, and regularly sell for over $1 million.
+
+This 1963 coupe is perhaps best known for its split
+rear window.
+
+It's a design feature that was only used in the first
+year models because it limited rear visibility.
+
+The one-year ""split window"" Sting Rays are hugely popular,
+and are among the most collectable Corvettes.",
+collection,0x00008D4B,1030132,corvette_racer_concept_59,Corvette Stingray Racer Concept '59,0x00004216,brand-prefix-display-name,"�o let me introduce you to one of the most important cars
+in the long history of the Corvette: the Sting Ray Racer.
+
+Corvettes have been raced enthusiastically, 
+ever since their debut in 1954.
+
+Zora Arkus-Duntov, an engineer and racing driver who
+worked for GM, was particularly keen on racing,
+
+and in 1957 he produced the Corvette SS,
+the first Corvette built specifically for racing.
+
+Now this Sting Ray Racer is essentially a Corvette SS
+with an open-top body.
+
+It's based on drawi�gs by Peter Brock, 
+who is a renowned designer of GM.
+
+The development of the Sting Ray Racer was commissioned by Bill
+Mitchell, who was the new GM Design chief at the time.
+
+The design of the Sting Ray Racer is known for having had 
+a significant influence on the history of the Corvette,
+
+as another GM designer, Larry Shinoda, refined this design
+into the C2 Corvette.n",
+collection,0x00008D4D,1030134,_2000_gt_67,2000GT '67,0x00004299,brand-prefix-display-name,"One of the great masterpieces of Japanese car design, 
+
+Toyota's 2000GT ranks among the most beautiful
+GT cars in history.
+
+When it debuted in 1967, it sold for a little over
+two million yen, which was approximately $6800 at the time.
+
+Today It would fetch high 6 figures in dollars. 
+
+A minor design modification in 1969 also divides the 2000GTs
+into early models and late models.
+
+The 2000GT competed in numerous speed trials
+where it set records, 
+
+and it was even raced by Carroll Shelby in 1968.
+
+All in all, it's a fabulous car, and one which you can enjoy
+owning for many years.",
+collection,0x00008D4E,1030135,quattro_s1_pikespeak_87,Sport quattro S1 Pikes Peak '87,0x00006F5A,brand-prefix-display-name,"The 4WD Sport quattro S1 revolutionized the automotive
+industry in the 1980s.
+
+You only have to look at its achievements in the
+World Rally Championship for proof of that!
+
+The Sport quattro S1 was developed 
+for homologation in Group B rallying.
+
+As a result, only 200 were ever built.
+
+But that's not the whole story to this particular
+Sport quattro S1.
+
+This is an S1-E2, a further evolved version of the S1.
+
+It won the Pikes Peak International Hill Climb in 1987,
+with Walter Röhrl at the wheel.
+
+This victory would prove to be the last hurrah for the
+Sport quattro, as Audi pulled out of Group B rallying in 1986.
+
+Without a doubt, this is one of the greatest among greats.e",
+collection,0x00008D4F,1030136,_500_modial_pf_coupe_54,500 Mondial Pinin Farina Coupe '54,0x000084C7,brand-prefix-display-name,"�he 500 Mondial Pinin Farina Coupe was one of the great
+Ferraris of the 1950s.
+
+There are a few different types of the Ferrari Mondial,
+
+But this is 1 of 2 coupes that were built 
+to race the 1954 Tour de France!
+
+Unfortunately it retired out of the race,
+
+but perhaps this was a good thing, given how well it was
+taken care of and endured throughout the years.
+
+The car was bought by a French collector and safely stored
+away in a chateau for several decades.
+
+So, when John Shirley�acquired the car in 2002, 
+
+everything from the engine to the paint finish was 
+in perfect condition!
+
+After only minor work, he was able to enter it in the
+Pebble Beach Concours d'Elegance in 2012.
+
+Unsurprisingly, it went home with the Gran Turismo Trophy.4",
+collection,0x00008D55,1030142,r8_gordini_rally_66,R8 Gordini '66,0x00007640,brand-prefix-display-name,"Amédée Gordini was a legendary tuner of Renault
+and Simca cars,
+ 
+and perhaps best known for his achievements at Le Mans.
+
+He was a hard working Frenchman who even went on to become an
+F1 race car constructor - basically, a genius.
+
+For many years, Gordini partnered with Renault to produce
+performance versions of the company's mass market cars.
+
+This Renault 8 Gordini is one such example and probably the
+most popular of the official collaborations.
+
+The fact it's almost twice as powerful as the base model
+just goes to show what a genius tuner Gordini really was.
+
+The classic blue paint with white stripes, V-shaped bonnet
+and boxy styling still has legions of fans to this day!",
+collection,0x00008D57,1030144,rx500_70,RX500 '70,0x00004270,brand-prefix-display-name,"The Mazda RX500 is a supercar that is nothing short of mythical.
+
+It was built in 1970 for the 50th anniversary of Toyo Kogyo,
+known as Mazda today, and displayed at the Tokyo Motor Show.
+
+This RX500 was conceived as a successor
+to the famed 'Cosmo Sport' of the 1960s.
+
+Unlike the Cosmo Sport however, its rotary engine was not
+ mounted in front but positioned rear-midship.
+
+And this rotary engine was a high rpm type that would
+rev up to 14000rpm.
+
+With 247 HP and weighing only 850kg, 
+the RX500 was an extremely fast car.
+ 
+Only one RX500 was ever built as a concept model, and in
+2008 it was restored by Mazda to its original glory.",
+collection,0x00008D7C,1030181,_8c_2900b_touring_berlinetta_38,8C 2900B Touring Berlinetta '38,0x0000428A,brand-prefix-display-name,"The 8C name refers to the engine's eight cylinders, and 
+these cars are the iconic pre-war Alfa Romeos.
+
+The inline-8 was designed by the genius Italian
+engineer Vittorio Jano.
+
+The “Berlinetta” body was made by famed coachbuilder
+Touring.
+
+There were only five Berlinettas made in total.
+ 
+This particular one, from 1937, appeared in many motor
+shows and catalogues.
+
+It also won ""Best of Show"" at the Pebble Beach
+Concours d'Elegance in 2018.
+
+It then won the Concorso d'Eleganza Villa d'Este
+the following year...
+
+...before winning the Louis Vuitton Classic Concours Award.
+
+I doubt many other cars have won prizes at three of the
+world's biggest concours.
+
+Needless to say, its current value is nothing short of
+astron�mi�alű",
+collection,0x00008D89,1030194,f50_95,F50 '95,0x00007604,brand-prefix-display-name,"The F50 was the successor to the F40, and was one of 
+the most Spartan cars Ferrari ever produced.
+
+The idea came from Enzo Ferrari's son, Piero,
+ 
+who wanted to create a road car similar to an F1 race car 
+for the company's 50th anniversary.
+
+This is reflected in things like the F50's V12 engine being
+mounted in the same structure as the Ferrari F1 machine.
+
+The V12 engine in-house is also based on the V12 used in
+the Ferrari F1 racers.
+
+So if you're in the mood to drive a Ferrari F1 around town,
+the F50 is the car for you!",
+collection,0x00008D8E,1030199,d_type_54,D-type '54,0x00004219,brand-prefix-display-name,"The D-Type is one of the most important cars in the history
+of Jaguar motorsport,
+
+it is also one of my favorite driving cars of the 1950s.
+
+While it shares components with the double
+Le Mans-winning C-Type,
+
+its all-aluminum monocoque body was a radical new change
+from that model.
+
+Its straight-six engine was also significantly tuned for both
+power and reliability.
+
+C-Type designer Malcolm Sayer also
+worked his magic on the D-Type,
+ 
+fitting a fin to factory team cars
+to enhance stability at high speeds.
+
+The D-Type retired on its Le Mans debut in 1954, but
+came back in 1955 to win three consecutive races.
+
+Just 68 of this legendary racing car were produced, 
+With the works cars being the most desirable.",
+collection,0x00008D91,1030202,e_type_coupe_62,E-type Coupé '61,0x000075FA,brand-prefix-display-name,"�he E-type Coupe, which made its debut in 1961, had a huge
+influence on sports car design.
+
+The engine, in the car's nose, was based on the same straight-six
+engine that won Le Mans five times in the C-Type and D-Type.
+
+Although known in the wide world as the E-type, in
+North America it was often called the ""XK-E”.
+
+The beautiful body, which evolved from the D-Type sports
+racer, was designed by Malcolm Sayer,
+
+who is known as an early proponent of 
+aerodynamic design for automobiles.�p/>
+The E-Type remained in production for 14 years, and though it
+evolved to comply with later safety and emission laws, 
+
+it remained instantly recognizable to everyone.
+
+Although Jaguar didn’t have a factory race program
+for the E-Type in motorsports,
+
+it did build a “low-drag” coupe and a series of 12 lightweight
+E-Types that were raced on both sides of the Atlantic.
+
+Although famous for its good looks, the Jaguar E-Type
+is also a seriously fast sports car.",
+collection,0x00008D9C,1030213,clk_lm_98,AMG Mercedes CLK-LM '98,0x000084C9,verified-car-key-alias,"�his CLK-LM is one of the most attractive race cars
+produced by Mercedes-Benz.
+
+It only competed for a few years in the late 1990s, racing in
+GT1, which was then the pinnacle of Touring Car competition.
+
+GT1-class regulations required an automaker to build only 
+one street car to be approved for competition.
+
+Despite their appearance, these street cars
+were in fact full-on race machines.
+
+The CLK-LM's predecessor, the CLK-GTR, was produced
+in accordance to these regulations in 1997.
+This CLK-LM was a further evolution of the CLK-GTR.
+
+The replacement of the V-12 engine with a V-8 improved the
+race car's overall balance.
+
+As soon as it took to the track in the '98 FIA-GT Championships,
+it absolutely dominated the competition.
+
+That year, it took home both Drivers' and Manufacturers'
+championships.�",
+collection,0x00008DE3,1030284,db3s_53,DB3S '53,0x0000421B,brand-prefix-display-name,"I know what you're thinking: a DB3 road car doesn't exist.
+
+The DB2 was followed by the DB2/4, the DB2/4 Mk II,
+the Mark III, and then the DB4.
+
+If that's what you're thinking, then you certainly know
+your Aston Martins!
+
+There was, however, a DB3 race car.
+
+It was introduced in 1951, and, unfortunately,
+saw limited success.
+
+This DB3S is an upgraded version 
+that was released in 1953.
+
+It's well known as a true masterpiece.
+
+Its beefed-up inline-6 engine powered it to numerous
+victories in some of the UK's most famous races.
+
+This particular example, chassis number 1...
+
+...is the car that took home the Gran Turismo Trophy 
+at the Pebble Beach Concours d'Elegance in 2013.E",
+collection,0x00008DE7,1030288,_300_sel_68_amg_71,300 SEL 6.8 AMG '71,0x000075D1,brand-prefix-display-name,"�his 300 SEL 6.8 AMG should be seen as an important part of
+AMG's success story.
+
+AMG started as a company that built competition vehicles
+based on Mercedes-Benz cars.
+
+It was established by former Daimler-Benz engineer 
+Hans Werner Aufrecht...
+
+...and Erhard Melcher.
+
+The name of the brand comes from the combination of
+“A” for Aufrecht, “M” for Melcher...
+
+...and “G” for Grossaspach, the hometown of Aufrecht.
+
+The 300 SEL 6.8 AMG competed in the 24 Hours of Spa
+in �971, where it won its class and finished 2nd overall. 
+
+This result which really put AMG on the map.
+
+Mercedes-Benz owners flocked to AMG
+to have their cars tuned by the company.
+
+AMG’s fame spread from there, becoming a wholly-owned
+subsidiary of Mercedes-Benz in 2005.�",
+collection,0x00008DEF,1030296,mangsta_69,Mangusta '69,0x00007621,brand-prefix-display-name,"Giorgetto Giugiaro is a legend in the world of car design.
+
+He's worked on so many great cars, it would be hard to pick
+just one to define him.
+
+But if I had to choose...
+
+...I'd go for the De Tomaso Mangusta, a car he designed
+while working for Carrozzeria Ghia.
+
+The Mangusta looks more striking than many of Giugiaro's
+later designs.
+
+There's something elegant about its sleek lines. It’s a simple
+design, and yet it's glamorous and muscular, too.
+
+The Mangusta bowed in 1966, and only 400 were produced. 
+It's powered by a Ford overhead valve V-8.
+
+These days they're highly sought-after as early examples
+of Giugiaro's genius.",
+collection,0x00008DF0,1030297,willys_mb_45,Willys MB '45,0x00004265,brand-prefix-display-name,"�eep is surely one of the world's most familiar and
+beloved brands, especially to off-road enthusiasts.
+
+The company has a long and storied history...
+
+...but there's no doubt this Willys MB (Military, Model B) 
+was one of its greatest successes.
+
+Interestingly, Willys didn't actually come up with
+the name ""Jeep.""
+
+It was the brainchild of the American Bantam Car Company’s
+prototype utility vehicle for the military.
+
+This car was designated “GP” for general purpose,
+which sou�ds like ""Jeep.""
+
+After World War II, the company decided to focus on
+mass-producing Jeeps and trademarked the name.
+
+The company’s ""civilian jeeps"" were based on the classic
+Willys MB.
+
+It had developed a good reputation during the war and was
+initially marketed for use in agriculture.
+
+The company also began worldwide production under license,
+which meant that anyone could produce a Jeep.
+
+This would prove to be an absolutely decisive factor in the
+growth of the Jeep brand we kn�w and love today.X",
+collection,0x00008DF1,1030298,merak_ss_80,Merak SS '80,0x0000A3F7,brand-prefix-display-name,"�he Maserati Merak is a fine example of a 
+beautiful mid-engine supercar from the 1970s.
+
+It was designed by Giorgetto Giugiaro, who
+began at FIAT in 1955, then worked at...
+
+...Bertone for six years, and later at Ghia until 1968.
+
+He subsequently established ""Italdesign,"" a design firm
+that would create many masterpieces. 
+
+The Maserati Merak was created during 
+Giugiaro’s early Italdesign days.
+
+This stunning new Maserati was introduced at 
+the 1972 Paris Motor Show.
+
+The M�rak SS is the lighter and more 
+powerful model that made its debut in 1975.
+
+This 1980 model is powered by a 220ps version
+of the V-6 shared with the Citroën-Maserati SM.
+
+Although the striking Merak has a mid-mounted 
+engine, it is actually a 2+2 with small rear seats...
+
+...which is very rare for an exotic high-performance car.a",
+collection,0x00008DF9,1030306,db5_64,DB5 '64,0x00005736,brand-prefix-display-name,"The Aston Martin DB5 is truly a rare gem, both in terms
+of price and its head-turning allure.
+
+And we all know who's responsible for that, don’t we?
+
+That's right, Bond. James Bond, from the hugely popular
+British-born 007 movie series.
+
+The DB5 which appeared in ""Goldfinger"" in 1964 was probably
+the most famous car in the world at the time.
+
+Aston Martin recently responded to huge public demand for
+these ""Bond Edition"" DB5s by producing 25 replicas.
+
+These replicas built in late 2020 and 2021 sold for
+a huge sum upwards of $3.75M each.
+
+I can't begin to imagine what 
+the original car would fetch,
+
+ although one of two cars built in 1965 to promote the film
+sold for $6.4 million in 2019!",
+collection,0x00008E3A,1030371,_917k_70,917K '70,0x00004291,brand-prefix-display-name,"The 917K is one of the most important race cars
+in Porsche's history.
+
+It was developed from the long-tailed 917LH which made its debut
+in 1969.
+
+Under its hood was a few different engines depending on the car, 
+from a 4.5-liter, 4.9-liter and a 5.0-liter air-cooled flat-12.
+
+Fast and ferocious on the track, the 917K delivered
+Porsche its first overall victory at Le Mans.
+
+Although Porsche didn't have a works team, the 917K still won
+7 of 10 races in the International Championship for Makes.
+
+Even better, it would also go on to win the 24 Hours
+of Le Mans that year, and again in 1971.
+
+Porsche's golden era began with the 917K, making it one of 
+the most significant models in motorsports history.",
+collection,0x00008E3B,1030372,_962c_88,962 C '88,0x00004202,brand-prefix-display-name,"The world of motorsports is known for its 
+extremely competitive development, 
+
+which makes Porsche's achievements during the 1980s
+truly miraculous.
+
+Porsche won at Le Mans in 1982 and 1983 with their 956,
+
+and the updated Porsche 956 went on to win 2 more
+Le Mans races.
+
+The Porsche 962 series is a race car that is directly linked to
+the legendary 956 series,
+
+and the Porsche 962C won at Le Mans in 1986 and 1987, 
+
+contributing to the last 2 of the 7 consecutive Le Mans
+victories by Porsche that started in 1981.
+
+The 962C remains a potent piece of machinery to this day. 
+Are you ready to harness the power of this legendary Porsche?",
+collection,0x00008E3C,1030373,_356_a_1500_gs_carrera_gt_ss_56,356 A/1500 GS GT Carrera Speedster '56,0x000041F6,brand-prefix-display-name,"�t's a well-known fact that Porsche’s first production car
+started with the rear-engine Porsche 356.
+
+Full production of the 356 series began in 1950...
+
+...and the coupe model was soon followed by
+open-top versions.
+
+All of these models shared a boxed sheet metal
+chassis with independent suspension.
+
+And the flat-4 engine was available in five
+different displacements and output.
+
+A slightly modified 356A appeared in 1955.
+ 
+In 1956, a high performance 1.5-liter engine develop�d for
+the 550 Spyder was offered as an option.
+
+Models equipped with the powerful 1.5-liter engine
+were called the GS Carrera.
+
+They are known to have been cars that could immediately
+be raced as is.
+
+This model is a GS Carrera GT, characterized by
+a lighter body and powerful engine.
+
+These cars are collectibles that rarely change hands,
+so don't miss your chance to drive it!�",
+collection,0x00008E41,1030378,_911_gt1_strassenver_97,911 GT1 Strassenversion '97,0x000041FB,brand-prefix-display-name,"What do you call a street-legal Porsche 911 that shoots from
+zero to 100km/h in 3.7 secs, and tops out at 310km/h?
+
+Why, the Porsche 911 GT1 Strassenversion of course!
+
+Developed to meet competition rules for the Le Mans
+GT1 Class, only 25 cars were ever sold.
+
+The production car it was based on was
+pretty much a race car to begin with.
+
+From its nose to its front suspension, the Porsche 911 GT1
+Strassenversion looks like a type 993 911.
+
+But behind the seats you’ll see lots of parts reminiscent of
+the Porsche 962 that competed at Le Mans in the 1980s.
+
+The engine is a fire-breathing twin-turbocharged 
+3.2-liter flat-6.
+
+A chance to own this car rarely comes around. 
+And this is your chance.",
+collection,0x00008E42,1030379,mercedes_amg_gt_r_17,Mercedes-AMG GT R,0x0000762B,dms-car-key-override,Buddy_ContentCar_Hagerty_normal_mercedes_amg_gt_r_17_1030379,
+collection,0x00008E43,1030380,s_baker_tourer_29,S Barker Tourer '29,0x000084D0,brand-prefix-display-name,"If classic cars are your thing, then you're bound to
+recognize this S-Type Mercedes right away.
+
+It won ""Best of Show"" at the 2017
+Pebble Beach Concours d'Elegance.
+
+And it's known as Mercedes-Benz's first sports car. Called
+the S-Type, it was designed by Dr. Ferdinand Porsche.
+
+The body was constructed by Barker & Co., a coachbuilder
+best known for its work on Rolls-Royce cars.
+
+The car's distinctive rear end is commonly referred to as
+a ""boat tail.""
+
+No one quite made them like Barker & Co.
+
+This S-Type was commissioned by Earl Howe, a co-founder
+of the British Racing Driver's Club.
+
+Not only is this car a priceless gem, it takes
+a certain amount of grace drive it!",
+collection,0x00008E45,1030382,_300sl_w194_52,300 SL (W194) '52,0x000075D3,brand-prefix-display-name,"�he Type W194 300SL is one of the more notable Mercedes-Benz 
+machines from the Golden Age of racing of the 1950s.
+
+A champion at Le Mans and the Carrera Panamericana, the car 
+is also known for inspiring the iconic 300SL Coupe.
+
+Designed by Rudolf Uhlenhaut, a legendary engineer with a 
+vast amount of experience in race car design...
+
+...the Mercedes-Benz W194 300SL boasted the latest
+in the race technology of its day.
+
+It featured a spaceframe chassis, an independent suspension
+and a�single-overhead camshaft inline-6.
+
+Only ten were believed to have been built.
+
+Thanks to its excellent performance and reliability, the car
+shone in endurance races.
+
+This car, chassis number 007/52, is the car
+that won Le Mans.
+
+If a W194 were to hit the market now, the price
+would surely be astronomical.�",
+collection,0x00008E46,1030383,_356_a_1500_gs_carrera_56,356 A/1500 GS Carrera '56,0x000041F5,brand-prefix-display-name,"On the outside, the Porsche GS Carrera looks no different
+from other 356 coupes of its day,
+
+ but what makes this GS Carrera so special
+and raises its value,
+
+is the four-cam 1.5L engine that produces 100ps.
+
+This engine was the most powerful version
+available for the 356 series at the time.
+
+It was also possible to order lighter speedster seats,
+and even without heaters to reduce weight. 
+
+That's why the GS was not just a fast street car, 
+but was also seen in many races.
+
+I think you'll find that it's directly linked to
+Porsche's illustrious past!",
+collection,0x00008E51,1030394,fairlady_z432_69,Fairlady Z 432 '69,0x00006F4E,brand-prefix-display-name,"The first model of the Nissan Z series was known
+as the type S30.
+
+Of all the S30s, this Z432 is particularly special.
+
+With a classic Z-series design...
+
+It is powered by the same S20 2L inline six-cylinder
+engine seen in the Skyline GT-Rs of its day.
+
+The four valves per cylinder...
+
+Three carburettors...
+
+And two cams don’t just prove its high performance.
+
+These numbers are also the origin of the 'Z432'
+model name.
+
+The fact that it had a GT-R engine was reflected i� its
+price, more than double that of standard S30s.
+
+Furthermore, only 419 of the Z432s were produced,
+making it the most valuable of the first-gen Zs.
+
+There was also a higher performance competition model
+of the Z432, the Z432R.
+
+An extremely�rare variant, it tends to fetch a very
+handsome price at auctions.�",
+collection,0x00008E54,1030397,spyder_550_1500rs_55,Spyder type 550/1500RS '55,0x00007653,brand-prefix-display-name,"Did you know that the first car to ever be wear the Porsche
+badge was a mid-engine convertible?
+
+It was the 356/1 prototype from 1948. 
+
+The company was no doubt intrigued with
+mid-engine layouts from the get-go.
+
+The 550 Spyder, introduced in 1953, was another 
+mid-engine sports car from Porsche. 
+
+The 550/1500RS was a variant that went on the market 
+at the end of 1954.
+
+This specific 550/1500RS, with its blue body and white
+triangular stripes, has a serial number 0067.
+
+It's the only 550 still wearing the same finish 
+that came from the factory.
+
+And that makes it a priceless treasure.C",
+collection,0x00008E66,1030415,_911_turbo_s_93,911 Turbo S (964) '93,0x0000D317,verified-car-key-alias,"�here are countless stories to tell about the Porsche 911, but
+the 911 Turbo S Leichtbau is an exceptionally rare model.
+
+“Leichtbau,” meaning “lightweight” in German,
+was produced in a limited run of 86 cars.
+
+It celebrated Porsche’s success in the IMSA championship.
+
+The car was based on the third-generation 911 Type 964 Turbo
+and used the same 3.3-liter engine as the previous model.
+
+However, in the Leichtbau, the flat-6 was tuned to 381ps.
+
+Inside, most luxuries were �tripped away,
+along with the rear seats.
+
+This reduced its curb weight to just 1290kg, a figure that gave
+true meaning to the Leichtbau name.
+
+Weight savings were achieved not only through reduction.
+
+Aluminum doors with thinner glass and a carbon-fiber hood
+further refined the car’s purpose.
+
+Externally, the rear-fender air intakes distinguished
+the Leichtbau from base 911s.
+
+And, the large rear spoiler stood as a unique carbon element.
+
+The driving experience was nothing s�ort of exquisite, reminding
+us that the finest sports cars are often defined by lightness.N",
+collection,0x00008E76,1030431,nismo400r_95,400R (1995),0x0000B2D9,fuzzy-name,"�he Nismo 400R was long considered the ultimate GT-R.
+
+ The car is based on the Skyline GT-R, but you won't find
+the name ""Skyline"" or ""GT-R"" anywhere on the body.
+
+From the engine to the body to the chassis, this limited-edition model 
+was extensively tuned by Nismo, Nissan's motorsports division.
+
+And they named it simply the ""400R.""
+
+Perhaps that's why this car isn't talked about
+as much as other legendary Skyline GT-R models.
+
+This is a culmination of the Nissan works team's know�edge gained at Le Mans,
+coming in the form of increased displacement engine,
+
+a reinforced suspension and clutch,
+as well as the extensive use of carbon fiber, notably in the prop shafts.
+
+At the time the 400R was being planned, Japanese automakers had a 
+self-imposed limit of 280 horsepower for their road cars.
+
+As its name suggests, the 400R had a bit more, with 400.
+
+It also had a price tag to match, costing three times as much
+as a new R33 model Skyline GT-R.
+
+One of the most ex�ensive Japanese-made cars at the time, Nissan 
+claims to have built only 44 of them.
+
+Because of its rarity, it has become one of the most 
+difficult Skyline GT-R models to find.�",
+collection,0x00008E78,1030433,celica_wrc_95,Celica GT-Four Rally Car (ST205) '95,0x0000A3F2,brand-prefix-display-name,"�he Celica is one of Toyota's most popular two-door coupes
+but it is also known for its long career in rallying,
+
+particularly when Group A cars became the main competitors 
+in the 1987 World Rally Championship.
+
+Toyota introduced the GT-Four which was basically a rally-
+prepared model of the base production Celica.
+
+The GT-Four model was available across three generations, with
+works cars and those with race history the most valuable.
+
+This particular Group A rally machine is a 3rd gen�ration,
+GT-Four developed from the ST205 Celica.
+
+As was essential in the golden years of Groupe A, it's four-
+wheel-drive and is fitted with a turbo anti-lag system.
+
+The Toyota works team began competing with this car
+for the 1995 season of the WRC,
+
+However, in the penultimate round, the car was
+found to have illegal turbo restrictors.
+
+The resulting penalties stripped the drivers of points and
+the works team was banned from the WRC for one year.
+
+You could say it's a car with h�story.
+
+For rally fans, the combination of the classic Castrol livery and
+the aggressive design makes this an all-time Group A classic.�",
+collection,0x00008E81,1030442,corvette_c1_58,Corvette Roadster C1 '58,0x0000AF02,verified-car-key-alias,"The Chevrolet Corvette is undoubtedly one of the world’s
+most famous sports cars.
+
+When it made its debut in 1953...
+
+...it quickly became known as ""America's sport car""
+because no other car like it existed in the U.S.
+
+The car was noted for its attractive body style
+and powerful engine.
+
+The original 1953 were built mostly by hand, 
+and only a 300 units were produced.
+
+Still, they were incredibly popular, and the next year,
+General Motors increased production of the car.
+
+This 1958 model exhibits a thoroughly new design
+with four headlights.K",
+collection,0x00008E82,1030443,a6gcs_spyder_54,A6GCS/53 Spyder '54,0x00009D5A,brand-prefix-display-name,"�his Maserati A6GCS Spider was
+bodied by the small Italian Carrozzeria, of Medardo Fantuzzi.
+
+A Modest production run of the beautiful Fantuzzi spiders were
+built on the A6GCS chassis.
+
+Like most of the competition bodies from the Bolognese
+coachbuilder, the Maserati displayed a functional beauty.
+
+That same beauty was true of the stunning Maserati 250F
+and sharknose Ferrari 156 Formula 1 cars,
+
+ and dozens of other Maserati and Ferrari sports racing cars.
+
+The A6GCS featured a twin�cam straight-six mounted up front that
+was designed by the famed Italian engineer, Gioacchino Colombo.
+
+Fitted with three twin throat Weber Carburetors, the
+1985cc engine had a maximum output of 170ps.
+
+This car, chassis 2078 has a fantastic history.
+
+Built as a works racing car, it was assigned to the
+great Luigi Musso for the 1954 season.
+
+Musso contested ten races in 1954, and came away with three
+overall wins and five class victories,
+
+becoming the Italian 2000cc champion.�p/>
+A6GCS 2078 was sold to Argentina, where it was raced with mixed
+results in 1955. It returned to Italy in 1986.
+
+This car won the Gran Turismo Trophy at the
+2014 Pebble Beach Concours d'Elegance.�",
+collection,0x00008E84,1030445,pontiac_gto_judge_69,GTO 'The Judge' '69,0x0000995C,brand-prefix-display-name,"Introduced in 1964, the Pontiac GTO is considered
+one of the first American muscle cars.
+
+In a series of one-upmanship by various manufacturers, the GTO's
+performance was soon eclipsed by the competition.
+
+In response, Pontiac created a new high-performance
+model called ""The Judge.""
+
+It came equipped with a powerful 6.6-liter V-8.
+
+It also boasted wide tires, a rear spoiler and distinctive livery
+that gave the car an extremely powerful presence.
+
+Because of The Judge, the Pontiac GTO retained its rightful
+place at the top of the muscle-car heap.l",
+collection,0x00008E8E,0,,Lancia Rally 037 Evoluzione 2 '84,0x00009D5C,message-key-override,"The Lancia Rally 037 is one of the iconic Group B
+rally cars of the 1980s.
+
+Introduced in the early years of Group B racing, it combined
+a mid-engine layout with a rear-wheel drive.
+
+Its spaceframe chassis and powerful mid-mounted engine...
+
+...was reminiscent of Lancia's iconic Stratos rally car.
+
+While 4-wheel drive would become mainstream starting
+with the Audi quattro in 1981...
+
+...the rear-wheel-drive Rally 037 claimed the 1983
+season series title, besting the competition.
+
+This Evoluzione II was the final spec of the car, which
+came equipped with a 2.1-liter powerplant.",
+collection,0x00008E95,1030462,alpine_a220_68,A220 Race Car '68,0x000075E1,brand-prefix-display-name,"It's hard to believe that a Le Mans prototype
+also competed in rallies. 
+
+Well, it really did happen.
+
+Let me introduce you to the Alpine A220.
+
+It's a successor to the Alpine M Series, which performed well
+at Le Mans in the 1960s.
+
+It features a mid-mounted 3L V8 engine designed by Gordini...
+
+but unfortunately it never made much of a mark at Le Mans.
+
+However it would go on to compete in the world of rallying
+which was a fairly unique challenge for such a car.
+
+This specific car has a dramatically shortened tail for rallying
+which makes it especially rare.",
+collection,0x00008EA8,1030481,delta_hf_integrale_wrc_92,DELTA HF Integrale WRC Group A (1992),0x0000C7C1,verified-car-key-alias,"�ancia is renowned not only for its refined Italian design spirit
+but also for its illustrious motorsport heritage.
+
+The marque has created legendary rally cars including the Fulvia,
+Stratos, and the Delta, which dominated Group A racing.
+
+The Delta burst onto the World Rally Championship scene in 1987
+claiming 9 victories and ultimately earning the season title.
+
+With each stage of development, the Delta saw
+a steady infusion of innovative technology.
+
+And just look at the pronounced b�ister fenders—don’t they exude
+the raw, untamed aggression of a true fighting machine?
+
+Since entering competition in 1992, the HF Integrale
+captured 6 consecutive manufacturers’ titles.
+
+A true icon of 1990s rallying, it remains a legend
+whose brilliance has never faded.�",
+collection,0x00008EA9,1030482,kpgc110_skyline_gtr_73,Skyline 2000GT-R '73,0x0000A3F6,verified-car-key-alias,"�he 1973 Skyline GT-R is often considered almost mythical
+because of its extremely low production numbers.
+
+It is nicknamed the ""Kenmeri GT-R"" in reference to the 'Ken
+& Mary' commercials used to promote the C110 Skyline.
+
+The base model is the C110 Skyline that debuted in 1972,
+the direct successor to the legendary ""Hakosuka"" GT-R.
+
+The exact model code of Kenmeri GT-R was ""KPGC110,""
+and sales began in January 1973.
+
+However, the Kenmeri GT-R was only sold 
+for three months after its �ebut.
+
+The emissions regulations introduced at the time stopped
+the production of high-performance cars like the GT-R.
+
+It is said that only around 200 cars were produced
+in the three months it was available.
+
+In order to focus on environmental issues like exhaust
+emissions, Nissan also stopped its motorsports activities...
+
+And because of this, not only did this GT-R
+have a short lifespan...
+
+It never had a chance to prove itself in racing, 
+which was an important part of the Skyl�ne mystique.
+
+As a result, this model is considered the unicorn of GT-Rs
+and is highly prized by collectors around the world.",
+collection,0x00008EAB,1030484,roadrunner_superbird_70,Superbird '70,0x000084CE,brand-prefix-display-name,"�f you call yourself a racing fan, then you're no doubt
+familiar with NASCAR.
+
+Its race machines are loosely based on production cars,
+and the series is extremely popular in the U.S.
+
+Established in 1948, NASCAR is a motorsport series
+with a lot of history behind it.
+
+Among the more legendary race cars in the history of
+NASCAR is the Plymouth Superbird.
+
+Towards the end of the 1960s, NASCAR race cars were starting
+to regularly exceed speeds of more than 300km/h.
+
+The Superbird wa� based on the Plymouth Road Runner.
+
+Its long nose and large rear wing helped increase stability
+at high speeds.
+
+These aerodynamic advantages translated to incredibly
+fast lap times that left the competition in the dust.
+
+The brass at NASCAR weren't thrilled in seeing the
+lopsided results of the races...
+
+...nor did they want to see race car production costs
+skyrocket, making it inaccessible to the masses.
+
+As a result, the Superbird was discontinued after two years.
+
+Regardles�, it's remembered as a legendary muscle car.c",
+collection,0x00008EB4,1030493,ra_272_65,RA272 (1965),0x0000A83D,fuzzy-name,"One of the most iconic cars in Honda's history
+is this Formula 1 machine, the Honda RA272.
+
+Honda was the first Japanese automaker to
+compete in F1 racing.
+
+In 1965, this car earned Honda its first F1 win at the
+Mexican Grand Prix in the final round of the season.
+
+With an aluminum monocoque chassis up front
+and a space-frame towards the rear...
+
+...it was powered by a horizontal 1.5-liter V-12 mounted amidships.
+
+The RA272 was developed and driven by Richie 
+Ginther, an American racer of the 1960s.
+
+Honda has since earned many victories as an engine
+supplier, and it all began with the RA272.C",
+collection,0x00008EB6,1030495,_904_carrera_gts_64,Carrera GTS (904) '64,0x0000A9D8,brand-prefix-display-name,"�he Carrera GTS 904 is a shining star in Porsche's 
+storied motorsports history.
+
+Since the early 1950s, Porsche competed in 
+international races with the 356.
+
+All the while, the folks there were planning to build 
+a dedicated GT race car.
+
+Essentially, they needed to build 100 cars in
+12 months to qualify for competition.
+
+The result was the Carrera GTS in 1963.
+
+While a plan to use the flat-6 engine developed for
+the 911 never bore fruit...
+
+...the car featured a low and lig�tweight mid-engine 
+body and specially-designed suspension.
+
+As soon as the car was ready, it was racing all over
+the world.
+
+This particular Carrera GTS competed in the second
+Japanese Grand Prix, held in 1964.
+
+Its heated yet successful battle against Japan's Skyline is 
+still talked about by Japanese race fans to this day.�",
+collection,0x00008EB8,1030497,ds_21_pallas_70,DS21 Pallas (1970),0x0000A689,fuzzy-name,"�roduced by French car company, 
+Citroën, the DS is a timeless masterpiece.
+
+Citroën was founded in 1919 and has consistently been known for
+its advanced technology.
+
+In the '30s, Citroën produced unibody front-wheel-drive machines 
+while most cars had separate frames and rear-wheel-drive.
+
+The Traction Avant, released in 1934, 
+sold about 750,000 units before production ended.
+
+The DS model that replaced the Traction Avant was introduced
+at the 1955 Paris Salon international car sh�w.
+
+Visitors to the show were wowed by the futuristic body
+by Italian sculptor and designer Flaminio Bertoni.
+
+The DS was a mid-size 4-door sedan that sported a sharp-looking
+front end and sports-car aerodynamics...
+
+...the result of a body that tapers sharply towards the rear.
+
+Also, the car's mechanics, from the
+suspension to the brakes to the transmission...
+
+...was controlled by a proprietary hydraulic system.
+
+The DS you see here is a later model
+that shows a few evolutiona�y design changes.
+
+It also has adaptive headlights that respond to steering inputs.�",
+collection,0x00008EBC,1030501,mustang_boss_429_69,Mustang Boss 429 '69,0x00008054,brand-prefix-display-name,"This is the legendary Mustang equipped with the Boss 429 Ford
+race engine.
+
+You may have heard of the 427 ""side oiler"" engine 
+used by Ford in the 1960s.
+
+It also powered classic models like the GT40 and the
+Shelby 427 Cobra.
+
+This Mustang BOSS 429 engine is the successor to the 427 and
+was developed as part of Ford's push into NASCAR.
+
+The street-legal version of the BOSS 429 produced a conservative
+375 hp, while the race version pumped out 560 hp.
+
+NASCAR regulations required 500 of these engines to
+be mass produced.
+
+After fulfilling NASCAR's homologation requirement, the Mustang
+BOSS 429 ended its production run in just two years.",
+collection,0x00008EBD,1030502,skyline_super_sillette_84,Skyline Super Silhouette '84,0x00009D5E,fuzzy-name,"Have you heard of the ""Fuji Grand Champion Race?""
+It was a popular motorsports series in Japan in the 1980s.
+
+Those familiar with the event...
+
+...know all about the ""Super Silhouette"" that
+competed in the opening races for those events.
+
+The Super Silhouette races were held
+under Group 5 regulations of the day.
+
+While the exteriors of the cars maintained the look of
+production models...
+
+...under the sheet metal, they were dedicated race
+machines developed for competition.
+
+This Nissan Skyline Super Silhouette was
+the most popular car in the series.
+
+Famous for its flaming side exhaust, it serves as an iconic
+reminder of a time when racing was fun and wild.T",
+collection,0x00008ECD,1030518,mp4_4_88,MP4/4 '88,0x0000A393,brand-prefix-display-name,"�he McLaren MP4/4 Honda was a legendary F1 machine that
+proved virtually unbeatable in the 1988 Formula 1 season.
+
+The chassis was developed by Gordon Murray,
+the renowned race-car designer. 
+
+It came powered with the RA168E turbocharged Honda V-6 engine.
+
+In 1988, Formula 1 regulations changed significantly...
+
+...with strict limits placed on turbo boost pressure
+and fuel usage during races.
+
+Honda’s turbocharged engine utilized advanced electronic control
+technology, delivering �oth power and efficiency.
+
+The driver lineup featured two of the sport’s finest:
+Alain Prost and Ayrton Senna.
+
+With two legends behind the wheel, the MP4/4 won
+an extraordinary 15 of 16 races that season.
+
+Car No. 12 was driven by Ayrton Senna.
+
+In 1988, Senna secured the drivers’ championship,
+recording 13 pole positions and eight victories.�",
+collection,0x00008ECF,1030520,chevelle_ss_454_ls6_70,Chevelle SS 454 Sport Coupe '70,0x00009D56,fuzzy-name,"The 1970 Chevrolet Chevelle SS was Chevrolet's mid-size
+muscle car.
+
+The optional LS6 engine provided plenty of performance,
+even for a car as big as this.
+
+The 7.4-liter 454 engine was given increased compression,
+high-lift cams and special cylinder heads.
+
+Its power rating of 450 HP was likely the highest
+catalogued output for any American car at the time.
+
+It was an incredible street machine that could easily surpass
+500 HP with very little tuning.",
+collection,0x00008ED2,1030523,_205_t16_wrc_ev2_86,205 Turbo 16 Evolution 2 '86,0x00008200,brand-prefix-display-name,"�he Peugeot 205 Turbo 16 is sometimes referred to as the
+'ultimate rally car'.
+
+It was originally designed to compete in the World Rally
+Championship's legendary Group B category.
+
+Group B regulations were officially implemented in 1983,
+
+and at the time, only 200 of a model were required for
+Group B homologation within 12 months.
+
+No commitment to mass production of road versions meant that
+manufacturers could make bold decisions on development.
+
+And the choice made by Peugeot,
+�
+was to mount a powerful turbocharged engine midship, 
+combined with 4WD.
+
+At that point, the other teams in Group B hadn’t yet adopted
+the configuration, which initially gave Peugeot an advantage.
+
+The Peugeot 205 Turbo 16 made its debut in
+the middle of the 1984 season,
+
+and it immediately proved itself to be effective, winning the 
+World Rally Championship title in 1985 and 1986.�",
+collection,0x00008EDC,1030533,_190e_evo2_91,Mercedes-Benz 190E Evolution2'91,0x0000B2D8,dms-car-key-override,"�f you're looking for a legend of sports sedan,
+
+then look no further than 
+the Mercedes-Benz 190 E 2.5-16 Evo II.
+
+This car was made with a single goal:
+to win races.
+
+It was developed to compete in the DTM, a German race series
+that gained a worldwide following through the 1980s and 1990s.
+
+The DTM is contested by touring cars,
+which are based on road-going production models.
+
+For its entry, Mercedes-Benz turned the compact 190-series sedan
+into a mighty homologation model.
+
+�he final evolution model of this is this Evolution II.
+
+Although technically a production road car,
+visually, it's a bona fide touring race car.
+
+The race version of the 190 E Evo II
+dominated the DTM and the European racing scene.
+
+The AMG Mercedes-Benz works team won the manufacturers title
+for two consecutive seasons in 1991 and 1992.
+
+Only 502 road legal versions
+of the homologation model were ever produced.
+
+This is one car that any serious collector must have.�",
+collection,0x00008EE3,1030540,xj220_gt_road_92,Jaguar XJ220 '92,0x0000A3FB,exact-display-name,"�he Jaguar XJ220 is one of the most unusual
+performance cars in Jaguar history.
+
+From the 1980s through to the 1990s,
+the world's car manufacturers...
+
+...produced numerous legendary supercars
+that are still talked about today.
+
+Classic British luxury car maker and racing legend Jaguar
+made its mark on super-car history with the XJ220.
+
+The limited production Jaguar XJ220 was released in 1992,
+but the project had been in development since the early 1980s.
+
+It started as an unoffici�l project by a group of employees
+which included Jim Randle, then Jaguar's chief engineer.
+
+It was later approved as an official road-car project
+and development of the XJ220 began in earnest.
+
+The car's styling takes cues from the legendary
+Jaguar XJ13 race car prototype of the 1960s...
+
+...incorporating the elegant form of the classic mid-engine
+prototype in a style befitting a modern road car of the 1990s.
+
+The construction of the engine and chassis meanwhile,
+were based on Jaguar's�already successful Group C cars.
+
+It featured a 542ps twin-turbo V-6 engine
+mounted centrally in the aluminum monocoque shell.
+
+One of the most famous stories about the XJ220...
+
+was that it was so named because the designers
+set a goal of a 220-mph (354km/h) top speed.",
+collection,0x00008EEE,1030551,_911_carrera_rs_73,911 Carrera RS2.7 (901) '73,0x0000A3F1,fuzzy-name,"�here have been many great Porsche 911s over the years, 
+but the Carrera RS stands out as a shining masterpiece.
+
+The 1973 Carrera RS was the first production 
+911 to wear the ""Carrera RS"" name.
+
+And it was built specifically to win races.
+
+It was a homologation model designed to meet FIA Group 4
+regulations.
+
+Its engine displacement was increased to 2.7 liters
+from 2.4 liters of the standard 911.
+
+The car was lighter than the stock version because
+all luxury and convenience amenit�es were removed.
+
+Summer tires were chosen for enhanced grip, aided by
+special front and rear spoilers.
+
+The ""ducktail"" rear spoiler served as a
+particularly iconic design feature.
+
+The 911 Carrera RS was sold in limited numbers
+from late 1972 to 1973.
+
+And while race iterations of other 911s followed, 
+a trend that continues to this day...
+
+...the 911 Carrera RS was the first of the series,
+thus, it now enjoys legendary status among Porsche fans. &",
+collection,0x00008EEF,1030552,_959_87,959,0x0000A9D7,verified-car-key-alias,"�he Porsche 959 was developed specifically to compete in the
+WRC's top class—Group B—which was introduced in 1982.
+
+Because it was produced solely for homologation purposes,
+only 292 cars were built.
+
+At a glance, the 959 looked similar to contemporary 911s,
+but under the skin, it was an entirely different car.
+
+The technical ambition of the project was exemplified
+by the 959's drivetrain.
+
+Because Group B rally cars needed to efficiently transfer 500
+or so horsepower to the road, �hey were typically 4WD.
+
+For the 959, Porsche developed an advanced
+electronically controlled 4WD system.
+
+Unfortunately, the abrupt end of the Group B category meant that
+the 959 was never able to compete in the series.
+
+So, Porsche looked for other venues for the 959, and one of them
+was what many considered the world's toughest race.
+
+Porsche entered off-road versions of the 959
+into the 1986 Paris-Dakar Rally.
+
+To the surprise of many, the Porsche factory 959 team achieved
+an a�azing one-two finish.
+
+The Porsche 959 is a crucial milestone in Porsche history
+that showed the potential of 4WD sports cars.�",
+collection,0x00008EFE,1030567,impreza_wrc_98,Impreza WRC Car '98,0x0000BCF1,verified-car-key-alias,"�he World Rally Championship represents the pinnacle 
+of rally racing.
+
+It was on this international stage where Subaru became the
+first Japanese automaker...
+
+...to accomplish the great feat of winning three successive
+manufacturers' titles, from 1995 to 1997.
+
+The car that was responsible for the ""three-peat""
+was the Subaru Impreza WRC.
+
+The Impreza WRC came bathed in the blue livery of 
+the Subaru works team.
+
+It combined a turbocharged boxer engine with an advanced
+all-wheel d�ive system.
+
+This machine won many rally competitions, including the
+Rallye Monte Carlo.
+
+After the announcement of new world rally-car regulations
+in 1997...
+
+...the Impreza WRC went to battle as a 2-door coupe with
+unique blister fenders both at front and rear.
+
+Its refreshed appearance strongly resembled the original 
+Impreza 22B STi.
+
+From behind the wheel of the new-look Impreza WRC...
+
+...driver Colin McRae claimed three victories for
+the Subaru rally team in 1998.�",
+collection,0x00008F0C,1030581,charger_rt_426_hemi_68,Charger RT 427 HEMI '68,0x0000B2D6,fuzzy-name,"Even if you weren't around to experience the muscle car boom
+that dominated the American automotive scene in the 1960s...
+
+...I'll bet that your heart skipped a beat whenever
+you saw one of them in action in a movie or on the TV.
+
+The 1968 Dodge Charger is one of the great
+masterpieces of the American muscle car genre.
+
+The body style alone is enough to turn heads.
+
+The ""twin diamond"" shape of the profile
+is one of the trademarks of the 1968 model.
+
+And of course, you can't have a m�scle car
+without the muscle.
+
+This Charger is the sportier R/T grade, but it also...
+
+...comes with the 426 Hemi, 
+Mopar's most powerful engine option available at the time.
+
+If you're building a muscle car collection,
+this is one car you can't�afford to miss.",
+collection,0x00008F40,1030633,escudo_pikespeak_98,V6 Escudo Pikes Peak Special spec.98,0x00009E9B,fuzzy-name,"The V6 Escudo Pikes Peak Special took on
+the Pikes Peak International Hill Climb in 1996.
+ 
+It won that year, catapulting Suzuki's image as a serious maker
+of off-road machines. 
+
+The Pikes Peak Hill Climb is a race up a mountain
+road to an elevation of over 4593 feet.
+
+With a history dating back more than 100 years, 
+it is among the oldest motorsport events in the world.
+
+The V6 Escudo Pikes Peak Special packed a 981 HP
+2.5-liter V-6 in a body that only weighed 800kg.
+
+It was specially tuned to deliver peak performance
+at altitudes that exceeded 13,123 feet.",
+collection,0x00008F55,1030654,espace_f1_95,Espace F1,0x0000CDE9,fuzzy-name,"�t’s been said that the European minivan boom of the
+1980s was sparked by the Renault Espace.
+
+The series had a powerful Formula 1 variant
+known as the Espace F1.
+
+This car was proposed to Renault by Matra, the company that
+had initially constructed the Espace’s fiberglass body.
+
+At the time, Renault was hailed as the reigning champion
+of Formula 1.
+
+Transplanting a RS4 unit from its winning F1 machine
+of 1992, the FW14B...
+
+...Matra sought to pay homage to Renault’s Formula � success
+and, at the same time, mark ten years of the Espace.
+
+Clothed in an almost entirely carbon-fiber
+and aluminum body...
+
+...this car swapped out its third-row seats for an F1 engine
+mounted amidships.
+
+And its test run was piloted by none other than F1 driver
+Alain Prost!
+
+This is one unorthodox minivan that can really zip
+around a race track.�",
+collection,0x00008F58,1030657,w196r_monopost_55,"Mercedes-Benz W 196 R ""Monoposto"" '55",0x0000C19F,dms-car-key-override,"�he name ""W 196"" evokes a special reverence among
+Mercedes-Benz enthusiasts.
+
+The reason is this legendary model didn’t just compete;
+it dominated the racing world of the 1950s. 
+
+When the 2.5-liter engine limit was set for F1 in 1954,
+Mercedes-Benz engineered a car tailored to the new regulation.
+
+This machine, christened the ""W 196 R,"" was equipped with an inline
+8-cylinder angled, which on the track, became a finely tuned weapon.
+
+Upon its debut in 1954, the car claimed four out of�six victories in
+the skilled hands of racing legend Juan Manuel Fangio.
+
+The following year, in 1955, it solidified its reputation,
+claiming five wins out of six races.
+
+The ""W 196 R"" before you hails from that illustrious,
+unforgettable 1955 season. 
+
+In this iteration, it appears without the original cowl, showcasing
+the sleek single-seater with ""monoposto"" body.
+
+It features a distinctive hood bulge designed for air intake.
+
+By the way, did you know that the ""W 196 R"" had a sibli�g
+developed for sports-car racing?
+
+Named the ""W 196 S,"" this model became a legend in its own right,
+becoming a titan of the sports-car world.
+
+Officially known as the ""300 SLR"", it left an indelible mark on
+automotive history with its unmatched design and performance.",
+collection,0x00008F5F,1030664,mangusta_69_cd,Mangusta (Christian Dior),0x00009D62,brand-prefix-display-name,"�he De Tomaso Mangusta is an iconic 1960s sports car. 
+
+It is one of car designer Giorgetto Giugiaro's
+most legendary creations,
+
+and its value has risen quite a bit in recent years. 
+
+Now we have a very interesting chapter 
+added to the history of the Mangusta.
+
+Introducing a Gran Turismo original, the Mangusta
+""Christian Dior."" 
+
+This car was created in collaboration with
+the famous French couture house Christian Dior.
+
+The aim of Dior here was to infuse the sports car 
+with �ts elegant brand essence. 
+
+The designer who worked on this project is Kim Jones,
+Dior Men's Artistic Director
+
+The Mangusta he customized is characterized by its chic body
+color and stripe, and the ""Dior"" signature on its side.
+
+The racing number 47 on the body is also strongly tied 
+to the history of the Dior Brand.
+
+Last but not least, a special racing suit and helmet 
+have been designed specifically to accompany this Mangusta!",
+collection,0x00008F64,1030669,castrol_nsx_00,Castrol 無限 NSX '00,0x0000BB40,dms-car-key-override,"�he Castrol MUGEN NSX was one of the standouts
+in the competitive 2000 JGTC season.
+
+It became the first Honda NSX to win a high-level Japanese 
+GT championship.
+
+In the top GT500 class of the Japanese GT Car Championship 
+(JGTC), there was a real dogfight...
+
+...between the factory teams of Honda, Nissan and Toyota, 
+who were always trying to one-up each other.
+
+Since 1997, Honda had been competing with its NSX GT race car.
+
+But tuning regulations in the JGTC restricted the develop�ent of the NSX GT.
+
+This led to less than satisfactory results on the track, but 
+Honda's race department refused to give up.
+
+Through tuning of the car's aerodynamics and improvements to weight 
+balance, the NSX steadily improved year after year.
+
+All of that perseverance came to fruition in the 2000 season when 
+the Castrol MUGEN NSX took home the series championship.
+
+Today, the original NSX has become a consummate collector 
+car, an icon of Japanese automobiles
+
+And this car rep�esents the model's legacy as a 
+timeless, persistent race machine.�",
+collection,0x00009F00,1030711,gt_one_race_99,TS020 #3 (ESSO) (1999),0x0000B9E0,verified-car-key-alias,"�verall victory in the 24 Hours of Le Mans
+is one of the greatest achievements for a manufacturer.
+
+This Toyota GT-One is one of many cars
+that sought to secure its place in the history books.
+
+It competed in Le Mans in the late 1990s under GT1 regulations,
+the highest category for production-based race cars.
+
+Having developed this Le Mans spec car specifically to
+compete in GT1, Toyota named it simply the ""GT-One.""
+
+Development of the GT-One, and the race team, 
+was led by genius race�car designer André de Cortanze.
+
+Already an accomplished engineer, Cortanze had
+developed cars for F1, WRC and Le Mans.
+
+What he created for Toyota was
+a beautifully advanced racing machine.
+
+His GT-One combined formula car technology
+with the styling of a GT car.
+
+The Toyota GT-One competed in Le Mans twice,
+in 1998 and 1999.
+
+In its first outing in 1998, it finished 9th overall.
+
+Toyota returned in 1999 with the team of Ukyo Katayama,
+Toshio Suzuki and Keiichi Tsuchiya takin� 2nd in car No.3.
+
+Although the team wasn't quite able to reach its goal,
+fans will never forget the feats of the GT-One.�",
+collection,0x0000C2A6,1030751,unimog_411_62,Mercedes-Benz Type411 Unimog (1962),0x0000C2FF,verified-car-key-alias,"�ercedes-Benz, renowned for its passenger vehicles,
+has also made significant contributions to the commercial sector.
+
+One such example is the Unimog.
+
+An acronym for Universal-Motor-Gerät, its name translates to 
+""Universal Motorized Working Machine.""
+
+Designed in 1945, the Unimog was engineered as an all-wheel-drive
+farming vehicle capable of navigating rugged terrain.
+
+Its versatility stemmed from a range of attachments, 
+enabling it to perform virtually any task required.
+
+1953�marked the debut of the 401/402, the first iteration
+to bear Mercedes-Benz's iconic three-pointed star.
+
+It was followed by the Type 411.
+
+It featured a cabin and flatbed mounted on a ladder frame 
+derived from the 401.
+
+Often hailed as ""the last original Unimog,"" 
+the 411 holds a special place in automotive history.
+
+Having evolved beyond its agricultural roots, it is now 
+celebrated as a premier vintage vehicle.~",
+collection,0x0000CB95,1030752,land_cruiser_fj40v_74,Toyota Land Cruiser FJ40V 1974,0x0000CC62,verified-car-key-alias,"�he Toyota Land Cruiser is one of the longest-running
+and most respected vehicles in the world.
+
+Its story began more than 70 years ago, in 1951.
+
+The FJ40 series arrived in 1960, marking
+the model’s third generation.
+
+It was offered in a variety of body styles,
+each designed for a specific purpose.
+
+The 2-door hardtop, seen here, was built to conquer
+the harshest off-road conditions.
+
+Although compact at just 3.9m in length, it was
+powered by a stout 3.9-liter gasoline engine.�p/>
+Its rugged 4WD system with a 2-speed transfer case
+made it indispensable on mountain trails.
+
+With its distinctive charm, the FJ40 became an enduring favorite
+and stayed in production for 24 years, until 1984.
+
+In 2021, TOYOTA GAZOO Racing began producing
+reproduction parts for the model.
+
+Why? Because a legendary off-roader like this
+was simply too good to let fade away.
+�",
 usedCar,0x000044BA,1000001,r32_gtr_v2_94,Skyline GT-R V･spec II (R32) '94,0x00006F5E,brand-prefix-display-name,"The Skyline GT-R could may well be the most popular 
 Japanese car ever.
 
@@ -7096,6 +9467,26 @@ at the 1993 World Rally Championship.
 
 It certainly played a major role in restoring Ford to its
 former rally glory.",
+usedCar,0x00005495,0,,Toyota Chaser Tourer V '97,0x0000D4C7,message-key-override,"�ey there! Looking for a slightly retro, rear-wheel-drive sedan?
+Then how about Toyota’s sixth-generation Chaser?
+
+With its pillarless-hardtop appearance and concealed B-pillars,
+the Chaser is the sportier sibling of the Cresta and Mark II.
+
+The Tourer V is the most serious in the lineup, powered by a
+turbocharged 2.5-liter second-generation 1JZ-GTE inline-6.
+
+With 280ps and 38.5kgm of torque, this sedan has enough
+muscle to run wheel-to-wheel with genuine sports cars.
+
+Need proof� Look no further than its storied win at
+the 1998 Japanese Touring Car Championship!
+
+Its durable, highly tunable engine also makes it an ideal
+foundation for a competitive drift car.
+
+The Chaser is a high-performance sedan with a well-concealed
+wild side, and it is a perennial favorite among enthusiasts.�",
 usedCar,0x00005498,1000558,_4_gtl_85,R4 GTL,0x0000B862,verified-car-key-alias,"The Renault 4 is a French economy car with
 a long and glorious history.
 
@@ -7285,2359 +9676,6 @@ The sheer speed at which it takes corners is unbelievable.
 
 Believe me, there aren’t many cars out there that have had
 such a hold on young drivers as the Mitsubishi FTO!",
-collection,0x00008CCE,1030007,_300sl_coupe_54,300 SL Coupé '54,0x000075D2,brand-prefix-display-name,"The Mercedes-Benz 300 SL Coupe is a classic car 
-with a real racing pedigree.
-
-It was based on the legendary W194 racing coupe,
-which won races all over the world,
-
-including the 24 hours of Le Mans, and the 
-Carrera Panamericana,
-
-a victory which really turned heads in North America.
-
-East coast importer Max Hoffman asked the German manufacturer
-to produce a road version of the W194.
-
-Some dealers claimed to have a hundred orders waiting
-
-Mercedes-Benz relented, and the 300 SL “Gullwing” Coupe resulted.
-
-It's undoubtedly one of the most important models in the
-company's history!&",
-collection,0x00008CD1,1030010,f40_92,F40 '92,0x00007602,brand-prefix-display-name,"The F40 was the last Ferrari to have been personally
-approved by the company's founder, Enzo Ferrari.
-
-The development codename of the F40 was ""LM,"" 
-standing for ""Le Mans"".
-
-You can see that it was designed as a road car, while
-it has the appearance of a serious race car.
-
-Some say that the F40 suffers from
-turbo lag and a peaky engine...
-
-...but I consider it to be a very refined example
-of Ferrari engineering.
-
-Many professional drivers maintain that the the engine
-has very few shortcomings if it is properly controlled. 
-
-That means, if you have the driving skill,
-you can handle it.&",
-collection,0x00008CE8,1030033,castrol_toms_supra_97,Supra GT500 '97,0x0000427E,brand-prefix-display-name,"The 1997 Castrol TOM'S Supra is one of the most famous
-race cars in the history of Japanese motorsports.
-
-The All Japan Grand Touring Championship was a very popular
-event in Japan from the late 1990s to the early 2000s.
-
-It featured cars like the Nissan Skyline GT-R, the Honda NSX,
-and of course, the Toyota Supra.
-
-Nissan's GT-Rs dominated the series 
-in the beginning.
-
-But the first car that challenged its dominance 
-was this 1997 Castrol TOM'S Supra.
-
-The Supra would go on to win the All Japan GT Championship
-four times.
-
-But it's this iconic TOM's Supra that I remember most fondly.",
-collection,0x00008CE9,1030034,_787b_91,787B '91,0x0000426E,brand-prefix-display-name,"�o you know about the 1991 Le Mans 24 Hours?
-
-In the final year that rotary engines were allowed to compete,
-Mazda defied the odds and won in miraculous fashion.
-
-The winning race car was the 787B, powered by 4-rotor engine,
-which outlasted powerhouse rivals like Jaguar and Porsche.
-
-The victory was made even sweeter by the fact that Mazda
-became the only Japanese company to win the historic race.
-
-After a bad showing the previous year, no one expected the
-787B to do well in 1991, quali�ying in 19th position.
-
-However, the Mazda team was undeterred and ran a strategic
-and consistent race, taking the checkered flag.
-
-The drivers who accomplished the impossible were Volker Weidler,
-Johnny Herbert and Bertrand Gachot.
-
-After the race, the now-historic No. 55 car was safely stowed
-away to be preserved forever.
-
-Then, in 2011, the car was restored and returned to Le Mans for a
-demo run celebrating the 20th anniversary of its victory.",
-collection,0x00008CF2,1030043,challenger_rt_70,Challenger R/T '70,0x0000420E,brand-prefix-display-name,"This is a 1970 model, first-generation Dodge Challenger.
-
-And it happens to be an R/T series, powered by a 426 Hemi
-engine, which features hemispherical combustion chambers.
-
-The 1970 models debuted in 1969, and customers had a choice
-between the basic straight-six model and this R/T.
-
-The basic model was classified as a ""pony car,"" while the R/T
-was considered a true muscle car.
-
-Relatively few Dodge Challenger R/Ts were produced,
-so today they are worth quite a lot.
-
-In fact, I'd go so far as to say that this Hemi R/T is a true
-collector's item.",
-collection,0x00008CF3,1030044,_330_p4_67,330 P4 '67,0x000075D5,brand-prefix-display-name,"The Ferrari 330 P4 is, without a doubt, one of the 
-most beautiful race cars in the world.
-
-And one of the rarest also.
-
-The Ferrari P series are sports cars with a mid-mounted
-V-12 engine.
-
-First developed in 1963, they have an amazing track record,
-with many historic wins over the years.
-
-The development of the P series was stepped up
-to challenge Ford at Le Mans...
-
-...and it reached its pinnacle with the P4 in 1967.
-
-At the 1967 Daytona 24-hour race, two 330 P4s and one 412P
-pulled off a spectacular 1-2-3 finish.
-
-Even if you include the P3 modified to P4 specifications,
-only four 330 P4s were ever produced.U",
-collection,0x00008CF5,1030046,_365_gtb4_71,365 GTB4 '71,0x000075D6,brand-prefix-display-name,"�he 365 GTB4 remains one of the most memorable Ferraris.
-
-It made its debut in 1968...
-
-...as the successor to iconic 1960s Ferraris
-like the 250 GT Lusso and the 275 GTB.
-
-It is a front engine/rear-wheel-drive model,
-powered by a 4-cam 4390cc V-12.
-
-Like all Ferraris of the period, the first number indicated
-the displacement per cylinder.
-
-The ""GT"" stood for ""Gran Turismo.""
-
-The ""B"" designated it as a ""Berlinetta,"" 
-meaning that it was a coupe.
-
-And the ""4"" represented th� 4-cam engine with 
-double overhead cams on each cylinder bank.
-
-Most people know this car as the 
-Ferrari Daytona.
-
-A name inspired by the company's historic 1-2-3 finish at
-the Daytona 24 Hours in '67, a year prior to its release.
-
-A major achievement indeed!�",
-collection,0x00008CF8,1030049,gt40_mk1_66,GT40 Mark I '66,0x0000422E,brand-prefix-display-name,"When most people think of the Ford GT40, they think of
-Carroll Shelby, and they wouldn't be wrong.
-
-But it's worth mentioning that Shelby wasn't actually involved
-with the first GT40 Mark I, which appeared in 1964.
-
-The Mark I was a car with a fantastic concept.
-
-I think the way it retains the look of a classic GT car
-makes it especially beautiful.
-
-The only thing the Mark I was missing was the reliability
-required for endurance racing.
-
-That's why Ford decided to hand a large part of its
-racing program over to Shelby.
-
-And, the rest is history.
-
-But the GT40 Mark I is where it all began, and because of that, 
-it's considered a prized collector's item.",
-collection,0x00008CFA,1030051,gt350_65,G.T.350 '65,0x0000422D,brand-prefix-display-name,"�he 1965 Shelby GT350 is a variant of the Mustang
-that debuted in 1964.
-
-It was a model that was born from the collaboration between
-Ford and Carroll Shelby,
-
-and has a fantastic history of successes 
-in the world of racing.
-
-Ford's then General Manager, Lee Iacocca, is generally 
-regarded as the man behind the Mustang.
-
-In addition to knowing how to build cars people wanted. 
-Iacocca understood the value of motorsport,
-
-which is why he entrusted the Mustang's
-racing project to Sh�lby.
-
-The result of this new collaboration was the GT350.
-
-Being made specifically for racing, it's very spartan
-compared to the standard Mustang,
-
-its light, 2-seat setup and high-performance 289 engine 
-ensured success in SCCA and other competition races.�",
-collection,0x00008CFB,1030052,miura_p400_proto_67,Miura P400 Bertone Prototype '67,0x00004237,brand-prefix-display-name,"�he legendary Miura supercar was actually Lamborghini's
-first midship design.
-
-This car is chassis 0706—the second of the first five cars
-built—and is the oldest Miura in existence
-
-Even for a brand as storied as Lamborghini, 
-the Miura is especially legendary.
-
-Its chassis—designed by Gian Paolo Dallara—was displayed 
-without a body, at the 1965 Turin Salon.
-
-Those who saw it thought it was a sure sign that Lamborghini
-was going to start racing!
-
-The reaction was enough to�persuade company founder
-Ferruccio Lamborghini to greenlight its development,
-
-and the first prototype Miura was completed the
-following year in 1966.
-
-This chassis number 0706 has miraculously survived the years
-without any restoration work,
-
-and it was entered in the Pebble Beach Concours d'Elegance
-in 2008, where it won the Gran Turismo Trophy.�",
-collection,0x00008CFE,1030055,mclaren_f1_94,McLaren F1 '94,0x00007622,exact-display-name,"Is the McLaren F1 the greatest supercar of them all?
-Quite possibly.
-
-McLaren's founder, Bruce McLaren, had always wanted to
-enter the road car business,
-
-but died in 1970 before a true production car
-could be developed.
-
-The company would not start working on road cars again
-until the late 1980s.
-
-And this 3 seater ""McLaren F1"" was finally born in 1992.
-
-Conceived and engineered by Gordon Murray, the exterior and
-Interior were designed by Peter Stevens.
-
-Many aspects of this car, including the weight balance
-and distribution, are close to perfection.
-
-Needless to say with only 106 built, they're not easy to get.
-
-It’s little wonder that the McLaren F1 is one of the most
-desirable supercars ever.",
-collection,0x00008CFF,1030056,mclaren_f1_gtr_lemans_95,McLaren F1 GTR - BMW '95,0x00007623,exact-display-name,"This McLaren F1 GTR is the overall winner
-of the 1995 Le Mans 24 Hour race.
-
-The drivers in the race were Masanori Sekiya, J.J. Lehto,
-and Yannick Dalmas,
-
-and Sekiya was the first Japanese driver to win the famed race,
-
-and Lehto was also the first Finn to claim this honor.
-
-Although design engineer Gordon Murray was not
-keen on entering it in races,
-
-he agreed to make some aerodynamic alterations,
-and the result was a win at its first race,
-
-which happened to be at Le Mans!
-
- Following the Le Mans victory, McLaren resolved to
-continue developing the GTR as a race car,
-
-making this a crucial icon in both the history
-of McLaren and in the history of Le Mans.i",
-collection,0x00008D06,1030063,cobra_67,Cobra 427 '66,0x00004211,brand-prefix-display-name,"�arroll Shelby, who won at Le Mans and even competed in
-Formula 1, was one of America's greatest car enthusiasts……
-
-who has a permanent place in automotive history.
-
-After he retired from driving, Shelby became a constructor,
-with a focus on developing road cars that could win races.
-
-The 'Cobra' is one of the iconic cars produced by Shelby.
-
-First production lots were shipped out in the spring of 1963,
-
- and were initially powered by Ford’s 260 CID engine, which
-were soon repl�ced by the 289 CID unit.
-
-And the legendary Cobra 427 was introduced in 1964.
-
-The Cobra 427 was powered by a 7L Ford 427,
-
-which was an engine selected by Shelby with the aim to
-defeat Ferrari in competition.
-
-With their proven competition pedigree and aggressive looks,
-
-big block Cobras are sought after by car enthusiasts
-all over the world.�",
-collection,0x00008D09,1030066,_250_gto_62,250 GTO '62,0x000075D0,brand-prefix-display-name,"�his 250 GTO is one of the last Ferraris to combine 
-the characteristics of road cars and racing cars.
-
-It's not the rarest Ferrari of them all, and maybe
-there are fairer models around.
-
-But if you like good stories, I'm sure you'll become
-fond of this car!
-
-Even if you include the 330 GT and the series 2 cars, 
-only 39 of these 250 GTOs were built in total.
-
-and each one of them has its own unique tale.
-
-This car, chassis number 3729GT, is a right-hand drive
-built for the UK.
-�
-It was purchased by Jaguar dealer
-and race car driver John Coombs,
-
-and it was originally white but painted red in 1966.
-
-Really famous drivers including Graham Hill, Richie Ginther
-and Mike Parkes, drove this car in the UK during the 1960s.
-
-It was later owned and raced by the British racing driver
-Jack Sears for several years.
-
-Since 1999 it's been owned by former Microsoft President
-and chief operating officer, John Shirley.
-
-The price of this particular car takes this long stor�ed
-history into account.E",
-collection,0x00008D0E,1030071,xj13_66,XJ13 '66,0x0000765E,brand-prefix-display-name,"Jaguar played a huge part in the history of the
-24 Hours of Le Mans,
-
-winning this famous race five times in the 1950s with the
-C-Type and D-Type.
-
-However Jaguar withdrew from competition at Le Mans after 1956,
-and didn't show interest in racing again until the 1960s.
-
-But development of a sports car to succeed the D-Type 
-had been secretly underway.
-
-That successor of the D-Type, is the car you see before you, 
-the XJ13 with a midship mounted V12.
-
-But unfortunately, this XJ13 never made it to Le Mans. 
-
-By the time the car was ready, management's priorities
-had changed again.
-
-We can only imagine what might have happened,
-
-had Jaguar been part of the legendary Ford-Ferrari tussle
-at the '67 Le Mans.",
-collection,0x00008D0F,1030072,_155_v6ti_dtm_93,155 2.5 V6 TI '93,0x000075CE,brand-prefix-display-name,"This is one of the most recognizable cars from the 1990s
-German touring car championship known as the DTM.
-
-After regulations were loosened in 1993, the DTM became a
-platform for developing some very powerful cars.
-
-One of these was the Alfa 155 2.5 V6 TI, which was fielded
-by the Alfa Romeo works team.
-
-Winning 12 out of 20 races in 1993...
-
-...it secured the championship title for both
-driver Nicola Larini and the manufacturer.
-
-The DTM later became a more international competition
-before being discontinued in 1996.
-
-This meant that Alfa Romeo would go down in history as the
-only non-German manufacturer to win the series.
-
-It's one of the most significant DTM cars whose uniqueness
-lies in its heritage.",
-collection,0x00008D12,1030075,camaro_z28_302_69,Camaro Z28 '69,0x0000420B,brand-prefix-display-name,"�he 1969 Z28 was the last of the first-generation Camaros
-and is considered one of the greatest of them all.
-
-After only three years of production, 700,000 units were sold.
-
-The lineup included 12 different engines, 
-including inline-6- and V-8-powered variants.
-
-This Z28 represented the top-of-the-line version of
-that first-generation model.
-
-It came with a high-revving 5.0-liter V-8,
-a 4-speed manual gearbox and power disc brakes.
-
-And the car was distinguished as a Z28 by two wid� stripes
-that ran the length of its body.
-
-There's an interesting backstory to the Z28's engine, too.
-
-It was actually based on a race engine. The 5.0-liter V-8
-was essentially a de-tuned version of the engine...
-
-...originally developed for the Penske Camaro
-that competed in the SCCA Trans Am Series.
-
-The Penske Camaro was driven by the legendary American
-race driver Mark Donahue.
-
-He won the Trans Am series in both 1968 and 1969.%",
-collection,0x00008D13,1030076,chaparral_2j_race_70,2J '70,0x0000428D,brand-prefix-display-name,"�ave you ever considered who had the most influence over
-modern racing car technology?
-
-For me, that would be either Colin Chapman or Jim Hall. 
-
-Chapman, of course, was the founder of Lotus.
-But do you know Jim Hall?
-
-He is the founder of Chaparral Cars, 
-
-but also a driver who competed in Formula 1,
-as well as being a brilliant engineer.
-
-The most innovative of all the Chaparral cars was
-this 1970 2J, aka the “sucker” car.
-
-It featured two fans at the rear of the chassis, �hich were
-a part of a suction system that produced downforce.
-
-Other innovations included an adjustable spoiler and a
-two-pedal semi-automatic transmission...
-
-All in all, it’s one of the most outlandish and imaginative
-race cars ever produced.
-
-The 2J was undoubtedly Chaparral's greatest achievement,
-and lives on in motorsport legend to this day.�",
-collection,0x00008D1A,1030083,kpgc10_skyline_gtr_70,Skyline Hard Top 2000GT-R (KPGC10) '70,0x00006F56,brand-prefix-display-name,"The ""Hakosuka"" Skyline has become a cult classic for
-Japanese car enthusiasts.
-
-Of the various models, this 2-door hardtop GT-R,
-known by its model number, KPGC10, stands out.
-
-This car remains on the most-wanted list for many collectors.
-
-Among the car's many charms was its engine.
-
-It was the direct descendent of the high-performance engine
-in Japan’s first prototype race car, the Prince R380.
-
-Fewer than 1200 KPGC10s coupes were produced. Including
-the 4-door models, the total is still only around 2000 cars.
-
-This car made a name for itself by winning 49 consecutive races
-in the Japanese Touring Car Championship.
-
-Owning it means owning a piece of that
-incredible history.",
-collection,0x00008D1D,1030086,mclaren_f1_gtr_long_97,McLaren F1 GTR Race Car '97,0x00007624,brand-prefix-display-name,"�cLaren's founder, Bruce McLaren, always wanted to produce 
-a road car that would rival the best in the world.
-
-In 1969, he drew up plans to produce road-going cars that 
-were essentially slightly modified Can-Am race machines.
-
-These were called the M6GT and M12GT.
-
-However, they never amounted to much... 
-
-...with only a few prototypes created.
-
-His dream was finally realized in the 1990s with perhaps the 
-greatest sports car of all time.
-
-Designed by Gordon Murray and equipped�with the company's 
-racing know-how, the McLaren F1 road car was born.
-
-The car shown here is the McLaren F1 GTR, a race version of 
-the legendary road car.
-　
-The stock F1 was so powerful that for Le Mans, the engine had to 
-be detuned from 618 HP to 592 HP to comply with regulations.
-
-The McLaren F1 powerplant was built by BMW...
-
-...which allowed the F1 GTR to also be raced by 
-BMW's works teams.
-
-It has become one of the most popular of the F1 collection
-of BMW works racers.�",
-collection,0x00008D20,1030089,penzoil_gtr_99,GT-R GT500 '99,0x00006F59,brand-prefix-display-name,"�he Nissan Skyline GT-R has a storied racing history.
-
-It established a tradition that was carried on by the 
-second-generation GT-R.
-
-The 1999 Pennzoil Nismo GT-R was powered by
-the RB26DETT, an inline-6 engine.
-
-It won the All Japan Grand Touring Championship.
- 
-It remains one of the most consistent race cars to
-ever wage war in the competitive series.
-
-While the R34 GT-R took the title again
-in 2003, which was its final year...
-
-...the battle-tested engine under its hood had �lready
-been swapped in favor of a V-6 powerplant.
-
-This means that this 1999 Pennzoil was the last GT-R 
-to win the series title with the iconic inline-6.
-
-There's just something special about this inline-6-powered model.
-For me, its achievements are nothing short of legendary.�",
-collection,0x00008D2B,1030100,gt40_mk4_race_67,Mark IV Race Car '67,0x0000422F,brand-prefix-display-name,"�he Ford Mark IV dominated the 1967 Le Mans 24 hour race,
-
-and it was a momentous achievement for Ford, 
-which had also won the prior year.
-
-The car was powered by the 7L V8 engine that Carroll Shelby
-had chosen for the Mark II, 
-
-But its chassis was completely different.
-
-This chassis was based on the J-car that was under development
-to meet new regulations…
- 
-incorporating cutting edge aerodynamic innovations.
-
-As a result, the Mark IV was incredibly quick.
-
-So quick in f�ct, that it finished a full four laps ahead of 
-the second-placed Ferrari 330 P4 at Le Mans in 1967.
-
-It's also worth noting that the drivers Dan Gurney and
-A.J. Foyt were both American,
-
-making this the first victory for an all-American team 
-in the history of the 24 hours of Le Mans.
-
-And it's because of these facts that the Ford Mark IV
-has a special place in motorsport history. j",
-collection,0x00008D2D,1030102,tz2_1965,GIULIA TZ2 carrozzata da ZAGATO '65,0x0000428B,brand-prefix-display-name,"You'd be hard pressed to find a wilder, more bewitching
-street-legal car than the Alfa Romeo Giulia TZ.
-
-It's also incredibly rare, with only around
-12 ever built.
-
-And what’s truly noteworthy is that this race car...
-
-...has no history of crashes and has never undergone 
-any restoration work.
-
-You can see why it has become a collector's item.
-
-It should come as no surprise that this TZ2 won the Gran Turismo 
-Trophy at the 2009 Pebble Beach Concours d'Elegance.",
-collection,0x00008D30,1030105,xjr9_race_88,XJR-9 '88,0x0000765F,brand-prefix-display-name,"�espite their early success in the 1950s, Jaguar didn't enter
-a works team at Le Mans again for almost 30 years.
-
-In fact, they wouldn't return to the race until 1986, 
-when they entered the XJR-6.
-
-The XJR-6 was designed by Tony Southgate, 
-who had made his name in Formula 1,
-
-and it was powered by a naturally aspirated V12 engine.
-
-It was the heyday of turbocharged cars, and the XJR-6's uniquely
-high-pitched exhaust note was instantly recognizable.
-
-The sight and sound of a Jaguar�tearing around the track
-once more certainly got the fans excited!
-
-Two years later, Jaguar entered the XJR-9 
-and finally won at Le Mans,
-
- for their first new victory at the 24 Hours of Le Mans since an
-Ecurie Ecose D-Type won in 1957.
-
-It had been more than thirty years since their last win!
-
-That alone is enough to secure this iconic car's
-place in the annals of racing history!�",
-collection,0x00008D31,1030106,r92cp_92,R92CP '92,0x00006F64,brand-prefix-display-name,"�his Nissan R92CP is the fastest Group C racing car of them all.
-
-It really is an absolute beast, reaching over 400km/h
-on Fuji Speedway's long straight.
-
-Group C races used to be extremely popular in Japan in their day,
-
-The year after the FIA World Endurance Championship was created,
-Japan had already set up its own endurance racing series.
-
-This series was initially dominated by Porsche, 
-
-but Nissan and Toyota quickly grew stronger to become
-its top contenders.
-
-The R92CP -�designed by Nissan's Kazutoshi Mizuno and built
-entirely in-house, was developed for the former C1 class,
-
-and its level of maturity as well as its speed
-were way ahead of its competition.
-
-Even legendary drivers of Japan such as Kazuyoshi Hoshino and
-Masahiro Hasemi spoke of R92CP's acceleration with dread.c",
-collection,0x00008D35,1030110,ford_roadster_1932_xx,1932 Ford Roadster Hot Rod,0x00009D57,verified-car-key-alias,"If you're looking for a car that will really give you a
-taste of traditional American hot rod culture...
-
-Then the 1932 Ford Model B, or ""Deuce"", as it is
-affectionately called, is a great place to start.
-
-The name ""Deuce"" comes from its two-door
-configuration.
-
-Popular as a base for customization...
-
-It is a prime example of a custom hot rod.",
-collection,0x00008D37,1030112,abarth_1500_biposto_bertone_52,1500 Biposto Bertone B.A.T 1 '52,0x00004284,brand-prefix-display-name,"�ranco Scaglione was a designer who applied the principles of
-aeronautical engineering to car design during his career.
-
-He is perhaps best known for his B.A.T. design concept cars.
-
-B.A.T. stands for ""Berlina Aerodinamica Tecnica,"" and these were 
-experimental vehicles designed for aerodynamic testing.
-
-This car predates B.A.T. 5, which is usually considered
-the first of the B.A.T series.
-
-But the owner Chris Drake and many historians believe
-that this car spawned the B.A.T. series...�/
-...and should be considered to be B.A.T.1.
-
-First presented at the 1952 Turin Motor Show, it was later
-owned by the Packard Motor Car Company.
-
-Lovingly restored over a period of seven years,
-Drake's hard work paid off in 2010...
-
-...when, at the famous Pebble Beach Concours 
-d'Elegance...
-
-...it won the Gran Turismo Trophy!a",
-collection,0x00008D39,1030114,_288_gto_84,GTO '84,0x00004261,brand-prefix-display-name,"To me, when Leonardo Fioravanti was at Pininfarina
-and designing for Ferrari...
-
-..remains one of the greatest periods in the company's history.
-
-Starting with the Dino 246 and culminating with this 288 GTO,
-most cars featured mid-mounted V-8 engines.
-
-Although its styling may appear sleek and feminine, the rear
-fenders are an indication of its mighty power.
-
-Only Fioravanti could craft such a beautiful mid-engine car!
-Some would say that the GTO is the epitome of his genius.
-
-The 288 GTO’s model name is derived from its twin-turbocharged
-2.8-liter V-8 powerplant.
-
-Only 270 were ever made, so they're not that easy to find.
-Still, it's a must-have for any serious Ferrari collection.S",
-collection,0x00008D3A,1030115,countach_lp400_74,Countach LP400 '74,0x00004218,brand-prefix-display-name,"The Countach had a huge impact on the motor industry, and
-plotted the course Lamborghini has followed ever since.
-
-Its development was headed up by the brilliant engineer
-Paolo Stanzani...
-
-Who, together with designer Marcello Gandini, 
-produced this scissor-doored masterpiece.
-
-Although Countachs were produced for over 25 years,
-the first generation LP400 remains the most popular.
-
-There's just something different about the way it drives.
-The fact only 150 were made adds scarcity value, too.
-
-You can be certain these Countach LP400s are only going to
-become more popular in the years to come.Q",
-collection,0x00008D3B,1030116,sauber_mercedes_c9_89,Sauber Mercedes C9 '89,0x0000764C,exact-display-name,"�f I were to ask you to think of Swiss F1 team,
-chances are you'd think of Sauber,
-
-which was founded by Peter Sauber, a keen amateur race driver.
-
-Sauber built his first race car in 1970,
-and drove it in hill climbs.
-
-Sauber then focused on the management side of things, and the
-team experienced early success with the BMW-engined C5.
-
-In many ways, that success was the launchpad which propelled
-the team all the way to Formula 1 in 1993.
-
-Prior to its F1 involvement, Sauber's greate�t achievement
-was the C9, a Group C race car developed with Mercedes.
-
-The C9 made its racing debut in 1987, and soon tasted victory.
-
-In the 1989 season it was virtually unrivaled,
-
-becoming the winner of the World Sports Car Championship 
-and winning the 24 Hours of Le Mans!�",
-collection,0x00008D45,1030126,cobra_coupe_64,Cobra Daytona Coupe '64,0x00004212,brand-prefix-display-name,"The Shelby Cobra Daytona Coupe may be the most 
-valuable Shelby Cobra of them all.
-
-Carroll Shelby was determined to win Le Mans for Ford...
-
-...so he asked his friend Pete Brock to design a coupe body 
-for the Cobra.
-
-Its specs are almost exactly the same as the 289 Cobra,
-but its top speed was 30km/h faster.
-
-Having won class races at Le Mans and Daytona, this Cobra 
-claimed the 1965 FIA GT Class championship.
-
-Only six examples were ever produced, including prototypes,
-therefore, the car has become the stuff of legends.",
-collection,0x00008D46,1030127,xnr_ghia_roadster_60,XNR Ghia Roadster '60,0x00004258,brand-prefix-display-name,"This unique Plymouth roadster is best known for having been
-designed by Carrozzeria Ghia.
-
-But do you know where the ""XNR"" name comes from?
-
-If you try to read “XNR” out loud, it sounds just like
-""Exner,"" doesn't it?
- 
-It's the name of the legendary American designer 
-Virgil Max Exner...
-
-...who led Chrysler's design for much of the 1950s and 1960s.
-
-He developed various designs in conjunction with
-Luigi Segre of Carrozzeria Ghia.
-
-Many innovative and interesting designs
-resulted from this collaboration.
-
-And this XNR Ghia Roadster was one of them.
-
-The XNR also made waves in 2011 when it claimed the Gran Turismo
-Trophy at the Pebble Beach Concours d'Elegance.",
-collection,0x00008D49,1030130,_250_gt_berlinetta_swb_61,250 GT Berlinetta passo corto '61,0x0000425C,brand-prefix-display-name,"Ferrari's 250 GT series owes much of its renown to this car,
-the 250 GT Berlinetta.
-
-The model was announced by Ferrari in 1959, and marked a
-decisive shift away from previous 250s.
-
-One of the most notable differences was the 2400mm wheelbase,
-which was 200mm shorter than its predecessors.
-
-This gave the car better handling, and led to the name
-""SWB,"" which stands for ""short wheelbase.""
-
-The V12 engine was also more powerful,
-
-and driven by great drivers including Stirling Moss� Graham Hill,
-and Carroll Shelby,
-
- the model proved to be an outstanding success.
-
-The total production of the Ferrari 250 Berlinetta was
-around 160 cars in total.
-
-Some of these featured an aluminum body for racing, while
-others like this one�had steel bodies for street use.�",
-collection,0x00008D4A,1030131,corvette_coupe_63,Corvette Sting Ray Sport Coupe (C2) '63,0x00005601,brand-prefix-display-name,"No sports car says ""America"" quite like
-the Chevrolet Corvette!
-
-This second generation model, also known as the Sting Ray
-was especially popular.
-
-Later versions featuring the L88 racing engine are very
-collectable, and regularly sell for over $1 million.
-
-This 1963 coupe is perhaps best known for its split
-rear window.
-
-It's a design feature that was only used in the first
-year models because it limited rear visibility.
-
-The one-year ""split window"" Sting Rays are hugely popular,
-and are among the most collectable Corvettes.",
-collection,0x00008D4B,1030132,corvette_racer_concept_59,Corvette Stingray Racer Concept '59,0x00004216,brand-prefix-display-name,"�o let me introduce you to one of the most important cars
-in the long history of the Corvette: the Sting Ray Racer.
-
-Corvettes have been raced enthusiastically, 
-ever since their debut in 1954.
-
-Zora Arkus-Duntov, an engineer and racing driver who
-worked for GM, was particularly keen on racing,
-
-and in 1957 he produced the Corvette SS,
-the first Corvette built specifically for racing.
-
-Now this Sting Ray Racer is essentially a Corvette SS
-with an open-top body.
-
-It's based on drawi�gs by Peter Brock, 
-who is a renowned designer of GM.
-
-The development of the Sting Ray Racer was commissioned by Bill
-Mitchell, who was the new GM Design chief at the time.
-
-The design of the Sting Ray Racer is known for having had 
-a significant influence on the history of the Corvette,
-
-as another GM designer, Larry Shinoda, refined this design
-into the C2 Corvette.n",
-collection,0x00008D4D,1030134,_2000_gt_67,2000GT '67,0x00004299,brand-prefix-display-name,"One of the great masterpieces of Japanese car design, 
-
-Toyota's 2000GT ranks among the most beautiful
-GT cars in history.
-
-When it debuted in 1967, it sold for a little over
-two million yen, which was approximately $6800 at the time.
-
-Today It would fetch high 6 figures in dollars. 
-
-A minor design modification in 1969 also divides the 2000GTs
-into early models and late models.
-
-The 2000GT competed in numerous speed trials
-where it set records, 
-
-and it was even raced by Carroll Shelby in 1968.
-
-All in all, it's a fabulous car, and one which you can enjoy
-owning for many years.",
-collection,0x00008D4E,1030135,quattro_s1_pikespeak_87,Sport quattro S1 Pikes Peak '87,0x00006F5A,brand-prefix-display-name,"The 4WD Sport quattro S1 revolutionized the automotive
-industry in the 1980s.
-
-You only have to look at its achievements in the
-World Rally Championship for proof of that!
-
-The Sport quattro S1 was developed 
-for homologation in Group B rallying.
-
-As a result, only 200 were ever built.
-
-But that's not the whole story to this particular
-Sport quattro S1.
-
-This is an S1-E2, a further evolved version of the S1.
-
-It won the Pikes Peak International Hill Climb in 1987,
-with Walter Röhrl at the wheel.
-
-This victory would prove to be the last hurrah for the
-Sport quattro, as Audi pulled out of Group B rallying in 1986.
-
-Without a doubt, this is one of the greatest among greats.e",
-collection,0x00008D4F,1030136,_500_modial_pf_coupe_54,500 Mondial Pinin Farina Coupe '54,0x000084C7,brand-prefix-display-name,"�he 500 Mondial Pinin Farina Coupe was one of the great
-Ferraris of the 1950s.
-
-There are a few different types of the Ferrari Mondial,
-
-But this is 1 of 2 coupes that were built 
-to race the 1954 Tour de France!
-
-Unfortunately it retired out of the race,
-
-but perhaps this was a good thing, given how well it was
-taken care of and endured throughout the years.
-
-The car was bought by a French collector and safely stored
-away in a chateau for several decades.
-
-So, when John Shirley�acquired the car in 2002, 
-
-everything from the engine to the paint finish was 
-in perfect condition!
-
-After only minor work, he was able to enter it in the
-Pebble Beach Concours d'Elegance in 2012.
-
-Unsurprisingly, it went home with the Gran Turismo Trophy.4",
-collection,0x00008D55,1030142,r8_gordini_rally_66,R8 Gordini '66,0x00007640,brand-prefix-display-name,"Amédée Gordini was a legendary tuner of Renault
-and Simca cars,
- 
-and perhaps best known for his achievements at Le Mans.
-
-He was a hard working Frenchman who even went on to become an
-F1 race car constructor - basically, a genius.
-
-For many years, Gordini partnered with Renault to produce
-performance versions of the company's mass market cars.
-
-This Renault 8 Gordini is one such example and probably the
-most popular of the official collaborations.
-
-The fact it's almost twice as powerful as the base model
-just goes to show what a genius tuner Gordini really was.
-
-The classic blue paint with white stripes, V-shaped bonnet
-and boxy styling still has legions of fans to this day!",
-collection,0x00008D57,1030144,rx500_70,RX500 '70,0x00004270,brand-prefix-display-name,"The Mazda RX500 is a supercar that is nothing short of mythical.
-
-It was built in 1970 for the 50th anniversary of Toyo Kogyo,
-known as Mazda today, and displayed at the Tokyo Motor Show.
-
-This RX500 was conceived as a successor
-to the famed 'Cosmo Sport' of the 1960s.
-
-Unlike the Cosmo Sport however, its rotary engine was not
- mounted in front but positioned rear-midship.
-
-And this rotary engine was a high rpm type that would
-rev up to 14000rpm.
-
-With 247 HP and weighing only 850kg, 
-the RX500 was an extremely fast car.
- 
-Only one RX500 was ever built as a concept model, and in
-2008 it was restored by Mazda to its original glory.",
-collection,0x00008D7C,1030181,_8c_2900b_touring_berlinetta_38,8C 2900B Touring Berlinetta '38,0x0000428A,brand-prefix-display-name,"The 8C name refers to the engine's eight cylinders, and 
-these cars are the iconic pre-war Alfa Romeos.
-
-The inline-8 was designed by the genius Italian
-engineer Vittorio Jano.
-
-The “Berlinetta” body was made by famed coachbuilder
-Touring.
-
-There were only five Berlinettas made in total.
- 
-This particular one, from 1937, appeared in many motor
-shows and catalogues.
-
-It also won ""Best of Show"" at the Pebble Beach
-Concours d'Elegance in 2018.
-
-It then won the Concorso d'Eleganza Villa d'Este
-the following year...
-
-...before winning the Louis Vuitton Classic Concours Award.
-
-I doubt many other cars have won prizes at three of the
-world's biggest concours.
-
-Needless to say, its current value is nothing short of
-astron�mi�alű",
-collection,0x00008D89,1030194,f50_95,F50 '95,0x00007604,brand-prefix-display-name,"The F50 was the successor to the F40, and was one of 
-the most Spartan cars Ferrari ever produced.
-
-The idea came from Enzo Ferrari's son, Piero,
- 
-who wanted to create a road car similar to an F1 race car 
-for the company's 50th anniversary.
-
-This is reflected in things like the F50's V12 engine being
-mounted in the same structure as the Ferrari F1 machine.
-
-The V12 engine in-house is also based on the V12 used in
-the Ferrari F1 racers.
-
-So if you're in the mood to drive a Ferrari F1 around town,
-the F50 is the car for you!",
-collection,0x00008D8E,1030199,d_type_54,D-type '54,0x00004219,brand-prefix-display-name,"The D-Type is one of the most important cars in the history
-of Jaguar motorsport,
-
-it is also one of my favorite driving cars of the 1950s.
-
-While it shares components with the double
-Le Mans-winning C-Type,
-
-its all-aluminum monocoque body was a radical new change
-from that model.
-
-Its straight-six engine was also significantly tuned for both
-power and reliability.
-
-C-Type designer Malcolm Sayer also
-worked his magic on the D-Type,
- 
-fitting a fin to factory team cars
-to enhance stability at high speeds.
-
-The D-Type retired on its Le Mans debut in 1954, but
-came back in 1955 to win three consecutive races.
-
-Just 68 of this legendary racing car were produced, 
-With the works cars being the most desirable.",
-collection,0x00008D91,1030202,e_type_coupe_62,E-type Coupé '61,0x000075FA,brand-prefix-display-name,"�he E-type Coupe, which made its debut in 1961, had a huge
-influence on sports car design.
-
-The engine, in the car's nose, was based on the same straight-six
-engine that won Le Mans five times in the C-Type and D-Type.
-
-Although known in the wide world as the E-type, in
-North America it was often called the ""XK-E”.
-
-The beautiful body, which evolved from the D-Type sports
-racer, was designed by Malcolm Sayer,
-
-who is known as an early proponent of 
-aerodynamic design for automobiles.�p/>
-The E-Type remained in production for 14 years, and though it
-evolved to comply with later safety and emission laws, 
-
-it remained instantly recognizable to everyone.
-
-Although Jaguar didn’t have a factory race program
-for the E-Type in motorsports,
-
-it did build a “low-drag” coupe and a series of 12 lightweight
-E-Types that were raced on both sides of the Atlantic.
-
-Although famous for its good looks, the Jaguar E-Type
-is also a seriously fast sports car.",
-collection,0x00008D9C,1030213,clk_lm_98,AMG Mercedes CLK-LM '98,0x000084C9,verified-car-key-alias,"�his CLK-LM is one of the most attractive race cars
-produced by Mercedes-Benz.
-
-It only competed for a few years in the late 1990s, racing in
-GT1, which was then the pinnacle of Touring Car competition.
-
-GT1-class regulations required an automaker to build only 
-one street car to be approved for competition.
-
-Despite their appearance, these street cars
-were in fact full-on race machines.
-
-The CLK-LM's predecessor, the CLK-GTR, was produced
-in accordance to these regulations in 1997.
-This CLK-LM was a further evolution of the CLK-GTR.
-
-The replacement of the V-12 engine with a V-8 improved the
-race car's overall balance.
-
-As soon as it took to the track in the '98 FIA-GT Championships,
-it absolutely dominated the competition.
-
-That year, it took home both Drivers' and Manufacturers'
-championships.�",
-collection,0x00008DE3,1030284,db3s_53,DB3S '53,0x0000421B,brand-prefix-display-name,"I know what you're thinking: a DB3 road car doesn't exist.
-
-The DB2 was followed by the DB2/4, the DB2/4 Mk II,
-the Mark III, and then the DB4.
-
-If that's what you're thinking, then you certainly know
-your Aston Martins!
-
-There was, however, a DB3 race car.
-
-It was introduced in 1951, and, unfortunately,
-saw limited success.
-
-This DB3S is an upgraded version 
-that was released in 1953.
-
-It's well known as a true masterpiece.
-
-Its beefed-up inline-6 engine powered it to numerous
-victories in some of the UK's most famous races.
-
-This particular example, chassis number 1...
-
-...is the car that took home the Gran Turismo Trophy 
-at the Pebble Beach Concours d'Elegance in 2013.E",
-collection,0x00008DE7,1030288,_300_sel_68_amg_71,300 SEL 6.8 AMG '71,0x000075D1,brand-prefix-display-name,"�his 300 SEL 6.8 AMG should be seen as an important part of
-AMG's success story.
-
-AMG started as a company that built competition vehicles
-based on Mercedes-Benz cars.
-
-It was established by former Daimler-Benz engineer 
-Hans Werner Aufrecht...
-
-...and Erhard Melcher.
-
-The name of the brand comes from the combination of
-“A” for Aufrecht, “M” for Melcher...
-
-...and “G” for Grossaspach, the hometown of Aufrecht.
-
-The 300 SEL 6.8 AMG competed in the 24 Hours of Spa
-in �971, where it won its class and finished 2nd overall. 
-
-This result which really put AMG on the map.
-
-Mercedes-Benz owners flocked to AMG
-to have their cars tuned by the company.
-
-AMG’s fame spread from there, becoming a wholly-owned
-subsidiary of Mercedes-Benz in 2005.�",
-collection,0x00008DEF,1030296,mangsta_69,Mangusta '69,0x00007621,brand-prefix-display-name,"Giorgetto Giugiaro is a legend in the world of car design.
-
-He's worked on so many great cars, it would be hard to pick
-just one to define him.
-
-But if I had to choose...
-
-...I'd go for the De Tomaso Mangusta, a car he designed
-while working for Carrozzeria Ghia.
-
-The Mangusta looks more striking than many of Giugiaro's
-later designs.
-
-There's something elegant about its sleek lines. It’s a simple
-design, and yet it's glamorous and muscular, too.
-
-The Mangusta bowed in 1966, and only 400 were produced. 
-It's powered by a Ford overhead valve V-8.
-
-These days they're highly sought-after as early examples
-of Giugiaro's genius.",
-collection,0x00008DF0,1030297,willys_mb_45,Willys MB '45,0x00004265,brand-prefix-display-name,"�eep is surely one of the world's most familiar and
-beloved brands, especially to off-road enthusiasts.
-
-The company has a long and storied history...
-
-...but there's no doubt this Willys MB (Military, Model B) 
-was one of its greatest successes.
-
-Interestingly, Willys didn't actually come up with
-the name ""Jeep.""
-
-It was the brainchild of the American Bantam Car Company’s
-prototype utility vehicle for the military.
-
-This car was designated “GP” for general purpose,
-which sou�ds like ""Jeep.""
-
-After World War II, the company decided to focus on
-mass-producing Jeeps and trademarked the name.
-
-The company’s ""civilian jeeps"" were based on the classic
-Willys MB.
-
-It had developed a good reputation during the war and was
-initially marketed for use in agriculture.
-
-The company also began worldwide production under license,
-which meant that anyone could produce a Jeep.
-
-This would prove to be an absolutely decisive factor in the
-growth of the Jeep brand we kn�w and love today.X",
-collection,0x00008DF1,1030298,merak_ss_80,Merak SS '80,0x0000A3F7,brand-prefix-display-name,"�he Maserati Merak is a fine example of a 
-beautiful mid-engine supercar from the 1970s.
-
-It was designed by Giorgetto Giugiaro, who
-began at FIAT in 1955, then worked at...
-
-...Bertone for six years, and later at Ghia until 1968.
-
-He subsequently established ""Italdesign,"" a design firm
-that would create many masterpieces. 
-
-The Maserati Merak was created during 
-Giugiaro’s early Italdesign days.
-
-This stunning new Maserati was introduced at 
-the 1972 Paris Motor Show.
-
-The M�rak SS is the lighter and more 
-powerful model that made its debut in 1975.
-
-This 1980 model is powered by a 220ps version
-of the V-6 shared with the Citroën-Maserati SM.
-
-Although the striking Merak has a mid-mounted 
-engine, it is actually a 2+2 with small rear seats...
-
-...which is very rare for an exotic high-performance car.a",
-collection,0x00008DF9,1030306,db5_64,DB5 '64,0x00005736,brand-prefix-display-name,"The Aston Martin DB5 is truly a rare gem, both in terms
-of price and its head-turning allure.
-
-And we all know who's responsible for that, don’t we?
-
-That's right, Bond. James Bond, from the hugely popular
-British-born 007 movie series.
-
-The DB5 which appeared in ""Goldfinger"" in 1964 was probably
-the most famous car in the world at the time.
-
-Aston Martin recently responded to huge public demand for
-these ""Bond Edition"" DB5s by producing 25 replicas.
-
-These replicas built in late 2020 and 2021 sold for
-a huge sum upwards of $3.75M each.
-
-I can't begin to imagine what 
-the original car would fetch,
-
- although one of two cars built in 1965 to promote the film
-sold for $6.4 million in 2019!",
-collection,0x00008E3A,1030371,_917k_70,917K '70,0x00004291,brand-prefix-display-name,"The 917K is one of the most important race cars
-in Porsche's history.
-
-It was developed from the long-tailed 917LH which made its debut
-in 1969.
-
-Under its hood was a few different engines depending on the car, 
-from a 4.5-liter, 4.9-liter and a 5.0-liter air-cooled flat-12.
-
-Fast and ferocious on the track, the 917K delivered
-Porsche its first overall victory at Le Mans.
-
-Although Porsche didn't have a works team, the 917K still won
-7 of 10 races in the International Championship for Makes.
-
-Even better, it would also go on to win the 24 Hours
-of Le Mans that year, and again in 1971.
-
-Porsche's golden era began with the 917K, making it one of 
-the most significant models in motorsports history.",
-collection,0x00008E3B,1030372,_962c_88,962 C '88,0x00004202,brand-prefix-display-name,"The world of motorsports is known for its 
-extremely competitive development, 
-
-which makes Porsche's achievements during the 1980s
-truly miraculous.
-
-Porsche won at Le Mans in 1982 and 1983 with their 956,
-
-and the updated Porsche 956 went on to win 2 more
-Le Mans races.
-
-The Porsche 962 series is a race car that is directly linked to
-the legendary 956 series,
-
-and the Porsche 962C won at Le Mans in 1986 and 1987, 
-
-contributing to the last 2 of the 7 consecutive Le Mans
-victories by Porsche that started in 1981.
-
-The 962C remains a potent piece of machinery to this day. 
-Are you ready to harness the power of this legendary Porsche?",
-collection,0x00008E3C,1030373,_356_a_1500_gs_carrera_gt_ss_56,356 A/1500 GS GT Carrera Speedster '56,0x000041F6,brand-prefix-display-name,"�t's a well-known fact that Porsche’s first production car
-started with the rear-engine Porsche 356.
-
-Full production of the 356 series began in 1950...
-
-...and the coupe model was soon followed by
-open-top versions.
-
-All of these models shared a boxed sheet metal
-chassis with independent suspension.
-
-And the flat-4 engine was available in five
-different displacements and output.
-
-A slightly modified 356A appeared in 1955.
- 
-In 1956, a high performance 1.5-liter engine develop�d for
-the 550 Spyder was offered as an option.
-
-Models equipped with the powerful 1.5-liter engine
-were called the GS Carrera.
-
-They are known to have been cars that could immediately
-be raced as is.
-
-This model is a GS Carrera GT, characterized by
-a lighter body and powerful engine.
-
-These cars are collectibles that rarely change hands,
-so don't miss your chance to drive it!�",
-collection,0x00008E41,1030378,_911_gt1_strassenver_97,911 GT1 Strassenversion '97,0x000041FB,brand-prefix-display-name,"What do you call a street-legal Porsche 911 that shoots from
-zero to 100km/h in 3.7 secs, and tops out at 310km/h?
-
-Why, the Porsche 911 GT1 Strassenversion of course!
-
-Developed to meet competition rules for the Le Mans
-GT1 Class, only 25 cars were ever sold.
-
-The production car it was based on was
-pretty much a race car to begin with.
-
-From its nose to its front suspension, the Porsche 911 GT1
-Strassenversion looks like a type 993 911.
-
-But behind the seats you’ll see lots of parts reminiscent of
-the Porsche 962 that competed at Le Mans in the 1980s.
-
-The engine is a fire-breathing twin-turbocharged 
-3.2-liter flat-6.
-
-A chance to own this car rarely comes around. 
-And this is your chance.",
-collection,0x00008E42,1030379,mercedes_amg_gt_r_17,Mercedes-AMG GT R,0x0000762B,dms-car-key-override,Buddy_ContentCar_Hagerty_normal_mercedes_amg_gt_r_17_1030379,
-collection,0x00008E43,1030380,s_baker_tourer_29,S Barker Tourer '29,0x000084D0,brand-prefix-display-name,"If classic cars are your thing, then you're bound to
-recognize this S-Type Mercedes right away.
-
-It won ""Best of Show"" at the 2017
-Pebble Beach Concours d'Elegance.
-
-And it's known as Mercedes-Benz's first sports car. Called
-the S-Type, it was designed by Dr. Ferdinand Porsche.
-
-The body was constructed by Barker & Co., a coachbuilder
-best known for its work on Rolls-Royce cars.
-
-The car's distinctive rear end is commonly referred to as
-a ""boat tail.""
-
-No one quite made them like Barker & Co.
-
-This S-Type was commissioned by Earl Howe, a co-founder
-of the British Racing Driver's Club.
-
-Not only is this car a priceless gem, it takes
-a certain amount of grace drive it!",
-collection,0x00008E45,1030382,_300sl_w194_52,300 SL (W194) '52,0x000075D3,brand-prefix-display-name,"�he Type W194 300SL is one of the more notable Mercedes-Benz 
-machines from the Golden Age of racing of the 1950s.
-
-A champion at Le Mans and the Carrera Panamericana, the car 
-is also known for inspiring the iconic 300SL Coupe.
-
-Designed by Rudolf Uhlenhaut, a legendary engineer with a 
-vast amount of experience in race car design...
-
-...the Mercedes-Benz W194 300SL boasted the latest
-in the race technology of its day.
-
-It featured a spaceframe chassis, an independent suspension
-and a�single-overhead camshaft inline-6.
-
-Only ten were believed to have been built.
-
-Thanks to its excellent performance and reliability, the car
-shone in endurance races.
-
-This car, chassis number 007/52, is the car
-that won Le Mans.
-
-If a W194 were to hit the market now, the price
-would surely be astronomical.�",
-collection,0x00008E46,1030383,_356_a_1500_gs_carrera_56,356 A/1500 GS Carrera '56,0x000041F5,brand-prefix-display-name,"On the outside, the Porsche GS Carrera looks no different
-from other 356 coupes of its day,
-
- but what makes this GS Carrera so special
-and raises its value,
-
-is the four-cam 1.5L engine that produces 100ps.
-
-This engine was the most powerful version
-available for the 356 series at the time.
-
-It was also possible to order lighter speedster seats,
-and even without heaters to reduce weight. 
-
-That's why the GS was not just a fast street car, 
-but was also seen in many races.
-
-I think you'll find that it's directly linked to
-Porsche's illustrious past!",
-collection,0x00008E51,1030394,fairlady_z432_69,Fairlady Z 432 '69,0x00006F4E,brand-prefix-display-name,"The first model of the Nissan Z series was known
-as the type S30.
-
-Of all the S30s, this Z432 is particularly special.
-
-With a classic Z-series design...
-
-It is powered by the same S20 2L inline six-cylinder
-engine seen in the Skyline GT-Rs of its day.
-
-The four valves per cylinder...
-
-Three carburettors...
-
-And two cams don’t just prove its high performance.
-
-These numbers are also the origin of the 'Z432'
-model name.
-
-The fact that it had a GT-R engine was reflected i� its
-price, more than double that of standard S30s.
-
-Furthermore, only 419 of the Z432s were produced,
-making it the most valuable of the first-gen Zs.
-
-There was also a higher performance competition model
-of the Z432, the Z432R.
-
-An extremely�rare variant, it tends to fetch a very
-handsome price at auctions.�",
-collection,0x00008E54,1030397,spyder_550_1500rs_55,Spyder type 550/1500RS '55,0x00007653,brand-prefix-display-name,"Did you know that the first car to ever be wear the Porsche
-badge was a mid-engine convertible?
-
-It was the 356/1 prototype from 1948. 
-
-The company was no doubt intrigued with
-mid-engine layouts from the get-go.
-
-The 550 Spyder, introduced in 1953, was another 
-mid-engine sports car from Porsche. 
-
-The 550/1500RS was a variant that went on the market 
-at the end of 1954.
-
-This specific 550/1500RS, with its blue body and white
-triangular stripes, has a serial number 0067.
-
-It's the only 550 still wearing the same finish 
-that came from the factory.
-
-And that makes it a priceless treasure.C",
-collection,0x00008E66,1030415,_911_turbo_s_93,911 Turbo S (964) '93,0x0000D317,verified-car-key-alias,"�here are countless stories to tell about the Porsche 911, but
-the 911 Turbo S Leichtbau is an exceptionally rare model.
-
-“Leichtbau,” meaning “lightweight” in German,
-was produced in a limited run of 86 cars.
-
-It celebrated Porsche’s success in the IMSA championship.
-
-The car was based on the third-generation 911 Type 964 Turbo
-and used the same 3.3-liter engine as the previous model.
-
-However, in the Leichtbau, the flat-6 was tuned to 381ps.
-
-Inside, most luxuries were �tripped away,
-along with the rear seats.
-
-This reduced its curb weight to just 1290kg, a figure that gave
-true meaning to the Leichtbau name.
-
-Weight savings were achieved not only through reduction.
-
-Aluminum doors with thinner glass and a carbon-fiber hood
-further refined the car’s purpose.
-
-Externally, the rear-fender air intakes distinguished
-the Leichtbau from base 911s.
-
-And, the large rear spoiler stood as a unique carbon element.
-
-The driving experience was nothing s�ort of exquisite, reminding
-us that the finest sports cars are often defined by lightness.N",
-collection,0x00008E76,1030431,nismo400r_95,400R (1995),0x0000B2D9,fuzzy-name,"�he Nismo 400R was long considered the ultimate GT-R.
-
- The car is based on the Skyline GT-R, but you won't find
-the name ""Skyline"" or ""GT-R"" anywhere on the body.
-
-From the engine to the body to the chassis, this limited-edition model 
-was extensively tuned by Nismo, Nissan's motorsports division.
-
-And they named it simply the ""400R.""
-
-Perhaps that's why this car isn't talked about
-as much as other legendary Skyline GT-R models.
-
-This is a culmination of the Nissan works team's know�edge gained at Le Mans,
-coming in the form of increased displacement engine,
-
-a reinforced suspension and clutch,
-as well as the extensive use of carbon fiber, notably in the prop shafts.
-
-At the time the 400R was being planned, Japanese automakers had a 
-self-imposed limit of 280 horsepower for their road cars.
-
-As its name suggests, the 400R had a bit more, with 400.
-
-It also had a price tag to match, costing three times as much
-as a new R33 model Skyline GT-R.
-
-One of the most ex�ensive Japanese-made cars at the time, Nissan 
-claims to have built only 44 of them.
-
-Because of its rarity, it has become one of the most 
-difficult Skyline GT-R models to find.�",
-collection,0x00008E78,1030433,celica_wrc_95,Celica GT-Four Rally Car (ST205) '95,0x0000A3F2,brand-prefix-display-name,"�he Celica is one of Toyota's most popular two-door coupes
-but it is also known for its long career in rallying,
-
-particularly when Group A cars became the main competitors 
-in the 1987 World Rally Championship.
-
-Toyota introduced the GT-Four which was basically a rally-
-prepared model of the base production Celica.
-
-The GT-Four model was available across three generations, with
-works cars and those with race history the most valuable.
-
-This particular Group A rally machine is a 3rd gen�ration,
-GT-Four developed from the ST205 Celica.
-
-As was essential in the golden years of Groupe A, it's four-
-wheel-drive and is fitted with a turbo anti-lag system.
-
-The Toyota works team began competing with this car
-for the 1995 season of the WRC,
-
-However, in the penultimate round, the car was
-found to have illegal turbo restrictors.
-
-The resulting penalties stripped the drivers of points and
-the works team was banned from the WRC for one year.
-
-You could say it's a car with h�story.
-
-For rally fans, the combination of the classic Castrol livery and
-the aggressive design makes this an all-time Group A classic.�",
-collection,0x00008E81,1030442,corvette_c1_58,Corvette Roadster C1 '58,0x0000AF02,verified-car-key-alias,"The Chevrolet Corvette is undoubtedly one of the world’s
-most famous sports cars.
-
-When it made its debut in 1953...
-
-...it quickly became known as ""America's sport car""
-because no other car like it existed in the U.S.
-
-The car was noted for its attractive body style
-and powerful engine.
-
-The original 1953 were built mostly by hand, 
-and only a 300 units were produced.
-
-Still, they were incredibly popular, and the next year,
-General Motors increased production of the car.
-
-This 1958 model exhibits a thoroughly new design
-with four headlights.K",
-collection,0x00008E82,1030443,a6gcs_spyder_54,A6GCS/53 Spyder '54,0x00009D5A,brand-prefix-display-name,"�his Maserati A6GCS Spider was
-bodied by the small Italian Carrozzeria, of Medardo Fantuzzi.
-
-A Modest production run of the beautiful Fantuzzi spiders were
-built on the A6GCS chassis.
-
-Like most of the competition bodies from the Bolognese
-coachbuilder, the Maserati displayed a functional beauty.
-
-That same beauty was true of the stunning Maserati 250F
-and sharknose Ferrari 156 Formula 1 cars,
-
- and dozens of other Maserati and Ferrari sports racing cars.
-
-The A6GCS featured a twin�cam straight-six mounted up front that
-was designed by the famed Italian engineer, Gioacchino Colombo.
-
-Fitted with three twin throat Weber Carburetors, the
-1985cc engine had a maximum output of 170ps.
-
-This car, chassis 2078 has a fantastic history.
-
-Built as a works racing car, it was assigned to the
-great Luigi Musso for the 1954 season.
-
-Musso contested ten races in 1954, and came away with three
-overall wins and five class victories,
-
-becoming the Italian 2000cc champion.�p/>
-A6GCS 2078 was sold to Argentina, where it was raced with mixed
-results in 1955. It returned to Italy in 1986.
-
-This car won the Gran Turismo Trophy at the
-2014 Pebble Beach Concours d'Elegance.�",
-collection,0x00008E84,1030445,pontiac_gto_judge_69,GTO 'The Judge' '69,0x0000995C,brand-prefix-display-name,"Introduced in 1964, the Pontiac GTO is considered
-one of the first American muscle cars.
-
-In a series of one-upmanship by various manufacturers, the GTO's
-performance was soon eclipsed by the competition.
-
-In response, Pontiac created a new high-performance
-model called ""The Judge.""
-
-It came equipped with a powerful 6.6-liter V-8.
-
-It also boasted wide tires, a rear spoiler and distinctive livery
-that gave the car an extremely powerful presence.
-
-Because of The Judge, the Pontiac GTO retained its rightful
-place at the top of the muscle-car heap.l",
-collection,0x00008E95,1030462,alpine_a220_68,A220 Race Car '68,0x000075E1,brand-prefix-display-name,"It's hard to believe that a Le Mans prototype
-also competed in rallies. 
-
-Well, it really did happen.
-
-Let me introduce you to the Alpine A220.
-
-It's a successor to the Alpine M Series, which performed well
-at Le Mans in the 1960s.
-
-It features a mid-mounted 3L V8 engine designed by Gordini...
-
-but unfortunately it never made much of a mark at Le Mans.
-
-However it would go on to compete in the world of rallying
-which was a fairly unique challenge for such a car.
-
-This specific car has a dramatically shortened tail for rallying
-which makes it especially rare.",
-collection,0x00008EA8,1030481,delta_hf_integrale_wrc_92,DELTA HF Integrale WRC Group A (1992),0x0000C7C1,verified-car-key-alias,"�ancia is renowned not only for its refined Italian design spirit
-but also for its illustrious motorsport heritage.
-
-The marque has created legendary rally cars including the Fulvia,
-Stratos, and the Delta, which dominated Group A racing.
-
-The Delta burst onto the World Rally Championship scene in 1987
-claiming 9 victories and ultimately earning the season title.
-
-With each stage of development, the Delta saw
-a steady infusion of innovative technology.
-
-And just look at the pronounced b�ister fenders—don’t they exude
-the raw, untamed aggression of a true fighting machine?
-
-Since entering competition in 1992, the HF Integrale
-captured 6 consecutive manufacturers’ titles.
-
-A true icon of 1990s rallying, it remains a legend
-whose brilliance has never faded.�",
-collection,0x00008EA9,1030482,kpgc110_skyline_gtr_73,Skyline 2000GT-R '73,0x0000A3F6,verified-car-key-alias,"�he 1973 Skyline GT-R is often considered almost mythical
-because of its extremely low production numbers.
-
-It is nicknamed the ""Kenmeri GT-R"" in reference to the 'Ken
-& Mary' commercials used to promote the C110 Skyline.
-
-The base model is the C110 Skyline that debuted in 1972,
-the direct successor to the legendary ""Hakosuka"" GT-R.
-
-The exact model code of Kenmeri GT-R was ""KPGC110,""
-and sales began in January 1973.
-
-However, the Kenmeri GT-R was only sold 
-for three months after its �ebut.
-
-The emissions regulations introduced at the time stopped
-the production of high-performance cars like the GT-R.
-
-It is said that only around 200 cars were produced
-in the three months it was available.
-
-In order to focus on environmental issues like exhaust
-emissions, Nissan also stopped its motorsports activities...
-
-And because of this, not only did this GT-R
-have a short lifespan...
-
-It never had a chance to prove itself in racing, 
-which was an important part of the Skyl�ne mystique.
-
-As a result, this model is considered the unicorn of GT-Rs
-and is highly prized by collectors around the world.",
-collection,0x00008EAB,1030484,roadrunner_superbird_70,Superbird '70,0x000084CE,brand-prefix-display-name,"�f you call yourself a racing fan, then you're no doubt
-familiar with NASCAR.
-
-Its race machines are loosely based on production cars,
-and the series is extremely popular in the U.S.
-
-Established in 1948, NASCAR is a motorsport series
-with a lot of history behind it.
-
-Among the more legendary race cars in the history of
-NASCAR is the Plymouth Superbird.
-
-Towards the end of the 1960s, NASCAR race cars were starting
-to regularly exceed speeds of more than 300km/h.
-
-The Superbird wa� based on the Plymouth Road Runner.
-
-Its long nose and large rear wing helped increase stability
-at high speeds.
-
-These aerodynamic advantages translated to incredibly
-fast lap times that left the competition in the dust.
-
-The brass at NASCAR weren't thrilled in seeing the
-lopsided results of the races...
-
-...nor did they want to see race car production costs
-skyrocket, making it inaccessible to the masses.
-
-As a result, the Superbird was discontinued after two years.
-
-Regardles�, it's remembered as a legendary muscle car.c",
-collection,0x00008EB4,1030493,ra_272_65,RA272 (1965),0x0000A83D,fuzzy-name,"One of the most iconic cars in Honda's history
-is this Formula 1 machine, the Honda RA272.
-
-Honda was the first Japanese automaker to
-compete in F1 racing.
-
-In 1965, this car earned Honda its first F1 win at the
-Mexican Grand Prix in the final round of the season.
-
-With an aluminum monocoque chassis up front
-and a space-frame towards the rear...
-
-...it was powered by a horizontal 1.5-liter V-12 mounted amidships.
-
-The RA272 was developed and driven by Richie 
-Ginther, an American racer of the 1960s.
-
-Honda has since earned many victories as an engine
-supplier, and it all began with the RA272.C",
-collection,0x00008EB6,1030495,_904_carrera_gts_64,Carrera GTS (904) '64,0x0000A9D8,brand-prefix-display-name,"�he Carrera GTS 904 is a shining star in Porsche's 
-storied motorsports history.
-
-Since the early 1950s, Porsche competed in 
-international races with the 356.
-
-All the while, the folks there were planning to build 
-a dedicated GT race car.
-
-Essentially, they needed to build 100 cars in
-12 months to qualify for competition.
-
-The result was the Carrera GTS in 1963.
-
-While a plan to use the flat-6 engine developed for
-the 911 never bore fruit...
-
-...the car featured a low and lig�tweight mid-engine 
-body and specially-designed suspension.
-
-As soon as the car was ready, it was racing all over
-the world.
-
-This particular Carrera GTS competed in the second
-Japanese Grand Prix, held in 1964.
-
-Its heated yet successful battle against Japan's Skyline is 
-still talked about by Japanese race fans to this day.�",
-collection,0x00008EB8,1030497,ds_21_pallas_70,DS21 Pallas (1970),0x0000A689,fuzzy-name,"�roduced by French car company, 
-Citroën, the DS is a timeless masterpiece.
-
-Citroën was founded in 1919 and has consistently been known for
-its advanced technology.
-
-In the '30s, Citroën produced unibody front-wheel-drive machines 
-while most cars had separate frames and rear-wheel-drive.
-
-The Traction Avant, released in 1934, 
-sold about 750,000 units before production ended.
-
-The DS model that replaced the Traction Avant was introduced
-at the 1955 Paris Salon international car sh�w.
-
-Visitors to the show were wowed by the futuristic body
-by Italian sculptor and designer Flaminio Bertoni.
-
-The DS was a mid-size 4-door sedan that sported a sharp-looking
-front end and sports-car aerodynamics...
-
-...the result of a body that tapers sharply towards the rear.
-
-Also, the car's mechanics, from the
-suspension to the brakes to the transmission...
-
-...was controlled by a proprietary hydraulic system.
-
-The DS you see here is a later model
-that shows a few evolutiona�y design changes.
-
-It also has adaptive headlights that respond to steering inputs.�",
-collection,0x00008EBC,1030501,mustang_boss_429_69,Mustang Boss 429 '69,0x00008054,brand-prefix-display-name,"This is the legendary Mustang equipped with the Boss 429 Ford
-race engine.
-
-You may have heard of the 427 ""side oiler"" engine 
-used by Ford in the 1960s.
-
-It also powered classic models like the GT40 and the
-Shelby 427 Cobra.
-
-This Mustang BOSS 429 engine is the successor to the 427 and
-was developed as part of Ford's push into NASCAR.
-
-The street-legal version of the BOSS 429 produced a conservative
-375 hp, while the race version pumped out 560 hp.
-
-NASCAR regulations required 500 of these engines to
-be mass produced.
-
-After fulfilling NASCAR's homologation requirement, the Mustang
-BOSS 429 ended its production run in just two years.",
-collection,0x00008EBD,1030502,skyline_super_sillette_84,Skyline Super Silhouette '84,0x00009D5E,fuzzy-name,"Have you heard of the ""Fuji Grand Champion Race?""
-It was a popular motorsports series in Japan in the 1980s.
-
-Those familiar with the event...
-
-...know all about the ""Super Silhouette"" that
-competed in the opening races for those events.
-
-The Super Silhouette races were held
-under Group 5 regulations of the day.
-
-While the exteriors of the cars maintained the look of
-production models...
-
-...under the sheet metal, they were dedicated race
-machines developed for competition.
-
-This Nissan Skyline Super Silhouette was
-the most popular car in the series.
-
-Famous for its flaming side exhaust, it serves as an iconic
-reminder of a time when racing was fun and wild.T",
-collection,0x00008ECD,1030518,mp4_4_88,MP4/4 '88,0x0000A393,brand-prefix-display-name,"�he McLaren MP4/4 Honda was a legendary F1 machine that
-proved virtually unbeatable in the 1988 Formula 1 season.
-
-The chassis was developed by Gordon Murray,
-the renowned race-car designer. 
-
-It came powered with the RA168E turbocharged Honda V-6 engine.
-
-In 1988, Formula 1 regulations changed significantly...
-
-...with strict limits placed on turbo boost pressure
-and fuel usage during races.
-
-Honda’s turbocharged engine utilized advanced electronic control
-technology, delivering �oth power and efficiency.
-
-The driver lineup featured two of the sport’s finest:
-Alain Prost and Ayrton Senna.
-
-With two legends behind the wheel, the MP4/4 won
-an extraordinary 15 of 16 races that season.
-
-Car No. 12 was driven by Ayrton Senna.
-
-In 1988, Senna secured the drivers’ championship,
-recording 13 pole positions and eight victories.�",
-collection,0x00008ECF,1030520,chevelle_ss_454_ls6_70,Chevelle SS 454 Sport Coupe '70,0x00009D56,fuzzy-name,"The 1970 Chevrolet Chevelle SS was Chevrolet's mid-size
-muscle car.
-
-The optional LS6 engine provided plenty of performance,
-even for a car as big as this.
-
-The 7.4-liter 454 engine was given increased compression,
-high-lift cams and special cylinder heads.
-
-Its power rating of 450 HP was likely the highest
-catalogued output for any American car at the time.
-
-It was an incredible street machine that could easily surpass
-500 HP with very little tuning.",
-collection,0x00008ED2,1030523,_205_t16_wrc_ev2_86,205 Turbo 16 Evolution 2 '86,0x00008200,brand-prefix-display-name,"�he Peugeot 205 Turbo 16 is sometimes referred to as the
-'ultimate rally car'.
-
-It was originally designed to compete in the World Rally
-Championship's legendary Group B category.
-
-Group B regulations were officially implemented in 1983,
-
-and at the time, only 200 of a model were required for
-Group B homologation within 12 months.
-
-No commitment to mass production of road versions meant that
-manufacturers could make bold decisions on development.
-
-And the choice made by Peugeot,
-�
-was to mount a powerful turbocharged engine midship, 
-combined with 4WD.
-
-At that point, the other teams in Group B hadn’t yet adopted
-the configuration, which initially gave Peugeot an advantage.
-
-The Peugeot 205 Turbo 16 made its debut in
-the middle of the 1984 season,
-
-and it immediately proved itself to be effective, winning the 
-World Rally Championship title in 1985 and 1986.�",
-collection,0x00008EDC,1030533,_190e_evo2_91,Mercedes-Benz 190E Evolution2'91,0x0000B2D8,dms-car-key-override,"�f you're looking for a legend of sports sedan,
-
-then look no further than 
-the Mercedes-Benz 190 E 2.5-16 Evo II.
-
-This car was made with a single goal:
-to win races.
-
-It was developed to compete in the DTM, a German race series
-that gained a worldwide following through the 1980s and 1990s.
-
-The DTM is contested by touring cars,
-which are based on road-going production models.
-
-For its entry, Mercedes-Benz turned the compact 190-series sedan
-into a mighty homologation model.
-
-�he final evolution model of this is this Evolution II.
-
-Although technically a production road car,
-visually, it's a bona fide touring race car.
-
-The race version of the 190 E Evo II
-dominated the DTM and the European racing scene.
-
-The AMG Mercedes-Benz works team won the manufacturers title
-for two consecutive seasons in 1991 and 1992.
-
-Only 502 road legal versions
-of the homologation model were ever produced.
-
-This is one car that any serious collector must have.�",
-collection,0x00008EE3,1030540,xj220_gt_road_92,Jaguar XJ220 '92,0x0000A3FB,exact-display-name,"�he Jaguar XJ220 is one of the most unusual
-performance cars in Jaguar history.
-
-From the 1980s through to the 1990s,
-the world's car manufacturers...
-
-...produced numerous legendary supercars
-that are still talked about today.
-
-Classic British luxury car maker and racing legend Jaguar
-made its mark on super-car history with the XJ220.
-
-The limited production Jaguar XJ220 was released in 1992,
-but the project had been in development since the early 1980s.
-
-It started as an unoffici�l project by a group of employees
-which included Jim Randle, then Jaguar's chief engineer.
-
-It was later approved as an official road-car project
-and development of the XJ220 began in earnest.
-
-The car's styling takes cues from the legendary
-Jaguar XJ13 race car prototype of the 1960s...
-
-...incorporating the elegant form of the classic mid-engine
-prototype in a style befitting a modern road car of the 1990s.
-
-The construction of the engine and chassis meanwhile,
-were based on Jaguar's�already successful Group C cars.
-
-It featured a 542ps twin-turbo V-6 engine
-mounted centrally in the aluminum monocoque shell.
-
-One of the most famous stories about the XJ220...
-
-was that it was so named because the designers
-set a goal of a 220-mph (354km/h) top speed.",
-collection,0x00008EEE,1030551,_911_carrera_rs_73,911 Carrera RS2.7 (901) '73,0x0000A3F1,fuzzy-name,"�here have been many great Porsche 911s over the years, 
-but the Carrera RS stands out as a shining masterpiece.
-
-The 1973 Carrera RS was the first production 
-911 to wear the ""Carrera RS"" name.
-
-And it was built specifically to win races.
-
-It was a homologation model designed to meet FIA Group 4
-regulations.
-
-Its engine displacement was increased to 2.7 liters
-from 2.4 liters of the standard 911.
-
-The car was lighter than the stock version because
-all luxury and convenience amenit�es were removed.
-
-Summer tires were chosen for enhanced grip, aided by
-special front and rear spoilers.
-
-The ""ducktail"" rear spoiler served as a
-particularly iconic design feature.
-
-The 911 Carrera RS was sold in limited numbers
-from late 1972 to 1973.
-
-And while race iterations of other 911s followed, 
-a trend that continues to this day...
-
-...the 911 Carrera RS was the first of the series,
-thus, it now enjoys legendary status among Porsche fans. &",
-collection,0x00008EEF,1030552,_959_87,959,0x0000A9D7,verified-car-key-alias,"�he Porsche 959 was developed specifically to compete in the
-WRC's top class—Group B—which was introduced in 1982.
-
-Because it was produced solely for homologation purposes,
-only 292 cars were built.
-
-At a glance, the 959 looked similar to contemporary 911s,
-but under the skin, it was an entirely different car.
-
-The technical ambition of the project was exemplified
-by the 959's drivetrain.
-
-Because Group B rally cars needed to efficiently transfer 500
-or so horsepower to the road, �hey were typically 4WD.
-
-For the 959, Porsche developed an advanced
-electronically controlled 4WD system.
-
-Unfortunately, the abrupt end of the Group B category meant that
-the 959 was never able to compete in the series.
-
-So, Porsche looked for other venues for the 959, and one of them
-was what many considered the world's toughest race.
-
-Porsche entered off-road versions of the 959
-into the 1986 Paris-Dakar Rally.
-
-To the surprise of many, the Porsche factory 959 team achieved
-an a�azing one-two finish.
-
-The Porsche 959 is a crucial milestone in Porsche history
-that showed the potential of 4WD sports cars.�",
-collection,0x00008EFE,1030567,impreza_wrc_98,Impreza WRC Car '98,0x0000BCF1,verified-car-key-alias,"�he World Rally Championship represents the pinnacle 
-of rally racing.
-
-It was on this international stage where Subaru became the
-first Japanese automaker...
-
-...to accomplish the great feat of winning three successive
-manufacturers' titles, from 1995 to 1997.
-
-The car that was responsible for the ""three-peat""
-was the Subaru Impreza WRC.
-
-The Impreza WRC came bathed in the blue livery of 
-the Subaru works team.
-
-It combined a turbocharged boxer engine with an advanced
-all-wheel d�ive system.
-
-This machine won many rally competitions, including the
-Rallye Monte Carlo.
-
-After the announcement of new world rally-car regulations
-in 1997...
-
-...the Impreza WRC went to battle as a 2-door coupe with
-unique blister fenders both at front and rear.
-
-Its refreshed appearance strongly resembled the original 
-Impreza 22B STi.
-
-From behind the wheel of the new-look Impreza WRC...
-
-...driver Colin McRae claimed three victories for
-the Subaru rally team in 1998.�",
-collection,0x00008F0C,1030581,charger_rt_426_hemi_68,Charger RT 427 HEMI '68,0x0000B2D6,fuzzy-name,"Even if you weren't around to experience the muscle car boom
-that dominated the American automotive scene in the 1960s...
-
-...I'll bet that your heart skipped a beat whenever
-you saw one of them in action in a movie or on the TV.
-
-The 1968 Dodge Charger is one of the great
-masterpieces of the American muscle car genre.
-
-The body style alone is enough to turn heads.
-
-The ""twin diamond"" shape of the profile
-is one of the trademarks of the 1968 model.
-
-And of course, you can't have a m�scle car
-without the muscle.
-
-This Charger is the sportier R/T grade, but it also...
-
-...comes with the 426 Hemi, 
-Mopar's most powerful engine option available at the time.
-
-If you're building a muscle car collection,
-this is one car you can't�afford to miss.",
-collection,0x00008F40,1030633,escudo_pikespeak_98,V6 Escudo Pikes Peak Special spec.98,0x00009E9B,fuzzy-name,"The V6 Escudo Pikes Peak Special took on
-the Pikes Peak International Hill Climb in 1996.
- 
-It won that year, catapulting Suzuki's image as a serious maker
-of off-road machines. 
-
-The Pikes Peak Hill Climb is a race up a mountain
-road to an elevation of over 4593 feet.
-
-With a history dating back more than 100 years, 
-it is among the oldest motorsport events in the world.
-
-The V6 Escudo Pikes Peak Special packed a 981 HP
-2.5-liter V-6 in a body that only weighed 800kg.
-
-It was specially tuned to deliver peak performance
-at altitudes that exceeded 13,123 feet.",
-collection,0x00008F55,1030654,espace_f1_95,Espace F1,0x0000CDE9,fuzzy-name,"�t’s been said that the European minivan boom of the
-1980s was sparked by the Renault Espace.
-
-The series had a powerful Formula 1 variant
-known as the Espace F1.
-
-This car was proposed to Renault by Matra, the company that
-had initially constructed the Espace’s fiberglass body.
-
-At the time, Renault was hailed as the reigning champion
-of Formula 1.
-
-Transplanting a RS4 unit from its winning F1 machine
-of 1992, the FW14B...
-
-...Matra sought to pay homage to Renault’s Formula � success
-and, at the same time, mark ten years of the Espace.
-
-Clothed in an almost entirely carbon-fiber
-and aluminum body...
-
-...this car swapped out its third-row seats for an F1 engine
-mounted amidships.
-
-And its test run was piloted by none other than F1 driver
-Alain Prost!
-
-This is one unorthodox minivan that can really zip
-around a race track.�",
-collection,0x00008F58,1030657,w196r_monopost_55,"Mercedes-Benz W 196 R ""Monoposto"" '55",0x0000C19F,dms-car-key-override,"�he name ""W 196"" evokes a special reverence among
-Mercedes-Benz enthusiasts.
-
-The reason is this legendary model didn’t just compete;
-it dominated the racing world of the 1950s. 
-
-When the 2.5-liter engine limit was set for F1 in 1954,
-Mercedes-Benz engineered a car tailored to the new regulation.
-
-This machine, christened the ""W 196 R,"" was equipped with an inline
-8-cylinder angled, which on the track, became a finely tuned weapon.
-
-Upon its debut in 1954, the car claimed four out of�six victories in
-the skilled hands of racing legend Juan Manuel Fangio.
-
-The following year, in 1955, it solidified its reputation,
-claiming five wins out of six races.
-
-The ""W 196 R"" before you hails from that illustrious,
-unforgettable 1955 season. 
-
-In this iteration, it appears without the original cowl, showcasing
-the sleek single-seater with ""monoposto"" body.
-
-It features a distinctive hood bulge designed for air intake.
-
-By the way, did you know that the ""W 196 R"" had a sibli�g
-developed for sports-car racing?
-
-Named the ""W 196 S,"" this model became a legend in its own right,
-becoming a titan of the sports-car world.
-
-Officially known as the ""300 SLR"", it left an indelible mark on
-automotive history with its unmatched design and performance.",
-collection,0x00008F5F,1030664,mangusta_69_cd,Mangusta (Christian Dior),0x00009D62,brand-prefix-display-name,"�he De Tomaso Mangusta is an iconic 1960s sports car. 
-
-It is one of car designer Giorgetto Giugiaro's
-most legendary creations,
-
-and its value has risen quite a bit in recent years. 
-
-Now we have a very interesting chapter 
-added to the history of the Mangusta.
-
-Introducing a Gran Turismo original, the Mangusta
-""Christian Dior."" 
-
-This car was created in collaboration with
-the famous French couture house Christian Dior.
-
-The aim of Dior here was to infuse the sports car 
-with �ts elegant brand essence. 
-
-The designer who worked on this project is Kim Jones,
-Dior Men's Artistic Director
-
-The Mangusta he customized is characterized by its chic body
-color and stripe, and the ""Dior"" signature on its side.
-
-The racing number 47 on the body is also strongly tied 
-to the history of the Dior Brand.
-
-Last but not least, a special racing suit and helmet 
-have been designed specifically to accompany this Mangusta!",
-collection,0x00008F64,1030669,castrol_nsx_00,Castrol 無限 NSX '00,0x0000BB40,dms-car-key-override,"�he Castrol MUGEN NSX was one of the standouts
-in the competitive 2000 JGTC season.
-
-It became the first Honda NSX to win a high-level Japanese 
-GT championship.
-
-In the top GT500 class of the Japanese GT Car Championship 
-(JGTC), there was a real dogfight...
-
-...between the factory teams of Honda, Nissan and Toyota, 
-who were always trying to one-up each other.
-
-Since 1997, Honda had been competing with its NSX GT race car.
-
-But tuning regulations in the JGTC restricted the develop�ent of the NSX GT.
-
-This led to less than satisfactory results on the track, but 
-Honda's race department refused to give up.
-
-Through tuning of the car's aerodynamics and improvements to weight 
-balance, the NSX steadily improved year after year.
-
-All of that perseverance came to fruition in the 2000 season when 
-the Castrol MUGEN NSX took home the series championship.
-
-Today, the original NSX has become a consummate collector 
-car, an icon of Japanese automobiles
-
-And this car rep�esents the model's legacy as a 
-timeless, persistent race machine.�",
-collection,0x00009F00,1030711,gt_one_race_99,TS020 #3 (ESSO) (1999),0x0000B9E0,verified-car-key-alias,"�verall victory in the 24 Hours of Le Mans
-is one of the greatest achievements for a manufacturer.
-
-This Toyota GT-One is one of many cars
-that sought to secure its place in the history books.
-
-It competed in Le Mans in the late 1990s under GT1 regulations,
-the highest category for production-based race cars.
-
-Having developed this Le Mans spec car specifically to
-compete in GT1, Toyota named it simply the ""GT-One.""
-
-Development of the GT-One, and the race team, 
-was led by genius race�car designer André de Cortanze.
-
-Already an accomplished engineer, Cortanze had
-developed cars for F1, WRC and Le Mans.
-
-What he created for Toyota was
-a beautifully advanced racing machine.
-
-His GT-One combined formula car technology
-with the styling of a GT car.
-
-The Toyota GT-One competed in Le Mans twice,
-in 1998 and 1999.
-
-In its first outing in 1998, it finished 9th overall.
-
-Toyota returned in 1999 with the team of Ukyo Katayama,
-Toshio Suzuki and Keiichi Tsuchiya takin� 2nd in car No.3.
-
-Although the team wasn't quite able to reach its goal,
-fans will never forget the feats of the GT-One.�",
-collection,0x0000C2A6,1030751,unimog_411_62,Mercedes-Benz Type411 Unimog (1962),0x0000C2FF,verified-car-key-alias,"�ercedes-Benz, renowned for its passenger vehicles,
-has also made significant contributions to the commercial sector.
-
-One such example is the Unimog.
-
-An acronym for Universal-Motor-Gerät, its name translates to 
-""Universal Motorized Working Machine.""
-
-Designed in 1945, the Unimog was engineered as an all-wheel-drive
-farming vehicle capable of navigating rugged terrain.
-
-Its versatility stemmed from a range of attachments, 
-enabling it to perform virtually any task required.
-
-1953�marked the debut of the 401/402, the first iteration
-to bear Mercedes-Benz's iconic three-pointed star.
-
-It was followed by the Type 411.
-
-It featured a cabin and flatbed mounted on a ladder frame 
-derived from the 401.
-
-Often hailed as ""the last original Unimog,"" 
-the 411 holds a special place in automotive history.
-
-Having evolved beyond its agricultural roots, it is now 
-celebrated as a premier vintage vehicle.~",
-collection,0x0000CB95,1030752,land_cruiser_fj40v_74,Toyota Land Cruiser FJ40V 1974,0x0000CC62,verified-car-key-alias,"�he Toyota Land Cruiser is one of the longest-running
-and most respected vehicles in the world.
-
-Its story began more than 70 years ago, in 1951.
-
-The FJ40 series arrived in 1960, marking
-the model’s third generation.
-
-It was offered in a variety of body styles,
-each designed for a specific purpose.
-
-The 2-door hardtop, seen here, was built to conquer
-the harshest off-road conditions.
-
-Although compact at just 3.9m in length, it was
-powered by a stout 3.9-liter gasoline engine.�p/>
-Its rugged 4WD system with a 2-speed transfer case
-made it indispensable on mountain trails.
-
-With its distinctive charm, the FJ40 became an enduring favorite
-and stayed in production for 24 years, until 1984.
-
-In 2021, TOYOTA GAZOO Racing began producing
-reproduction parts for the model.
-
-Why? Because a legendary off-roader like this
-was simply too good to let fade away.
-�",
-brandCentral,0x0000D4C2,0,,Hyundai IONIQ 6 N '25,0x0000D4C8,message-key-override,"There is a question looming over the modern age: Is the
-sports car destined to go the way of the dodo?
-
-The IONIQ 6 N is Hyundai N’s answer to that question,
-redefining the sports car for the EV era.
-
-Its sleek streamliner silhouette boasts a Cd of 0.27, blending
-aerodynamic efficiency with striking design.
-
-Beneath that shape is 609ps and 740 Nm of torque.
-But there is more here than mere brute force.
-
-When N Grin Boost is activated, the IONIQ 6 N’s
-0-100km/h sprint drops to just 3.2 seconds.
-
-Its N e-Shift simulates a physical gearbox, backed
-by the roar of its N Active Sound+ system.
-
-Crowned 2026 World Performance Car, this machine
-proves the electric sports car’s future has arrived.",
-brandCentral,0x00004F02,0,,Caterham Seven Superlight R500 '08,0x0000D4C5,message-key-override,"Carving through a corner with absolute precision
-captures the very essence of driving.
-
-Few automakers have pursued that sensation with as
-much single-minded determination as Caterham.
-
-Introduced in 1999, the Superlight R500 represented
-the most extreme expression of the iconic Seven.
-
-With extensive use of lightweight materials, the R500
-tipped the scales at a mere 500kg.
-
-In 2008, it was refitted with a 2-liter Ford Duratec engine
-producing 266ps and ample torque in the low-to-mid rpm range.
-
-The R500 name reflected its remarkable
-500-horsepower-per-ton power-to-weight ratio.
-
-Free of electronic driver aids and unnecessary comforts, it
-remains a vivid reminder of what a pure sports car can be.",
-brandCentral,0x00005051,0,,Mercedes-AMG F1 W08 EQ Power+ 2017,0x00007600,message-key-override,"The AMG F1 W08 EQ Power+ dominated the 
-2017 Formula 1 season.
-
-The engine was a turbocharged 1.6-liter V-6 with a 
-unique integrated hybrid energy recovery unit.
-
-The car was driven by Lewis Hamilton and 
-Valtteri Bottas.
-
-Between the two of them, they notched up an 
-impressive 12 victories in 20 races.
-
-This performance earned Hamilton his fourth 
-World Drivers Championship.
-
-Mercedes AMG also claimed its
-fourth consecutive Constructors Championship.",
-brandCentral,0x0000505D,0,,Mercedes-AMG F1 W08 EQ Power+ (Color Variation) 2017,0x00007601,message-key-override,"AMG's W08 EQ Power+ was an unstoppable force in the 2017
-Formula 1 season.
-
-This particular version features an all-new color scheme
-that gives the dominant race car some flash.
-
-Like the previous year, the AMG F1 team dominated in 2017 taking
-its fourth straight Constructors Championship.
-
-Ace driver Lewis Hamilton also had a stellar year,
-winning his fourth Drivers Championship.",
-brandCentral,0x00005046,0,,Fittipaldi EF7 Vision Gran Turismo by Pininfarina,0x0000763D,message-key-override,"Emerson Fittipaldi is one of the true legends of motorsports.
-His credentials include...
-
-...two-time Formula 1 champion...
-
-...two-time Indy 500 winner...
-
-...and now, car designer. This Vision Gran Turismo model is
-his take on the perfect race car.
-
-Its official name is the Fittipaldi EF7 VGT by Pininfarina.
-
-The concept was to create a car that anyone could drive,
-but one that could also be a serious racing contender.
-
-And as anyone taking the wheel will see, that concept
-has become reality.=",
-brandCentral,0x0000506D,0,,Mercedes-Benz AMG Vision Gran Turismo LH Edition,0x00007630,message-key-override,"This special edition of the Mercedes-Benz AMG Vision Gran
-Turismo is named for racing legend Lewis Hamilton.
-
-Key differences from the base model include the rich
-Bordeaux bodywork and the large fixed rear wing,
-
-Also, the power of the engine has been increased to 600ps.",
 usedCar,0x0000D4C3,0,,Toyota Mark II Tourer V '97,0x0000D4C6,message-key-override,"�ver heard of the Toyota Mark II? It was an iconic FR car
 that led Japan’s midsize sedan market for decades.
 
@@ -9658,41 +9696,3 @@ yet grippy, giving the car a remarkable degree of depth.
 
 Older sedans are seeing a major resurgence right now,
 so adding this one to your collection is an easy call.�",
-usedCar,0x00005495,0,,Toyota Chaser Tourer V '97,0x0000D4C7,message-key-override,"�ey there! Looking for a slightly retro, rear-wheel-drive sedan?
-Then how about Toyota’s sixth-generation Chaser?
-
-With its pillarless-hardtop appearance and concealed B-pillars,
-the Chaser is the sportier sibling of the Cresta and Mark II.
-
-The Tourer V is the most serious in the lineup, powered by a
-turbocharged 2.5-liter second-generation 1JZ-GTE inline-6.
-
-With 280ps and 38.5kgm of torque, this sedan has enough
-muscle to run wheel-to-wheel with genuine sports cars.
-
-Need proof� Look no further than its storied win at
-the 1998 Japanese Touring Car Championship!
-
-Its durable, highly tunable engine also makes it an ideal
-foundation for a competitive drift car.
-
-The Chaser is a high-performance sedan with a well-concealed
-wild side, and it is a perennial favorite among enthusiasts.�",
-collection,0x00008E8E,0,,Lancia Rally 037 Evoluzione 2 '84,0x00009D5C,message-key-override,"The Lancia Rally 037 is one of the iconic Group B
-rally cars of the 1980s.
-
-Introduced in the early years of Group B racing, it combined
-a mid-engine layout with a rear-wheel drive.
-
-Its spaceframe chassis and powerful mid-mounted engine...
-
-...was reminiscent of Lancia's iconic Stratos rally car.
-
-While 4-wheel drive would become mainstream starting
-with the Audi quattro in 1981...
-
-...the rear-wheel-drive Rally 037 claimed the 1983
-season series title, besting the competition.
-
-This Evoluzione II was the final spec of the car, which
-came equipped with a 2.1-liter powerplant.",
