@@ -24,3 +24,17 @@ Time: 2026-10-17 10:54:20
 Result: 16 / 16 PASS
 
 Artifacts: rust/out/smoke
+
+## Vehicle / cafe data validation (2026-10-23)
+
+`python scripts\verify_site_data.py`:
+
+```text
+PASS cars=591 with_dialogue=329 dialogues=444 scene_lines=2620 mapped=444
+images=582 speakers=14 car_texts=634 text_cars=581 review=253
+```
+
+`cargo test --release`: 2 passed, 0 failed.
+
+`gt7re research`: 3,529 cafe messages, 1,698 scenes, 444 exact CarDetail
+rows, 633 text entries, 0 unresolved cafe car keys.

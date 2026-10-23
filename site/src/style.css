@@ -378,6 +378,12 @@ button { font-family: inherit; cursor: pointer; }
   gap: 7px;
   margin-bottom: 18px;
 }
+.text-source-note {
+  margin: -6px 0 18px;
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.6;
+}
 .text-source span {
   padding: 5px 8px;
   border-radius: 999px;
@@ -398,6 +404,20 @@ button { font-family: inherit; cursor: pointer; }
   font-size: 15px;
   line-height: 1.75;
   white-space: pre-wrap;
+}
+.text-variants {
+  margin-top: 34px;
+  padding-top: 24px;
+  border-top: 1px dashed var(--line);
+}
+.text-variants > h4 {
+  margin: 0 0 18px;
+  font-size: 14px;
+}
+.text-variant + .text-variant {
+  margin-top: 28px;
+  padding-top: 24px;
+  border-top: 1px solid #ececf1;
 }
 .text-copy.en-copy p { color: #555560; font-size: 13px; line-height: 1.7; }
 .text-empty { min-height: 220px; justify-content: center; }

@@ -326,19 +326,24 @@ def build_exact_cafe(cars: list[dict], legacy_items: list[dict] | None = None) -
                 "variantEn": VARIANT_NAMES[variant["variant"]][1],
             })
             turns.append(turn)
-            targets = set(_message_targets(message["raw"]))
-            targets.update(_recover_partial_next_targets(
-                message["raw"],
-                message_id,
-                message["carKey"],
-                messages,
-            ))
+            targets = list(dict.fromkeys(_message_targets(message["raw"])))
+            targets.extend(
+                target
+                for target in _recover_partial_next_targets(
+                    message["raw"],
+                    message_id,
+                    message["carKey"],
+                    messages,
+                )
+                if target not in targets
+            )
             if (
                 "next" in message["raw"].lower()
                 and message_id + 1 in messages
                 and messages[message_id + 1]["carKey"] == message["carKey"]
+                and message_id + 1 not in targets
             ):
-                targets.add(message_id + 1)
+                targets.append(message_id + 1)
             for target in targets:
                 if target not in visited:
                     queue.append(target)

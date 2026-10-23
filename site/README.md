@@ -9,7 +9,7 @@ from the local game installation. The public deployment is
 - 591 canonical cars, 79 brands and 582 matched official thumbnails.
 - 444 unique `CarDetail` records, all resolved to cars through the game's
   `GTCafeMessages`, `ConversationGTCafeMsg`, DMSB car keys and RT2 labels.
-- 2,614 car-scene lines, preserving the recovered message-chain order.
+- 2,620 car-scene lines, preserving the recovered message-chain order.
 - 634 brand/used/collection descriptions mapped to 581 cars, with EN/ZH text.
 - Four car tabs: cafe dialogue, Brand Central, Used Cars and Hagerty
   Collection.
@@ -61,7 +61,7 @@ The production Worker is `gt7-cafe-edge` and serves the custom domain
 - `public/data/car_text_orphans.csv`: 9 texts without a usable current DMSB
   car row.
 - `public/data/cafe_dialogues.csv`: 444 unique CarDetail records.
-- `public/data/cafe_scene_dialogues.csv`: 2,614 scene lines.
+- `public/data/cafe_scene_dialogues.csv`: 2,620 scene lines.
 - `public/data/unmatched_dialogues.csv`: the legacy 253-record review.
 - `public/data/unmatched_dialogues.md`: the same review grouped by resolved car.
 

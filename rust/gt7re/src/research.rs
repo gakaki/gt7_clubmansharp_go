@@ -271,6 +271,50 @@ fn orphan_text_id(message_key: &str) -> Option<u32> {
     }
 }
 
+fn canonical_car_name(id: &str) -> Option<&'static str> {
+    Some(match id {
+        "0x0000428B" => "Alfa Romeo GIULIA TZ2  carrozzata da ZAGATO '65",
+        "0x0000761E" => "BMW M4 Gr.4",
+        "0x0000761D" => "BMW M4 Safety Car",
+        "0x0000AB4D" => "Dallara SF23 Super Formula / Honda '23",
+        "0x0000AB4C" => "Dallara SF23 Super Formula / Toyota '23",
+        "0x00004243" => "Dodge SRT Tomahawk GTS-R Vision Gran Turismo",
+        "0x00004251" => "Dodge Viper Gr.4",
+        "0x00004220" => "Eckert's Rod & Custom Mach Forty",
+        "0x0000425E" => "Ferrari 458 Italia Gr.4",
+        "0x00004224" => "Ford Focus Gr.B Rally Car",
+        "0x0000CD14" => "Ford Mustang 2015 American Racer",
+        "0x0000423B" => "Ford Mustang Gr.3",
+        "0x0000423C" => "Ford Mustang Gr.4",
+        "0x0000423D" => "Ford Mustang Gr.B Rally Car",
+        "0x00004234" => "Lamborghini Huracán Gr.4",
+        "0x00004267" => "Mazda Atenza Gr.3",
+        "0x00004269" => "Mazda Atenza Gr.4",
+        "0x00004242" => "Mazda RX-VISION GT3 CONCEPT",
+        "0x0000B1A5" => "MAZDA3 Gr.4",
+        "0x000075D9" => "McLaren 650S Gr.4",
+        "0x00007627" => "McLaren Ultimate Vision Gran Turismo (Gr.1)",
+        "0x000053F0" => "Mitsubishi Lancer Evolution Final Edition Gr.3",
+        "0x000053EF" => "Mitsubishi Lancer Evolution Final Edition Gr.4",
+        "0x00006F51" => "Nissan GT-R Gr.4",
+        "0x000084D1" => "Nissan Silvia spec-R Aero (S15) Touring Car",
+        "0x00007DB6" => "Peugeot L500R HYbrid Vision Gran Turismo, 2017",
+        "0x00007DB7" => "Peugeot L750R HYbrid Vision Gran Turismo, 2017",
+        "0x00007644" => "Peugeot RCZ Gr.3",
+        "0x00007645" => "Peugeot RCZ Gr.4",
+        "0x00008050" => "Porsche 917 LIVING LEGEND",
+        "0x0000763F" => "Porsche Vision Gran Turismo",
+        "0x00007DB4" => "Renault Sport Mégane R.S. Trophy Safety Car",
+        "0x0000427C" => "Subaru WRX Gr.B Rally Car",
+        "0x0000CD16" => "Toyota AE86 Levin D-Tuned",
+        "0x00004C39" => "Toyota FT-1",
+        "0x0000CD13" => "Toyota Supra GT Road Car (JZA80)",
+        "0x0000765D" => "Volkswagen GTI Roadster Vision Gran Turismo",
+        "0x0000765C" => "Volkswagen GTI Vision Gran Turismo (Gr.3)",
+        _ => return None,
+    })
+}
+
 fn token_overlap(a: &str, b: &str) -> f32 {
     let a: HashSet<&str> = a.split_whitespace().collect();
     let b: HashSet<&str> = b.split_whitespace().collect();
@@ -304,9 +348,9 @@ fn local_override(car_key: &str) -> &'static [&'static str] {
         "gr_supra_racing_concept_18" => &["Toyota GR Supra Racing Concept '18"],
         "gr_supra_rz_20" => &["Toyota GR Supra RZ '20"],
         "gr010_hybrid_21" => &["TOYOTA GR010 HYBRID '21"],
-        "peugeot_vision_gt_14" => &["PEUGEOT Vision Gran Turismo8"],
-        "bugatti_vision_gt_15" => &["Bugatti Vision Gran Turismo8"],
-        "porsche_vision_gt_coupe_21" => &["Porsche Vision Gran Turismo8"],
+        "peugeot_vision_gt_14" => &["PEUGEOT Vision Gran Turismo"],
+        "bugatti_vision_gt_15" => &["Bugatti Vision Gran Turismo"],
+        "porsche_vision_gt_coupe_21" => &["Porsche Vision Gran Turismo"],
         "v8_vantage_gt4m_xx" => &["Aston Martin Vantage Gr.4"],
         "vw3_vgt_gt3m_xx" => &["Volkswagen GTI Vision Gran Turismo (Gr.3)X"],
         "toyota_ft1_vgt_gt3m_xx" => &["Toyota FT-1 Vision Gran Turismo (Gr.3)7"],
@@ -720,6 +764,11 @@ fn build_cars(
         })
         .collect();
     cars.sort_by(|a, b| a.name_en.cmp(&b.name_en));
+    for car in &mut cars {
+        if let Some(name) = canonical_car_name(&car.id) {
+            car.name_en = name.into();
+        }
+    }
     let canonical = HashMap::from([
         ("Audi R18 TDI '11", "0x00006F5C"),
         ("Lancia Delta HF Integrale Evoluzione '91", "0x00008149"),
@@ -814,7 +863,17 @@ fn attr_u32(tag: &str, names: &[&str]) -> Vec<u32> {
         let needle = format!("{name}=");
         let mut offset = 0;
         while let Some(rel) = lower[offset..].find(&needle) {
-            let start = offset + rel + needle.len();
+            let word_start = offset + rel;
+            let boundary = lower[..word_start]
+                .chars()
+                .next_back()
+                .map(|c| c.is_ascii_whitespace() || c == '<')
+                .unwrap_or(true);
+            let start = word_start + needle.len();
+            if !boundary {
+                offset = start;
+                continue;
+            }
             let digits: String = lower[start..]
                 .chars()
                 .take_while(|c| c.is_ascii_digit())

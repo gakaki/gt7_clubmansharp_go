@@ -89,6 +89,21 @@ $files = Get-ChildItem C:\gt7\gt7\_re\extracted\text\rtext\common\*.rt2 | % Full
 & $exe udp parse capture.bin
 ```
 
+## DMSB + RT2 research pipeline
+
+```powershell
+& $exe research `
+  --rt2-dir C:\gt7\gt7\_re\extracted\text\rtext\common `
+  --dmsb-dir C:\gt7\gt7\_re\extracted\dms_prpys\dmsdata `
+  --key-dir C:\gt7\gt7\_re\keys\rt2_rust `
+  --legacy-review C:\gt7\gt7\_re\reports\legacy_review_ids.json `
+  --out C:\gt7\gt7\_re\reports\research_rust.json
+```
+
+The pipeline parses the three dealer-description DMSB tables, joins their
+message keys to RT2 labels, reconstructs the GT Cafe message graph, and emits
+`car_texts_rust.csv` and `cafe_car_detail_rust.csv` beside the JSON report.
+
 ## 原理
 
 ### 1. 内容库命名

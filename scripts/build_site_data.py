@@ -974,28 +974,31 @@ def main() -> None:
         "cafeExactStats": exact_stats,
         "carTextSources": text_report["sources"],
         "carTextStats": text_report["stats"],
-        "speakers": [
-            {
-                "id": meta["speaker"],
-                "en": meta["speaker"],
-                "zh": meta["speakerZh"],
-                "roleEn": meta["roleEn"],
-                "roleZh": meta["roleZh"],
-                "avatar": meta["avatar"],
-                "count": speaker_counts.get(meta["speaker"], 0),
-            }
-            for meta in SPEAKERS.values()
-            if speaker_counts.get(meta["speaker"], 0)
-        ],
+        "speakers": sorted(
+            (
+                {
+                    "id": key,
+                    "en": meta["speaker"],
+                    "zh": meta["speakerZh"],
+                    "roleEn": meta["roleEn"],
+                    "roleZh": meta["roleZh"],
+                    "avatar": meta["avatar"],
+                    "count": speaker_counts.get(key, 0),
+                }
+                for key, meta in SPEAKERS.items()
+                if speaker_counts.get(key, 0)
+            ),
+            key=lambda speaker: (-speaker["count"], speaker["en"]),
+        ),
         "cast": [
             {
-                "id": SPEAKERS[key]["speaker"],
+                "id": key,
                 "en": SPEAKERS[key]["speaker"],
                 "zh": SPEAKERS[key]["speakerZh"],
                 "roleEn": SPEAKERS[key]["roleEn"],
                 "roleZh": SPEAKERS[key]["roleZh"],
                 "avatar": SPEAKERS[key]["avatar"],
-                "count": speaker_counts.get(SPEAKERS[key]["speaker"], 0),
+                "count": speaker_counts.get(key, 0),
             }
             for key in (
                 "Luca", "Sarah", "Stella", "Chris", "Jeremy",

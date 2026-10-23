@@ -29,6 +29,15 @@ def main() -> None:
     assert payload["stats"]["mappedDialogues"] == 444
     assert not [d for d in dialogues if d["speaker"] in {"", "Buddy", "Guest"}]
     assert not [d for d in dialogues if not d.get("speakerZh") or not d.get("roleZh")]
+    speaker_ids = {speaker["id"] for speaker in payload["speakers"]}
+    cast_ids = {speaker["id"] for speaker in payload["cast"]}
+    assert "Sarah" in speaker_ids
+    assert "Luca" in cast_ids
+    assert len(speaker_ids) == 14
+    assert payload["speakers"] == sorted(
+        payload["speakers"],
+        key=lambda speaker: (-speaker["count"], speaker["en"]),
+    )
 
     text_stats = payload["carTextStats"]
     assert text_stats["entries"] == 634, text_stats
@@ -52,6 +61,17 @@ def main() -> None:
         text.get("en") and text.get("zh") and text.get("textId")
         for car in cars
         for text in car["texts"].values()
+    )
+    assert sum(
+        len(text.get("variants", []))
+        for car in cars
+        for text in car["texts"].values()
+    ) == 1
+    assert all(
+        variant.get("en") and variant.get("zh") and variant.get("textId")
+        for car in cars
+        for text in car["texts"].values()
+        for variant in text.get("variants", [])
     )
     assert payload["stats"]["legacyReview"] == len(payload["unmatched"]) == 253
 
@@ -111,6 +131,10 @@ def main() -> None:
     assert by_name["Xiaomi SU7 Ultra '25"]["texts"]["brandCentral"]["en"]
     assert by_name["Xiaomi SU7 Ultra '25"]["texts"]["brandCentral"]["zh"]
     assert by_name["Lamborghini Urus '18"]["texts"]["brandCentral"]["en"]
+    corvette_variants = by_name[
+        "Chevrolet Corvette Stingray L46 350 (C3) '69"
+    ]["texts"]["usedCar"].get("variants", [])
+    assert [variant["textId"] for variant in corvette_variants] == ["0x00004CC1"]
     for car in cars:
         for category, text in car["texts"].items():
             assert category in text_sources, (car["nameEn"], category)

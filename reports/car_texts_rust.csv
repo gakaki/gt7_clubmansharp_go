@@ -1287,7 +1287,7 @@ luxury image with the sportiness of its racing heritage.
 
 This high-performance GT S version came equipped with an
 engine that produced 50ps more than the base model.",
-brandCentral,0x00004F99,1020192,peugeot_vision_gt_14,PEUGEOT Vision Gran Turismo,0x0000763C,exact-display-name,"The Peugeot Vision Gran Turismo is all about performance.
+brandCentral,0x00004F99,1020192,peugeot_vision_gt_14,PEUGEOT Vision Gran Turismo,0x0000763C,dms-car-key-override,"The Peugeot Vision Gran Turismo is all about performance.
 
 This remarkable car was developed by Peugeot's design team
 and the engineers responsible for the Peugeot Sport.
@@ -1459,7 +1459,7 @@ The ""RJ"" in the name stands for Racing Jacket.
 
 You really feel like you are wearing the car 
 when sitting in the driver's seat.",
-brandCentral,0x00004FAC,1020211,bugatti_vision_gt_15,Bugatti Vision Gran Turismo,0x00004208,exact-display-name,"Bugatti has always been a company that drew inspiration
+brandCentral,0x00004FAC,1020211,bugatti_vision_gt_15,Bugatti Vision Gran Turismo,0x00004208,dms-car-key-override,"Bugatti has always been a company that drew inspiration
 from its racing history.
 
 The case is no different with this model that embodied 
@@ -1543,7 +1543,7 @@ traction provided by 4WD and the sport-tuned suspension system.
 
 Its ten-cylinder engine can produces more than 600ps
 and delivers it with a sweet, melodic roar.",
-brandCentral,0x00004FB4,1020219,_458_italia_gt4m_xx,458 Italia Gr.4,0x0000425E,fuzzy-name,"This version of the Ferrari 458 Italia is a Gran Turismo
+brandCentral,0x00004FB4,1020219,_458_italia_gt4m_xx,458 Italia Gr.4,0x0000425E,brand-prefix-display-name,"This version of the Ferrari 458 Italia is a Gran Turismo
 Gr.4 original.
 
 It has fewer aerodynamic modifications, but retains the
@@ -1585,7 +1585,7 @@ which was both stable and predictable.
 
 Its long wheelbase allowed for a spacious interior, while its
 profile provided excellent downforce at high speed.",
-brandCentral,0x00004FB9,1020224,mustang_gt_premium_gt4m_xx,Mustang Gr.4,0x0000423C,fuzzy-name,"The sixth-generation Mustang served as the foundation for 
+brandCentral,0x00004FB9,1020224,mustang_gt_premium_gt4m_xx,Mustang Gr.4,0x0000423C,brand-prefix-display-name,"The sixth-generation Mustang served as the foundation for 
 this original Gran Turismo-exclusive Gr.4 race car.
 
 Throughout its history, the legendary pony car from Ford 
@@ -1593,7 +1593,7 @@ has been converted to compete on the race track.
 
 There's a reason for this: The Mustang is simply one of the 
 most well-balanced sports cars America has ever produced.",
-brandCentral,0x00004FBA,1020225,mustang_gt_premium_gt3m_xx,Mustang Gr.3,0x0000423B,fuzzy-name,"The sixth-generation Mustang served as the foundation 
+brandCentral,0x00004FBA,1020225,mustang_gt_premium_gt3m_xx,Mustang Gr.3,0x0000423B,brand-prefix-display-name,"The sixth-generation Mustang served as the foundation 
 for this Gran Turismo-exclusive Gr.3 race car.
 
 One of the Mustang's great attributes was its speed.
@@ -1613,7 +1613,7 @@ corners with ease.
 
 The Mégane's celebrated handling remains a key feature of
 this racing variant.",
-brandCentral,0x00004FBD,1020228,gtr_gt4m_xx,GT-R Gr.4,0x00006F51,fuzzy-name,"This Gr.4 Gran Turismo-exclusive race car used the Nissan GT-R
+brandCentral,0x00004FBD,1020228,gtr_gt4m_xx,GT-R Gr.4,0x00006F51,brand-prefix-display-name,"This Gr.4 Gran Turismo-exclusive race car used the Nissan GT-R
 for its foundation.
 
 The inclusion of fog lights on the car's front bumper
@@ -1682,7 +1682,7 @@ embedded throughout the vehicle.
 
 Combined with the attractive styling inside and out, 
 you have one very intriguing and capable sports sedan.",
-brandCentral,0x00004FC2,1020233,m4_14_sc,M4 Safety Car,0x0000761D,fuzzy-name,"This Gran Turismo Gr.4 original race car is based on
+brandCentral,0x00004FC2,1020233,m4_14_sc,M4 Safety Car,0x0000761D,brand-prefix-display-name,"This Gran Turismo Gr.4 original race car is based on
 the BMW M4.
 
 At first glance, it might looks like an M Performance Edition,
@@ -1714,7 +1714,7 @@ was none other than the Toyota 86.
 
 With 346ps on tap and remarkable handling, this machine 
 had the power and grace of a GT3 racer.w",
-brandCentral,0x00004FC6,1020237,vw3_vgt_gt3m_xx,GTI Vision Gran Turismo (Gr.3),0x0000765C,dms-car-key-override,"This Vision Gran Turismo Gr.3 was based on the
+brandCentral,0x00004FC6,1020237,vw3_vgt_gt3m_xx,GTI Vision Gran Turismo (Gr.3),0x0000765C,brand-prefix-display-name,"This Vision Gran Turismo Gr.3 was based on the
 GTI Roadster.
 
 The front splitter and rear wing were designed to work
@@ -1722,7 +1722,7 @@ together to dramatically increase downforce.
 
 This version is a rear-wheel driver, changed from
 the base car's 4WD system.",
-brandCentral,0x00004FC7,1020238,rcz_gt3m_xx,RCZ Gr.3,0x00007644,fuzzy-name,"Serving as the foundation for the Gran Turismo Gr.3 race car 
+brandCentral,0x00004FC7,1020238,rcz_gt3m_xx,RCZ Gr.3,0x00007644,brand-prefix-display-name,"Serving as the foundation for the Gran Turismo Gr.3 race car 
 was the Peugeot RCZ.
 
 While the original came with an FF layout, we changed it to an 
@@ -1950,7 +1950,7 @@ the addition of wide fenders and other distinct tweaks.
 
 A rear wing has been added to improve the car's aerodynamics, 
 which were pretty good to begin with, I might add.",
-brandCentral,0x00004FDE,1020261,huracan_lp610_4_gt4m_xx,Huracán Gr.4,0x00004234,fuzzy-name,"The Huracán served as the foundation for this 
+brandCentral,0x00004FDE,1020261,huracan_lp610_4_gt4m_xx,Huracán Gr.4,0x00004234,brand-prefix-display-name,"The Huracán served as the foundation for this 
 Gran Turismo-exclusive Gr.4 race car.
 
 The car cornered so well that not much was done in terms of 
@@ -1996,7 +1996,7 @@ automobile in the series.
 
 Needless to say, this model has become a major piece
 in the history of Toyota racing.",
-brandCentral,0x00004FE2,1020265,atenza_sedan_gt4m_xx,Atenza Gr.4,0x00004269,fuzzy-name,"The third-generation Atenza served as the base for this
+brandCentral,0x00004FE2,1020265,atenza_sedan_gt4m_xx,Atenza Gr.4,0x00004269,brand-prefix-display-name,"The third-generation Atenza served as the base for this
 original Gran Turismo Gr.4 race car.
 
 Like the production model, it comes with 4-wheel drive, 
@@ -2004,7 +2004,7 @@ which gives the car excellent grip.
 
 A hood scoop is attached to improve heat dissipation. Look 
 closely and you'll see plenty more tweaks to the body.",
-brandCentral,0x00004FE3,1020266,atenza_sedan_gt3m_xx,Atenza Gr.3,0x00004267,fuzzy-name,"This Gran Turismo-exclusive Gr.3 used the
+brandCentral,0x00004FE3,1020266,atenza_sedan_gt3m_xx,Atenza Gr.3,0x00004267,brand-prefix-display-name,"This Gran Turismo-exclusive Gr.3 used the
 third-generation Atenza as a base.
 
 It was converted to a rear-wheel-driver to meet
@@ -2022,7 +2022,7 @@ reflected in the car's name.
 
 McLaren's patented active suspension was refined even
 further to provide neck-wrenching handling.",
-brandCentral,0x00004FE5,1020268,_650s_coupe_gt4m_xx,650S Gr.4,0x000075D9,fuzzy-name,"This Gran Turismo Gr.4 original race car is based on the
+brandCentral,0x00004FE5,1020268,_650s_coupe_gt4m_xx,650S Gr.4,0x000075D9,brand-prefix-display-name,"This Gran Turismo Gr.4 original race car is based on the
 McLaren 650S.
 
 Not only is it an extremely capable handling machine, it's also
@@ -2084,7 +2084,7 @@ didn't take much to make this car a potent GT3 machine.
 
 After beginning life in a one-make series, the Sport R.S.01 
 now competes in GT races all over the world.",
-brandCentral,0x00004FED,1020276,viper_gts_gt4m_xx,Viper Gr.4,0x00004251,fuzzy-name,"The Dodge Viper served as the base for this original 
+brandCentral,0x00004FED,1020276,viper_gts_gt4m_xx,Viper Gr.4,0x00004251,brand-prefix-display-name,"The Dodge Viper served as the base for this original 
 Gran Turismo Gr.4 race car.
 
 Modifications include the addition of a front splitter, 
@@ -2641,7 +2641,7 @@ The aerodynamic parts are borrowed from the Gr.3 version.
 
 It boasts superior downforce, which is essential when going 
 really fast on an off-road trail. 8",
-brandCentral,0x00005028,1020335,wrx_gtbm_xx,WRX Gr.B Rally Car,0x0000427C,fuzzy-name,"This Gran Turismo-exclusive Gr.B rally car is based on
+brandCentral,0x00005028,1020335,wrx_gtbm_xx,WRX Gr.B Rally Car,0x0000427C,brand-prefix-display-name,"This Gran Turismo-exclusive Gr.B rally car is based on
 the Subaru WRX STI.
 
 The body is specifically designed to provide maximum
@@ -2660,7 +2660,7 @@ this car was designed specifically to win that race.
 
 The engine is mounted amidships, providing power to
 all four wheels.",
-brandCentral,0x0000502A,1020337,mustang_gt_premium_gtbm_xx,Mustang Gr.B Rally Car,0x0000423D,fuzzy-name,"This Gran Turismo-exclusive Gr.B rally car is based on the
+brandCentral,0x0000502A,1020337,mustang_gt_premium_gtbm_xx,Mustang Gr.B Rally Car,0x0000423D,brand-prefix-display-name,"This Gran Turismo-exclusive Gr.B rally car is based on the
 sixth-generation Ford Mustang.
 
 The livery is inspired by the Ford GT race car.
@@ -2673,7 +2673,7 @@ to keep ride quality stable.
 
 The original car was rear-wheel drive, but this one has been
 converted to 4WD.",
-brandCentral,0x0000502B,1020338,focus_st_gtbm_xx,Focus Gr.B Rally Car,0x00004224,fuzzy-name,"This Gran Turismo-exclusive Gr.B rally car is based on the
+brandCentral,0x0000502B,1020338,focus_st_gtbm_xx,Focus Gr.B Rally Car,0x00004224,brand-prefix-display-name,"This Gran Turismo-exclusive Gr.B rally car is based on the
 Ford Focus ST.
 
 The drivetrain has been converted from powering only the 
@@ -3183,7 +3183,7 @@ from the marque's rich motorsports history.
 
 The past, the present and future;
 they're all are here in this one exquisite vehicle.",
-brandCentral,0x0000506E,1020405,_917_ll_14,917 LIVING LEGEND,0x00008050,fuzzy-name,"How much do you know about Porsche's legendary 917 race car?
+brandCentral,0x0000506E,1020405,_917_ll_14,917 LIVING LEGEND,0x00008050,brand-prefix-display-name,"How much do you know about Porsche's legendary 917 race car?
 
 It brought the company its first ever overall victory at 
 Le Mans back in 1970.

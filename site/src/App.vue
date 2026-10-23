@@ -22,7 +22,7 @@ const activeTab = ref('cafe')
 
 const carTextTabs = [
   { id: 'cafe', labelZh: '咖啡屋对话', labelEn: 'Cafe dialogue' },
-  { id: 'brandCentral', labelZh: '品牌购物', labelEn: 'Brand Central' },
+  { id: 'brandCentral', labelZh: '品牌购物 / 车库', labelEn: 'Brand Central / Garage' },
   { id: 'usedCar', labelZh: '二手车', labelEn: 'Used Cars' },
   { id: 'collection', labelZh: '收藏馆', labelEn: 'Hagerty Collection' },
 ]
@@ -152,7 +152,7 @@ const filtered = computed(() => {
       `${d.en} ${d.zh} ${d.speaker} ${d.speakerZh}`.toLowerCase().includes(q),
     )
     if (dialogueHit) return true
-    return Object.values(c.texts || {}).some((text) =>
+    return allTextEntries(c).some((text) =>
       `${text.en} ${text.zh} ${text.titleEn} ${text.titleZh}`.toLowerCase().includes(q),
     )
   })
@@ -166,6 +166,12 @@ function visibleConversation(c) {
   const turns = c.conversation?.length ? c.conversation : (c.dialogues || [])
   if (speakerFilter.value === 'ALL') return turns
   return turns.filter((d) => d.speaker === speakerFilter.value)
+}
+function allTextEntries(car) {
+  return Object.values(car?.texts || {}).flatMap((text) => [
+    text,
+    ...(text.variants || []),
+  ])
 }
 
 const grouped = computed(() => {
@@ -292,7 +298,11 @@ function cycleTab(delta) {
 }
 
 function tabLabel(tab) {
-  const label = lang.value === 'zh' ? tab.labelZh : tab.labelEn
+  const label = lang.value === 'zh'
+    ? tab.labelZh
+    : lang.value === 'both'
+      ? `${tab.labelZh} · ${tab.labelEn}`
+      : tab.labelEn
   if (!activeCar.value) return label
   if (tab.id === 'cafe') {
     return `${label} · ${activeCar.value.conversation?.length || 0}`
@@ -335,6 +345,8 @@ function cafeSceneGroups(car) {
   }
   return groups.filter((group) => group.visibleTurns.length)
 }
+
+const activeCafeScenes = computed(() => cafeSceneGroups(activeCar.value))
 
 function sceneTitle(scene) {
   return lang.value === 'zh' ? scene.titleZh : scene.titleEn
@@ -631,9 +643,9 @@ function yearOf(name) {
           </button>
         </nav>
         <div v-if="activeTab === 'cafe'" class="dialogues cafe-dialogues" role="tabpanel">
-          <template v-if="cafeSceneGroups(activeCar).length">
+          <template v-if="activeCafeScenes.length">
             <section
-              v-for="scene in cafeSceneGroups(activeCar)"
+              v-for="scene in activeCafeScenes"
               :key="scene.key"
               class="cafe-scene"
             >
@@ -693,6 +705,9 @@ function yearOf(name) {
               <span>{{ activeText().carKey }}</span>
               <span>{{ activeText().textId }}</span>
             </div>
+            <p v-if="activeTab === 'brandCentral'" class="text-source-note">
+              此段车辆介绍同时用于车库展示；若游戏数据库为同一车型保存了多条版本，会列在正文后的“补充介绍”中。
+            </p>
             <div v-if="lang !== 'en'" class="text-copy zh-copy">
               <h4>{{ activeText().titleZh }}</h4>
               <p>{{ activeText().zh }}</p>
@@ -701,6 +716,25 @@ function yearOf(name) {
               <h4>{{ activeText().titleEn }}</h4>
               <p>{{ activeText().en }}</p>
             </div>
+            <section v-if="activeText().variants?.length" class="text-variants">
+              <h4>补充介绍 · Additional description</h4>
+              <article
+                v-for="variant in activeText().variants"
+                :key="variant.textId"
+                class="text-variant"
+              >
+                <div class="text-source">
+                  <span>{{ variant.textId }}</span>
+                  <span>{{ variant.carKey || variant.sourceName }}</span>
+                </div>
+                <div v-if="lang !== 'en'" class="text-copy zh-copy">
+                  <p>{{ variant.zh }}</p>
+                </div>
+                <div v-if="lang !== 'zh'" class="text-copy en-copy">
+                  <p>{{ variant.en }}</p>
+                </div>
+              </article>
+            </section>
           </template>
           <div v-else class="no-dialogue text-empty">
             <strong>这辆车没有该商店的官方说明文本</strong>

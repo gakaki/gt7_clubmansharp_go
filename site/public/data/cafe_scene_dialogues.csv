@@ -100,7 +100,7 @@ went on to become one of the most iconic GT-R-based models.
 It was fast and strikingly designed.
 
 Even in race-prepared form, it still exudes that unmistakable
-R34 presence.0","这辆车的外形很不错。
+R34 presence.","这辆车的外形很不错。
 我认为它是Gran Turismo当中比较受欢迎的一款R34 Skyline……
 
 我认为这是一款由开发者创造的、开发意图十分明确的汽车，
@@ -118,7 +118,7 @@ See you around sometime.","不用，我也觉得挺开心的。
 下次再见。"
 0x00007203,Freeman_001_911_carrera_rs_92_1st,1,Porsche 911 Carrera RS (964) '92,Freeman Thomas,弗里曼·托马斯,前福特设计总监 · 保时捷/奥迪,False,Is this 964 RS yours? >,这辆964 RS是你的吗？
 0x00007204,Freeman_001_911_carrera_rs_92_1st,2,Porsche 911 Carrera RS (964) '92,Sarah,莎拉·伊顿,主向导 / 赛事工程师,False,"Wait! Aren’t you the former design director at Ford,
-Mr. Freeman Thomas? b",等等……您是前Ford设计总监，弗里曼·托马斯先生吗？
+Mr. Freeman Thomas?",等等……您是前Ford设计总监，弗里曼·托马斯先生吗？
 0x00007205,Freeman_001_911_carrera_rs_92_1st,3,Porsche 911 Carrera RS (964) '92,Freeman Thomas,弗里曼·托马斯,前福特设计总监 · 保时捷/奥迪,False,"Indeed I am. Sorry to surprise you like that.
 You can just call me Freeman.~","是的，如果吓到你们了，那我很抱歉，
 你们可以直接叫我弗里曼。"
@@ -784,7 +784,7 @@ Thank you so much!","您对这辆车的见解真是字字珠玑……
 0x00007282,Harada_008_mr2_gts_97_1st,7,Toyota MR2 GT-S '97,Hikonori Kagurazaka,神乐坂彦则,高性能车设计师,False,"No, the pleasure was all mine!
 Well, see you around!","没有的事！我自己也很享受这样的交谈！
 相信我们会再见的。"
-0x00007289,Harada_009_viper_gts_02_1st,1,Dodge Viper GTS '02,Hikonori Kagurazaka,神乐坂彦则,高性能车设计师,False,"This is a first generation Dodge Viper, am I right? n",这是一辆初代Dodge Viper，我说的对吗？
+0x00007289,Harada_009_viper_gts_02_1st,1,Dodge Viper GTS '02,Hikonori Kagurazaka,神乐坂彦则,高性能车设计师,False,"This is a first generation Dodge Viper, am I right?",这是一辆初代Dodge Viper，我说的对吗？
 0x0000728A,Harada_009_viper_gts_02_1st,2,Dodge Viper GTS '02,Sarah,莎拉·伊顿,主向导 / 赛事工程师,False,"Hey, aren’t you Mr. Hikonori Kagurazaka?
 
 The legendary car designer who's based in Europe…?","嗨，您是神乐坂彦则先生吗？
@@ -927,7 +927,7 @@ and one day lovingly restore...","你知道吗，从一开始我就想让这款R
 0x000072A8,Matano_002_roadster_89_1st,6,Mazda Eunos Roadster (NA Special Package) '89,Sarah,莎拉·伊顿,主向导 / 赛事工程师,False,"That is really a great story.
 Do you want to hear more from him?","这也太吸引人了吧，
 您想听他多说一点吗？"
-0x000072A9,Matano_002_roadster_89_1st,8,Mazda Eunos Roadster (NA Special Package) '89,Tom Matano,俣野努,马自达设计师 · MX-5 设计参与者,True,"There was this one time I received a wedding invitation
+0x000072A9,Matano_002_roadster_89_1st,7,Mazda Eunos Roadster (NA Special Package) '89,Tom Matano,俣野努,马自达设计师 · MX-5 设计参与者,True,"There was this one time I received a wedding invitation
 from a total stranger living in Texas.
 
 And I thought to myself, 'Maybe its an owner of a Roadster?'
@@ -963,7 +963,7 @@ of everybody who wo��ed on t�e �a��քext id=2100208 type=9>R","有�
 我感到万分满足。
 如果没有开发这台车的同事们投注的热情，也不可能促
 成这样的美事。"
-0x000072AA,Matano_002_roadster_89_1st,7,Mazda Eunos Roadster (NA Special Package) '89,Sarah,莎拉·伊顿,主向导 / 赛事工程师,False,Wow. Thank you for sharing such a precious story with us!,哇，感谢您给我们分享这些有趣而且珍贵的故事！7
+0x000072AA,Matano_002_roadster_89_1st,8,Mazda Eunos Roadster (NA Special Package) '89,Sarah,莎拉·伊顿,主向导 / 赛事工程师,False,Wow. Thank you for sharing such a precious story with us!,哇，感谢您给我们分享这些有趣而且珍贵的故事！
 0x000072AB,Matano_002_roadster_89_1st,9,Mazda Eunos Roadster (NA Special Package) '89,Tom Matano,俣野努,马自达设计师 · MX-5 设计参与者,False,"I look forward to discussing car design in more depth
 the next time we get the chance!",很期待跟你们详细聊车辆设计的事，等下次有机会吧。
 0x000072B4,Fabio_001_abarth_500_09_1st,1,Abarth 500 '09,Fabio Filippini,法比奥·菲利皮尼,前宾尼法利纳设计总监,False,"Excuse me, are you the one who drove up in that Abarth? +",打扰了，请问你是那个开着Abarth的车手吗？
@@ -972,7 +972,7 @@ the next time we get the chance!",很期待跟你们详细聊车辆设计的事�
 And please, you can just call me Fabio.","是的，我是法比奥.菲利皮尼。很高兴认识你们。
 你们叫我法比奥就好。"
 0x000072B7,Fabio_001_abarth_500_09_1st,4,Abarth 500 '09,Sarah,莎拉·伊顿,主向导 / 赛事工程师,False,"We're very honoured to meet you, Fabio!",非常荣幸能见到您，法比奥！
-0x000072B8,Fabio_001_abarth_500_09_1st,5,Abarth 500 '09,Sarah,莎拉·伊顿,主向导 / 赛事工程师,False,"So...you know Pininfarina, right?7",这么说……您知道Pininfarina？
+0x000072B8,Fabio_001_abarth_500_09_1st,5,Abarth 500 '09,Sarah,莎拉·伊顿,主向导 / 赛事工程师,False,"So...you know Pininfarina, right?",这么说……您知道Pininfarina？
 0x000072B9,Fabio_001_abarth_500_09_1st,6,Abarth 500 '09,Sarah,莎拉·伊顿,主向导 / 赛事工程师,False,"Right, it is after all one of the most
 famous Carrozzerias in Italy.
 
@@ -1124,7 +1124,7 @@ And Touring was the Carrozzeria who did the body for this car.","这是二十世
 
 在备受推崇的DB4跑车基础上强化了性能。
 这辆车的车身是由Carrozzeria Touring公司打造的。"
-0x00007361,EOM1_001_db5_64_1st,5,Aston Martin DB5 '64,Sarah,莎拉·伊顿,主向导 / 赛事工程师,False,"Oh, I hope I haven't lost you. Have you heard of them?",哎呀，我是不是说的太复杂了？你听过这家公司吗？0
+0x00007361,EOM1_001_db5_64_1st,5,Aston Martin DB5 '64,Sarah,莎拉·伊顿,主向导 / 赛事工程师,False,"Oh, I hope I haven't lost you. Have you heard of them?",哎呀，我是不是说的太复杂了？你听过这家公司吗？
 0x00007362,EOM1_001_db5_64_1st,6,Aston Martin DB5 '64,Sarah,莎拉·伊顿,主向导 / 赛事工程师,False,"Right. It's one of the historic Carrozzerias of Italy.
 
 The Superleggera is famous as a lightweight body-manufacturing
@@ -1378,7 +1378,7 @@ It shaved a full 21 seconds off the lap time of its
 predecessor, the R32 GT-R.
 It was a slogan that reflected all the effort that
 had gone into the development of the R33 GT-R.
-I think stories like that really add to this car's value.","“缩短了21秒的浪漫”。
+I think stories like that really add to this car's value.","缩短了21秒的浪漫”。
 这是R33 Skyline GT-R广告口号。
 在纽博格林北侧赛道的一次计时赛中，
 
@@ -1386,7 +1386,7 @@ R33 Skyline GT-R将前辈车型R32 GT-R的单圈成绩消掉了
 整整21秒。
 这条口号也反映出了Nissan为研发R33 GT-R所做的所有
 投入。
-我认为正是这样的故事让R33 GT-R这款车更有价值。1"
+我认为正是这样的故事让R33 GT-R这款车更有价值。"
 0x000073A7,EOM1_008_penzoil_gtr_99_1st,1,Nissan GT-R GT500 '99,Chris,克里斯,咖啡屋常客 · 公路车鉴赏,False,About this car here... Hmm... I see...,至于这一台……嗯……我知道了……
 0x000073A8,EOM1_008_penzoil_gtr_99_1st,2,Nissan GT-R GT500 '99,Sarah,莎拉·伊顿,主向导 / 赛事工程师,False,"Oh, hey there, Chris! Find any cool cars to size up today?
 
@@ -1735,7 +1735,7 @@ roar past their more powerful rivals.","你知道Abarth在二十世纪五、六�
 He's definitely one of the greats and no motor sports
 enthusiast would claim otherwise.","就知道您肯定知道他，他是意大利汽车界的传奇人物，
 
-绝对是赛车爱好者们不可不知的大人物之一。0"
+绝对是赛车爱好者们不可不知的大人物之一。"
 0x000073FD,EOM1_016_abarth_500_09_1st,7,Abarth 500 '09,Sarah,莎拉·伊顿,主向导 / 赛事工程师,False,"He was a former driver, and an engineer to boot.
 
 All in all, a genius who gained a huge following among
@@ -2082,7 +2082,7 @@ Freeman worked in the past as a designer
 for companies like Porsche and Audi,
 
 and is the one who actually worked on
-this first generation Audi TT. h","哇，见到您是我们的荣幸！
+this first generation Audi TT.","哇，见到您是我们的荣幸！
 
 弗里曼曾在Porsche和Audi担任过设计师，
 
@@ -2427,7 +2427,7 @@ In fact, the S13's best qualities are priceless!","这轻巧紧凑的车身与�
 简直是面面俱到的前置后驱跑车。
 不仅停放时姿态优雅，转弯时同样美得让人窒息。
 现如今，这款车确实非同寻常。
-老实说，S13本身就是无价之宝！9"
+老实说，S13本身就是无价之宝！"
 0x00009567,EOM1_024__208_gti_ps_14_1st,1,Peugeot 208 GTi by Peugeot Sport '14,Chris,克里斯,咖啡屋常客 · 公路车鉴赏,False,"About this car here... Hmm, I see....)",至于这一台……嗯……我知道了……
 0x00009568,EOM1_024__208_gti_ps_14_1st,2,Peugeot 208 GTi by Peugeot Sport '14,Sarah,莎拉·伊顿,主向导 / 赛事工程师,False,"Chris! I see you've been working hard today!
 
@@ -2621,7 +2621,7 @@ V8引擎，也同样令人惊叹。
 不但能在日常行驶中派上用场，还是让Camaro Z28
 在Trans Am竞赛获胜的幕后功臣。
 这款1969年车型是Z28最后的改款，
-其每代车款都令人着迷不已。2"
+其每代车款都令人着迷不已。"
 0x00009585,EOM1_029_camaro_zl1_1le_18_1st,1,Chevrolet Camaro ZL1 1LE Package '18,Chris,克里斯,咖啡屋常客 · 公路车鉴赏,False,"About this car here... Hmm, I see....)",至于这一台……嗯……我知道了……
 0x00009586,EOM1_029_camaro_zl1_1le_18_1st,2,Chevrolet Camaro ZL1 1LE Package '18,Sarah,莎拉·伊顿,主向导 / 赛事工程师,False,"Chris! I see you've been working hard today!
 
@@ -2752,7 +2752,7 @@ over time.","在日产Skyline GT-R系列车型中，这款R32
 整个赛场，赢得了众多赛车铁杆粉的青睐。
 
 我推测，随着时间的累积
-这款车将持续升值。4"
+这款车将持续升值。"
 0x00009597,EOM1_032_fairlady_z_s_07_1st,1,Nissan Fairlady Z Version S (Z33) '07,Chris,克里斯,咖啡屋常客 · 公路车鉴赏,False,"About this car here... Hmm, I see....)",至于这一台……嗯……我知道了……
 0x00009598,EOM1_032_fairlady_z_s_07_1st,2,Nissan Fairlady Z Version S (Z33) '07,Sarah,莎拉·伊顿,主向导 / 赛事工程师,False,"Chris! I see you've been working hard today!
 
@@ -3536,7 +3536,7 @@ the final three stints...
 ...was so dehydrated after the race that he was unable
 to make the podium.
 As for the engine, when Mazda's engineers took it apart, they
-apparently saw that it could have gone another 500 km!","“转子引擎的油耗高得吓人，所以不适合耐力赛。”
+apparently saw that it could have gone another 500 km!","转子引擎的油耗高得吓人，所以不适合耐力赛。”
 
 赛车界曾是这样看待转子引擎的。
 
@@ -3626,8 +3626,7 @@ was officially released.
 Because of this, the competition car was also called
 the NSX-GT.
 This car came in 3rd place in Round Five of the
-Super GT in Japan.
-I","这台第二代NSX-GT于2014年首次亮相。
+Super GT in Japan.","这台第二代NSX-GT于2014年首次亮相。
 
 听起来不觉得有些奇怪吗？
 毕竟，它的基本车型，第二代NSX，在2016年才开始销售。
@@ -4605,7 +4604,7 @@ to this café pretty often!","嗨，斯黛拉！你的气色永远都是这么�
 她也经常来这家咖啡厅！"
 0x00009836,CarLover_016_morris_mini_cooper_s_970_65_1st,3,Mini-Cooper 'S' '65,Stella,斯黛拉,咖啡屋常客 · 紧凑型车,False,I love talking all about cars at this café!,我喜欢在这家咖啡厅里聊各种关于汽车的事！
 0x00009837,CarLover_016_morris_mini_cooper_s_970_65_1st,4,Mini-Cooper 'S' '65,Stella,斯黛拉,咖啡屋常客 · 紧凑型车,False,Are you a car history buff?,你对汽车历史有研究吗？
-0x00009838,CarLover_016_morris_mini_cooper_s_970_65_1st,5,Mini-Cooper 'S' '65,Stella,斯黛拉,咖啡屋常客 · 紧凑型车,False,Great! Then you'll want to hear this.),太好了！那你肯定对我说的这个感兴趣！8
+0x00009838,CarLover_016_morris_mini_cooper_s_970_65_1st,5,Mini-Cooper 'S' '65,Stella,斯黛拉,咖啡屋常客 · 紧凑型车,False,Great! Then you'll want to hear this.),太好了！那你肯定对我说的这个感兴趣！
 0x00009839,CarLover_016_morris_mini_cooper_s_970_65_1st,6,Mini-Cooper 'S' '65,Stella,斯黛拉,咖啡屋常客 · 紧凑型车,False,"In any case, you'll still want to hear this.",哎，别这样。听我跟你讲！
 0x0000983A,CarLover_016_morris_mini_cooper_s_970_65_1st,7,Mini-Cooper 'S' '65,Stella,斯黛拉,咖啡屋常客 · 紧凑型车,True,"When the Mini was born in 1959, it revolutionized the world
 of compact front-wheel-drive cars.
@@ -4877,7 +4876,7 @@ changed the rules on aerodynamics...
 
 ...deeming the fan system illegal.
 One can only imagine what this car could have achieved,
-had it been given time to develop.0","这是一台让人过目难忘的车！
+had it been given time to develop.","这是一台让人过目难忘的车！
 
 这辆Chaparral 2J是专为1970年加拿大-美国挑战杯系列赛制造的。
 在它的身后，你会发现……
@@ -5131,7 +5130,7 @@ However, after 24 hours of racing, the R8 LMS won by the
 amazingly slim margin of 40 seconds!
 
 It just goes to show that races are not just won by pure
-speed, but also by reliability.4","这台基于R8打造的GT3赛车在2015年3月的
+speed, but also by reliability.","这台基于R8打造的GT3赛车在2015年3月的
 日内瓦车展上首次亮相。
 
 说实话，还有谁没听说过它的辉煌事迹吗？
@@ -5386,7 +5385,7 @@ your way to becoming Gran Turismo royalty!","它是GT锦标赛的传奇，也是
 灵敏的操控意味着你需要拥有全面的驾驶技术才能够驾
 驭它。
 如果你能够驯服这头猛兽，相信你的跑车浪漫旅比赛传奇之路
-会一路畅通！4"
+会一路畅通！"
 0x00009B84,RaceEnthusiast_049_epson_nsx_08_1st,1,Honda NSX GT500 '08,Jeremy,杰里米,咖啡屋常客 · 赛车史,False,"This...This car!
 Is it yours!?","这这这……这辆车！！
 这车是你的？！!"
@@ -5489,7 +5488,7 @@ Because it was painted all silver, the car was called
 the ""Silver Arrow.""
 
 Actually, there’s a story behind the name.
-Would you care to hear it?2","在1955年，Mercedes-Benz选择从汽车运动赛事中抽身。
+Would you care to hear it?","在1955年，Mercedes-Benz选择从汽车运动赛事中抽身。
 
 直到1988年，他们才正式推出这辆Sauber-Mercedes，
 
@@ -5687,7 +5686,7 @@ Abarth是汽车历史上最富传奇色彩的品牌之一。
 是因为卡洛·阿巴斯出生于十一月，所以是天蝎座！~"
 0x00009BDD,Nakamura_003_fairlady_z_s_07_1st,1,Nissan Fairlady Z Version S (Z33) '07,Shiro Nakamura,中村史郎,前日产首席创意官,False,Is this Z33 yours by any chance?,这辆Z33该不会碰巧是你的吧？
 0x00009BDE,Nakamura_003_fairlady_z_s_07_1st,2,Nissan Fairlady Z Version S (Z33) '07,Sarah,莎拉·伊顿,主向导 / 赛事工程师,False,"Excuse me, sir, aren’t you… the former Nissan
-Chief Creative Officer, Mr. Shiro Nakamura!?",您是不是……前Nissan首席创意官中村史郎先生！？7
+Chief Creative Officer, Mr. Shiro Nakamura!?",您是不是……前Nissan首席创意官中村史郎先生！？
 0x00009BDF,Nakamura_003_fairlady_z_s_07_1st,3,Nissan Fairlady Z Version S (Z33) '07,Shiro Nakamura,中村史郎,前日产首席创意官,False,"Hello. It's very nice to meet you.
 Yes, I'm Shiro Nakamura.",是的，我是。请多多指教。
 0x00009BE0,Nakamura_003_fairlady_z_s_07_1st,4,Nissan Fairlady Z Version S (Z33) '07,Sarah,莎拉·伊顿,主向导 / 赛事工程师,False,"It's an incredible honor to meet you!
@@ -5739,11 +5738,11 @@ recognizable as a Z from any angle.<next�id=1800306 type=9ԙ","Z33于2001年�
 但你还是一眼就能看出，这是一辆Z系车。"
 0x00009BE2,Nakamura_003_fairlady_z_s_07_1st,6,Nissan Fairlady Z Version S (Z33) '07,Sarah,莎拉·伊顿,主向导 / 赛事工程师,False,"Wow, that was fascinating! Thanks!",哇，好精彩的解说！感谢感谢！
 0x00009BE3,Nakamura_003_fairlady_z_s_07_1st,7,Nissan Fairlady Z Version S (Z33) '07,Shiro Nakamura,中村史郎,前日产首席创意官,False,"No need to thank me. It was a lot of fun.
-See you around sometime.7","哦，这是我的荣幸。
+See you around sometime.","哦，这是我的荣幸。
 那么，回头见。"
 0x00009BE6,Nakamura_004_fairlady_z_st_08_1st,1,Nissan Fairlady Z (Z34) '08,Shiro Nakamura,中村史郎,前日产首席创意官,False,Is this Z34 yours by any chance?,这辆Z34该不会碰巧是你的吧？
 0x00009BE7,Nakamura_004_fairlady_z_st_08_1st,2,Nissan Fairlady Z (Z34) '08,Sarah,莎拉·伊顿,主向导 / 赛事工程师,False,"Excuse me, sir, aren’t you… the former Nissan
-Chief Creative Officer, Mr. Shiro Nakamura!?",您是不是……前Nissan首席创意官中村史郎先生！？7
+Chief Creative Officer, Mr. Shiro Nakamura!?",您是不是……前Nissan首席创意官中村史郎先生！？
 0x00009BE8,Nakamura_004_fairlady_z_st_08_1st,3,Nissan Fairlady Z (Z34) '08,Shiro Nakamura,中村史郎,前日产首席创意官,False,"Hello. It's very nice to meet you.
 Yes, I'm Shiro Nakamura.",是的，我是。请多多指教。
 0x00009BE9,Nakamura_004_fairlady_z_st_08_1st,4,Nissan Fairlady Z (Z34) '08,Sarah,莎拉·伊顿,主向导 / 赛事工程师,False,"It's an incredible honor to meet you!
@@ -5776,7 +5775,7 @@ If the Z33 represented a modern and more
 elegant design theme...
 
 ...then the Z34's look is one that's a more authentic of an
-FR sports car with added aggressiveness.2","从设计上看，Z34比Z33的外观更回归经典。
+FR sports car with added aggressiveness.","从设计上看，Z34比Z33的外观更回归经典。
 首先，轴距缩短了100mm……
 
 显得车头相对更长。
@@ -5796,11 +5795,11 @@ Z34则更像是一款地道的前置后驱跑车，
 而且更具攻击性。"
 0x00009BEB,Nakamura_004_fairlady_z_st_08_1st,6,Nissan Fairlady Z (Z34) '08,Sarah,莎拉·伊顿,主向导 / 赛事工程师,False,"Wow, that was fascinating! Thanks!",哇，好精彩的解说！感谢感谢！
 0x00009BEC,Nakamura_004_fairlady_z_st_08_1st,7,Nissan Fairlady Z (Z34) '08,Shiro Nakamura,中村史郎,前日产首席创意官,False,"No need to thank me. It was a lot of fun.
-See you around sometime.7","哦，这是我的荣幸。
+See you around sometime.","哦，这是我的荣幸。
 那么，回头见。"
 0x00009BEF,Nakamura_005_gt40_mk1_66_1st,1,Ford GT40 Mark I '66,Shiro Nakamura,中村史郎,前日产首席创意官,False,Is this GT40 Mark I yours by any chance?,这辆GT40 Mark I该不会碰巧是你的吧？
 0x00009BF0,Nakamura_005_gt40_mk1_66_1st,2,Ford GT40 Mark I '66,Sarah,莎拉·伊顿,主向导 / 赛事工程师,False,"Excuse me, sir, aren’t you… the former Nissan
-Chief Creative Officer, Mr. Shiro Nakamura!?",您是不是……前Nissan首席创意官中村史郎先生！？7
+Chief Creative Officer, Mr. Shiro Nakamura!?",您是不是……前Nissan首席创意官中村史郎先生！？
 0x00009BF1,Nakamura_005_gt40_mk1_66_1st,3,Ford GT40 Mark I '66,Shiro Nakamura,中村史郎,前日产首席创意官,False,"Hello. It's very nice to meet you.
 Yes, I'm Shiro Nakamura.",是的，我是。请多多指教。
 0x00009BF2,Nakamura_005_gt40_mk1_66_1st,4,Ford GT40 Mark I '66,Sarah,莎拉·伊顿,主向导 / 赛事工程师,False,"It's an incredible honor to meet you!
@@ -5870,11 +5869,11 @@ GT40可能欠缺一些激情，但有着更具现代感的轮廓。
 事实上，我觉得最有魅力的就是这部分。"
 0x00009BF4,Nakamura_005_gt40_mk1_66_1st,6,Ford GT40 Mark I '66,Sarah,莎拉·伊顿,主向导 / 赛事工程师,False,"Wow, that was fascinating! Thanks!",哇，好精彩的解说！感谢感谢！
 0x00009BF5,Nakamura_005_gt40_mk1_66_1st,7,Ford GT40 Mark I '66,Shiro Nakamura,中村史郎,前日产首席创意官,False,"No need to thank me. It was a lot of fun.
-See you around sometime.7","哦，这是我的荣幸。
+See you around sometime.","哦，这是我的荣幸。
 那么，回头见。"
 0x00009BF8,Nakamura_006_stratos_73_1st,1,Lancia Stratos '73,Shiro Nakamura,中村史郎,前日产首席创意官,False,Is this Stratos yours by any chance?,这辆Stratos该不会碰巧是你的吧？
 0x00009BF9,Nakamura_006_stratos_73_1st,2,Lancia Stratos '73,Sarah,莎拉·伊顿,主向导 / 赛事工程师,False,"Excuse me, sir, aren’t you… the former Nissan
-Chief Creative Officer, Mr. Shiro Nakamura!?",您是不是……前Nissan首席创意官中村史郎先生！？7
+Chief Creative Officer, Mr. Shiro Nakamura!?",您是不是……前Nissan首席创意官中村史郎先生！？
 0x00009BFA,Nakamura_006_stratos_73_1st,3,Lancia Stratos '73,Shiro Nakamura,中村史郎,前日产首席创意官,False,"Hello. It's very nice to meet you.
 Yes, I'm Shiro Nakamura.",是的，我是。请多多指教。
 0x00009BFB,Nakamura_006_stratos_73_1st,4,Lancia Stratos '73,Sarah,莎拉·伊顿,主向导 / 赛事工程师,False,"It's an incredible honor to meet you!
@@ -5915,14 +5914,14 @@ is defined by both.","你无法想象一辆汽车究竟是如何表现出这种�
 又没有忘记其本源。
 确切地说，这辆Stratos是一辆跨越两个世界的车。"
 0x00009BFD,Nakamura_006_stratos_73_1st,6,Lancia Stratos '73,Sarah,莎拉·伊顿,主向导 / 赛事工程师,False,"By the way, do you know who Gandini is?",顺便问一句，你们知道甘迪尼是谁吗？
-0x00009BFE,Nakamura_006_stratos_73_1st,8,Lancia Stratos '73,Sarah,莎拉·伊顿,主向导 / 赛事工程师,False,"Yes. He's the legendary car designer from Italy,
+0x00009BFE,Nakamura_006_stratos_73_1st,7,Lancia Stratos '73,Sarah,莎拉·伊顿,主向导 / 赛事工程师,False,"Yes. He's the legendary car designer from Italy,
 Marcello Gandini.
 
 He had a hand in the design of cars such as the Countach
 and Stratos, and is known all around the world.","对，马塞罗·甘迪尼，来自意大利的传奇汽车设计师。
 
 他曾设计过Countach和Stratos，在全世界都享有盛名。"
-0x00009BFF,Nakamura_006_stratos_73_1st,7,Lancia Stratos '73,Sarah,莎拉·伊顿,主向导 / 赛事工程师,False,"He's the legendary car designer from Italy,
+0x00009BFF,Nakamura_006_stratos_73_1st,8,Lancia Stratos '73,Sarah,莎拉·伊顿,主向导 / 赛事工程师,False,"He's the legendary car designer from Italy,
 Marcello Gandini.
 
 He was the chief designer
@@ -5973,11 +5972,11 @@ Stratos由“博通设计打造”。
 不过恐怕它现在已经是我负担不起的天价了。<"
 0x00009C01,Nakamura_006_stratos_73_1st,10,Lancia Stratos '73,Sarah,莎拉·伊顿,主向导 / 赛事工程师,False,"Wow, that was fascinating! Thanks!",哇，好精彩的解说！感谢感谢！
 0x00009C02,Nakamura_006_stratos_73_1st,11,Lancia Stratos '73,Shiro Nakamura,中村史郎,前日产首席创意官,False,"No need to thank me. It was a lot of fun.
-See you around sometime.7","哦，这是我的荣幸。
+See you around sometime.","哦，这是我的荣幸。
 那么，回头见。"
 0x00009C05,Nakamura_007_gtr_17_1st,1,Nissan GT-R Premium edition '17,Shiro Nakamura,中村史郎,前日产首席创意官,False,Is this NISSAN GT-R yours by any chance?,这辆NISSAN GT-R该不会碰巧是你的吧？
 0x00009C06,Nakamura_007_gtr_17_1st,2,Nissan GT-R Premium edition '17,Sarah,莎拉·伊顿,主向导 / 赛事工程师,False,"Excuse me, sir, aren’t you… the former Nissan
-Chief Creative Officer, Mr. Shiro Nakamura!?",您是不是……前Nissan首席创意官中村史郎先生！？7
+Chief Creative Officer, Mr. Shiro Nakamura!?",您是不是……前Nissan首席创意官中村史郎先生！？
 0x00009C07,Nakamura_007_gtr_17_1st,3,Nissan GT-R Premium edition '17,Shiro Nakamura,中村史郎,前日产首席创意官,False,"Hello. It's very nice to meet you.
 Yes, I'm Shiro Nakamura.",是的，我是。请多多指教。
 0x00009C08,Nakamura_007_gtr_17_1st,4,Nissan GT-R Premium edition '17,Sarah,莎拉·伊顿,主向导 / 赛事工程师,False,"It's an incredible honor to meet you!
@@ -6020,11 +6019,11 @@ it has a modern design with depth and good textures.","哦，这是2017年的车
 我们对材质的应用很到位。"
 0x00009C0A,Nakamura_007_gtr_17_1st,6,Nissan GT-R Premium edition '17,Sarah,莎拉·伊顿,主向导 / 赛事工程师,False,"Wow, that was fascinating! Thanks!",哇，好精彩的解说！感谢感谢！
 0x00009C0B,Nakamura_007_gtr_17_1st,7,Nissan GT-R Premium edition '17,Shiro Nakamura,中村史郎,前日产首席创意官,False,"No need to thank me. It was a lot of fun.
-See you around sometime.7","哦，这是我的荣幸。
+See you around sometime.","哦，这是我的荣幸。
 那么，回头见。"
 0x00009C0E,Nakamura_008_alpine_a110_1600s_68_1st,1,Alpine A110 1600S '72,Shiro Nakamura,中村史郎,前日产首席创意官,False,Is this Alpine A110 yours by any chance?,这辆Alpine A110该不会碰巧是你的吧？
 0x00009C0F,Nakamura_008_alpine_a110_1600s_68_1st,2,Alpine A110 1600S '72,Sarah,莎拉·伊顿,主向导 / 赛事工程师,False,"Excuse me, sir, aren’t you… the former Nissan
-Chief Creative Officer, Mr. Shiro Nakamura!?",您是不是……前Nissan首席创意官中村史郎先生！？7
+Chief Creative Officer, Mr. Shiro Nakamura!?",您是不是……前Nissan首席创意官中村史郎先生！？
 0x00009C10,Nakamura_008_alpine_a110_1600s_68_1st,3,Alpine A110 1600S '72,Shiro Nakamura,中村史郎,前日产首席创意官,False,"Hello. It's very nice to meet you.
 Yes, I'm Shiro Nakamura.",是的，我是。请多多指教。
 0x00009C11,Nakamura_008_alpine_a110_1600s_68_1st,4,Alpine A110 1600S '72,Sarah,莎拉·伊顿,主向导 / 赛事工程师,False,"It's an incredible honor to meet you!
@@ -6082,11 +6081,11 @@ add to my collection.","这辆车确实令人叹为观止，请关注紧凑的�
 这是一项真正的大师之作，我很想把它纳入我的收藏。"
 0x00009C13,Nakamura_008_alpine_a110_1600s_68_1st,6,Alpine A110 1600S '72,Sarah,莎拉·伊顿,主向导 / 赛事工程师,False,"Wow, that was fascinating! Thanks!",哇，好精彩的解说！感谢感谢！
 0x00009C14,Nakamura_008_alpine_a110_1600s_68_1st,7,Alpine A110 1600S '72,Shiro Nakamura,中村史郎,前日产首席创意官,False,"No need to thank me. It was a lot of fun.
-See you around sometime.7","哦，这是我的荣幸。
+See you around sometime.","哦，这是我的荣幸。
 那么，回头见。"
 0x00009C17,Nakamura_009_fairlady_z432_69_1st,1,Nissan Fairlady Z 432 '69,Shiro Nakamura,中村史郎,前日产首席创意官,False,Is this S30 yours by any chance?,这辆S30该不会碰巧是你的吧？
 0x00009C18,Nakamura_009_fairlady_z432_69_1st,2,Nissan Fairlady Z 432 '69,Sarah,莎拉·伊顿,主向导 / 赛事工程师,False,"Excuse me, sir, aren’t you… the former Nissan
-Chief Creative Officer, Mr. Shiro Nakamura!?",您是不是……前Nissan首席创意官中村史郎先生！？7
+Chief Creative Officer, Mr. Shiro Nakamura!?",您是不是……前Nissan首席创意官中村史郎先生！？
 0x00009C19,Nakamura_009_fairlady_z432_69_1st,3,Nissan Fairlady Z 432 '69,Shiro Nakamura,中村史郎,前日产首席创意官,False,"Hello. It's very nice to meet you.
 Yes, I'm Shiro Nakamura.",是的，我是。请多多指教。
 0x00009C1A,Nakamura_009_fairlady_z432_69_1st,4,Nissan Fairlady Z 432 '69,Sarah,莎拉·伊顿,主向导 / 赛事工程师,False,"It's an incredible honor to meet you!
@@ -6164,7 +6163,7 @@ S30就是一台纯粹的日系车。
 尤其值得一提的一位，便是最近去世的松尾良彦。"
 0x00009C1C,Nakamura_009_fairlady_z432_69_1st,6,Nissan Fairlady Z 432 '69,Sarah,莎拉·伊顿,主向导 / 赛事工程师,False,"Wow, that was fascinating! Thanks!",哇，好精彩的解说！感谢感谢！
 0x00009C1D,Nakamura_009_fairlady_z432_69_1st,7,Nissan Fairlady Z 432 '69,Shiro Nakamura,中村史郎,前日产首席创意官,False,"No need to thank me. It was a lot of fun.
-See you around sometime.7","哦，这是我的荣幸。
+See you around sometime.","哦，这是我的荣幸。
 那么，回头见。"
 0x00009C74,Harada_010_amuse_s2000_gt1_turbo_xx_1st,1,Amuse S2000 GT1 Turbo,Hikonori Kagurazaka,神乐坂彦则,高性能车设计师,False,"Wait a second...
 That's an S2000 GT1, right?",那是……一辆S2000 GT1吗？
@@ -6875,7 +6874,7 @@ Luckily, it became 4-seater and a totally different concept.","我确实参与�
 0x00009CD7,Matano_007_rx8_spirit_r_12_1st,7,Mazda RX-8 Spirit R '12,Tom Matano,俣野努,马自达设计师 · MX-5 设计参与者,False,"I look forward to discussing car design in more depth
 the next time we get the chance!","很期待跟你们详细聊车辆设计的事，
 等下次有机会吧！"
-0x00009CDA,Fabio_002__365_gtb4_71_1st,1,Ferrari 365 GTB4 '71,Fabio Filippini,法比奥·菲利皮尼,前宾尼法利纳设计总监,False,"Excuse me, are you the one who drove up in that 365 GTB4? f",请问你是那个开着365 GTB4的车手吗？
+0x00009CDA,Fabio_002__365_gtb4_71_1st,1,Ferrari 365 GTB4 '71,Fabio Filippini,法比奥·菲利皮尼,前宾尼法利纳设计总监,False,"Excuse me, are you the one who drove up in that 365 GTB4?",请问你是那个开着365 GTB4的车手吗？
 0x00009CDB,Fabio_002__365_gtb4_71_1st,2,Ferrari 365 GTB4 '71,Sarah,莎拉·伊顿,主向导 / 赛事工程师,False,Wait... You're the former Director of Pininfarina!,等等……您是前Pininfarina总监！
 0x00009CDC,Fabio_002__365_gtb4_71_1st,3,Ferrari 365 GTB4 '71,Fabio Filippini,法比奥·菲利皮尼,前宾尼法利纳设计总监,False,"Yes, my name is Fabio Filippini. Very nice to make your
 acquaintance. And please, call me Fabio.","是的，我是法比奥·菲利皮尼。很高兴认识你们。
@@ -6888,15 +6887,15 @@ carrozzerias in Italy.
 Mr. Fabio also worked at Renault Design for a long time as well.","当然，毕竟它是意大利最有名
 的Carrozzeria之一。
 
-而且，法比奥先生还在Renault Design工作了很长时间。0"
+而且，法比奥先生还在Renault Design工作了很长时间。"
 0x00009CE0,Fabio_002__365_gtb4_71_1st,7,Ferrari 365 GTB4 '71,Sarah,莎拉·伊顿,主向导 / 赛事工程师,False,"Pininfarina is one of the most famous carrozzerias in Italy!
 
 And Mr. Fabio also worked at Renault Design for a
-long time as well.4","Pininfarina可是意大利最有名的
+long time as well.","Pininfarina可是意大利最有名的
 Carrozzeria之一！
 
 而且，法比奥先生还在Renault Design
-工作了很长时间。9"
+工作了很长时间。"
 0x00009CE1,Fabio_002__365_gtb4_71_1st,8,Ferrari 365 GTB4 '71,Fabio Filippini,法比奥·菲利皮尼,前宾尼法利纳设计总监,False,"Known as the “Daytona,"" it is the epitome of
 the front-engine Prancing Horse GT...
 
@@ -7023,7 +7022,7 @@ carrozzerias in Italy.
 Mr. Fabio also worked at Renault Design for a long time as well.","当然，毕竟它是意大利最有名
 的Carrozzeria之一。
 
-而且，法比奥先生还在Renault Design工作了很长时间。0"
+而且，法比奥先生还在Renault Design工作了很长时间。"
 0x00009CF0,Fabio_002_dino_246gt_69_1st,7,Ferrari Dino 246 GT '71,Sarah,莎拉·伊顿,主向导 / 赛事工程师,False,"Pininfarina is one of the most famous carrozzerias
 in Italy!
 
@@ -7032,7 +7031,7 @@ a long time as well.","Pininfarina可是意大利最有名的
 Carrozzeria之一！
 
 而且，法比奥先生还在Renault Design
-工作了很长时间。9"
+工作了很长时间。"
 0x00009CF1,Fabio_002_dino_246gt_69_1st,8,Ferrari Dino 246 GT '71,Fabio Filippini,法比奥·菲利皮尼,前宾尼法利纳设计总监,False,"The little berlinetta, known as the Dino 206/246 GT...
 
 ...is certainly one of the most beautiful cars ever
@@ -7104,15 +7103,15 @@ carrozzerias in Italy.
 Mr. Fabio also worked at Renault Design for a long time as well.","当然，毕竟它是意大利最有名
 的Carrozzeria之一。
 
-而且，法比奥先生还在Renault Design工作了很长时间。0"
+而且，法比奥先生还在Renault Design工作了很长时间。"
 0x00009CFC,Fabio_002_megane_renaultsport_11_1st,7,Renault Sport Mégane R.S. Trophy '11,Sarah,莎拉·伊顿,主向导 / 赛事工程师,False,"Pininfarina is one of the most famous carrozzerias in Italy!
 
 And Mr. Fabio also worked at Renault Design for a
-long time as well.4","Pininfarina可是意大利最有名的
+long time as well.","Pininfarina可是意大利最有名的
 Carrozzeria之一！
 
 而且，法比奥先生还在Renault Design
-工作了很长时间。9"
+工作了很长时间。"
 0x00009CFD,Fabio_002_megane_renaultsport_11_1st,8,Renault Sport Mégane R.S. Trophy '11,Fabio Filippini,法比奥·菲利皮尼,前宾尼法利纳设计总监,True,"This is a car I had a hand in styling when I was
 with Renault Design!
 
@@ -7163,11 +7162,11 @@ carrozzerias in Italy.
 Mr. Fabio also worked at Renault Design for a long time as well.","当然，毕竟它是意大利最有名
 的Carrozzeria之一。
 
-而且，法比奥先生还在Renault Design工作了很长时间。0"
+而且，法比奥先生还在Renault Design工作了很长时间。"
 0x00009D08,Fabio_002__308_gtb_78_1st,7,Ferrari 308 GTB '75,Sarah,莎拉·伊顿,主向导 / 赛事工程师,False,"Pininfarina is one of the most famous carrozzerias in Italy!
 
 And Mr. Fabio also worked at Renault Design for a
-long time as well.4","Pininfarina可是意大利最有名的
+long time as well.","Pininfarina可是意大利最有名的
 Carrozzeria之一！
 
 而且，法比奥先生还在Renault Design工作了很长时间。"
@@ -7550,7 +7549,7 @@ GT3的成功来得如此突然，订单纷至沓来，
 
 这辆车简直像有魔力一般！"
 0x00009D84,Freeman_004__911_gt3_01_1st,6,Porsche 911 GT3 (996) '01,Sarah,莎拉·伊顿,主向导 / 赛事工程师,False,Have you ever heard of Porsche's Mezger engine？,您听说过Porsche的Mezger引擎吗？
-0x00009D85,Freeman_004__911_gt3_01_1st,8,Porsche 911 GT3 (996) '01,Sarah,莎拉·伊顿,主向导 / 赛事工程师,True,"That's correct! It's an engine created by Porsche's
+0x00009D85,Freeman_004__911_gt3_01_1st,7,Porsche 911 GT3 (996) '01,Sarah,莎拉·伊顿,主向导 / 赛事工程师,True,"That's correct! It's an engine created by Porsche's
 legendary engineer Hans Mezger!
 
 He's responsible for the 911's traditional air-cooled
@@ -7568,7 +7567,7 @@ F1和勒芒赛事用的赛车引擎。
 尽管自996之后，911的引擎都换成了水冷……
 
 但梅茨格的设计理念依然根植于GT2，GT3以及911 Turbo之中。"
-0x00009D86,Freeman_004__911_gt3_01_1st,7,Porsche 911 GT3 (996) '01,Sarah,莎拉·伊顿,主向导 / 赛事工程师,True,"Hans Mezger was Porsche's legendary engineer.
+0x00009D86,Freeman_004__911_gt3_01_1st,8,Porsche 911 GT3 (996) '01,Sarah,莎拉·伊顿,主向导 / 赛事工程师,True,"Hans Mezger was Porsche's legendary engineer.
 
 He's responsible for the 911's traditional air-cooled
 engines, as well as race engines for F1 and Le Mans.
@@ -7835,7 +7834,7 @@ J·梅斯的愿景是继承GT40的设计精髓……
 0x00009DAC,Freeman_008_ford_gt_06_1st,6,Ford GT '06,Sarah,莎拉·伊顿,主向导 / 赛事工程师,False,"J Mays was in charge of Ford's design department.
 
 And, Camillo Pardo was this car's
-chief designer.","J·梅斯曾掌管Ford的设计部门。
+chief designer.","梅斯曾掌管Ford的设计部门。
 
 卡米洛·帕尔多是2006 Ford GT的主设计师。"""
 0x00009DAD,Freeman_008_ford_gt_06_1st,7,Ford GT '06,Freeman Thomas,弗里曼·托马斯,前福特设计总监 · 保时捷/奥迪,True,"It is really a clever design in that it is larger
@@ -8003,11 +8002,11 @@ These types of cars make life entertaining, don't you think?","设计在工业�
 Thank you so much!","您对这辆车的见解真是字字珠玑。
 太谢谢您了！\"
 0x00009E71,Harada_016_sr3_sl_13_1st,7,Radical SR3 SL '13,Hikonori Kagurazaka,神乐坂彦则,高性能车设计师,False,"Don't mention it, the pleasure was all mine!
-Well, see you around!7","太客气了！我自己也很享受这样的交谈！
+Well, see you around!","太客气了！我自己也很享受这样的交谈！
 好吧，那再见了！"
 0x00009E74,Harada_017_m3_sport_evo_89_1st,1,BMW M3 Sport Evolution '89,Hikonori Kagurazaka,神乐坂彦则,高性能车设计师,False,"Wait a second,
 that's the E30 M3 Sport Evolution, right?","等等……
-这是E30 M3 Sport Evolution，对吗？8"
+这是E30 M3 Sport Evolution，对吗？"
 0x00009E75,Harada_017_m3_sport_evo_89_1st,2,BMW M3 Sport Evolution '89,Sarah,莎拉·伊顿,主向导 / 赛事工程师,False,"Aren’t you Mr. Hikonori Kagurazaka,
 the legendary car designer based in Europe?","您是神乐坂彦则先生吗？
 那位在欧洲工作的传奇汽车设计师？"
@@ -8057,7 +8056,7 @@ the end effect is one that's relatively prominent.<next id=2001706 type","在198
 Thank you so much!","您对这辆车的见解真是字字珠玑。
 太谢谢您了！\"
 0x00009E7A,Harada_017_m3_sport_evo_89_1st,7,BMW M3 Sport Evolution '89,Hikonori Kagurazaka,神乐坂彦则,高性能车设计师,False,"Don't mention it, the pleasure was all mine!
-Well, see you around!7","太客气了！我自己也很享受这样的交谈！
+Well, see you around!","太客气了！我自己也很享受这样的交谈！
 好吧，那再见了！"
 0x00009E7D,Harada_018_ford_gt_17_1st,1,Ford GT '17,Hikonori Kagurazaka,神乐坂彦则,高性能车设计师,False,"Wait a second,
 that's the Ford GT, right?","等等……
@@ -8116,7 +8115,7 @@ its innovative three-dimensional design.","极具标志性特色的Mini、Beetle
 Thank you so much!","您对这辆车的见解真是字字珠玑。
 太谢谢您了！\"
 0x00009E83,Harada_018_ford_gt_17_1st,7,Ford GT '17,Hikonori Kagurazaka,神乐坂彦则,高性能车设计师,False,"Don't mention it, the pleasure was all mine!
-Well, see you around!7","太客气了！我自己也很享受这样的交谈！
+Well, see you around!","太客气了！我自己也很享受这样的交谈！
 好吧，那再见了！"
 0x00009E86,Harada_019_datsun_240z_fugu_z_xx_1st,1,GReddy Fugu Z,Hikonori Kagurazaka,神乐坂彦则,高性能车设计师,False,"Wait a second,
 that's the Fugu Z, right?","等等……
@@ -8192,7 +8191,7 @@ Thank you, Sung Kang!","我觉得Fugu Z是一辆充满魅力的车。
 Thank you so much!","您对这辆车的见解真是字字珠玑。
 太谢谢您了！\"
 0x00009E8C,Harada_019_datsun_240z_fugu_z_xx_1st,7,GReddy Fugu Z,Hikonori Kagurazaka,神乐坂彦则,高性能车设计师,False,"Don't mention it, the pleasure was all mine!
-Well, see you around!7","太客气了！我自己也很享受这样的交谈！
+Well, see you around!","太客气了！我自己也很享受这样的交谈！
 好吧，那再见了！"
 0x00009E8F,Harada_020_tuscan_speed6_00_1st,1,TVR Tuscan Speed 6 '00,Hikonori Kagurazaka,神乐坂彦则,高性能车设计师,False,"Wait a second,
 that's the TVR Tuscan, right?","等等……
@@ -8261,7 +8260,7 @@ captivating only those who understand it.","看啊，这才是我眼中真正的
 Thank you so much!","您对这辆车的见解真是字字珠玑。
 太谢谢您了！\"
 0x00009E95,Harada_020_tuscan_speed6_00_1st,7,TVR Tuscan Speed 6 '00,Hikonori Kagurazaka,神乐坂彦则,高性能车设计师,False,"Don't mention it, the pleasure was all mine!
-Well, see you around!7","太客气了！我自己也很享受这样的交谈！
+Well, see you around!","太客气了！我自己也很享受这样的交谈！
 好吧，那再见了！"
 0x00009F1C,Nakamura_010__330_p4_67_1st,1,Ferrari 330 P4 '67,Shiro Nakamura,中村史郎,前日产首席创意官,False,Is this Ferrari 330 P4 yours by any chance?,这辆Ferrari 330 P4是你的吗？
 0x00009F1D,Nakamura_010__330_p4_67_1st,2,Ferrari 330 P4 '67,Sarah,莎拉·伊顿,主向导 / 赛事工程师,False,"Excuse me, sir, aren’t you former Nissan Chief Creative Officer,
@@ -8314,7 +8313,7 @@ were still works of art.","我的观点是，330 P4是最时尚、最具魅力�
 这款杰作代表了那个赛车也可以很美的时代。"
 0x00009F21,Nakamura_010__330_p4_67_1st,6,Ferrari 330 P4 '67,Sarah,莎拉·伊顿,主向导 / 赛事工程师,False,"Wow, that was fascinating! Thanks!",哇，好精彩的解说！感谢感谢！
 0x00009F22,Nakamura_010__330_p4_67_1st,7,Ferrari 330 P4 '67,Shiro Nakamura,中村史郎,前日产首席创意官,False,"No need to thank me. It was a lot of fun.
-See you around sometime.7","不用客气，我也觉得挺开心的。
+See you around sometime.","不用客气，我也觉得挺开心的。
 下次再见。"
 0x00009F25,Nakamura_011__180sx_x_96_1st,1,Nissan 180SX Type X '96,Shiro Nakamura,中村史郎,前日产首席创意官,False,Is this 180SX yours by any chance?,这辆180SX是你的吗？
 0x00009F26,Nakamura_011__180sx_x_96_1st,2,Nissan 180SX Type X '96,Sarah,莎拉·伊顿,主向导 / 赛事工程师,False,"Excuse me, sir, aren’t you former Nissan Chief Creative Officer,
@@ -8357,7 +8356,7 @@ but it's a look that exudes positive emotions.","这辆车淋漓尽致地展现�
 不过的确传达出积极求变的信息。"
 0x00009F2A,Nakamura_011__180sx_x_96_1st,6,Nissan 180SX Type X '96,Sarah,莎拉·伊顿,主向导 / 赛事工程师,False,"Wow, that was fascinating! Thanks!",哇，好精彩的解说！感谢感谢！
 0x00009F2B,Nakamura_011__180sx_x_96_1st,7,Nissan 180SX Type X '96,Shiro Nakamura,中村史郎,前日产首席创意官,False,"No need to thank me. It was a lot of fun.
-See you around sometime.7","不用客气，我也觉得挺开心的。
+See you around sometime.","不用客气，我也觉得挺开心的。
 下次再见。"
 0x00009F2E,Nakamura_012_kpgc10_skyline_gtr_70_1st,1,Nissan Skyline Hard Top 2000GT-R (KPGC10) '70,Shiro Nakamura,中村史郎,前日产首席创意官,False,Is this Skyline GT-R KPGC yours by any chance?,这辆Skyline GT-R KPGC是你的吗？
 0x00009F2F,Nakamura_012_kpgc10_skyline_gtr_70_1st,2,Nissan Skyline Hard Top 2000GT-R (KPGC10) '70,Sarah,莎拉·伊顿,主向导 / 赛事工程师,False,"Excuse me, sir, aren’t you former Nissan Chief Creative Officer,
@@ -8416,10 +8415,10 @@ the window line of the Pillar is set at the same angle.","这辆初代GT-R是日
 粗看之下，R35很像是一台溜背车……
 
 �;�…但与KPGC进行比较之后你就会发现
-两者C柱窗户的线条呈现的角度其实是一模一样的。0"
+两者C柱窗户的线条呈现的角度其实是一模一样的。"
 0x00009F33,Nakamura_012_kpgc10_skyline_gtr_70_1st,6,Nissan Skyline Hard Top 2000GT-R (KPGC10) '70,Sarah,莎拉·伊顿,主向导 / 赛事工程师,False,"Wow, that was fascinating! Thanks!",哇，好精彩的解说！感谢感谢！
 0x00009F34,Nakamura_012_kpgc10_skyline_gtr_70_1st,7,Nissan Skyline Hard Top 2000GT-R (KPGC10) '70,Shiro Nakamura,中村史郎,前日产首席创意官,False,"No need to thank me. It was a lot of fun.
-See you around sometime.7","不用客气，我也觉得挺开心的。
+See you around sometime.","不用客气，我也觉得挺开心的。
 下次再见。"
 0x00009F37,Nakamura_013_infiniti_vision_gt_14_1st,1,INFINITI CONCEPT Vision Gran Turismo,Shiro Nakamura,中村史郎,前日产首席创意官,False,Is this Infinity Vision Gran Turismo yours by any chance?,这辆Infinity Vision Gran Turismo是你的吗？
 0x00009F38,Nakamura_013_infiniti_vision_gt_14_1st,2,INFINITI CONCEPT Vision Gran Turismo,Sarah,莎拉·伊顿,主向导 / 赛事工程师,False,"Excuse me, sir, aren’t you former Nissan Chief Creative Officer,
@@ -8479,7 +8478,7 @@ the production Infiniti cars that came afterwards.","当山内一典先生找我
 更为后续推出的英菲尼迪量产车型留下了许多启发。"
 0x00009F3C,Nakamura_013_infiniti_vision_gt_14_1st,6,INFINITI CONCEPT Vision Gran Turismo,Sarah,莎拉·伊顿,主向导 / 赛事工程师,False,"Wow, that was fascinating! Thanks!",哇，好精彩的解说！感谢感谢！
 0x00009F3D,Nakamura_013_infiniti_vision_gt_14_1st,7,INFINITI CONCEPT Vision Gran Turismo,Shiro Nakamura,中村史郎,前日产首席创意官,False,"No need to thank me. It was a lot of fun.
-See you around sometime.7","不用客气，我也觉得挺开心的。
+See you around sometime.","不用客气，我也觉得挺开心的。
 下次再见。"
 0x00009F40,Nakamura_014_m3_03_1st,1,BMW M3 Coupé '03,Shiro Nakamura,中村史郎,前日产首席创意官,False,Is this M3 yours by any chance?,这辆M3是你的吗？
 0x00009F41,Nakamura_014_m3_03_1st,2,BMW M3 Coupé '03,Sarah,莎拉·伊顿,主向导 / 赛事工程师,False,"Excuse me, sir, aren’t you former Nissan Chief Creative Officer,
@@ -8537,7 +8536,7 @@ on a mass-produced vehicle..","这款车延续了2002款的风格，
 能实现这样的成果确实难能可贵。."
 0x00009F45,Nakamura_014_m3_03_1st,6,BMW M3 Coupé '03,Sarah,莎拉·伊顿,主向导 / 赛事工程师,False,"Wow, that was fascinating! Thanks!",哇，好精彩的解说！感谢感谢！
 0x00009F46,Nakamura_014_m3_03_1st,7,BMW M3 Coupé '03,Shiro Nakamura,中村史郎,前日产首席创意官,False,"No need to thank me. It was a lot of fun.
-See you around sometime.7","不用客气，我也觉得挺开心的。
+See you around sometime.","不用客气，我也觉得挺开心的。
 下次再见。"
 0x00009F49,Nakamura_015_gtr_lm_nismo_15_1st,1,Nissan GT-R LM NISMO '15,Shiro Nakamura,中村史郎,前日产首席创意官,False,Is this GT-R LM NISMO yours by any chance?,这辆GT-R LM NISMO是你的吗？
 0x00009F4A,Nakamura_015_gtr_lm_nismo_15_1st,2,Nissan GT-R LM NISMO '15,Sarah,莎拉·伊顿,主向导 / 赛事工程师,False,"Excuse me, sir, aren’t you former Nissan Chief Creative Officer,
@@ -8598,7 +8597,7 @@ and it was discontinued after a year.","你们记得三角翼吗？
 遗憾的是，这辆车在勒芒未能有所斩�，在一年后便停产了。"
 0x00009F4E,Nakamura_015_gtr_lm_nismo_15_1st,6,Nissan GT-R LM NISMO '15,Sarah,莎拉·伊顿,主向导 / 赛事工程师,False,"Wow, that was fascinating! Thanks!",哇，好精彩的解说！感谢感谢！
 0x00009F4F,Nakamura_015_gtr_lm_nismo_15_1st,7,Nissan GT-R LM NISMO '15,Shiro Nakamura,中村史郎,前日产首席创意官,False,"No need to thank me. It was a lot of fun.
-See you around sometime.7","不用客气，我也觉得挺开心的。
+See you around sometime.","不用客气，我也觉得挺开心的。
 下次再见。"
 0x00009F52,Nakamura_016_nissan_vision_gt_14_tms2015_1st,1,NISSAN CONCEPT 2020 Vision Gran Turismo,Shiro Nakamura,中村史郎,前日产首席创意官,False,"Is this Nissan Concept 2020 Vision Gran Turismo
 yours by any chance?","这辆Nissan Concept 2020 Vision Gran Turismo
@@ -8661,7 +8660,7 @@ are related to that of the 2017 GT-R.","日产Concept 2020 Vision Gran Turismo�
 与2017款GT-R有着密切的联系。"
 0x00009F57,Nakamura_016_nissan_vision_gt_14_tms2015_1st,6,NISSAN CONCEPT 2020 Vision Gran Turismo,Sarah,莎拉·伊顿,主向导 / 赛事工程师,False,"Wow, that was fascinating! Thanks!",哇，好精彩的解说！感谢感谢！
 0x00009F58,Nakamura_016_nissan_vision_gt_14_tms2015_1st,7,NISSAN CONCEPT 2020 Vision Gran Turismo,Shiro Nakamura,中村史郎,前日产首席创意官,False,"No need to thank me. It was a lot of fun.
-See you around sometime.7","不用客气，我也觉得挺开心的。
+See you around sometime.","不用客气，我也觉得挺开心的。
 下次再见。"
 0x00009F5B,Nakamura_017_xanavi_nismo_gtr_08_1st,1,Nissan GT-R GT500 '08,Shiro Nakamura,中村史郎,前日产首席创意官,False,Is this XANAVI NISMO GT-R yours by any chance?,这辆XANAVI NISMO GT-R是你的吗？
 0x00009F5C,Nakamura_017_xanavi_nismo_gtr_08_1st,2,Nissan GT-R GT500 '08,Sarah,莎拉·伊顿,主向导 / 赛事工程师,False,"Excuse me, sir, aren’t you former Nissan Chief Creative Officer,
@@ -8725,7 +8724,7 @@ the R35 GT-R's cabin must ab�olutely remain distinctive!","虽然这样说感�
 所以，我才会在S��计R35 GT-R的时候赋予驾驶舱独特的风格！"
 0x00009F60,Nakamura_017_xanavi_nismo_gtr_08_1st,6,Nissan GT-R GT500 '08,Sarah,莎拉·伊顿,主向导 / 赛事工程师,False,"Wow, that was fascinating! Thanks!",哇，好精彩的解说！感谢感谢！
 0x00009F61,Nakamura_017_xanavi_nismo_gtr_08_1st,7,Nissan GT-R GT500 '08,Shiro Nakamura,中村史郎,前日产首席创意官,False,"No need to thank me. It was a lot of fun.
-See you around sometime.7","不用客气，我也觉得挺开心的。
+See you around sometime.","不用客气，我也觉得挺开心的。
 下次再见。"
 0x00009F64,Matano_008_v8_vantage_s_15_1st,1,Aston Martin V8 Vantage S '15,Tom Matano,俣野努,马自达设计师 · MX-5 设计参与者,False,"Does this Aston Martin V8 Vantage belong to you,
 by any chance?",这台是你的Aston Martin V8 Vantage吗？
@@ -8984,7 +8983,7 @@ the next time we get the chance.","很期待跟你们详细聊车辆设计的事
 0x00009F93,Ed_009_corvette_coupe_63_1st,1,Chevrolet Corvette Sting Ray Sport Coupe (C2) '63,Ed Welburn,埃德·韦伯恩,前通用汽车全球设计副总裁,False,"Hi there, I think it’s my first time seeing you here.
 
 Are you the driver of this
-Corvette Sting Ray “Split Window” Corvette?9","嗨，这应该是我第一次在这里看到你，
+Corvette Sting Ray “Split Window” Corvette?","嗨，这应该是我第一次在这里看到你，
 你是这辆Corvette Sting Ray “Split Window”的车手吗？"
 0x00009F94,Ed_009_corvette_coupe_63_1st,2,Chevrolet Corvette Sting Ray Sport Coupe (C2) '63,Sarah,莎拉·伊顿,主向导 / 赛事工程师,False,"Wait...Is it my imagination, or are you the
 GM Design Leader…","等等……您是那位通用汽车的设计总监？
@@ -9070,7 +9069,7 @@ The roofline settles far back on the body,
 making the bonnet look long and sleek.
 
 The ‘60s-era details are creative and add to
-the charm of the design.8","这辆Toyota 2000GT是非常优秀的跑车，
+the charm of the design.","这辆Toyota 2000GT是非常优秀的跑车，
 也是现代汽车历史中的一款经典杰作。
 
 它的比例十分出色，我甚至找不到任何改进的余地。
@@ -9492,7 +9491,7 @@ making it a look like its ready to pounce!","每当我看到Daihatsu Copen，都
 0x00009FF4,Freeman_014_copen_activetop_02_1st,7,Daihatsu Copen Active Top '02,Freeman Thomas,弗里曼·托马斯,前福特设计总监 · 保时捷/奥迪,False,"It was nice talking to you too. Now go and take another
 good look at your beloved car!","和你们交谈也很愉快，
 趁此机会再回去欣赏下你的车吧，也许你会发现一个全新的角度！+"
-0x00009FF7,Fabio_006_f40_92_1st,1,Ferrari F40 '92,Fabio Filippini,法比奥·菲利皮尼,前宾尼法利纳设计总监,False,"Excuse me, are you the one who drove up in that F40?",打扰了，请问你是那个开着F40的车手吗？8
+0x00009FF7,Fabio_006_f40_92_1st,1,Ferrari F40 '92,Fabio Filippini,法比奥·菲利皮尼,前宾尼法利纳设计总监,False,"Excuse me, are you the one who drove up in that F40?",打扰了，请问你是那个开着F40的车手吗？
 0x00009FF8,Fabio_006_f40_92_1st,2,Ferrari F40 '92,Sarah,莎拉·伊顿,主向导 / 赛事工程师,False,"Wait, you're the former Director of Pininfarina!",等等……您是前Pininfarina总监！
 0x00009FF9,Fabio_006_f40_92_1st,3,Ferrari F40 '92,Fabio Filippini,法比奥·菲利皮尼,前宾尼法利纳设计总监,False,"Yes, my name is Fabio Filippini. Very nice to make your
 acquaintance. And please, call me Fabio.","是的，我是法比奥·菲利皮尼。很高兴认识你们。
@@ -9505,7 +9504,7 @@ carrozzerias in Italy.
 Mr. Fabio also worked at Renault Design
 for a long time as well.","当然，毕竟它是意大利最有名
 的Carrozzeria之一。
-而且，法比奥先生还在Renault Design工作了很长时间。9"
+而且，法比奥先生还在Renault Design工作了很长时间。"
 0x00009FFD,Fabio_006_f40_92_1st,7,Ferrari F40 '92,Sarah,莎拉·伊顿,主向导 / 赛事工程师,False,"Pininfarina is one of the most famous carrozzerias
 in Italy!
 
@@ -9583,7 +9582,7 @@ carrozzerias in Italy.
 Mr. Fabio also worked at Renault Design
 for a long time as well.","当然，毕竟它是意大利最有名
 的Carrozzeria之一。
-而且，法比奥先生还在Renault Design工作了很长时间。9"
+而且，法比奥先生还在Renault Design工作了很长时间。"
 0x0000A009,Fabio_007_nsx_r_92_1st,7,Honda NSX Type R '92,Sarah,莎拉·伊顿,主向导 / 赛事工程师,False,"Pininfarina is one of the most famous carrozzerias
 in Italy!
 
@@ -9655,7 +9654,7 @@ carrozzerias in Italy.
 Mr. Fabio also worked at Renault Design
 for a long time as well.","当然，毕竟它是意大利最有名
 的Carrozzeria之一。
-而且，法比奥先生还在Renault Design工作了很长时间。9"
+而且，法比奥先生还在Renault Design工作了很长时间。"
 0x0000A015,Fabio_008_458_italia_1st,7,Ferrari 458 Italia '09,Sarah,莎拉·伊顿,主向导 / 赛事工程师,False,"Pininfarina is one of the most famous carrozzerias
 in Italy!
 
@@ -9722,7 +9721,7 @@ carrozzerias in Italy.
 Mr. Fabio also worked at Renault Design
 for a long time as well.","当然，毕竟它是意大利最有名
 的Carrozzeria之一。
-而且，法比奥先生还在Renault Design工作了很长时间。9"
+而且，法比奥先生还在Renault Design工作了很长时间。"
 0x0000A021,Fabio_009_250_gt_berlinetta_swb_1st,7,Ferrari 250 GT Berlinetta passo corto '61,Sarah,莎拉·伊顿,主向导 / 赛事工程师,False,"Pininfarina is one of the most famous carrozzerias
 in Italy!
 
@@ -9794,7 +9793,7 @@ carrozzerias in Italy.
 Mr. Fabio also worked at Renault Design
 for a long time as well.","当然，毕竟它是意大利最有名
 的Carrozzeria之一。
-而且，法比奥先生还在Renault Design工作了很长时间。9"
+而且，法比奥先生还在Renault Design工作了很长时间。"
 0x0000A02D,Fabio_010_beat_91_1st,7,Honda Beat '91,Sarah,莎拉·伊顿,主向导 / 赛事工程师,False,"Pininfarina is one of the most famous carrozzerias
 in Italy!
 
@@ -9839,7 +9838,7 @@ They were a typical 1990s Japanese fashionable trend.","看，这就是我们可
 0x0000A030,Fabio_010_beat_91_1st,10,Honda Beat '91,Fabio Filippini,法比奥·菲利皮尼,前宾尼法利纳设计总监,False,"I hope it helps you to see your car in a different light.
 See you again, ciao!","没问题，这应该能让你重新认识你的车。
 下次见，ciao！("
-0x0000A033,Fabio_011_mito_14_t_sport_09_1st,1,Alfa Romeo MiTo 1.4 T Sport '09,Fabio Filippini,法比奥·菲利皮尼,前宾尼法利纳设计总监,False,"Excuse me, are you the one who drove up in that Alfa Romeo MiTo? \",打扰了，请问你是那个开着Alfa Romeo MiTo的车手吗？7
+0x0000A033,Fabio_011_mito_14_t_sport_09_1st,1,Alfa Romeo MiTo 1.4 T Sport '09,Fabio Filippini,法比奥·菲利皮尼,前宾尼法利纳设计总监,False,"Excuse me, are you the one who drove up in that Alfa Romeo MiTo? \",打扰了，请问你是那个开着Alfa Romeo MiTo的车手吗？
 0x0000A034,Fabio_011_mito_14_t_sport_09_1st,2,Alfa Romeo MiTo 1.4 T Sport '09,Sarah,莎拉·伊顿,主向导 / 赛事工程师,False,"Wait, you're the former Director of Pininfarina!",等等……您是前Pininfarina总监！
 0x0000A035,Fabio_011_mito_14_t_sport_09_1st,3,Alfa Romeo MiTo 1.4 T Sport '09,Fabio Filippini,法比奥·菲利皮尼,前宾尼法利纳设计总监,False,"Yes, my name is Fabio Filippini. Very nice to make your
 acquaintance. And please, call me Fabio.","是的，我是法比奥·菲利皮尼。很高兴认识你们。
@@ -9852,13 +9851,13 @@ carrozzerias in Italy.
 Mr. Fabio also worked at Renault Design
 for a long time as well.","当然，毕竟它是意大利最有名
 的Carrozzeria之一。
-而且，法比奥先生还在Renault Design工作了很长时间。9"
+而且，法比奥先生还在Renault Design工作了很长时间。"
 0x0000A039,Fabio_011_mito_14_t_sport_09_1st,7,Alfa Romeo MiTo 1.4 T Sport '09,Sarah,莎拉·伊顿,主向导 / 赛事工程师,False,"Right, it is, after all, one of the most famous Carrozzerias
 in Italy.
 
 And Mr. Fabio worked at Renault Design for a long time as well.","当然，毕竟它是意大利最有名
 的Carrozzeria之一。
-而且，法比奥先生还在Renault Design工作了很长时间。9"
+而且，法比奥先生还在Renault Design工作了很长时间。"
 0x0000A03A,Fabio_011_mito_14_t_sport_09_1st,8,Alfa Romeo MiTo 1.4 T Sport '09,Fabio Filippini,法比奥·菲利皮尼,前宾尼法利纳设计总监,True,"This car represents the baby of
 the Alfa Romeo range.
 
@@ -9915,7 +9914,7 @@ See you again, ciao!","没问题，这应该能让你重新认识你的车。
 hand in many famous cars from the German company, Opel?","您不会是儿玉英雄吧？
 曾经参与过德国Opel公司的诸多名车的那位设计师？"""
 0x0000A046,Kodama_001_aqua_s_11_1st,3,Toyota Aqua S '11,Hideo Kodama,儿玉英雄,前欧宝设计师,False,"Yes! I'm Kodama.
-It's a pleasure to meet the both of you.",是的，正是本人。见到你们两位很高兴。8
+It's a pleasure to meet the both of you.",是的，正是本人。见到你们两位很高兴。
 0x0000A047,Kodama_001_aqua_s_11_1st,4,Toyota Aqua S '11,Sarah,莎拉·伊顿,主向导 / 赛事工程师,False,"The pleasure is ours, Kodama-san.
 What an honor it is to make your acquaintance!
 
@@ -9964,7 +9963,7 @@ again sometime.",不必客气，我们有机会再多聊一聊汽车设计吧。
 hand in many famous cars from the German company, Opel?","您不会是儿玉英雄吧？
 曾经参与过德国Opel公司的诸多名车的那位设计师？"""
 0x0000A04F,Kodama_002__500_f_68_1st,3,FIAT 500 F '68,Hideo Kodama,儿玉英雄,前欧宝设计师,False,"Yes! I'm Kodama.
-It's a pleasure to meet the both of you.",是的，正是本人。见到你们两位很高兴。8
+It's a pleasure to meet the both of you.",是的，正是本人。见到你们两位很高兴。
 0x0000A050,Kodama_002__500_f_68_1st,4,FIAT 500 F '68,Sarah,莎拉·伊顿,主向导 / 赛事工程师,False,"The pleasure is ours, Kodama-san.
 What an honor it is to make your acquaintance!
 
@@ -9998,7 +9997,7 @@ The result was a rear-engine, super-compact Cinquecento.
 Thanks to the intentionally flared wheel arches,
 the car appears to be in constant motion.
 The yawning hood lid is also quite appealing,
-not to mention functional.4","千万不要小看这款娇小的车型。它表现出了极高的
+not to mention functional.","千万不要小看这款娇小的车型。它表现出了极高的
 产品设计水平，
 
 甚至堪称永恒经典。
@@ -10025,7 +10024,7 @@ again sometime.",不必客气，我们有机会再多聊一聊汽车设计吧。
 hand in many famous cars from the German company, Opel?","您不会是儿玉英雄吧？
 曾经参与过德国Opel公司的诸多名车的那位设计师？"""
 0x0000A058,Kodama_003_delta_hf_integrale_evo_91_1st,3,Lancia Delta HF Integrale Evoluzione '91,Hideo Kodama,儿玉英雄,前欧宝设计师,False,"Yes! I'm Kodama.
-It's a pleasure to meet the both of you.",是的，正是本人。见到你们两位很高兴。8
+It's a pleasure to meet the both of you.",是的，正是本人。见到你们两位很高兴。
 0x0000A059,Kodama_003_delta_hf_integrale_evo_91_1st,4,Lancia Delta HF Integrale Evoluzione '91,Sarah,莎拉·伊顿,主向导 / 赛事工程师,False,"The pleasure is ours, Kodama-san.
 What an honor it is to make your acquaintance!
 
@@ -10093,7 +10092,7 @@ again sometime.",不必客气，我们有机会再多聊一聊汽车设计吧。
 hand in many famous cars from the German company, Opel?","您不会是儿玉英雄吧？
 曾经参与过德国Opel公司的诸多名车的那位设计师？"""
 0x0000A061,Kodama_004_challenger_rt_70_1st,3,Dodge Challenger R/T '70,Hideo Kodama,儿玉英雄,前欧宝设计师,False,"Yes! I'm Kodama.
-It's a pleasure to meet the both of you.",是的，正是本人。见到你们两位很高兴。8
+It's a pleasure to meet the both of you.",是的，正是本人。见到你们两位很高兴。
 0x0000A062,Kodama_004_challenger_rt_70_1st,4,Dodge Challenger R/T '70,Sarah,莎拉·伊顿,主向导 / 赛事工程师,False,"The pleasure is ours, Kodama-san.
 What an honor it is to make your acquaintance!
 
@@ -10153,7 +10152,7 @@ again sometime.",不必客气，我们有机会再多聊一聊汽车设计吧。
 hand in many famous cars from the German company, Opel?","您不会是儿玉英雄吧？
 曾经参与过德国Opel公司的诸多名车的那位设计师？"""
 0x0000A06A,Kodama_005_miura_p400_proto_67_1st,3,Lamborghini Miura P400 Bertone Prototype '67,Hideo Kodama,儿玉英雄,前欧宝设计师,False,"Yes! I'm Kodama.
-It's a pleasure to meet the both of you.",是的，正是本人。见到你们两位很高兴。8
+It's a pleasure to meet the both of you.",是的，正是本人。见到你们两位很高兴。
 0x0000A06B,Kodama_005_miura_p400_proto_67_1st,4,Lamborghini Miura P400 Bertone Prototype '67,Sarah,莎拉·伊顿,主向导 / 赛事工程师,False,"The pleasure is ours, Kodama-san.
 What an honor it is to make your acquaintance!
 
@@ -10219,7 +10218,7 @@ again sometime.",不必客气，我们有机会再多聊一聊汽车设计吧。
 hand in many famous cars from the German company, Opel?","您不会是儿玉英雄吧？
 曾经参与过德国Opel公司的诸多名车的那位设计师？"""
 0x0000A073,Kodama_006_mclaren_f1_94_1st,3,McLaren F1 '94,Hideo Kodama,儿玉英雄,前欧宝设计师,False,"Yes! I'm Kodama.
-It's a pleasure to meet the both of you.",是的，正是本人。见到你们两位很高兴。8
+It's a pleasure to meet the both of you.",是的，正是本人。见到你们两位很高兴。
 0x0000A074,Kodama_006_mclaren_f1_94_1st,4,McLaren F1 '94,Sarah,莎拉·伊顿,主向导 / 赛事工程师,False,"The pleasure is ours, Kodama-san.
 What an honor it is to make your acquaintance!
 
@@ -10278,7 +10277,7 @@ again sometime.",不必客气，我们有机会再多聊一聊汽车设计吧。
 a hand in many famous cars from the German company, Opel?","您不会是儿玉英雄吧，
 曾经参与过德国Opel公司的诸多名车的那位设计师？"""
 0x0000A1C4,Kodama_007_a6gcs_spyder_54_1st,3,Maserati A6GCS/53 Spyder '54,Hideo Kodama,儿玉英雄,前欧宝设计师,False,"Yes! I'm Kodama.
-It's a pleasure to meet the both of you.",是的，正是本人。见到你们两位很高兴。8
+It's a pleasure to meet the both of you.",是的，正是本人。见到你们两位很高兴。
 0x0000A1C5,Kodama_007_a6gcs_spyder_54_1st,4,Maserati A6GCS/53 Spyder '54,Sarah,莎拉·伊顿,主向导 / 赛事工程师,False,"The pleasure is ours, Kodama-san.
 What an honor it is to make your acquaintance!
 
@@ -10343,7 +10342,7 @@ again sometime.",不必客气，我们有机会再多聊一聊汽车设计吧。
 a hand in many famous cars from the German company, Opel?","您不会是儿玉英雄吧，
 曾经参与过德国Opel公司的诸多名车的那位设计师？"""
 0x0000A1CD,Kodama_008__917k_70_1st,3,Porsche 917K '70,Hideo Kodama,儿玉英雄,前欧宝设计师,False,"Yes! I'm Kodama.
-It's a pleasure to meet the both of you.",是的，正是本人。见到你们两位很高兴。8
+It's a pleasure to meet the both of you.",是的，正是本人。见到你们两位很高兴。
 0x0000A1CE,Kodama_008__917k_70_1st,4,Porsche 917K '70,Sarah,莎拉·伊顿,主向导 / 赛事工程师,False,"The pleasure is ours, Kodama-san.
 What an honor it is to make your acquaintance!
 
@@ -10404,7 +10403,7 @@ again sometime.",不必客气，我们有机会再多聊一聊汽车设计吧。
 a hand in many famous cars from the German company, Opel?","您不会是儿玉英雄吧，
 曾经参与过德国Opel公司的诸多名车的那位设计师？"""
 0x0000A1D6,Kodama_009_mangsta_69_1st,3,De Tomaso Mangusta '69,Hideo Kodama,儿玉英雄,前欧宝设计师,False,"Yes! I'm Kodama.
-It's a pleasure to meet the both of you.",是的，正是本人。见到你们两位很高兴。8
+It's a pleasure to meet the both of you.",是的，正是本人。见到你们两位很高兴。
 0x0000A1D7,Kodama_009_mangsta_69_1st,4,De Tomaso Mangusta '69,Sarah,莎拉·伊顿,主向导 / 赛事工程师,False,"The pleasure is ours, Kodama-san.
 What an honor it is to make your acquaintance!
 
@@ -10455,7 +10454,7 @@ again sometime.",不必客气，我们有机会再多聊一聊汽车设计吧。
 a hand in many famous cars from the German company, Opel?","您不会是儿玉英雄吧，
 曾经参与过德国Opel公司的诸多名车的那位设计师？"""
 0x0000A1DF,Kodama_010_golf_1_gti_83_1st,3,Volkswagen Golf I GTI '83,Hideo Kodama,儿玉英雄,前欧宝设计师,False,"Yes! I'm Kodama.
-It's a pleasure to meet the both of you.",是的，正是本人。见到你们两位很高兴。8
+It's a pleasure to meet the both of you.",是的，正是本人。见到你们两位很高兴。
 0x0000A1E0,Kodama_010_golf_1_gti_83_1st,4,Volkswagen Golf I GTI '83,Sarah,莎拉·伊顿,主向导 / 赛事工程师,False,"The pleasure is ours, Kodama-san.
 What an honor it is to make your acquaintance!
 
@@ -10481,14 +10480,14 @@ century, the Golf was something Giugiaro had a hand in designing.","这款Golf I
 Golf的设计有着乔治亚罗的影子。"
 0x0000A1E2,Kodama_010_golf_1_gti_83_1st,6,Volkswagen Golf I GTI '83,Sarah,莎拉·伊顿,主向导 / 赛事工程师,False,"Speaking of which, are you familiar with the name
 ‘Giorgetto Giugiaro’?",说起来，你对“乔治亚罗”这个名字有印象吗？
-0x0000A1E3,Kodama_010_golf_1_gti_83_1st,8,Volkswagen Golf I GTI '83,Sarah,莎拉·伊顿,主向导 / 赛事工程师,False,"That's correct. Giorgetto Giugiaro is
+0x0000A1E3,Kodama_010_golf_1_gti_83_1st,7,Volkswagen Golf I GTI '83,Sarah,莎拉·伊顿,主向导 / 赛事工程师,False,"That's correct. Giorgetto Giugiaro is
 a legendary car designer from Italy.
 
 He's designed many famous vehicles,
 everything from compacts to supercars.","没错，乔盖托·乔治亚罗是意大利传奇的汽车设计师之一。
 
 从紧凑型车到超级跑车，他主笔了无数名车的设计。"
-0x0000A1E4,Kodama_010_golf_1_gti_83_1st,7,Volkswagen Golf I GTI '83,Sarah,莎拉·伊顿,主向导 / 赛事工程师,False,"Why, he is one of Italy’s greatest car designers.
+0x0000A1E4,Kodama_010_golf_1_gti_83_1st,8,Volkswagen Golf I GTI '83,Sarah,莎拉·伊顿,主向导 / 赛事工程师,False,"Why, he is one of Italy’s greatest car designers.
 
 From compacts to supercars, he has left his mark
 on the designs of countless masterpieces.%","乔盖托·乔治亚罗是意大利传奇的汽车设计师之一。
@@ -10521,7 +10520,7 @@ again sometime.",不必客气，我们有机会再多聊一聊汽车设计吧。
 a hand in many famous cars from the German company, Opel?","您不会是儿玉英雄吧，
 曾经参与过德国Opel公司的诸多名车的那位设计师？"""
 0x0000A1EC,Kodama_011__300sl_w194_52_1st,3,Mercedes-Benz 300 SL (W194) '52,Hideo Kodama,儿玉英雄,前欧宝设计师,False,"Yes! I'm Kodama.
-It's a pleasure to meet the both of you.",是的，正是本人。见到你们两位很高兴。8
+It's a pleasure to meet the both of you.",是的，正是本人。见到你们两位很高兴。
 0x0000A1ED,Kodama_011__300sl_w194_52_1st,4,Mercedes-Benz 300 SL (W194) '52,Sarah,莎拉·伊顿,主向导 / 赛事工程师,False,"The pleasure is ours, Kodama-san.
 What an honor it is to make your acquaintance!
 
@@ -10573,7 +10572,7 @@ again sometime.",不必客气，我们有机会再多聊一聊汽车设计吧。
 a hand in many famous cars from the German company, Opel?","您不会是儿玉英雄吧，
 曾经参与过德国Opel公司的诸多名车的那位设计师？"""
 0x0000A1F5,Kodama_012__8c_2900b_touring_berlinetta_38_1st,3,Alfa Romeo 8C 2900B Touring Berlinetta '38,Hideo Kodama,儿玉英雄,前欧宝设计师,False,"Yes! I'm Kodama.
-It's a pleasure to meet the both of you.",是的，正是本人。见到你们两位很高兴。8
+It's a pleasure to meet the both of you.",是的，正是本人。见到你们两位很高兴。
 0x0000A1F6,Kodama_012__8c_2900b_touring_berlinetta_38_1st,4,Alfa Romeo 8C 2900B Touring Berlinetta '38,Sarah,莎拉·伊顿,主向导 / 赛事工程师,False,"The pleasure is ours, Kodama-san.
 What an honor it is to make your acquaintance!
 
@@ -10660,7 +10659,7 @@ That's why the car is still so popular.
 
 And here's an interesting fact:
 The area around the opening line of the rear hatch,
- was carried over to the Z33. u","自S30推出又过了两代之后，
+ was carried over to the Z33.","自S30推出又过了两代之后，
 这款新车终于重新找回了“Z”系列的特色。
 
 车身的起伏曲线十分克制，
@@ -11226,7 +11225,7 @@ This Honda-powered SF19 conjures up memories
 of Alex Palou’s record victory.
 
 Palou later went on to compete in the IndyCar series,
-a formula racing series held in the USA.2","这辆SF19是为日本顶尖的方程式系列赛
+a formula racing series held in the USA.","这辆SF19是为日本顶尖的方程式系列赛
 ——超级方程式锦标赛而开发的。
 
 放眼整个亚洲，超级方程式都是最卓越的方程式比赛……
@@ -11318,7 +11317,7 @@ Speaking of Tajima-san...
 His impressive career includes six consecutive wins
 at the Pikes Peak International Hillclimb.
 Monster Sport has also built legendary hill climbers
-based on the Suzuki Cultus and Escudo.4","这是第二代的Swift Sport啊！
+based on the Suzuki Cultus and Escudo.","这是第二代的Swift Sport啊！
 
 因为基础规格够高，所以无需过多改装，
 就能直接参加比赛。
@@ -11506,7 +11505,7 @@ one of the surprises in yo6r collection!","嗯，看来你们很喜欢收藏汽�
 如果这辆车能��成为你那些令人惊艳的藏品之一，
 我也会感到非常满足！"
 0x0000A373,DiorKimJones_001_mangusta_69_cd_1st,6,De Tomaso Mangusta (Christian Dior),Sarah,莎拉·伊顿,主向导 / 赛事工程师,False,"I was surprised to see Dior and such an iconic sports car
-come together like this! Thank you so much! Q","看到Dior和这样一辆标志性的经典跑车相结合，真是令人大开眼界！
+come together like this! Thank you so much!","看到Dior和这样一辆标志性的经典跑车相结合，真是令人大开眼界！
 非常感谢！"
 0x0000A374,DiorKimJones_001_mangusta_69_cd_1st,7,De Tomaso Mangusta (Christian Dior),Kim Jones,金·琼斯,时装设计师 · Dior 男装艺术总监,False,"Don’t mention it! It was truly an honour for me to work with
 such a legendary sports car!",不必言谢！与这样一辆传奇跑车合作，是我的荣幸！
@@ -11647,7 +11646,7 @@ widely known only after his passing.]","这是创作者的灵魂在向着未知�
 Thank you so much!","您对这辆车的见解真是字字珠玑。
 太谢谢您了！\"
 0x0000A6D1,Harada_021_ds_21_pallas_70_1st,7,Citroën DS 21 Pallas '70,Hikonori Kagurazaka,神乐坂彦则,高性能车设计师,False,"Don't mention it, the pleasure was all mine!
-Well, see you around!7","太客气了！我自己也很享受这样的交谈！
+Well, see you around!","太客气了！我自己也很享受这样的交谈！
 好吧，那再见了！"
 0x0000A6D4,Fabio_012_giulia_gta_20_1st,1,Alfa Romeo Giulia GTAm '20,Fabio Filippini,法比奥·菲利皮尼,前宾尼法利纳设计总监,False,"Excuse me, are you the one who drove up in that
 Alfa Romeo Giulia GTAm?",打扰了，请问你是那个开着Alfa Romeo Giulia GTAm的车手吗？
@@ -11663,7 +11662,7 @@ Carrozzerias in Italy.
 And Mr. Fabio worked at Renault Design for a long time as well.","当然，毕竟它是意大利最有名
 的Carrozzeria之一。
 
-而且，法比奥先生还在Renault Design工作了很长时间。0"
+而且，法比奥先生还在Renault Design工作了很长时间。"
 0x0000A6DA,Fabio_012_giulia_gta_20_1st,7,Alfa Romeo Giulia GTAm '20,Sarah,莎拉·伊顿,主向导 / 赛事工程师,False,"Pininfarina is one of the most famous Carrozzerias in Italy!
 
 And Mr. Fabio worked at Renault Design for a long time as well.","Pininfarina可是意大利最有名的Carrozzeria之一！
@@ -11702,7 +11701,7 @@ See you again, ciao!","没问题，这应该能让你重新认识你的车。
 hand in many famous cars from the German company Opel?","您不会是儿玉英雄吧，
 曾经参与过德国Opel公司的诸多名车的那位设计师？"""
 0x0000A74A,Kodama_013_xnr_ghia_roadster_60_1st,3,Plymouth XNR Ghia Roadster '60,Hideo Kodama,儿玉英雄,前欧宝设计师,False,"Yes! I'm Kodama. It's a pleasure to meet
-the both of you.",是的，正是本人。见到你们两位很高兴。8
+the both of you.",是的，正是本人。见到你们两位很高兴。
 0x0000A74B,Kodama_013_xnr_ghia_roadster_60_1st,4,Plymouth XNR Ghia Roadster '60,Sarah,莎拉·伊顿,主向导 / 赛事工程师,False,"The pleasure is ours, Kodama-san. What an honor
 it is to make your acquaintance!
 
@@ -11754,7 +11753,7 @@ Ford Thunderbird等跑车的回应。
 hand in many famous cars from the German company Opel?","您不会是儿玉英雄吧，
 曾经参与过德国Opel公司的诸多名车的那位设计师？"""
 0x0000A753,Kodama_014__500_modial_pf_coupe_54_1st,3,Ferrari 500 Mondial Pinin Farina Coupe '54,Hideo Kodama,儿玉英雄,前欧宝设计师,False,"Yes! I'm Kodama. It's a pleasure to meet
-the both of you.",是的，正是本人。见到你们两位很高兴。8
+the both of you.",是的，正是本人。见到你们两位很高兴。
 0x0000A754,Kodama_014__500_modial_pf_coupe_54_1st,4,Ferrari 500 Mondial Pinin Farina Coupe '54,Sarah,莎拉·伊顿,主向导 / 赛事工程师,False,"The pleasure is ours, Kodama-san. What an honor
 it is to make your acquaintance!
 
@@ -11782,7 +11781,7 @@ It's powered by a 4-cylinder engine,
 which is mounted well back...
 
 allowing for a long bonnet and the cabin's placement right
-in front of the rear wheels. o","经典的比例和简单的形状，无需多余的装饰，
+in front of the rear wheels.","经典的比例和简单的形状，无需多余的装饰，
 这辆车简直就像是一座雕塑。
 
 在此之前，Ferrari的车身大多交由Vignale、Ghia
@@ -11802,7 +11801,7 @@ in front of the rear wheels. o","经典的比例和简单的形状，无需多�
 hand in many famous cars from the German company Opel?","您不会是儿玉英雄吧，
 曾经参与过德国Opel公司的诸多名车的那位设计师？"""
 0x0000A75C,Kodama_015_i3_15_1st,3,BMW i3 '15,Hideo Kodama,儿玉英雄,前欧宝设计师,False,"Yes! I'm Kodama. It's a pleasure to meet
-the both of you.",是的，正是本人。见到你们两位很高兴。8
+the both of you.",是的，正是本人。见到你们两位很高兴。
 0x0000A75D,Kodama_015_i3_15_1st,4,BMW i3 '15,Sarah,莎拉·伊顿,主向导 / 赛事工程师,False,"The pleasure is ours, Kodama-san. What an honor
 it is to make your acquaintance!
 
@@ -11862,7 +11861,7 @@ That's why this design is so important. A gold star!","宝马的电动车都以�
 hand in many famous cars from the German company Opel?","您不会是儿玉英雄吧，
 曾经参与过德国Opel公司的诸多名车的那位设计师？"""
 0x0000A765,Kodama_016_sports_800_65_1st,3,Toyota Sports 800 '65,Hideo Kodama,儿玉英雄,前欧宝设计师,False,"Yes! I'm Kodama. It's a pleasure to meet
-the both of you.",是的，正是本人。见到你们两位很高兴。8
+the both of you.",是的，正是本人。见到你们两位很高兴。
 0x0000A766,Kodama_016_sports_800_65_1st,4,Toyota Sports 800 '65,Sarah,莎拉·伊顿,主向导 / 赛事工程师,False,"The pleasure is ours, Kodama-san. What an honor
 it is to make your acquaintance!
 
@@ -11923,7 +11922,7 @@ a Toyota subsidiary company...
 hand in many famous cars from the German company Opel?","您不会是儿玉英雄吧，
 曾经参与过德国Opel公司的诸多名车的那位设计师？"""
 0x0000A76E,Kodama_017_swift_sports_17_1st,3,Suzuki Swift Sport '17,Hideo Kodama,儿玉英雄,前欧宝设计师,False,"Yes! I'm Kodama. It's a pleasure to meet
-the both of you.",是的，正是本人。见到你们两位很高兴。8
+the both of you.",是的，正是本人。见到你们两位很高兴。
 0x0000A76F,Kodama_017_swift_sports_17_1st,4,Suzuki Swift Sport '17,Sarah,莎拉·伊顿,主向导 / 赛事工程师,False,"The pleasure is ours, Kodama-san. What an honor
 it is to make your acquaintance!
 
@@ -12007,7 +12006,7 @@ the change in flow of BMW design.","这辆车的设计在尝试摆脱BMW之前�
 可以说，这是一台反映了BMW设计思路演变的车。\"
 0x0000A77F,Nakamura_020_m3_coupe_07_1st,6,BMW M3 Coupé '07,Sarah,莎拉·伊顿,主向导 / 赛事工程师,False,"Wow, that was fascinating! Thanks!",哇，好精彩的解说！感谢感谢！
 0x0000A780,Nakamura_020_m3_coupe_07_1st,7,BMW M3 Coupé '07,Shiro Nakamura,中村史郎,前日产首席创意官,False,"No need to thank me. It was a lot of fun.
-See you around sometime.7","不用客气，我也觉得挺开心的。
+See you around sometime.","不用客气，我也觉得挺开心的。
 下次再见。"
 0x0000A783,Nakamura_021_pantera_71_1st,1,De Tomaso Pantera '71,Shiro Nakamura,中村史郎,前日产首席创意官,False,Is this De Tomaso Pantera yours by any chance?,这辆De Tomaso Pantera是你的吗？
 0x0000A784,Nakamura_021_pantera_71_1st,2,De Tomaso Pantera '71,Sarah,莎拉·伊顿,主向导 / 赛事工程师,False,"Excuse me, sir, aren’t you the former Nissan
@@ -12066,10 +12065,10 @@ Pantera车型最初由Ford开发，却拥有多处
 
 而且是一辆价格相对较为实惠的超跑……
 所以许多车主并没有将他们的爱车束之高阁，
-而是按照自己的喜好进行改装。6"
+而是按照自己的喜好进行改装。"
 0x0000A78C,Nakamura_021_pantera_71_1st,10,De Tomaso Pantera '71,Sarah,莎拉·伊顿,主向导 / 赛事工程师,False,"Wow, that was fascinating! Thanks!",哇，好精彩的解说！感谢感谢！
 0x0000A78D,Nakamura_021_pantera_71_1st,11,De Tomaso Pantera '71,Shiro Nakamura,中村史郎,前日产首席创意官,False,"No need to thank me. It was a lot of fun.
-See you around sometime.7","不用客气，我也觉得挺开心的。
+See you around sometime.","不用客气，我也觉得挺开心的。
 下次再见。"
 0x0000A790,Nakamura_022_cobra_coupe_64_1st,1,Shelby Cobra Daytona Coupe '64,Shiro Nakamura,中村史郎,前日产首席创意官,False,Is this Cobra Daytona Coupe yours by any chance?,这辆Cobra Daytona Coupe是你的吗？
 0x0000A791,Nakamura_022_cobra_coupe_64_1st,2,Shelby Cobra Daytona Coupe '64,Sarah,莎拉·伊顿,主向导 / 赛事工程师,False,"Excuse me, sir, aren’t you the former Nissan
@@ -12119,7 +12118,7 @@ put this car together, really comes through.","这辆车是美国赛车设计史
 
 皮特·布洛克贯彻他的设计理念，成功打造了这款经典车。]"
 0x0000A795,Nakamura_022_cobra_coupe_64_1st,6,Shelby Cobra Daytona Coupe '64,Sarah,莎拉·伊顿,主向导 / 赛事工程师,False,"By the way, do you know who Pete Brock is?",顺便问一句，你们知道皮特·布洛克是谁吗？
-0x0000A796,Nakamura_022_cobra_coupe_64_1st,8,Shelby Cobra Daytona Coupe '64,Sarah,莎拉·伊顿,主向导 / 赛事工程师,False,"That's right. He's an American race-car designer.
+0x0000A796,Nakamura_022_cobra_coupe_64_1st,7,Shelby Cobra Daytona Coupe '64,Sarah,莎拉·伊顿,主向导 / 赛事工程师,False,"That's right. He's an American race-car designer.
 
 In his younger days, he showed his brilliance at GM,
 contributing to the Chevrolet Corvette's design.
@@ -12132,7 +12131,7 @@ helping to create this Cobra.","没错。他是一名美国赛车设计师。
 
 另外他也与卡罗尔·谢尔比联手，打造了这辆Cobra，
 为自己赢得了赫赫声名。"
-0x0000A797,Nakamura_022_cobra_coupe_64_1st,7,Shelby Cobra Daytona Coupe '64,Sarah,莎拉·伊顿,主向导 / 赛事工程师,False,"Pete Brock is an American race-car designer.
+0x0000A797,Nakamura_022_cobra_coupe_64_1st,8,Shelby Cobra Daytona Coupe '64,Sarah,莎拉·伊顿,主向导 / 赛事工程师,False,"Pete Brock is an American race-car designer.
 
 In his younger days, he showed his brilliance at GM,
 contributing to the Chevrolet Corvette's design.
@@ -12161,7 +12160,7 @@ That's why the more time passes, the better it looks.","这辆Daytona Cobra毫�
 令人回味。"
 0x0000A799,Nakamura_022_cobra_coupe_64_1st,10,Shelby Cobra Daytona Coupe '64,Sarah,莎拉·伊顿,主向导 / 赛事工程师,False,"Wow, that was fascinating! Thanks!",哇，好精彩的解说！感谢感谢！
 0x0000A79A,Nakamura_022_cobra_coupe_64_1st,11,Shelby Cobra Daytona Coupe '64,Shiro Nakamura,中村史郎,前日产首席创意官,False,"No need to thank me. It was a lot of fun.
-See you around sometime.7","不用客气，我也觉得挺开心的。
+See you around sometime.","不用客气，我也觉得挺开心的。
 下次再见。"
 0x0000A7A0,Harada_022_veyron_16_4_13_1st,1,Bugatti Veyron 16.4 '13,Hikonori Kagurazaka,神乐坂彦则,高性能车设计师,False,"Wait a second... That's the Bugatti Veyron, right?",等等……这是Bugatti Veyron，对吗？
 0x0000A7A1,Harada_022_veyron_16_4_13_1st,2,Bugatti Veyron 16.4 '13,Sarah,莎拉·伊顿,主向导 / 赛事工程师,False,"Hey, aren’t you Mr. Hikonori Kagurazaka? The legendary
@@ -12704,8 +12703,8 @@ ZR1同样还配备了巨大的进气口和出气口……
 0x0000A81C,Ed_018_corvette_c7_zr1_19_1st,7,Chevrolet Corvette C7 ZR1 '19,Ed Welburn,埃德·韦伯恩,前通用汽车全球设计副总裁,False,"There's so much I'd like to speak with you about!
 I look forward to seeing you again!",我其实很想多跟你聊聊！希望下次还能碰上。
 0x0000A872,Ito_001_morris_mini_cooper_s_970_65_1st,1,Mini-Cooper 'S' '65,Kunihisa Ito,伊藤邦久,通用/欧宝/福特汽车设计师,False,Is this your Mini Cooper?,这是你的Mini Cooper吗？
-0x0000A873,Ito_001_morris_mini_cooper_s_970_65_1st,2,Mini-Cooper 'S' '65,Sarah,莎拉·伊顿,主向导 / 赛事工程师,False,"Wait, aren't you...Kunihisa Ito, the car designer?",等等，您难道是……著名的汽车设计师伊藤邦久？7
-0x0000A874,Ito_001_morris_mini_cooper_s_970_65_1st,3,Mini-Cooper 'S' '65,Kunihisa Ito,伊藤邦久,通用/欧宝/福特汽车设计师,False,"Yes, it's nice to meet you. I am Kunihisa Ito.",是的，我是伊藤邦久。很高兴认识你们。8
+0x0000A873,Ito_001_morris_mini_cooper_s_970_65_1st,2,Mini-Cooper 'S' '65,Sarah,莎拉·伊顿,主向导 / 赛事工程师,False,"Wait, aren't you...Kunihisa Ito, the car designer?",等等，您难道是……著名的汽车设计师伊藤邦久？
+0x0000A874,Ito_001_morris_mini_cooper_s_970_65_1st,3,Mini-Cooper 'S' '65,Kunihisa Ito,伊藤邦久,通用/欧宝/福特汽车设计师,False,"Yes, it's nice to meet you. I am Kunihisa Ito.",是的，我是伊藤邦久。很高兴认识你们。
 0x0000A875,Ito_001_morris_mini_cooper_s_970_65_1st,4,Mini-Cooper 'S' '65,Sarah,莎拉·伊顿,主向导 / 赛事工程师,False,"It's such an honor to make your acquaintance, Ito-san!
 
 Mr. Ito was a vital part of the design teams at
@@ -12759,11 +12758,11 @@ Thus the Mini Cooper S you see here was born.<next id=1900106 type=9׾","这是�
 于是，你眼前的这一辆MINI Cooper S就诞生了。*"
 0x0000A877,Ito_001_morris_mini_cooper_s_970_65_1st,6,Mini-Cooper 'S' '65,Sarah,莎拉·伊顿,主向导 / 赛事工程师,False,Thank you for sharing such an interesting story.,感谢您分享这个有趣的故事！
 0x0000A878,Ito_001_morris_mini_cooper_s_970_65_1st,7,Mini-Cooper 'S' '65,Kunihisa Ito,伊藤邦久,通用/欧宝/福特汽车设计师,False,"The pleasure was mine. Please don't
-hesitate to call on me again.7","这也是我的荣幸。
+hesitate to call on me again.","这也是我的荣幸。
 以后有什么想要了解的知识，请随时打给我。"
 0x0000A87B,Ito_002_amemiya_fd3s_rx7_xx_1st,1,RE Amemiya FD3S RX-7,Kunihisa Ito,伊藤邦久,通用/欧宝/福特汽车设计师,False,Is this your RX-7?,这是你的RX-7吗？>
-0x0000A87C,Ito_002_amemiya_fd3s_rx7_xx_1st,2,RE Amemiya FD3S RX-7,Sarah,莎拉·伊顿,主向导 / 赛事工程师,False,"Wait, aren't you...Kunihisa Ito, the car designer?",等等，您难道是……著名的汽车设计师伊藤邦久？7
-0x0000A87D,Ito_002_amemiya_fd3s_rx7_xx_1st,3,RE Amemiya FD3S RX-7,Kunihisa Ito,伊藤邦久,通用/欧宝/福特汽车设计师,False,"Yes, it's nice to meet you. I am Kunihisa Ito.",是的，我是伊藤邦久。很高兴认识你们。8
+0x0000A87C,Ito_002_amemiya_fd3s_rx7_xx_1st,2,RE Amemiya FD3S RX-7,Sarah,莎拉·伊顿,主向导 / 赛事工程师,False,"Wait, aren't you...Kunihisa Ito, the car designer?",等等，您难道是……著名的汽车设计师伊藤邦久？
+0x0000A87D,Ito_002_amemiya_fd3s_rx7_xx_1st,3,RE Amemiya FD3S RX-7,Kunihisa Ito,伊藤邦久,通用/欧宝/福特汽车设计师,False,"Yes, it's nice to meet you. I am Kunihisa Ito.",是的，我是伊藤邦久。很高兴认识你们。
 0x0000A87E,Ito_002_amemiya_fd3s_rx7_xx_1st,4,RE Amemiya FD3S RX-7,Sarah,莎拉·伊顿,主向导 / 赛事工程师,False,"It's such an honor to make your acquaintance, Ito-san!
 
 Mr. Ito was a vital part of the design teams at
@@ -12809,8 +12808,8 @@ RE Amemiya改装后的版本。
 Please don't hesitate to call on me again.\","这也是我的荣幸。
 以后有什么想要了解的知识，请随时打给我。"
 0x0000A884,Ito_003__787b_91_1st,1,Mazda 787B '91,Kunihisa Ito,伊藤邦久,通用/欧宝/福特汽车设计师,False,Is this your Mazda 787B?,这是你的Mazda 787B吗？
-0x0000A885,Ito_003__787b_91_1st,2,Mazda 787B '91,Sarah,莎拉·伊顿,主向导 / 赛事工程师,False,"Wait, aren't you...Kunihisa Ito, the car designer?",等等，您难道是……著名的汽车设计师伊藤邦久？7
-0x0000A886,Ito_003__787b_91_1st,3,Mazda 787B '91,Kunihisa Ito,伊藤邦久,通用/欧宝/福特汽车设计师,False,"Yes, it's nice to meet you. I am Kunihisa Ito.",是的，我是伊藤邦久。很高兴认识你们。8
+0x0000A885,Ito_003__787b_91_1st,2,Mazda 787B '91,Sarah,莎拉·伊顿,主向导 / 赛事工程师,False,"Wait, aren't you...Kunihisa Ito, the car designer?",等等，您难道是……著名的汽车设计师伊藤邦久？
+0x0000A886,Ito_003__787b_91_1st,3,Mazda 787B '91,Kunihisa Ito,伊藤邦久,通用/欧宝/福特汽车设计师,False,"Yes, it's nice to meet you. I am Kunihisa Ito.",是的，我是伊藤邦久。很高兴认识你们。
 0x0000A887,Ito_003__787b_91_1st,4,Mazda 787B '91,Sarah,莎拉·伊顿,主向导 / 赛事工程师,False,"It's such an honor to make your acquaintance, Ito-san!
 
 Mr. Ito was a vital part of the design teams at
@@ -12858,8 +12857,8 @@ and red livery of that race machine.<next id=1900306 type=","在1991年参加勒
 Please don't hesitate to call on me again.\","这也是我的荣幸。
 以后有什么想要了解的知识，请随时打给我。"
 0x0000A88D,Ito_004_epson_nsx_08_1st,1,Honda NSX GT500 '08,Kunihisa Ito,伊藤邦久,通用/欧宝/福特汽车设计师,False,Is this your NSX?,这是你的NSX吗？
-0x0000A88E,Ito_004_epson_nsx_08_1st,2,Honda NSX GT500 '08,Sarah,莎拉·伊顿,主向导 / 赛事工程师,False,"Wait, aren't you...Kunihisa Ito, the car designer?",等等，您难道是……著名的汽车设计师伊藤邦久？7
-0x0000A88F,Ito_004_epson_nsx_08_1st,3,Honda NSX GT500 '08,Kunihisa Ito,伊藤邦久,通用/欧宝/福特汽车设计师,False,"Yes, it's nice to meet you. I am Kunihisa Ito.",是的，我是伊藤邦久。很高兴认识你们。8
+0x0000A88E,Ito_004_epson_nsx_08_1st,2,Honda NSX GT500 '08,Sarah,莎拉·伊顿,主向导 / 赛事工程师,False,"Wait, aren't you...Kunihisa Ito, the car designer?",等等，您难道是……著名的汽车设计师伊藤邦久？
+0x0000A88F,Ito_004_epson_nsx_08_1st,3,Honda NSX GT500 '08,Kunihisa Ito,伊藤邦久,通用/欧宝/福特汽车设计师,False,"Yes, it's nice to meet you. I am Kunihisa Ito.",是的，我是伊藤邦久。很高兴认识你们。
 0x0000A890,Ito_004_epson_nsx_08_1st,4,Honda NSX GT500 '08,Sarah,莎拉·伊顿,主向导 / 赛事工程师,False,"It's such an honor to make your acquaintance, Ito-san!
 
 Mr. Ito was a vital part of the design teams at
@@ -13497,7 +13496,7 @@ looking to win a class victory or compete in a road rally.","这辆1955年出品
 good look at your beloved car.","不客气。趁此机会再回去
 欣赏下你的爱车吧！"
 0x0000AA15,Fabio_013_clio_sport_v6_00_1st,1,Renault Sport Clio V6 24V '00,Fabio Filippini,法比奥·菲利皮尼,前宾尼法利纳设计总监,False,"Excuse me, are you the one who drove up in that
-Renault Clio V6?\",打扰了，请问你是那个开着Renault Clio V6的车手吗？7
+Renault Clio V6?\",打扰了，请问你是那个开着Renault Clio V6的车手吗？
 0x0000AA16,Fabio_013_clio_sport_v6_00_1st,2,Renault Sport Clio V6 24V '00,Sarah,莎拉·伊顿,主向导 / 赛事工程师,False,"Wait, you're the former Director of Pininfarina!",等等……您是前Pininfarina总监！
 0x0000AA17,Fabio_013_clio_sport_v6_00_1st,3,Renault Sport Clio V6 24V '00,Fabio Filippini,法比奥·菲利皮尼,前宾尼法利纳设计总监,False,"Yes, my name is Fabio Filippini. Very nice to make your
 acquaintance. And please, call me Fabio.","是的，我是法比奥·菲利皮尼。很高兴认识你们。
@@ -13510,7 +13509,7 @@ famous carrozzerias in Italy.
 And Mr. Fabio worked at Renault Design for a long time as well.","当然，毕竟它是意大利最有名
 的Carrozzeria之一。
 
-而且，法比奥先生还在Renault Design工作了很长时间。0"
+而且，法比奥先生还在Renault Design工作了很长时间。"
 0x0000AA1B,Fabio_013_clio_sport_v6_00_1st,7,Renault Sport Clio V6 24V '00,Sarah,莎拉·伊顿,主向导 / 赛事工程师,False,"Pininfarina is one of the most famous carrozzerias in Italy.
 
 And Mr. Fabio worked at Renault Design for a long time as well.","Pininfarina可是意大利最有名的Carrozzeria之一！
@@ -13558,7 +13557,7 @@ famous carrozzerias in Italy.
 And Mr. Fabio worked at Renault Design for a long time as well.","当然，毕竟它是意大利最有名
 的Carrozzeria之一。
 
-而且，法比奥先生还在Renault Design工作了很长时间。0"
+而且，法比奥先生还在Renault Design工作了很长时间。"
 0x0000AA27,Fabio_014_s13_silvia_qs_88_1st,7,Nissan Silvia Q's (S13) '88,Sarah,莎拉·伊顿,主向导 / 赛事工程师,False,"Pininfarina is one of the most famous Carrozzerias in Italy.
 
 And Mr. Fabio worked at Renault Design for a long time as well.","Pininfarina可是意大利最有名的Carrozzeria之一！
@@ -13602,7 +13601,7 @@ famous carrozzerias in Italy.
 And Mr. Fabio worked at Renault Design for a long time as well.","当然，毕竟它是意大利最有名
 的Carrozzeria之一。
 
-而且，法比奥先生还在Renault Design工作了很长时间。0"
+而且，法比奥先生还在Renault Design工作了很长时间。"
 0x0000AA33,Fabio_015_s13_silvia_ks_dia_90_1st,7,Nissan Silvia K's Dia Selection (S13) '90,Sarah,莎拉·伊顿,主向导 / 赛事工程师,False,"Pininfarina is one of the most famous carrozzerias in Italy.
 
 And Mr. Fabio worked at Renault Design for a long time as well.","Pininfarina可是意大利最有名的Carrozzeria之一！
@@ -13644,7 +13643,7 @@ famous carrozzerias in Italy.
 And Mr. Fabio worked at Renault Design for a long time as well.","当然，毕竟它是意大利最有名
 的Carrozzeria之一。
 
-而且，法比奥先生还在Renault Design工作了很长时间。0"
+而且，法比奥先生还在Renault Design工作了很长时间。"
 0x0000AA3F,Fabio_016__512bb_76_1st,7,Ferrari 512 BB '76,Sarah,莎拉·伊顿,主向导 / 赛事工程师,False,"Pininfarina is one of the most famous carrozzerias in Italy.
 
 And Mr. Fabio worked at Renault Design for a long time as well.","Pininfarina可是意大利最有名的Carrozzeria之一！
@@ -14362,7 +14361,7 @@ in less than eight minutes!","这是一台二代Subaru Impreza STi。
 hand in many famous cars from the German company Opel?","您不会是儿玉英雄吧，
 曾经参与设计过德国Opel公司的诸多名车的那位设计师？"
 0x0000AF34,Kodama_018_d_type_54_1st,3,Jaguar D-type '54,Hideo Kodama,儿玉英雄,前欧宝设计师,False,"Yes! I'm Kodama. It's a pleasure to meet
-the both of you.",是的，正是本人。见到你们两位很高兴。8
+the both of you.",是的，正是本人。见到你们两位很高兴。
 0x0000AF35,Kodama_018_d_type_54_1st,4,Jaguar D-type '54,Sarah,莎拉·伊顿,主向导 / 赛事工程师,False,"The pleasure is ours, Kodama-san. What an honour
 it is to make your acquaintance!
 
@@ -14411,7 +14410,7 @@ again sometime.","我很荣幸！希望以后还可以有机会
 hand in many famous cars from the German company Opel?","您不会是儿玉英雄吧，
 曾经参与设计过德国Opel公司的诸多名车的那位设计师？"
 0x0000AF3D,Kodama_019_e_type_coupe_62_1st,3,Jaguar E-type Coupé '61,Hideo Kodama,儿玉英雄,前欧宝设计师,False,"Yes! I'm Kodama. It's a pleasure to meet
-the both of you.",是的，正是本人。见到你们两位很高兴。8
+the both of you.",是的，正是本人。见到你们两位很高兴。
 0x0000AF3E,Kodama_019_e_type_coupe_62_1st,4,Jaguar E-type Coupé '61,Sarah,莎拉·伊顿,主向导 / 赛事工程师,False,"The pleasure is ours, Kodama-san. What an honour
 it is to make your acquaintance!
 
@@ -14483,7 +14482,7 @@ Just remember to give it some wide-rim wheels!","毫无疑问，Nissan S30的跑
 同时也没有忘记为它配上一套更宽的车轮！"
 0x0000AF49,Nakamura_023_fairlady_240zg_71_1st,6,Nissan Fairlady 240ZG (HS30) '71,Sarah,莎拉·伊顿,主向导 / 赛事工程师,False,Thank you for sharing such an interesting story.,感谢您分享这个有趣的故事！
 0x0000AF4A,Nakamura_023_fairlady_240zg_71_1st,7,Nissan Fairlady 240ZG (HS30) '71,Shiro Nakamura,中村史郎,前日产首席创意官,False,"No need to thank me. It was a lot of fun.
-See you around sometime.7","不用客气，我也觉得挺开心的。
+See you around sometime.","不用客气，我也觉得挺开心的。
 下次再见。"
 0x0000AF4C,Nakamura_023_fairlady_240zg_71_repeat_Win,1,Nissan Fairlady 240ZG (HS30) '71,Shiro Nakamura,中村史郎,前日产首席创意官,False,"So, you're the one that won that race? Congratulations!
 That was some impressive driving!(","你就是那场比赛的冠军吗？
@@ -14519,14 +14518,14 @@ breaking the GT mold...
 目标是创造出完全不同的纯粹赛车。"
 0x0000AF52,Nakamura_024_gt40_mk4_race_67_1st,6,Ford Mark IV Race Car '67,Sarah,莎拉·伊顿,主向导 / 赛事工程师,False,Thank you for sharing such an interesting story.,感谢您分享这个有趣的故事！
 0x0000AF53,Nakamura_024_gt40_mk4_race_67_1st,7,Ford Mark IV Race Car '67,Shiro Nakamura,中村史郎,前日产首席创意官,False,"No need to thank me. It was a lot of fun.
-See you around sometime.7","不用客气，我也觉得挺开心的。
+See you around sometime.","不用客气，我也觉得挺开心的。
 下次再见。"
 0x0000AF55,Nakamura_024_gt40_mk4_race_67_repeat_Win,1,Ford Mark IV Race Car '67,Shiro Nakamura,中村史郎,前日产首席创意官,False,"So, you're the one that won that race? Congratulations!
 That was some impressive driving!(","你就是那场比赛的冠军吗？
 祝贺你，真是令人印象深刻的车技！"
 0x0000AF56,Ito_005_viper_gt3_r_15_1st,1,Dodge Viper SRT GT3-R '15,Kunihisa Ito,伊藤邦久,通用/欧宝/福特汽车设计师,False,Is this Dodge Viper yours by any chance?,这辆Dodge Viper是你的吗？
-0x0000AF57,Ito_005_viper_gt3_r_15_1st,2,Dodge Viper SRT GT3-R '15,Sarah,莎拉·伊顿,主向导 / 赛事工程师,False,"Wait, aren't you...Kunihisa Ito, the car designer?",等等，您难道是……著名的汽车设计师伊藤邦久？7
-0x0000AF58,Ito_005_viper_gt3_r_15_1st,3,Dodge Viper SRT GT3-R '15,Kunihisa Ito,伊藤邦久,通用/欧宝/福特汽车设计师,False,"Yes, it's nice to meet you. I am Kunihisa Ito.",是的，我是伊藤邦久。很高兴认识你们。8
+0x0000AF57,Ito_005_viper_gt3_r_15_1st,2,Dodge Viper SRT GT3-R '15,Sarah,莎拉·伊顿,主向导 / 赛事工程师,False,"Wait, aren't you...Kunihisa Ito, the car designer?",等等，您难道是……著名的汽车设计师伊藤邦久？
+0x0000AF58,Ito_005_viper_gt3_r_15_1st,3,Dodge Viper SRT GT3-R '15,Kunihisa Ito,伊藤邦久,通用/欧宝/福特汽车设计师,False,"Yes, it's nice to meet you. I am Kunihisa Ito.",是的，我是伊藤邦久。很高兴认识你们。
 0x0000AF59,Ito_005_viper_gt3_r_15_1st,4,Dodge Viper SRT GT3-R '15,Sarah,莎拉·伊顿,主向导 / 赛事工程师,False,"It's such an honor to make your acquaintance, Ito-san!
 
 Mr. Ito was a vital part of the design teams at American
@@ -14576,8 +14575,8 @@ By the way...","我听说了你在比赛中的统治级表现。
 
 顺便问问……$"
 0x0000AF5F,Ito_006_petronas_toms_sc430_08_1st,1,Lexus SC430 GT500 '08,Kunihisa Ito,伊藤邦久,通用/欧宝/福特汽车设计师,False,Is this Lexus SC430 yours by any chance?,这辆Lexus SC430是你的吗？
-0x0000AF60,Ito_006_petronas_toms_sc430_08_1st,2,Lexus SC430 GT500 '08,Sarah,莎拉·伊顿,主向导 / 赛事工程师,False,"Wait, aren't you...Kunihisa Ito, the car designer?",等等，您难道是……著名的汽车设计师伊藤邦久？7
-0x0000AF61,Ito_006_petronas_toms_sc430_08_1st,3,Lexus SC430 GT500 '08,Kunihisa Ito,伊藤邦久,通用/欧宝/福特汽车设计师,False,"Yes, it's nice to meet you. I am Kunihisa Ito.",是的，我是伊藤邦久。很高兴认识你们。8
+0x0000AF60,Ito_006_petronas_toms_sc430_08_1st,2,Lexus SC430 GT500 '08,Sarah,莎拉·伊顿,主向导 / 赛事工程师,False,"Wait, aren't you...Kunihisa Ito, the car designer?",等等，您难道是……著名的汽车设计师伊藤邦久？
+0x0000AF61,Ito_006_petronas_toms_sc430_08_1st,3,Lexus SC430 GT500 '08,Kunihisa Ito,伊藤邦久,通用/欧宝/福特汽车设计师,False,"Yes, it's nice to meet you. I am Kunihisa Ito.",是的，我是伊藤邦久。很高兴认识你们。
 0x0000AF62,Ito_006_petronas_toms_sc430_08_1st,4,Lexus SC430 GT500 '08,Sarah,莎拉·伊顿,主向导 / 赛事工程师,False,"It's such an honor to make your acquaintance, Ito-san!
 
 Mr. Ito was a vital part of the design teams at American
@@ -14630,7 +14629,7 @@ By the way...","我听说了你在比赛中的统治级表现。
 真是太了不起了！恭喜你。
 
 顺便问问……$"
-0x0000AF68,Harada_025_bruce_levens_ford_gt51_coupe_xx_1st,1,Wicked Fabrication GT 51,Hikonori Kagurazaka,神乐坂彦则,高性能车设计师,False,"Wait a second... That's a customized '51 Ford, right?!",等等……这是辆改装过的51款Ford，对吗？8
+0x0000AF68,Harada_025_bruce_levens_ford_gt51_coupe_xx_1st,1,Wicked Fabrication GT 51,Hikonori Kagurazaka,神乐坂彦则,高性能车设计师,False,"Wait a second... That's a customized '51 Ford, right?!",等等……这是辆改装过的51款Ford，对吗？
 0x0000AF69,Harada_025_bruce_levens_ford_gt51_coupe_xx_1st,2,Wicked Fabrication GT 51,Sarah,莎拉·伊顿,主向导 / 赛事工程师,False,"Hey, aren’t you Mr. Hikonori Kagurazaka? The legendary
 Japanese car designer based in Europe?","啊，您是神乐坂彦则先生吗？
 那位在欧洲工作的日本汽车设计师？"
@@ -14934,7 +14933,7 @@ To this day, the Corvette remains�synonymous with
 American sports car culture...
 
 ...making it one of the most important sports cars
-in automotive history.2","啊，1953——令人难忘的一年！
+in automotive history.","啊，1953——令人难忘的一年！
 在这一年，“C1”，也就是第一代的雪佛兰科尔维特诞生了。
 
 这也标志着美国量产跑车时代的开端。
@@ -14981,7 +14980,7 @@ Now, while Maserati hasn’t been racing much
 these days...
 
 ...this MC20-based machine marked its glorious return
-to the track!2","Maserati MC20是一台2020年的中置跑车。
+to the track!","Maserati MC20是一台2020年的中置跑车。
 它的名字将“Maserati”和意为“竞速”的“Corse”
 与发布年份相结合。
 
@@ -15392,7 +15391,7 @@ to a new level.
 It had a sequential blinker inspired by the '67/'68 Shelby.
 
 And, did it ever look �ean, especially with optional big
-wheels spaced-out to the edges!","J·梅斯及其团队的目标……
+wheels spaced-out to the edges!","梅斯及其团队的目标……
 
 是使这款车更贴近一辆欧洲跑车，同时不失
 其美式小马车的传统。
@@ -15515,7 +15514,7 @@ It’s bold, aggressive, but not over-the-top.
 Much like the McLaren 650S, all of the design elements
 work in harmony, making for a very consistent design.
 I love the side intakes and the graphics on the rear,
-including the cool exhaust shape and location.6","我一直非常中意McLaren MP4的设计。
+including the cool exhaust shape and location.","我一直非常中意McLaren MP4的设计。
 
 它大胆不羁、具有侵略性，但又不过分张扬。
 就像McLaren 650S一样，所有的设计元素协调统一，
@@ -15711,7 +15710,7 @@ What's more, he was a great racer and an innovative
 engineer to boot!
 
 Abarth was founded in 1949, and is well-known for its work
-on FIAT mechanicals.9","当然知道了，他可是意大利传奇品牌——Abarth的创始人！
+on FIAT mechanicals.","当然知道了，他可是意大利传奇品牌——Abarth的创始人！
 
 更令人赞叹的是，他也是一位伟大的车手和一位创意无边的
 改装工程师！
@@ -16260,13 +16259,13 @@ XJ13。
 
 XJ13由著名的马尔科姆·塞尔所设计……
 尽管从未参加过任何比赛，但它无疑
-为E-Type的开发提供了大量的思路。4"
+为E-Type的开发提供了大量的思路。"
 0x0000B45D,Kodama_023_xj13_66_1st,6,Jaguar XJ13 '66,Sarah,莎拉·伊顿,主向导 / 赛事工程师,False,"Wow, that was fascinating! Thanks!",哇，好精彩的解说！感谢感谢！
 0x0000B45E,Kodama_023_xj13_66_1st,7,Jaguar XJ13 '66,Hideo Kodama,儿玉英雄,前欧宝设计师,False,"My pleasure! I hope we can discuss car design
 again sometime.","我很荣幸！希望以后还可以有机会
 交流汽车设计。"
 0x0000B461,Ito_007_xjr9_race_88_1st,1,Jaguar XJR-9 '88,Kunihisa Ito,伊藤邦久,通用/欧宝/福特汽车设计师,False,Is this Jaguar XJR-9 yours?,这辆Jaguar XJR-9是你的吗？
-0x0000B462,Ito_007_xjr9_race_88_1st,2,Jaguar XJR-9 '88,Sarah,莎拉·伊顿,主向导 / 赛事工程师,False,"Wait, aren't you Kunihisa Ito, the car designer?",等等，您难道是……著名的汽车设计师伊藤邦久？7
+0x0000B462,Ito_007_xjr9_race_88_1st,2,Jaguar XJR-9 '88,Sarah,莎拉·伊顿,主向导 / 赛事工程师,False,"Wait, aren't you Kunihisa Ito, the car designer?",等等，您难道是……著名的汽车设计师伊藤邦久？
 0x0000B463,Ito_007_xjr9_race_88_1st,3,Jaguar XJR-9 '88,Kunihisa Ito,伊藤邦久,通用/欧宝/福特汽车设计师,False,"Indeed, I am. Nice to meet you.",是的，我是。请多多指教。
 0x0000B464,Ito_007_xjr9_race_88_1st,4,Jaguar XJR-9 '88,Sarah,莎拉·伊顿,主向导 / 赛事工程师,False,"It's an honour to make your acquaintance, Ito-san!
 
@@ -16432,7 +16431,7 @@ carrozzerias in Italy.
 Mr. Fabio also worked at Renault Design for a long time as well.","当然，毕竟它是意大利最有名
 的Carrozzeria之一。
 
-而且，法比奥先生还在Renault Design工作了很长时间。0"
+而且，法比奥先生还在Renault Design工作了很长时间。"
 0x0000B563,Fabio_023_f12_berlinetta_12_1st,7,Ferrari F12berlinetta '12,Sarah,莎拉·伊顿,主向导 / 赛事工程师,False,"Pininfarina is one of the most famous carrozzerias
 in Italy!
 
@@ -16441,7 +16440,7 @@ a long time as well.","Pininfarina可是意大利最有名的
 Carrozzeria之一！
 
 而且，法比奥先生还在Renault Design
-工作了很长时间。9"
+工作了很长时间。"
 0x0000B564,Fabio_023_f12_berlinetta_12_1st,8,Ferrari F12berlinetta '12,Fabio Filippini,法比奥·菲利皮尼,前宾尼法利纳设计总监,True,"Designed by Pininfarina together with Ferrari Design,
 the F12 was awarded the Compasso d'Oro 2014.
 As you can see, it represents a huge change in
@@ -16456,7 +16455,7 @@ separating the extractor into two parts.
 But the most characteristic elements
 are the Aero Bridges...
 Channelling the air from the hood towards the flanks,
-improving the overall aerodynamic efficiency.3","这辆F12是由宾尼法利纳和法拉利设计合作设计的，
+improving the overall aerodynamic efficiency.","这辆F12是由宾尼法利纳和法拉利设计合作设计的，
 荣获了2014年度的金圆规工业设计奖。
 如你所见，相比之前的599，它的设计发生了巨大的变化。
 
@@ -16480,7 +16479,7 @@ Now...","那天赢了比赛的人就是你啊？我都听说了，了不起的�
 
 然后……"
 0x0000B569,Fabio_024_f430_f1_06_1st,1,Ferrari F430 '06,Fabio Filippini,法比奥·菲利皮尼,前宾尼法利纳设计总监,False,"Excuse me, are you the one who drove up in that
-F430?8",打扰了，请问你是那个开着F430的车手吗？
+F430?",打扰了，请问你是那个开着F430的车手吗？
 0x0000B56A,Fabio_024_f430_f1_06_1st,2,Ferrari F430 '06,Sarah,莎拉·伊顿,主向导 / 赛事工程师,False,Wait... You're the former Director of Pininfarina!,等等……您是前Pininfarina总监！
 0x0000B56B,Fabio_024_f430_f1_06_1st,3,Ferrari F430 '06,Fabio Filippini,法比奥·菲利皮尼,前宾尼法利纳设计总监,False,"Yes, my name is Fabio Filippini. Very nice to make your
 acquaintance. And please, call me Fabio.","是的，我是法比奥·菲利皮尼。很高兴认识你们。
@@ -16493,7 +16492,7 @@ carrozzerias in Italy!
 Mr. Fabio also worked at Renault Design for a long time as well.","当然，毕竟它是意大利最有名
 的Carrozzeria之一。
 
-而且，法比奥先生还在Renault Design工作了很长时间。0"
+而且，法比奥先生还在Renault Design工作了很长时间。"
 0x0000B56F,Fabio_024_f430_f1_06_1st,7,Ferrari F430 '06,Sarah,莎拉·伊顿,主向导 / 赛事工程师,False,"Pininfarina is one of the most famous carrozzerias
 in Italy.
 
@@ -16502,7 +16501,7 @@ a long time as well.","Pininfarina可是意大利最有名的
 Carrozzeria之一！
 
 而且，法比奥先生还在Renault Design
-工作了很长时间。9"
+工作了很长时间。"
 0x0000B570,Fabio_024_f430_f1_06_1st,8,Ferrari F430 '06,Fabio Filippini,法比奥·菲利皮尼,前宾尼法利纳设计总监,True,"The F430 is strongly derived from the 360 Modena,
 albeit with important technical changes...
 Starting with the new V8 engine.
@@ -16552,7 +16551,7 @@ carrozzerias in Italy.
 Mr. Fabio also worked at Renault Design for a long time as well.","当然，毕竟它是意大利最有名
 的Carrozzeria之一。
 
-而且，法比奥先生还在Renault Design工作了很长时间。0"
+而且，法比奥先生还在Renault Design工作了很长时间。"
 0x0000B57B,Fabio_025_ds3_racing_11_1st,7,DS 3 Racing '11,Sarah,莎拉·伊顿,主向导 / 赛事工程师,False,"Pininfarina is one of the most famous carrozzerias
 in Italy!
 
@@ -16561,7 +16560,7 @@ a long time as well.","Pininfarina可是意大利最有名的
 Carrozzeria之一！
 
 而且，法比奥先生还在Renault Design
-工作了很长时间。9"
+工作了很长时间。"
 0x0000B57C,Fabio_025_ds3_racing_11_1st,8,DS 3 Racing '11,Fabio Filippini,法比奥·菲利皮尼,前宾尼法利纳设计总监,True,"The ‘DS’ brand was created by the PSA Group to renew
 the unconventional spirit of the legendary Citroën DS19.
 
@@ -16762,7 +16761,7 @@ carrozzerias in Italy.
 Mr. Fabio also worked at Renault Design for a long time as well.","当然，毕竟它是意大利最有名
 的Carrozzeria之一。
 
-而且，法比奥先生还在Renault Design工作了很长时间。0"
+而且，法比奥先生还在Renault Design工作了很长时间。"
 0x0000B764,Fabio_026_taycan_turbo_s_20_1st,7,Porsche Taycan Turbo S '19,Sarah,莎拉·伊顿,主向导 / 赛事工程师,False,"Pininfarina is one of the most famous carrozzerias
 in Italy!
 
@@ -16771,7 +16770,7 @@ a long time as well.","Pininfarina可是意大利最有名的
 Carrozzeria之一！
 
 而且，法比奥先生还在Renault Design
-工作了很长时间。9"
+工作了很长时间。"
 0x0000B765,Fabio_026_taycan_turbo_s_20_1st,8,Porsche Taycan Turbo S '19,Fabio Filippini,法比奥·菲利皮尼,前宾尼法利纳设计总监,True,"This is the new ""electric"" expression of Porsche design.
 
 The design of this eco-sustainable evolution adopts
@@ -16829,7 +16828,7 @@ a long time as well.","Pininfarina可是意大利最有名的
 Carrozzeria之一！
 
 而且，法比奥先生还在Renault Design
-工作了很长时间。9"
+工作了很长时间。"
 0x0000B771,Fabio_027_celica_wrc_95_1st,8,Toyota Celica GT-FOUR Rally Car (ST205) '95,Fabio Filippini,法比奥·菲利皮尼,前宾尼法利纳设计总监,True,"The sixth-generation of the Toyota Celica has the most
 character of all the models in its long lineage.
 
@@ -16889,7 +16888,7 @@ a long time as well.","Pininfarina可是意大利最有名的
 Carrozzeria之一！
 
 而且，法比奥先生还在Renault Design
-工作了很长时间。9"
+工作了很长时间。"
 0x0000B77D,Fabio_028_lancer_evo6_tommi_gsr_scp_00_1st,8,Mitsubishi Lancer Evolution VI GSR T.M. EDITION Special Color Package '99,Fabio Filippini,法比奥·菲利皮尼,前宾尼法利纳设计总监,True,"The Lancer Evo is one of the most boring Japanese family
 sedans to have been transformed into a racing beast.
 It’s a mild-mannered nobody turned superhero...
@@ -16947,7 +16946,7 @@ a long time as well.","Pininfarina可是意大利最有名的
 Carrozzeria之一！
 
 而且，法比奥先生还在Renault Design
-工作了很长时间。9"
+工作了很长时间。"
 0x0000B789,Fabio_029_clio_rs_220_edc_trophy_16_1st,8,Renault Sport Clio R.S. 220 EDC Trophy '16,Fabio Filippini,法比奥·菲利皮尼,前宾尼法利纳设计总监,True,"The Renault Clio RS is an icon of Europe’s
 ""Supermini"" segment.
 
@@ -16979,8 +16978,7 @@ racing ""weapon.""A","雷诺Clio RS是欧洲“超迷你”类型
 
 基于这种设计，再加上运动感十足的保险杠、空气动力学细节
 以及应用了18寸轮毂和红色卡钳的超低姿态车身……
-足以在视觉上将它充分改造成一款赛道小钢炮！
-j"
+足以在视觉上将它充分改造成一款赛道小钢炮！"
 0x0000B78A,Fabio_029_clio_rs_220_edc_trophy_16_1st,9,Renault Sport Clio R.S. 220 EDC Trophy '16,Sarah,莎拉·伊顿,主向导 / 赛事工程师,False,"Wow, that was fascinating! Thanks!",哇，好精彩的解说！感谢感谢！
 0x0000B78B,Fabio_029_clio_rs_220_edc_trophy_16_1st,10,Renault Sport Clio R.S. 220 EDC Trophy '16,Fabio Filippini,法比奥·菲利皮尼,前宾尼法利纳设计总监,False,"I hope it helps you see your car with fresh eyes.
 See you again. Ciao!","没问题，这应该能让你重新认识你的车。
@@ -17930,7 +17928,7 @@ By the way, this car…","我在咖啡厅里听说了你在重要比赛中获胜
 
 顺便一提……"
 0x0000B8C4,Maeda_009_rx8_spirit_r_12_1st,1,Mazda RX-8 Spirit R '12,Ikuo Maeda,前田育男,前马自达设计负责人 · 魂动设计,False,"This is the RX-8, isn’t it? Say, are you
-the owner of this car?7",这辆RX-8是你的吗？
+the owner of this car?",这辆RX-8是你的吗？
 0x0000B8C5,Maeda_009_rx8_spirit_r_12_1st,2,Mazda RX-8 Spirit R '12,Sarah,莎拉·伊顿,主向导 / 赛事工程师,False,"Excuse me, but aren’t you Ikuo Maeda,
 the former design lead for Mazda?(",哦，您是Mazda的前任首席设计师前田育男先生！
 0x0000B8C6,Maeda_009_rx8_spirit_r_12_1st,3,Mazda RX-8 Spirit R '12,Ikuo Maeda,前田育男,前马自达设计负责人 · 魂动设计,False,"Yes my name is Maeda.
@@ -18228,13 +18226,13 @@ that Mazda was to take in its future designs.","当时，Mercedes-Benz刚刚发�
 Mazda或许是想用这辆车来广而告之：
 “嘿，转子引擎可是我们的专长！”
 与Cosmo Sport的存在相仿，这款车
-标志着Mazda未来设计的方向。8"
+标志着Mazda未来设计的方向。"
 0x0000B8EF,Nakamura_027_rx500_70_1st,10,Mazda RX500 '70,Sarah,莎拉·伊顿,主向导 / 赛事工程师,False,"Wow, that was fascinating! Thanks!",哇，好精彩的解说！感谢感谢！
 0x0000B8F0,Nakamura_027_rx500_70_1st,11,Mazda RX500 '70,Shiro Nakamura,中村史郎,前日产首席创意官,False,"Oh, it was my pleasure.
 Well, see you around.","哦，这是我的荣幸。
 那么，回头见。"
 0x0000B8F3,Ito_008_r92cp_92_1st,1,Nissan R92CP '92,Kunihisa Ito,伊藤邦久,通用/欧宝/福特汽车设计师,False,Is this Nissan R92CP yours?,这辆Nissan R92CP是你的吗？
-0x0000B8F4,Ito_008_r92cp_92_1st,2,Nissan R92CP '92,Sarah,莎拉·伊顿,主向导 / 赛事工程师,False,"Wait, aren't you… Kunihisa Ito, the car designer?""",等等，您难道是……著名的汽车设计师伊藤邦久？7
+0x0000B8F4,Ito_008_r92cp_92_1st,2,Nissan R92CP '92,Sarah,莎拉·伊顿,主向导 / 赛事工程师,False,"Wait, aren't you… Kunihisa Ito, the car designer?""",等等，您难道是……著名的汽车设计师伊藤邦久？
 0x0000B8F5,Ito_008_r92cp_92_1st,3,Nissan R92CP '92,Kunihisa Ito,伊藤邦久,通用/欧宝/福特汽车设计师,False,"Indeed, I am. Nice to meet you.",是的，我是。请多多指教。
 0x0000B8F6,Ito_008_r92cp_92_1st,4,Nissan R92CP '92,Sarah,莎拉·伊顿,主向导 / 赛事工程师,False,"It's an honour to make your acquaintance, Ito-san!
 
@@ -18273,7 +18271,7 @@ Nissan最终震撼赢得该级别的冠军，此车功不可没。"
 hesitate to call on me again.\","这也是我的荣幸。以后有什么想要了解的知识，
 请随时打给我。"
 0x0000B8FC,Ito_009__919_hybrid_16_1st,1,Porsche 919 Hybrid '16,Kunihisa Ito,伊藤邦久,通用/欧宝/福特汽车设计师,False,Is this Porsche 919 Hybrid yours?,这辆Porsche 919 Hybrid是你的吗？
-0x0000B8FD,Ito_009__919_hybrid_16_1st,2,Porsche 919 Hybrid '16,Sarah,莎拉·伊顿,主向导 / 赛事工程师,False,"Wait, aren't you… Kunihisa Ito, the car designer?""",等等，您难道是……著名的汽车设计师伊藤邦久？7
+0x0000B8FD,Ito_009__919_hybrid_16_1st,2,Porsche 919 Hybrid '16,Sarah,莎拉·伊顿,主向导 / 赛事工程师,False,"Wait, aren't you… Kunihisa Ito, the car designer?""",等等，您难道是……著名的汽车设计师伊藤邦久？
 0x0000B8FE,Ito_009__919_hybrid_16_1st,3,Porsche 919 Hybrid '16,Kunihisa Ito,伊藤邦久,通用/欧宝/福特汽车设计师,False,"Indeed, I am. Nice to meet you.",是的，我是。请多多指教。
 0x0000B8FF,Ito_009__919_hybrid_16_1st,4,Porsche 919 Hybrid '16,Sarah,莎拉·伊顿,主向导 / 赛事工程师,False,"It's an honour to make your acquaintance, Ito-san!
 
@@ -18327,7 +18325,7 @@ winning streak at the famous racing event.","如果我没记错的话，这台�
 hesitate to call on me again.\","这也是我的荣幸。以后有什么想要了解的知识，
 请随时打给我。"
 0x0000B905,Ito_010_ts050_hybrid_16_1st,1,Toyota TS050 - Hybrid '16,Kunihisa Ito,伊藤邦久,通用/欧宝/福特汽车设计师,False,Is this Toyota TS050 Hybrid yours?,这辆Toyota TS050 Hybrid是你的吗？
-0x0000B906,Ito_010_ts050_hybrid_16_1st,2,Toyota TS050 - Hybrid '16,Sarah,莎拉·伊顿,主向导 / 赛事工程师,False,"Wait, aren't you… Kunihisa Ito, the car designer?""",等等，您难道是……著名的汽车设计师伊藤邦久？7
+0x0000B906,Ito_010_ts050_hybrid_16_1st,2,Toyota TS050 - Hybrid '16,Sarah,莎拉·伊顿,主向导 / 赛事工程师,False,"Wait, aren't you… Kunihisa Ito, the car designer?""",等等，您难道是……著名的汽车设计师伊藤邦久？
 0x0000B907,Ito_010_ts050_hybrid_16_1st,3,Toyota TS050 - Hybrid '16,Kunihisa Ito,伊藤邦久,通用/欧宝/福特汽车设计师,False,"Indeed, I am. Nice to meet you.",是的，我是。请多多指教。
 0x0000B908,Ito_010_ts050_hybrid_16_1st,4,Toyota TS050 - Hybrid '16,Sarah,莎拉·伊顿,主向导 / 赛事工程师,False,"It's an honour to make your acquaintance, Ito-san!
 
@@ -18370,7 +18368,7 @@ It was the first Japanese car to do so since the Mazda
 不过，在2018年，在距离首次亮相勒芒已经
 过去33年之际，Toyota却取得了令人难以置信的全面胜利。
 
-这是继1991年Mazda787B赢得比赛后，日本车队首次在勒芒夺冠。4"
+这是继1991年Mazda787B赢得比赛后，日本车队首次在勒芒夺冠。"
 0x0000B90A,Ito_010_ts050_hybrid_16_1st,6,Toyota TS050 - Hybrid '16,Sarah,莎拉·伊顿,主向导 / 赛事工程师,False,"Wow, that was fascinating! Thanks!",哇，好精彩的解说！感谢感谢！
 0x0000B90B,Ito_010_ts050_hybrid_16_1st,7,Toyota TS050 - Hybrid '16,Kunihisa Ito,伊藤邦久,通用/欧宝/福特汽车设计师,False,"The pleasure was mine. Please don't
 hesitate to call on me again.\","这也是我的荣幸。以后有什么想要了解的知识，
@@ -18445,7 +18443,7 @@ fans continue to love the Evo.","在翼豪陆神的发展史上，充斥着持�
 这正是车迷们一直对翼豪陆神怀有深厚感情的众多原因之一。"
 0x0000B913,Harada_027_lancer_evo9_mr_gsr_06_1st,6,Mitsubishi Lancer Evolution IX MR GSR '06,Sarah,莎拉·伊顿,主向导 / 赛事工程师,False,That was very insightful. Thank you so much!,真是见解独到的解说。谢谢您了！
 0x0000B914,Harada_027_lancer_evo9_mr_gsr_06_1st,7,Mitsubishi Lancer Evolution IX MR GSR '06,Hikonori Kagurazaka,神乐坂彦则,高性能车设计师,False,"Don't mention it. The pleasure was all mine!
-Well, see you around!7","太客气了！我自己也很享受这样的交谈！
+Well, see you around!","太客气了！我自己也很享受这样的交谈！
 好吧，那再见了！"
 0x0000B917,Harada_028_eckert_mustang_mach_40_xx_1st,1,Eckert's Rod & Custom Mach Forty,Hikonori Kagurazaka,神乐坂彦则,高性能车设计师,False,Wait a second…,等等……
 0x0000B918,Harada_028_eckert_mustang_mach_40_xx_1st,2,Eckert's Rod & Custom Mach Forty,Sarah,莎拉·伊顿,主向导 / 赛事工程师,False,"Hey, aren’t you Mr. Hikonori Kagurazaka?
@@ -18508,7 +18506,7 @@ The Mach 40... Yes, that is the name of my new self.","如果我没有记错的�
 “Mach 40”……是的，这就是我的新名字。"
 0x0000B91C,Harada_028_eckert_mustang_mach_40_xx_1st,6,Eckert's Rod & Custom Mach Forty,Sarah,莎拉·伊顿,主向导 / 赛事工程师,False,That was very insightful. Thank you so much!,真是见解独到的解说。谢谢您了！
 0x0000B91D,Harada_028_eckert_mustang_mach_40_xx_1st,7,Eckert's Rod & Custom Mach Forty,Hikonori Kagurazaka,神乐坂彦则,高性能车设计师,False,"Don't mention it. The pleasure was all mine!
-Well, see you around!7","太客气了！我自己也很享受这样的交谈！
+Well, see you around!","太客气了！我自己也很享受这样的交谈！
 好吧，那再见了！"
 0x0000B920,Matano_018_v12_vantage_gt3_12_1st,1,Aston Martin V12 Vantage GT3 '12,Tom Matano,俣野努,马自达设计师 · MX-5 设计参与者,False,"Does this Aston Martin Vantage belong to you,
 by any chance?",这台是你的Aston Martin Vantage吗？
@@ -18865,7 +18863,7 @@ That was in back in 1967!","你了解AMG的历史吗？
 
 各取一个首字母，为公司起名为“AMG”。
 
-那是在1967年！2"
+那是在1967年！"
 0x0000BAD4,Kodama_026__8c_competizione_08_1st,1,Alfa Romeo 8C Competizione '08,Hideo Kodama,儿玉英雄,前欧宝设计师,False,Are you the owner of this car?,这辆车是你的吗？
 0x0000BAD5,Kodama_026__8c_competizione_08_1st,2,Alfa Romeo 8C Competizione '08,Sarah,莎拉·伊顿,主向导 / 赛事工程师,False,"Are you by chance Mr. Hideo Kodama, the designer who had a
 hand in many famous cars from the German company Opel?","您不会是儿玉英雄吧，
@@ -19319,7 +19317,7 @@ a long time as well.","没错。它是意大利最有名的
 车身制造商之一。
 
 而且，法比奥先生还在Renault Design
-工作了很长时间。0"
+工作了很长时间。"
 0x0000BBFF,Fabio_030_v40_t5_rdesign_13_1st,7,Volvo V40 T5 R-Design '13,Sarah,莎拉·伊顿,主向导 / 赛事工程师,False,"Pininfarina is one of the most famous carrozzerias
 in Italy!
 
@@ -19415,7 +19413,7 @@ It is a basic example of the ‘Jaray-style.’Q","很多人认为Porsche不仅�
 
 这些都是典型的“贾雷式气动设计”风格的体现。"
 0x0000BFD2,Kodama_028__911_carrera_rs_96_1st,6,Porsche 911 Carrera RS (993) '95,Sarah,莎拉·伊顿,主向导 / 赛事工程师,False,"Are you, by chance, familiar with the Jaray-style?",你是否了解贾雷式气动设计？
-0x0000BFD3,Kodama_028__911_carrera_rs_96_1st,8,Porsche 911 Carrera RS (993) '95,Sarah,莎拉·伊顿,主向导 / 赛事工程师,False,"Yes! It refers to a design language used by the
+0x0000BFD3,Kodama_028__911_carrera_rs_96_1st,7,Porsche 911 Carrera RS (993) '95,Sarah,莎拉·伊顿,主向导 / 赛事工程师,False,"Yes! It refers to a design language used by the
 aerodynamics expert Paul Jaray.
 
 Jaray is known for his streamlined automobile designs,
@@ -19424,7 +19422,7 @@ which took inspiration from airplanes and airships.","我知道！这是指空�
 
 贾雷因其流线型汽车设计而闻名，
 而他的设计灵感来源于飞机和飞船。"
-0x0000BFD4,Kodama_028__911_carrera_rs_96_1st,7,Porsche 911 Carrera RS (993) '95,Sarah,莎拉·伊顿,主向导 / 赛事工程师,False,"Well, it refers to a design language used by the
+0x0000BFD4,Kodama_028__911_carrera_rs_96_1st,8,Porsche 911 Carrera RS (993) '95,Sarah,莎拉·伊顿,主向导 / 赛事工程师,False,"Well, it refers to a design language used by the
 aerodynamics expert Paul Jaray.
 
 Jaray is known for his streamlined automobile designs,
@@ -19432,16 +19430,16 @@ which took inspiration from airplanes and airships.","这是指空气动力学�
 所创立的一种设计语言。
 
 贾雷因其流线型汽车设计而闻名，
-而他的设计灵感来源于飞机和飞船。8"
+而他的设计灵感来源于飞机和飞船。"
 0x0000BFD5,Kodama_028__911_carrera_rs_96_1st,9,Porsche 911 Carrera RS (993) '95,Hideo Kodama,儿玉英雄,前欧宝设计师,False,"Naturally, the basic principles of behind this design style
 are also evident in the 993 911 Carrera RS.","显然，这种设计风格的基本原则在993车系的
-911 Carrera RS车型中也有所体现。9"
+911 Carrera RS车型中也有所体现。"
 0x0000BFD6,Kodama_028__911_carrera_rs_96_1st,10,Porsche 911 Carrera RS (993) '95,Sarah,莎拉·伊顿,主向导 / 赛事工程师,False,"Wow, that was fascinating! Thanks!",哇，好精彩的解说！感谢感谢！
 0x0000BFD7,Kodama_028__911_carrera_rs_96_1st,11,Porsche 911 Carrera RS (993) '95,Hideo Kodama,儿玉英雄,前欧宝设计师,False,"My pleasure! I hope we can discuss car design
 again sometime.","我很荣幸！希望以后还可以有机会
 交流汽车设计。"
 0x0000BFDA,Ito_011__962c_88_1st,1,Porsche 962 C '88,Kunihisa Ito,伊藤邦久,通用/欧宝/福特汽车设计师,False,Is this Porsche 962C yours?,这辆Porsche 962C是你的吗？
-0x0000BFDB,Ito_011__962c_88_1st,2,Porsche 962 C '88,Sarah,莎拉·伊顿,主向导 / 赛事工程师,False,"Wait, aren't you... Kunihisa Ito, the car designer?""",等等，您难道是……著名的汽车设计师伊藤邦久？7
+0x0000BFDB,Ito_011__962c_88_1st,2,Porsche 962 C '88,Sarah,莎拉·伊顿,主向导 / 赛事工程师,False,"Wait, aren't you... Kunihisa Ito, the car designer?""",等等，您难道是……著名的汽车设计师伊藤邦久？
 0x0000BFDC,Ito_011__962c_88_1st,3,Porsche 962 C '88,Kunihisa Ito,伊藤邦久,通用/欧宝/福特汽车设计师,False,"Indeed, I am. Nice to meet you.",是的，我是。请多多指教。
 0x0000BFDD,Ito_011__962c_88_1st,4,Porsche 962 C '88,Sarah,莎拉·伊顿,主向导 / 赛事工程师,False,"It's an honour to make your acquaintance, Ito-san!
 
@@ -19484,7 +19482,7 @@ Porsche 956及其后继车型962……
 hesitate to call on me again.\","这也是我的荣幸。以后有什么想要了解的知识，
 请随时打给我。"
 0x0000BFE3,Ito_012_clk_lm_98_1st,1,Mercedes-Benz CLK-LM '98,Kunihisa Ito,伊藤邦久,通用/欧宝/福特汽车设计师,False,Is this CLK-LM yours?,这辆CLK-LM是你的吗？
-0x0000BFE4,Ito_012_clk_lm_98_1st,2,Mercedes-Benz CLK-LM '98,Sarah,莎拉·伊顿,主向导 / 赛事工程师,False,"Wait, aren't you... Kunihisa Ito, the car designer?""",等等，您难道是……著名的汽车设计师伊藤邦久？7
+0x0000BFE4,Ito_012_clk_lm_98_1st,2,Mercedes-Benz CLK-LM '98,Sarah,莎拉·伊顿,主向导 / 赛事工程师,False,"Wait, aren't you... Kunihisa Ito, the car designer?""",等等，您难道是……著名的汽车设计师伊藤邦久？
 0x0000BFE5,Ito_012_clk_lm_98_1st,3,Mercedes-Benz CLK-LM '98,Kunihisa Ito,伊藤邦久,通用/欧宝/福特汽车设计师,False,"Indeed, I am. Nice to meet you.",是的，我是。请多多指教。
 0x0000BFE6,Ito_012_clk_lm_98_1st,4,Mercedes-Benz CLK-LM '98,Sarah,莎拉·伊顿,主向导 / 赛事工程师,False,"It's an honour to make your acquaintance, Ito-san!
 
@@ -19702,7 +19700,7 @@ And a two-tone livery is available as an option.","这是在迈克尔·舒马赫
 See you again. Ciao!","没问题，这应该能让你重新认识你的车。
 下次见，ciao！("
 0x0000C016,Fabio_032_rx_vision_15_1st,1,Mazda RX-VISION '15,Fabio Filippini,法比奥·菲利皮尼,前宾尼法利纳设计总监,False,"Excuse me, are you the one who drove up in that
-MAZDA RX-VISION?\",打扰了，请问你是那个开着MAZDA RX-VISION的车手吗？7
+MAZDA RX-VISION?\",打扰了，请问你是那个开着MAZDA RX-VISION的车手吗？
 0x0000C017,Fabio_032_rx_vision_15_1st,2,Mazda RX-VISION '15,Sarah,莎拉·伊顿,主向导 / 赛事工程师,False,Wait... You're the former Director of Pininfarina!,等等……您是前Pininfarina总监！
 0x0000C018,Fabio_032_rx_vision_15_1st,3,Mazda RX-VISION '15,Fabio Filippini,法比奥·菲利皮尼,前宾尼法利纳设计总监,False,"Yes, my name is Fabio Filippini. Very nice to make your
 acquaintance. And please, call me Fabio.","是的，我是法比奥·菲利皮尼。很高兴认识你们。
@@ -19761,7 +19759,7 @@ beautiful sheet metal surfaces.","2015年东京车展上首次亮相的……
 其火焰般的红色车身涂装让人瞬间联想到
 日本传统漆器的质感……
 
-进一步强化了RX-VISION车身金属表面的流动美感。4"
+进一步强化了RX-VISION车身金属表面的流动美感。"
 0x0000C01E,Fabio_032_rx_vision_15_1st,9,Mazda RX-VISION '15,Sarah,莎拉·伊顿,主向导 / 赛事工程师,False,"Wow, that was fascinating! Thanks!",哇，好精彩的解说！感谢感谢！
 0x0000C01F,Fabio_032_rx_vision_15_1st,10,Mazda RX-VISION '15,Fabio Filippini,法比奥·菲利皮尼,前宾尼法利纳设计总监,False,"I hope it helps you see your car with fresh eyes.
 See you again. Ciao!","没问题，这应该能让你重新认识你的车。
@@ -20096,7 +20094,7 @@ FIA引入的Group 6规则
 again sometime.","我很荣幸！希望以后还可以有机会
 交流汽车设计。"
 0x0000C443,Ito_013_sauber_mercedes_c9_89_1st,1,Sauber Mercedes C9 '89,Kunihisa Ito,伊藤邦久,通用/欧宝/福特汽车设计师,False,Is this Sauber Mercedes C9 yours?,这辆Sauber Mercedes C9是你的吗？
-0x0000C444,Ito_013_sauber_mercedes_c9_89_1st,2,Sauber Mercedes C9 '89,Sarah,莎拉·伊顿,主向导 / 赛事工程师,False,"Wait, aren't you... Kunihisa Ito, the car designer?""",等等，您难道是……著名的汽车设计师伊藤邦久？7
+0x0000C444,Ito_013_sauber_mercedes_c9_89_1st,2,Sauber Mercedes C9 '89,Sarah,莎拉·伊顿,主向导 / 赛事工程师,False,"Wait, aren't you... Kunihisa Ito, the car designer?""",等等，您难道是……著名的汽车设计师伊藤邦久？
 0x0000C445,Ito_013_sauber_mercedes_c9_89_1st,3,Sauber Mercedes C9 '89,Kunihisa Ito,伊藤邦久,通用/欧宝/福特汽车设计师,False,"Indeed, I am. Nice to meet you.",是的，我是。请多多指教。
 0x0000C446,Ito_013_sauber_mercedes_c9_89_1st,4,Sauber Mercedes C9 '89,Sarah,莎拉·伊顿,主向导 / 赛事工程师,False,"It's an honour to make your acquaintance, Ito-san!
 
@@ -20156,7 +20154,7 @@ could deliver!","从1987年首次亮相的那一刻起，索伯梅赛德斯C9
 hesitate to call on me again.\","这也是我的荣幸。以后有什么想要了解的知识，
 请随时打给我。"
 0x0000C44C,Ito_014_mclaren_p1_gtr_16_1st,1,McLaren P1 GTR '16,Kunihisa Ito,伊藤邦久,通用/欧宝/福特汽车设计师,False,Is this McLaren P1 GTR yours?,这辆McLaren P1 GTR是你的吗？
-0x0000C44D,Ito_014_mclaren_p1_gtr_16_1st,2,McLaren P1 GTR '16,Sarah,莎拉·伊顿,主向导 / 赛事工程师,False,"Wait, aren't you... Kunihisa Ito, the car designer?""",等等，您难道是……著名的汽车设计师伊藤邦久？7
+0x0000C44D,Ito_014_mclaren_p1_gtr_16_1st,2,McLaren P1 GTR '16,Sarah,莎拉·伊顿,主向导 / 赛事工程师,False,"Wait, aren't you... Kunihisa Ito, the car designer?""",等等，您难道是……著名的汽车设计师伊藤邦久？
 0x0000C44E,Ito_014_mclaren_p1_gtr_16_1st,3,McLaren P1 GTR '16,Kunihisa Ito,伊藤邦久,通用/欧宝/福特汽车设计师,False,"Indeed, I am. Nice to meet you.",是的，我是。请多多指教。
 0x0000C44F,Ito_014_mclaren_p1_gtr_16_1st,4,McLaren P1 GTR '16,Sarah,莎拉·伊顿,主向导 / 赛事工程师,False,"It's an honour to make your acquaintance, Ito-san!
 
@@ -20202,7 +20200,7 @@ side skirts, and an imposing rear wing.","McLaren P1是英国汽车制造商McLa
 hesitate to call on me again.\","这也是我的荣幸。以后有什么想要了解的知识，
 请随时打给我。"
 0x0000C455,Ito_015_quattro_s1_pikespeak_87_1st,1,Audi Sport quattro S1 Pikes Peak '87,Kunihisa Ito,伊藤邦久,通用/欧宝/福特汽车设计师,False,Is this Audi quattro S1 yours?,这辆Audi quattro S1是你的吗？
-0x0000C456,Ito_015_quattro_s1_pikespeak_87_1st,2,Audi Sport quattro S1 Pikes Peak '87,Sarah,莎拉·伊顿,主向导 / 赛事工程师,False,"Wait, aren't you... Kunihisa Ito, the car designer?""",等等，您难道是……著名的汽车设计师伊藤邦久？7
+0x0000C456,Ito_015_quattro_s1_pikespeak_87_1st,2,Audi Sport quattro S1 Pikes Peak '87,Sarah,莎拉·伊顿,主向导 / 赛事工程师,False,"Wait, aren't you... Kunihisa Ito, the car designer?""",等等，您难道是……著名的汽车设计师伊藤邦久？
 0x0000C457,Ito_015_quattro_s1_pikespeak_87_1st,3,Audi Sport quattro S1 Pikes Peak '87,Kunihisa Ito,伊藤邦久,通用/欧宝/福特汽车设计师,False,"Indeed, I am. Nice to meet you.",是的，我是。请多多指教。
 0x0000C458,Ito_015_quattro_s1_pikespeak_87_1st,4,Audi Sport quattro S1 Pikes Peak '87,Sarah,莎拉·伊顿,主向导 / 赛事工程师,False,"It's an honour to make your acquaintance, Ito-san!
 
@@ -20372,7 +20370,7 @@ and a NACA duct on the hood!
 The great stance is set up by the tires set out to the
 edges and special suspension.
 You'll also spot the big red Brembo brake calipers
-behind the glossy black wheels.2","Type R是一款风格激进的四门掀背轿跑车。
+behind the glossy black wheels.","Type R是一款风格激进的四门掀背轿跑车。
 这一细分市场最初由VW Golf GTI炒热。
 
 这款车的特别之处在于它就像一部充满特效的动作电影！
@@ -20869,7 +20867,7 @@ but did you know that those are reserved for SUVs?
 
 This ""2008"" is a compact SUV.
 As is to be expected of a Peugeot, it's perky and nimble,
-just as it should be!9","Peugeot的车可以从它们名字中的数字区分开来。
+just as it should be!","Peugeot的车可以从它们名字中的数字区分开来。
 
 例如“205”或“306”，似乎所有车名都遵循着三位数命名格式。
 这一传统其实可追溯到1929年的“201”！
@@ -21257,7 +21255,7 @@ that made the Land Cruiser a legend.
 
 With an impressive production run that has lasted 24 years...
 ...this best-selling SUV has made the Land Cruiser a household name
-all over the world.8","丰田Land Cruiser是真正开创
+all over the world.","丰田Land Cruiser是真正开创
 日本越野历史的车型。
 
 这款1960年发布的“40系”是第三代车型。
@@ -21496,7 +21494,7 @@ in 1999!","Mitsubishi FTO是一款曾在赛坛掀起波澜的
 要知道，在赛场上比拼动力优势的
 往往是那些后轮驱动车型。
 虽然此车型未能在全日本GT锦标赛摘得桂冠……
-但在1999赛季揭幕战中还是成功斩获了亚军佳绩！0"
+但在1999赛季揭幕战中还是成功斩获了亚军佳绩！"
 0x0000CFC3,CarLover_039_mines_r34_n1_base_06_1st,1,Mine's BNR34 GT-R N1 base,Stella,斯黛拉,咖啡屋常客 · 紧凑型车,False,"Hi! Nice to meet you.
 
 I noticed your cool car and just had to say Hi!(","嗨！很高兴见到你！
@@ -21570,7 +21568,7 @@ I can’t say exactly how many, but I certainly plan to find out!","296 GTB是Fe
 我听说，在1970至1990年间，
 Ferrari还以类似的方式命名了其他车型。
 
-具体数量我一时说不上来，但我一定会查个明白！9"
+具体数量我一时说不上来，但我一定会查个明白！"
 0x0000CFCF,CarLover_041_polestar_5_26_1st,1,Polestar 5 Performance '26,Stella,斯黛拉,咖啡屋常客 · 紧凑型车,False,"Hi! Nice to meet you.
 
 I noticed your cool car and just had to say Hi!(","嗨！很高兴见到你！
@@ -21800,7 +21798,7 @@ Now�I want to see it in action!*","这辆科迈罗1969 Race-Mod，虽然保留
 至于它的心脏，则是一台动力磅礴的机械增压V8引擎！
 
 现在，我真想一睹它在赛道上飞驰的风采！"
-0x0000D37E,Fabio_034__911_turbo_s_93_1st,1,Porsche 911 Turbo S Leichtbau (964) '93,Fabio Filippini,法比奥·菲利皮尼,前宾尼法利纳设计总监,False,Are you the one who drove in that 911 964 Turbo S?,请问你是那个开着911 964 Turbo S的车手吗？8
+0x0000D37E,Fabio_034__911_turbo_s_93_1st,1,Porsche 911 Turbo S Leichtbau (964) '93,Fabio Filippini,法比奥·菲利皮尼,前宾尼法利纳设计总监,False,Are you the one who drove in that 911 964 Turbo S?,请问你是那个开着911 964 Turbo S的车手吗？
 0x0000D37F,Fabio_034__911_turbo_s_93_1st,2,Porsche 911 Turbo S Leichtbau (964) '93,Sarah,莎拉·伊顿,主向导 / 赛事工程师,False,Wait... You're the former Director of Pininfarina!,等等……您是前Pininfarina总监！
 0x0000D380,Fabio_034__911_turbo_s_93_1st,3,Porsche 911 Turbo S Leichtbau (964) '93,Fabio Filippini,法比奥·菲利皮尼,前宾尼法利纳设计总监,False,"Yes, my name is Fabio Filippini. It's very nice to make your
 acquaintance. And please, call me Fabio.","是的，我是法比奥·菲利皮尼。很高兴认识你们。
@@ -21836,7 +21834,7 @@ complete the look.
 But if you ask me...
 
 Its most iconic detail is found in the rear fender
-air intakes based on those of the Porsche 959!1","在911漫长的进化历程中，964 Turbo S
+air intakes based on those of the Porsche 959!","在911漫长的进化历程中，964 Turbo S
 以其极具力量感的纯粹设计独树一帜。
 
 为了彰显此车雕塑般的形体美……
@@ -22101,7 +22099,7 @@ Now, let's see what we have here...","很高兴见到你们两位。
 见到好车我就必须得看看。
 
 这一片的人经常直接管我叫“车评人”。
-现在让我们看看眼前的这一台……0"
+现在让我们看看眼前的这一台……"
 0x0000D6CC,RT2_caterham_seven_sl_r500_12_1306101,4,Caterham Seven Superlight R500 '08,Chris,克里斯,咖啡屋常客 · 公路车鉴赏,True,"The granddaddy of lightweight sports cars,
 the Seven is a legend among legends.
 Its story began in 1957, when the car was
@@ -22134,7 +22132,7 @@ few cars can match the Superlight R500.","“Seven”作为所有轻量级跑车
 
 它那高昂的引擎轰鸣声，能让你从头到脚都感到震颤。
 毫无疑问，对于追求赛道刺激感的车迷来说，
-这款车就是他们的终极目标。2"
+这款车就是他们的终极目标。"
 0x0000D6CF,RT2_mark_2_v_97_1306201,1,Toyota Mark II Tourer V '97,Chris,克里斯,咖啡屋常客 · 公路车鉴赏,False,About this car here... Hmm... I see...,至于这一台……嗯……我知道了……
 0x0000D6D0,RT2_mark_2_v_97_1306201,2,Toyota Mark II Tourer V '97,Sarah,莎拉·伊顿,主向导 / 赛事工程师,False,"Chris! I see you've been working hard today!
 
@@ -22153,7 +22151,7 @@ Now, let's see what we have here...","很高兴见到你们两位。
 见到好车我就必须得看看。
 
 这一片的人经常直接管我叫“车评人”。
-现在让我们看看眼前的这一台……0"
+现在让我们看看眼前的这一台……"
 0x0000D6D2,RT2_mark_2_v_97_1306201,4,Toyota Mark II Tourer V '97,Chris,克里斯,咖啡屋常客 · 公路车鉴赏,True,"The Toyota Mark II is widely regarded as one of Japan’s
 most iconic luxury sedans.
 

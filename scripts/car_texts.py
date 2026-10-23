@@ -195,6 +195,7 @@ def _parse_dms(path: Path):
 
 def _clean_text(value: str) -> str:
     value = value.replace("\r\n", "\n").replace("\r", "\n")
+    value = value.replace("\ufeff", "")
     value = re.sub(r"<p\s*/?>", "\n", value, flags=re.IGNORECASE)
     value = re.sub(r"<br\s*/?>", "\n", value, flags=re.IGNORECASE)
     # The localisation payload uses ordinary tags for paragraphs, but also
@@ -207,8 +208,16 @@ def _clean_text(value: str) -> str:
     )
     value = re.sub(r"<([^<>/]+)>", r"\1", value)
     value = re.sub(r"[\x00-\x08\x0b-\x1f\x7f]", "", value)
+    # Some recovery candidates retain one or two container bytes before the
+    # first Chinese character (for example ``o...`` before ``弗朗``).
+    value = re.sub(
+        r"^\s*(?:[A-Za-z0-9][^\w\u4e00-\u9fff]{1,4}|[^\w\u4e00-\u9fff]{1,4})"
+        r"(?=[\u4e00-\u9fff])",
+        "",
+        value,
+    )
     value = re.sub(r"[ \t]+\n", "\n", value)
-    value = re.sub(r"([。！？.!?…])[A-Za-z]{1,2}\s*$", r"\1", value)
+    value = re.sub(r"([。！？.!?…])\s*[A-Za-z0-9]{1,2}\s*$", r"\1", value)
     value = re.sub(r"\n{3,}", "\n\n", value).strip()
     return value.rstrip("\ufffd").rstrip()
 
@@ -377,14 +386,29 @@ def build_car_texts(cars: list[dict]) -> dict:
                 category_hits += 1
                 matched_by_category[spec["id"]] += 1
                 for car in resolved:
-                    car.setdefault("texts", {})[spec["id"]] = {
+                    text_value = {
                         "titleZh": spec["titleZh"],
                         "titleEn": spec["titleEn"],
                         "textId": text_id,
                         "carKey": car_key,
+                        "sourceName": display,
+                        "matchMethod": method,
                         "en": entry["en"],
                         "zh": entry["zh"],
                     }
+                    texts = car.setdefault("texts", {})
+                    existing = texts.get(spec["id"])
+                    if existing is None:
+                        texts[spec["id"]] = text_value
+                        continue
+                    if existing.get("textId") == text_id:
+                        continue
+                    variants = existing.setdefault("variants", [])
+                    if not any(
+                        variant.get("textId") == text_id
+                        for variant in variants
+                    ):
+                        variants.append(text_value)
             else:
                 entry["alternates"] = alternates
                 unresolved.append(entry)
@@ -439,14 +463,27 @@ def build_car_texts(cars: list[dict]) -> dict:
         entries.append(entry)
         matched_by_category[spec["id"]] += 1
         for car in resolved:
-            car.setdefault("texts", {})[spec["id"]] = {
+            text_value = {
                 "titleZh": spec["titleZh"],
                 "titleEn": spec["titleEn"],
                 "textId": orphan["textId"],
                 "carKey": "",
+                "sourceName": entry["sourceName"],
+                "matchMethod": "message-key-override",
                 "en": orphan["en"],
                 "zh": orphan["zh"],
             }
+            texts = car.setdefault("texts", {})
+            existing = texts.get(spec["id"])
+            if existing is None:
+                texts[spec["id"]] = text_value
+            elif existing.get("textId") != orphan["textId"]:
+                variants = existing.setdefault("variants", [])
+                if not any(
+                    variant.get("textId") == orphan["textId"]
+                    for variant in variants
+                ):
+                    variants.append(text_value)
         orphan_texts.remove(orphan)
 
     cars_by_name = {
