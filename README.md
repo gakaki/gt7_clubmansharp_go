@@ -19,8 +19,9 @@ limitations are recorded in `report/FINAL_STATUS.md`.
 | Indexed MDL5 submodels | 59,498 |
 | Unique CarDetail records | 444 |
 | Car-scene dialogue lines | 2,620 |
-| Dealer/garage descriptions | 634 |
-| Cars with at least one description | 581 |
+| Dealer descriptions | 634 |
+| Vehicle Collection entries | 579 |
+| Cars with at least one description | 582 |
 | Legacy 253 ambiguity review | 253 / 253 resolved |
 | Strongly-typed subtitle speakers | 14 |
 | Real decoded character portraits | 19 |
@@ -29,13 +30,14 @@ limitations are recorded in `report/FINAL_STATUS.md`.
 | Menu-Book covers located (screenshot or container) | 77 |
 | Browser-ready Menu-Book covers | 74 |
 
-The vehicle descriptions cover three independent game sources:
+The vehicle descriptions cover four independent game sources:
 
 - Brand Central vehicle descriptions.
+- PS5 `DescriptionCatch` / `DescriptionLong` Car Collection text.
 - Used Car Dealer descriptions.
 - Hagerty Collection descriptions.
 
-Each car page exposes four tabs: GT Cafe, Brand Central, Used Cars and Hagerty
+Each car page exposes five tabs: GT Cafe, Brand Central, Car Collection, Used Cars and Hagerty
 Collection. Chinese, English and bilingual modes are available.
 
 The Cafe Menu Book archive at <https://gt7.gakaki.com/menus_cafe> adds all

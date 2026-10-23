@@ -13,6 +13,7 @@ if hasattr(sys.stdout, "reconfigure"):
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 from textpick import load_best  # noqa: E402
 from car_texts import _clean_text, build_car_texts  # noqa: E402
+from vehicle_collection import build_vehicle_collection_texts  # noqa: E402
 from cafe_exact import build_exact_cafe  # noqa: E402
 from export_unmatched_review import main as export_unmatched_review  # noqa: E402
 
@@ -940,6 +941,18 @@ def main() -> None:
     print(f"official matches: {matched}/{len(cars)}")
 
     text_report = build_car_texts(cars)
+    vehicle_collection_report = build_vehicle_collection_texts(cars)
+    text_report["sources"].extend(vehicle_collection_report["sources"])
+    collection_stats = vehicle_collection_report["stats"]
+    text_report["stats"]["entries"] += collection_stats["matchedEntries"]
+    text_report["stats"]["mappedEntries"] += collection_stats["matchedEntries"]
+    text_report["stats"]["carsWithAnyText"] = sum(
+        bool(car.get("texts")) for car in cars
+    )
+    text_report["stats"]["byCategory"]["vehicleCollection"] = (
+        collection_stats["matchedEntries"]
+    )
+    text_report["stats"]["vehicleCollection"] = collection_stats
     print("car text stats:", json.dumps(text_report["stats"], ensure_ascii=False))
     dealer_offers = attach_dealer_offers(cars, text_report)
 

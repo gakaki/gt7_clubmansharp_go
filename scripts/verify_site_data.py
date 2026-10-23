@@ -11,6 +11,7 @@ DATA = ROOT / "public" / "data" / "cars.json"
 CSV_DATA = ROOT / "public" / "data" / "cafe_dialogues.csv"
 SCENE_CSV = ROOT / "public" / "data" / "cafe_scene_dialogues.csv"
 TEXT_CSV = ROOT / "public" / "data" / "car_texts.csv"
+COLLECTION_CSV = ROOT / "public" / "data" / "vehicle_collection_texts.csv"
 DEALER_CSV = ROOT / "public" / "data" / "dealer_offers.csv"
 UNMATCHED_CSV = ROOT / "public" / "data" / "unmatched_dialogues.csv"
 UNMATCHED_MD = ROOT / "public" / "data" / "unmatched_dialogues.md"
@@ -62,19 +63,22 @@ def main() -> None:
     )
 
     text_stats = payload["carTextStats"]
-    assert text_stats["entries"] == 634, text_stats
-    assert text_stats["mappedEntries"] == 634, text_stats
+    assert text_stats["entries"] == 1213, text_stats
+    assert text_stats["mappedEntries"] == 1213, text_stats
     assert text_stats["unresolvedEntries"] == 0, text_stats
     assert text_stats["orphanTextRows"] == 9, text_stats
-    assert text_stats["carsWithAnyText"] == 581, text_stats
+    assert text_stats["carsWithAnyText"] == 582, text_stats
     assert text_stats["byCategory"] == {
         "brandCentral": 401,
         "usedCar": 139,
         "collection": 94,
+        "vehicleCollection": 579,
     }, text_stats
     assert all(isinstance(car.get("texts"), dict) for car in cars)
-    assert sum(bool(car["texts"]) for car in cars) == 581
-    allowed_text_categories = {"brandCentral", "usedCar", "collection"}
+    assert sum(bool(car["texts"]) for car in cars) == 582
+    allowed_text_categories = {
+        "brandCentral", "vehicleCollection", "usedCar", "collection",
+    }
     assert all(
         set(car["texts"]) <= allowed_text_categories
         for car in cars
@@ -115,6 +119,15 @@ def main() -> None:
         car_text_rows = list(csv.DictReader(fh))
     assert len(car_text_rows) == 634, len(car_text_rows)
     assert all(row["carIds"] and row["en"] and row["zh"] for row in car_text_rows)
+    with COLLECTION_CSV.open(encoding="utf-8-sig", newline="") as fh:
+        collection_rows = list(csv.DictReader(fh))
+    assert len(collection_rows) == 579, len(collection_rows)
+    assert len({row["carId"] for row in collection_rows}) == 579
+    assert all(
+        row["carId"] and row["carKey"] and row["catchTextId"]
+        and row["longTextId"] and row["en"] and row["zh"]
+        for row in collection_rows
+    )
 
     dealer_offers = payload["dealerOffers"]
     assert len(dealer_offers) == 65
@@ -180,13 +193,36 @@ def main() -> None:
     assert by_name["Porsche 911 GT3 RS (992) '22"]["conversation"] == []
 
     text_sources = {source["id"] for source in payload["carTextSources"]}
-    assert text_sources == {"brandCentral", "usedCar", "collection"}
-    assert payload["carTextStats"]["mappedEntries"] >= 634
-    assert payload["carTextStats"]["carsWithAnyText"] >= 581
+    assert text_sources == {
+        "brandCentral", "vehicleCollection", "usedCar", "collection",
+    }
+    assert payload["carTextStats"]["mappedEntries"] == 1213
+    assert payload["carTextStats"]["carsWithAnyText"] == 582
     assert all(isinstance(car.get("texts"), dict) for car in cars)
     assert by_name["Xiaomi SU7 Ultra '25"]["texts"]["brandCentral"]["en"]
     assert by_name["Xiaomi SU7 Ultra '25"]["texts"]["brandCentral"]["zh"]
     assert by_name["Lamborghini Urus '18"]["texts"]["brandCentral"]["en"]
+    collection_cars = [
+        car for car in cars if "vehicleCollection" in car["texts"]
+    ]
+    assert len(collection_cars) == 579
+    assert not [
+        car for car in collection_cars
+        if not car["texts"]["vehicleCollection"]["catch"]["en"]
+        or not car["texts"]["vehicleCollection"]["catch"]["zh"]
+        or not car["texts"]["vehicleCollection"]["long"]["en"]
+        or not car["texts"]["vehicleCollection"]["long"]["zh"]
+    ]
+    peugeot_collection = by_name[
+        "Peugeot 205 Turbo 16 Evolution 2 '86"
+    ]["texts"]["vehicleCollection"]
+    assert "Group B racing world by storm" in peugeot_collection["catch"]["en"]
+    assert "B组别" in peugeot_collection["catch"]["zh"]
+    xiaomi_collection = by_name[
+        "Xiaomi SU7 Ultra '25"
+    ]["texts"]["vehicleCollection"]
+    assert "smartphone giant" in xiaomi_collection["catch"]["en"]
+    assert "智能手机巨头" in xiaomi_collection["catch"]["zh"]
     corvette_variants = by_name[
         "Chevrolet Corvette Stingray L46 350 (C3) '69"
     ]["texts"]["usedCar"].get("variants", [])
@@ -200,6 +236,7 @@ def main() -> None:
     for name in (
         "car_texts.json",
         "car_texts.csv",
+        "vehicle_collection_texts.csv",
         "car_text_orphans.csv",
         "dealer_offers.csv",
         "cafe_variants.csv",

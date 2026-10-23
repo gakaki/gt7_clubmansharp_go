@@ -370,7 +370,7 @@ button { font-family: inherit; cursor: pointer; }
 .review-open:hover { border-color: var(--accent); }
 .car-tabs {
   display: grid;
-  grid-template-columns: repeat(4, minmax(120px, 1fr));
+  grid-template-columns: repeat(5, minmax(105px, 1fr));
   gap: 6px;
   padding: 10px 22px;
   background: #f7f7fa;
@@ -436,6 +436,21 @@ button { font-family: inherit; cursor: pointer; }
   margin-top: 24px;
   padding-top: 20px;
   border-top: 1px dashed var(--line);
+}
+.collection-part + .collection-part {
+  margin-top: 30px;
+  padding-top: 26px;
+  border-top: 1px solid var(--line);
+}
+.collection-part > h4 {
+  margin: 0 0 14px;
+  color: #34343c;
+  font-size: 14px;
+  letter-spacing: .02em;
+}
+.collection-part .text-copy + .text-copy {
+  margin-top: 16px;
+  padding-top: 16px;
 }
 .text-copy h4 { margin: 0 0 10px; font-size: 15px; }
 .text-copy p {

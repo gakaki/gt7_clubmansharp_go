@@ -32,6 +32,8 @@ remain under `C:\gt7\gt7\_re`.
 | RADA race-line chunks | 392 | `extracted/tracks/rada/` |
 | Canonical cars | 591 | `site/public/data/cars.json` |
 | Dealer descriptions | 634 / 581 cars | `site/public/data/car_texts.csv` |
+| Car Collection descriptions | 579 / 579 cars | `site/public/data/vehicle_collection_texts.csv` |
+| Cars with any vehicle description | 582 | `site/public/data/cars.json` |
 | Current dealer offers | 65 (50 used, 15 legend) | `site/public/data/dealer_offers.csv` |
 | Unique CarDetail entries | 444 | `site/public/data/cafe_dialogues.csv` |
 | Cafe scene lines | 2,620 | `site/public/data/cafe_scene_dialogues.csv` |
@@ -74,7 +76,7 @@ so the research tree does not misrepresent partial formats as complete.
 ```text
 verify_site_data.py:
 PASS cars=591 with_dialogue=332 dialogues=444 scene_lines=2620 mapped=444
-images=582 speakers=14 car_texts=634 text_cars=581 review=253
+images=582 speakers=14 car_texts=1213 text_cars=582 review=253
 
 verify_rust_parity.py:
 PASS cars=591 texts=634 scenes=1698 conversation=2620 review=253 avatars=19
@@ -83,7 +85,9 @@ cargo test --release:
 9 passed, 0 failed
 ```
 
-The native Rust `pipeline` command now performs the complete research path:
+The native Rust `pipeline` command performs the baseline research path:
 GPB4 extraction from the original PS5 `PRPYS`, RT2/DMSB joins, all three
 vehicle-description categories, exact Cafe scene reconstruction, the 253-row
-historical review, and 19 real Cafe/dealer face atlases.
+historical review, and 19 real Cafe/dealer face atlases. The site builder then
+adds the 579 unique-car Car Collection entries recovered from the PS5
+`DescriptionCatch` / `DescriptionLong` RT2 tables.

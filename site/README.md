@@ -11,11 +11,13 @@ Turismo 7 PS5 data recovered from the local game installation. The public deploy
   `GTCafeMessages`, `ConversationGTCafeMsg`, DMSB car keys and RT2 labels.
 - 2,620 car-scene lines, preserving the recovered message-chain order.
 - 634 brand/used/collection descriptions mapped to 581 cars, with EN/ZH text.
+- 579 Car Collection entries extracted from PS5 `DescriptionCatch` and
+  `DescriptionLong`, with paired EN/ZH short and full descriptions.
 - Current dealer rotation data for 50 used cars and 15 legend cars, including
   price, discount, rarity and hot/pick flags.
 - 19 distinct real portraits decoded from the game's PS5 IDP0/TXS5 face
   atlases using the native Rust GNM mode 9 / BC7 pipeline.
-- Four car tabs: cafe dialogue, Brand Central, Used Cars and Hagerty
+- Five car tabs: cafe dialogue, Brand Central, Car Collection, Used Cars and Hagerty
   Collection.
 - All 15 Cafe cast cards and the three vehicle-text merchants use real
   portraits decoded from the PS5 face atlases; no SVG or shared placeholder
@@ -38,6 +40,8 @@ Turismo 7 PS5 data recovered from the local game installation. The public deploy
 - Home: <https://gt7.gakaki.com>
 - Xiaomi SU7 Ultra, Brand Central:
   <https://gt7.gakaki.com/?car=0x0000D1BB&tab=brandCentral&lang=both>
+- Xiaomi SU7 Ultra, Car Collection:
+  <https://gt7.gakaki.com/?car=0x0000D1BB&tab=vehicleCollection&lang=both>
 - Legacy 253 review:
   <https://gt7.gakaki.com/?review=unmatched&lang=both>
 - Full Cafe cast portraits:
@@ -81,6 +85,8 @@ The production Worker is `gt7-cafe-edge` and serves the custom domain
 - `public/data/cars.json`: optimized site payload.
 - `public/data/car_texts.csv`: 634 dealer description rows with category,
   message IDs and EN/ZH text.
+- `public/data/vehicle_collection_texts.csv`: 579 unique-car Car Collection
+  records with paired Catch/Long IDs and EN/ZH text.
 - `public/data/car_text_orphans.csv`: 9 texts without a usable current DMSB
   car row.
 - `public/data/cafe_dialogues.csv`: 444 unique CarDetail records.

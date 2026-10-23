@@ -42,7 +42,8 @@ function sanitizeGlyphs(value) {
 
 const carTextTabs = [
   { id: 'cafe', labelZh: '咖啡屋对话', labelEn: 'Cafe dialogue' },
-  { id: 'brandCentral', labelZh: '品牌购物 / 车库', labelEn: 'Brand Central / Garage' },
+  { id: 'brandCentral', labelZh: '品牌购物', labelEn: 'Brand Central' },
+  { id: 'vehicleCollection', labelZh: '车辆收藏', labelEn: 'Car Collection' },
   { id: 'usedCar', labelZh: '二手车', labelEn: 'Used Cars' },
   { id: 'collection', labelZh: '收藏馆', labelEn: 'Hagerty Collection' },
 ]
@@ -53,6 +54,13 @@ const textMerchants = {
     roleZh: '品牌中心车辆顾问',
     roleEn: 'Brand Central vehicle advisor',
     avatar: 'avatars/extracted/brand-central-advisor.png',
+  },
+  vehicleCollection: {
+    nameZh: '车辆收藏',
+    nameEn: 'Car Collection',
+    roleZh: 'PS5 车辆图鉴说明',
+    roleEn: 'PS5 vehicle encyclopedia entry',
+    avatar: '',
   },
   usedCar: {
     nameZh: '二手车商',
@@ -129,7 +137,7 @@ function onKey(e) {
   } else if (activeCar.value && e.key === 'Tab') {
     e.preventDefault()
     cycleTab(e.shiftKey ? -1 : 1)
-  } else if (activeCar.value && ['1', '2', '3', '4'].includes(e.key)) {
+  } else if (activeCar.value && ['1', '2', '3', '4', '5'].includes(e.key)) {
     e.preventDefault()
     setActiveTab(carTextTabs[Number(e.key) - 1].id)
   } else if (e.key === 'Enter') {
@@ -517,7 +525,7 @@ function yearOf(name) {
     </section>
     <p class="summary-note">
       {{ stats.mappedDialogues }} 条 CarDetail 已定位到车辆 · 重建完整场景 {{ stats.conversationLines }} 行对白
-      · {{ carTextStats.carsWithAnyText }} 辆车已有品牌购物/二手车/收藏馆说明
+      · {{ carTextStats.carsWithAnyText }} 辆车已有品牌购物/车辆收藏/二手车/收藏馆说明
     </p>
     <section class="castbar" aria-label="咖啡屋主要角色">
       <div v-for="person in cast" :key="person.id" class="cast-person">
@@ -736,6 +744,7 @@ function yearOf(name) {
               <p class="note">
                 咖啡屋 {{ tabHasContent(activeCar, 'cafe') ? '有' : '无' }}对白
                 · 品牌购物 {{ tabHasContent(activeCar, 'brandCentral') ? '有' : '无' }}
+                · 车辆收藏 {{ tabHasContent(activeCar, 'vehicleCollection') ? '有' : '无' }}
                 · 二手车 {{ tabHasContent(activeCar, 'usedCar') ? '有' : '无' }}
                 · 收藏馆 {{ tabHasContent(activeCar, 'collection') ? '有' : '无' }}
               </p>
@@ -824,16 +833,40 @@ function yearOf(name) {
         <div v-else class="text-panel" role="tabpanel">
           <template v-if="activeText()">
             <div v-if="activeMerchant()" class="text-merchant">
-              <img :src="avatarUrl(activeMerchant().avatar)" :alt="activeMerchant().nameEn" loading="eager" />
+              <img
+                v-if="activeMerchant().avatar"
+                :src="avatarUrl(activeMerchant().avatar)"
+                :alt="activeMerchant().nameEn"
+                loading="eager"
+              />
               <span>
-                <b>{{ lang === 'zh' ? activeMerchant().nameZh : activeMerchant().nameEn }}</b>
-                <small>{{ lang === 'zh' ? activeMerchant().roleZh : activeMerchant().roleEn }}</small>
+                <b>
+                  {{ lang === 'zh' ? activeMerchant().nameZh
+                    : lang === 'both'
+                      ? `${activeMerchant().nameZh} · ${activeMerchant().nameEn}`
+                      : activeMerchant().nameEn }}
+                </b>
+                <small>
+                  {{ lang === 'zh' ? activeMerchant().roleZh
+                    : lang === 'both'
+                      ? `${activeMerchant().roleZh} · ${activeMerchant().roleEn}`
+                      : activeMerchant().roleEn }}
+                </small>
               </span>
             </div>
             <div class="text-source">
-              <span>{{ lang === 'zh' ? activeText().titleZh : activeText().titleEn }}</span>
+              <span>
+                {{ lang === 'zh' ? activeText().titleZh
+                  : lang === 'both'
+                    ? `${activeText().titleZh} · ${activeText().titleEn}`
+                    : activeText().titleEn }}
+              </span>
               <span>{{ activeText().carKey }}</span>
-              <span>{{ activeText().textId }}</span>
+              <span v-if="activeTab !== 'vehicleCollection'">{{ activeText().textId }}</span>
+              <template v-else>
+                <span>Catch {{ activeText().textIds?.catch }}</span>
+                <span>Long {{ activeText().textIds?.long }}</span>
+              </template>
             </div>
             <div v-if="activeOffer()" class="dealer-offer">
               <strong>Cr. {{ formatPrice(activeOffer().price) }}</strong>
@@ -844,16 +877,38 @@ function yearOf(name) {
               <span v-if="activeOffer().isNew">{{ lang === 'zh' ? '新车' : 'New' }}</span>
             </div>
             <p v-if="activeTab === 'brandCentral'" class="text-source-note">
-              此段车辆介绍同时用于车库展示；若游戏数据库为同一车型保存了多条版本，会列在正文后的“补充介绍”中。
+              这是品牌购物页的车型介绍；车辆收藏的独立短简介与长正文位于“车辆收藏”页签。
             </p>
-            <div v-if="lang !== 'en'" class="text-copy zh-copy">
-              <h4>{{ activeText().titleZh }}</h4>
-              <p>{{ activeText().zh }}</p>
-            </div>
-            <div v-if="lang !== 'zh'" class="text-copy en-copy">
-              <h4>{{ activeText().titleEn }}</h4>
-              <p>{{ activeText().en }}</p>
-            </div>
+            <template v-if="activeTab === 'vehicleCollection'">
+              <section class="collection-part">
+                <h4>一句话简介 · Catch</h4>
+                <div v-if="lang !== 'en'" class="text-copy zh-copy">
+                  <p>{{ activeText().catch?.zh }}</p>
+                </div>
+                <div v-if="lang !== 'zh'" class="text-copy en-copy">
+                  <p>{{ activeText().catch?.en }}</p>
+                </div>
+              </section>
+              <section class="collection-part">
+                <h4>车辆收藏正文 · Full description</h4>
+                <div v-if="lang !== 'en'" class="text-copy zh-copy">
+                  <p>{{ activeText().long?.zh }}</p>
+                </div>
+                <div v-if="lang !== 'zh'" class="text-copy en-copy">
+                  <p>{{ activeText().long?.en }}</p>
+                </div>
+              </section>
+            </template>
+            <template v-else>
+              <div v-if="lang !== 'en'" class="text-copy zh-copy">
+                <h4>{{ activeText().titleZh }}</h4>
+                <p>{{ activeText().zh }}</p>
+              </div>
+              <div v-if="lang !== 'zh'" class="text-copy en-copy">
+                <h4>{{ activeText().titleEn }}</h4>
+                <p>{{ activeText().en }}</p>
+              </div>
+            </template>
             <section v-if="activeText().variants?.length" class="text-variants">
               <h4>补充介绍 · Additional description</h4>
               <article
@@ -875,11 +930,19 @@ function yearOf(name) {
             </section>
           </template>
           <div v-else class="no-dialogue text-empty">
-            <strong>这辆车没有该商店的官方说明文本</strong>
-            <span>已检查 PS5 文本表，没有强行关联其他车辆的内容。</span>
+            <strong>
+              {{ activeTab === 'vehicleCollection'
+                ? '这辆车没有车辆收藏说明'
+                : '这辆车没有该商店的官方说明文本' }}
+            </strong>
+            <span>
+              {{ activeTab === 'vehicleCollection'
+                ? '已检查 DescriptionCatch / DescriptionLong，没有借用其他车型的收藏正文。'
+                : '已检查 PS5 文本表，没有强行关联其他车辆的内容。' }}
+            </span>
           </div>
         </div>
-        <div class="keyhint">← → / ↑ ↓ 切换车辆 · 1–4 或 Tab 切换资料页签 · Esc 关闭</div>
+        <div class="keyhint">← → / ↑ ↓ 切换车辆 · 1–5 或 Tab 切换资料页签 · Esc 关闭</div>
       </div>
     </div>
 
@@ -889,7 +952,8 @@ function yearOf(name) {
       · <a :href="base + 'data/cafe_variants.csv'" download>下载全部初次/重复/获胜分支 CSV</a>
       · <a :href="base + 'data/unmatched_dialogues.csv'" download>下载 253 条歧义复核 CSV</a>
       · <a :href="base + 'data/unmatched_dialogues.md'" download>人工判定清单 MD</a>
-      · <a :href="base + 'data/car_texts.csv'" download>三类车辆说明 CSV</a>
+      · <a :href="base + 'data/car_texts.csv'" download>品牌购物/二手车/收藏馆说明 CSV</a>
+      · <a :href="base + 'data/vehicle_collection_texts.csv'" download>车辆收藏中英文 CSV</a>
       · <a :href="base + 'data/dealer_offers.csv'" download>当前车商报价 CSV</a>
       · <a :href="base + 'data/car_text_orphans.csv'" download>未归属说明文本 CSV</a>
       · 数据来源：Gran Turismo 7 (PS5, PPSA01317) 本地化文本 · 仅供研究使用
