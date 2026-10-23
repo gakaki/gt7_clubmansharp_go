@@ -23,14 +23,27 @@ pub struct Idp0Header {
 
 fn u64le(b: &[u8], o: usize) -> u64 {
     u64::from_le_bytes([
-        b[o], b[o + 1], b[o + 2], b[o + 3], b[o + 4], b[o + 5], b[o + 6], b[o + 7],
+        b[o],
+        b[o + 1],
+        b[o + 2],
+        b[o + 3],
+        b[o + 4],
+        b[o + 5],
+        b[o + 6],
+        b[o + 7],
     ])
 }
 
 fn tag(b: &[u8], o: usize) -> String {
     b[o..o + 4]
         .iter()
-        .map(|c| if (0x20..0x7F).contains(c) { *c as char } else { '.' })
+        .map(|c| {
+            if (0x20..0x7F).contains(c) {
+                *c as char
+            } else {
+                '.'
+            }
+        })
         .collect()
 }
 

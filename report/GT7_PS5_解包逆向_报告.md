@@ -197,7 +197,7 @@ scripts 5 / develop 3
   （X/H/6H9GN），即过场动画/影片资源。
 - 01 00 00 00（4,798 个）为带版本头的容器族（含 .img 图像资源）。
 - 0xFFF7EEC5 / 0xFFF7ED85 / 0xFFF7972F / 0xFFF7F32E = Polyphony PackedFile
-  （zlib / zstd-tiny / zstd-regular / zstd-chunked），gt7store.py 已实现自动解包。
+  （zlib / zstd-tiny / zstd-regular / zstd-chunked），`gt7re` 已实现自动解包。
   实测 PS5 上 0xFFF7EEC5 为**裸 DEFLATE**（非 zlib 封装），偏移 0x04 是解压后大小；
   9,097 个该类文件全部是 **DDS 贴图**，已全部解包为 42.4 GB（`_re/extracted/textures`）。
 - 全库 95,339 个文件已按类型硬链接到 `_re/extracted/by_kind/<kind>/`（零额外空间）。
@@ -244,30 +244,32 @@ scripts 5 / develop 3
 
 ## 7. 工具链与用法
 
-脚本目录 C:\gt7\gt7\_re\scripts\，Python 环境 C:\gt7\gt7\_re\venv
+唯一工具链为 `C:\gt7\gt7\_re\rust\gt7re`，不再依赖 Python。
 
 ```powershell
-$py = "C:\gt7\gt7\_re\venv\Scripts\python.exe"
-$S  = "C:\gt7\gt7\_re\scripts"
+$exe = "C:\gt7\gt7\_re\rust\gt7re\target\release\gt7re.exe"
 
 # 路径 到 store 文件
-& $py $S\gt7store.py resolve "common/render.txs"
+& $exe resolve "common/render.txs"
 
 # 全库类型普查
-& $py $S\gt7store.py census --out C:\gt7\gt7\_re\reports\store_census.csv
+& $exe census --out C:\gt7\gt7\_re\reports\store_census_rust.csv
 
 # 按清单批量提取（自动解 PackedFile）
-& $py $S\gt7store.py extract-hits C:\gt7\gt7\_re\reports\named.txt -o D:\out
+& $exe extract --list C:\gt7\gt7\_re\reports\named.txt --out D:\out --mode copy
 
-# 大规模命名发现（numpy 向量化，千万级候选每分钟）
-& $py $S\gtfast.py --lists <候选文件> --mine --expand --rounds 3 --static
+# 大规模命名发现（Rust + Rayon）
+& $exe discover --list <候选文件> --named named.txt --mine --expand --rounds 3
 
 # 本地化文本：恢复密钥流并导出 JSON/CSV
-& $py $S\rt2_decode.py auto <rt2 文件...> -o <输出目录>
+& $exe rt2 decode <rt2 文件...> --out <输出目录> --keydir keys
 
 # 二进制结构查看与字符串提取
-& $py $S\binview.py <file> --offset 0x40 --length 0x200
-& $py $S\binview.py <file> --utf16 --limit 30
+& $exe inspect <file> --offset 0x40 --length 0x200
+& $exe inspect <file> --utf16 --limit 30
+
+# 游戏更新后的一键重建、校验和部署
+& $exe update --deploy
 ```
 
 上游工具仓库（_re/repos/）：

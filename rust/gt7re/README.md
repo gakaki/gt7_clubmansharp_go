@@ -1,6 +1,6 @@
 # gt7re — Gran Turismo 7 (PS5) 并行解析器
 
-Rust 实现，用来完成此前 Python 阶段的全部工作：内容库索引、资源命名还原、
+Rust 实现，用来完成全部研究流程：内容库索引、资源命名还原、
 类型普查、批量解包/提取、`.rt2` 本地化文本解密，以及 GT7 UDP 遥测包解析。
 
 ## 快速开始
@@ -136,7 +136,7 @@ Individual commands:
 Parity check:
 
 ```powershell
-python C:\gt7\gt7\_re\scripts\verify_rust_parity.py
+.\target\release\gt7re.exe verify
 ```
 
 ## DMSB + RT2 research pipeline

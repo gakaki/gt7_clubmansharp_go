@@ -38,14 +38,20 @@ pub fn unpack(data: &[u8]) -> Result<(Vec<u8>, &'static str)> {
             let declared = (-size) as usize;
             let mut out = Vec::new();
             let body = &data[8..];
-            let zlib_ok = flate2::read::ZlibDecoder::new(body).read_to_end(&mut out).is_ok();
+            let zlib_ok = flate2::read::ZlibDecoder::new(body)
+                .read_to_end(&mut out)
+                .is_ok();
             if !zlib_ok {
                 out.clear();
                 flate2::read::DeflateDecoder::new(body).read_to_end(&mut out)?;
             }
             if declared != 0 && out.len() != declared {
                 // tolerate truncated/renamed variants but keep the payload
-                eprintln!("warning: deflate size {} != declared {}", out.len(), declared);
+                eprintln!(
+                    "warning: deflate size {} != declared {}",
+                    out.len(),
+                    declared
+                );
             }
             Ok((out, "packed:zlib"))
         }

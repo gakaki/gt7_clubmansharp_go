@@ -8,6 +8,9 @@ GitHub repository.
 The public research browser is deployed at <https://gt7.gakaki.com>.
 The requirement-by-requirement extraction status and remaining format
 limitations are recorded in `report/FINAL_STATUS.md`.
+All project-owned Python sources and the local Python virtual environment have
+been removed; the remaining pipeline is Rust and uses Rayon for independent
+store, text, image, index and site tasks.
 
 ## Current results
 
@@ -39,6 +42,8 @@ The vehicle descriptions cover four independent game sources:
 
 Each car page exposes five tabs: GT Cafe, Brand Central, Car Collection, Used Cars and Hagerty
 Collection. Chinese, English and bilingual modes are available.
+The main car index also filters by Brand Central, Used Cars, Car Collection
+and GT Cafe dialogue.
 
 The Cafe Menu Book archive at <https://gt7.gakaki.com/menus_cafe> adds all
 108 main, bonus and Extra menus. It includes collection names, cars,
@@ -52,8 +57,8 @@ by public decoders.
 
 ## Main directories
 
-- `scripts/`: Python extraction, DMSB parsing, RT2 text recovery, scene
-  reconstruction, site-data generation and verification.
+- `rust/gt7re/`: the complete extraction, DMSB/RT2, site-data, menu-book,
+  verification, packaging and deployment pipeline.
 - `site/src/`: Vue 3 frontend.
 - `site/public/data/`: optimized JSON/CSV/Markdown research data.
 - `reports/`: extraction and mapping reports.
@@ -70,20 +75,17 @@ The recovered menu bytecode is documented in
 
 ```powershell
 cd C:\gt7\gt7\_re
-& .\rust\gt7re\target\release\gt7re.exe pipeline
-python scripts\build_site_data.py
-python scripts\verify_site_data.py
-python scripts\verify_avatars.py
-python scripts\verify_rust_parity.py
-python scripts\fetch_menu_covers.py
-python scripts\build_menu_books.py
-python scripts\sanitize_site_text.py
-python scripts\verify_menu_books.py
-cd site
-npm install
-npm run build
-npx wrangler deploy -c wrangler.production.toml
+cd rust\gt7re
+cargo build --release
+.\target\release\gt7re.exe update
+
+# Refresh official descriptions / covers and deploy the production Worker:
+.\target\release\gt7re.exe update --refresh-official --proxy http://127.0.0.1:7897 --deploy
 ```
+
+`update` scans the content store, rebuilds the DMSB/RT2 research report, joins
+the site data, rebuilds menu books, refreshes all parallel indexes and runs the
+fail-fast Rust verifier. Independent extraction stages use Rayon.
 
 ## Data sources
 

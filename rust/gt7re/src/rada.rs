@@ -49,7 +49,14 @@ fn u32le(b: &[u8], o: usize) -> u32 {
 }
 fn u64le(b: &[u8], o: usize) -> u64 {
     u64::from_le_bytes([
-        b[o], b[o + 1], b[o + 2], b[o + 3], b[o + 4], b[o + 5], b[o + 6], b[o + 7],
+        b[o],
+        b[o + 1],
+        b[o + 2],
+        b[o + 3],
+        b[o + 4],
+        b[o + 5],
+        b[o + 6],
+        b[o + 7],
     ])
 }
 fn f32le(b: &[u8], o: usize) -> f32 {
@@ -122,7 +129,11 @@ pub fn parse(path: &Path) -> Result<RadaFile> {
         off += 4;
     }
     Ok(RadaFile {
-        name: path.file_name().unwrap_or_default().to_string_lossy().to_string(),
+        name: path
+            .file_name()
+            .unwrap_or_default()
+            .to_string_lossy()
+            .to_string(),
         size: data.len() as u64,
         sections,
     })

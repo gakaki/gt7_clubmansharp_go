@@ -56,20 +56,20 @@ Turismo 7 PS5 data recovered from the local game installation. The public deploy
 ## Local build
 
 ```powershell
-python ..\scripts\build_site_data.py
-python ..\scripts\verify_site_data.py
-python ..\scripts\fetch_menu_covers.py
-python ..\scripts\build_menu_books.py
-python ..\scripts\sanitize_site_text.py
-python ..\scripts\verify_menu_books.py
+cd ..\rust\gt7re
+.\target\release\gt7re.exe site-build
+.\target\release\gt7re.exe menu-build
+.\target\release\gt7re.exe verify
+cd ..\site
 npm install
 npm run build
 npm run preview
 ```
 
-The scripts require the recovered PS5/PS4 extraction tree under
+The native commands require the recovered PS5 extraction tree under
 `C:\gt7\gt7\_re\extracted`. Raw game containers and decryption keys are not
-part of source control.
+part of source control. For a complete game-update run, use
+`gt7re.exe update` from `rust/gt7re`.
 
 ## Deploy
 

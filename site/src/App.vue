@@ -13,7 +13,7 @@ const query = ref('')
 const searchInput = ref('')
 const brandFilter = ref('ALL')
 const speakerFilter = ref('ALL')
-const dialogueFilter = ref('all')
+const sourceFilter = ref('all')
 const activeCar = ref(null)
 const activeIndex = ref(-1)
 const showUnmatched = ref(false)
@@ -46,6 +46,13 @@ const carTextTabs = [
   { id: 'vehicleCollection', labelZh: '车辆收藏', labelEn: 'Car Collection' },
   { id: 'usedCar', labelZh: '二手车', labelEn: 'Used Cars' },
   { id: 'collection', labelZh: '收藏馆', labelEn: 'Hagerty Collection' },
+]
+const sourceFilters = [
+  { id: 'all', labelZh: '全部', labelEn: 'All' },
+  { id: 'brandCentral', labelZh: '品牌店', labelEn: 'Brand Central' },
+  { id: 'usedCar', labelZh: '二手车', labelEn: 'Used Cars' },
+  { id: 'vehicleCollection', labelZh: '车辆收藏', labelEn: 'Car Collection' },
+  { id: 'cafe', labelZh: '咖啡屋对白', labelEn: 'Cafe dialogue' },
 ]
 const textMerchants = {
   brandCentral: {
@@ -88,6 +95,10 @@ onMounted(async () => {
   const res = await fetch(`${import.meta.env.BASE_URL}data/cars.json`)
   data.value = sanitizeGlyphs(await res.json())
   const params = new URLSearchParams(location.search)
+  const wantedSource = params.get('filter')
+  if (sourceFilters.some((filter) => filter.id === wantedSource)) {
+    sourceFilter.value = wantedSource
+  }
   const wanted = params.get('car')
   if (wanted) {
     const car = data.value.cars.find((c) => c.id.toLowerCase() === wanted.toLowerCase())
@@ -193,8 +204,14 @@ const filtered = computed(() => {
     if (brandFilter.value !== 'ALL' && c.brand !== brandFilter.value) return false
     const carDialogues = visibleDialogues(c)
     const carConversation = visibleConversation(c)
-    if (dialogueFilter.value === 'yes' && !carConversation.length) return false
-    if (dialogueFilter.value === 'no' && carConversation.length) return false
+    if (sourceFilter.value === 'cafe' && !carConversation.length) return false
+    if (
+      sourceFilter.value !== 'all' &&
+      sourceFilter.value !== 'cafe' &&
+      !c.texts?.[sourceFilter.value]
+    ) {
+      return false
+    }
     if (speakerFilter.value !== 'ALL' && !carConversation.length) return false
     if (!q) return true
     const base = `${c.nameEn} ${c.nameZh} ${c.brand}`.toLowerCase()
@@ -210,6 +227,22 @@ const filtered = computed(() => {
     )
   })
 })
+
+function setSourceFilter(id) {
+  sourceFilter.value = id
+  const url = new URL(location.href)
+  if (id === 'all') url.searchParams.delete('filter')
+  else url.searchParams.set('filter', id)
+  history.replaceState(null, '', url)
+}
+
+function sourceFilterLabel(filter) {
+  return lang.value === 'zh'
+    ? filter.labelZh
+    : lang.value === 'both'
+      ? `${filter.labelZh} · ${filter.labelEn}`
+      : filter.labelEn
+}
 
 function visibleDialogues(c) {
   if (speakerFilter.value === 'ALL') return c.dialogues
@@ -548,10 +581,16 @@ function yearOf(name) {
 
     <div class="toolbar">
       <input v-model="searchInput" class="search" type="search" placeholder="搜索车型 / 对白 / 车辆说明…（按 / 聚焦）" />
-      <div class="seg">
-        <button :class="{ on: dialogueFilter === 'all' }" @click="dialogueFilter = 'all'">全部</button>
-        <button :class="{ on: dialogueFilter === 'yes' }" @click="dialogueFilter = 'yes'">有对白</button>
-        <button :class="{ on: dialogueFilter === 'no' }" @click="dialogueFilter = 'no'">无对白</button>
+      <div class="seg" role="group" aria-label="车辆资料筛选">
+        <button
+          v-for="filter in sourceFilters"
+          :key="filter.id"
+          :class="{ on: sourceFilter === filter.id }"
+          :aria-pressed="sourceFilter === filter.id"
+          @click="setSourceFilter(filter.id)"
+        >
+          {{ sourceFilterLabel(filter) }}
+        </button>
       </div>
     </div>
 

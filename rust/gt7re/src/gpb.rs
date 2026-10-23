@@ -16,7 +16,14 @@ pub struct Embedded {
 
 fn u64le(b: &[u8], o: usize) -> u64 {
     u64::from_le_bytes([
-        b[o], b[o + 1], b[o + 2], b[o + 3], b[o + 4], b[o + 5], b[o + 6], b[o + 7],
+        b[o],
+        b[o + 1],
+        b[o + 2],
+        b[o + 3],
+        b[o + 4],
+        b[o + 5],
+        b[o + 6],
+        b[o + 7],
     ])
 }
 
@@ -34,7 +41,11 @@ pub fn find_embedded(data: &[u8]) -> Vec<Embedded> {
                 && size > 0
                 && (i as u64 + off + size) <= data.len() as u64
             {
-                out.push(Embedded { offset: i, payload_offset: off, payload_size: size });
+                out.push(Embedded {
+                    offset: i,
+                    payload_offset: off,
+                    payload_size: size,
+                });
             }
             i += 0x40;
         } else {

@@ -16,6 +16,26 @@ use walkdir::WalkDir;
 
 use crate::rt2::{self, Rt2File};
 
+type LocalisationTexts = HashMap<(String, u32), String>;
+type LocalisationLabels = HashMap<(String, String), u32>;
+
+fn atomic_write(path: &Path, data: &[u8]) -> Result<()> {
+    let temporary = path.with_extension(format!("{}.tmp", std::process::id()));
+    fs::write(&temporary, data)?;
+    let mut last_error = None;
+    for attempt in 0..8 {
+        match fs::rename(&temporary, path) {
+            Ok(()) => return Ok(()),
+            Err(error) => {
+                last_error = Some(error);
+                std::thread::sleep(std::time::Duration::from_millis(50 * (attempt + 1)));
+            }
+        }
+    }
+    let _ = fs::remove_file(&temporary);
+    Err(last_error.unwrap()).with_context(|| path.display().to_string())
+}
+
 #[derive(Debug)]
 pub struct Options {
     pub rt2_dir: PathBuf,
@@ -216,11 +236,7 @@ fn clean_text(value: &str) -> String {
         let end = start + 1 + rel_end;
         let inner = rest[start + 1..end].trim();
         let lower = inner.to_ascii_lowercase();
-        if lower == "p"
-            || lower == "p/"
-            || lower.starts_with("p ")
-            || lower.starts_with("br")
-        {
+        if lower == "p" || lower == "p/" || lower.starts_with("p ") || lower.starts_with("br") {
             out.push('\n');
         } else if inner
             .chars()
@@ -240,7 +256,12 @@ fn clean_text(value: &str) -> String {
     while out.contains("\n\n\n") {
         out = out.replace("\n\n\n", "\n\n");
     }
-    out.trim().to_string()
+    out.lines()
+        .map(str::trim_end)
+        .collect::<Vec<_>>()
+        .join("\n")
+        .trim()
+        .to_string()
 }
 
 fn norm(value: &str) -> String {
@@ -303,11 +324,17 @@ fn normalize_car_name(value: &str, known: &HashSet<String>) -> String {
 
 fn orphan_text_id(message_key: &str) -> Option<u32> {
     match message_key {
-        "Buddy_ContentCar_BrandCentralOwner_normal_caterham_seven_sl_r500_12_1020041" => Some(0x00004F02),
-        "Buddy_ContentCar_BrandCentralOwner_normal_pininfarina_vision_gt_17_1020365" => Some(0x00005046),
+        "Buddy_ContentCar_BrandCentralOwner_normal_caterham_seven_sl_r500_12_1020041" => {
+            Some(0x00004F02)
+        }
+        "Buddy_ContentCar_BrandCentralOwner_normal_pininfarina_vision_gt_17_1020365" => {
+            Some(0x00005046)
+        }
         "Buddy_ContentCar_BrandCentralOwner_normal_f1_w08_eq_17_1020376" => Some(0x00005051),
         "Buddy_ContentCar_BrandCentralOwner_normal_f1_w08_eq_17_le_1020388" => Some(0x0000505D),
-        "Buddy_ContentCar_BrandCentralOwner_normal_mercedes_amg_vision_gt_race_13_lhc_1020404" => Some(0x0000506D),
+        "Buddy_ContentCar_BrandCentralOwner_normal_mercedes_amg_vision_gt_race_13_lhc_1020404" => {
+            Some(0x0000506D)
+        }
         "Buddy_ContentCar_BrandCentralOwner_normal_ioniq_6_n_25_1020780" => Some(0x0000D4C2),
         "Buddy_ContentCar_Hagerty_normal_rally_037_evo_2_84_1030455" => Some(0x00008E8E),
         "Buddy_ContentCar_UsedCarOwner_normal_chaser_v_97_1000555" => Some(0x00005495),
@@ -630,14 +657,18 @@ fn resolve_cars(
         .map(|(i, car)| {
             let key = norm(car_key);
             let candidate = core_name(&car.name_en);
-            let score = levenshtein_ratio(&shown, &candidate)
-                + 0.35 * token_overlap(&key, &car.name_en);
+            let score =
+                levenshtein_ratio(&shown, &candidate) + 0.35 * token_overlap(&key, &car.name_en);
             (score, i)
         })
         .collect();
     ranked.sort_by(|a, b| b.0.total_cmp(&a.0));
     if let (Some(&(best, idx)), Some(&(second, second_idx))) = (ranked.first(), ranked.get(1)) {
-        let margin = if idx == second_idx { 1.0 } else { best - second };
+        let margin = if idx == second_idx {
+            1.0
+        } else {
+            best - second
+        };
         if best >= 0.72 && margin >= 0.06 {
             return (vec![idx], "fuzzy-name");
         }
@@ -649,18 +680,14 @@ fn load_localisation(
     lang: &str,
     rt2_dir: &Path,
     key_dir: &Path,
-) -> Result<(HashMap<(String, u32), String>, HashMap<(String, String), u32>)> {
+) -> Result<(LocalisationTexts, LocalisationLabels)> {
     let path = rt2_dir.join(format!("{lang}.rt2"));
     let rt = Rt2File::parse(&path)?;
     let key_path = key_dir.join(format!("{lang}.ks.bin"));
     let key = fs::read(&key_path).with_context(|| key_path.display().to_string())?;
     let mut key_candidates = vec![key.clone()];
     if lang == "us" {
-        for name in [
-            "rt2_all.ks.bin",
-            "rt2_pooled.ks.bin",
-            "rt2_hybrid.ks.bin",
-        ] {
+        for name in ["rt2_all.ks.bin", "rt2_pooled.ks.bin", "rt2_hybrid.ks.bin"] {
             let candidate = key_dir.parent().unwrap_or(key_dir).join(name);
             if let Ok(bytes) = fs::read(candidate) {
                 key_candidates.push(bytes);
@@ -683,9 +710,7 @@ fn load_localisation(
     let mut texts: HashMap<(String, u32), String> = HashMap::new();
     for candidate_key in &key_candidates {
         for decoded in rt2::decode(&rt, candidate_key) {
-            let entry = texts
-                .entry((decoded.section, decoded.id))
-                .or_default();
+            let entry = texts.entry((decoded.section, decoded.id)).or_default();
             if quality(&decoded.text) > quality(entry) {
                 *entry = decoded.text;
             }
@@ -717,15 +742,12 @@ fn load_localisation(
                 let key = (section.name.clone(), entry.id);
                 let valid = (value.starts_with("Buddy_") || value.starts_with("RT2_"))
                     && value.chars().all(|c| {
-                        c.is_ascii_alphanumeric()
-                            || matches!(c, '_' | '-' | '.' | '/' | ' ')
+                        c.is_ascii_alphanumeric() || matches!(c, '_' | '-' | '.' | '/' | ' ')
                     });
                 let score = if valid {
                     100_000 + value.len() as i64
                 } else {
-                    value.matches('\u{fffd}').count() as i64 * -80
-                        + value.len() as i64
-                        - 100_000
+                    value.matches('\u{fffd}').count() as i64 * -80 + value.len() as i64 - 100_000
                 };
                 let old_score = best_labels
                     .get(&key)
@@ -738,8 +760,7 @@ fn load_localisation(
                         if valid {
                             100_000 + old.len() as i64
                         } else {
-                            old.matches('\u{fffd}').count() as i64 * -80
-                                + old.len() as i64
+                            old.matches('\u{fffd}').count() as i64 * -80 + old.len() as i64
                                 - 100_000
                         }
                     })
@@ -848,17 +869,15 @@ fn attach_dealer_offers(
     if !path.is_file() {
         return Ok(Vec::new());
     }
-    let root: serde_json::Value = serde_json::from_slice(
-        &fs::read(path).with_context(|| path.display().to_string())?,
-    )
-    .with_context(|| format!("parsing dealer data {}", path.display()))?;
+    let root: serde_json::Value =
+        serde_json::from_slice(&fs::read(path).with_context(|| path.display().to_string())?)
+            .with_context(|| format!("parsing dealer data {}", path.display()))?;
     let categories = [
         ("used_car_dealer", "usedCar"),
         ("legend_car_dealer", "collection"),
         ("brand_central_dealer", "brandCentral"),
     ];
-    let mut offers_by_key: HashMap<String, BTreeMap<String, DealerOffer>> =
-        HashMap::new();
+    let mut offers_by_key: HashMap<String, BTreeMap<String, DealerOffer>> = HashMap::new();
     for (dealer_key, category) in categories {
         let Some(entries) = root
             .get(dealer_key)
@@ -885,9 +904,18 @@ fn attach_dealer_offers(
                     .and_then(|v| v.as_u64())
                     .unwrap_or(0),
                 rarity: entry.get("rarity").and_then(|v| v.as_u64()).unwrap_or(0),
-                is_new: entry.get("is_new").and_then(|v| v.as_bool()).unwrap_or(false),
-                is_hot: entry.get("is_hot").and_then(|v| v.as_bool()).unwrap_or(false),
-                is_pick: entry.get("is_pick").and_then(|v| v.as_bool()).unwrap_or(false),
+                is_new: entry
+                    .get("is_new")
+                    .and_then(|v| v.as_bool())
+                    .unwrap_or(false),
+                is_hot: entry
+                    .get("is_hot")
+                    .and_then(|v| v.as_bool())
+                    .unwrap_or(false),
+                is_pick: entry
+                    .get("is_pick")
+                    .and_then(|v| v.as_bool())
+                    .unwrap_or(false),
                 car_key: car_key.into(),
             };
             offers_by_key
@@ -1109,12 +1137,17 @@ fn write_csvs(out: &Path, texts: &[TextEntry], details: &[Turn]) -> Result<()> {
     let parent = out.parent().unwrap_or_else(|| Path::new("."));
     fs::create_dir_all(parent)?;
     let text_path = parent.join("car_texts_rust.csv");
-    let mut writer = csv::WriterBuilder::new()
-        .from_path(&text_path)
-        .with_context(|| text_path.display().to_string())?;
+    let mut writer = csv::WriterBuilder::new().from_writer(Vec::new());
     writer.write_record([
-        "category", "textId", "messageId", "carKey", "sourceName",
-        "carIds", "matchMethod", "en", "zh",
+        "category",
+        "textId",
+        "messageId",
+        "carKey",
+        "sourceName",
+        "carIds",
+        "matchMethod",
+        "en",
+        "zh",
     ])?;
     for row in texts {
         writer.write_record([
@@ -1130,14 +1163,14 @@ fn write_csvs(out: &Path, texts: &[TextEntry], details: &[Turn]) -> Result<()> {
         ])?;
     }
     writer.flush()?;
+    atomic_write(
+        &text_path,
+        &writer.into_inner().map_err(|e| anyhow::anyhow!(e))?,
+    )?;
 
     let detail_path = parent.join("cafe_car_detail_rust.csv");
-    let mut writer = csv::WriterBuilder::new()
-        .from_path(&detail_path)
-        .with_context(|| detail_path.display().to_string())?;
-    writer.write_record([
-        "id", "messageId", "carKey", "speaker", "en", "zh",
-    ])?;
+    let mut writer = csv::WriterBuilder::new().from_writer(Vec::new());
+    writer.write_record(["id", "messageId", "carKey", "speaker", "en", "zh"])?;
     for row in details {
         writer.write_record([
             row.id.as_str(),
@@ -1149,17 +1182,32 @@ fn write_csvs(out: &Path, texts: &[TextEntry], details: &[Turn]) -> Result<()> {
         ])?;
     }
     writer.flush()?;
+    atomic_write(
+        &detail_path,
+        &writer.into_inner().map_err(|e| anyhow::anyhow!(e))?,
+    )?;
     Ok(())
 }
 
 fn write_dealer_csv(out: &Path, offers: &[DealerOfferRecord]) -> Result<()> {
-    let path = out.parent().unwrap_or_else(|| Path::new(".")).join(
-        "dealer_offers_rust.csv",
-    );
-    let mut writer = csv::Writer::from_path(path)?;
+    let path = out
+        .parent()
+        .unwrap_or_else(|| Path::new("."))
+        .join("dealer_offers_rust.csv");
+    let mut writer = csv::Writer::from_writer(Vec::new());
     writer.write_record([
-        "carId", "nameEn", "nameZh", "category", "offerId", "price",
-        "discountPrice", "rarity", "isNew", "isHot", "isPick", "carKey",
+        "carId",
+        "nameEn",
+        "nameZh",
+        "category",
+        "offerId",
+        "price",
+        "discountPrice",
+        "rarity",
+        "isNew",
+        "isHot",
+        "isPick",
+        "carKey",
     ])?;
     for row in offers {
         writer.write_record([
@@ -1178,7 +1226,7 @@ fn write_dealer_csv(out: &Path, offers: &[DealerOfferRecord]) -> Result<()> {
         ])?;
     }
     writer.flush()?;
-    Ok(())
+    atomic_write(&path, &writer.into_inner().map_err(|e| anyhow::anyhow!(e))?)
 }
 
 pub fn build(options: &Options) -> Result<Research> {
@@ -1191,9 +1239,27 @@ pub fn build(options: &Options) -> Result<Research> {
     let (by_name, by_core) = car_index(&cars);
 
     let specs = [
-        ("brandCentral", "品牌购物", "Brand Central", "BrandCentralOwnerCarDescriptionMessages.dmsb", "BuddyContentCarBrandCentralOwner"),
-        ("usedCar", "二手车", "Used Car Dealer", "UsedCarOwnerCarDescriptionMessages.dmsb", "BuddyContentCarUsedCarOwner"),
-        ("collection", "收藏馆", "Hagerty Collection", "HagertyCarDescriptionMessages.dmsb", "BuddyContentCarHagerty"),
+        (
+            "brandCentral",
+            "品牌购物",
+            "Brand Central",
+            "BrandCentralOwnerCarDescriptionMessages.dmsb",
+            "BuddyContentCarBrandCentralOwner",
+        ),
+        (
+            "usedCar",
+            "二手车",
+            "Used Car Dealer",
+            "UsedCarOwnerCarDescriptionMessages.dmsb",
+            "BuddyContentCarUsedCarOwner",
+        ),
+        (
+            "collection",
+            "收藏馆",
+            "Hagerty Collection",
+            "HagertyCarDescriptionMessages.dmsb",
+            "BuddyContentCarHagerty",
+        ),
     ];
     let mut text_entries: Vec<TextEntry> = specs
         .par_iter()
@@ -1202,14 +1268,18 @@ pub fn build(options: &Options) -> Result<Research> {
             let mut rows = Vec::new();
             for row in &table.rows {
                 let message_key = table.string(row, 0x38)?;
-                let Some(text_id) = us_labels.get(&(spec.4.to_string(), message_key.clone())) else {
+                let Some(text_id) = us_labels.get(&(spec.4.to_string(), message_key.clone()))
+                else {
                     continue;
                 };
                 let car_key = table.string(row, 0x40)?;
                 let source_name = display.get(&car_key).cloned().unwrap_or_default();
                 let (indices, method) =
                     resolve_cars(&car_key, &source_name, &cars, &by_name, &by_core);
-                let car_ids = indices.iter().map(|i| cars[*i].id.clone()).collect::<Vec<_>>();
+                let car_ids = indices
+                    .iter()
+                    .map(|i| cars[*i].id.clone())
+                    .collect::<Vec<_>>();
                 rows.push(TextEntry {
                     category: spec.0.into(),
                     title_zh: spec.1.into(),
@@ -1219,8 +1289,18 @@ pub fn build(options: &Options) -> Result<Research> {
                     message_key,
                     car_key,
                     source_name,
-                    en: clean_text(us_texts.get(&(spec.4.into(), *text_id)).map(String::as_str).unwrap_or("")),
-                    zh: clean_text(zh_texts.get(&(spec.4.into(), *text_id)).map(String::as_str).unwrap_or("")),
+                    en: clean_text(
+                        us_texts
+                            .get(&(spec.4.into(), *text_id))
+                            .map(String::as_str)
+                            .unwrap_or(""),
+                    ),
+                    zh: clean_text(
+                        zh_texts
+                            .get(&(spec.4.into(), *text_id))
+                            .map(String::as_str)
+                            .unwrap_or(""),
+                    ),
                     car_ids,
                     match_method: method.into(),
                 });
@@ -1232,9 +1312,7 @@ pub fn build(options: &Options) -> Result<Research> {
         .flatten()
         .collect();
 
-    for (category, title_zh, title_en, section, message_key, car_name) in
-        ORPHAN_TEXT_OVERRIDES
-    {
+    for (category, title_zh, title_en, section, message_key, car_name) in ORPHAN_TEXT_OVERRIDES {
         let Some(text_id) = us_labels
             .get(&((*section).to_string(), (*message_key).to_string()))
             .copied()
@@ -1280,14 +1358,17 @@ pub fn build(options: &Options) -> Result<Research> {
     for entry in &text_entries {
         for car_id in &entry.car_ids {
             if let Some(car) = cars.iter_mut().find(|car| &car.id == car_id) {
-                car.texts.insert(entry.category.clone(), CarText {
-                    title_zh: entry.title_zh.clone(),
-                    title_en: entry.title_en.clone(),
-                    text_id: entry.text_id.clone(),
-                    car_key: entry.car_key.clone(),
-                    en: entry.en.clone(),
-                    zh: entry.zh.clone(),
-                });
+                car.texts.insert(
+                    entry.category.clone(),
+                    CarText {
+                        title_zh: entry.title_zh.clone(),
+                        title_en: entry.title_en.clone(),
+                        text_id: entry.text_id.clone(),
+                        car_key: entry.car_key.clone(),
+                        en: entry.en.clone(),
+                        zh: entry.zh.clone(),
+                    },
+                );
             }
         }
     }
@@ -1346,22 +1427,25 @@ pub fn build(options: &Options) -> Result<Research> {
         if en.is_empty() || en == label {
             continue;
         }
-        messages_by_id.insert(message_id, CafeMessage {
-            id: text_id,
+        messages_by_id.insert(
             message_id,
-            message_key,
-            car_key: car_key.clone(),
-            raw,
-            en,
-            zh: clean_text(
-                zh_texts
-                    .get(&("BuddyGTCafe".into(), text_id))
-                    .map(String::as_str)
-                    .unwrap_or(""),
-            ),
-            speaker: speaker_from_label(&label),
-            is_detail: false,
-        });
+            CafeMessage {
+                id: text_id,
+                message_id,
+                message_key,
+                car_key: car_key.clone(),
+                raw,
+                en,
+                zh: clean_text(
+                    zh_texts
+                        .get(&("BuddyGTCafe".into(), text_id))
+                        .map(String::as_str)
+                        .unwrap_or(""),
+                ),
+                speaker: speaker_from_label(&label),
+                is_detail: false,
+            },
+        );
     }
     // Post-launch DLC labels can exist in RT2 before their row is present in
     // the retail GTCafeMessages table. Recover the stable label components.
@@ -1389,22 +1473,25 @@ pub fn build(options: &Options) -> Result<Research> {
         if en.is_empty() || en == *label {
             continue;
         }
-        messages_by_id.insert(message_id, CafeMessage {
-            id: *text_id,
+        messages_by_id.insert(
             message_id,
-            message_key: label.clone(),
-            car_key: car_key.to_string(),
-            raw,
-            en,
-            zh: clean_text(
-                zh_texts
-                    .get(&("BuddyGTCafe".into(), *text_id))
-                    .map(String::as_str)
-                    .unwrap_or(""),
-            ),
-            speaker: speaker_from_label(label),
-            is_detail: false,
-        });
+            CafeMessage {
+                id: *text_id,
+                message_id,
+                message_key: label.clone(),
+                car_key: car_key.to_string(),
+                raw,
+                en,
+                zh: clean_text(
+                    zh_texts
+                        .get(&("BuddyGTCafe".into(), *text_id))
+                        .map(String::as_str)
+                        .unwrap_or(""),
+                ),
+                speaker: speaker_from_label(label),
+                is_detail: false,
+            },
+        );
     }
     for message in messages_by_id.values_mut() {
         message.is_detail = message.raw.to_ascii_lowercase().contains("cardetail");
@@ -1413,10 +1500,7 @@ pub fn build(options: &Options) -> Result<Research> {
     for message in messages_by_id.values() {
         if matches!(
             message.car_key.as_str(),
-            "caterham_seven_sl_r500_12"
-                | "chaser_v_97"
-                | "ioniq_6_n_25"
-                | "mark_2_v_97"
+            "caterham_seven_sl_r500_12" | "chaser_v_97" | "ioniq_6_n_25" | "mark_2_v_97"
         ) {
             orphan_by_car
                 .entry(message.car_key.clone())
@@ -1443,7 +1527,9 @@ pub fn build(options: &Options) -> Result<Research> {
             let key = variants_table.string(row, 0x08).ok()?;
             let start = u32le(row, 0x1C).ok()?;
             let car_key = variants_table.string(row, 0x20).ok()?;
-            messages_by_id.contains_key(&start).then_some((key, start, car_key))
+            messages_by_id
+                .contains_key(&start)
+                .then_some((key, start, car_key))
         })
         .collect();
     let orphan_car_keys = orphan_by_car.len();
@@ -1456,11 +1542,7 @@ pub fn build(options: &Options) -> Result<Research> {
         roots.sort_unstable();
         roots.dedup();
         for root in roots {
-            variants.push((
-                format!("RT2_{car_key}_{root}"),
-                root,
-                car_key.clone(),
-            ));
+            variants.push((format!("RT2_{car_key}_{root}"), root, car_key.clone()));
         }
     }
 
@@ -1654,9 +1736,11 @@ pub fn build(options: &Options) -> Result<Research> {
     }
     for car in &mut cars {
         let mut seen_turns = HashSet::new();
-        car.conversation.retain(|turn| seen_turns.insert(turn.id.clone()));
+        car.conversation
+            .retain(|turn| seen_turns.insert(turn.id.clone()));
         let mut seen_dialogues = HashSet::new();
-        car.dialogues.retain(|row| seen_dialogues.insert(row.id.clone()));
+        car.dialogues
+            .retain(|row| seen_dialogues.insert(row.id.clone()));
         car.conversation.sort_by(|a, b| {
             a.scene_key
                 .cmp(&b.scene_key)
@@ -1721,7 +1805,7 @@ pub fn build(options: &Options) -> Result<Research> {
     if let Some(parent) = options.out.parent() {
         fs::create_dir_all(parent)?;
     }
-    fs::write(&options.out, serde_json::to_vec(&research)?)?;
+    atomic_write(&options.out, &serde_json::to_vec(&research)?)?;
     write_csvs(&options.out, &research.text_entries, &research.detail_rows)?;
     write_dealer_csv(&options.out, &research.dealer_offers)?;
     Ok(research)
@@ -1734,17 +1818,13 @@ mod tests {
     #[test]
     fn inline_placeholders_survive_text_cleanup() {
         let text = "<sseq scmd=\"GTCafe_Test\">Engine <660cc> and <1548PS>.<p/>Done";
-        assert_eq!(
-            clean_text(text),
-            "Engine 660cc and 1548PS.\nDone"
-        );
+        assert_eq!(clean_text(text), "Engine 660cc and 1548PS.\nDone");
     }
 
     #[test]
     fn message_targets_support_next_and_yesno() {
-        let targets = targets(
-            "Continue<next id=1702206 type=9>\\n<yesno msgid=1702207 nmsgid=1702208>",
-        );
+        let targets =
+            targets("Continue<next id=1702206 type=9>\\n<yesno msgid=1702207 nmsgid=1702208>");
         assert_eq!(targets, vec![1702206, 1702207, 1702208]);
     }
 
@@ -1755,24 +1835,15 @@ mod tests {
             norm("Suzuki Swift Sport KATANA Edition Gr.4"),
         ]);
         assert_eq!(
-            normalize_car_name(
-                "Gran Turismo Red Bull X2019 25th Anniversary[",
-                &known
-            ),
+            normalize_car_name("Gran Turismo Red Bull X2019 25th Anniversary[", &known),
             "Gran Turismo Red Bull X2019 25th Anniversary"
         );
         assert_eq!(
-            normalize_car_name(
-                "Suzuki Swift Sport KATANA Edition Gr.47",
-                &known
-            ),
+            normalize_car_name("Suzuki Swift Sport KATANA Edition Gr.47", &known),
             "Suzuki Swift Sport KATANA Edition Gr.4"
         );
         assert_eq!(
-            normalize_car_name(
-                "Alfa Romeo GIULIA TZ2  carrozzata da ZAGATO '65",
-                &known
-            ),
+            normalize_car_name("Alfa Romeo GIULIA TZ2  carrozzata da ZAGATO '65", &known),
             "Alfa Romeo GIULIA TZ2 carrozzata da ZAGATO '65"
         );
     }

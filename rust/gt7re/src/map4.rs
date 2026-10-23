@@ -81,7 +81,11 @@ pub fn parse(path: &Path) -> Result<Map4> {
     }
 
     Ok(Map4 {
-        name: path.file_name().unwrap_or_default().to_string_lossy().to_string(),
+        name: path
+            .file_name()
+            .unwrap_or_default()
+            .to_string_lossy()
+            .to_string(),
         size: data.len() as u64,
         point_count: count,
         edge_count,

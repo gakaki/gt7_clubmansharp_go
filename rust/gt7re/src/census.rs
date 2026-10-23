@@ -79,7 +79,10 @@ pub fn classify(head: &[u8]) -> String {
             return (*name).to_string();
         }
     }
-    if head.first().map(|b| *b == b'{' || *b == b'[').unwrap_or(false)
+    if head
+        .first()
+        .map(|b| *b == b'{' || *b == b'[')
+        .unwrap_or(false)
         || head
             .iter()
             .take(32)
@@ -91,7 +94,10 @@ pub fn classify(head: &[u8]) -> String {
         return "zero-filled".to_string();
     }
     if head.len() >= 4 {
-        return format!("unknown:{:02X}{:02X}{:02X}{:02X}", head[0], head[1], head[2], head[3]);
+        return format!(
+            "unknown:{:02X}{:02X}{:02X}{:02X}",
+            head[0], head[1], head[2], head[3]
+        );
     }
     "empty".to_string()
 }
@@ -139,12 +145,23 @@ pub fn write_census(store: &Store, out: &Path) -> Result<CensusSummary> {
 
 pub fn write_report(summary: &CensusSummary, out: &Path) -> Result<()> {
     let mut f = BufWriter::new(fs::File::create(out)?);
-    writeln!(f, "files: {}\nbytes: {:.2} GB\n", summary.files, summary.bytes as f64 / 2f64.powi(30))?;
+    writeln!(
+        f,
+        "files: {}\nbytes: {:.2} GB\n",
+        summary.files,
+        summary.bytes as f64 / 2f64.powi(30)
+    )?;
     let mut v: Vec<_> = summary.by_kind.iter().collect();
-    v.sort_by(|a, b| b.1 .0.cmp(&a.1 .0));
+    v.sort_by_key(|item| std::cmp::Reverse(item.1 .0));
     writeln!(f, "{:<40} {:>9} {:>10}", "kind", "count", "size(GB)")?;
     for (kind, (n, bytes)) in v {
-        writeln!(f, "{:<40} {:>9} {:>10.2}", kind, n, *bytes as f64 / 2f64.powi(30))?;
+        writeln!(
+            f,
+            "{:<40} {:>9} {:>10.2}",
+            kind,
+            n,
+            *bytes as f64 / 2f64.powi(30)
+        )?;
     }
     Ok(())
 }
@@ -172,11 +189,16 @@ pub fn sanitize_kind(name: &str) -> String {
 }
 
 /// Split a census into per-kind lists under `outdir/catalog/<kind>.txt`.
-pub fn write_catalog(rows: &[(String, u64, String)], outdir: &Path) -> Result<Vec<(String, usize, u64)>> {
+pub fn write_catalog(
+    rows: &[(String, u64, String)],
+    outdir: &Path,
+) -> Result<Vec<(String, usize, u64)>> {
     fs::create_dir_all(outdir)?;
     let mut map: HashMap<String, Vec<(String, u64)>> = HashMap::new();
     for (rel, size, kind) in rows {
-        map.entry(kind.clone()).or_default().push((rel.clone(), *size));
+        map.entry(kind.clone())
+            .or_default()
+            .push((rel.clone(), *size));
     }
     let mut summary = Vec::new();
     for (kind, items) in &map {
@@ -193,6 +215,6 @@ pub fn write_catalog(rows: &[(String, u64, String)], outdir: &Path) -> Result<Ve
         fs::write(path, s)?;
         summary.push((kind.clone(), items.len(), bytes));
     }
-    summary.sort_by(|a, b| b.1.cmp(&a.1));
+    summary.sort_by_key(|item| std::cmp::Reverse(item.1));
     Ok(summary)
 }

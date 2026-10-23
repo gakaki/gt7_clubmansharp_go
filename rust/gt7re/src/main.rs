@@ -1,6 +1,5 @@
 use anyhow::{bail, Context, Result};
 use clap::{Parser, Subcommand};
-use rayon::prelude::*;
 use gt7re::avatar;
 use gt7re::census;
 use gt7re::discover;
@@ -9,22 +8,32 @@ use gt7re::gpb;
 use gt7re::gpb4;
 use gt7re::idp0;
 use gt7re::jxl;
-use gt7re::mdl5;
 use gt7re::map4;
+use gt7re::mdl5;
+use gt7re::menu;
+use gt7re::official;
 use gt7re::packed;
 use gt7re::rada;
 use gt7re::research;
 use gt7re::rt2;
+use gt7re::site;
 use gt7re::sndz;
 use gt7re::store::Store;
+use gt7re::tools;
 use gt7re::txs5;
 use gt7re::udp;
+use gt7re::verify;
+use rayon::prelude::*;
 use std::collections::HashSet;
 use std::fs;
 use std::path::PathBuf;
 
 #[derive(Parser)]
-#[command(name = "gt7re", version, about = "Gran Turismo 7 (PS5) parallel content-store parser")]
+#[command(
+    name = "gt7re",
+    version,
+    about = "Gran Turismo 7 (PS5) parallel content-store parser"
+)]
 struct Cli {
     /// Path to the game's contents directory
     #[arg(long, global = true, default_value = r"C:\gt7\gt7\contents")]
@@ -35,6 +44,7 @@ struct Cli {
 }
 
 #[derive(Subcommand)]
+#[allow(clippy::large_enum_variant)]
 enum Cmd {
     /// Resolve asset path(s) to store files
     Resolve { paths: Vec<String> },
@@ -135,6 +145,18 @@ enum Cmd {
         #[arg(long, default_value = r"C:\gt7\gt7\_re\reports\sndz_index.json")]
         sndz_out: PathBuf,
     },
+    /// One-command game-update pipeline: raw store -> research -> site -> verify
+    Update {
+        /// Refresh official bilingual descriptions before rebuilding the site
+        #[arg(long)]
+        refresh_official: bool,
+        /// Proxy used only with --refresh-official
+        #[arg(long)]
+        proxy: Option<String>,
+        /// Run Vite build and deploy the production Cloudflare Worker
+        #[arg(long)]
+        deploy: bool,
+    },
     /// Unpack a Polyphony PackedFile
     Packed {
         file: PathBuf,
@@ -145,6 +167,11 @@ enum Cmd {
     Udp {
         #[command(subcommand)]
         cmd: UdpCmd,
+    },
+    /// Refresh official car descriptions, thumbnails or menu covers
+    Official {
+        #[command(subcommand)]
+        cmd: OfficialCmd,
     },
     /// Split a census CSV into per-type catalog lists
     Catalog {
@@ -268,6 +295,91 @@ enum Cmd {
         #[arg(long)]
         out: PathBuf,
     },
+    /// Build the browser datasets from the native research report and caches
+    SiteBuild {
+        #[arg(long, default_value = r"C:\gt7\gt7\_re\reports\research_rust.json")]
+        research: PathBuf,
+        #[arg(long, default_value = r"C:\gt7\gt7\_re\reports\official_cars.json")]
+        official_cars: PathBuf,
+        #[arg(
+            long,
+            default_value = r"C:\gt7\gt7\_re\reports\official_car_descriptions.json"
+        )]
+        official_descriptions: PathBuf,
+        #[arg(
+            long,
+            default_value = r"C:\gt7\gt7\_re\reports\vehicle_collection_texts.json"
+        )]
+        collection_fallback: PathBuf,
+        #[arg(long, default_value = r"C:\gt7\gt7\_re\site\public\data")]
+        data_dir: PathBuf,
+        #[arg(long, default_value = r"C:\gt7\gt7\_re\reports")]
+        report_dir: PathBuf,
+    },
+    /// Rebuild GT Cafe menu books from DMSB and the current car list
+    MenuBuild {
+        #[arg(long, default_value = r"C:\gt7\gt7\_re\site\public\data")]
+        data_dir: PathBuf,
+        #[arg(long, default_value = r"C:\gt7\gt7\_re\reports\dms_rust\dmsdata")]
+        dmsb_dir: PathBuf,
+        #[arg(long, default_value = r"C:\gt7\gt7\_re\reports")]
+        report_dir: PathBuf,
+    },
+    /// Verify all public datasets and text-quality invariants
+    Verify {
+        #[arg(long, default_value = r"C:\gt7\gt7\_re\site\public\data")]
+        data_dir: PathBuf,
+        #[arg(long, default_value = r"C:\gt7\gt7\_re\reports")]
+        reports_dir: PathBuf,
+        #[arg(long, default_value = r"C:\gt7\gt7\_re\reports\research_rust.json")]
+        research: PathBuf,
+    },
+    /// Hex/string/u32 inspection for binary research
+    Inspect {
+        file: PathBuf,
+        #[arg(long, default_value_t = 0)]
+        offset: u64,
+        #[arg(long, default_value_t = 0x100)]
+        length: usize,
+        #[arg(long)]
+        u32s: bool,
+        #[arg(long)]
+        strings: bool,
+        #[arg(long)]
+        utf16: bool,
+        #[arg(long, default_value_t = 60)]
+        limit: usize,
+    },
+    /// Regenerate the research-tree manifest
+    Manifest {
+        #[arg(long, default_value = r"C:\gt7\gt7\_re")]
+        root: PathBuf,
+        #[arg(long, default_value = r"C:\gt7\gt7\_re\manifest.json")]
+        out: PathBuf,
+    },
+    /// Package recovered menu Dis ad hoc bytecode with SHA-256 audit rows
+    PackageMenu {
+        #[arg(long, default_value = r"C:\gt7\gt7\_re\tree\scripts\gt7\menu")]
+        source: PathBuf,
+        #[arg(
+            long,
+            default_value = r"C:\gt7\gt7\_re\reports\gt7_menu_scripts_diss.zip"
+        )]
+        archive: PathBuf,
+        #[arg(
+            long,
+            default_value = r"C:\gt7\gt7\_re\reports\menu_disassembly_manifest.csv"
+        )]
+        manifest: PathBuf,
+    },
+    /// Export all stored bilingual text for matching vehicles
+    Dossier {
+        query: String,
+        #[arg(long, default_value = r"C:\gt7\gt7\_re\site\public\data\cars.json")]
+        cars: PathBuf,
+        #[arg(long, default_value = r"C:\gt7\gt7\_re\reports\car_dossier.md")]
+        out: PathBuf,
+    },
 }
 
 #[derive(Subcommand)]
@@ -285,6 +397,16 @@ enum Rt2Cmd {
     },
     /// Print container metadata
     Info { file: PathBuf },
+    /// Count markup tags in one decoded RT2 section
+    Tags {
+        file: PathBuf,
+        #[arg(long)]
+        keystream: PathBuf,
+        #[arg(long, default_value = "BuddyGTCafe")]
+        section: String,
+        #[arg(long, default_value_t = 40)]
+        limit: usize,
+    },
 }
 
 #[derive(Subcommand)]
@@ -293,6 +415,53 @@ enum UdpCmd {
     Parse { file: PathBuf },
     /// Print the packet layout table
     Layout,
+}
+
+#[derive(Subcommand)]
+enum OfficialCmd {
+    /// Parse the official rendered car-list HTML into a catalogue
+    Cars {
+        #[arg(long, default_value = r"C:\gt7\gt7\_re\site\official_carlist2.html")]
+        source: PathBuf,
+        #[arg(long, default_value = r"C:\gt7\gt7\_re\reports\official_cars.json")]
+        out: PathBuf,
+    },
+    /// Cache official bilingual car-list descriptions
+    Descriptions {
+        #[arg(
+            long,
+            default_value = r"C:\gt7\gt7\_re\reports\official_car_descriptions.json"
+        )]
+        out: PathBuf,
+        #[arg(long)]
+        proxy: Option<String>,
+    },
+    /// Refresh official car thumbnails and brand logos
+    Images {
+        #[arg(long, default_value = r"C:\gt7\gt7\_re\reports\official_cars.json")]
+        source: PathBuf,
+        #[arg(long, default_value = r"C:\gt7\gt7\_re\site\public\cars")]
+        cars_out: PathBuf,
+        #[arg(long, default_value = r"C:\gt7\gt7\_re\site\public\logos")]
+        logos_out: PathBuf,
+    },
+    /// Crop whitespace around downloaded brand logos
+    TrimLogos {
+        #[arg(long, default_value = r"C:\gt7\gt7\_re\site\public\logos")]
+        dir: PathBuf,
+    },
+    /// Refresh public menu-book screenshots and their manifest
+    MenuCovers {
+        #[arg(long, default_value = r"C:\gt7\gt7\_re\site\public\menu_covers")]
+        out: PathBuf,
+        #[arg(
+            long,
+            default_value = r"C:\gt7\gt7\_re\site\public\data\menu_cover_sources.json"
+        )]
+        manifest: PathBuf,
+        #[arg(long)]
+        proxy: Option<String>,
+    },
 }
 
 fn run() -> Result<()> {
@@ -327,16 +496,28 @@ fn run() -> Result<()> {
                 out.display()
             );
             let mut v: Vec<_> = s.by_kind.iter().collect();
-            v.sort_by(|a, b| b.1 .0.cmp(&a.1 .0));
+            v.sort_by_key(|item| std::cmp::Reverse(item.1 .0));
             for (k, (n, bytes)) in v.iter().take(40) {
-                println!("{:<40} {:>9} {:>10.2} GB", k, n, *bytes as f64 / 2f64.powi(30));
+                println!(
+                    "{:<40} {:>9} {:>10.2} GB",
+                    k,
+                    n,
+                    *bytes as f64 / 2f64.powi(30)
+                );
             }
             if let Some(r) = report {
                 census::write_report(&s, &r)?;
                 println!("report -> {}", r.display());
             }
         }
-        Cmd::Discover { lists, named, mine, expand, depth2, rounds } => {
+        Cmd::Discover {
+            lists,
+            named,
+            mine,
+            expand,
+            depth2,
+            rounds,
+        } => {
             let store = Store::scan(&cli.store)?;
             let mut map = discover::load_named(&named);
             println!("start: {} named files", map.len());
@@ -402,7 +583,12 @@ fn run() -> Result<()> {
             discover::save_named(&named, &map)?;
             println!("final: {} named -> {}", map.len(), named.display());
         }
-        Cmd::Extract { list, out, mode, limit } => {
+        Cmd::Extract {
+            list,
+            out,
+            mode,
+            limit,
+        } => {
             let store = Store::scan(&cli.store)?;
             let entries = extract::load_named(&list)?;
             let mode = match mode.as_str() {
@@ -421,20 +607,28 @@ fn run() -> Result<()> {
             );
         }
         Cmd::Rt2 { cmd } => match cmd {
-            Rt2Cmd::Decode { files, out, keydir, keystream } => {
+            Rt2Cmd::Decode {
+                files,
+                out,
+                keydir,
+                keystream,
+            } => {
                 let shared = match &keystream {
                     Some(p) => Some(fs::read(p)?),
                     None => None,
                 };
-                for f in files {
-                    if let Some(ks) = &shared {
-                        let n = rt2::decode_with_key(&f, ks, &out)?;
-                        println!("{}: {n} strings (shared keystream)", f.display());
-                    } else {
-                        let (ks, n) = rt2::auto_decode(&f, &out, keydir.as_deref())?;
-                        println!("{}: {n} strings, keystream {ks} bytes", f.display());
-                    }
-                }
+                files
+                    .par_iter()
+                    .try_for_each(|file| -> anyhow::Result<()> {
+                        if let Some(ks) = &shared {
+                            let n = rt2::decode_with_key(file, ks, &out)?;
+                            println!("{}: {n} strings (shared keystream)", file.display());
+                        } else {
+                            let (ks, n) = rt2::auto_decode(file, &out, keydir.as_deref())?;
+                            println!("{}: {n} strings, keystream {ks} bytes", file.display());
+                        }
+                        Ok(())
+                    })?;
             }
             Rt2Cmd::Info { file } => {
                 let rt = rt2::Rt2File::parse(&file)?;
@@ -444,6 +638,16 @@ fn run() -> Result<()> {
                 }
                 println!("strings: {}", rt.payloads().len());
                 println!("max payload: {}", rt.max_payload_len());
+            }
+            Rt2Cmd::Tags {
+                file,
+                keystream,
+                section,
+                limit,
+            } => {
+                let key = fs::read(keystream)?;
+                let count = rt2::tag_counts(&file, &key, &section, limit)?;
+                println!("tag patterns: {count}");
             }
         },
         Cmd::Research {
@@ -478,8 +682,7 @@ fn run() -> Result<()> {
             let started = std::time::Instant::now();
             let store = Store::scan(&cli.store)?;
             let atlas_dir = out.unwrap_or_else(avatar::default_atlas_dir);
-            let portrait_dir =
-                portraits.unwrap_or_else(avatar::default_portrait_dir);
+            let portrait_dir = portraits.unwrap_or_else(avatar::default_portrait_dir);
             let entries = avatar::extract_all(&store, &atlas_dir, &portrait_dir)?;
             let manifest_path = manifest.unwrap_or_else(|| atlas_dir.join("manifest.json"));
             avatar::write_manifest(&entries, &manifest_path)?;
@@ -574,11 +777,234 @@ fn run() -> Result<()> {
                 started.elapsed().as_secs_f64()
             );
         }
+        Cmd::Update {
+            refresh_official,
+            proxy,
+            deploy,
+        } => {
+            let started = std::time::Instant::now();
+            let repo = PathBuf::from(r"C:\gt7\gt7\_re");
+            let site_dir = repo.join("site");
+            let data_dir = site_dir.join("public/data");
+            let reports = repo.join("reports");
+            let dmsb_root = reports.join("dms_rust");
+            let gpb4_file = PathBuf::from(r"C:\gt7\gt7\contents\3\S\PRPYS");
+            let census_csv = reports.join("store_census_rust.csv");
+            let research_json = reports.join("research_rust.json");
+
+            let store = Store::scan(&cli.store)?;
+            eprintln!(
+                "update: scanning {:.2} GiB ...",
+                store.stats().1 as f64 / 2f64.powi(30)
+            );
+            census::write_census(&store, &census_csv)?;
+            gpb4::extract(&gpb4_file, &dmsb_root)?;
+            let dmsb_dir = dmsb_root.join("dmsdata");
+
+            if refresh_official {
+                official::descriptions(
+                    &reports.join("official_car_descriptions.json"),
+                    proxy.as_deref(),
+                )?;
+            }
+            research::build(&research::Options {
+                rt2_dir: repo.join("extracted/text/rtext/common"),
+                dmsb_dir: dmsb_dir.clone(),
+                key_dir: repo.join("keys/rt2_rust"),
+                out: research_json.clone(),
+                legacy_review: Some(reports.join("legacy_review_ids.json")),
+                dealer_data: Some(PathBuf::from(r"C:\gt7\gt7\cs")),
+            })?;
+
+            let site_options = site::Options {
+                site_data: data_dir.clone(),
+                report_dir: reports.clone(),
+                research: research_json.clone(),
+                ..site::Options::default()
+            };
+            let site_result = site::build(&site_options);
+            let menu_result =
+                site_result.and_then(|_| menu::build(&data_dir, &dmsb_dir, &cli.store, &reports));
+
+            // Independent binary indexes and avatar decoding share the same
+            // immutable content store and run concurrently with the site pass.
+            let catalog = census::read_catalog(&census_csv)?;
+            let mdl5_entries = catalog
+                .iter()
+                .filter(|(_, _, kind)| kind == "model-3d (MDL5)")
+                .map(|(rel, size, _)| (rel.clone(), *size))
+                .collect::<Vec<_>>();
+            let jxl_entries = catalog
+                .iter()
+                .filter(|(_, _, kind)| kind == "jpeg-xl")
+                .map(|(rel, _, _)| rel.clone())
+                .collect::<Vec<_>>();
+            let sndz_entries = catalog
+                .iter()
+                .filter(|(_, _, kind)| kind == "sound (SNDZ)")
+                .map(|(rel, _, _)| rel.clone())
+                .collect::<Vec<_>>();
+            let ((mdl5_result, avatar_result), (jxl_result, sndz_result)) = rayon::join(
+                || {
+                    rayon::join(
+                        || -> anyhow::Result<()> {
+                            let values = mdl5::index_many(&mdl5_entries, &cli.store, 2 << 20, 2000);
+                            fs::write(
+                                reports.join("mdl5_index.json"),
+                                serde_json::to_vec(&values)?,
+                            )?;
+                            Ok(())
+                        },
+                        || -> anyhow::Result<()> {
+                            let atlas = reports.join("face_atlases_rust");
+                            let portraits = site_dir.join("public/avatars/extracted");
+                            let entries = avatar::extract_all(&store, &atlas, &portraits)?;
+                            avatar::write_manifest(&entries, &atlas.join("manifest.json"))?;
+                            Ok(())
+                        },
+                    )
+                },
+                || {
+                    rayon::join(
+                        || -> anyhow::Result<()> {
+                            let values = jxl::index_many(&jxl_entries, &store.root);
+                            fs::write(
+                                reports.join("jxl_index.json"),
+                                serde_json::to_vec(&values)?,
+                            )?;
+                            Ok(())
+                        },
+                        || -> anyhow::Result<()> {
+                            let values = sndz::index_many(&sndz_entries, &store.root);
+                            fs::write(
+                                reports.join("sndz_index.json"),
+                                serde_json::to_vec(&values)?,
+                            )?;
+                            Ok(())
+                        },
+                    )
+                },
+            );
+            menu_result?;
+            mdl5_result?;
+            avatar_result?;
+            jxl_result?;
+            sndz_result?;
+            let verified = verify::run(&verify::Options {
+                data_dir: data_dir.clone(),
+                reports_dir: reports.clone(),
+                research: research_json,
+            })?;
+            let disassembly = repo.join("tree/scripts/gt7/menu");
+            if disassembly.is_dir() {
+                tools::package_disassembly(
+                    &disassembly,
+                    &reports.join("gt7_menu_scripts_diss.zip"),
+                    &reports.join("menu_disassembly_manifest.csv"),
+                )?;
+            }
+            tools::manifest(&repo, &repo.join("manifest.json"))?;
+            if deploy {
+                let build = std::process::Command::new("npm")
+                    .args(["run", "build"])
+                    .current_dir(&site_dir)
+                    .status()?;
+                if !build.success() {
+                    bail!("npm build failed");
+                }
+                let deploy = std::process::Command::new("npx")
+                    .args(["wrangler", "deploy", "--config", "wrangler.production.toml"])
+                    .current_dir(&site_dir)
+                    .status()?;
+                if !deploy.success() {
+                    bail!("Cloudflare deploy failed");
+                }
+            }
+            println!(
+                "update complete: {} ({:.2}s)",
+                serde_json::to_string(&verified)?,
+                started.elapsed().as_secs_f64()
+            );
+        }
+        Cmd::SiteBuild {
+            research,
+            official_cars,
+            official_descriptions,
+            collection_fallback,
+            data_dir,
+            report_dir,
+        } => {
+            let options = site::Options {
+                research,
+                official_cars,
+                official_descriptions,
+                collection_fallback,
+                site_data: data_dir,
+                report_dir,
+                ..site::Options::default()
+            };
+            let payload = site::build(&options)?;
+            println!(
+                "{}",
+                serde_json::to_string(payload.get("stats").unwrap_or(&serde_json::Value::Null))?
+            );
+        }
+        Cmd::MenuBuild {
+            data_dir,
+            dmsb_dir,
+            report_dir,
+        } => {
+            let payload = menu::build(&data_dir, &dmsb_dir, &cli.store, &report_dir)?;
+            println!(
+                "{}",
+                serde_json::to_string(payload.get("counts").unwrap_or(&serde_json::Value::Null))?
+            );
+        }
+        Cmd::Verify {
+            data_dir,
+            reports_dir,
+            research,
+        } => {
+            verify::run(&verify::Options {
+                data_dir,
+                reports_dir,
+                research,
+            })?;
+        }
+        Cmd::Inspect {
+            file,
+            offset,
+            length,
+            u32s,
+            strings,
+            utf16,
+            limit,
+        } => tools::inspect(&tools::InspectOptions {
+            file,
+            offset,
+            length,
+            u32s,
+            strings,
+            utf16,
+            limit,
+        })?,
+        Cmd::Manifest { root, out } => tools::manifest(&root, &out)?,
+        Cmd::PackageMenu {
+            source,
+            archive,
+            manifest,
+        } => tools::package_disassembly(&source, &archive, &manifest)?,
+        Cmd::Dossier { query, cars, out } => tools::dossier(&cars, &query, &out)?,
         Cmd::Packed { file, out } => {
             let data = fs::read(&file)?;
             let (payload, kind) = packed::unpack(&data)?;
             fs::write(&out, &payload)?;
-            println!("{kind}: {} -> {} ({} bytes)", data.len(), out.display(), payload.len());
+            println!(
+                "{kind}: {} -> {} ({} bytes)",
+                data.len(),
+                out.display(),
+                payload.len()
+            );
         }
         Cmd::Udp { cmd } => match cmd {
             UdpCmd::Parse { file } => {
@@ -592,14 +1018,42 @@ fn run() -> Result<()> {
             }
             UdpCmd::Layout => println!("{}", serde_json::to_string_pretty(&udp::layout())?),
         },
+        Cmd::Official { cmd } => match cmd {
+            OfficialCmd::Cars { source, out } => official::cars(&source, &out)?,
+            OfficialCmd::Descriptions { out, proxy } => {
+                official::descriptions(&out, proxy.as_deref())?
+            }
+            OfficialCmd::Images {
+                source,
+                cars_out,
+                logos_out,
+            } => official::images(&source, &cars_out, &logos_out)?,
+            OfficialCmd::TrimLogos { dir } => official::trim_logos(&dir)?,
+            OfficialCmd::MenuCovers {
+                out,
+                manifest,
+                proxy,
+            } => official::menu_covers(&out, &manifest, proxy.as_deref())?,
+        },
         Cmd::Catalog { csv, out } => {
             let rows = census::read_catalog(&csv)?;
             let summary = census::write_catalog(&rows, &out)?;
             for (kind, n, bytes) in summary.iter().take(50) {
-                println!("{:<40} {:>9} {:>10.2} GB", kind, n, *bytes as f64 / 2f64.powi(30));
+                println!(
+                    "{:<40} {:>9} {:>10.2} GB",
+                    kind,
+                    n,
+                    *bytes as f64 / 2f64.powi(30)
+                );
             }
         }
-        Cmd::ExtractKind { csv, kind, out, mode, limit } => {
+        Cmd::ExtractKind {
+            csv,
+            kind,
+            out,
+            mode,
+            limit,
+        } => {
             let store = Store::scan(&cli.store)?;
             let rows = census::read_catalog(&csv)?;
             let entries: Vec<extract::Named> = rows
@@ -648,7 +1102,12 @@ fn run() -> Result<()> {
                 out.display()
             );
         }
-        Cmd::Mdl5Index { csv, out, head_mb, max_strings } => {
+        Cmd::Mdl5Index {
+            csv,
+            out,
+            head_mb,
+            max_strings,
+        } => {
             let rows = census::read_catalog(&csv)?;
             let entries: Vec<(String, u64)> = rows
                 .into_iter()
@@ -671,7 +1130,12 @@ fn run() -> Result<()> {
                 out.display()
             );
         }
-        Cmd::Rada { file, named, out, polyline } => {
+        Cmd::Rada {
+            file,
+            named,
+            out,
+            polyline,
+        } => {
             if let Some(f) = file {
                 let r = rada::parse(&f)?;
                 if let Some(p) = out.parent() {
@@ -697,9 +1161,12 @@ fn run() -> Result<()> {
                 let text = fs::read_to_string(&n)?;
                 fs::create_dir_all(&out)?;
                 let mut done = 0usize;
-                let mut summary = String::from("asset,section,flags,count,length_m,closure_m,px,pz\n");
+                let mut summary =
+                    String::from("asset,section,flags,count,length_m,closure_m,px,pz\n");
                 for line in text.lines() {
-                    let Some((asset, rel)) = line.split_once('\t') else { continue };
+                    let Some((asset, rel)) = line.split_once('\t') else {
+                        continue;
+                    };
                     if !asset.contains("course_line") {
                         continue;
                     }
@@ -707,21 +1174,18 @@ fn run() -> Result<()> {
                     match rada::parse(&p) {
                         Ok(r) => {
                             let stem = asset.replace('/', "_");
-                            fs::write(
-                                out.join(format!("{stem}.json")),
-                                serde_json::to_vec(&r)?,
-                            )?;
+                            fs::write(out.join(format!("{stem}.json")), serde_json::to_vec(&r)?)?;
                             if polyline {
                                 let dir = out.join(&stem);
                                 fs::create_dir_all(&dir)?;
                                 for (i, sec) in r.sections.iter().enumerate() {
-                                    rada::write_polyline_csv(sec, &dir.join(format!("{i:02}.csv")))?;
+                                    rada::write_polyline_csv(
+                                        sec,
+                                        &dir.join(format!("{i:02}.csv")),
+                                    )?;
                                     let pts = rada::reconstruct(sec);
-                                    let length = sec
-                                        .distances
-                                        .iter()
-                                        .cloned()
-                                        .fold(f32::MIN, f32::max);
+                                    let length =
+                                        sec.distances.iter().cloned().fold(f32::MIN, f32::max);
                                     let closure = pts
                                         .first()
                                         .zip(pts.last())
@@ -781,7 +1245,9 @@ fn run() -> Result<()> {
                 let mut summary = String::from("asset,points,edges,length_m,closure_m,cell\n");
                 let mut done = 0usize;
                 for line in text.lines() {
-                    let Some((asset, rel)) = line.split_once('\t') else { continue };
+                    let Some((asset, rel)) = line.split_once('\t') else {
+                        continue;
+                    };
                     if !asset.contains("course_map") {
                         continue;
                     }
@@ -829,7 +1295,11 @@ fn run() -> Result<()> {
                 }
                 fs::write(&out, serde_json::to_vec(&files)?)?;
                 let total_entries: usize = files.iter().map(|f| f.entries.len()).sum();
-                println!("indexed {} files ({} descriptors)", files.len(), total_entries);
+                println!(
+                    "indexed {} files ({} descriptors)",
+                    files.len(),
+                    total_entries
+                );
                 return Ok(());
             }
             let rows = census::read_catalog(&csv)?;
@@ -907,7 +1377,12 @@ fn run() -> Result<()> {
                 out.display()
             );
         }
-        Cmd::Idp0Extract { csv, out, limit, ext } => {
+        Cmd::Idp0Extract {
+            csv,
+            out,
+            limit,
+            ext,
+        } => {
             let store = Store::scan(&cli.store)?;
             let rows = census::read_catalog(&csv)?;
             let mut entries: Vec<String> = rows
@@ -969,12 +1444,17 @@ fn run() -> Result<()> {
                 out.display()
             );
             let mut kv: Vec<_> = kinds.into_iter().collect();
-            kv.sort_by(|a, b| b.1.cmp(&a.1));
+            kv.sort_by_key(|item| std::cmp::Reverse(item.1));
             for (m, n) in kv.iter().take(8) {
                 println!("  inner magic {m:?}: {n}");
             }
         }
-        Cmd::Strings { csv, kind, out, max } => {
+        Cmd::Strings {
+            csv,
+            kind,
+            out,
+            max,
+        } => {
             let store = Store::scan(&cli.store)?;
             let rows = census::read_catalog(&csv)?;
             let entries: Vec<String> = rows
@@ -1015,7 +1495,12 @@ fn run() -> Result<()> {
             }
             fs::write(&out, serde_json::to_vec(&result)?)?;
             let total: usize = result.iter().map(|r| r.1.len()).sum();
-            println!("{} files, {} strings -> {}", result.len(), total, out.display());
+            println!(
+                "{} files, {} strings -> {}",
+                result.len(),
+                total,
+                out.display()
+            );
         }
         Cmd::GpbExtract { csv, kind, out } => {
             let store = Store::scan(&cli.store)?;
@@ -1058,7 +1543,23 @@ fn run() -> Result<()> {
 }
 
 fn main() {
-    if let Err(e) = run() {
+    // The generated Clap command tree is large; give parsing and JSON joins a
+    // deterministic stack budget instead of relying on the Windows default.
+    let worker = std::thread::Builder::new()
+        .name("gt7re-main".into())
+        .stack_size(64 << 20)
+        .spawn(run);
+    let result = match worker {
+        Ok(handle) => match handle.join() {
+            Ok(result) => result,
+            Err(_) => {
+                eprintln!("error: worker thread panicked");
+                std::process::exit(1);
+            }
+        },
+        Err(error) => Err(error.into()),
+    };
+    if let Err(e) = result {
         eprintln!("error: {e:#}");
         std::process::exit(1);
     }

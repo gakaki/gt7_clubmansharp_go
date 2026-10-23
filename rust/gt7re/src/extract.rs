@@ -34,7 +34,10 @@ pub fn load_named(path: &Path) -> Result<Vec<Named>> {
             let a = a.trim();
             let r = r.trim();
             if !a.is_empty() && !r.is_empty() {
-                out.push(Named { asset: a.to_string(), rel: r.to_string() });
+                out.push(Named {
+                    asset: a.to_string(),
+                    rel: r.to_string(),
+                });
             }
         }
     }
@@ -76,30 +79,29 @@ pub fn extract_named(
             if let Some(parent) = dest.parent() {
                 let _ = fs::create_dir_all(parent);
             }
-            let res: Result<u64> = (|| {
-                match mode {
-                    Mode::Link => {
-                        if dest.exists() {
-                            let _ = fs::remove_file(&dest);
-                        }
-                        fs::hard_link(&src, &dest)
-                            .with_context(|| format!("hardlink {} -> {}", src.display(), dest.display()))?;
-                        Ok(fs::metadata(&dest)?.len())
+            let res: Result<u64> = (|| match mode {
+                Mode::Link => {
+                    if dest.exists() {
+                        let _ = fs::remove_file(&dest);
                     }
-                    Mode::Copy => {
-                        let raw = fs::read(&src)?;
-                        let unpacked = packed::unpack(&raw);
-                        let (payload, _kind) = match unpacked {
-                            Ok(v) => v,
-                            Err(_) => (raw, "raw"),
-                        };
-                        fs::write(&dest, &payload)?;
-                        Ok(payload.len() as u64)
-                    }
+                    fs::hard_link(&src, &dest).with_context(|| {
+                        format!("hardlink {} -> {}", src.display(), dest.display())
+                    })?;
+                    Ok(fs::metadata(&dest)?.len())
+                }
+                Mode::Copy => {
+                    let raw = fs::read(&src)?;
+                    let unpacked = packed::unpack(&raw);
+                    let (payload, _kind) = match unpacked {
+                        Ok(v) => v,
+                        Err(_) => (raw, "raw"),
+                    };
+                    fs::write(&dest, &payload)?;
+                    Ok(payload.len() as u64)
                 }
             })();
             let n = done.fetch_add(1, Ordering::Relaxed) + 1;
-            if n % 500 == 0 {
+            if n.is_multiple_of(500) {
                 eprintln!("  extracted {n}/{}", slice.len());
             }
             match res {

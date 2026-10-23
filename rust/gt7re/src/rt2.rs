@@ -41,7 +41,14 @@ fn u32le(b: &[u8], o: usize) -> u32 {
 }
 fn u64le(b: &[u8], o: usize) -> u64 {
     u64::from_le_bytes([
-        b[o], b[o + 1], b[o + 2], b[o + 3], b[o + 4], b[o + 5], b[o + 6], b[o + 7],
+        b[o],
+        b[o + 1],
+        b[o + 2],
+        b[o + 3],
+        b[o + 4],
+        b[o + 5],
+        b[o + 6],
+        b[o + 7],
     ])
 }
 
@@ -51,10 +58,10 @@ impl Rt2File {
         if data.len() < 0x20 {
             bail!("file too small for rt2");
         }
-        if &data[0..4] != b"50TR" {
-            bail!("bad rt2 magic: {:02X?}", &data[0..4]);
-        }
         let count = u32le(&data, 4) as usize;
+        if count == 0 || count > 4096 || 0x20 + count * 0x18 > data.len() {
+            bail!("invalid rt2/section count {count}");
+        }
         let mut sections = Vec::with_capacity(count);
         for i in 0..count {
             let o = 0x20 + i * 0x18;
@@ -341,13 +348,21 @@ pub fn decode(rt: &Rt2File, ks: &[u8]) -> Vec<DecodedString> {
                 .enumerate()
                 .map(|(i, b)| b ^ ks[i])
                 .collect();
-            out.push(DecodedString { section: sec.name.clone(), id: e.id, text: clean_text(v) });
+            out.push(DecodedString {
+                section: sec.name.clone(),
+                id: e.id,
+                text: clean_text(v),
+            });
         }
     }
     out
 }
 
-pub fn write_outputs(strings: &[DecodedString], stem: &str, outdir: &Path) -> Result<(PathBuf, PathBuf)> {
+pub fn write_outputs(
+    strings: &[DecodedString],
+    stem: &str,
+    outdir: &Path,
+) -> Result<(PathBuf, PathBuf)> {
     fs::create_dir_all(outdir)?;
     let mut root = Map::new();
     for s in strings {
@@ -365,7 +380,11 @@ pub fn write_outputs(strings: &[DecodedString], stem: &str, outdir: &Path) -> Re
     let mut w = csv::Writer::from_path(&csv_path)?;
     w.write_record(["section", "id", "text"])?;
     for s in strings {
-        w.write_record([s.section.as_str(), &format!("0x{:08X}", s.id), s.text.as_str()])?;
+        w.write_record([
+            s.section.as_str(),
+            &format!("0x{:08X}", s.id),
+            s.text.as_str(),
+        ])?;
     }
     w.flush()?;
     Ok((json_path, csv_path))
@@ -385,10 +404,20 @@ pub fn auto_decode(path: &Path, outdir: &Path, keydir: Option<&Path>) -> Result<
     let ks = recover_keystream(&payloads, maxlen);
     if let Some(kd) = keydir {
         fs::create_dir_all(kd)?;
-        fs::write(kd.join(format!("{}.ks.bin", path.file_stem().unwrap_or_default().to_string_lossy())), &ks)?;
+        fs::write(
+            kd.join(format!(
+                "{}.ks.bin",
+                path.file_stem().unwrap_or_default().to_string_lossy()
+            )),
+            &ks,
+        )?;
     }
     let strings = decode(&rt, &ks);
-    let stem = path.file_stem().unwrap_or_default().to_string_lossy().to_string();
+    let stem = path
+        .file_stem()
+        .unwrap_or_default()
+        .to_string_lossy()
+        .to_string();
     write_outputs(&strings, &stem, outdir)?;
     Ok((ks.len(), strings.len()))
 }
@@ -398,7 +427,33 @@ pub fn auto_decode(path: &Path, outdir: &Path, keydir: Option<&Path>) -> Result<
 pub fn decode_with_key(path: &Path, ks: &[u8], outdir: &Path) -> Result<usize> {
     let rt = Rt2File::parse(path)?;
     let strings = decode(&rt, ks);
-    let stem = path.file_stem().unwrap_or_default().to_string_lossy().to_string();
+    let stem = path
+        .file_stem()
+        .unwrap_or_default()
+        .to_string_lossy()
+        .to_string();
     write_outputs(&strings, &stem, outdir)?;
     Ok(strings.len())
+}
+
+pub fn tag_counts(path: &Path, key: &[u8], section: &str, limit: usize) -> Result<usize> {
+    let rt = Rt2File::parse(path)?;
+    let regex = regex::Regex::new(r"<[^>]+>").expect("tag regex");
+    let attribute = regex::Regex::new(r#"\s+\w+="[^"]*""#).expect("attribute regex");
+    let mut counts = std::collections::BTreeMap::<String, usize>::new();
+    for item in decode(&rt, key) {
+        if item.section != section {
+            continue;
+        }
+        for tag in regex.find_iter(&item.text) {
+            let normalized = attribute.replace_all(tag.as_str(), "").into_owned();
+            *counts.entry(normalized).or_default() += 1;
+        }
+    }
+    let mut values = counts.into_iter().collect::<Vec<_>>();
+    values.sort_by_key(|item| std::cmp::Reverse(item.1));
+    for (tag, count) in values.iter().take(limit) {
+        println!("{count:6}  {tag}");
+    }
+    Ok(values.len())
 }

@@ -12,8 +12,7 @@ use std::fs;
 use std::path::{Path, PathBuf};
 
 const TAGS: [&[u8; 4]; 10] = [
-    b"HTBS", b"WAVS", b"RNDS", b"BRNS", b"BLNS",
-    b"CHNS", b"TSKS", b"SMXS", b"REQS", b"WAVD",
+    b"HTBS", b"WAVS", b"RNDS", b"BRNS", b"BLNS", b"CHNS", b"TSKS", b"SMXS", b"REQS", b"WAVD",
 ];
 
 #[derive(Clone, Debug, Serialize)]
@@ -40,15 +39,9 @@ pub fn index_one(rel: &str, path: &Path) -> Result<SndzInfo> {
     }
     let mut tags = BTreeMap::new();
     for tag in TAGS {
-        let count = data
-            .windows(4)
-            .filter(|window| *window == tag)
-            .count();
+        let count = data.windows(4).filter(|window| *window == tag).count();
         if count > 0 {
-            tags.insert(
-                String::from_utf8_lossy(tag).to_string(),
-                count,
-            );
+            tags.insert(String::from_utf8_lossy(tag).to_string(), count);
         }
     }
     Ok(SndzInfo {

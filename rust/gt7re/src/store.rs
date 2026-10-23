@@ -26,7 +26,11 @@ pub fn cache_key(x: u32) -> String {
         }
         TABLE[(v % 36) as usize] as char
     };
-    let flag = if x >= FLAG_BOUNDARY { TABLE[1] } else { TABLE[0] } as char;
+    let flag = if x >= FLAG_BOUNDARY {
+        TABLE[1]
+    } else {
+        TABLE[0]
+    } as char;
     format!(
         "{}/{}/{}{}{}{}{}",
         digit(0),

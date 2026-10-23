@@ -1,66 +1,66 @@
-﻿carId,nameEn,nameZh,category,offerId,price,discountPrice,rarity,isNew,isHot,isPick,carKey
-0x000075D5,Ferrari 330 P4 '67,Ferrari 330 P4 '67,collection,2005,20000000,0,3,True,False,False,_330_p4_67
-0x00004260,Ferrari Dino 246 GT '71,Ferrari Dino 246 GT '71,collection,2009,450000,0,3,False,False,False,dino_246gt_69
-0x00007602,Ferrari F40 '92,Ferrari F40 '92,collection,2011,2500000,0,3,False,False,True,f40_92
-0x0000422E,Ford GT40 Mark I '66,Ford GT40 Mark I '66,collection,2014,5500000,0,3,False,False,False,gt40_mk1_66
-0x0000422F,Ford Mark IV Race Car '67,Ford Mark IV Race Car '67,collection,2007,6750000,0,3,False,False,False,gt40_mk4_race_67
-0x0000765E,Jaguar XJ13 '66,Jaguar XJ13 '66,collection,2006,12000000,0,3,False,False,False,xj13_66
-0x00004218,Lamborghini Countach LP400 '74,Lamborghini Countach LP400 '74,collection,2008,1800000,0,3,False,True,False,countach_lp400_74
-0x00004237,Lamborghini Miura P400 Bertone Prototype '67,Lamborghini Miura P400 Bertone Prototype '67,collection,2010,3500000,0,3,False,False,False,miura_p400_proto_67
-0x0000428E,Lancia Stratos '73,Lancia Stratos '73,collection,2012,550000,0,3,False,False,False,stratos_73
-0x0000426E,Mazda 787B '91,Mazda 787B '91,collection,2000,3300000,0,3,True,False,False,_787b_91
-0x000075D2,Mercedes-Benz 300 SL Coupé '54,Mercedes-Benz 300 SL Coupé '54,collection,2002,1500000,0,3,True,False,True,_300sl_coupe_54
-0x000084CE,Plymouth Superbird '70,Plymouth Superbird '70,collection,2004,500000,0,3,True,False,False,roadrunner_superbird_70
-0x00004211,Shelby Cobra 427 '66,Shelby Cobra 427 '66,collection,2001,2500000,0,3,True,True,False,cobra_67
-0x00004212,Shelby Cobra Daytona Coupe '64,Shelby Cobra Daytona Coupe '64,collection,2013,20000000,0,3,False,False,False,cobra_coupe_64
-0x00004299,Toyota 2000GT '67,Toyota 2000GT '67,collection,2003,1000000,0,3,True,False,False,_2000_gt_67
-0x000075DB,Alfa Romeo 8C Competizione '08,Alfa Romeo 8C Competizione '08,usedCar,1043,220000,0,1,False,True,False,_8c_competizione_08
-0x00004285,Alfa Romeo MiTo 1.4 T Sport '09,Alfa Romeo MiTo 1.4 T Sport '09,usedCar,1038,28000,0,1,False,False,True,mito_14_t_sport_09
-0x0000423F,Aston Martin One-77 '11,Aston Martin One-77 '11,usedCar,1042,1300000,0,1,False,False,False,one_77_11
-0x00006F61,Audi R8 4.2 FSI R tronic '07,Audi R8 4.2 FSI R tronic '07,usedCar,1036,130000,0,1,False,True,False,r8_07
-0x00006F69,Audi TT Coupé 3.2 quattro '03,Audi TT Coupé 3.2 quattro '03,usedCar,1034,48000,0,1,False,False,False,tt_coupe_32_03
-0x0000B861,Audi TTS Coupé '09,Audi TTS Coupé '09,usedCar,1013,65000,0,0,False,False,False,tts_coupe_09
-0x00007661,BMW Z8 '01,BMW Z8 '01,usedCar,1041,95000,0,1,False,False,False,z8_01
-0x0000420B,Chevrolet Camaro Z28 '69,Chevrolet Camaro Z28 '69,usedCar,1004,65000,0,0,True,False,False,camaro_z28_302_69
-0x00004214,Chevrolet Corvette C7 Stingray '14,Chevrolet Corvette C7 Stingray '14,usedCar,1037,70000,0,1,False,False,False,corvette_c7_14
-0x000084CA,Chevrolet Corvette Stingray L46 350 (C3) '69,Chevrolet Corvette Stingray L46 350 (C3) '69,usedCar,1011,70000,0,0,False,False,True,corvette_l46_350_69
-0x000075F8,DMC DeLorean S2 '04,DMC DeLorean S2 '04,usedCar,1035,80000,0,1,False,False,False,dmc12_stage2_04
-0x000075F2,Daihatsu Copen Active Top '02,Daihatsu Copen Active Top '02,usedCar,1019,20000,0,0,False,False,False,copen_activetop_02
-0x00004264,Ford Shelby GT350R '16,Ford Shelby GT350R '16,usedCar,1039,75000,0,1,False,False,False,shelby_gt350r_16
-0x0000760E,GT by Citroën Road Car,GT by Citroën Road Car,usedCar,1047,1000000,0,1,False,False,True,gt_by_citroen_road_xx
-0x000075E5,Honda Beat '91,Honda Beat '91,usedCar,1018,22000,0,0,False,False,False,beat_91
-0x000075ED,Honda Civic Type R (EK) '98,Honda Civic Type R (EK) '98,usedCar,1010,55000,0,0,False,False,False,civic_r_98
-0x00007614,Honda Integra Type R (DC2) '98,Honda Integra Type R (DC2) '98,usedCar,1023,50000,0,0,False,False,False,integra_r_98
-0x0000763A,Honda NSX Type R '92,Honda NSX Type R '92,usedCar,1025,120000,0,1,False,False,False,nsx_r_92
-0x00007649,Honda S2000 '99,Honda S2000 '99,usedCar,1031,55000,0,1,False,False,False,s2000_99
-0x0000764B,Honda S800 '66,Honda S800 '66,usedCar,1017,45000,0,0,False,False,False,s800_66
-0x000075FF,Jaguar F-type R Coupé '14,Jaguar F-type R Coupé '14,usedCar,1046,110000,0,1,False,False,False,f_type_r_coupe_14
-0x0000B2D7,Lexus LFA '10,Lexus LFA '10,usedCar,1044,375000,0,1,False,False,False,lfa_10
-0x00007631,MINI Cooper S '05,MINI Cooper S '05,usedCar,1003,23600,0,0,True,False,False,mini_cooper_s_06
-0x0000426B,Mazda Eunos Roadster (NA Special Package) '89,Mazda Eunos Roadster (NA Special Package) '89,usedCar,1022,28000,0,0,False,True,False,roadster_89
-0x00004271,Mazda RX-7 GT-X (FC) '90,Mazda RX-7 GT-X (FC) '90,usedCar,1028,45000,0,1,False,False,False,rx7_gtx_90
-0x00004272,Mazda RX-7 Spirit R Type A (FD) '02,Mazda RX-7 Spirit R Type A (FD) '02,usedCar,1007,85000,0,0,False,False,False,rx7_spiritr_a_02
-0x0000428F,Mazda Roadster S (ND) '15,Mazda Roadster S (ND) '15,usedCar,1002,25000,0,0,True,False,True,roadster_s_15
-0x0000762C,Mercedes-AMG GT S '15,Mercedes-AMG GT S '15,usedCar,1049,90000,0,1,False,False,False,mercedes_amg_gt_s_14
-0x000053EA,Mitsubishi Lancer Evolution IV GSR '96,Mitsubishi Lancer Evolution IV GSR '96,usedCar,1026,52000,0,1,False,False,False,lancer_evo4_96
-0x000053EB,Mitsubishi Lancer Evolution V GSR '98,Mitsubishi Lancer Evolution V GSR '98,usedCar,1012,60000,0,0,False,False,False,lancer_evo5_gsr_98
-0x00006F48,Nissan 180SX Type X '96,Nissan 180SX Type X '96,usedCar,1014,52000,0,0,False,False,False,_180sx_x_96
-0x00007605,Nissan Fairlady 240ZG (HS30) '71,Nissan Fairlady 240ZG (HS30) '71,usedCar,1005,75000,0,0,True,False,False,fairlady_240zg_71
-0x00006F4C,Nissan Fairlady Z Version S (Z33) '07,Nissan Fairlady Z Version S (Z33) '07,usedCar,1048,45000,0,1,False,False,False,fairlady_z_s_07
-0x00006F68,Nissan Sileighty '98,Nissan Sileighty '98,usedCar,1016,60000,0,0,False,False,False,sileighty_xx
-0x00006F66,Nissan Silvia Q's (S13) '88,Nissan Silvia Q's (S13) '88,usedCar,1033,35000,0,1,False,False,False,s13_silvia_qs_88
-0x00006F5F,Nissan Skyline GT-R V･spec (R33) '97,Nissan Skyline GT-R V･spec (R33) '97,usedCar,1030,120000,0,1,False,False,False,r33_gtr_v_97
-0x00006F5E,Nissan Skyline GT-R V･spec II (R32) '94,Nissan Skyline GT-R V･spec II (R32) '94,usedCar,1032,100000,0,1,False,False,False,r32_gtr_v2_94
-0x00006F60,Nissan Skyline GT-R V･spec II Nür (R34) '02,Nissan Skyline GT-R V･spec II Nür (R34) '02,usedCar,1008,180000,0,0,False,True,False,r34_gtr_v2_nur_02
-0x000041F7,Renault R5 Turbo '80,Renault R5 Turbo '80,usedCar,1020,85000,0,0,False,False,True,_5_turbo_80
-0x000075F1,Renault Sport Clio V6 24V '00,Renault Sport Clio V6 24V '00,usedCar,1027,65000,0,1,False,False,False,clio_sport_v6_00
-0x00009960,Subaru BRZ S '21,Subaru BRZ S '21,usedCar,1040,32000,0,1,False,False,False,brz_s_21
-0x00004277,Subaru Impreza 22B-STi Version '98,Subaru Impreza 22B-STi Version '98,usedCar,1009,150000,0,0,False,False,False,impreza_22b_98
-0x00004294,Subaru Impreza Coupe WRX Type R STi Version VI '99,Subaru Impreza Coupe WRX Type R STi Version VI '99,usedCar,1029,65000,0,1,False,True,True,impreza_coupe_wrx_sti6_99
-0x00007654,Suzuki Swift Sport '07,Suzuki Swift Sport '07,usedCar,1000,9800,0,0,True,False,False,swift_sports_07
-0x00007658,TVR Tuscan Speed 6 '00,特维尔Tuscan Speed 6 '00,usedCar,1021,90000,0,0,False,False,False,tuscan_speed6_00
-0x00004247,Tesla Model S Signature Performance '12,Tesla Model S Signature Performance '12,usedCar,1045,100000,0,1,False,False,False,tesla_model_s_sig_perf_12
-0x0000427F,Toyota Corolla Levin 3door 1600GT APEX (AE86) '83,Toyota Corolla Levin 3door 1600GT APEX (AE86) '83,usedCar,1006,32000,0,0,False,False,False,levin_gt_apex_83
-0x00008053,Toyota GR86 RZ '21,Toyota GR86 RZ '21,usedCar,1001,30000,0,0,True,True,False,gr_86_rz_21
-0x0000429C,Toyota MR2 GT-S '97,Toyota MR2 GT-S '97,usedCar,1024,48000,0,0,False,False,False,mr2_gts_97
-0x00004298,Toyota Supra RZ '97,Toyota Supra RZ '97,usedCar,1015,85000,0,0,False,True,False,supra_rz_97
+carId,nameEn,nameZh,category,offerId,price,discountPrice,rarity,isNew,isHot,isPick,carKey
+0x000075D5,Ferrari 330 P4 '67,,collection,2005,20000000,0,3,true,false,false,_330_p4_67
+0x00004260,Ferrari Dino 246 GT '71,,collection,2009,450000,0,3,false,false,false,dino_246gt_69
+0x00007602,Ferrari F40 '92,,collection,2011,2500000,0,3,false,false,true,f40_92
+0x0000422E,Ford GT40 Mark I '66,,collection,2014,5500000,0,3,false,false,false,gt40_mk1_66
+0x0000422F,Ford Mark IV Race Car '67,,collection,2007,6750000,0,3,false,false,false,gt40_mk4_race_67
+0x0000765E,Jaguar XJ13 '66,,collection,2006,12000000,0,3,false,false,false,xj13_66
+0x00004218,Lamborghini Countach LP400 '74,,collection,2008,1800000,0,3,false,true,false,countach_lp400_74
+0x00004237,Lamborghini Miura P400 Bertone Prototype '67,,collection,2010,3500000,0,3,false,false,false,miura_p400_proto_67
+0x0000428E,Lancia Stratos '73,,collection,2012,550000,0,3,false,false,false,stratos_73
+0x0000426E,Mazda 787B '91,,collection,2000,3300000,0,3,true,false,false,_787b_91
+0x000075D2,Mercedes-Benz 300 SL Coupé '54,,collection,2002,1500000,0,3,true,false,true,_300sl_coupe_54
+0x000084CE,Plymouth Superbird '70,,collection,2004,500000,0,3,true,false,false,roadrunner_superbird_70
+0x00004211,Shelby Cobra 427 '66,,collection,2001,2500000,0,3,true,true,false,cobra_67
+0x00004212,Shelby Cobra Daytona Coupe '64,,collection,2013,20000000,0,3,false,false,false,cobra_coupe_64
+0x00004299,Toyota 2000GT '67,,collection,2003,1000000,0,3,true,false,false,_2000_gt_67
+0x000075DB,Alfa Romeo 8C Competizione '08,,usedCar,1043,220000,0,1,false,true,false,_8c_competizione_08
+0x00004285,Alfa Romeo MiTo 1.4 T Sport '09,,usedCar,1038,28000,0,1,false,false,true,mito_14_t_sport_09
+0x0000423F,Aston Martin One-77 '11,,usedCar,1042,1300000,0,1,false,false,false,one_77_11
+0x00006F61,Audi R8 4.2 FSI R tronic '07,,usedCar,1036,130000,0,1,false,true,false,r8_07
+0x00006F69,Audi TT Coupé 3.2 quattro '03,,usedCar,1034,48000,0,1,false,false,false,tt_coupe_32_03
+0x0000B861,Audi TTS Coupé '09,,usedCar,1013,65000,0,0,false,false,false,tts_coupe_09
+0x00007661,BMW Z8 '01,,usedCar,1041,95000,0,1,false,false,false,z8_01
+0x0000420B,Chevrolet Camaro Z28 '69,,usedCar,1004,65000,0,0,true,false,false,camaro_z28_302_69
+0x00004214,Chevrolet Corvette C7 Stingray '14,,usedCar,1037,70000,0,1,false,false,false,corvette_c7_14
+0x000084CA,Chevrolet Corvette Stingray L46 350 (C3) '69,,usedCar,1011,70000,0,0,false,false,true,corvette_l46_350_69
+0x000075F8,DMC DeLorean S2 '04,,usedCar,1035,80000,0,1,false,false,false,dmc12_stage2_04
+0x000075F2,Daihatsu Copen Active Top '02,,usedCar,1019,20000,0,0,false,false,false,copen_activetop_02
+0x00004264,Ford Shelby GT350R '16,,usedCar,1039,75000,0,1,false,false,false,shelby_gt350r_16
+0x0000760E,GT by Citroën Road Car,,usedCar,1047,1000000,0,1,false,false,true,gt_by_citroen_road_xx
+0x000075E5,Honda Beat '91,,usedCar,1018,22000,0,0,false,false,false,beat_91
+0x000075ED,Honda Civic Type R (EK) '98,,usedCar,1010,55000,0,0,false,false,false,civic_r_98
+0x00007614,Honda Integra Type R (DC2) '98,,usedCar,1023,50000,0,0,false,false,false,integra_r_98
+0x0000763A,Honda NSX Type R '92,,usedCar,1025,120000,0,1,false,false,false,nsx_r_92
+0x00007649,Honda S2000 '99,,usedCar,1031,55000,0,1,false,false,false,s2000_99
+0x0000764B,Honda S800 '66,,usedCar,1017,45000,0,0,false,false,false,s800_66
+0x000075FF,Jaguar F-type R Coupé '14,,usedCar,1046,110000,0,1,false,false,false,f_type_r_coupe_14
+0x0000B2D7,Lexus LFA '10,,usedCar,1044,375000,0,1,false,false,false,lfa_10
+0x00007631,MINI Cooper S '05,,usedCar,1003,23600,0,0,true,false,false,mini_cooper_s_06
+0x0000426B,Mazda Eunos Roadster (NA Special Package) '89,,usedCar,1022,28000,0,0,false,true,false,roadster_89
+0x00004271,Mazda RX-7 GT-X (FC) '90,,usedCar,1028,45000,0,1,false,false,false,rx7_gtx_90
+0x00004272,Mazda RX-7 Spirit R Type A (FD) '02,,usedCar,1007,85000,0,0,false,false,false,rx7_spiritr_a_02
+0x0000428F,Mazda Roadster S (ND) '15,,usedCar,1002,25000,0,0,true,false,true,roadster_s_15
+0x0000762C,Mercedes-AMG GT S '15,,usedCar,1049,90000,0,1,false,false,false,mercedes_amg_gt_s_14
+0x000053EA,Mitsubishi Lancer Evolution IV GSR '96,,usedCar,1026,52000,0,1,false,false,false,lancer_evo4_96
+0x000053EB,Mitsubishi Lancer Evolution V GSR '98,,usedCar,1012,60000,0,0,false,false,false,lancer_evo5_gsr_98
+0x00006F48,Nissan 180SX Type X '96,,usedCar,1014,52000,0,0,false,false,false,_180sx_x_96
+0x00007605,Nissan Fairlady 240ZG (HS30) '71,,usedCar,1005,75000,0,0,true,false,false,fairlady_240zg_71
+0x00006F4C,Nissan Fairlady Z Version S (Z33) '07,,usedCar,1048,45000,0,1,false,false,false,fairlady_z_s_07
+0x00006F68,Nissan Sileighty '98,,usedCar,1016,60000,0,0,false,false,false,sileighty_xx
+0x00006F66,Nissan Silvia Q's (S13) '88,,usedCar,1033,35000,0,1,false,false,false,s13_silvia_qs_88
+0x00006F5F,Nissan Skyline GT-R V･spec (R33) '97,,usedCar,1030,120000,0,1,false,false,false,r33_gtr_v_97
+0x00006F5E,Nissan Skyline GT-R V･spec II (R32) '94,,usedCar,1032,100000,0,1,false,false,false,r32_gtr_v2_94
+0x00006F60,Nissan Skyline GT-R V･spec II Nür (R34) '02,,usedCar,1008,180000,0,0,false,true,false,r34_gtr_v2_nur_02
+0x000041F7,Renault R5 Turbo '80,,usedCar,1020,85000,0,0,false,false,true,_5_turbo_80
+0x000075F1,Renault Sport Clio V6 24V '00,,usedCar,1027,65000,0,1,false,false,false,clio_sport_v6_00
+0x00009960,Subaru BRZ S '21,,usedCar,1040,32000,0,1,false,false,false,brz_s_21
+0x00004277,Subaru Impreza 22B-STi Version '98,,usedCar,1009,150000,0,0,false,false,false,impreza_22b_98
+0x00004294,Subaru Impreza Coupe WRX Type R STi Version VI '99,,usedCar,1029,65000,0,1,false,true,true,impreza_coupe_wrx_sti6_99
+0x00007654,Suzuki Swift Sport '07,,usedCar,1000,9800,0,0,true,false,false,swift_sports_07
+0x00007658,TVR Tuscan Speed 6 '00,,usedCar,1021,90000,0,0,false,false,false,tuscan_speed6_00
+0x00004247,Tesla Model S Signature Performance '12,,usedCar,1045,100000,0,1,false,false,false,tesla_model_s_sig_perf_12
+0x0000427F,Toyota Corolla Levin 3door 1600GT APEX (AE86) '83,,usedCar,1006,32000,0,0,false,false,false,levin_gt_apex_83
+0x00008053,Toyota GR86 RZ '21,,usedCar,1001,30000,0,0,true,true,false,gr_86_rz_21
+0x0000429C,Toyota MR2 GT-S '97,,usedCar,1024,48000,0,0,false,false,false,mr2_gts_97
+0x00004298,Toyota Supra RZ '97,,usedCar,1015,85000,0,0,false,true,false,supra_rz_97

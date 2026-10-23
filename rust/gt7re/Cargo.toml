@@ -1,6 +1,6 @@
 [package]
 name = "gt7re"
-version = "0.1.0"
+version = "0.2.0"
 edition = "2021"
 description = "Parallel Gran Turismo 7 (PS5) content-store parser, extractor and RT2 decoder"
 license = "MIT"
@@ -17,6 +17,11 @@ csv = "1"
 flate2 = "1"
 zstd = "0.13"
 walkdir = "2"
+regex = "1"
+sha2 = "0.10"
+ureq = { version = "3", features = ["gzip", "json"] }
+image = { version = "0.25", default-features = false, features = ["jpeg", "png", "webp"] }
+zip = { version = "2", default-features = false, features = ["deflate"] }
 
 [profile.release]
 opt-level = 3

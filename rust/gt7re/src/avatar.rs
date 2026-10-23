@@ -82,8 +82,7 @@ impl RgbaImage {
                 }
                 let source = ((source_y as usize * self.width as usize) + source_x as usize) * 4;
                 let target = ((row as usize * width as usize) + column as usize) * 4;
-                output.pixels[target..target + 4]
-                    .copy_from_slice(&self.pixels[source..source + 4]);
+                output.pixels[target..target + 4].copy_from_slice(&self.pixels[source..source + 4]);
             }
         }
         output
@@ -99,28 +98,24 @@ impl RgbaImage {
             self.pixels[offset] as f32
         };
         for y in 0..height as usize {
-            let source_y =
-                ((y as f32 + 0.5) * self.height as f32 / height as f32 - 0.5)
-                    .clamp(0.0, self.height.saturating_sub(1) as f32);
+            let source_y = ((y as f32 + 0.5) * self.height as f32 / height as f32 - 0.5)
+                .clamp(0.0, self.height.saturating_sub(1) as f32);
             let y0 = source_y.floor() as usize;
             let y1 = (y0 + 1).min(self.height as usize - 1);
             let fy = source_y - y0 as f32;
             for x in 0..width as usize {
-                let source_x =
-                    ((x as f32 + 0.5) * self.width as f32 / width as f32 - 0.5)
-                        .clamp(0.0, self.width.saturating_sub(1) as f32);
+                let source_x = ((x as f32 + 0.5) * self.width as f32 / width as f32 - 0.5)
+                    .clamp(0.0, self.width.saturating_sub(1) as f32);
                 let x0 = source_x.floor() as usize;
                 let x1 = (x0 + 1).min(self.width as usize - 1);
                 let fx = source_x - x0 as f32;
                 let mut rgba = [0u8; 4];
-                for channel in 0..4 {
-                    let top = sample(x0, y0, channel) * (1.0 - fx)
-                        + sample(x1, y0, channel) * fx;
-                    let bottom = sample(x0, y1, channel) * (1.0 - fx)
-                        + sample(x1, y1, channel) * fx;
-                    rgba[channel] = (top * (1.0 - fy) + bottom * fy)
-                        .round()
-                        .clamp(0.0, 255.0) as u8;
+                for (channel, output_channel) in rgba.iter_mut().enumerate() {
+                    let top = sample(x0, y0, channel) * (1.0 - fx) + sample(x1, y0, channel) * fx;
+                    let bottom =
+                        sample(x0, y1, channel) * (1.0 - fx) + sample(x1, y1, channel) * fx;
+                    *output_channel =
+                        (top * (1.0 - fy) + bottom * fy).round().clamp(0.0, 255.0) as u8;
                 }
                 output.put_pixel(x as u32, y as u32, rgba);
             }
@@ -249,23 +244,17 @@ pub const AVATARS: &[AvatarSpec] = &[
 ];
 
 fn u16le(data: &[u8], offset: usize) -> Result<u16> {
-    let bytes = data
-        .get(offset..offset + 2)
-        .context("u16 out of range")?;
+    let bytes = data.get(offset..offset + 2).context("u16 out of range")?;
     Ok(u16::from_le_bytes([bytes[0], bytes[1]]))
 }
 
 fn u32le(data: &[u8], offset: usize) -> Result<u32> {
-    let bytes = data
-        .get(offset..offset + 4)
-        .context("u32 out of range")?;
+    let bytes = data.get(offset..offset + 4).context("u32 out of range")?;
     Ok(u32::from_le_bytes([bytes[0], bytes[1], bytes[2], bytes[3]]))
 }
 
 fn u64le(data: &[u8], offset: usize) -> Result<u64> {
-    let bytes = data
-        .get(offset..offset + 8)
-        .context("u64 out of range")?;
+    let bytes = data.get(offset..offset + 8).context("u64 out of range")?;
     Ok(u64::from_le_bytes([
         bytes[0], bytes[1], bytes[2], bytes[3], bytes[4], bytes[5], bytes[6], bytes[7],
     ]))
@@ -306,8 +295,8 @@ fn gnm_mode9_bc7(raw: &[u8], width: u16, height: u16) -> Result<Vec<u8>> {
         y(5),
         x(5),
     ];
-    let blocks_w = (width as usize + 3) / 4;
-    let blocks_h = (height as usize + 3) / 4;
+    let blocks_w = (width as usize).div_ceil(4);
+    let blocks_h = (height as usize).div_ceil(4);
     let blocks_per_row = blocks_w.div_ceil(64);
     let x_terms: Vec<usize> = (0..64).map(|v| pattern_axis(v, &pattern, true)).collect();
     let y_terms: Vec<usize> = (0..64).map(|v| pattern_axis(v, &pattern, false)).collect();
@@ -343,12 +332,11 @@ fn decode_bc7(raw: &[u8], width: u16, height: u16) -> Result<RgbaImage> {
                     let y = by * 4 + py;
                     if x < width && y < height {
                         let src = (py * 4 + px) * 4;
-                        image.put_pixel(x as u32, y as u32, [
-                            rgba[src],
-                            rgba[src + 1],
-                            rgba[src + 2],
-                            rgba[src + 3],
-                        ]);
+                        image.put_pixel(
+                            x as u32,
+                            y as u32,
+                            [rgba[src], rgba[src + 1], rgba[src + 2], rgba[src + 3]],
+                        );
                     }
                 }
             }
@@ -386,20 +374,14 @@ fn save_png(image: &RgbaImage, path: &Path) -> Result<()> {
     }
 
     let row_bytes = image.width as usize * 4;
-    let mut scanlines = Vec::with_capacity(
-        image.height as usize * (1 + row_bytes),
-    );
+    let mut scanlines = Vec::with_capacity(image.height as usize * (1 + row_bytes));
     let mut previous = vec![0u8; row_bytes];
     for row in image.pixels.chunks_exact(row_bytes) {
         scanlines.push(4);
         for index in 0..row_bytes {
             let left = if index >= 4 { row[index - 4] } else { 0 };
             let above = previous[index];
-            let upper_left = if index >= 4 {
-                previous[index - 4]
-            } else {
-                0
-            };
+            let upper_left = if index >= 4 { previous[index - 4] } else { 0 };
             scanlines.push(row[index].wrapping_sub(paeth(left, above, upper_left)));
         }
         previous.copy_from_slice(row);

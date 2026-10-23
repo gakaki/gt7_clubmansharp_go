@@ -57,7 +57,12 @@ fn extract_strings(data: &[u8], limit: usize) -> Vec<String> {
     out
 }
 
-pub fn index_one(rel: &str, path: &Path, head_bytes: u64, string_limit: usize) -> Result<ModelInfo> {
+pub fn index_one(
+    rel: &str,
+    path: &Path,
+    head_bytes: u64,
+    string_limit: usize,
+) -> Result<ModelInfo> {
     let meta = fs::metadata(path)?;
     let take = meta.len().min(head_bytes) as usize;
     let data = {
@@ -78,8 +83,14 @@ pub fn index_one(rel: &str, path: &Path, head_bytes: u64, string_limit: usize) -
     let u64_at = |o: usize| -> u64 {
         if data.len() >= o + 8 {
             u64::from_le_bytes([
-                data[o], data[o + 1], data[o + 2], data[o + 3],
-                data[o + 4], data[o + 5], data[o + 6], data[o + 7],
+                data[o],
+                data[o + 1],
+                data[o + 2],
+                data[o + 3],
+                data[o + 4],
+                data[o + 5],
+                data[o + 6],
+                data[o + 7],
             ])
         } else {
             0
@@ -95,8 +106,7 @@ pub fn index_one(rel: &str, path: &Path, head_bytes: u64, string_limit: usize) -
         field_0x0c: u32_at(0x0C),
         model_count,
         models_offset,
-        models_end: models_offset
-            .saturating_add(u64::from(model_count).saturating_mul(0x58)),
+        models_end: models_offset.saturating_add(u64::from(model_count).saturating_mul(0x58)),
         texture_set_offset: u64_at(0x108),
         shaders_offset: u64_at(0x110),
         strings: extract_strings(&data[8..], string_limit),

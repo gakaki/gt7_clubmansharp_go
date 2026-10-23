@@ -13,6 +13,7 @@ const base = arg('--base', 'http://127.0.0.1:4174/')
 const cdpRoot = arg('--cdp', 'http://127.0.0.1:9333')
 const outDir = path.resolve(arg('--out-dir', '../site'))
 const sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms))
+await fs.mkdir(outDir, { recursive: true })
 
 class Cdp {
   constructor(ws) {
@@ -80,6 +81,26 @@ await cdp.call('Emulation.setDeviceMetricsOverride', {
   deviceScaleFactor: 1,
   mobile: false,
 })
+await navigate(`${base}?lang=zh`)
+const filterExpected = await evaluate(`(async () => {
+  const data = await (await fetch('/data/cars.json')).json()
+  return {
+    all: data.cars.length,
+    brandCentral: data.cars.filter((car) => car.texts?.brandCentral).length,
+    usedCar: data.cars.filter((car) => car.texts?.usedCar).length,
+    vehicleCollection: data.cars.filter((car) => car.texts?.vehicleCollection).length,
+    cafe: data.cars.filter((car) => car.conversation?.length || car.dialogues?.length).length,
+  }
+})()`)
+const filterObserved = {}
+for (const [index, id] of ['all', 'brandCentral', 'usedCar', 'vehicleCollection', 'cafe'].entries()) {
+  await evaluate(`document.querySelectorAll('.seg button')[${index}]?.click()`)
+  await sleep(250)
+  filterObserved[id] = await evaluate(`document.querySelectorAll('.card').length`)
+}
+const filterLabels = await evaluate(`[...document.querySelectorAll('.seg button')].map((node) => node.textContent.trim())`)
+await screenshot('main-source-filters.png')
+
 await navigate(`${base}?lang=both&car=0x0000D1BB&tab=vehicleCollection`)
 const desktop = await evaluate(`(() => {
   const tabs = [...document.querySelectorAll('.car-tabs button')]
@@ -151,6 +172,18 @@ await cdp.call('Emulation.setDeviceMetricsOverride', {
   deviceScaleFactor: 2,
   mobile: true,
 })
+await navigate(`${base}?lang=zh`)
+const mobileFilters = await evaluate(`(() => {
+  const bar = document.querySelector('.seg')
+  return {
+    buttons: bar?.querySelectorAll('button').length || 0,
+    clientWidth: bar?.clientWidth || 0,
+    scrollWidth: bar?.scrollWidth || 0,
+    bodyWidth: document.documentElement.scrollWidth,
+    viewportWidth: document.documentElement.clientWidth,
+  }
+})()`)
+await screenshot('main-source-filters-mobile.png')
 await navigate(`${base}?lang=zh&car=0x0000D1BB&tab=vehicleCollection`)
 const mobileBefore = await evaluate(`(() => ({
   title: document.querySelector('.dialog h3')?.textContent?.trim() || '',
@@ -201,8 +234,22 @@ const checks = {
   mobileSwitchedCar: mobileBefore.title !== mobileAfter.title,
   mobileCollection: mobileBefore.tabs.length === 5 &&
     mobileBefore.panel.includes('智能手机巨头'),
+  fiveSourceFilters: filterLabels.length === 5 &&
+    filterLabels.some((label) => label.includes('品牌店')) &&
+    filterLabels.some((label) => label.includes('二手车')) &&
+    filterLabels.some((label) => label.includes('车辆收藏')) &&
+    filterLabels.some((label) => label.includes('咖啡屋对白')),
+  sourceFilterCounts: Object.entries(filterExpected)
+    .every(([id, count]) => filterObserved[id] === count),
+  mobileFilterStrip: mobileFilters.buttons === 5 &&
+    mobileFilters.bodyWidth <= mobileFilters.viewportWidth &&
+    mobileFilters.scrollWidth >= mobileFilters.clientWidth,
 }
 const report = {
+  filterExpected,
+  filterObserved,
+  filterLabels,
+  mobileFilters,
   desktop,
   english,
   missingCollection,

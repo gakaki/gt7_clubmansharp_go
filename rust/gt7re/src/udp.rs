@@ -29,22 +29,37 @@ pub fn parse(pkt: &[u8]) -> Result<Value> {
     }
     let mut m = Map::new();
     m.insert("packet_size".into(), json!(pkt.len()));
-    m.insert("version".into(), json!(match pkt.len() {
-        SIZE_A => "A",
-        SIZE_B => "B",
-        SIZE_T => "T",
-        SIZE_C => "C",
-        _ => "unknown",
-    }));
-    m.insert("magic".into(), json!(format!("0x{:08X}", i32_at(pkt, 0) as u32)));
+    m.insert(
+        "version".into(),
+        json!(match pkt.len() {
+            SIZE_A => "A",
+            SIZE_B => "B",
+            SIZE_T => "T",
+            SIZE_C => "C",
+            _ => "unknown",
+        }),
+    );
+    m.insert(
+        "magic".into(),
+        json!(format!("0x{:08X}", i32_at(pkt, 0) as u32)),
+    );
     m.insert("position".into(), json!(f32v(pkt, 4, 3)));
     m.insert("world_velocity".into(), json!(f32v(pkt, 16, 3)));
     m.insert("rotation".into(), json!(f32v(pkt, 28, 3)));
-    m.insert("orientation_relative_to_north".into(), json!(f32_at(pkt, 40)));
+    m.insert(
+        "orientation_relative_to_north".into(),
+        json!(f32_at(pkt, 40)),
+    );
     m.insert("angular_velocity".into(), json!(f32v(pkt, 44, 3)));
     m.insert("body_height".into(), json!(f32_at(pkt, 56)));
     m.insert("engine_rpm".into(), json!(f32_at(pkt, 60)));
-    m.insert("iv".into(), json!(pkt[64..68].iter().map(|b| format!("{b:02X}")).collect::<Vec<_>>()));
+    m.insert(
+        "iv".into(),
+        json!(pkt[64..68]
+            .iter()
+            .map(|b| format!("{b:02X}"))
+            .collect::<Vec<_>>()),
+    );
     m.insert("fuel_level".into(), json!(f32_at(pkt, 68)));
     m.insert("fuel_capacity".into(), json!(f32_at(pkt, 72)));
     m.insert("speed".into(), json!(f32_at(pkt, 76)));
@@ -99,11 +114,17 @@ pub fn parse(pkt: &[u8]) -> Result<Value> {
         m.insert("unknown_f32_340".into(), json!(f32_at(pkt, 340)));
     }
     if pkt.len() >= SIZE_C {
-        m.insert("surface_type".into(), json!(String::from_utf8_lossy(&pkt[344..348]).into_owned()));
+        m.insert(
+            "surface_type".into(),
+            json!(String::from_utf8_lossy(&pkt[344..348]).into_owned()),
+        );
         m.insert("current_lap_ms".into(), json!(i32_at(pkt, 348)));
         m.insert("wheel_steering_angle".into(), json!(f32v(pkt, 352, 2)));
         m.insert("wheel_base".into(), json!(f32_at(pkt, 360)));
-        m.insert("car_category".into(), json!(String::from_utf8_lossy(&pkt[364..368]).into_owned()));
+        m.insert(
+            "car_category".into(),
+            json!(String::from_utf8_lossy(&pkt[364..368]).into_owned()),
+        );
     }
     Ok(Value::Object(m))
 }

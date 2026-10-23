@@ -34,16 +34,12 @@ pub struct Gpb4Archive {
 }
 
 fn u32le(data: &[u8], offset: usize) -> Result<u32> {
-    let bytes = data
-        .get(offset..offset + 4)
-        .context("u32 out of range")?;
+    let bytes = data.get(offset..offset + 4).context("u32 out of range")?;
     Ok(u32::from_le_bytes([bytes[0], bytes[1], bytes[2], bytes[3]]))
 }
 
 fn u64le(data: &[u8], offset: usize) -> Result<u64> {
-    let bytes = data
-        .get(offset..offset + 8)
-        .context("u64 out of range")?;
+    let bytes = data.get(offset..offset + 8).context("u64 out of range")?;
     Ok(u64::from_le_bytes([
         bytes[0], bytes[1], bytes[2], bytes[3], bytes[4], bytes[5], bytes[6], bytes[7],
     ]))
@@ -76,9 +72,7 @@ pub fn parse(source: &Path) -> Result<Gpb4Archive> {
         let flags = u64le(&data, offset + 0x10)?;
         let size = u64le(&data, offset + 0x18)?;
         if data_offset > data.len() as u64 || size > data.len() as u64 - data_offset {
-            bail!(
-                "GPB4 entry {index} out of range: offset=0x{data_offset:X} size=0x{size:X}"
-            );
+            bail!("GPB4 entry {index} out of range: offset=0x{data_offset:X} size=0x{size:X}");
         }
         entries.push(Gpb4Entry {
             index,

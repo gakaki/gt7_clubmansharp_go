@@ -1,212 +1,163 @@
 [
- {
-  "path": "reports/named.txt",
-  "desc": "真实资源路径 → store 文件映射",
-  "exists": true,
-  "files": 1,
-  "bytes": 456173
- },
- {
-  "path": "reports/store_census_rust.csv",
-  "desc": "全库 95,339 文件类型普查",
-  "exists": true,
-  "files": 1,
-  "bytes": 9056854
- },
- {
-  "path": "reports/mdl5_index.json",
-  "desc": "8,149 个 MDL5、59,498 个子模型记录与 621 万标识符",
-  "exists": true,
-  "files": 1,
-  "bytes": 79310638
- },
- {
-  "path": "reports/txs5_index.json",
-  "desc": "4,296 个直接 TXS5 的纹理描述符",
-  "exists": true,
-  "files": 1,
-  "bytes": 1240047
- },
- {
-  "path": "reports/txs5_index_idp0.json",
-  "desc": "14,983 个 IDP0 内嵌 TXS5 描述符",
-  "exists": true,
-  "files": 1,
-  "bytes": 2761215
- },
- {
-  "path": "reports/gt7_menu_scripts_diss.zip",
-  "desc": "1,906 个 Adhoc 菜单脚本反汇编",
-  "exists": true,
-  "files": 1,
-  "bytes": 12943253
- },
- {
-  "path": "reports/menu_disassembly_manifest.csv",
-  "desc": "菜单反汇编逐文件 SHA-256 清单",
-  "exists": true,
-  "files": 1,
-  "bytes": 269575
- },
- {
-  "path": "reports/jxl_index.json",
-  "desc": "4,074 个 JPEG XL 盒容器与 codestream/EXIF 索引",
-  "exists": true,
-  "files": 1,
-  "bytes": 1141806
- },
- {
-  "path": "reports/sndz_index.json",
-  "desc": "860 个 SNDZ 音频容器与段标签索引",
-  "exists": true,
-  "files": 1,
-  "bytes": 160511
- },
- {
-  "path": "reports/research_rust.json",
-  "desc": "Rust DMSB + RT2 + GT Cafe 研究结果",
-  "exists": true,
-  "files": 1,
-  "bytes": 9142059
- },
- {
-  "path": "reports/face_atlases_rust",
-  "desc": "19 位角色的游戏内真实头像图集输出",
-  "exists": true,
-  "files": 20,
-  "bytes": 3874994
- },
- {
-  "path": "site/public/avatars/extracted",
-  "desc": "站点使用的 19 张真实角色头像",
-  "exists": true,
-  "files": 19,
-  "bytes": 676268
- },
- {
-  "path": "site/public/cars",
-  "desc": "官方 GT7 车辆缩略图缓存",
-  "exists": true,
-  "files": 580,
-  "bytes": 20255027
- },
- {
-  "path": "site/public/logos",
-  "desc": "官方品牌标志缓存",
-  "exists": true,
-  "files": 77,
-  "bytes": 1266338
- },
- {
-  "path": "site/public/data",
-  "desc": "研究站点 JSON/CSV/Markdown 数据",
-  "exists": true,
-  "files": 11,
-  "bytes": 12379018
- },
- {
-  "path": "report/FINAL_STATUS.md",
-  "desc": "逐项完成度、产物和格式限制",
-  "exists": true,
-  "files": 1,
-  "bytes": 4717
- },
- {
-  "path": "extracted/text_decoded",
-  "desc": "19 语言本地化文本（JSON/CSV）",
-  "exists": true,
-  "files": 38,
-  "bytes": 238589444
- },
- {
-  "path": "extracted/textures",
-  "desc": "9,097 张 DDS 贴图（42.4 GB）",
-  "exists": true,
-  "files": 9097,
-  "bytes": 45523110708
- },
- {
-  "path": "extracted/jxl",
-  "desc": "4,074 个游戏 JPEG XL 容器",
-  "exists": true,
-  "files": 4074,
-  "bytes": 1124525989
- },
- {
-  "path": "extracted/idp0",
-  "desc": "14,983 个 IDP0 载荷（4.99 GB）",
-  "exists": true,
-  "files": 14983,
-  "bytes": 5362921472
- },
- {
-  "path": "extracted/audio",
-  "desc": "860 个 SNDZ 音频",
-  "exists": true,
-  "files": 860,
-  "bytes": 669038048
- },
- {
-  "path": "extracted/video",
-  "desc": "15 个 MP4/HEVC 影片",
-  "exists": true,
-  "files": 15,
-  "bytes": 5637742104
- },
- {
-  "path": "extracted/tracks/map4",
-  "desc": "85 条赛道中心线（点集 + 边表）",
-  "exists": true,
-  "files": 171,
-  "bytes": 12314529
- },
- {
-  "path": "extracted/tracks/preview",
-  "desc": "85 张赛道布局预览 PNG",
-  "exists": true,
-  "files": 156,
-  "bytes": 6860935
- },
- {
-  "path": "extracted/tracks/rada",
-  "desc": "392 个 RADA 分块（向量 + 弧长）",
-  "exists": true,
-  "files": 478,
-  "bytes": 14964568
- },
- {
-  "path": "extracted/by_kind",
-  "desc": "全库按类型硬链接归档（95,339）",
-  "exists": true,
-  "files": 95339,
-  "bytes": 302826430818
- },
- {
-  "path": "tree",
-  "desc": "12,354 个已命名资源的真实路径镜像",
-  "exists": true,
-  "files": 14260,
-  "bytes": 116921969498
- },
- {
-  "path": "rust/gt7re",
-  "desc": "Rust 并行解析器源码与二进制",
-  "exists": true,
-  "files": 2967,
-  "bytes": 864618816
- },
- {
-  "path": "report/FORMATS.md",
-  "desc": "格式手册",
-  "exists": true,
-  "files": 1,
-  "bytes": 10126
- },
- {
-  "path": "report/GT7_PS5_解包逆向_报告.md",
-  "desc": "总报告",
-  "exists": true,
-  "files": 1,
-  "bytes": 19140
- }
+  {
+    "bytes": 456173,
+    "desc": "真实资源路径 → store 文件映射",
+    "exists": true,
+    "files": 1,
+    "path": "reports/named.txt"
+  },
+  {
+    "bytes": 9056854,
+    "desc": "全库 95,339 文件类型普查",
+    "exists": true,
+    "files": 1,
+    "path": "reports/store_census_rust.csv"
+  },
+  {
+    "bytes": 79310638,
+    "desc": "MDL5 模型索引",
+    "exists": true,
+    "files": 1,
+    "path": "reports/mdl5_index.json"
+  },
+  {
+    "bytes": 1240047,
+    "desc": "TXS5 纹理描述符",
+    "exists": true,
+    "files": 1,
+    "path": "reports/txs5_index.json"
+  },
+  {
+    "bytes": 2761215,
+    "desc": "IDP0 内嵌 TXS5",
+    "exists": true,
+    "files": 1,
+    "path": "reports/txs5_index_idp0.json"
+  },
+  {
+    "bytes": 12943413,
+    "desc": "Adhoc 菜单脚本反汇编",
+    "exists": true,
+    "files": 1,
+    "path": "reports/gt7_menu_scripts_diss.zip"
+  },
+  {
+    "bytes": 267665,
+    "desc": "菜单反汇编 SHA-256",
+    "exists": true,
+    "files": 1,
+    "path": "reports/menu_disassembly_manifest.csv"
+  },
+  {
+    "bytes": 1141806,
+    "desc": "JPEG XL 盒容器",
+    "exists": true,
+    "files": 1,
+    "path": "reports/jxl_index.json"
+  },
+  {
+    "bytes": 160511,
+    "desc": "SNDZ 音频容器",
+    "exists": true,
+    "files": 1,
+    "path": "reports/sndz_index.json"
+  },
+  {
+    "bytes": 9172470,
+    "desc": "Rust DMSB + RT2 + Cafe 研究",
+    "exists": true,
+    "files": 1,
+    "path": "reports/research_rust.json"
+  },
+  {
+    "bytes": 3874956,
+    "desc": "角色头像图集",
+    "exists": true,
+    "files": 20,
+    "path": "reports/face_atlases_rust"
+  },
+  {
+    "bytes": 758211,
+    "desc": "站点角色头像",
+    "exists": true,
+    "files": 19,
+    "path": "site/public/avatars/extracted"
+  },
+  {
+    "bytes": 20255027,
+    "desc": "车辆缩略图",
+    "exists": true,
+    "files": 580,
+    "path": "site/public/cars"
+  },
+  {
+    "bytes": 1266338,
+    "desc": "品牌标志",
+    "exists": true,
+    "files": 77,
+    "path": "site/public/logos"
+  },
+  {
+    "bytes": 15118973,
+    "desc": "站点数据集",
+    "exists": true,
+    "files": 15,
+    "path": "site/public/data"
+  },
+  {
+    "bytes": 238589444,
+    "desc": "本地化文本",
+    "exists": true,
+    "files": 38,
+    "path": "extracted/text_decoded"
+  },
+  {
+    "bytes": 45523110708,
+    "desc": "DDS 贴图",
+    "exists": true,
+    "files": 9097,
+    "path": "extracted/textures"
+  },
+  {
+    "bytes": 5362921472,
+    "desc": "IDP0 载荷",
+    "exists": true,
+    "files": 14983,
+    "path": "extracted/idp0"
+  },
+  {
+    "bytes": 669038048,
+    "desc": "SNDZ 音频",
+    "exists": true,
+    "files": 860,
+    "path": "extracted/audio"
+  },
+  {
+    "bytes": 5637742104,
+    "desc": "视频",
+    "exists": true,
+    "files": 15,
+    "path": "extracted/video"
+  },
+  {
+    "bytes": 34141760,
+    "desc": "赛道数据",
+    "exists": true,
+    "files": 806,
+    "path": "extracted/tracks"
+  },
+  {
+    "bytes": 116921969498,
+    "desc": "命名资源镜像",
+    "exists": true,
+    "files": 14260,
+    "path": "tree"
+  },
+  {
+    "bytes": 3993177622,
+    "desc": "Rust 工具源码",
+    "exists": true,
+    "files": 8781,
+    "path": "rust/gt7re"
+  }
 ]

@@ -27,12 +27,22 @@ Artifacts: rust/out/smoke
 
 ## Vehicle / cafe data validation (2026-10-23)
 
-`python scripts\verify_site_data.py`:
+`gt7re verify`:
 
 ```text
-PASS cars=591 with_dialogue=332 dialogues=444 scene_lines=2620 mapped=444
-images=582 speakers=14 car_texts=634 text_cars=581 review=253
+PASS cars=591 withDialogue=332 dialogues=444 conversationLines=2620
+vehicleCollectionCars=580 dealerOffers=65 menuBooks=108 avatars=19
 ```
+
+`cargo test --release`: 9 passed, 0 failed.
+
+`npm run build`: passed.
+
+Production browser verification:
+
+- Vehicle details and source filters: 15 / 15 checks passed.
+- Cafe menu books: 17 / 17 checks passed.
+- Searchable Python source files in `_re`: 0.
 
 `cargo test --release`: 9 passed, 0 failed.
 
@@ -50,12 +60,6 @@ keys and 19 real character portraits.
 
 `gt7re mdl5-index`: 8,149 files, 59,498 submodel records, 7,279 valid model
 tables, 6,215,273 identifiers, texture and shader offsets for every file.
-
-`python scripts\verify_avatars.py`:
-
-```text
-PASS avatars=19 cafe=15 unique_hashes=19 min_pair_distance=5
-```
 
 Two consecutive full `gt7re pipeline` runs produced identical SHA-256 hashes
 for the census, research JSON, dealer/vehicle/cafe CSV files, MDL5/JXL/SNDZ

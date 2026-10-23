@@ -74,12 +74,10 @@ so the research tree does not misrepresent partial formats as complete.
 ## Verification
 
 ```text
-verify_site_data.py:
-PASS cars=591 with_dialogue=332 dialogues=444 scene_lines=2620 mapped=444
-images=582 speakers=14 car_texts=1215 text_cars=582 review=253
-
-verify_rust_parity.py:
-PASS cars=591 texts=634 scenes=1698 conversation=2620 review=253 avatars=19
+gt7re verify:
+PASS native Rust verifier:
+cars=591 withDialogue=332 dialogues=444 conversationLines=2620
+vehicleCollectionCars=580 dealerOffers=65 menuBooks=108 avatars=19
 
 verify_vehicle_collection_ui.mjs (production):
 PASS five tabs, split Brand Central / Car Collection, EN/ZH/bilingual,
@@ -91,8 +89,14 @@ cargo test --release:
 ```
 
 The production Worker `gt7-cafe-edge` deployment
-`0816f9d8-1e49-40b9-84ce-4a6f34194359` serves
+`b959bbe0-3576-4f70-82c4-b0aabcecf412` serves
 <https://gt7.gakaki.com>.
+
+The complete project-owned Python pipeline (63 scripts and the local virtual
+environment) has been removed. Rust now owns store discovery, RT2, GPB4,
+research joins, site generation, menu books, official caches, avatars,
+indexing, diagnostics, packaging, verification and deployment orchestration.
+`gt7re update` performs the update path with Rayon-based parallel stages.
 
 The native Rust `pipeline` command performs the baseline research path:
 GPB4 extraction from the original PS5 `PRPYS`, RT2/DMSB joins, all three
