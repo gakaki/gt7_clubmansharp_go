@@ -17,6 +17,8 @@ SECTIONS = [
     ("reports/research_rust.json", "Rust DMSB + RT2 + GT Cafe 研究结果"),
     ("reports/face_atlases_rust", "19 位角色的游戏内真实头像图集输出"),
     ("site/public/avatars/extracted", "站点使用的 19 张真实角色头像"),
+    ("site/public/cars", "官方 GT7 车辆缩略图缓存"),
+    ("site/public/logos", "官方品牌标志缓存"),
     ("site/public/data", "研究站点 JSON/CSV/Markdown 数据"),
     ("report/FINAL_STATUS.md", "逐项完成度、产物和格式限制"),
     ("extracted/text_decoded", "19 语言本地化文本（JSON/CSV）"),

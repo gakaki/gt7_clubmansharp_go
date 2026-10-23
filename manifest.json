@@ -53,7 +53,7 @@
   "desc": "Rust DMSB + RT2 + GT Cafe 研究结果",
   "exists": true,
   "files": 1,
-  "bytes": 9142063
+  "bytes": 9142059
  },
  {
   "path": "reports/face_atlases_rust",
@@ -68,6 +68,20 @@
   "exists": true,
   "files": 19,
   "bytes": 676268
+ },
+ {
+  "path": "site/public/cars",
+  "desc": "官方 GT7 车辆缩略图缓存",
+  "exists": true,
+  "files": 580,
+  "bytes": 20255027
+ },
+ {
+  "path": "site/public/logos",
+  "desc": "官方品牌标志缓存",
+  "exists": true,
+  "files": 77,
+  "bytes": 1266338
  },
  {
   "path": "site/public/data",
@@ -158,7 +172,7 @@
   "desc": "Rust 并行解析器源码与二进制",
   "exists": true,
   "files": 2965,
-  "bytes": 863356302
+  "bytes": 863953886
  },
  {
   "path": "report/FORMATS.md",
