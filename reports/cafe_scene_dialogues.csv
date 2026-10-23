@@ -2474,10 +2474,6 @@ many cars on the road that are quite this exciting!","Yaris WRC是一款彻底�
 
 不管怎么说，对于一个真正的赛车迷来说，这是少数几
 辆能令人兴奋到不能自己的公路车！"
-0x00007917,RaceEnthusiast_005_penzoil_gtr_99_1st_Cunsomized,0,Nissan GT-R GT500 '99,Jeremy,杰里米,咖啡屋常客 · 赛车史,false,"...Th-This car!
-Is it yours!?","这这这……这辆车！！
-这车是你的？！
-!"
 0x00007918,RaceEnthusiast_005_penzoil_gtr_99_1st_Cunsomized,0,Nissan GT-R GT500 '99,Sarah,莎拉·伊顿,主向导 / 赛事工程师,false,"Ah, Jeremy! Nothing gets past you, does it?
 
 Jeremy loves nothing more than geeking out about racing.
@@ -2504,13 +2500,6 @@ Ah, I could talk about it all day long!","哇哦，这绝对是辆绝世好车�
 
 我跟你说，夸起它来，我可以夸一整天……"
 0x0000791B,RaceEnthusiast_005_penzoil_gtr_99_1st_Win_Cunsomized,0,Nissan GT-R GT500 '99,Jeremy,杰里米,咖啡屋常客 · 赛车史,false,"Hold on, you're the winner of that race, aren't you?
-Congratulations!
-Now...","你就是那个赢了刚才那场比赛的人吧？
-兄弟，水平不错啊！
-
-不过顺便一说……
-$"
-0x0000791C,RaceEnthusiast_005_penzoil_gtr_99_Repeat_Win_Cunsomized,0,Nissan GT-R GT500 '99,Jeremy,杰里米,咖啡屋常客 · 赛车史,false,"Hold on, you're the winner of that race, aren't you?
 Congratulations!
 Now...","你就是那个赢了刚才那场比赛的人吧？
 兄弟，水平不错啊！
@@ -11883,14 +11872,6 @@ for a long time as well.","当然，毕竟它是意大利最有名
 的Carrozzeria之一。
 而且，法比奥先生还在Renault Design工作了很长时间。
 9"
-0x0000A039,Fabio_011_mito_14_t_sport_09_1st,0,Alfa Romeo MiTo 1.4 T Sport '09,Sarah,莎拉·伊顿,主向导 / 赛事工程师,false,"Right, it is, after all, one of the most famous Carrozzerias
-in Italy.
-
-And Mr. Fabio worked at Renault Design for a long time as well.
-q","当然，毕竟它是意大利最有名
-的Carrozzeria之一。
-而且，法比奥先生还在Renault Design工作了很长时间。
-9"
 0x0000A03A,Fabio_011_mito_14_t_sport_09_1st,0,Alfa Romeo MiTo 1.4 T Sport '09,Fabio Filippini,法比奥·菲利皮尼,前宾尼法利纳设计总监,false,"This car is the ‘baby’ of the Alfa Romeo line.
 
 Regardless, its design recalls the stylistic features
@@ -17842,17 +17823,6 @@ By the way...","你不会刚好就是那天锦标赛的冠军吧？
 
 顺便问一句……
 x"
-0x0000AF82,Ed_019_lc500_17_repeatt_Win,0,Lexus LC500 '17,Ed Welburn,埃德·韦伯恩,前通用汽车全球设计副总裁,false,"Hmm, would you happen to be the championship winner
-from the other day?
-
-That was some fantastic driving!
-
-By the way...","你不会刚好就是那天锦标赛的冠军吧？
-
-你的驾驶技术真是漂亮！
-
-顺便问一句……
-x"
 0x0000AF83,Ed_020_lancer_evo_final_15_1st,0,Mitsubishi Lancer Evolution Final Edition '15,Ed Welburn,埃德·韦伯恩,前通用汽车全球设计副总裁,false,"Hi there, I think it’s my first time seeing you here.
 Are you the driver of this Evolution Final Edition?","嗨，这应该是我第一次在这里看到你，
 你是这辆Evolution Final Edition的车手吗？
@@ -17907,17 +17877,6 @@ I look forward to seeing you again!
 X","我其实很想多跟你聊聊！希望下次还能碰上。
 F"
 0x0000AF8A,Ed_020_lancer_evo_final_15_1stt_Win,0,Mitsubishi Lancer Evolution Final Edition '15,Ed Welburn,埃德·韦伯恩,前通用汽车全球设计副总裁,false,"Hmm, would you happen to be the championship winner
-from the other day?
-
-That was some fantastic driving!
-
-By the way...","你不会刚好就是那天锦标赛的冠军吧？
-
-你的驾驶技术真是漂亮！
-
-顺便问一句……
-x"
-0x0000AF8B,Ed_020_lancer_evo_final_15_repeatt_Win,0,Mitsubishi Lancer Evolution Final Edition '15,Ed Welburn,埃德·韦伯恩,前通用汽车全球设计副总裁,false,"Hmm, would you happen to be the championship winner
 from the other day?
 
 That was some fantastic driving!
@@ -23876,16 +23835,6 @@ By the way...","啊，我认出你了。你就是那天比赛的冠军吧？
 祝贺你，你的表现无与伦比！
 
 顺带一问……"
-0x0000C02A,Freeman_030_lancer_evo8_mr_gsr_04_Repeat_WIn,0,Mitsubishi Lancer Evolution VIII MR GSR '04,Freeman Thomas,弗里曼·托马斯,前福特设计总监 · 保时捷/奥迪,false,"Hey, I recognise you. Didn't you win
-a race the other day?
-
-Congratulations on your fantastic performance!
-
-By the way...","啊，我认出你了。你就是那天比赛的冠军吧？
-
-祝贺你，你的表现无与伦比！
-
-顺带一问……"
 0x0000C02B,Freeman_031_rgt_42_16_1st,0,RUF RGT 4.2 '16,Freeman Thomas,弗里曼·托马斯,前福特设计总监 · 保时捷/奥迪,false,"Is this Ruf RGT yours?
 >",这辆如虎RGT是你的吗？
 0x0000C02C,Freeman_031_rgt_42_16_1st,0,RUF RGT 4.2 '16,Sarah,莎拉·伊顿,主向导 / 赛事工程师,false,"Wait... Aren’t you Freeman Thomas,
@@ -23945,16 +23894,6 @@ good look at your beloved car!","不客气。趁此机会再回去
 欣赏下你的爱车吧！
 U"
 0x0000C032,Freeman_031_rgt_42_16_1st_WIn,0,RUF RGT 4.2 '16,Freeman Thomas,弗里曼·托马斯,前福特设计总监 · 保时捷/奥迪,false,"Hey, I recognise you. Didn't you win
-a race the other day?
-
-Congratulations on your fantastic performance!
-
-By the way...","啊，我认出你了。你就是那天比赛的冠军吧？
-
-祝贺你，你的表现无与伦比！
-
-顺带一问……"
-0x0000C033,Freeman_031_rgt_42_16_Repeat_WIn,0,RUF RGT 4.2 '16,Freeman Thomas,弗里曼·托马斯,前福特设计总监 · 保时捷/奥迪,false,"Hey, I recognise you. Didn't you win
 a race the other day?
 
 Congratulations on your fantastic performance!
@@ -24567,16 +24506,6 @@ good look at your beloved car!","不客气。趁此机会再回去
 欣赏下你的爱车吧！
 U"
 0x0000C47A,Freeman_032_civic_r_lim_20_1st_WIn,0,Honda Civic Type R Limited Edition (FK8) '20,Freeman Thomas,弗里曼·托马斯,前福特设计总监 · 保时捷/奥迪,false,"Hey, I recognise you. Didn't you win
-a race the other day?
-
-Congratulations on your fantastic performance!
-
-By the way...","啊，我认出你了。你就是那天比赛的冠军吧？
-
-祝贺你，你的表现无与伦比！
-
-顺带一问……"
-0x0000C47B,Freeman_032_civic_r_lim_20_Repeat_WIn,0,Honda Civic Type R Limited Edition (FK8) '20,Freeman Thomas,弗里曼·托马斯,前福特设计总监 · 保时捷/奥迪,false,"Hey, I recognise you. Didn't you win
 a race the other day?
 
 Congratulations on your fantastic performance!

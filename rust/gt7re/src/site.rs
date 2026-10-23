@@ -568,6 +568,27 @@ fn clean_turn(
     Some(Value::Object(attach_speaker(output)))
 }
 
+fn dedupe_turn_content(rows: &mut Vec<Value>) {
+    let mut seen = HashSet::new();
+    rows.retain(|row| {
+        let normalize = |value: &str| {
+            value
+                .chars()
+                .filter(|ch| ch.is_alphanumeric())
+                .flat_map(char::to_lowercase)
+                .collect::<String>()
+        };
+        let speaker = row.get("speaker").and_then(Value::as_str).unwrap_or("");
+        let zh = normalize(row.get("zh").and_then(Value::as_str).unwrap_or(""));
+        let en = normalize(row.get("en").and_then(Value::as_str).unwrap_or(""));
+        let text = if zh.is_empty() { en } else { zh };
+        if text.is_empty() {
+            return true;
+        }
+        seen.insert((speaker.to_string(), text))
+    });
+}
+
 fn text_object(
     entry: &Value,
     us: &HashMap<(String, String), String>,
@@ -1027,6 +1048,8 @@ pub fn build(options: &Options) -> Result<Value> {
             let order_b = b.get("sceneOrder").and_then(Value::as_u64).unwrap_or(0);
             (scene_a, order_a).cmp(&(scene_b, order_b))
         });
+        dedupe_turn_content(&mut dialogues);
+        dedupe_turn_content(&mut conversation);
         object.insert("dialogues".into(), Value::Array(dialogues));
         object.insert("conversation".into(), Value::Array(conversation));
         object.remove("cafeScenes");
@@ -2151,5 +2174,16 @@ mod tests {
             clean_text("visible text<next id=1800102 type=9>"),
             "visible text"
         );
+    }
+
+    #[test]
+    fn removes_duplicate_dialogue_content_but_keeps_different_speakers() {
+        let mut rows = vec![
+            json!({"speaker": "Sarah", "zh": "你好。", "en": "Hello."}),
+            json!({"speaker": "Sarah", "zh": "你好。", "en": "Hello."}),
+            json!({"speaker": "Luca", "zh": "你好。", "en": "Hello."}),
+        ];
+        dedupe_turn_content(&mut rows);
+        assert_eq!(rows.len(), 2);
     }
 }

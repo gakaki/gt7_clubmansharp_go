@@ -116,6 +116,35 @@ for (const [index, id] of ['all', 'brandCentral', 'usedCar', 'vehicleCollection'
 const filterLabels = await evaluate(`[...document.querySelectorAll('.seg button')].map((node) => node.textContent.trim())`)
 await screenshot('main-source-filters.png')
 
+await navigate(`${base}?lang=zh&l1=zh&car=0x00006F59&tab=cafe`)
+const cafeDesktop = await evaluate(`(() => {
+  const grid = document.querySelector('.cafe-dialogues')
+  const turns = [...document.querySelectorAll('.cafe-scene .dialogue')]
+  const normalize = (value) => String(value || '')
+    .normalize('NFKC')
+    .toLowerCase()
+    .replace(/[\\p{P}\\p{S}\\s]+/gu, '')
+  const seen = new Set()
+  let duplicates = 0
+  for (const turn of turns) {
+    const speaker = turn.querySelector('.who')?.textContent || ''
+    const text = [...turn.querySelectorAll('.dialogue-text')]
+      .map((node) => node.textContent).join('')
+    const key = speaker + '\\0' + normalize(text)
+    if (seen.has(key)) duplicates += 1
+    else seen.add(key)
+  }
+  return {
+    scenes: document.querySelectorAll('.cafe-scene').length,
+    columns: grid ? getComputedStyle(grid).gridTemplateColumns : '',
+    turns: turns.length,
+    duplicates,
+    bodyWidth: document.documentElement.scrollWidth,
+    viewportWidth: document.documentElement.clientWidth,
+  }
+})()`)
+await screenshot('cafe-multi-scene-desktop.png')
+
 await navigate(`${base}?lang=both&l1=zh&l2=us&car=0x0000D1BB&tab=vehicleCollection`)
 const desktop = await evaluate(`(() => {
   const tabs = [...document.querySelectorAll('.car-tabs button')]
@@ -261,6 +290,18 @@ const mobileBefore = await evaluate(`(() => ({
   viewportWidth: document.documentElement.clientWidth,
 }))()`)
 await screenshot('vehicle-collection-mobile.png')
+await navigate(`${base}?lang=zh&l1=zh&car=0x00006F59&tab=cafe`)
+const cafeMobile = await evaluate(`(() => {
+  const grid = document.querySelector('.cafe-dialogues')
+  return {
+    scenes: document.querySelectorAll('.cafe-scene').length,
+    columns: grid ? getComputedStyle(grid).gridTemplateColumns : '',
+    bodyWidth: document.documentElement.scrollWidth,
+    viewportWidth: document.documentElement.clientWidth,
+    fixedNav: getComputedStyle(document.querySelector('.mobile-car-nav')).position,
+  }
+})()`)
+await screenshot('cafe-multi-scene-mobile.png')
 await navigate(`${base}?lang=zh&l1=zh&car=0x0000D1BB&tab=garageSpecs`)
 const mobileGarage = await evaluate(`(() => {
   const panel = document.querySelector('.garage-specs-panel')
@@ -307,6 +348,10 @@ const checks = {
   missingCollectionState: missingCollection.title.includes('2002 Turbo') &&
     missingCollection.muted &&
     missingCollection.panel.includes('No Car Collection entry is available'),
+  cafeDesktopColumns: cafeDesktop.scenes >= 4 &&
+    cafeDesktop.columns.split(' ').length === 2 &&
+    cafeDesktop.duplicates === 0 &&
+    cafeDesktop.bodyWidth <= cafeDesktop.viewportWidth,
   keyboardTabs: keyboard.brand.includes('品牌购物') &&
     keyboard.collection.includes('车辆收藏') &&
     keyboard.garage.includes('车库数据'),
@@ -347,6 +392,10 @@ const checks = {
     mobileGarage.panel.includes('1,548 PS') &&
     mobileGarage.fixedNav === 'fixed' &&
     mobileGarage.bodyWidth <= mobileGarage.viewportWidth,
+  cafeMobileColumns: cafeMobile.scenes >= 4 &&
+    cafeMobile.columns.split(' ').length === 1 &&
+    cafeMobile.fixedNav === 'fixed' &&
+    cafeMobile.bodyWidth <= cafeMobile.viewportWidth,
   peugeotGarage: garagePeugeot.title.includes('205 Turbo 16 Evolution 2') &&
     garagePeugeot.panel.includes('PP 671.14') &&
     garagePeugeot.panel.includes('455 PS') &&
@@ -388,6 +437,7 @@ const report = {
   filterLabels,
   mobileFilters,
   desktop,
+  cafeDesktop,
   garageDesktop,
   english,
   garageEnglish,
@@ -398,6 +448,7 @@ const report = {
   garageVariant,
   garageMissing,
   mobileBefore,
+  cafeMobile,
   mobileGarage,
   mobileAfter,
   checks,

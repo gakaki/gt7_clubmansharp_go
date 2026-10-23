@@ -218,6 +218,29 @@ pub fn run(options: &Options) -> Result<Value> {
                 dialogue_lines.insert((id.to_string(), scene.to_string()));
             }
         }
+        let mut seen_dialogue_content = HashSet::new();
+        for turn in car
+            .get("conversation")
+            .and_then(Value::as_array)
+            .into_iter()
+            .flatten()
+        {
+            let normalize = |value: &str| {
+                value
+                    .chars()
+                    .filter(|ch| ch.is_alphanumeric())
+                    .flat_map(char::to_lowercase)
+                    .collect::<String>()
+            };
+            let speaker = turn.get("speaker").and_then(Value::as_str).unwrap_or("");
+            let zh = normalize(turn.get("zh").and_then(Value::as_str).unwrap_or(""));
+            let en = normalize(turn.get("en").and_then(Value::as_str).unwrap_or(""));
+            let text = if zh.is_empty() { en } else { zh };
+            if text.is_empty() || seen_dialogue_content.insert((speaker.to_string(), text)) {
+                continue;
+            }
+            bail!("{id}: duplicate cafe dialogue content");
+        }
     }
     if collection != 580 {
         bail!("expected 580 Car Collection cars, got {collection}");
@@ -228,9 +251,9 @@ pub fn run(options: &Options) -> Result<Value> {
     if dialogue_cars != 332 {
         bail!("expected 332 cars with cafe content, got {dialogue_cars}");
     }
-    if dialogue_lines.len() != 2620 {
+    if dialogue_lines.len() != 2612 {
         bail!(
-            "expected 2620 unique conversation lines, got {}",
+            "expected 2612 unique conversation lines, got {}",
             dialogue_lines.len()
         );
     }

@@ -603,7 +603,11 @@ function textCategoryCount(car) {
 function cafeSceneGroups(car) {
   const groups = []
   const byKey = new Map()
+  const seenTurns = new Set()
   for (const turn of car?.conversation || []) {
+    const dedupeKey = dialogueDedupeKey(turn)
+    if (seenTurns.has(dedupeKey)) continue
+    seenTurns.add(dedupeKey)
     const key = turn.sceneKey || turn.sceneId || 'scene'
     if (!byKey.has(key)) {
       const group = { key, titleZh: '', titleEn: '', turns: [] }
@@ -628,6 +632,15 @@ function cafeSceneGroups(car) {
       : group.turns.filter((turn) => turn.speaker === speakerFilter.value)
   }
   return groups.filter((group) => group.visibleTurns.length)
+}
+
+function dialogueDedupeKey(turn) {
+  const normalize = (value) => String(value || '')
+    .normalize('NFKC')
+    .toLowerCase()
+    .replace(/[\p{P}\p{S}\s]+/gu, '')
+  const text = normalize(turn.zh) || normalize(turn.en)
+  return text ? `${turn.speaker || ''}\u0000${text}` : `id:${turn.id}`
 }
 
 const activeCafeScenes = computed(() => cafeSceneGroups(activeCar.value))

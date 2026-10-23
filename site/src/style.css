@@ -358,12 +358,22 @@ button { font-family: inherit; cursor: pointer; }
 .close { border: 0; background: #f2f2f5; border-radius: 8px; width: 34px; height: 34px; font-size: 15px; }
 
 .dialogues { padding: 8px 22px 24px; }
-.cafe-dialogues { padding-top: 0; }
-.cafe-scene {
-  padding: 18px 0 4px;
-  border-bottom: 1px solid var(--line);
+.cafe-dialogues {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+  align-items: start;
+  padding: 12px 22px 24px;
 }
-.cafe-scene:last-of-type { border-bottom: 0; }
+.cafe-scene {
+  min-width: 0;
+  padding: 14px 16px 8px;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: linear-gradient(145deg, #fff, #fafafd);
+  box-shadow: 0 5px 18px rgba(24, 24, 30, 0.045);
+}
+.cafe-scene:only-child { grid-column: 1 / -1; }
 .scene-head {
   position: static;
   display: flex;
@@ -879,6 +889,12 @@ button { font-family: inherit; cursor: pointer; }
   .variant-tabs { justify-content: flex-start; margin-top: 8px; }
   .review-open { margin-left: 0; }
   .dialogues { padding: 4px 14px 20px; }
+  .cafe-dialogues {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 10px;
+    padding: 4px 14px 20px;
+  }
+  .cafe-scene { padding: 12px 12px 6px; }
   .text-panel { padding: 16px 14px 22px; }
   .garage-specs-panel { padding: 16px 14px 22px; }
   .specs-heading {
