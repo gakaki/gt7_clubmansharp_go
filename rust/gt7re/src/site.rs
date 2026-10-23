@@ -20,6 +20,35 @@ type TextKey = (String, String);
 type TextCandidates = HashMap<TextKey, Vec<((isize, isize, usize), String)>>;
 static WRITE_SEQUENCE: AtomicU64 = AtomicU64::new(0);
 
+const LANGUAGES: &[(&str, &str, &str)] = &[
+    ("ar", "العربية", "Arabic"),
+    ("cn", "简体中文", "Chinese (Simplified)"),
+    ("cz", "Čeština", "Czech"),
+    ("de", "Deutsch", "German"),
+    ("es", "Español", "Spanish"),
+    ("fr", "Français", "French"),
+    ("gb", "English (UK)", "English (UK)"),
+    ("it", "Italiano", "Italian"),
+    ("jp", "日本語", "Japanese"),
+    ("kr", "한국어", "Korean"),
+    ("nl", "Nederlands", "Dutch"),
+    ("pl", "Polski", "Polish"),
+    ("pt", "Português", "Portuguese"),
+    ("ru", "Русский", "Russian"),
+    ("th", "ไทย", "Thai"),
+    ("tr", "Türkçe", "Turkish"),
+    ("tw", "繁體中文", "Chinese (Traditional)"),
+    ("us", "English (US)", "English (US)"),
+    ("zh", "中文（简体）", "Chinese"),
+];
+
+fn language_catalog() -> Vec<Value> {
+    LANGUAGES
+        .iter()
+        .map(|(id, native, english)| json!({"id": id, "native": native, "english": english}))
+        .collect()
+}
+
 fn atomic_write(path: &Path, data: &[u8]) -> Result<()> {
     if let Some(parent) = path.parent() {
         fs::create_dir_all(parent)?;
@@ -260,10 +289,15 @@ fn clean_text(value: &str) -> String {
     static RESIDUE: OnceLock<Regex> = OnceLock::new();
     static CONTROL: OnceLock<Regex> = OnceLock::new();
     let mut text = value.replace("\r\n", "\n").replace('\r', "\n");
+    if text.starts_with("ssq ") {
+        if let Some(end) = text.find('>') {
+            text = text[end + 1..].to_string();
+        }
+    }
     let tag = TAG.get_or_init(|| Regex::new(r"(?is)</?[a-z][^>]*>").expect("tag regex"));
     text = tag.replace_all(&text, "\n").into_owned();
     let malformed = MALFORMED.get_or_init(|| {
-        Regex::new(r"(?i)[^\w\s<]{1,3}\s*(?:sseq|seq|next|yesno|p)\b[^>]*>")
+        Regex::new(r"(?i)(?:^|[^\w\s<]{1,3}\s*)(?:sseq|seq|ssq|next|yesno|p)\b[^\n>]*>")
             .expect("malformed tag regex")
     });
     text = malformed.replace_all(&text, "").into_owned();
@@ -505,6 +539,7 @@ fn clean_turn(
         .or_else(|| object.get("sceneId").and_then(Value::as_str))
         .unwrap_or("");
     output.insert("sceneId".into(), json!(scene));
+    output.remove("translations");
     if !detail {
         output.remove("isCarDetail");
         output.remove("sceneOrder");
@@ -637,6 +672,61 @@ fn write_csv(path: &Path, headers: &[&str], rows: impl Iterator<Item = Vec<Strin
     }
     writer.flush()?;
     atomic_write(path, &writer.into_inner().map_err(|e| anyhow::anyhow!(e))?)
+}
+
+fn collect_dialogue_translations(research: &Value) -> BTreeMap<String, BTreeMap<String, String>> {
+    let mut languages: BTreeMap<String, BTreeMap<String, String>> = BTreeMap::new();
+    let mut add_turn = |turn: &Value| {
+        let Some(id) = turn.get("id").and_then(Value::as_str) else {
+            return;
+        };
+        let Some(translations) = turn.get("translations").and_then(Value::as_object) else {
+            return;
+        };
+        for (language, value) in translations {
+            let Some(text) = value.as_str() else {
+                continue;
+            };
+            let text = clean_text(text);
+            let text = if text.starts_with("ssq") {
+                text.split_once('>')
+                    .map(|(_, rest)| clean_text(rest))
+                    .unwrap_or(text)
+            } else {
+                text
+            };
+            if !text.is_empty() {
+                languages
+                    .entry(language.clone())
+                    .or_default()
+                    .insert(id.to_string(), text);
+            }
+        }
+    };
+    for scene in research
+        .get("cafeScenes")
+        .and_then(Value::as_array)
+        .into_iter()
+        .flatten()
+    {
+        for turn in scene
+            .get("turns")
+            .and_then(Value::as_array)
+            .into_iter()
+            .flatten()
+        {
+            add_turn(turn);
+        }
+    }
+    for turn in research
+        .get("detailRows")
+        .and_then(Value::as_array)
+        .into_iter()
+        .flatten()
+    {
+        add_turn(turn);
+    }
+    languages
 }
 
 pub fn build(options: &Options) -> Result<Value> {
@@ -1018,6 +1108,22 @@ pub fn build(options: &Options) -> Result<Value> {
                     clean_text(turn.get("zh").and_then(Value::as_str).unwrap_or(""))
                 })),
             );
+            if let Some(translations) = turn.get_mut("translations").and_then(Value::as_object_mut)
+            {
+                translations.retain(|_, value| {
+                    let Some(text) = value.as_str() else {
+                        return false;
+                    };
+                    let cleaned = clean_text(text);
+                    if cleaned.is_empty() {
+                        false
+                    } else {
+                        *value = Value::String(cleaned);
+                        true
+                    }
+                });
+            }
+            turn.remove("translations");
             turn.insert(
                 "resolvedCarNameEn".into(),
                 json!(resolved.map(|v| v.0.as_str()).unwrap_or("")),
@@ -1169,6 +1275,8 @@ pub fn build(options: &Options) -> Result<Value> {
 
     let payload = json!({
         "generated": "GT7 PS5 dump (native Rust)",
+        "languages": language_catalog(),
+        "dialogueTranslationDir": "data/dialogue_translations",
         "cars": cars_value.clone(),
         "brands": brands,
         "unmatched": unmatched.clone(),
@@ -1201,6 +1309,17 @@ pub fn build(options: &Options) -> Result<Value> {
     let serialized = serde_json::to_vec(&payload)?;
     let cars_path = options.site_data.join("cars.json");
     atomic_write(&cars_path, &serialized)?;
+    let dialogue_translations = collect_dialogue_translations(&research);
+    let translation_dir = options.site_data.join("dialogue_translations");
+    fs::create_dir_all(&translation_dir)?;
+    dialogue_translations
+        .par_iter()
+        .try_for_each(|(locale, values)| -> Result<()> {
+            atomic_write(
+                &translation_dir.join(format!("{locale}.json")),
+                &serde_json::to_vec(values)?,
+            )
+        })?;
 
     // CPU-heavy joins above are parallel. Export files sequentially so
     // Windows filter drivers and Cloudflare preview servers never observe two
@@ -1816,4 +1935,25 @@ fn export_unmatched_markdown(rows: &[Value]) -> String {
         ));
     }
     format!("{}\n", out.trim_end())
+}
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    #[test]
+    fn removes_truncated_dialogue_commands() {
+        assert_eq!(
+            clean_text("ssq cm=\"GTCafe_Conv_Standard01\">visible text"),
+            "visible text"
+        );
+        assert_eq!(
+            clean_text("ssq cm=\"TCfeCov_Standad0\">これは“アバルト”ね"),
+            "これは“アバルト”ね"
+        );
+        assert_eq!(
+            clean_text("visible text<next id=1800102 type=9>"),
+            "visible text"
+        );
+    }
 }

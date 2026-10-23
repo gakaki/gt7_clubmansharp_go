@@ -85,7 +85,7 @@ await cdp.call('Emulation.setDeviceMetricsOverride', {
   deviceScaleFactor: 1,
   mobile: false,
 })
-await navigate(`${base}?lang=zh`)
+await navigate(`${base}?lang=zh&l1=zh`)
 const filterExpected = await evaluate(`(async () => {
   const data = await (await fetch('/data/cars.json')).json()
   return {
@@ -105,7 +105,7 @@ for (const [index, id] of ['all', 'brandCentral', 'usedCar', 'vehicleCollection'
 const filterLabels = await evaluate(`[...document.querySelectorAll('.seg button')].map((node) => node.textContent.trim())`)
 await screenshot('main-source-filters.png')
 
-await navigate(`${base}?lang=both&car=0x0000D1BB&tab=vehicleCollection`)
+await navigate(`${base}?lang=both&l1=zh&l2=us&car=0x0000D1BB&tab=vehicleCollection`)
 const desktop = await evaluate(`(() => {
   const tabs = [...document.querySelectorAll('.car-tabs button')]
   const panel = document.querySelector('.text-panel')
@@ -148,13 +148,13 @@ const collection = await evaluate(
 )
 const keyboard = { brand, collection }
 
-await navigate(`${base}?lang=en&car=0x0000D1BB&tab=vehicleCollection`)
+await navigate(`${base}?lang=en&l1=us&l2=zh&car=0x0000D1BB&tab=vehicleCollection`)
 const english = await evaluate(`(() => ({
   title: document.querySelector('.dialog h3')?.textContent?.trim() || '',
   panel: document.querySelector('.text-panel')?.innerText || '',
 }))()`)
 
-await navigate(`${base}?lang=en&car=0x00009D5B&tab=vehicleCollection`)
+await navigate(`${base}?lang=en&l1=us&l2=zh&car=0x00009D5B&tab=vehicleCollection`)
 const missingCollection = await evaluate(`(() => ({
   title: document.querySelector('.dialog h3')?.textContent?.trim() || '',
   panel: document.querySelector('.text-panel')?.innerText || '',
@@ -163,7 +163,7 @@ const missingCollection = await evaluate(`(() => ({
     ?.classList.contains('muted') || false,
 }))()`)
 
-await navigate(`${base}?lang=both&car=0x00008200&tab=vehicleCollection`)
+await navigate(`${base}?lang=both&l1=zh&l2=us&car=0x00008200&tab=vehicleCollection`)
 const peugeot = await evaluate(`(() => ({
   title: document.querySelector('.dialog h3')?.textContent?.trim() || '',
   panel: document.querySelector('.text-panel')?.innerText || '',
@@ -176,7 +176,7 @@ await cdp.call('Emulation.setDeviceMetricsOverride', {
   deviceScaleFactor: 2,
   mobile: true,
 })
-await navigate(`${base}?lang=zh`)
+await navigate(`${base}?lang=zh&l1=zh`)
 const mobileFilters = await evaluate(`(() => {
   const bar = document.querySelector('.seg')
   return {
@@ -188,7 +188,7 @@ const mobileFilters = await evaluate(`(() => {
   }
 })()`)
 await screenshot('main-source-filters-mobile.png')
-await navigate(`${base}?lang=zh&car=0x0000D1BB&tab=vehicleCollection`)
+await navigate(`${base}?lang=zh&l1=zh&car=0x0000D1BB&tab=vehicleCollection`)
 const mobileBefore = await evaluate(`(() => ({
   title: document.querySelector('.dialog h3')?.textContent?.trim() || '',
   tabs: [...document.querySelectorAll('.car-tabs button')].map((node) => node.textContent.trim()),

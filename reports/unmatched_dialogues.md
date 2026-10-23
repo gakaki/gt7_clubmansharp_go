@@ -2011,7 +2011,12 @@ Skyline GT-R...
 of te R32.
 
 It turned out, he kept his word. On a test run, the R33
-set a
+set a p time of 7:59ʋt theNürburgring!
+
+This time was 21 seconds faster tan thefatestlap
+st b theʹ.</
+The R33 thn led to the R34, hih carried on e
+spirt of its predcessor.ٛ scmd="GTCafe_Top" />
 
 这辆R34是第五代的Skyline GT-R。
 
@@ -3853,7 +3858,9 @@ b后\
 住了。
 
 我
-J他G]：bm
+J他G]：bmpO藏_fDu_d
+PPr天我一不f心W众露失Q情，
+HQjm	{Wayٝ>
 PoSI`)e让看`UN车，你猜i么着？
 
 J~代的FQryIGqPjKvkgօߍ046 ۰
@@ -6909,15 +6916,27 @@ g发生在一eZF1赛上？
 轻变速[所承j|的压力。
 
 本田的b次
-<>e
+pTQ^r了c
+@影lx~
+他P的F1赛
+H
+XWJ_R
+bzh于yskgf
+
+由iGB西k大N赛b处的赛道高于海[面，20m><>e
 nd常YpR引擎}h@a~输出Av@h些W响cf</>
 设计RA22的引z，前机工程师
 兼田clF1
 队负责人中村l夫hO
 
-UIx了IhzV
+UIx了IhzVPr地
+Q运转，
+VRA27在竞对cp占S
+abYd< md="f_vStdd0>
 d坐在k]胜K车中的车里奇·金瑟VY
-也
+也phTw}]crl
+^~XMNL
+]qX֓>
 vor`
 aMf{~K]JwEg一个F1冠军头衔中
 汇集到了]yFV一m辉|历jYHv
@@ -6978,7 +6997,12 @@ nd Jaanz acn history!<pscmd="GTae_Top" /
 
 1966年，这款由<791cc>引擎驱动的S800发布。
 
-并且
+并且P直Z190年都Oe日vG
+]X先锋地X。
+
+当时E田就计划PR参加S列比赛n赛车l`们
+建立一个赛车运B支iL
+
 UrR提D
 y
 ed推动Q赛车hEPE
@@ -7043,7 +7067,13 @@ oall subequent Turbos
 
 这个系列原本将迎来被替换的命运。
 
-当然，我们现C么说也是
+当然，我们现C么说也是P后F葛亮罢了。
+
+初代930在1975年到1989年之间i续生
+长q]间VgRb很庞大e…
+
+然后A1990年升级
+`了964965平台。< scmd="Cafe_Conv_Standard02">
 另N值r\eya是dkurboe
 u[e身也c为了eGTH
 Hlggp上Bs捷QlTb天还在沿|，
@@ -7250,7 +7280,7 @@ and sides of the body.
 Becse these machis areso similar in capability,
 the race becomes a test of a driver’s skill.
 
-The
+The  pses this concpt to new heights
 
 这辆SF23是专为日本的顶级方程式系列赛事
 ——超级方程式所打造的赛车。
@@ -8804,7 +8834,13 @@ lH司	气得[tGVyj—]h们Wn^大{Ra。
 
 BI同时，我在筹I]款叫“靱
 p的概念_Yw它Io为
-򦚞下
+򦚞下P代pbrr]bd}。</
+en思|，s_“d”xeNZA的Fmj是e{yb行T
+它们俩最后	~上了同A设X主题。ן scm=Ǭafe_Cnv_adrd0
+说baBATENZc\tqR说意义b凡jD实上
+kI前不
+oorV{cGq
+PXt[eo
 w款Q已uy世十多年了，但它的设计仍S^得Xb
 |T{z考BiAŎ[I(a[道zlr你yAGobYvnyoK\的`MF^d多，St能f会
 设计的魔t。p/
@@ -8863,7 +8899,8 @@ LM55这个名字中，“LM”是“勒芒”的缩写，
 勒芒超PM跑O组别的规则给了设计师很大的发挥空间……
 
 所以，要是我真ie出
-样Sm车dPg
+样Sm车dPgP嘿，说]
+定真能捧回~奖杯呢i
 
 ## 0x0000B8BF — Ikuo Maeda
 

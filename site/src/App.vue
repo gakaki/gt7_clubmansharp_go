@@ -3,12 +3,64 @@ import { ref, computed, watch, onMounted, onBeforeUnmount, nextTick } from 'vue'
 
 const data = ref(null)
 const base = import.meta.env.BASE_URL
-const initialLang = new URLSearchParams(location.search).get('lang')
-const lang = ref(
-  ['zh', 'en', 'both'].includes(initialLang)
-    ? initialLang
-    : localStorage.getItem('gt7cafe.lang') || 'zh',
+const languageOptions = [
+  { id: 'ar', native: 'العربية', english: 'Arabic', zh: '阿拉伯语', rtl: true },
+  { id: 'cn', native: '简体中文', english: 'Chinese (Simplified)', zh: '简体中文' },
+  { id: 'cz', native: 'Čeština', english: 'Czech', zh: '捷克语' },
+  { id: 'de', native: 'Deutsch', english: 'German', zh: '德语' },
+  { id: 'es', native: 'Español', english: 'Spanish', zh: '西班牙语' },
+  { id: 'fr', native: 'Français', english: 'French', zh: '法语' },
+  { id: 'gb', native: 'English (UK)', english: 'English (UK)', zh: '英语（英国）' },
+  { id: 'it', native: 'Italiano', english: 'Italian', zh: '意大利语' },
+  { id: 'jp', native: '日本語', english: 'Japanese', zh: '日语' },
+  { id: 'kr', native: '한국어', english: 'Korean', zh: '韩语' },
+  { id: 'nl', native: 'Nederlands', english: 'Dutch', zh: '荷兰语' },
+  { id: 'pl', native: 'Polski', english: 'Polish', zh: '波兰语' },
+  { id: 'pt', native: 'Português', english: 'Portuguese', zh: '葡萄牙语' },
+  { id: 'ru', native: 'Русский', english: 'Russian', zh: '俄语' },
+  { id: 'th', native: 'ไทย', english: 'Thai', zh: '泰语' },
+  { id: 'tr', native: 'Türkçe', english: 'Turkish', zh: '土耳其语' },
+  { id: 'tw', native: '繁體中文', english: 'Chinese (Traditional)', zh: '繁体中文' },
+  { id: 'us', native: 'English (US)', english: 'English (US)', zh: '英语（美国）' },
+  { id: 'zh', native: '中文（简体）', english: 'Chinese', zh: '中文' },
+]
+const languageIds = new Set(languageOptions.map((language) => language.id))
+const initialParams = new URLSearchParams(location.search)
+const explicitLang = initialParams.get('lang')
+const legacyLang = explicitLang || localStorage.getItem('gt7cafe.lang')
+const legacyPrimary = legacyLang === 'both'
+  ? 'zh'
+  : legacyLang === 'en'
+    ? 'us'
+    : legacyLang
+const initialPrimary = initialParams.get('l1')
+  || (explicitLang && explicitLang !== 'both' ? legacyPrimary : null)
+  || localStorage.getItem('gt7cafe.primaryLang')
+  || legacyPrimary
+  || 'zh'
+const primaryLang = ref(languageIds.has(initialPrimary) ? initialPrimary : 'zh')
+const initialSecondary = initialParams.get('l2')
+  || localStorage.getItem('gt7cafe.secondaryLang')
+  || 'en'
+const secondaryLang = ref(
+  languageIds.has(initialSecondary) && initialSecondary !== primaryLang.value
+    ? initialSecondary
+    : (primaryLang.value === 'en' ? 'zh' : 'en'),
 )
+const bilingual = ref(
+  explicitLang
+    ? explicitLang === 'both'
+    : localStorage.getItem('gt7cafe.bilingual') === '1',
+)
+const lang = computed(() =>
+  bilingual.value ? 'both' : (isChineseLocale(primaryLang.value) ? 'zh' : 'en'),
+)
+const showZhContent = computed(() => activeLocales().some(isChineseLocale))
+const showEnContent = computed(() =>
+  activeLocales().some((code) => !isChineseLocale(code)) || !showZhContent.value,
+)
+const dialogueTranslations = ref({})
+const loadingLanguages = ref(new Set())
 const query = ref('')
 const searchInput = ref('')
 const brandFilter = ref('ALL')
@@ -94,6 +146,17 @@ watch(searchInput, (v) => {
 onMounted(async () => {
   const res = await fetch(`${import.meta.env.BASE_URL}data/cars.json`)
   data.value = sanitizeGlyphs(await res.json())
+  await ensureSelectedLanguages()
+  window.__gt7LanguageState = () => ({
+    primary: primaryLang.value,
+    secondary: secondaryLang.value,
+    bilingual: bilingual.value,
+    loaded: Object.keys(dialogueTranslations.value),
+    loading: [...loadingLanguages.value],
+    sample: dialogueTranslations.value[primaryLang.value]
+      ? Object.keys(dialogueTranslations.value[primaryLang.value]).slice(0, 3)
+      : [],
+  })
   const params = new URLSearchParams(location.search)
   const wantedSource = params.get('filter')
   if (sourceFilters.some((filter) => filter.id === wantedSource)) {
@@ -159,12 +222,82 @@ function onKey(e) {
     document.querySelector('.search')?.focus()
   }
 }
-function setLang(v) {
-  lang.value = v
-  localStorage.setItem('gt7cafe.lang', v)
+function isChineseLocale(code) {
+  return ['zh', 'cn', 'tw'].includes(code)
+}
+
+function languageMeta(code) {
+  return languageOptions.find((language) => language.id === code) || languageOptions[0]
+}
+
+function languageName(code) {
+  const language = languageMeta(code)
+  return lang.value === 'zh' ? language.zh : language.native
+}
+
+function activeLocales() {
+  return bilingual.value
+    ? [primaryLang.value, secondaryLang.value]
+    : [primaryLang.value]
+}
+
+async function ensureLanguage(code) {
+  if (!code || dialogueTranslations.value[code] || loadingLanguages.value.has(code)) return
+  loadingLanguages.value = new Set([...loadingLanguages.value, code])
+  try {
+    const dir = data.value?.dialogueTranslationDir || 'data/dialogue_translations'
+    const response = await fetch(`${base}${dir}/${code}.json`)
+    if (!response.ok) throw new Error(`HTTP ${response.status}`)
+    dialogueTranslations.value = {
+      ...dialogueTranslations.value,
+      [code]: await response.json(),
+    }
+  } catch (error) {
+    console.warn(`Unable to load dialogue language ${code}`, error)
+  } finally {
+    const next = new Set(loadingLanguages.value)
+    next.delete(code)
+    loadingLanguages.value = next
+  }
+}
+
+async function ensureSelectedLanguages() {
+  for (const code of activeLocales()) {
+    await ensureLanguage(code)
+  }
+}
+
+function syncLanguageSettings() {
+  localStorage.setItem('gt7cafe.primaryLang', primaryLang.value)
+  localStorage.setItem('gt7cafe.secondaryLang', secondaryLang.value)
+  localStorage.setItem('gt7cafe.bilingual', bilingual.value ? '1' : '0')
+  localStorage.setItem('gt7cafe.lang', bilingual.value ? 'both' : primaryLang.value)
   const url = new URL(location.href)
-  url.searchParams.set('lang', v)
+  url.searchParams.set('lang', bilingual.value ? 'both' : primaryLang.value)
+  url.searchParams.set('l1', primaryLang.value)
+  if (bilingual.value) url.searchParams.set('l2', secondaryLang.value)
+  else url.searchParams.delete('l2')
   history.replaceState(null, '', url)
+  ensureSelectedLanguages()
+}
+
+function setPrimaryLanguage(code) {
+  primaryLang.value = languageIds.has(code) ? code : 'zh'
+  if (secondaryLang.value === primaryLang.value) {
+    secondaryLang.value = primaryLang.value === 'en' ? 'zh' : 'en'
+  }
+  syncLanguageSettings()
+}
+
+function setSecondaryLanguage(code) {
+  if (!languageIds.has(code) || code === primaryLang.value) return
+  secondaryLang.value = code
+  syncLanguageSettings()
+}
+
+function toggleBilingual() {
+  bilingual.value = !bilingual.value
+  syncLanguageSettings()
 }
 
 const cars = computed(() => data.value?.cars ?? [])
@@ -501,7 +634,31 @@ const letters = computed(() => {
 })
 
 function displayName(c) {
-  return lang.value === 'zh' ? c.nameZh : c.nameEn
+  return isChineseLocale(primaryLang.value) ? c.nameZh : c.nameEn
+}
+function carNameLocales() {
+  const groups = new Set()
+  return activeLocales().filter((code) => {
+    const group = isChineseLocale(code) ? 'zh' : 'en'
+    if (groups.has(group)) return false
+    groups.add(group)
+    return true
+  })
+}
+function dialogueText(turn, code) {
+  const translated = dialogueTranslations.value[code]?.[turn.id]
+  if (translated) return translated
+  if (isChineseLocale(code)) return turn.zh || turn.en || ''
+  if (code === 'us' || code === 'gb') return turn.en || turn.zh || ''
+  return turn.en || turn.zh || ''
+}
+function dialogueLocaleClass(code) {
+  if (isChineseLocale(code) || ['jp', 'kr'].includes(code)) return 'cjk'
+  if (code === 'ar') return 'rtl'
+  return 'latin'
+}
+function dialogueDirection(code) {
+  return languageMeta(code).rtl ? 'rtl' : 'ltr'
 }
 function speakerName(d) {
   if (lang.value === 'zh') return d.speakerZh || d.speaker
@@ -543,10 +700,39 @@ function yearOf(name) {
         </div>
       </div>
       <a class="menu-archive-link" href="/menus_cafe">菜单书档案</a>
-      <div class="lang" role="group" aria-label="language">
-        <button :class="{ on: lang === 'zh' }" @click="setLang('zh')">中文</button>
-        <button :class="{ on: lang === 'en' }" @click="setLang('en')">English</button>
-        <button :class="{ on: lang === 'both' }" @click="setLang('both')">双语</button>
+      <div class="language-picker" role="group" aria-label="对白语言">
+        <select
+          :value="primaryLang"
+          aria-label="第一语言"
+          @change="setPrimaryLanguage($event.target.value)"
+        >
+          <option v-for="language in languageOptions" :key="language.id" :value="language.id">
+            {{ language.native }}
+          </option>
+        </select>
+        <button
+          type="button"
+          class="bilingual-toggle"
+          :class="{ on: bilingual }"
+          :aria-pressed="bilingual"
+          @click="toggleBilingual"
+        >
+          双语
+        </button>
+        <select
+          v-if="bilingual"
+          :value="secondaryLang"
+          aria-label="第二语言"
+          @change="setSecondaryLanguage($event.target.value)"
+        >
+          <option
+            v-for="language in languageOptions.filter((item) => item.id !== primaryLang)"
+            :key="language.id"
+            :value="language.id"
+          >
+            {{ language.native }}
+          </option>
+        </select>
       </div>
     </header>
 
@@ -650,9 +836,10 @@ function yearOf(name) {
               </div>
             </div>
             <div class="name">
-              <template v-if="lang !== 'en'">{{ c.nameZh }}</template>
-              <template v-if="lang === 'both'"><br /></template>
-              <template v-if="lang !== 'zh'">{{ c.nameEn }}</template>
+              <template v-for="(code, index) in carNameLocales()" :key="code">
+                <br v-if="index" />
+                {{ isChineseLocale(code) ? c.nameZh : c.nameEn }}
+              </template>
             </div>
             <div class="meta">
               <span class="year">{{ yearOf(c.nameEn) }}</span>
@@ -740,8 +927,17 @@ function yearOf(name) {
               <span>精确归属：<b>{{ d.resolvedCarNameEn || '未解析' }}</b> · {{ d.resolvedCarNameZh || '' }}</span>
               <span>场景：<code>{{ d.sceneId || 'unknown' }}</code></span>
             </div>
-            <div v-if="lang !== 'en'" class="cn">{{ d.zh }}</div>
-            <div v-if="lang !== 'zh'" class="en">{{ d.en }}</div>
+            <div
+              v-for="code in activeLocales()"
+              :key="code"
+              class="dialogue-text"
+              :class="dialogueLocaleClass(code)"
+              :dir="dialogueDirection(code)"
+              :lang="code"
+            >
+              <span v-if="bilingual" class="translation-language">{{ languageName(code) }}</span>
+              {{ dialogueText(d, code) }}
+            </div>
           </div>
           <div class="review-actions">
             <a :href="base + 'data/unmatched_dialogues.csv'" download>下载全部 {{ unmatched.length }} 条 CSV</a>
@@ -784,8 +980,8 @@ function yearOf(name) {
           <div class="headmain">
             <img v-if="activeCar.image" class="modalcar" :src="base + activeCar.image" :alt="activeCar.nameEn" />
             <div>
-              <h3>{{ lang === 'en' ? activeCar.nameEn : activeCar.nameZh }}</h3>
-              <p>{{ lang === 'en' ? activeCar.brand : `${activeCar.nameEn} · ${activeCar.brand}` }}</p>
+              <h3>{{ displayName(activeCar) }}</h3>
+              <p>{{ isChineseLocale(primaryLang) ? `${activeCar.nameEn} · ${activeCar.brand}` : activeCar.brand }}</p>
               <p class="note">
                 咖啡屋 {{ tabHasContent(activeCar, 'cafe') ? '有' : '无' }}对白
                 · 品牌购物 {{ tabHasContent(activeCar, 'brandCentral') ? '有' : '无' }}
@@ -796,10 +992,39 @@ function yearOf(name) {
             </div>
           </div>
           <div class="detail-controls">
-            <div class="lang detail-lang" role="group" aria-label="车辆详情语言">
-              <button :class="{ on: lang === 'zh' }" @click="setLang('zh')">中文</button>
-              <button :class="{ on: lang === 'en' }" @click="setLang('en')">English</button>
-              <button :class="{ on: lang === 'both' }" @click="setLang('both')">双语</button>
+            <div class="language-picker detail-lang" role="group" aria-label="对白语言">
+              <select
+                :value="primaryLang"
+                aria-label="第一语言"
+                @change="setPrimaryLanguage($event.target.value)"
+              >
+                <option v-for="language in languageOptions" :key="language.id" :value="language.id">
+                  {{ language.native }}
+                </option>
+              </select>
+              <button
+                type="button"
+                class="bilingual-toggle"
+                :class="{ on: bilingual }"
+                :aria-pressed="bilingual"
+                @click="toggleBilingual"
+              >
+                双语
+              </button>
+              <select
+                v-if="bilingual"
+                :value="secondaryLang"
+                aria-label="第二语言"
+                @change="setSecondaryLanguage($event.target.value)"
+              >
+                <option
+                  v-for="language in languageOptions.filter((item) => item.id !== primaryLang)"
+                  :key="language.id"
+                  :value="language.id"
+                >
+                  {{ language.native }}
+                </option>
+              </select>
             </div>
             <div class="actions">
               <button class="copy" @click="copyLink">{{ copyState }}</button>
@@ -848,8 +1073,17 @@ function yearOf(name) {
                   </span>
                   <span class="id">{{ d.id }}</span>
                 </div>
-                <div v-if="lang !== 'en'" class="cn">{{ d.zh }}</div>
-                <div v-if="lang !== 'zh'" class="en">{{ d.en }}</div>
+                <div
+                  v-for="code in activeLocales()"
+                  :key="code"
+                  class="dialogue-text"
+                  :class="dialogueLocaleClass(code)"
+                  :dir="dialogueDirection(code)"
+                  :lang="code"
+                >
+                  <span v-if="bilingual" class="translation-language">{{ languageName(code) }}</span>
+                  {{ dialogueText(d, code) }}
+                </div>
               </article>
             </section>
           </template>
@@ -866,8 +1100,17 @@ function yearOf(name) {
                 </span>
                 <span class="id">{{ d.id }}</span>
               </div>
-              <div v-if="lang !== 'en'" class="cn">{{ d.zh }}</div>
-              <div v-if="lang !== 'zh'" class="en">{{ d.en }}</div>
+              <div
+                v-for="code in activeLocales()"
+                :key="code"
+                class="dialogue-text"
+                :class="dialogueLocaleClass(code)"
+                :dir="dialogueDirection(code)"
+                :lang="code"
+              >
+                <span v-if="bilingual" class="translation-language">{{ languageName(code) }}</span>
+                {{ dialogueText(d, code) }}
+              </div>
             </article>
           </template>
           <div v-if="!activeCar.conversation.length" class="no-dialogue">
@@ -939,29 +1182,29 @@ function yearOf(name) {
             <template v-if="activeTab === 'vehicleCollection'">
               <section class="collection-part">
                 <h4>{{ detailCopy('一句话简介', 'Catch copy') }}</h4>
-                <div v-if="lang !== 'en'" class="text-copy zh-copy">
+                <div v-if="showZhContent" class="text-copy zh-copy">
                   <p>{{ activeText().catch?.zh }}</p>
                 </div>
-                <div v-if="lang !== 'zh'" class="text-copy en-copy">
+                <div v-if="showEnContent" class="text-copy en-copy">
                   <p>{{ activeText().catch?.en }}</p>
                 </div>
               </section>
               <section class="collection-part">
                 <h4>{{ detailCopy('车辆收藏正文', 'Full description') }}</h4>
-                <div v-if="lang !== 'en'" class="text-copy zh-copy">
+                <div v-if="showZhContent" class="text-copy zh-copy">
                   <p>{{ activeText().long?.zh }}</p>
                 </div>
-                <div v-if="lang !== 'zh'" class="text-copy en-copy">
+                <div v-if="showEnContent" class="text-copy en-copy">
                   <p>{{ activeText().long?.en }}</p>
                 </div>
               </section>
             </template>
             <template v-else>
-              <div v-if="lang !== 'en'" class="text-copy zh-copy">
+              <div v-if="showZhContent" class="text-copy zh-copy">
                 <h4>{{ activeText().titleZh }}</h4>
                 <p>{{ activeText().zh }}</p>
               </div>
-              <div v-if="lang !== 'zh'" class="text-copy en-copy">
+              <div v-if="showEnContent" class="text-copy en-copy">
                 <h4>{{ activeText().titleEn }}</h4>
                 <p>{{ activeText().en }}</p>
               </div>
@@ -977,10 +1220,10 @@ function yearOf(name) {
                   <span>{{ variant.textId }}</span>
                   <span>{{ variant.carKey || variant.sourceName }}</span>
                 </div>
-                <div v-if="lang !== 'en'" class="text-copy zh-copy">
+                <div v-if="showZhContent" class="text-copy zh-copy">
                   <p>{{ variant.zh }}</p>
                 </div>
-                <div v-if="lang !== 'zh'" class="text-copy en-copy">
+                <div v-if="showEnContent" class="text-copy en-copy">
                   <p>{{ variant.en }}</p>
                 </div>
               </article>

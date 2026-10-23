@@ -44,6 +44,9 @@ Each car page exposes five tabs: GT Cafe, Brand Central, Car Collection, Used Ca
 Collection. Chinese, English and bilingual modes are available.
 The main car index also filters by Brand Central, Used Cars, Car Collection
 and GT Cafe dialogue.
+All 19 localisation languages found in the PS5 RT2 files are available for GT
+Cafe dialogue. Users can select one language or any two-language combination;
+the choice is remembered in local storage.
 
 The Cafe Menu Book archive at <https://gt7.gakaki.com/menus_cafe> adds all
 108 main, bonus and Extra menus. It includes collection names, cars,

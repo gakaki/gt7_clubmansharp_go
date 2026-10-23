@@ -33,6 +33,7 @@ remain under `C:\gt7\gt7\_re`.
 | Canonical cars | 591 | `site/public/data/cars.json` |
 | Dealer descriptions | 634 / 581 cars | `site/public/data/car_texts.csv` |
 | Car Collection descriptions | 580 / 580 cars | `site/public/data/vehicle_collection_texts.csv` |
+| GT Cafe dialogue languages | 19 | `site/public/data/dialogue_translations/` |
 | Cars with any vehicle description | 582 | `site/public/data/cars.json` |
 | Current dealer offers | 65 (50 used, 15 legend) | `site/public/data/dealer_offers.csv` |
 | Unique CarDetail entries | 444 | `site/public/data/cafe_dialogues.csv` |
@@ -89,7 +90,7 @@ cargo test --release:
 ```
 
 The production Worker `gt7-cafe-edge` deployment
-`64386d12-8604-4448-a335-b5b42de43447` serves
+`f0c4cee8-e47d-4634-a34e-d7df6e94a088` serves
 <https://gt7.gakaki.com>.
 
 The complete project-owned Python pipeline (63 scripts and the local virtual

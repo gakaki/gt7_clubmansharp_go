@@ -14,6 +14,9 @@ Turismo 7 PS5 data recovered from the local game installation. The public deploy
 - 580 Car Collection cars paired to PS5 `DescriptionCatch` /
   `DescriptionLong` IDs, cross-checked against the official bilingual car-list
   modules for clean EN/ZH short and full descriptions.
+- All 19 PS5 dialogue languages, loaded on demand from
+  `public/data/dialogue_translations/*.json`. The selected primary language,
+  secondary language and single/dual mode are persisted in local storage.
 - Current dealer rotation data for 50 used cars and 15 legend cars, including
   price, discount, rarity and hot/pick flags.
 - 19 distinct real portraits decoded from the game's PS5 IDP0/TXS5 face
@@ -26,7 +29,9 @@ Turismo 7 PS5 data recovered from the local game installation. The public deploy
 - Search across car names, cafe dialogue and all three description sources.
 - A 253-record legacy ambiguity review, retaining the old candidate and the
   exact RT2-resolved car for manual checking.
-- Chinese, English and bilingual display modes.
+- Single-language and any two-language bilingual dialogue display modes.
+- Persisted keys: `gt7cafe.primaryLang`, `gt7cafe.secondaryLang` and
+  `gt7cafe.bilingual`.
 - Keyboard navigation, quick tab switching, responsive mobile layout and
   content-visibility rendering.
 - A viewport-fixed mobile previous/next car bar that follows the complete

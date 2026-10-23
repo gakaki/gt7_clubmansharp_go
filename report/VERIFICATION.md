@@ -41,6 +41,8 @@ vehicleCollectionCars=580 dealerOffers=65 menuBooks=108 avatars=19
 Production browser verification:
 
 - Vehicle details and source filters: 15 / 15 checks passed.
+- Multilingual dialogue switching and persistence: 9 / 9 checks passed,
+  including Japanese + German, French + Italian and mobile layout.
 - Cafe menu books: 17 / 17 checks passed.
 - Searchable Python source files in `_re`: 0.
 

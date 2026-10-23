@@ -85,6 +85,17 @@ pub fn run(options: &Options) -> Result<Value> {
     if ids.len() != car_rows.len() {
         bail!("duplicate car ids detected");
     }
+    let languages = cars
+        .get("languages")
+        .and_then(Value::as_array)
+        .context("languages")?;
+    if languages.len() != 19 {
+        bail!("expected 19 game languages, got {}", languages.len());
+    }
+    let language_ids = languages
+        .iter()
+        .filter_map(|item| item.get("id")?.as_str())
+        .collect::<HashSet<_>>();
     let allowed: HashSet<&str> = ["brandCentral", "vehicleCollection", "usedCar", "collection"]
         .into_iter()
         .collect();
@@ -92,6 +103,7 @@ pub fn run(options: &Options) -> Result<Value> {
     let mut text_count = 0usize;
     let mut dialogue_cars = 0usize;
     let mut dialogue_lines = HashSet::new();
+    let mut translation_cells = 0usize;
     for car in car_rows {
         let id = car.get("id").and_then(Value::as_str).unwrap_or("");
         let texts = car
@@ -174,6 +186,25 @@ pub fn run(options: &Options) -> Result<Value> {
             "expected 2620 unique conversation lines, got {}",
             dialogue_lines.len()
         );
+    }
+    let mut language_hits = HashSet::new();
+    for language in &language_ids {
+        let path = options
+            .data_dir
+            .join("dialogue_translations")
+            .join(format!("{language}.json"));
+        let payload = load(&path)?;
+        let rows = payload
+            .as_object()
+            .with_context(|| format!("{}: expected object", path.display()))?;
+        if rows.is_empty() {
+            bail!("{}: empty language dictionary", path.display());
+        }
+        translation_cells += rows.len();
+        language_hits.insert(*language);
+    }
+    if language_hits != language_ids {
+        bail!("dialogue language coverage mismatch");
     }
     let stats = cars
         .get("stats")
@@ -261,6 +292,8 @@ pub fn run(options: &Options) -> Result<Value> {
         "withDialogue": dialogue_cars,
         "dialogues": 444,
         "conversationLines": dialogue_lines.len(),
+        "languages": language_hits.len(),
+        "translationCells": translation_cells,
         "carTextEntries": text_count,
         "vehicleCollectionCars": collection,
         "dealerOffers": dealer.len(),

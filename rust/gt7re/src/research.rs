@@ -8,7 +8,7 @@
 use anyhow::{bail, Context, Result};
 use rayon::prelude::*;
 use serde::Serialize;
-use serde_json::json;
+use serde_json::{json, Value};
 use std::collections::{BTreeMap, HashMap, HashSet, VecDeque};
 use std::fs;
 use std::path::{Path, PathBuf};
@@ -18,6 +18,11 @@ use crate::rt2::{self, Rt2File};
 
 type LocalisationTexts = HashMap<(String, u32), String>;
 type LocalisationLabels = HashMap<(String, String), u32>;
+
+pub const LANGUAGE_CODES: &[&str] = &[
+    "ar", "cn", "cz", "de", "es", "fr", "gb", "it", "jp", "kr", "nl", "pl", "pt", "ru", "th", "tr",
+    "tw", "us", "zh",
+];
 
 fn atomic_write(path: &Path, data: &[u8]) -> Result<()> {
     let temporary = path.with_extension(format!("{}.tmp", std::process::id()));
@@ -67,6 +72,8 @@ pub struct Turn {
     pub speaker: String,
     pub en: String,
     pub zh: String,
+    #[serde(default)]
+    pub translations: BTreeMap<String, String>,
     pub is_car_detail: bool,
     pub scene_key: String,
     pub scene_order: usize,
@@ -144,6 +151,7 @@ pub struct ResearchCar {
 pub struct Research {
     pub generated_from: &'static str,
     pub stats: serde_json::Value,
+    pub languages: Vec<String>,
     pub cars: Vec<ResearchCar>,
     pub text_entries: Vec<TextEntry>,
     pub dealer_offers: Vec<DealerOfferRecord>,
@@ -151,6 +159,47 @@ pub struct Research {
     pub detail_rows: Vec<Turn>,
     pub legacy_review: Vec<Turn>,
     pub unresolved_car_keys: BTreeMap<String, String>,
+}
+
+fn enrich_turn(turn: &mut Turn, language_texts: &BTreeMap<String, LocalisationTexts>) {
+    let Ok(id) = u32::from_str_radix(turn.id.trim_start_matches("0x"), 16) else {
+        return;
+    };
+    let mut translations = BTreeMap::new();
+    for (language, texts) in language_texts {
+        if let Some(text) = texts.get(&("BuddyGTCafe".to_string(), id)) {
+            let text = clean_text(text);
+            if !text.is_empty() {
+                translations.insert(language.clone(), text);
+            }
+        }
+    }
+    turn.translations = translations;
+}
+
+fn enrich_multilingual(
+    research: &mut Research,
+    language_texts: &BTreeMap<String, LocalisationTexts>,
+) {
+    for turn in research
+        .detail_rows
+        .iter_mut()
+        .chain(research.legacy_review.iter_mut())
+        .chain(
+            research
+                .cafe_scenes
+                .iter_mut()
+                .flat_map(|scene| scene.turns.iter_mut()),
+        )
+        .chain(
+            research
+                .cars
+                .iter_mut()
+                .flat_map(|car| car.dialogues.iter_mut().chain(car.conversation.iter_mut())),
+        )
+    {
+        enrich_turn(turn, language_texts);
+    }
 }
 
 #[derive(Debug)]
@@ -681,19 +730,6 @@ fn load_localisation(
     rt2_dir: &Path,
     key_dir: &Path,
 ) -> Result<(LocalisationTexts, LocalisationLabels)> {
-    let path = rt2_dir.join(format!("{lang}.rt2"));
-    let rt = Rt2File::parse(&path)?;
-    let key_path = key_dir.join(format!("{lang}.ks.bin"));
-    let key = fs::read(&key_path).with_context(|| key_path.display().to_string())?;
-    let mut key_candidates = vec![key.clone()];
-    if lang == "us" {
-        for name in ["rt2_all.ks.bin", "rt2_pooled.ks.bin", "rt2_hybrid.ks.bin"] {
-            let candidate = key_dir.parent().unwrap_or(key_dir).join(name);
-            if let Ok(bytes) = fs::read(candidate) {
-                key_candidates.push(bytes);
-            }
-        }
-    }
     let quality = |text: &str| -> i64 {
         let readable = text.chars().filter(|c| c.is_alphanumeric()).count() as i64;
         let replacement = text.matches('\u{fffd}').count() as i64;
@@ -707,7 +743,46 @@ fn load_localisation(
             .count() as i64;
         readable - replacement * 80 + ids * 3 + text.len() as i64 / 100
     };
+    let path = rt2_dir.join(format!("{lang}.rt2"));
+    let rt = Rt2File::parse(&path)?;
+    let key_path = key_dir.join(format!("{lang}.ks.bin"));
+    let key = fs::read(&key_path).with_context(|| key_path.display().to_string())?;
+    let mut key_candidates = vec![key.clone()];
+    if lang == "us" {
+        for name in ["rt2_all.ks.bin", "rt2_pooled.ks.bin", "rt2_hybrid.ks.bin"] {
+            let candidate = key_dir.parent().unwrap_or(key_dir).join(name);
+            if let Ok(bytes) = fs::read(candidate) {
+                key_candidates.push(bytes);
+            }
+        }
+    }
     let mut texts: HashMap<(String, u32), String> = HashMap::new();
+    if let Some(extracted) = rt2_dir
+        .parent()
+        .and_then(Path::parent)
+        .and_then(Path::parent)
+    {
+        let cache_path = extracted.join("text_decoded").join(format!("{lang}.json"));
+        if let Ok(bytes) = fs::read(&cache_path) {
+            if let Ok(Value::Object(sections)) = serde_json::from_slice::<serde_json::Value>(&bytes)
+            {
+                for (section, values) in sections {
+                    let Some(values) = values.as_object() else {
+                        continue;
+                    };
+                    for (id, value) in values {
+                        let Some(value) = value.as_str() else {
+                            continue;
+                        };
+                        let Ok(id) = u32::from_str_radix(id.trim_start_matches("0x"), 16) else {
+                            continue;
+                        };
+                        texts.insert((section.clone(), id), value.to_string());
+                    }
+                }
+            }
+        }
+    }
     for candidate_key in &key_candidates {
         for decoded in rt2::decode(&rt, candidate_key) {
             let entry = texts.entry((decoded.section, decoded.id)).or_default();
@@ -1231,11 +1306,31 @@ fn write_dealer_csv(out: &Path, offers: &[DealerOfferRecord]) -> Result<()> {
 
 pub fn build(options: &Options) -> Result<Research> {
     let dmsb_dir = find_dms_dir(&options.dmsb_dir)?;
-    let (us_texts, us_labels) = load_localisation("us", &options.rt2_dir, &options.key_dir)?;
-    let (zh_texts, _) = load_localisation("zh", &options.rt2_dir, &options.key_dir)?;
+    let loaded = LANGUAGE_CODES
+        .par_iter()
+        .map(|language| {
+            load_localisation(language, &options.rt2_dir, &options.key_dir)
+                .map(|(texts, labels)| ((*language).to_string(), texts, labels))
+        })
+        .collect::<Vec<_>>();
+    let mut language_texts = BTreeMap::new();
+    let mut us_labels = HashMap::new();
+    for result in loaded {
+        let (language, texts, labels) = result?;
+        if language == "us" {
+            us_labels = labels;
+        }
+        language_texts.insert(language, texts);
+    }
+    let us_texts = language_texts
+        .get("us")
+        .context("US localisation was not decoded")?;
+    let zh_texts = language_texts
+        .get("zh")
+        .context("Chinese localisation was not decoded")?;
     let display = car_display_map(&dmsb_dir)?;
     let known_names: HashSet<String> = display.values().map(|name| norm(name)).collect();
-    let mut cars = build_cars(&us_texts, &zh_texts, &known_names);
+    let mut cars = build_cars(us_texts, zh_texts, &known_names);
     let (by_name, by_core) = car_index(&cars);
 
     let specs = [
@@ -1572,6 +1667,7 @@ pub fn build(options: &Options) -> Result<Research> {
                     speaker: message.speaker.into(),
                     en: message.en.clone(),
                     zh: message.zh.clone(),
+                    translations: BTreeMap::new(),
                     is_car_detail: message.is_detail,
                     scene_key: key.clone(),
                     scene_order: turns.len() + 1,
@@ -1673,6 +1769,7 @@ pub fn build(options: &Options) -> Result<Research> {
             speaker: message.speaker.into(),
             en: message.en.clone(),
             zh: message.zh.clone(),
+            translations: BTreeMap::new(),
             is_car_detail: true,
             scene_key: String::new(),
             scene_order: 0,
@@ -1704,6 +1801,7 @@ pub fn build(options: &Options) -> Result<Research> {
                     .map(String::as_str)
                     .unwrap_or(""),
             ),
+            translations: BTreeMap::new(),
             is_car_detail: true,
             scene_key: String::new(),
             scene_order: 0,
@@ -1772,6 +1870,7 @@ pub fn build(options: &Options) -> Result<Research> {
     let cars_with_texts = cars.iter().filter(|car| !car.texts.is_empty()).count();
     let stats = json!({
         "cars": cars.len(),
+        "languages": language_texts.len(),
         "textEntries": text_entries.len(),
         "dealerOffers": dealer_offers.len(),
         "mappedTextEntries": mapped_texts,
@@ -1790,9 +1889,13 @@ pub fn build(options: &Options) -> Result<Research> {
         "conversationLines": cars.iter().map(|car| car.conversation.len()).sum::<usize>(),
         "unresolvedCafeCarKeys": unresolved_car_keys.len(),
     });
-    let research = Research {
+    let mut research = Research {
         generated_from: "PS5 DMSB + RT2 (native Rust)",
         stats,
+        languages: LANGUAGE_CODES
+            .iter()
+            .map(|value| (*value).to_string())
+            .collect(),
         cars,
         text_entries,
         dealer_offers,
@@ -1801,6 +1904,33 @@ pub fn build(options: &Options) -> Result<Research> {
         legacy_review,
         unresolved_car_keys,
     };
+    enrich_multilingual(&mut research, &language_texts);
+    let translated_turns = research
+        .detail_rows
+        .iter()
+        .chain(
+            research
+                .cafe_scenes
+                .iter()
+                .flat_map(|scene| scene.turns.iter()),
+        )
+        .filter(|turn| !turn.translations.is_empty())
+        .count();
+    let language_cells = research
+        .detail_rows
+        .iter()
+        .chain(
+            research
+                .cafe_scenes
+                .iter()
+                .flat_map(|scene| scene.turns.iter()),
+        )
+        .map(|turn| turn.translations.len())
+        .sum::<usize>();
+    if let Some(stats) = research.stats.as_object_mut() {
+        stats.insert("translatedTurns".into(), json!(translated_turns));
+        stats.insert("languageCells".into(), json!(language_cells));
+    }
 
     if let Some(parent) = options.out.parent() {
         fs::create_dir_all(parent)?;
