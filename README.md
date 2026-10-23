@@ -16,6 +16,7 @@ limitations are recorded in `report/FINAL_STATUS.md`.
 | Canonical cars | 591 |
 | Brands | 79 |
 | Matched official thumbnails | 582 |
+| Indexed MDL5 submodels | 59,498 |
 | Unique CarDetail records | 444 |
 | Car-scene dialogue lines | 2,620 |
 | Dealer/garage descriptions | 634 |

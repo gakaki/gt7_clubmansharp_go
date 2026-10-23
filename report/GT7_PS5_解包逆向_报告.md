@@ -10,11 +10,11 @@
 |---|---|---|
 | 内容库解包 | ✅ | 95,339 文件 / 282 GB，按类型硬链接归档 |
 | 文件名还原 | ✅ | FNV-1a + cache key，12,355 条映射 |
-| 音频 | ◐ | 860 个 SNDZ 已导出；`.szd/.szd3/.irf` 未解码 |
+| 音频 | ◐ | 860 个 SNDZ 已导出并索引段标签；`.szd/.szd3/.irf` 未解码 |
 | 视频 | ✅ | 15 个 MP4/HEVC，5.25 GB |
-| 3D 素材 | ◐ | 8,149 个 MDL5 元数据/标识符已索引；几何未导出 |
+| 3D 素材 | ◐ | 8,149 个 MDL5、59,498 个子模型记录、纹理/着色器偏移与 621 万标识符已索引；几何未导出 |
 | 贴图 | ◐ | 9,097 张 DDS 已解包（42.4 GB）；19,279 个 TXS5 已索引，像素 swizzle 未解 |
-| 图片 | ◐ | JPEG/PNG 可直接用；4,074 个 JXL 现有解码器不支持 |
+| 图片 | ◐ | JPEG/PNG 可直接用；4,074 个 JXL 已解包并建立盒/EXIF/codestream 索引，像素解码仍不支持 |
 | UI | ◐ | 92 个 UI 工程/189,277 条字符串；6,058 个内嵌 UI 贴图已抽出；GPB 结构未完整解析 |
 | 代码文件 | ⛔ | eboot.bin 为加密 PS5 SELF；`.adc` 为编译脚本 |
 | 代码主体逻辑 | ⛔ | 同上，需要主机密钥或 SELF 解密 |
@@ -225,7 +225,7 @@ scripts 5 / develop 3
 | _re/extracted/textures/ | 9,097 张 DDS 贴图（42.4 GB，已解压） |
 | _re/extracted/video/ | 15 个 MP4/HEVC 影片（5.25 GB） |
 | _re/extracted/by_kind/ | 全库 95,339 文件按类型硬链接归档 |
-| _re/reports/mdl5_index.json | 8,149 个 MDL5 模型的头部字段与标识符（64.8 MB） |
+| _re/reports/mdl5_index.json | 8,149 个 MDL5、59,498 个子模型记录、纹理/着色器偏移与 621 万标识符 |
 | _re/reports/mdl5_summary.txt | 模型专属词汇统计（着色器参数 / 节点名） |
 | _re/reports/txs5_index.json | 4,296 个 TXS5 / 7,902 个纹理描述符（格式、宽高、偏移） |
 | _re/reports/txs5_index_idp0.json | IDP0 内嵌的 14,983 个 TXS5 描述符 |
@@ -345,17 +345,20 @@ $exe = "C:\gt7\gt7\_re\rust\gt7re\target\release\gt7re.exe"
 
 1. eboot.bin 反编译：PS5 SELF 为加密态，需要主机密钥或社区 SELF 解密工具，
    这是拿到代码主体逻辑的前提。
-2. scripts/gt7/*.adc 反编译：Polyphony 编译脚本（非明文），
-   flatz 工具中留有未启用的 disas 入口可继续做。
+2. ~~scripts/gt7/*.adc 反编译~~：已完成——`scriptsmenu.adc` 中的 1,906 个
+   Adhoc 菜单脚本已全部反汇编为 `.diss`，共 1,325,950 行；归档为
+   `reports/gt7_menu_scripts_diss.zip`，逐文件 SHA-256 见
+   `reports/menu_disassembly_manifest.csv`。
 3. ~~rtext 短标签补全~~：已完成——密钥流全局复用后 19 语言坏行率 0.8%–3.2%
    （泰文 11%），长文本全部可读。
 4. gt.idx 的 index key：PS5 版本与 PS4 不同，如需 100% 官方文件名，
    需要从 eboot 或社区新 key 取得。
 5. 3D 与贴图集：DDS 贴图已全部解包（9,097 张 / 42.4 GB）。
-   MDL5 已完成元数据索引（8,149 模型、448 万标识符、110 万唯一名，
+    MDL5 已完成元数据索引（8,149 个文件、59,498 个子模型记录、621 万标识符，
    含 baseColorMap/clearcoatMap/flake_size/steering_rot 等），
    但完整几何（顶点/索引/材质绑定）尚未导出为 OBJ/glTF；
-   TXS5（17 GB）仍是自定义容器，字段已定位（尺寸/格式/数据偏移）但未解码。
+   TXS5（17 GB）仍是自定义容器，字段已定位（尺寸/格式/数据偏移）；
+   人头像使用的 GNM mode 9 + BC7 已成功解码，其余 tile 组合仍需逐格式验证。
 6. 音频解码：SNDZ 已按类型导出（860 个）；.szd/.szd3（Sony SCEE 变体）、
    .irf 仍需容器解析。
 7. 视频：已定位 15 个 MP4（5.25 GB，HEVC）；可直接用 ffmpeg 处理。

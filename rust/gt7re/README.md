@@ -119,6 +119,12 @@ Individual commands:
 & $exe avatars `
   --out C:\gt7\gt7\_re\reports\face_atlases_rust `
   --portraits C:\gt7\gt7\_re\site\public\avatars\extracted
+
+& $exe jxl-index `
+  --out C:\gt7\gt7\_re\reports\jxl_index.json
+
+& $exe sndz-index `
+  --out C:\gt7\gt7\_re\reports\sndz_index.json
 ```
 
 Parity check:

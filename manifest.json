@@ -15,10 +15,10 @@
  },
  {
   "path": "reports/mdl5_index.json",
-  "desc": "8,149 个 MDL5 模型的头部与标识符",
+  "desc": "8,149 个 MDL5、59,498 个子模型记录与 621 万标识符",
   "exists": true,
   "files": 1,
-  "bytes": 64779851
+  "bytes": 79310638
  },
  {
   "path": "reports/txs5_index.json",
@@ -47,6 +47,20 @@
   "exists": true,
   "files": 1,
   "bytes": 269575
+ },
+ {
+  "path": "reports/jxl_index.json",
+  "desc": "4,074 个 JPEG XL 盒容器与 codestream/EXIF 索引",
+  "exists": true,
+  "files": 1,
+  "bytes": 1141806
+ },
+ {
+  "path": "reports/sndz_index.json",
+  "desc": "860 个 SNDZ 音频容器与段标签索引",
+  "exists": true,
+  "files": 1,
+  "bytes": 160511
  },
  {
   "path": "reports/research_rust.json",
@@ -95,7 +109,7 @@
   "desc": "逐项完成度、产物和格式限制",
   "exists": true,
   "files": 1,
-  "bytes": 4328
+  "bytes": 4717
  },
  {
   "path": "extracted/text_decoded",
@@ -110,6 +124,13 @@
   "exists": true,
   "files": 9097,
   "bytes": 45523110708
+ },
+ {
+  "path": "extracted/jxl",
+  "desc": "4,074 个游戏 JPEG XL 容器",
+  "exists": true,
+  "files": 4074,
+  "bytes": 1124525989
  },
  {
   "path": "extracted/idp0",
@@ -171,8 +192,8 @@
   "path": "rust/gt7re",
   "desc": "Rust 并行解析器源码与二进制",
   "exists": true,
-  "files": 2965,
-  "bytes": 863953886
+  "files": 2967,
+  "bytes": 864596725
  },
  {
   "path": "report/FORMATS.md",
@@ -186,6 +207,6 @@
   "desc": "总报告",
   "exists": true,
   "files": 1,
-  "bytes": 18755
+  "bytes": 19140
  }
 ]

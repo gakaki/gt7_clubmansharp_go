@@ -8,12 +8,14 @@ use gt7re::extract::{self, Mode};
 use gt7re::gpb;
 use gt7re::gpb4;
 use gt7re::idp0;
+use gt7re::jxl;
 use gt7re::mdl5;
 use gt7re::map4;
 use gt7re::packed;
 use gt7re::rada;
 use gt7re::research;
 use gt7re::rt2;
+use gt7re::sndz;
 use gt7re::store::Store;
 use gt7re::txs5;
 use gt7re::udp;
@@ -204,6 +206,20 @@ enum Cmd {
         /// Index files from an extracted directory instead of the census
         #[arg(long)]
         dir: Option<PathBuf>,
+    },
+    /// Index JPEG XL box containers and their codestream/exif extents
+    JxlIndex {
+        #[arg(long, default_value = r"C:\gt7\gt7\_re\reports\store_census_rust.csv")]
+        csv: PathBuf,
+        #[arg(long)]
+        out: PathBuf,
+    },
+    /// Index SNDZ headers and waveform/program section tags
+    SndzIndex {
+        #[arg(long, default_value = r"C:\gt7\gt7\_re\reports\store_census_rust.csv")]
+        csv: PathBuf,
+        #[arg(long)]
+        out: PathBuf,
     },
     /// Extract the payloads of all IDP0 containers (normally TXS5 textures)
     Idp0Extract {
@@ -789,6 +805,52 @@ fn run() -> Result<()> {
                 files.len(),
                 total_entries,
                 texels,
+                out.display()
+            );
+        }
+        Cmd::JxlIndex { csv, out } => {
+            let store = Store::scan(&cli.store)?;
+            let rows = census::read_catalog(&csv)?;
+            let entries: Vec<String> = rows
+                .into_iter()
+                .filter(|(_, _, kind)| kind == "jpeg-xl")
+                .map(|(rel, _, _)| rel)
+                .collect();
+            println!("indexing {} JPEG XL containers ...", entries.len());
+            let files = jxl::index_many(&entries, &store.root);
+            if let Some(parent) = out.parent() {
+                fs::create_dir_all(parent)?;
+            }
+            fs::write(&out, serde_json::to_vec(&files)?)?;
+            let codestream: u64 = files.iter().map(|file| file.codestream_bytes).sum();
+            let exif = files.iter().filter(|file| file.has_exif).count();
+            println!(
+                "indexed {} JXL files ({} codestream bytes, {} with exif) -> {}",
+                files.len(),
+                codestream,
+                exif,
+                out.display()
+            );
+        }
+        Cmd::SndzIndex { csv, out } => {
+            let store = Store::scan(&cli.store)?;
+            let rows = census::read_catalog(&csv)?;
+            let entries: Vec<String> = rows
+                .into_iter()
+                .filter(|(_, _, kind)| kind == "sound (SNDZ)")
+                .map(|(rel, _, _)| rel)
+                .collect();
+            println!("indexing {} SNDZ containers ...", entries.len());
+            let files = sndz::index_many(&entries, &store.root);
+            if let Some(parent) = out.parent() {
+                fs::create_dir_all(parent)?;
+            }
+            fs::write(&out, serde_json::to_vec(&files)?)?;
+            let tagged = files.iter().filter(|file| !file.tags.is_empty()).count();
+            println!(
+                "indexed {} SNDZ files ({} with known section tags) -> {}",
+                files.len(),
+                tagged,
                 out.display()
             );
         }

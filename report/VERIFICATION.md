@@ -40,6 +40,15 @@ images=582 speakers=14 car_texts=634 text_cars=581 review=253
 1,698 scenes, 444 exact CarDetail rows, 634 text entries, 2,620 scene lines,
 65 dealer offers, 0 unresolved cafe car keys and 19 real character portraits.
 
+`gt7re jxl-index`: 4,074 containers, 1,123,293,789 codestream bytes and
+4,074 EXIF boxes.
+
+`gt7re sndz-index`: 860 containers, all with known section tags; 18,053
+`WAVS` and 857 `WAVD` sections indexed.
+
+`gt7re mdl5-index`: 8,149 files, 59,498 submodel records, 7,279 valid model
+tables, 6,215,273 identifiers, texture and shader offsets for every file.
+
 `python scripts\verify_avatars.py`:
 
 ```text

@@ -18,6 +18,11 @@ pub struct ModelInfo {
     pub version: u32,
     pub field_0x08: u32,
     pub field_0x0c: u32,
+    pub model_count: u32,
+    pub models_offset: u64,
+    pub models_end: u64,
+    pub texture_set_offset: u64,
+    pub shaders_offset: u64,
     pub strings: Vec<String>,
 }
 
@@ -70,12 +75,30 @@ pub fn index_one(rel: &str, path: &Path, head_bytes: u64, string_limit: usize) -
             0
         }
     };
+    let u64_at = |o: usize| -> u64 {
+        if data.len() >= o + 8 {
+            u64::from_le_bytes([
+                data[o], data[o + 1], data[o + 2], data[o + 3],
+                data[o + 4], data[o + 5], data[o + 6], data[o + 7],
+            ])
+        } else {
+            0
+        }
+    };
+    let model_count = u32_at(0x2C);
+    let models_offset = u64_at(0xD8);
     Ok(ModelInfo {
         rel: rel.to_string(),
         size: meta.len(),
         version: u32_at(4),
         field_0x08: u32_at(8),
         field_0x0c: u32_at(0x0C),
+        model_count,
+        models_offset,
+        models_end: models_offset
+            .saturating_add(u64::from(model_count).saturating_mul(0x58)),
+        texture_set_offset: u64_at(0x108),
+        shaders_offset: u64_at(0x110),
         strings: extract_strings(&data[8..], string_limit),
     })
 }

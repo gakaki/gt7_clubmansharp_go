@@ -17,10 +17,13 @@ remain under `C:\gt7\gt7\_re`.
 | UI textures from GPB/IDP0 | 6,058 | `extracted/ui_txs/` |
 | Real decoded character portraits | 19 | `site/public/avatars/extracted/` |
 | Packed DDS textures | 9,097 / 42.40 GiB | `extracted/textures/` |
+| JPEG XL containers | 4,074 / 1.05 GiB | `extracted/jxl/` |
+| JPEG XL box index | 4,074, all with EXIF boxes | `reports/jxl_index.json` |
 | IDP0 payloads | 14,983 / 4.99 GiB | `extracted/idp0/` |
 | Video files | 15 / 5.25 GiB | `extracted/video/` |
-| SNDZ sound containers | 860 / 0.62 GiB | `extracted/audio/` |
+| SNDZ sound containers | 860 / 0.62 GiB, section tags indexed | `extracted/audio/`, `reports/sndz_index.json` |
 | MDL5 metadata records | 8,149 | `reports/mdl5_index.json` |
+| MDL5 submodel records | 59,498 (7,279 files with valid model tables) | `reports/mdl5_index.json` |
 | TXS5 descriptors | 19,279 | `reports/txs5_index*.json` |
 | GPB4 DMSB bundle | 311 / 311, byte-identical | `reports/dms_rust/` |
 | Real Cafe face textures | 19 decoded, BC7 | `reports/face_atlases_rust/` |
@@ -57,9 +60,9 @@ code-logic blocker; the menu/Adhoc layer is available.
 | Format | Status | Reason |
 | --- | --- | --- |
 | PS5 TXS5 pixel data | Cafe face atlases decoded with GNM mode 9 + BC7 | Other TXS5 pixel formats still need per-format validation |
-| MDL5 geometry | Header and identifier strings indexed | Remaining vertex/index/container layout is undocumented |
+| MDL5 geometry | Header, model tables, texture/shader offsets and identifier strings indexed | Remaining vertex/index/container layout is undocumented |
 | SNDZ | Containers extracted | Files are synthesis programs rather than directly playable PCM/WAV |
-| JPEG XL previews | Containers identified | Installed decoders reject the game's JPEG XL variant |
+| JPEG XL previews | 4,074 containers extracted; pixel decode blocked | `pillow-jxl-plugin 1.3.8` and `imagecodecs 2026.10.10` reject the game's JXL codestream |
 | GPB | IDP0/TXS assets extracted; full node graph incomplete | Remaining GPB property schema unknown |
 | Core game logic | Blocked | `eboot.bin` is encrypted PS5 SELF |
 

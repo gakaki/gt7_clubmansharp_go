@@ -29,6 +29,7 @@
 /reports/face_atlases/uniform_portraits/
 /reports/avatar_portraits_rust/
 /reports/cars_live*.json
+/reports/jxl_*.jxl
 /reports/stella_unpacked.bin
 /reports/legacy_avatar_assets/
 /reports/dms_rust/
