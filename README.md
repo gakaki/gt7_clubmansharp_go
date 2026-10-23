@@ -41,6 +41,11 @@ Collection. Chinese, English and bilingual modes are available.
   parsing research.
 - `report/`: format notes and reverse-engineering documentation.
 
+The recovered menu bytecode is documented in
+`reports/gt7_menu_scripts_diss.zip`: 1,906 readable disassembly files,
+1,325,950 lines, with per-file SHA-256 hashes in
+`reports/menu_disassembly_manifest.csv`.
+
 ## Rebuild
 
 ```powershell
