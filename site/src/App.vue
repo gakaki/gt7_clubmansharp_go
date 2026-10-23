@@ -58,8 +58,8 @@ const textMerchants = {
   vehicleCollection: {
     nameZh: '车辆收藏',
     nameEn: 'Car Collection',
-    roleZh: 'PS5 车辆图鉴说明',
-    roleEn: 'PS5 vehicle encyclopedia entry',
+    roleZh: 'PS5 RT2 × 官方车表说明',
+    roleEn: 'PS5 RT2 × official car-list entry',
     avatar: '',
   },
   usedCar: {
@@ -861,11 +861,12 @@ function yearOf(name) {
                     ? `${activeText().titleZh} · ${activeText().titleEn}`
                     : activeText().titleEn }}
               </span>
-              <span>{{ activeText().carKey }}</span>
+              <span v-if="activeText().carKey">{{ activeText().carKey }}</span>
               <span v-if="activeTab !== 'vehicleCollection'">{{ activeText().textId }}</span>
               <template v-else>
-                <span>Catch {{ activeText().textIds?.catch }}</span>
-                <span>Long {{ activeText().textIds?.long }}</span>
+                <span v-if="activeText().textIds?.catch">Catch {{ activeText().textIds.catch }}</span>
+                <span v-if="activeText().textIds?.long">Long {{ activeText().textIds.long }}</span>
+                <span v-if="activeText().officialId">官方车表 {{ activeText().officialId }}</span>
               </template>
             </div>
             <div v-if="activeOffer()" class="dealer-offer">

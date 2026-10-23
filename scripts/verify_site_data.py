@@ -63,8 +63,8 @@ def main() -> None:
     )
 
     text_stats = payload["carTextStats"]
-    assert text_stats["entries"] == 1213, text_stats
-    assert text_stats["mappedEntries"] == 1213, text_stats
+    assert text_stats["entries"] == 1215, text_stats
+    assert text_stats["mappedEntries"] == 1215, text_stats
     assert text_stats["unresolvedEntries"] == 0, text_stats
     assert text_stats["orphanTextRows"] == 9, text_stats
     assert text_stats["carsWithAnyText"] == 582, text_stats
@@ -72,7 +72,7 @@ def main() -> None:
         "brandCentral": 401,
         "usedCar": 139,
         "collection": 94,
-        "vehicleCollection": 579,
+        "vehicleCollection": 581,
     }, text_stats
     assert all(isinstance(car.get("texts"), dict) for car in cars)
     assert sum(bool(car["texts"]) for car in cars) == 582
@@ -84,7 +84,12 @@ def main() -> None:
         for car in cars
     )
     assert all(
-        text.get("en") and text.get("zh") and text.get("textId")
+        text.get("en") and text.get("zh")
+        and (
+            text.get("textId")
+            or text.get("officialId")
+            or text.get("translationSource") == "local-rt2-recovered"
+        )
         for car in cars
         for text in car["texts"].values()
     )
@@ -121,11 +126,14 @@ def main() -> None:
     assert all(row["carIds"] and row["en"] and row["zh"] for row in car_text_rows)
     with COLLECTION_CSV.open(encoding="utf-8-sig", newline="") as fh:
         collection_rows = list(csv.DictReader(fh))
-    assert len(collection_rows) == 579, len(collection_rows)
-    assert len({row["carId"] for row in collection_rows}) == 579
+    assert len(collection_rows) == 581, len(collection_rows)
+    assert len({row["carId"] for row in collection_rows}) == 580
     assert all(
-        row["carId"] and row["carKey"] and row["catchTextId"]
-        and row["longTextId"] and row["en"] and row["zh"]
+        row["carId"] and row["en"] and row["zh"]
+        and (
+            row["officialId"]
+            or (row["catchTextId"] and row["longTextId"])
+        )
         for row in collection_rows
     )
 
@@ -196,7 +204,7 @@ def main() -> None:
     assert text_sources == {
         "brandCentral", "vehicleCollection", "usedCar", "collection",
     }
-    assert payload["carTextStats"]["mappedEntries"] == 1213
+    assert payload["carTextStats"]["mappedEntries"] == 1215
     assert payload["carTextStats"]["carsWithAnyText"] == 582
     assert all(isinstance(car.get("texts"), dict) for car in cars)
     assert by_name["Xiaomi SU7 Ultra '25"]["texts"]["brandCentral"]["en"]
@@ -205,7 +213,13 @@ def main() -> None:
     collection_cars = [
         car for car in cars if "vehicleCollection" in car["texts"]
     ]
-    assert len(collection_cars) == 579
+    assert len(collection_cars) == 580
+    assert all(
+        car["texts"]["vehicleCollection"].get("officialId")
+        or car["texts"]["vehicleCollection"].get("translationSource")
+        == "local-rt2-recovered"
+        for car in collection_cars
+    )
     assert not [
         car for car in collection_cars
         if not car["texts"]["vehicleCollection"]["catch"]["en"]

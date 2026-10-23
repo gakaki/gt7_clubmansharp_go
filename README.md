@@ -20,7 +20,7 @@ limitations are recorded in `report/FINAL_STATUS.md`.
 | Unique CarDetail records | 444 |
 | Car-scene dialogue lines | 2,620 |
 | Dealer descriptions | 634 |
-| Vehicle Collection entries | 579 |
+| Vehicle Collection cars | 580 |
 | Cars with at least one description | 582 |
 | Legacy 253 ambiguity review | 253 / 253 resolved |
 | Strongly-typed subtitle speakers | 14 |

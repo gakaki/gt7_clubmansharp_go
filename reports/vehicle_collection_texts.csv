@@ -624,7 +624,7 @@ The 2000 All Japan Grand Touring Championship (JGTC) GT500 class saw fierce comp
 The All Japan Grand Touring Championship (JGTC) ran until 2004, after which it evolved into the current Super GT series. Toyota entered the Supra into JGTC competition in 1994. During that era, the series was largely dominated by the Nissan Skyline GT-R; however, in 1997, the Supra finally broke through, capturing the season title with the No. 36 Castrol TOM'S Supra.","这台机器正是终结GT-R王朝的勇士。
 
 全日本GT锦标赛（JGTC）一直举办到2004年，随后演变为现在的Super GT系列赛。Toyota Supra于1994年开始参加JGTC赛事。当时赛事由Nissan Skyline GT-R统治，但1997年Supra终于从GT-R手中夺回了当季的冠军。这辆具有历史意义的赛车正是36号Castrol TOM'S Supra。"
-0x0000D4C5,Caterham Seven Superlight R500 '08,caterham_seven_sl_r500_12,,stable-car-key,car3395,official-gt7-carlist,0x000052BB,0x0000529F,"The ultimate version of the extremely lightweight Caterham.
+0x0000D4C5,Caterham Seven Superlight R500 '08,caterham_seven_sl_r500_12,,exact-display-name,car3395,official-gt7-carlist,0x000052BB,0x0000529F,"The ultimate version of the extremely lightweight Caterham.
 
 This car was produced by Caterham in 1996, more than two decades after the company inherited production rights to the Seven from Lotus in 1973. As the Superlight name implied, weight was trimmed throughout the car, making it between 77 lbs and 110 lbs lighter than the standard Seven, depending on trim. The later models from 2008 and after, were powered by a 2.0-liter Ford engine producing 262.3 HP, giving it 0-to-62.1 mph acceleration of 2.88 seconds and performance that could rival supercars.","轻量化Caterham的终极版本。
 
@@ -684,7 +684,7 @@ The car shown here represents the most extreme performance version of the third-
 Introduced in 2014, the Charger SRT Hellcat stands as one of the most powerful and extreme models in the Charger’s long-running legacy, which dates back to 1966. Developed by SRT, Chrysler’s high-performance division, the car produces 707.1 HP and reaches a top speed of 204 mph. This safety car version is a Gran Turismo Original model.","这款超高性能的Charger创下了全球最高速度纪录。
 
 2014年推出的Charger SRT Hellcat或许是自1966年延续至今的Dodge Charger历史上最强劲的车型。由Chrysler高性能开发团队SRT开发，可输出717 PS，最高时速达328.3 公里/小时。这款安全车版本是跑车浪漫旅的原创车型。"
-0x0000D4C7,Toyota Chaser Tourer V '97,chaser_v_97,,stable-car-key,car3612,official-gt7-carlist,0x0000D4B4,0x0000D4B7,"This sister to the Toyota Mark II provides an intense drive.
+0x0000D4C7,Toyota Chaser Tourer V '97,chaser_v_97,,exact-display-name,car3612,official-gt7-carlist,0x0000D4B4,0x0000D4B7,"This sister to the Toyota Mark II provides an intense drive.
 
 The Chaser was Toyota’s midsize sedan, sharing the Mark II’s fundamental design but wearing different exterior styling. The Tourer V performance model was powered by the second-generation 1JZ-GTE engine with variable valve timing, and flooring the pedal launched this beast forward with ferocious boost. The front-engine/rear-wheel-drive layout provided excellent control, making the car responsive to the driver’s inputs.","这款Toyota Mark II的姊妹车型驾驶手感极为扎实而强劲。
 
@@ -820,11 +820,6 @@ The ZR1 was introduced near the end of the C7 Corvette’s production run, becom
 Released in 2019, the eighth-generation Corvette became the first in the lineup to adopt a mid-engine layout—a major departure from the traditional front-engine design. At its core was the new 6.2-liter LT2 V-8, producing 495.1 HP and 470.1 ft-lb of torque, paired with an 8-speed dual-clutch gearbox. Although it left behind the Corvette’s signature long-nose silhouette, the C8 delivered outstanding performance, particularly in GT racing.","全新一代中置布局Corvette。
 
 2019年发布的第8代Corvette在动力总成上迎来重大变革，成为该系列首款采用中置布局的车型。全新6.2升V8“LT2”引擎输出可达502 PS/65.0 公斤力米，搭配8速双离合变速箱。虽然标志性的长车鼻不复存在，但凭借现代化的性能特质，它在GT赛事的核心组别里表现尤为惊艳。"
-0x00005600,Chevrolet Corvette Stingray Convertible (C3) '69,corvette_convertible_69,Corvette Stingray L46 350 (C3) '69,stable-car-key,car1542,official-gt7-carlist,0x00004B1E,0x000049B2,"Taking design cues from the Mako Shark II concept, this 3rd-gen Corvette was known for its distinctive character.
-
-The third-generation Corvette made its debut in the fall of 1967. Heavily inspired by Chevrolet’s 1965 show car, the Mako Shark II, it introduced a bold new coupe design, characterized by its curvaceous “coke bottle” silhouette, which instantly turned heads. Initially launched simply as the Corvette, the model brought back the Stingray name in 1969, along with a larger engine that added greater versatility and performance.","第3代Corvette，出类拔萃的内饰与外形设计均传承自Mako Shark II型的设计理念。
-
-第3代Corvette于1967年秋季首次亮相。深受Chevrolet 1965年展示车型Mako Shark II的影响，新款Corvette采用了被称为“可乐瓶”的迷人轿跑新造型。首次亮相时，这台车只是简单地被称为Corvette，但在1969年，它重新启用了Stingray的名号，并搭载有更大的引擎，让性能更加游刃有余。"
 0x000084CA,Chevrolet Corvette Stingray L46 350 (C3) '69,corvette_convertible_69,Corvette Stingray L46 350 (C3) '69,stable-car-key,car41,official-gt7-carlist,0x00004B1E,0x000049B2,"The Stingray version of the alluring 3rd-gen Corvette translated to more performance all around.
 
 The 1968 Corvette Stingray drew its design inspiration from the Mako Shark II concept, which reimagined the Corvette as a sleek grand tourer. In 1969, the base engine displacement was increased from 327 to 350 cubic inches, although output remained at 295.9 HP. The following year, Chevrolet introduced the LT1 engine, producing 364.9 HP. This version earned praise for being the best handling C3 Corvette.","第3代Corvette，出类拔萃的内饰与外形设计均传承自Mako Shark II型的设计理念。
@@ -845,7 +840,7 @@ Corvette CX Concept是一款采用全轮驱动的电动终极跑车。该车配�
 The Corvette CX.R Vision Gran Turismo Concept is a track-only model based on the Corvette CX Concept. With enhanced aerodynamics and a dramatically lower ride height, it offers even greater performance capability. Under the skin, a hybrid powertrain combines electric motors with an e-fuel–driven engine, delivering the speed, endurance, and efficiency demanded by endurance racing.","诞生自Corvette车系的未来主义GT赛车。
 
 Corvette CX.R Vision Gran Turismo Concept是基于Corvette CX Concept打造的纯赛道版本。相比其原型CX Concept，这款车拥有更出色的空气动力学性能和更小的离地间隙。该车搭载混合动力系统，电子燃料与电力驱动的组合，满足了耐力赛对高性能和长续航的双重要求。"
-0x000084CA,Chevrolet Corvette Stingray L46 350 (C3) '69,corvette_l46_350_69,Corvette Stingray L46 350 (C3) '69,stable-car-key,car41,official-gt7-carlist,0x000052BE,0x000052A2,"The Stingray version of the alluring 3rd-gen Corvette translated to more performance all around.
+0x000084CA,Chevrolet Corvette Stingray L46 350 (C3) '69,corvette_l46_350_69,Corvette Stingray L46 350 (C3) '69,exact-display-name,car41,official-gt7-carlist,0x000052BE,0x000052A2,"The Stingray version of the alluring 3rd-gen Corvette translated to more performance all around.
 
 The 1968 Corvette Stingray drew its design inspiration from the Mako Shark II concept, which reimagined the Corvette as a sleek grand tourer. In 1969, the base engine displacement was increased from 327 to 350 cubic inches, although output remained at 295.9 HP. The following year, Chevrolet introduced the LT1 engine, producing 364.9 HP. This version earned praise for being the best handling C3 Corvette.","第3代Corvette，出类拔萃的内饰与外形设计均传承自Mako Shark II型的设计理念。
 
@@ -1537,7 +1532,7 @@ This car introduced the concept of the Type R, a road-going race car. At its hea
 This performance model was introduced two years after the original launch of the IONIQ 5. It featured a 4-wheel-drive system powered by electric motors on the front and rear axles, allowing for freely adjustable torque distribution. When set to a rear-wheel bias, the system enabled the over two-ton SUV to be drifted with ease. In an effort to preserve the excitement of traditional combustion-engine cars, this unique electric SUV also offered a simulated 8-speed dual-clutch transmission and synthetic exhaust sounds.","一款颠覆纯电动车型传统认知的性能怪兽。
 
 这款IONIQ 5的高性能版本在其首发两年后正式推出。四驱系统采用前后轴双电机布局，可实现扭矩的自由调节和分配。当调节为偏向后驱时，即便是这台超过2吨的车也能轻松实现漂移驾驶。这款独特的电动SUV力图保持传统燃油车的驾驶激情，特别配备了模拟8速双离合变速箱以及仿真排气声效。"
-0x0000D4C8,Hyundai IONIQ 6 N '25,ioniq_6_n_25,,stable-car-key,car3610,official-gt7-carlist,0x0000D4B2,0x0000D4B5,"A new paradigm for high-performance EV.
+0x0000D4C8,Hyundai IONIQ 6 N '25,ioniq_6_n_25,,exact-display-name,car3610,official-gt7-carlist,0x0000D4B2,0x0000D4B5,"A new paradigm for high-performance EV.
 
 This was the second high-performance EV from Hyundai N. Equipped with a power unit with 770 Nm of torque and 641 HP of total system output, in a body tuned for aerodynamic performance, it accelerates from zero to 62.1 mph in just 3.2 seconds. Features such as N Active Sound+ and N e-Shift, which gave the feeling of gear shifts in an EV, showed Hyundai N’s dedication to preserving the fun of driving.","高性能电动车的全新标杆。
 
@@ -1742,7 +1737,7 @@ This cutting-edge Le Mans Daytona h (LMDh) prototype used a Dallara-built carbon
 This was De Tomaso’s second production mid-engine sports car. To address the lack of power in the earlier Vallelunga, it was fitted with a Ford V-8 engine. Weighing approximately 1.3 tons, the car could reach a top speed of 155.3 mph, thanks to its lightweight construction. The exterior, notable for its gullwing-opening rear section, was designed by Giorgetto Giugiaro during his time at Carrozzeria Ghia. Production was limited to just 401 units.","这台中置引擎跑车为声名卓著的Pantera的登场铺平了道路。
 
 De Tomaso品牌第二款量产中置引擎跑车。为解决前代Vallelunga动力孱弱的问题，该车搭载了Ford V8引擎。凭借约1.3吨的轻盈车重，最高时速可达250 公里/小时。采用鸥翼式开启后舱盖的外观设计出自乔盖托·乔治亚罗在Carrozzeria Ghia时期的手笔。全球仅生产401台。"
-0x0000D4C6,Toyota Mark II Tourer V '97,mark_2_v_97,,stable-car-key,car3611,official-gt7-carlist,0x0000D4B3,0x0000D4B6,"This sports sedan's refined looks hide sharp teeth.
+0x0000D4C6,Toyota Mark II Tourer V '97,mark_2_v_97,,exact-display-name,car3611,official-gt7-carlist,0x0000D4B3,0x0000D4B6,"This sports sedan's refined looks hide sharp teeth.
 
 The Tourer V was a performance model added to the eighth-generation Mark II lineup. Its biggest selling point was its power unit: a turbocharged 2.5-liter inline-6 engine that produced 276.1 HP and 278.5 ft-lb of torque. A 5-speed manual transmission was also available, and the roar of the 6-cylinder engine, combined with tremendous boost, hit as soon as the throttle pedal was floored. Even so, the interior was lavish and comfortable, bringing two seemingly opposite characters together in the Tourer V.","这款运动轿车精致的外表下暗藏锋芒。
 
@@ -2682,7 +2677,7 @@ Twingo以其三门单厢式车身而闻名，其轮廓线条从短促的引擎�
 Dr. Ferdinand Porsche’s Volkswagen was developed into a broad range of variants. One such version was the Sambabus, which reimagined the car as a van with generous luggage capacity. By positioning the horizontally-opposed engine at the very rear, designers were able to create a wide, low floor while preserving the vehicle’s compact footprint. This clever layout gave the model a number of advantages as a commercial vehicle, adding to its appeal and versatility.","具有露营车风格，以最小的体量实现了最大的内部空间。
 
 由费迪南德·保时捷博士设计的Volkswagen车型推出过多种不同版本。其中一款改成了厢式货车，提供更大的行李空间，那就是Sambabus。通过将水平对置引擎安装在车尾，设计师成功地在保持紧凑车身尺寸的同时，腾出了宽敞且极低的地板空间。这一高实用性的特点给了这个车型诸多优点，使其成为了一款非常成功的商用车辆。"
-0x0000428B,Alfa Romeo GIULIA TZ2 carrozzata da ZAGATO '65,tz2_1965,GIULIA TZ2 carrozzata da ZAGATO '65,stable-car-key,car1645,official-gt7-carlist,0x00004C0D,0x00004AA0,"Both in style and substance, this car represented all that was good about sports cars in the 1960s.
+0x0000428B,Alfa Romeo GIULIA TZ2  carrozzata da ZAGATO '65,tz2_1965,GIULIA TZ2 carrozzata da ZAGATO '65,stable-car-key,car1645,official-gt7-carlist,0x00004C0D,0x00004AA0,"Both in style and substance, this car represented all that was good about sports cars in the 1960s.
 
 This racing machine was the result of a collaborative effort between Alfa Romeo and Carrozzeria Zagato. Based on the TZ, its body shell was replaced with lightweight FRP, while the nose and roof were lowered to enhance aerodynamic performance. Under the hood, it featured the twin-ignition cylinder head from the Giulia GTA, allowing it to produce 162.7 HP and reach a top speed of 152.2 mph.","来自60年代的优美经典车型。  
 
@@ -2922,6 +2917,11 @@ This Vision Gran Turismo was created by the famed Carrozzeria Zagato, drawing in
 This was a track-only evolution of the Zonda, unveiled in 1999. Its mid-mounted AMG V-12 delivered 739.6 HP and 520.8 ft-lb of torque. To enhance stability, both the wheelbase and track width were extended. The car was capable of reaching a top speed of 217.5 mph and could accelerate from zero to 62.1 mph in just 2.7 seconds.","赛道专用Zonda，搭载序列室变速箱和可变尾翼。
 
 这是1999年推出的Zonda的纯赛车版本。其中置布局的AMG V12引擎能够输出750 PS/72.0 公斤力米。此外为了提升稳定性，这款车的轴距和轮距均有扩大。该车的0-100 公里/小时成绩为2.7秒，最高速度达到350 公里/小时。"
+0x00005600,Chevrolet Corvette Stingray Convertible (C3) '69,,Chevrolet Corvette Stingray Convertible (C3) '69,official-id,car1542,official-gt7-carlist,,,"Taking design cues from the Mako Shark II concept, this 3rd-gen Corvette was known for its distinctive character.
+
+The third-generation Corvette made its debut in the fall of 1967. Heavily inspired by Chevrolet’s 1965 show car, the Mako Shark II, it introduced a bold new coupe design, characterized by its curvaceous “coke bottle” silhouette, which instantly turned heads. Initially launched simply as the Corvette, the model brought back the Stingray name in 1969, along with a larger engine that added greater versatility and performance.","第3代Corvette，出类拔萃的内饰与外形设计均传承自Mako Shark II型的设计理念。
+
+第3代Corvette于1967年秋季首次亮相。深受Chevrolet 1965年展示车型Mako Shark II的影响，新款Corvette采用了被称为“可乐瓶”的迷人轿跑新造型。首次亮相时，这台车只是简单地被称为Corvette，但在1969年，它重新启用了Stingray的名号，并搭载有更大的引擎，让性能更加游刃有余。"
 0x00009D62,De Tomaso Mangusta (Christian Dior),,De Tomaso Mangusta '69,official-id,car3437,official-gt7-carlist,,,"This mid-engine sports car set the stage for the famous Pantera.
 
 This was De Tomaso’s second production mid-engine sports car. To address the lack of power in the earlier Vallelunga, it was fitted with a Ford V-8 engine. Weighing approximately 1.3 tons, the car could reach a top speed of 155.3 mph, thanks to its lightweight construction. The exterior, notable for its gullwing-opening rear section, was designed by Giorgetto Giugiaro during his time at Carrozzeria Ghia. Production was limited to just 401 units.","这台中置引擎跑车为声名卓著的Pantera的登场铺平了道路。

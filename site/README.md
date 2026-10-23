@@ -11,8 +11,9 @@ Turismo 7 PS5 data recovered from the local game installation. The public deploy
   `GTCafeMessages`, `ConversationGTCafeMsg`, DMSB car keys and RT2 labels.
 - 2,620 car-scene lines, preserving the recovered message-chain order.
 - 634 brand/used/collection descriptions mapped to 581 cars, with EN/ZH text.
-- 579 Car Collection entries extracted from PS5 `DescriptionCatch` and
-  `DescriptionLong`, with paired EN/ZH short and full descriptions.
+- 580 Car Collection cars paired to PS5 `DescriptionCatch` /
+  `DescriptionLong` IDs, cross-checked against the official bilingual car-list
+  modules for clean EN/ZH short and full descriptions.
 - Current dealer rotation data for 50 used cars and 15 legend cars, including
   price, discount, rarity and hot/pick flags.
 - 19 distinct real portraits decoded from the game's PS5 IDP0/TXS5 face
@@ -85,7 +86,7 @@ The production Worker is `gt7-cafe-edge` and serves the custom domain
 - `public/data/cars.json`: optimized site payload.
 - `public/data/car_texts.csv`: 634 dealer description rows with category,
   message IDs and EN/ZH text.
-- `public/data/vehicle_collection_texts.csv`: 579 unique-car Car Collection
+- `public/data/vehicle_collection_texts.csv`: 580 unique-car Car Collection
   records with paired Catch/Long IDs and EN/ZH text.
 - `public/data/car_text_orphans.csv`: 9 texts without a usable current DMSB
   car row.

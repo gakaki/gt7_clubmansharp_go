@@ -3906,7 +3906,7 @@
    },
    "carKey": "caterham_seven_sl_r500_12",
    "sourceName": "",
-   "matchMethod": "stable-car-key",
+   "matchMethod": "exact-display-name",
    "officialId": "car3395",
    "translationSource": "official-gt7-carlist",
    "sourceUrlEn": "https://www.gran-turismo.com/us/gt7/carlist/id/car3395",
@@ -4278,7 +4278,7 @@
    },
    "carKey": "chaser_v_97",
    "sourceName": "",
-   "matchMethod": "stable-car-key",
+   "matchMethod": "exact-display-name",
    "officialId": "car3612",
    "translationSource": "official-gt7-carlist",
    "sourceUrlEn": "https://www.gran-turismo.com/us/gt7/carlist/id/car3612",
@@ -5104,37 +5104,6 @@
   },
   {
    "category": "vehicleCollection",
-   "carId": "0x00005600",
-   "carNameEn": "Chevrolet Corvette Stingray Convertible (C3) '69",
-   "titleZh": "车辆收藏",
-   "titleEn": "Car Collection",
-   "textId": "0x00004B1E",
-   "textIds": {
-    "catch": "0x00004B1E",
-    "long": "0x000049B2"
-   },
-   "carKey": "corvette_convertible_69",
-   "sourceName": "Corvette Stingray L46 350 (C3) '69",
-   "matchMethod": "stable-car-key",
-   "officialId": "car1542",
-   "translationSource": "official-gt7-carlist",
-   "sourceUrlEn": "https://www.gran-turismo.com/us/gt7/carlist/id/car1542",
-   "sourceUrlZh": "https://www.gran-turismo.com/cn/gt7/carlist/id/car1542",
-   "en": "Taking design cues from the Mako Shark II concept, this 3rd-gen Corvette was known for its distinctive character.\n\nThe third-generation Corvette made its debut in the fall of 1967. Heavily inspired by Chevrolet’s 1965 show car, the Mako Shark II, it introduced a bold new coupe design, characterized by its curvaceous “coke bottle” silhouette, which instantly turned heads. Initially launched simply as the Corvette, the model brought back the Stingray name in 1969, along with a larger engine that added greater versatility and performance.",
-   "zh": "第3代Corvette，出类拔萃的内饰与外形设计均传承自Mako Shark II型的设计理念。\n\n第3代Corvette于1967年秋季首次亮相。深受Chevrolet 1965年展示车型Mako Shark II的影响，新款Corvette采用了被称为“可乐瓶”的迷人轿跑新造型。首次亮相时，这台车只是简单地被称为Corvette，但在1969年，它重新启用了Stingray的名号，并搭载有更大的引擎，让性能更加游刃有余。",
-   "catch": {
-    "textId": "0x00004B1E",
-    "en": "Taking design cues from the Mako Shark II concept, this 3rd-gen Corvette was known for its distinctive character.",
-    "zh": "第3代Corvette，出类拔萃的内饰与外形设计均传承自Mako Shark II型的设计理念。"
-   },
-   "long": {
-    "textId": "0x000049B2",
-    "en": "The third-generation Corvette made its debut in the fall of 1967. Heavily inspired by Chevrolet’s 1965 show car, the Mako Shark II, it introduced a bold new coupe design, characterized by its curvaceous “coke bottle” silhouette, which instantly turned heads. Initially launched simply as the Corvette, the model brought back the Stingray name in 1969, along with a larger engine that added greater versatility and performance.",
-    "zh": "第3代Corvette于1967年秋季首次亮相。深受Chevrolet 1965年展示车型Mako Shark II的影响，新款Corvette采用了被称为“可乐瓶”的迷人轿跑新造型。首次亮相时，这台车只是简单地被称为Corvette，但在1969年，它重新启用了Stingray的名号，并搭载有更大的引擎，让性能更加游刃有余。"
-   }
-  },
-  {
-   "category": "vehicleCollection",
    "carId": "0x000084CA",
    "carNameEn": "Chevrolet Corvette Stingray L46 350 (C3) '69",
    "titleZh": "车辆收藏",
@@ -5270,7 +5239,7 @@
    },
    "carKey": "corvette_l46_350_69",
    "sourceName": "Corvette Stingray L46 350 (C3) '69",
-   "matchMethod": "stable-car-key",
+   "matchMethod": "exact-display-name",
    "officialId": "car41",
    "translationSource": "official-gt7-carlist",
    "sourceUrlEn": "https://www.gran-turismo.com/us/gt7/carlist/id/car41",
@@ -9424,7 +9393,7 @@
    },
    "carKey": "ioniq_6_n_25",
    "sourceName": "",
-   "matchMethod": "stable-car-key",
+   "matchMethod": "exact-display-name",
    "officialId": "car3610",
    "translationSource": "official-gt7-carlist",
    "sourceUrlEn": "https://www.gran-turismo.com/us/gt7/carlist/id/car3610",
@@ -10695,7 +10664,7 @@
    },
    "carKey": "mark_2_v_97",
    "sourceName": "",
-   "matchMethod": "stable-car-key",
+   "matchMethod": "exact-display-name",
    "officialId": "car3611",
    "translationSource": "official-gt7-carlist",
    "sourceUrlEn": "https://www.gran-turismo.com/us/gt7/carlist/id/car3611",
@@ -16513,7 +16482,7 @@
   {
    "category": "vehicleCollection",
    "carId": "0x0000428B",
-   "carNameEn": "Alfa Romeo GIULIA TZ2 carrozzata da ZAGATO '65",
+   "carNameEn": "Alfa Romeo GIULIA TZ2  carrozzata da ZAGATO '65",
    "titleZh": "车辆收藏",
    "titleEn": "Car Collection",
    "textId": "0x00004C0D",
@@ -18000,6 +17969,37 @@
   },
   {
    "category": "vehicleCollection",
+   "carId": "0x00005600",
+   "carNameEn": "Chevrolet Corvette Stingray Convertible (C3) '69",
+   "titleZh": "车辆收藏",
+   "titleEn": "Car Collection",
+   "textId": "",
+   "textIds": {
+    "catch": "",
+    "long": ""
+   },
+   "carKey": "",
+   "sourceName": "Chevrolet Corvette Stingray Convertible (C3) '69",
+   "matchMethod": "official-id",
+   "officialId": "car1542",
+   "translationSource": "official-gt7-carlist",
+   "sourceUrlEn": "https://www.gran-turismo.com/us/gt7/carlist/id/car1542",
+   "sourceUrlZh": "https://www.gran-turismo.com/cn/gt7/carlist/id/car1542",
+   "en": "Taking design cues from the Mako Shark II concept, this 3rd-gen Corvette was known for its distinctive character.\n\nThe third-generation Corvette made its debut in the fall of 1967. Heavily inspired by Chevrolet’s 1965 show car, the Mako Shark II, it introduced a bold new coupe design, characterized by its curvaceous “coke bottle” silhouette, which instantly turned heads. Initially launched simply as the Corvette, the model brought back the Stingray name in 1969, along with a larger engine that added greater versatility and performance.",
+   "zh": "第3代Corvette，出类拔萃的内饰与外形设计均传承自Mako Shark II型的设计理念。\n\n第3代Corvette于1967年秋季首次亮相。深受Chevrolet 1965年展示车型Mako Shark II的影响，新款Corvette采用了被称为“可乐瓶”的迷人轿跑新造型。首次亮相时，这台车只是简单地被称为Corvette，但在1969年，它重新启用了Stingray的名号，并搭载有更大的引擎，让性能更加游刃有余。",
+   "catch": {
+    "textId": "",
+    "en": "Taking design cues from the Mako Shark II concept, this 3rd-gen Corvette was known for its distinctive character.",
+    "zh": "第3代Corvette，出类拔萃的内饰与外形设计均传承自Mako Shark II型的设计理念。"
+   },
+   "long": {
+    "textId": "",
+    "en": "The third-generation Corvette made its debut in the fall of 1967. Heavily inspired by Chevrolet’s 1965 show car, the Mako Shark II, it introduced a bold new coupe design, characterized by its curvaceous “coke bottle” silhouette, which instantly turned heads. Initially launched simply as the Corvette, the model brought back the Stingray name in 1969, along with a larger engine that added greater versatility and performance.",
+    "zh": "第3代Corvette于1967年秋季首次亮相。深受Chevrolet 1965年展示车型Mako Shark II的影响，新款Corvette采用了被称为“可乐瓶”的迷人轿跑新造型。首次亮相时，这台车只是简单地被称为Corvette，但在1969年，它重新启用了Stingray的名号，并搭载有更大的引擎，让性能更加游刃有余。"
+   }
+  },
+  {
+   "category": "vehicleCollection",
    "carId": "0x00009D62",
    "carNameEn": "De Tomaso Mangusta (Christian Dior)",
    "titleZh": "车辆收藏",
@@ -18055,7 +18055,7 @@
   "rt2RowsResolved": 577,
   "officialDescriptions": 580,
   "officialNameMatches": 578,
-  "rt2EnglishCatchMatchesOfficial": 487,
+  "rt2EnglishCatchMatchesOfficial": 486,
   "matchedCars": 580,
   "matchedEntries": 581,
   "unresolvedCars": 3,
