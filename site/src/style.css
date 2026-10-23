@@ -289,6 +289,8 @@ button { font-family: inherit; cursor: pointer; }
 .modalcar { width: 190px; height: 100px; object-fit: contain; background: #f2f2f5; border-radius: 8px; }
 .dialog header p { margin: 4px 0 0; color: var(--muted); font-size: 13px; }
 .dialog header .note { margin-top: 6px; color: #a0a0ab; font-size: 11px; }
+.detail-controls { display: flex; align-items: center; gap: 8px; flex: 0 0 auto; }
+.detail-lang button { padding: 7px 11px; }
 .actions { display: flex; gap: 8px; align-items: center; }
 .copy {
   border: 1px solid var(--line); background: #fff; border-radius: 8px;
@@ -549,13 +551,19 @@ button { font-family: inherit; cursor: pointer; }
     grid-template-columns: 96px minmax(0, 1fr);
     align-items: start;
     gap: 10px;
-    padding-right: 36px;
   }
   .modalcar { width: 96px; height: 64px; }
   .dialog h3 { font-size: 19px; line-height: 1.25; }
   .dialog header p { font-size: 12px; line-height: 1.45; }
   .dialog header .note { font-size: 10px; }
-  .actions { position: absolute; top: 12px; right: 12px; }
+  .detail-controls {
+    width: 100%;
+    justify-content: space-between;
+    gap: 8px;
+  }
+  .detail-lang { flex: 1 1 auto; max-width: 236px; }
+  .detail-lang button { flex: 1; padding: 7px 6px; font-size: 11px; }
+  .actions { margin-left: auto; }
   .actions .copy { display: none; }
   .car-tabs {
     display: flex;

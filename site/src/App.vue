@@ -707,8 +707,8 @@ function yearOf(name) {
           <div class="headmain">
             <img v-if="activeCar.image" class="modalcar" :src="base + activeCar.image" :alt="activeCar.nameEn" />
             <div>
-              <h3>{{ activeCar.nameZh }}</h3>
-              <p>{{ activeCar.nameEn }} · {{ activeCar.brand }}</p>
+              <h3>{{ lang === 'en' ? activeCar.nameEn : activeCar.nameZh }}</h3>
+              <p>{{ lang === 'en' ? activeCar.brand : `${activeCar.nameEn} · ${activeCar.brand}` }}</p>
               <p class="note">
                 咖啡屋 {{ tabHasContent(activeCar, 'cafe') ? '有' : '无' }}对白
                 · 品牌购物 {{ tabHasContent(activeCar, 'brandCentral') ? '有' : '无' }}
@@ -717,9 +717,16 @@ function yearOf(name) {
               </p>
             </div>
           </div>
-          <div class="actions">
-            <button class="copy" @click="copyLink">{{ copyState }}</button>
-            <button class="close" @click="closeCar">✕</button>
+          <div class="detail-controls">
+            <div class="lang detail-lang" role="group" aria-label="车辆详情语言">
+              <button :class="{ on: lang === 'zh' }" @click="setLang('zh')">中文</button>
+              <button :class="{ on: lang === 'en' }" @click="setLang('en')">English</button>
+              <button :class="{ on: lang === 'both' }" @click="setLang('both')">双语</button>
+            </div>
+            <div class="actions">
+              <button class="copy" @click="copyLink">{{ copyState }}</button>
+              <button class="close" @click="closeCar">✕</button>
+            </div>
           </div>
         </header>
         <nav class="car-tabs" role="tablist" aria-label="车辆资料">
