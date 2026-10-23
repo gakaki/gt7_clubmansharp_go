@@ -695,7 +695,7 @@ function avatarColor(name) {
   return `hsl(${h % 360} 42% 46%)`
 }
 function avatarUrl(path) {
-  return path ? `${base}${path}?v=20261023c` : ''
+  return path ? `${base}${path}?v=20261024-portrait-padding` : ''
 }
 
 const letters = computed(() => {

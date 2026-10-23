@@ -122,6 +122,26 @@ impl RgbaImage {
         }
         output
     }
+
+    fn pad_centered(&self, width: u32, height: u32, x: u32, y: u32) -> Self {
+        let mut output = Self::new(width, height);
+        for row in 0..self.height {
+            let target_y = y + row;
+            if target_y >= output.height {
+                break;
+            }
+            for column in 0..self.width {
+                let target_x = x + column;
+                if target_x >= output.width {
+                    break;
+                }
+                let source = ((row as usize * self.width as usize) + column as usize) * 4;
+                let target = ((target_y as usize * output.width as usize) + target_x as usize) * 4;
+                output.pixels[target..target + 4].copy_from_slice(&self.pixels[source..source + 4]);
+            }
+        }
+        output
+    }
 }
 
 /// All Cafe members plus the three text/dealer owners whose portraits use the
@@ -455,7 +475,13 @@ fn extract_one(
     // The primary 4x5 atlas cell contains a postage-stamp face image with the
     // useful silhouette inside this 64x64 inset.  Keeping the inset avoids the
     // neighbouring expression strip that otherwise cuts across the hair.
-    let portrait = atlas.crop(84, 0, 64, 64).resize_bilinear(192, 192);
+    // Keep a safe transparent margin inside the 192px portrait. The web UI
+    // masks this image with a circle; without padding the circle cuts through
+    // the hair and chin because the source face reaches all four edges.
+    let portrait = atlas
+        .crop(84, 0, 64, 64)
+        .resize_bilinear(168, 168)
+        .pad_centered(192, 192, 12, 8);
     let portrait_path = portrait_dir.join(format!("{}.png", spec.key));
     save_png(&portrait, &portrait_path)?;
 

@@ -1,6 +1,7 @@
 //! Fail-fast integrity checks for all public research datasets.
 
 use anyhow::{bail, Context, Result};
+use image::GenericImageView;
 use regex::Regex;
 use serde_json::Value;
 use std::collections::HashSet;
@@ -312,13 +313,27 @@ pub fn run(options: &Options) -> Result<Value> {
         }
     }
     let avatar_dir = options.data_dir.join("../avatars/extracted");
-    let avatars = fs::read_dir(&avatar_dir)
+    let avatar_paths = fs::read_dir(&avatar_dir)
         .with_context(|| avatar_dir.display().to_string())?
         .filter_map(Result::ok)
-        .filter(|entry| entry.path().extension().and_then(|value| value.to_str()) == Some("png"))
-        .count();
+        .map(|entry| entry.path())
+        .filter(|path| path.extension().and_then(|value| value.to_str()) == Some("png"))
+        .collect::<Vec<_>>();
+    let avatars = avatar_paths.len();
     if avatars != 19 {
         bail!("expected 19 decoded character portraits, got {avatars}");
+    }
+    for path in avatar_paths {
+        let image = image::open(&path).with_context(|| path.display().to_string())?;
+        if image.dimensions() != (192, 192) {
+            bail!("{}: unexpected portrait dimensions", path.display());
+        }
+        let top = image.get_pixel(96, 0)[3];
+        let bottom = image.get_pixel(96, 191)[3];
+        let center = image.get_pixel(96, 96)[3];
+        if top != 0 || bottom != 0 || center == 0 {
+            bail!("{}: portrait safe margin was not applied", path.display());
+        }
     }
 
     check_clean(&cars, "cars.json")?;
