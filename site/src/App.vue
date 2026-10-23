@@ -26,6 +26,29 @@ const carTextTabs = [
   { id: 'usedCar', labelZh: '二手车', labelEn: 'Used Cars' },
   { id: 'collection', labelZh: '收藏馆', labelEn: 'Hagerty Collection' },
 ]
+const textMerchants = {
+  brandCentral: {
+    nameZh: '品牌中心顾问',
+    nameEn: 'Brand Central Advisor',
+    roleZh: '品牌中心车辆顾问',
+    roleEn: 'Brand Central vehicle advisor',
+    avatar: 'avatars/extracted/brand-central-advisor.png',
+  },
+  usedCar: {
+    nameZh: '二手车商',
+    nameEn: 'Used Car Dealer',
+    roleZh: '二手车商',
+    roleEn: 'Used car dealer',
+    avatar: 'avatars/extracted/used-car-owner.png',
+  },
+  collection: {
+    nameZh: '麦基尔·哈格蒂',
+    nameEn: 'McKeel Hagerty',
+    roleZh: 'Hagerty 收藏馆',
+    roleEn: 'Hagerty Collection',
+    avatar: 'avatars/extracted/hagerty.png',
+  },
+}
 
 let searchTimer
 watch(searchInput, (v) => {
@@ -49,6 +72,7 @@ onMounted(async () => {
     }
   }
   if (params.get('review') === 'unmatched') openUnmatched()
+  if (params.get('cast') === 'all') showCast.value = true
   window.addEventListener('keydown', onKey)
 })
 onBeforeUnmount(() => window.removeEventListener('keydown', onKey))
@@ -355,6 +379,16 @@ function sceneTitle(scene) {
 function activeText() {
   if (!activeCar.value || activeTab.value === 'cafe') return null
   return activeCar.value.texts?.[activeTab.value] || null
+}
+function activeOffer() {
+  if (!activeCar.value || activeTab.value === 'cafe') return null
+  return activeCar.value.dealer?.[activeTab.value] || null
+}
+function activeMerchant() {
+  return textMerchants[activeTab.value] || null
+}
+function formatPrice(value) {
+  return Number(value || 0).toLocaleString('zh-CN')
 }
 function initials(name) {
   return name.split(/\s+/).map((w) => w[0]).join('').slice(0, 2).toUpperCase()
@@ -700,10 +734,25 @@ function yearOf(name) {
         </div>
         <div v-else class="text-panel" role="tabpanel">
           <template v-if="activeText()">
+            <div v-if="activeMerchant()" class="text-merchant">
+              <img :src="base + activeMerchant().avatar" :alt="activeMerchant().nameEn" loading="lazy" />
+              <span>
+                <b>{{ lang === 'zh' ? activeMerchant().nameZh : activeMerchant().nameEn }}</b>
+                <small>{{ lang === 'zh' ? activeMerchant().roleZh : activeMerchant().roleEn }}</small>
+              </span>
+            </div>
             <div class="text-source">
               <span>{{ lang === 'zh' ? activeText().titleZh : activeText().titleEn }}</span>
               <span>{{ activeText().carKey }}</span>
               <span>{{ activeText().textId }}</span>
+            </div>
+            <div v-if="activeOffer()" class="dealer-offer">
+              <strong>Cr. {{ formatPrice(activeOffer().price) }}</strong>
+              <span v-if="activeOffer().discountPrice > 0">优惠 Cr. {{ formatPrice(activeOffer().discountPrice) }}</span>
+              <span>稀有度 {{ activeOffer().rarity }}</span>
+              <span v-if="activeOffer().isHot">{{ lang === 'zh' ? '热门' : 'Hot' }}</span>
+              <span v-if="activeOffer().isPick">{{ lang === 'zh' ? '精选' : 'Pick' }}</span>
+              <span v-if="activeOffer().isNew">{{ lang === 'zh' ? '新车' : 'New' }}</span>
             </div>
             <p v-if="activeTab === 'brandCentral'" class="text-source-note">
               此段车辆介绍同时用于车库展示；若游戏数据库为同一车型保存了多条版本，会列在正文后的“补充介绍”中。
@@ -752,6 +801,7 @@ function yearOf(name) {
       · <a :href="base + 'data/unmatched_dialogues.csv'" download>下载 253 条歧义复核 CSV</a>
       · <a :href="base + 'data/unmatched_dialogues.md'" download>人工判定清单 MD</a>
       · <a :href="base + 'data/car_texts.csv'" download>三类车辆说明 CSV</a>
+      · <a :href="base + 'data/dealer_offers.csv'" download>当前车商报价 CSV</a>
       · <a :href="base + 'data/car_text_orphans.csv'" download>未归属说明文本 CSV</a>
       · 数据来源：Gran Turismo 7 (PS5, PPSA01317) 本地化文本 · 仅供研究使用
       <div class="credits">Luca / Sarah 头像来自公开角色资料，其余常驻好友为站点绘制说明图。</div>

@@ -273,7 +273,7 @@ button { font-family: inherit; cursor: pointer; }
   overflow-y: auto;
 }
 .dialog {
-  width: min(900px, 100%);
+  width: min(1100px, 100%);
   background: #fff;
   border-radius: 14px;
   box-shadow: 0 24px 80px rgba(0, 0, 0, 0.25);
@@ -366,12 +366,24 @@ button { font-family: inherit; cursor: pointer; }
   color: var(--muted);
   font-size: 12px;
   font-weight: 650;
-  white-space: nowrap;
+  white-space: normal;
+  line-height: 1.35;
+  min-height: 42px;
 }
 .car-tabs button:hover { color: var(--text); background: #fff; border-color: var(--line); }
 .car-tabs button.on { color: #fff; background: #17171c; border-color: #17171c; }
 .car-tabs button.muted:not(.on) { opacity: .52; }
 .text-panel { padding: 20px 22px 26px; min-height: 260px; }
+.text-merchant {
+  display: flex; align-items: center; gap: 10px; margin-bottom: 14px;
+}
+.text-merchant img {
+  width: 44px; height: 44px; border-radius: 50%; object-fit: cover;
+  background: #e8ebf0; border: 1px solid var(--line);
+}
+.text-merchant span { display: flex; flex-direction: column; gap: 2px; }
+.text-merchant b { font-size: 14px; }
+.text-merchant small { color: var(--muted); font-size: 10px; }
 .text-source {
   display: flex;
   flex-wrap: wrap;
@@ -391,6 +403,16 @@ button { font-family: inherit; cursor: pointer; }
   color: #777782;
   font-size: 10px;
   letter-spacing: .02em;
+}
+.dealer-offer {
+  display: flex; flex-wrap: wrap; align-items: center; gap: 7px;
+  margin: -8px 0 20px; padding: 10px 12px;
+  border: 1px solid #e0e4ec; border-radius: 9px; background: #fafbfd;
+  color: #697181; font-size: 11px;
+}
+.dealer-offer strong { color: #17171a; font-size: 15px; margin-right: 4px; }
+.dealer-offer span {
+  padding: 3px 7px; border-radius: 999px; background: #eef1f6;
 }
 .text-copy + .text-copy {
   margin-top: 24px;

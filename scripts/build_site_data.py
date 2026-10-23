@@ -27,6 +27,9 @@ TEXT_DIRS = [
 ]
 CAFE = Path(r"C:\gt7\gt7\_re\reports\cafe_dialogues.json")
 OFFICIAL = Path(r"C:\gt7\gt7\_re\reports\official_cars.json")
+DEALER_DATA = Path(r"C:\gt7\gt7\cs")
+DEALER_CSV_OUT = Path(r"C:\gt7\gt7\_re\site\public\data\dealer_offers.csv")
+DEALER_REPORT_CSV = Path(r"C:\gt7\gt7\_re\reports\dealer_offers.csv")
 
 MULTI = [
     "Eckert's Rod & Custom", "Chris Holstrom Concepts", "Greening Auto Company",
@@ -233,7 +236,7 @@ SPEAKERS = {
         "speakerZh": "卢卡",
         "roleEn": "GT Café owner",
         "roleZh": "GT 咖啡屋主人",
-        "avatar": "avatars/luca.jpg",
+        "avatar": "avatars/extracted/luca.png",
         "aliases": ["Luca"],
     },
     "Sarah": {
@@ -241,7 +244,7 @@ SPEAKERS = {
         "speakerZh": "莎拉·伊顿",
         "roleEn": "Main guide and race engineer",
         "roleZh": "主向导 / 赛事工程师",
-        "avatar": "avatars/sarah.jpg",
+        "avatar": "avatars/extracted/sarah.png",
         "aliases": ["Sarah Eaton", "Sarah"],
     },
     "Stella": {
@@ -249,7 +252,7 @@ SPEAKERS = {
         "speakerZh": "斯黛拉",
         "roleEn": "Café regular · compact cars",
         "roleZh": "咖啡屋常客 · 紧凑型车",
-        "avatar": "avatars/stella.svg",
+        "avatar": "avatars/extracted/stella.png",
         "aliases": ["Stella"],
     },
     "Chris": {
@@ -257,7 +260,7 @@ SPEAKERS = {
         "speakerZh": "克里斯",
         "roleEn": "Café regular · road-car appraisal",
         "roleZh": "咖啡屋常客 · 公路车鉴赏",
-        "avatar": "avatars/chris.svg",
+        "avatar": "avatars/extracted/chris.png",
         "aliases": ["Chris"],
     },
     "Jeremy": {
@@ -265,7 +268,7 @@ SPEAKERS = {
         "speakerZh": "杰里米",
         "roleEn": "Café regular · motorsport history",
         "roleZh": "咖啡屋常客 · 赛车史",
-        "avatar": "avatars/jeremy.svg",
+        "avatar": "avatars/extracted/jeremy.png",
         "aliases": ["Jeremy"],
     },
     "Freeman Thomas": {
@@ -273,7 +276,7 @@ SPEAKERS = {
         "speakerZh": "弗里曼·托马斯",
         "roleEn": "Former Ford design director; Porsche, Audi",
         "roleZh": "前福特设计总监 · 保时捷/奥迪",
-        "avatar": "avatars/designer.svg",
+        "avatar": "avatars/extracted/freeman-thomas.png",
         "aliases": ["Freeman Thomas", "Freeman"],
     },
     "Shiro Nakamura": {
@@ -281,7 +284,7 @@ SPEAKERS = {
         "speakerZh": "中村史郎",
         "roleEn": "Former Nissan Chief Creative Officer",
         "roleZh": "前日产首席创意官",
-        "avatar": "avatars/designer.svg",
+        "avatar": "avatars/extracted/shiro-nakamura.png",
         "aliases": ["Shiro Nakamura", "Nakamura"],
     },
     "Hideo Kodama": {
@@ -289,7 +292,7 @@ SPEAKERS = {
         "speakerZh": "儿玉英雄",
         "roleEn": "Former Opel designer",
         "roleZh": "前欧宝设计师",
-        "avatar": "avatars/designer.svg",
+        "avatar": "avatars/extracted/hideo-kodama.png",
         "aliases": ["Hideo Kodama", "Kodama"],
     },
     "Fabio Filippini": {
@@ -297,7 +300,7 @@ SPEAKERS = {
         "speakerZh": "法比奥·菲利皮尼",
         "roleEn": "Former Pininfarina design director",
         "roleZh": "前宾尼法利纳设计总监",
-        "avatar": "avatars/designer.svg",
+        "avatar": "avatars/extracted/fabio-filippini.png",
         "aliases": ["Fabio Filippini", "Fabio", "Filippini"],
     },
     "Ed Welburn": {
@@ -305,7 +308,7 @@ SPEAKERS = {
         "speakerZh": "埃德·韦伯恩",
         "roleEn": "Former GM global design vice president",
         "roleZh": "前通用汽车全球设计副总裁",
-        "avatar": "avatars/designer.svg",
+        "avatar": "avatars/extracted/ed-welburn.png",
         "aliases": ["Ed Welburn", "Welburn"],
     },
     "Tom Matano": {
@@ -313,7 +316,7 @@ SPEAKERS = {
         "speakerZh": "俣野努",
         "roleEn": "Mazda designer; MX-5 design contributor",
         "roleZh": "马自达设计师 · MX-5 设计参与者",
-        "avatar": "avatars/designer.svg",
+        "avatar": "avatars/extracted/tom-matano.png",
         "aliases": ["Tom Matano", "Matano"],
     },
     "Hikonori Kagurazaka": {
@@ -321,7 +324,7 @@ SPEAKERS = {
         "speakerZh": "神乐坂彦则",
         "roleEn": "High-performance car designer",
         "roleZh": "高性能车设计师",
-        "avatar": "avatars/designer.svg",
+        "avatar": "avatars/extracted/hikonori-kagurazaka.png",
         "aliases": ["Hikonori Kagurazaka", "Kagurazaka"],
     },
     "Kunihisa Ito": {
@@ -329,7 +332,7 @@ SPEAKERS = {
         "speakerZh": "伊藤邦久",
         "roleEn": "GM, Opel and Ford designer",
         "roleZh": "通用/欧宝/福特汽车设计师",
-        "avatar": "avatars/designer.svg",
+        "avatar": "avatars/extracted/kunihisa-ito.png",
         "aliases": ["Kunihisa Ito", "Kunihisa"],
     },
     "Ikuo Maeda": {
@@ -337,7 +340,7 @@ SPEAKERS = {
         "speakerZh": "前田育男",
         "roleEn": "Former Mazda design lead; Kodo design",
         "roleZh": "前马自达设计负责人 · 魂动设计",
-        "avatar": "avatars/designer.svg",
+        "avatar": "avatars/extracted/ikuo-maeda.png",
         "aliases": ["Ikuo Maeda", "Maeda"],
     },
     "Kim Jones": {
@@ -345,7 +348,7 @@ SPEAKERS = {
         "speakerZh": "金·琼斯",
         "roleEn": "Fashion designer; Dior Men artistic director",
         "roleZh": "时装设计师 · Dior 男装艺术总监",
-        "avatar": "avatars/designer.svg",
+        "avatar": "avatars/extracted/kim-jones.png",
         "aliases": ["Kim Jones"],
     },
 }
@@ -795,6 +798,76 @@ def select_fields(row: dict, fields: tuple[str, ...]) -> dict:
     return {key: row[key] for key in fields if key in row}
 
 
+def attach_dealer_offers(cars: list[dict], text_report: dict) -> list[dict]:
+    """Join the current online dealer rotation to canonical car records."""
+
+    if not DEALER_DATA.is_file():
+        return []
+
+    data = json.loads(DEALER_DATA.read_text(encoding="utf-8"))
+    category_names = {
+        "used_car_dealer": "usedCar",
+        "legend_car_dealer": "collection",
+        "brand_central_dealer": "brandCentral",
+    }
+    offers_by_key = {}
+    rows = []
+    for dealer_key, category in category_names.items():
+        offers = (
+            data.get(dealer_key, {})
+            .get("online_car_shop", {})
+            .get("cars", [])
+        )
+        for offer in offers:
+            label = (
+                offer.get("car_parameter", {})
+                .get("car_label", "")
+            )
+            if not label:
+                continue
+            value = {
+                "category": category,
+                "offerId": offer.get("id"),
+                "price": offer.get("price"),
+                "discountPrice": offer.get("discount_price"),
+                "rarity": offer.get("rarity"),
+                "isNew": offer.get("is_new"),
+                "isHot": offer.get("is_hot"),
+                "isPick": offer.get("is_pick"),
+                "carKey": label,
+            }
+            offers_by_key.setdefault(label, {})[category] = value
+
+    keys_by_car = defaultdict(set)
+    for entry in text_report.get("entries", []):
+        if entry.get("carKey"):
+            for car_id in entry.get("carIds", []):
+                keys_by_car[car_id].add(entry["carKey"])
+    for car in cars:
+        for text in car.get("texts", {}).values():
+            if text.get("carKey"):
+                keys_by_car[car["id"]].add(text["carKey"])
+            for variant in text.get("variants", []):
+                if variant.get("carKey"):
+                    keys_by_car[car["id"]].add(variant["carKey"])
+
+        matched = {}
+        for car_key in sorted(keys_by_car.get(car["id"], ())):
+            matched.update(offers_by_key.get(car_key, {}))
+        if matched:
+            car["dealer"] = matched
+            for category, offer in matched.items():
+                rows.append({
+                    "carId": car["id"],
+                    "nameEn": car["nameEn"],
+                    "nameZh": car["nameZh"],
+                    **offer,
+                })
+
+    rows.sort(key=lambda row: (row["category"], row["nameEn"]))
+    return rows
+
+
 def main() -> None:
     us, zh = load("us"), load("zh")
     rows = cafe_rows(us, zh)
@@ -868,6 +941,7 @@ def main() -> None:
 
     text_report = build_car_texts(cars)
     print("car text stats:", json.dumps(text_report["stats"], ensure_ascii=False))
+    dealer_offers = attach_dealer_offers(cars, text_report)
 
     items = json.loads(CAFE.read_text(encoding="utf-8"))
     previous_unmatched_ids = set()
@@ -974,6 +1048,7 @@ def main() -> None:
         "cafeExactStats": exact_stats,
         "carTextSources": text_report["sources"],
         "carTextStats": text_report["stats"],
+        "dealerOffers": dealer_offers,
         "speakers": sorted(
             (
                 {
@@ -1022,6 +1097,18 @@ def main() -> None:
     }
     OUT.parent.mkdir(parents=True, exist_ok=True)
     OUT.write_text(json.dumps(payload, ensure_ascii=False, separators=(",", ":")), encoding="utf-8")
+    dealer_fields = [
+        "carId", "nameEn", "nameZh", "category", "offerId", "price",
+        "discountPrice", "rarity", "isNew", "isHot", "isPick", "carKey",
+    ]
+    for csv_path in (DEALER_CSV_OUT, DEALER_REPORT_CSV):
+        with csv_path.open("w", encoding="utf-8-sig", newline="") as handle:
+            writer = csv.DictWriter(handle, fieldnames=dealer_fields)
+            writer.writeheader()
+            writer.writerows(
+                {key: row.get(key, "") for key in dealer_fields}
+                for row in dealer_offers
+            )
     rows = []
     for car in cars:
         rows.extend((car["nameEn"], d) for d in car["dialogues"])

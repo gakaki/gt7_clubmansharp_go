@@ -34,7 +34,14 @@ PASS cars=591 with_dialogue=329 dialogues=444 scene_lines=2620 mapped=444
 images=582 speakers=14 car_texts=634 text_cars=581 review=253
 ```
 
-`cargo test --release`: 2 passed, 0 failed.
+`cargo test --release`: 9 passed, 0 failed.
 
-`gt7re research`: 3,529 cafe messages, 1,698 scenes, 444 exact CarDetail
-rows, 633 text entries, 0 unresolved cafe car keys.
+`gt7re pipeline`: 311 GPB4 entries, 311 DMSB files, 3,529 cafe messages,
+1,698 scenes, 444 exact CarDetail rows, 634 text entries, 2,620 scene lines,
+65 dealer offers, 0 unresolved cafe car keys and 19 real character portraits.
+
+`python scripts\verify_avatars.py`:
+
+```text
+PASS avatars=19 cafe=15 unique_hashes=19 min_pair_distance=5
+```

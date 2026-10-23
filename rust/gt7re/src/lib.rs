@@ -7,10 +7,12 @@
 //! Polyphony PackedFile containers and the encrypted `.rt2` localisation
 //! containers.
 
+pub mod avatar;
 pub mod census;
 pub mod discover;
 pub mod extract;
 pub mod gpb;
+pub mod gpb4;
 pub mod idp0;
 pub mod mdl5;
 pub mod map4;

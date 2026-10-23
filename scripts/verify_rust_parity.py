@@ -6,6 +6,8 @@ from __future__ import annotations
 import json
 from pathlib import Path
 
+from PIL import Image, ImageChops
+
 
 ROOT = Path(r"C:\gt7\gt7")
 REPORTS = ROOT / r"_re\reports"
@@ -68,6 +70,29 @@ def main() -> None:
     }
     assert py_entries == rs_entries
 
+    def dealer_signature(row: dict) -> tuple:
+        return (
+            row["carId"],
+            row["category"],
+            row["offerId"],
+            row["price"],
+            row["discountPrice"],
+            row["rarity"],
+            row["isNew"],
+            row["isHot"],
+            row["isPick"],
+            row["carKey"],
+        )
+
+    py_dealers = {
+        dealer_signature(row) for row in python_site["dealerOffers"]
+    }
+    rs_dealers = {
+        dealer_signature(row) for row in rust["dealerOffers"]
+    }
+    assert py_dealers == rs_dealers
+    assert len(py_dealers) == 65
+
     py_scenes = {
         scene["conversationKey"]: (
             tuple(scene["carIds"]),
@@ -89,8 +114,32 @@ def main() -> None:
     assert rust["stats"]["cafeVariants"] == len(python_cafe["scenes"]) == 1698
     assert rust["stats"]["carDetailRows"] == 444
     assert rust["stats"]["conversationLines"] == python_site["stats"]["conversationLines"] == 2620
+    assert rust["stats"]["dealerOffers"] == len(py_dealers) == 65
     assert len(rust["legacyReview"]) == 253
     assert not rust["unresolvedCarKeys"]
+
+    avatar_manifest = load(REPORTS / "face_atlases" / "manifest.json")
+    rust_avatar_manifest = load(REPORTS / "face_atlases_rust" / "manifest.json")
+    assert avatar_manifest["count"] == rust_avatar_manifest["count"] == 19
+    assert {row["key"] for row in avatar_manifest["entries"]} == {
+        row["key"] for row in rust_avatar_manifest["entries"]
+    }
+    for row in avatar_manifest["entries"]:
+        key = row["key"]
+        python_image = Image.open(REPORTS / "face_atlases" / f"{key}.png").convert(
+            "RGBA"
+        )
+        rust_image = Image.open(
+            REPORTS / "face_atlases_rust" / f"{key}.png"
+        ).convert("RGBA")
+        assert python_image.size == rust_image.size
+        assert ImageChops.difference(python_image, rust_image).getbbox() is None, key
+    placeholder_markers = ("designer.svg", "stella.svg", "chris.svg", "jeremy.svg")
+    assert all(
+        marker not in speaker["avatar"]
+        for speaker in python_site["cast"]
+        for marker in placeholder_markers
+    )
 
     print(
         "PASS "
@@ -98,7 +147,9 @@ def main() -> None:
         f"texts={len(py_entries)} "
         f"scenes={len(py_scenes)} "
         f"conversation={rust['stats']['conversationLines']} "
-        f"review={len(rust['legacyReview'])}"
+        f"dealer_offers={len(py_dealers)} "
+        f"review={len(rust['legacyReview'])} "
+        f"avatars={len(avatar_manifest['entries'])}"
     )
 
 

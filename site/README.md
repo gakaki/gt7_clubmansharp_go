@@ -11,8 +11,15 @@ from the local game installation. The public deployment is
   `GTCafeMessages`, `ConversationGTCafeMsg`, DMSB car keys and RT2 labels.
 - 2,620 car-scene lines, preserving the recovered message-chain order.
 - 634 brand/used/collection descriptions mapped to 581 cars, with EN/ZH text.
+- Current dealer rotation data for 50 used cars and 15 legend cars, including
+  price, discount, rarity and hot/pick flags.
+- 19 distinct real portraits decoded from the game's PS5 IDP0/TXS5 face
+  atlases using the native Rust GNM mode 9 / BC7 pipeline.
 - Four car tabs: cafe dialogue, Brand Central, Used Cars and Hagerty
   Collection.
+- All 15 Cafe cast cards and the three vehicle-text merchants use real
+  portraits decoded from the PS5 face atlases; no SVG or shared placeholder
+  avatar is used.
 - Search across car names, cafe dialogue and all three description sources.
 - A 253-record legacy ambiguity review, retaining the old candidate and the
   exact RT2-resolved car for manual checking.
@@ -27,6 +34,8 @@ from the local game installation. The public deployment is
   <https://gt7.gakaki.com/?car=0x0000D1BB&tab=brandCentral&lang=both>
 - Legacy 253 review:
   <https://gt7.gakaki.com/?review=unmatched&lang=both>
+- Full Cafe cast portraits:
+  <https://gt7.gakaki.com/?cast=all&lang=both>
 - Data downloads: `public/data/`
 
 ## Local build

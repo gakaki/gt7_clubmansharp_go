@@ -23,6 +23,16 @@
 /reports/mprj_strings.json
 /reports/*.png
 /reports/*.jpg
+/reports/face_atlases/*.png
+/reports/face_atlases_rust/*.png
+/reports/face_atlases/portrait_candidates/
+/reports/face_atlases/uniform_portraits/
+/reports/avatar_portraits_rust/
+/reports/cars_live*.json
+/reports/stella_unpacked.bin
+/reports/legacy_avatar_assets/
+/reports/dms_rust/
+/reports/dms_gpb4_rust/
 
 # Frontend dependencies, build output and local browser profiles
 /site/node_modules/
@@ -35,12 +45,6 @@
 /site/live_*.json
 /site/live_*.txt
 /site/verify_*.json
-
-# Required at runtime, but excluded from source control to avoid redistributing
-# bulk commercial game imagery.
-/site/public/cars/
-/site/public/logos/
-/site/public/avatars/
 
 # Tool caches
 __pycache__/

@@ -89,6 +89,44 @@ $files = Get-ChildItem C:\gt7\gt7\_re\extracted\text\rtext\common\*.rt2 | % Full
 & $exe udp parse capture.bin
 ```
 
+## Complete native pipeline
+
+```powershell
+cd C:\gt7\gt7\_re\rust\gt7re
+cargo run --release --offline -- pipeline
+```
+
+This runs the complete native Rust path:
+
+1. Unpack the original PS5 GPB4 database at
+   `contents/3/S/PRPYS` (311 DMSB files).
+2. Decode RT2 US/Chinese localisation with the recovered keystream.
+3. Join Brand Central, Used Car and Hagerty descriptions to 591 cars and
+   parse the current 65-entry dealer rotation from `C:\gt7\gt7\cs`.
+4. Rebuild 1,698 exact GT Cafe scene variants and 2,620 scene lines from
+   message control flow.
+5. Preserve the 253-row historical ambiguity review with exact resolution.
+6. Decode all 19 GT Cafe/dealer BC7 face atlases using the exact AMD GFX10
+   GNM swizzle mode 9 equation and emit portrait PNGs.
+
+Individual commands:
+
+```powershell
+& $exe gpb4-extract `
+  --file C:\gt7\gt7\contents\3\S\PRPYS `
+  --out C:\gt7\gt7\_re\reports\dms_rust
+
+& $exe avatars `
+  --out C:\gt7\gt7\_re\reports\face_atlases_rust `
+  --portraits C:\gt7\gt7\_re\site\public\avatars\extracted
+```
+
+Parity check:
+
+```powershell
+python C:\gt7\gt7\_re\scripts\verify_rust_parity.py
+```
+
 ## DMSB + RT2 research pipeline
 
 ```powershell

@@ -1,10 +1,12 @@
 use anyhow::{bail, Context, Result};
 use clap::{Parser, Subcommand};
 use rayon::prelude::*;
+use gt7re::avatar;
 use gt7re::census;
 use gt7re::discover;
 use gt7re::extract::{self, Mode};
 use gt7re::gpb;
+use gt7re::gpb4;
 use gt7re::idp0;
 use gt7re::mdl5;
 use gt7re::map4;
@@ -87,6 +89,41 @@ enum Cmd {
         /// Optional JSON array of CarDetail ids for the prior 253-row audit
         #[arg(long)]
         legacy_review: Option<PathBuf>,
+        #[arg(long, default_value = r"C:\gt7\gt7\cs")]
+        dealer_data: PathBuf,
+    },
+    /// Decode every real GT Cafe face atlas and emit portrait PNGs
+    Avatars {
+        /// Decoded full expression atlases
+        #[arg(long)]
+        out: Option<PathBuf>,
+        /// Cropped portrait images used by the web UI
+        #[arg(long)]
+        portraits: Option<PathBuf>,
+        /// JSON manifest for the decoded assets
+        #[arg(long)]
+        manifest: Option<PathBuf>,
+    },
+    /// Run the complete native Rust vehicle-text, Cafe and avatar pipeline
+    Pipeline {
+        #[arg(long, default_value = r"C:\gt7\gt7\contents\3\S\PRPYS")]
+        gpb4_file: PathBuf,
+        #[arg(long, default_value = r"C:\gt7\gt7\_re\extracted\text\rtext\common")]
+        rt2_dir: PathBuf,
+        #[arg(long, default_value = r"C:\gt7\gt7\_re\reports\dms_rust")]
+        dmsb_dir: PathBuf,
+        #[arg(long, default_value = r"C:\gt7\gt7\_re\keys\rt2_rust")]
+        key_dir: PathBuf,
+        #[arg(long, default_value = r"C:\gt7\gt7\_re\reports\research_rust.json")]
+        out: PathBuf,
+        #[arg(long, default_value = r"C:\gt7\gt7\_re\reports\legacy_review_ids.json")]
+        legacy_review: PathBuf,
+        #[arg(long, default_value = r"C:\gt7\gt7\cs")]
+        dealer_data: PathBuf,
+        #[arg(long, default_value = r"C:\gt7\gt7\_re\reports\face_atlases_rust")]
+        avatars_out: PathBuf,
+        #[arg(long, default_value = r"C:\gt7\gt7\_re\site\public\avatars\extracted")]
+        portraits_out: PathBuf,
     },
     /// Unpack a Polyphony PackedFile
     Packed {
@@ -197,6 +234,13 @@ enum Cmd {
         csv: PathBuf,
         #[arg(long, default_value = "UI project (MPRJ)")]
         kind: String,
+        #[arg(long)]
+        out: PathBuf,
+    },
+    /// Unpack a GPB4 bundle (GT7 PS5 DMS database and similar archives)
+    Gpb4Extract {
+        #[arg(default_value = r"C:\gt7\gt7\contents\3\S\PRPYS")]
+        file: PathBuf,
         #[arg(long)]
         out: PathBuf,
     },
@@ -384,6 +428,7 @@ fn run() -> Result<()> {
             key_dir,
             out,
             legacy_review,
+            dealer_data,
         } => {
             let started = std::time::Instant::now();
             let report = research::build(&research::Options {
@@ -392,11 +437,71 @@ fn run() -> Result<()> {
                 key_dir,
                 out: out.clone(),
                 legacy_review,
+                dealer_data: Some(dealer_data),
             })?;
             println!(
                 "{} -> {} ({:.2}s)",
                 serde_json::to_string(&report.stats)?,
                 out.display(),
+                started.elapsed().as_secs_f64()
+            );
+        }
+        Cmd::Avatars {
+            out,
+            portraits,
+            manifest,
+        } => {
+            let started = std::time::Instant::now();
+            let store = Store::scan(&cli.store)?;
+            let atlas_dir = out.unwrap_or_else(avatar::default_atlas_dir);
+            let portrait_dir =
+                portraits.unwrap_or_else(avatar::default_portrait_dir);
+            let entries = avatar::extract_all(&store, &atlas_dir, &portrait_dir)?;
+            let manifest_path = manifest.unwrap_or_else(|| atlas_dir.join("manifest.json"));
+            avatar::write_manifest(&entries, &manifest_path)?;
+            println!(
+                "avatars={} atlases={} portraits={} -> {} ({:.2}s)",
+                entries.len(),
+                atlas_dir.display(),
+                portrait_dir.display(),
+                manifest_path.display(),
+                started.elapsed().as_secs_f64()
+            );
+        }
+        Cmd::Pipeline {
+            gpb4_file,
+            rt2_dir,
+            dmsb_dir,
+            key_dir,
+            out,
+            legacy_review,
+            avatars_out,
+            portraits_out,
+            dealer_data,
+        } => {
+            let started = std::time::Instant::now();
+            let store = Store::scan(&cli.store)?;
+            let (archive, dmsb_files) = gpb4::extract(&gpb4_file, &dmsb_dir)?;
+            let report = research::build(&research::Options {
+                rt2_dir,
+                dmsb_dir: dmsb_dir.clone(),
+                key_dir,
+                out: out.clone(),
+                legacy_review: Some(legacy_review),
+                dealer_data: Some(dealer_data),
+            })?;
+            let entries = avatar::extract_all(&store, &avatars_out, &portraits_out)?;
+            let avatar_manifest = avatars_out.join("manifest.json");
+            avatar::write_manifest(&entries, &avatar_manifest)?;
+            println!(
+                "{} gpb4Entries={} dmsbFiles={} avatars={} research={} avatarsManifest={} portraits={} ({:.2}s)",
+                serde_json::to_string(&report.stats)?,
+                archive.count,
+                dmsb_files,
+                entries.len(),
+                out.display(),
+                avatar_manifest.display(),
+                portraits_out.display(),
                 started.elapsed().as_secs_f64()
             );
         }
@@ -821,6 +926,15 @@ fn run() -> Result<()> {
                 counts.len(),
                 total,
                 nonempty,
+                out.display()
+            );
+        }
+        Cmd::Gpb4Extract { file, out } => {
+            let (archive, written) = gpb4::extract(&file, &out)?;
+            println!(
+                "GPB4 entries={} written={} -> {}",
+                archive.count,
+                written,
                 out.display()
             );
         }

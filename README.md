@@ -6,6 +6,8 @@ models, videos and bulk extracted assets are intentionally excluded from the
 GitHub repository.
 
 The public research browser is deployed at <https://gt7.gakaki.com>.
+The requirement-by-requirement extraction status and remaining format
+limitations are recorded in `report/FINAL_STATUS.md`.
 
 ## Current results
 
@@ -20,6 +22,7 @@ The public research browser is deployed at <https://gt7.gakaki.com>.
 | Cars with at least one description | 581 |
 | Legacy 253 ambiguity review | 253 / 253 resolved |
 | Strongly-typed subtitle speakers | 14 |
+| Real decoded character portraits | 19 |
 
 The vehicle descriptions cover three independent game sources:
 
@@ -50,8 +53,11 @@ The recovered menu bytecode is documented in
 
 ```powershell
 cd C:\gt7\gt7\_re
+& .\rust\gt7re\target\release\gt7re.exe pipeline
 python scripts\build_site_data.py
 python scripts\verify_site_data.py
+python scripts\verify_avatars.py
+python scripts\verify_rust_parity.py
 cd site
 npm install
 npm run build

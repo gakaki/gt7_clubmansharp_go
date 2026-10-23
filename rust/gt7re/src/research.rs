@@ -12,6 +12,7 @@ use serde_json::json;
 use std::collections::{BTreeMap, HashMap, HashSet, VecDeque};
 use std::fs;
 use std::path::{Path, PathBuf};
+use walkdir::WalkDir;
 
 use crate::rt2::{self, Rt2File};
 
@@ -22,6 +23,7 @@ pub struct Options {
     pub key_dir: PathBuf,
     pub out: PathBuf,
     pub legacy_review: Option<PathBuf>,
+    pub dealer_data: Option<PathBuf>,
 }
 
 #[derive(Clone, Debug, Serialize)]
@@ -82,6 +84,30 @@ pub struct CafeScene {
 
 #[derive(Clone, Debug, Serialize)]
 #[serde(rename_all = "camelCase")]
+pub struct DealerOffer {
+    pub category: String,
+    pub offer_id: u64,
+    pub price: u64,
+    pub discount_price: u64,
+    pub rarity: u64,
+    pub is_new: bool,
+    pub is_hot: bool,
+    pub is_pick: bool,
+    pub car_key: String,
+}
+
+#[derive(Clone, Debug, Serialize)]
+#[serde(rename_all = "camelCase")]
+pub struct DealerOfferRecord {
+    pub car_id: String,
+    pub name_en: String,
+    pub name_zh: String,
+    #[serde(flatten)]
+    pub offer: DealerOffer,
+}
+
+#[derive(Clone, Debug, Serialize)]
+#[serde(rename_all = "camelCase")]
 pub struct ResearchCar {
     pub id: String,
     pub name_en: String,
@@ -90,6 +116,7 @@ pub struct ResearchCar {
     pub dialogues: Vec<Turn>,
     pub conversation: Vec<Turn>,
     pub cafe_scenes: Vec<CafeScene>,
+    pub dealer: BTreeMap<String, DealerOffer>,
 }
 
 #[derive(Debug, Serialize)]
@@ -99,6 +126,7 @@ pub struct Research {
     pub stats: serde_json::Value,
     pub cars: Vec<ResearchCar>,
     pub text_entries: Vec<TextEntry>,
+    pub dealer_offers: Vec<DealerOfferRecord>,
     pub cafe_scenes: Vec<CafeScene>,
     pub detail_rows: Vec<Turn>,
     pub legacy_review: Vec<Turn>,
@@ -731,9 +759,12 @@ fn find_dms_dir(root: &Path) -> Result<PathBuf> {
     if root.join("CAR_NAME_ALPHABET.dmsb").is_file() {
         return Ok(root.to_path_buf());
     }
-    let mut candidates = fs::read_dir(root)?
+    let mut candidates = WalkDir::new(root)
+        .max_depth(6)
+        .into_iter()
         .filter_map(Result::ok)
-        .map(|entry| entry.path())
+        .filter(|entry| entry.file_type().is_dir())
+        .map(|entry| entry.into_path())
         .filter(|path| path.join("CAR_NAME_ALPHABET.dmsb").is_file())
         .collect::<Vec<_>>();
     candidates.sort();
@@ -761,6 +792,7 @@ fn build_cars(
             dialogues: Vec::new(),
             conversation: Vec::new(),
             cafe_scenes: Vec::new(),
+            dealer: BTreeMap::new(),
         })
         .collect();
     cars.sort_by(|a, b| a.name_en.cmp(&b.name_en));
@@ -785,6 +817,114 @@ fn build_cars(
                 .unwrap_or(true)
         })
         .collect()
+}
+
+fn attach_dealer_offers(
+    path: Option<&Path>,
+    cars: &mut [ResearchCar],
+    texts: &[TextEntry],
+) -> Result<Vec<DealerOfferRecord>> {
+    let Some(path) = path else {
+        return Ok(Vec::new());
+    };
+    if !path.is_file() {
+        return Ok(Vec::new());
+    }
+    let root: serde_json::Value = serde_json::from_slice(
+        &fs::read(path).with_context(|| path.display().to_string())?,
+    )
+    .with_context(|| format!("parsing dealer data {}", path.display()))?;
+    let categories = [
+        ("used_car_dealer", "usedCar"),
+        ("legend_car_dealer", "collection"),
+        ("brand_central_dealer", "brandCentral"),
+    ];
+    let mut offers_by_key: HashMap<String, BTreeMap<String, DealerOffer>> =
+        HashMap::new();
+    for (dealer_key, category) in categories {
+        let Some(entries) = root
+            .get(dealer_key)
+            .and_then(|value| value.get("online_car_shop"))
+            .and_then(|value| value.get("cars"))
+            .and_then(serde_json::Value::as_array)
+        else {
+            continue;
+        };
+        for entry in entries {
+            let Some(car_key) = entry
+                .get("car_parameter")
+                .and_then(|value| value.get("car_label"))
+                .and_then(serde_json::Value::as_str)
+            else {
+                continue;
+            };
+            let offer = DealerOffer {
+                category: category.into(),
+                offer_id: entry.get("id").and_then(|v| v.as_u64()).unwrap_or(0),
+                price: entry.get("price").and_then(|v| v.as_u64()).unwrap_or(0),
+                discount_price: entry
+                    .get("discount_price")
+                    .and_then(|v| v.as_u64())
+                    .unwrap_or(0),
+                rarity: entry.get("rarity").and_then(|v| v.as_u64()).unwrap_or(0),
+                is_new: entry.get("is_new").and_then(|v| v.as_bool()).unwrap_or(false),
+                is_hot: entry.get("is_hot").and_then(|v| v.as_bool()).unwrap_or(false),
+                is_pick: entry.get("is_pick").and_then(|v| v.as_bool()).unwrap_or(false),
+                car_key: car_key.into(),
+            };
+            offers_by_key
+                .entry(car_key.into())
+                .or_default()
+                .insert(category.into(), offer);
+        }
+    }
+
+    let mut keys_by_car: HashMap<String, HashSet<String>> = HashMap::new();
+    for entry in texts {
+        for car_id in &entry.car_ids {
+            keys_by_car
+                .entry(car_id.clone())
+                .or_default()
+                .insert(entry.car_key.clone());
+        }
+    }
+    for car in cars.iter() {
+        for text in car.texts.values() {
+            keys_by_car
+                .entry(car.id.clone())
+                .or_default()
+                .insert(text.car_key.clone());
+        }
+    }
+
+    let mut records = Vec::new();
+    for car in cars {
+        let Some(keys) = keys_by_car.get(&car.id) else {
+            continue;
+        };
+        let mut matched = BTreeMap::new();
+        for key in keys {
+            if let Some(offers) = offers_by_key.get(key) {
+                matched.extend(offers.clone());
+            }
+        }
+        for offer in matched.values() {
+            records.push(DealerOfferRecord {
+                car_id: car.id.clone(),
+                name_en: car.name_en.clone(),
+                name_zh: car.name_zh.clone(),
+                offer: offer.clone(),
+            });
+        }
+        car.dealer = matched;
+    }
+    records.sort_by(|a, b| {
+        a.offer
+            .category
+            .cmp(&b.offer.category)
+            .then_with(|| a.name_en.cmp(&b.name_en))
+    });
+    Ok(records)
 }
 
 fn speaker_from_label(label: &str) -> &'static str {
@@ -994,6 +1134,35 @@ fn write_csvs(out: &Path, texts: &[TextEntry], details: &[Turn]) -> Result<()> {
     Ok(())
 }
 
+fn write_dealer_csv(out: &Path, offers: &[DealerOfferRecord]) -> Result<()> {
+    let path = out.parent().unwrap_or_else(|| Path::new(".")).join(
+        "dealer_offers_rust.csv",
+    );
+    let mut writer = csv::Writer::from_path(path)?;
+    writer.write_record([
+        "carId", "nameEn", "nameZh", "category", "offerId", "price",
+        "discountPrice", "rarity", "isNew", "isHot", "isPick", "carKey",
+    ])?;
+    for row in offers {
+        writer.write_record([
+            row.car_id.as_str(),
+            row.name_en.as_str(),
+            row.name_zh.as_str(),
+            row.offer.category.as_str(),
+            &row.offer.offer_id.to_string(),
+            &row.offer.price.to_string(),
+            &row.offer.discount_price.to_string(),
+            &row.offer.rarity.to_string(),
+            &row.offer.is_new.to_string(),
+            &row.offer.is_hot.to_string(),
+            &row.offer.is_pick.to_string(),
+            row.offer.car_key.as_str(),
+        ])?;
+    }
+    writer.flush()?;
+    Ok(())
+}
+
 pub fn build(options: &Options) -> Result<Research> {
     let dmsb_dir = find_dms_dir(&options.dmsb_dir)?;
     let (us_texts, us_labels) = load_localisation("us", &options.rt2_dir, &options.key_dir)?;
@@ -1126,6 +1295,8 @@ pub fn build(options: &Options) -> Result<Research> {
             target.texts.insert("brandCentral".into(), text);
         }
     }
+    let dealer_offers =
+        attach_dealer_offers(options.dealer_data.as_deref(), &mut cars, &text_entries)?;
 
     let cafe_labels: HashMap<String, u32> = us_labels
         .iter()
@@ -1482,6 +1653,7 @@ pub fn build(options: &Options) -> Result<Research> {
     let stats = json!({
         "cars": cars.len(),
         "textEntries": text_entries.len(),
+        "dealerOffers": dealer_offers.len(),
         "mappedTextEntries": mapped_texts,
         "unresolvedTextEntries": unresolved_texts,
         "carsWithTexts": cars_with_texts,
@@ -1503,6 +1675,7 @@ pub fn build(options: &Options) -> Result<Research> {
         stats,
         cars,
         text_entries,
+        dealer_offers,
         cafe_scenes,
         detail_rows,
         legacy_review,
@@ -1514,6 +1687,7 @@ pub fn build(options: &Options) -> Result<Research> {
     }
     fs::write(&options.out, serde_json::to_vec(&research)?)?;
     write_csvs(&options.out, &research.text_entries, &research.detail_rows)?;
+    write_dealer_csv(&options.out, &research.dealer_offers)?;
     Ok(research)
 }
 

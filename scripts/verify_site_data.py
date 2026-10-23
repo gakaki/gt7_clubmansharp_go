@@ -10,6 +10,7 @@ DATA = ROOT / "public" / "data" / "cars.json"
 CSV_DATA = ROOT / "public" / "data" / "cafe_dialogues.csv"
 SCENE_CSV = ROOT / "public" / "data" / "cafe_scene_dialogues.csv"
 TEXT_CSV = ROOT / "public" / "data" / "car_texts.csv"
+DEALER_CSV = ROOT / "public" / "data" / "dealer_offers.csv"
 UNMATCHED_CSV = ROOT / "public" / "data" / "unmatched_dialogues.csv"
 UNMATCHED_MD = ROOT / "public" / "data" / "unmatched_dialogues.md"
 
@@ -34,9 +35,26 @@ def main() -> None:
     assert "Sarah" in speaker_ids
     assert "Luca" in cast_ids
     assert len(speaker_ids) == 14
+    for person in payload["speakers"] + payload["cast"]:
+        assert person["avatar"].endswith(".png"), person
+        assert (ROOT / "public" / person["avatar"]).is_file(), person
     assert payload["speakers"] == sorted(
         payload["speakers"],
         key=lambda speaker: (-speaker["count"], speaker["en"]),
+    )
+    face_manifest = json.loads(
+        (
+            Path(r"C:\gt7\gt7\_re\reports")
+            / "face_atlases_rust"
+            / "manifest.json"
+        ).read_text(encoding="utf-8")
+    )
+    assert "native Rust" in face_manifest["generatedFrom"]
+    assert face_manifest["count"] == 19
+    assert all(Path(entry["portrait"]).is_file() for entry in face_manifest["entries"])
+    assert all(
+        Path(entry["atlas"]).is_file()
+        for entry in face_manifest["entries"]
     )
 
     text_stats = payload["carTextStats"]
@@ -94,6 +112,18 @@ def main() -> None:
     assert len(car_text_rows) == 634, len(car_text_rows)
     assert all(row["carIds"] and row["en"] and row["zh"] for row in car_text_rows)
 
+    dealer_offers = payload["dealerOffers"]
+    assert len(dealer_offers) == 65
+    assert {
+        category: sum(row["category"] == category for row in dealer_offers)
+        for category in {"usedCar", "collection"}
+    } == {"usedCar": 50, "collection": 15}
+    assert sum(bool(car.get("dealer")) for car in cars) == 65
+    with DEALER_CSV.open(encoding="utf-8-sig", newline="") as fh:
+        dealer_rows = list(csv.DictReader(fh))
+    assert len(dealer_rows) == 65
+    assert all(row["carId"] and row["price"] for row in dealer_rows)
+
     with UNMATCHED_CSV.open(encoding="utf-8-sig", newline="") as fh:
         unmatched_rows = list(csv.DictReader(fh))
     assert len(unmatched_rows) == 253, len(unmatched_rows)
@@ -145,6 +175,7 @@ def main() -> None:
         "car_texts.json",
         "car_texts.csv",
         "car_text_orphans.csv",
+        "dealer_offers.csv",
         "cafe_variants.csv",
         "unmatched_dialogues.csv",
         "unmatched_dialogues.md",
