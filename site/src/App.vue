@@ -65,6 +65,7 @@ onMounted(async () => {
     const car = data.value.cars.find((c) => c.id.toLowerCase() === wanted.toLowerCase())
     if (car) {
       activeCar.value = car
+      activeIndex.value = navigable.value.findIndex((item) => item.id === car.id)
       const wantedTab = params.get('tab')
       activeTab.value = carTextTabs.some((tab) => tab.id === wantedTab)
         ? wantedTab
@@ -208,6 +209,14 @@ const grouped = computed(() => {
 })
 
 const navigable = computed(() => filtered.value)
+const navCar = computed(() =>
+  activeCar.value || navigable.value[activeIndex.value] || null,
+)
+const navPosition = computed(() => {
+  if (!navCar.value) return 0
+  const index = navigable.value.findIndex((car) => car.id === navCar.value.id)
+  return index < 0 ? 0 : index + 1
+})
 const filteredUnmatched = computed(() => {
   const q = query.value.trim().toLowerCase()
   return unmatched.value.filter((d) => {
@@ -219,10 +228,17 @@ const filteredUnmatched = computed(() => {
   })
 })
 
-function move(delta) {
+watch(navigable, (list) => {
+  if (!activeCar.value) return
+  activeIndex.value = list.findIndex((car) => car.id === activeCar.value.id)
+})
+
+function move(delta, openIfClosed = false) {
   const list = navigable.value
   if (!list.length) return
-  activeIndex.value = (activeIndex.value + delta + list.length) % list.length
+  activeIndex.value = activeIndex.value < 0
+    ? (delta > 0 ? 0 : list.length - 1)
+    : (activeIndex.value + delta + list.length) % list.length
   if (activeCar.value) {
     const c = list[activeIndex.value]
     activeCar.value = {
@@ -234,10 +250,20 @@ function move(delta) {
       (tab) => tab.id === activeTab.value && tabHasContent(activeCar.value, tab.id),
     )?.id || firstAvailableTab(activeCar.value)
     setActiveTab(nextTab)
+    setCarParam(c.id)
+  } else if (openIfClosed) {
+    openCar(list[activeIndex.value])
   }
-  requestAnimationFrame(() => {
+  if (!activeCar.value) requestAnimationFrame(() => {
     document.querySelector('.card.active')?.scrollIntoView({ block: 'nearest', behavior: 'smooth' })
   })
+}
+function stepMobile(delta) {
+  move(delta, true)
+}
+function toggleNavCar() {
+  if (activeCar.value) closeCar()
+  else if (navCar.value) openCar(navCar.value)
 }
 function openActive() {
   const c = navigable.value[activeIndex.value]
@@ -570,6 +596,38 @@ function yearOf(name) {
         </button>
       </section>
     </main>
+
+    <nav
+      v-if="navigable.length && !showUnmatched && !showCast"
+      class="mobile-car-nav"
+      aria-label="上一辆车和下一辆车"
+    >
+      <button
+        type="button"
+        class="mobile-car-step"
+        :aria-label="lang === 'en' ? 'Previous car' : '上一辆车'"
+        :disabled="!navigable.length"
+        @click="stepMobile(-1)"
+      >
+        <strong>‹</strong>
+        <span>{{ lang === 'en' ? 'Previous' : '上一辆' }}</span>
+      </button>
+      <button type="button" class="mobile-car-current" @click="toggleNavCar">
+        <small>{{ navCar ? navCar.brand : (lang === 'en' ? 'Choose a car' : '选择车辆') }}</small>
+        <b>{{ navCar ? displayName(navCar) : (lang === 'en' ? 'Browse all cars' : '浏览全部车型') }}</b>
+        <span aria-live="polite">{{ navPosition }} / {{ navigable.length }}</span>
+      </button>
+      <button
+        type="button"
+        class="mobile-car-step"
+        :aria-label="lang === 'en' ? 'Next car' : '下一辆车'"
+        :disabled="!navigable.length"
+        @click="stepMobile(1)"
+      >
+        <strong>›</strong>
+        <span>{{ lang === 'en' ? 'Next' : '下一辆' }}</span>
+      </button>
+    </nav>
 
     <div v-if="showUnmatched" class="modal review-modal" @click.self="toggleUnmatched">
       <div class="dialog review-dialog">

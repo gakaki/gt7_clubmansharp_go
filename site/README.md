@@ -26,6 +26,8 @@ from the local game installation. The public deployment is
 - Chinese, English and bilingual display modes.
 - Keyboard navigation, quick tab switching, responsive mobile layout and
   content-visibility rendering.
+- A viewport-fixed mobile previous/next car bar that follows the complete
+  filtered car order across brands and keeps the shared URL in sync.
 
 ## URLs
 
