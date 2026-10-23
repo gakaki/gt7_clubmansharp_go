@@ -1,0 +1,727 @@
+<script setup>
+import { ref, computed, watch, onMounted, onBeforeUnmount, nextTick } from 'vue'
+
+const data = ref(null)
+const base = import.meta.env.BASE_URL
+const initialLang = new URLSearchParams(location.search).get('lang')
+const lang = ref(
+  ['zh', 'en', 'both'].includes(initialLang)
+    ? initialLang
+    : localStorage.getItem('gt7cafe.lang') || 'zh',
+)
+const query = ref('')
+const searchInput = ref('')
+const brandFilter = ref('ALL')
+const speakerFilter = ref('ALL')
+const dialogueFilter = ref('all')
+const activeCar = ref(null)
+const activeIndex = ref(-1)
+const showUnmatched = ref(false)
+const showCast = ref(false)
+const activeTab = ref('cafe')
+
+const carTextTabs = [
+  { id: 'cafe', labelZh: '咖啡屋对话', labelEn: 'Cafe dialogue' },
+  { id: 'brandCentral', labelZh: '品牌购物', labelEn: 'Brand Central' },
+  { id: 'usedCar', labelZh: '二手车', labelEn: 'Used Cars' },
+  { id: 'collection', labelZh: '收藏馆', labelEn: 'Hagerty Collection' },
+]
+
+let searchTimer
+watch(searchInput, (v) => {
+  clearTimeout(searchTimer)
+  searchTimer = setTimeout(() => { query.value = v }, 160)
+})
+
+onMounted(async () => {
+  const res = await fetch(`${import.meta.env.BASE_URL}data/cars.json`)
+  data.value = await res.json()
+  const params = new URLSearchParams(location.search)
+  const wanted = params.get('car')
+  if (wanted) {
+    const car = data.value.cars.find((c) => c.id.toLowerCase() === wanted.toLowerCase())
+    if (car) {
+      activeCar.value = car
+      const wantedTab = params.get('tab')
+      activeTab.value = carTextTabs.some((tab) => tab.id === wantedTab)
+        ? wantedTab
+        : firstAvailableTab(car)
+    }
+  }
+  if (params.get('review') === 'unmatched') openUnmatched()
+  window.addEventListener('keydown', onKey)
+})
+onBeforeUnmount(() => window.removeEventListener('keydown', onKey))
+
+function onKey(e) {
+  const editing = ['INPUT', 'TEXTAREA', 'SELECT'].includes(e.target?.tagName)
+  if (editing) {
+    if (e.key === 'Escape') {
+      e.target.blur()
+      if (showCast.value) showCast.value = false
+      else if (activeCar.value) closeCar()
+    }
+    return
+  }
+  if (e.key === 'Escape') {
+    if (showUnmatched.value) {
+      toggleUnmatched()
+      return
+    }
+    if (showCast.value) {
+      showCast.value = false
+      return
+    }
+    closeCar()
+    return
+  }
+  if (['ArrowDown', 'ArrowRight'].includes(e.key)) {
+    e.preventDefault()
+    move(1)
+  } else if (['ArrowUp', 'ArrowLeft'].includes(e.key)) {
+    e.preventDefault()
+    move(-1)
+  } else if (activeCar.value && e.key === 'Tab') {
+    e.preventDefault()
+    cycleTab(e.shiftKey ? -1 : 1)
+  } else if (activeCar.value && ['1', '2', '3', '4'].includes(e.key)) {
+    e.preventDefault()
+    setActiveTab(carTextTabs[Number(e.key) - 1].id)
+  } else if (e.key === 'Enter') {
+    e.preventDefault()
+    openActive()
+  } else if (e.key === '/') {
+    e.preventDefault()
+    document.querySelector('.search')?.focus()
+  }
+}
+function setLang(v) {
+  lang.value = v
+  localStorage.setItem('gt7cafe.lang', v)
+  const url = new URL(location.href)
+  url.searchParams.set('lang', v)
+  history.replaceState(null, '', url)
+}
+
+const cars = computed(() => data.value?.cars ?? [])
+const stats = computed(() => data.value?.stats ?? { cars: 0, withDialogue: 0, dialogues: 0, unmatched: 0 })
+const carTextStats = computed(() => data.value?.carTextStats ?? {
+  entries: 0,
+  mappedEntries: 0,
+  carsWithAnyText: 0,
+})
+const unmatched = computed(() => data.value?.unmatched ?? [])
+const legacyReviewStats = computed(() => ({
+  total: unmatched.value.length,
+  resolved: data.value?.stats?.legacyReviewResolved ?? 0,
+}))
+const speakers = computed(() => data.value?.speakers ?? [])
+const cast = computed(() => data.value?.cast ?? [])
+
+const brands = computed(() => {
+  const map = new Map()
+  for (const c of cars.value) map.set(c.brand, (map.get(c.brand) || 0) + 1)
+  return [...map.entries()]
+    .sort((a, b) => a[0].localeCompare(b[0], 'en'))
+    .map(([name, count]) => ({ name, count }))
+})
+
+const brandLogos = computed(() => {
+  const map = {}
+  for (const c of cars.value) {
+    if (c.brandLogo && !map[c.brand]) map[c.brand] = c.brandLogo
+  }
+  return map
+})
+
+const filtered = computed(() => {
+  const q = query.value.trim().toLowerCase()
+  return cars.value.filter((c) => {
+    if (brandFilter.value !== 'ALL' && c.brand !== brandFilter.value) return false
+    const carDialogues = visibleDialogues(c)
+    const carConversation = visibleConversation(c)
+    if (dialogueFilter.value === 'yes' && !carConversation.length) return false
+    if (dialogueFilter.value === 'no' && carConversation.length) return false
+    if (speakerFilter.value !== 'ALL' && !carConversation.length) return false
+    if (!q) return true
+    const base = `${c.nameEn} ${c.nameZh} ${c.brand}`.toLowerCase()
+    if (base.includes(q)) return true
+    const dialogueHit = carDialogues.some((d) =>
+      `${d.en} ${d.zh} ${d.speaker} ${d.speakerZh}`.toLowerCase().includes(q),
+    ) || carConversation.some((d) =>
+      `${d.en} ${d.zh} ${d.speaker} ${d.speakerZh}`.toLowerCase().includes(q),
+    )
+    if (dialogueHit) return true
+    return Object.values(c.texts || {}).some((text) =>
+      `${text.en} ${text.zh} ${text.titleEn} ${text.titleZh}`.toLowerCase().includes(q),
+    )
+  })
+})
+
+function visibleDialogues(c) {
+  if (speakerFilter.value === 'ALL') return c.dialogues
+  return c.dialogues.filter((d) => d.speaker === speakerFilter.value)
+}
+function visibleConversation(c) {
+  const turns = c.conversation?.length ? c.conversation : (c.dialogues || [])
+  if (speakerFilter.value === 'ALL') return turns
+  return turns.filter((d) => d.speaker === speakerFilter.value)
+}
+
+const grouped = computed(() => {
+  const g = new Map()
+  for (const c of filtered.value) {
+    if (!g.has(c.brand)) g.set(c.brand, [])
+    g.get(c.brand).push(c)
+  }
+  return [...g.entries()]
+})
+
+const navigable = computed(() => filtered.value)
+const filteredUnmatched = computed(() => {
+  const q = query.value.trim().toLowerCase()
+  return unmatched.value.filter((d) => {
+    if (speakerFilter.value !== 'ALL' && d.speaker !== speakerFilter.value) return false
+    if (!q) return true
+    return `${d.en} ${d.zh} ${d.speaker} ${d.speakerZh} ${d.car || ''} ${d.resolvedCarNameEn || ''} ${d.resolvedCarNameZh || ''}`
+      .toLowerCase()
+      .includes(q)
+  })
+})
+
+function move(delta) {
+  const list = navigable.value
+  if (!list.length) return
+  activeIndex.value = (activeIndex.value + delta + list.length) % list.length
+  if (activeCar.value) {
+    const c = list[activeIndex.value]
+    activeCar.value = {
+      ...c,
+      dialogues: visibleDialogues(c),
+      conversation: visibleConversation(c),
+    }
+    const nextTab = carTextTabs.find(
+      (tab) => tab.id === activeTab.value && tabHasContent(activeCar.value, tab.id),
+    )?.id || firstAvailableTab(activeCar.value)
+    setActiveTab(nextTab)
+  }
+  requestAnimationFrame(() => {
+    document.querySelector('.card.active')?.scrollIntoView({ block: 'nearest', behavior: 'smooth' })
+  })
+}
+function openActive() {
+  const c = navigable.value[activeIndex.value]
+  if (c) openCar(c)
+}
+function openCar(c) {
+  const index = navigable.value.findIndex((x) => x.id === c.id)
+  activeIndex.value = index
+  activeCar.value = {
+    ...c,
+    dialogues: visibleDialogues(c),
+    conversation: visibleConversation(c),
+  }
+  activeTab.value = firstAvailableTab(activeCar.value)
+  setCarParam(c.id)
+  const url = new URL(location.href)
+  url.searchParams.delete('review')
+  history.replaceState(null, '', url)
+}
+function openCarById(id) {
+  const car = cars.value.find((item) => item.id === id)
+  if (car) openCar(car)
+}
+function openUnmatched() {
+  showUnmatched.value = true
+  showCast.value = false
+  if (activeCar.value) closeCar()
+  const url = new URL(location.href)
+  url.searchParams.set('review', 'unmatched')
+  history.replaceState(null, '', url)
+}
+function toggleUnmatched() {
+  if (!showUnmatched.value) {
+    openUnmatched()
+    return
+  }
+  showUnmatched.value = false
+  const url = new URL(location.href)
+  url.searchParams.delete('review')
+  history.replaceState(null, '', url)
+}
+function closeCar() {
+  activeCar.value = null
+  setCarParam(null)
+}
+function setCarParam(id) {
+  const url = new URL(location.href)
+  if (id) url.searchParams.set('car', id)
+  else url.searchParams.delete('car')
+  history.replaceState(null, '', url)
+}
+async function copyLink() {
+  try {
+    await navigator.clipboard.writeText(location.href)
+    copyState.value = '已复制'
+    setTimeout(() => { copyState.value = '复制链接' }, 1500)
+  } catch {
+    copyState.value = '复制失败'
+  }
+}
+const copyState = ref('复制链接')
+
+function tabHasContent(car, tabId) {
+  if (tabId === 'cafe') return Boolean(car?.conversation?.length || car?.dialogues?.length)
+  return Boolean(car?.texts?.[tabId]?.en || car?.texts?.[tabId]?.zh)
+}
+
+function firstAvailableTab(car) {
+  return carTextTabs.find((tab) => tabHasContent(car, tab.id))?.id || 'cafe'
+}
+
+function setActiveTab(tabId) {
+  activeTab.value = tabId
+  const url = new URL(location.href)
+  url.searchParams.set('tab', tabId)
+  history.replaceState(null, '', url)
+}
+function cycleTab(delta) {
+  const current = carTextTabs.findIndex((tab) => tab.id === activeTab.value)
+  const next = (current + delta + carTextTabs.length) % carTextTabs.length
+  setActiveTab(carTextTabs[next].id)
+}
+
+function tabLabel(tab) {
+  const label = lang.value === 'zh' ? tab.labelZh : tab.labelEn
+  if (!activeCar.value) return label
+  if (tab.id === 'cafe') {
+    return `${label} · ${activeCar.value.conversation?.length || 0}`
+  }
+  return `${label} · ${tabHasContent(activeCar.value, tab.id) ? '有' : '无'}`
+}
+
+function textCategoryCount(car) {
+  return carTextTabs.filter(
+    (tab) => tab.id !== 'cafe' && tabHasContent(car, tab.id),
+  ).length
+}
+
+function cafeSceneGroups(car) {
+  const groups = []
+  const byKey = new Map()
+  for (const turn of car?.conversation || []) {
+    const key = turn.sceneKey || turn.sceneId || 'scene'
+    if (!byKey.has(key)) {
+      const group = { key, titleZh: '', titleEn: '', turns: [] }
+      byKey.set(key, group)
+      groups.push(group)
+    }
+    byKey.get(key).turns.push(turn)
+  }
+  for (const group of groups) {
+    const speakers = [...new Set(group.turns.map((turn) => turn.speaker))]
+    const guest = speakers.find((name) => !['Sarah', 'Luca'].includes(name)) || speakers[0] || 'GT Cafe'
+    group.titleEn = speakers.includes('Sarah') && guest !== 'Sarah'
+      ? `${guest} and Sarah`
+      : guest
+    const guestZh = group.turns.find((turn) => turn.speaker === guest)?.speakerZh
+    const sarahZh = group.turns.find((turn) => turn.speaker === 'Sarah')?.speakerZh
+    group.titleZh = speakers.includes('Sarah') && guest !== 'Sarah'
+      ? `${guestZh || guest} 与 ${sarahZh || 'Sarah'}`
+      : guestZh || guest
+    group.visibleTurns = speakerFilter.value === 'ALL'
+      ? group.turns
+      : group.turns.filter((turn) => turn.speaker === speakerFilter.value)
+  }
+  return groups.filter((group) => group.visibleTurns.length)
+}
+
+function sceneTitle(scene) {
+  return lang.value === 'zh' ? scene.titleZh : scene.titleEn
+}
+
+function activeText() {
+  if (!activeCar.value || activeTab.value === 'cafe') return null
+  return activeCar.value.texts?.[activeTab.value] || null
+}
+function initials(name) {
+  return name.split(/\s+/).map((w) => w[0]).join('').slice(0, 2).toUpperCase()
+}
+function avatarColor(name) {
+  let h = 0
+  for (const ch of name) h = (h * 31 + ch.charCodeAt(0)) >>> 0
+  return `hsl(${h % 360} 42% 46%)`
+}
+
+const letters = computed(() => {
+  const set = new Set(brands.value.map((b) => b.name[0].toUpperCase()))
+  return [...set].sort()
+})
+
+function displayName(c) {
+  return lang.value === 'zh' ? c.nameZh : c.nameEn
+}
+function speakerName(d) {
+  if (lang.value === 'zh') return d.speakerZh || d.speaker
+  if (lang.value === 'both') return `${d.speakerZh || d.speaker} · ${d.speaker}`
+  return d.speaker
+}
+function speakerRole(d) {
+  return lang.value === 'zh' ? d.roleZh : d.roleEn
+}
+function speakerLabel(s) {
+  if (lang.value === 'zh') return s.zh
+  if (lang.value === 'both') return `${s.zh} · ${s.en}`
+  return s.en
+}
+function filterBySpeaker(s) {
+  speakerFilter.value = s.id
+  showCast.value = false
+  nextTick(() => document.querySelector('.content')?.scrollIntoView({ behavior: 'smooth' }))
+}
+function jumpTo(letter) {
+  const first = brands.value.find((b) => b.name[0].toUpperCase() === letter)
+  if (!first) return
+  document.getElementById(`brand-${first.name}`)?.scrollIntoView({ behavior: 'smooth', block: 'start' })
+}
+function yearOf(name) {
+  const m = name.match(/'(\d\d)$/)
+  return m ? `'${m[1]}` : ''
+}
+</script>
+
+<template>
+  <div class="app">
+    <header class="topbar">
+      <div class="brand">
+        <span class="gt">GT</span>
+        <div class="titles">
+          <h1>咖啡屋对话库</h1>
+          <p>Gran Turismo 7 · GT Café Dialogues</p>
+        </div>
+      </div>
+      <div class="lang" role="group" aria-label="language">
+        <button :class="{ on: lang === 'zh' }" @click="setLang('zh')">中文</button>
+        <button :class="{ on: lang === 'en' }" @click="setLang('en')">English</button>
+        <button :class="{ on: lang === 'both' }" @click="setLang('both')">双语</button>
+      </div>
+    </header>
+
+    <section class="summary">
+      <div class="stat"><b>{{ stats.cars }}</b><span>收录车辆</span></div>
+      <div class="stat"><b>{{ stats.withDialogue }}</b><span>有咖啡屋对白</span></div>
+      <div class="stat"><b>{{ stats.dialogues }}</b><span>CarDetail 对白</span></div>
+      <div class="stat"><b>{{ carTextStats.mappedEntries }}</b><span>车辆说明</span></div>
+      <div class="stat"><b>{{ brands.length }}</b><span>品牌</span></div>
+      <div class="stat"><b>{{ cast.length }}</b><span>咖啡屋角色</span></div>
+      <button class="stat review-stat" type="button" @click="openUnmatched">
+        <b>{{ unmatched.length }}</b>
+        <span>上一轮歧义复核</span>
+      </button>
+    </section>
+    <p class="summary-note">
+      {{ stats.mappedDialogues }} 条 CarDetail 已定位到车辆 · 重建完整场景 {{ stats.conversationLines }} 行对白
+      · {{ carTextStats.carsWithAnyText }} 辆车已有品牌购物/二手车/收藏馆说明
+    </p>
+    <section class="castbar" aria-label="咖啡屋主要角色">
+      <div v-for="person in cast" :key="person.id" class="cast-person">
+        <img :src="base + person.avatar" :alt="person.en" loading="eager" />
+        <span>
+          <b>{{ speakerLabel(person) }}</b>
+          <small>{{ speakerRole(person) }}</small>
+        </span>
+      </div>
+      <button class="cast-all" @click="showCast = true">
+        查看全部 {{ cast.length }} 位角色
+      </button>
+    </section>
+
+    <div class="toolbar">
+      <input v-model="searchInput" class="search" type="search" placeholder="搜索车型 / 对白 / 车辆说明…（按 / 聚焦）" />
+      <div class="seg">
+        <button :class="{ on: dialogueFilter === 'all' }" @click="dialogueFilter = 'all'">全部</button>
+        <button :class="{ on: dialogueFilter === 'yes' }" @click="dialogueFilter = 'yes'">有对白</button>
+        <button :class="{ on: dialogueFilter === 'no' }" @click="dialogueFilter = 'no'">无对白</button>
+      </div>
+    </div>
+
+    <nav class="brandbar">
+      <button class="chip" :class="{ on: brandFilter === 'ALL' }" @click="brandFilter = 'ALL'">全部品牌</button>
+      <button
+        v-for="l in letters"
+        :key="l"
+        class="letter"
+        @click="jumpTo(l)"
+      >{{ l }}</button>
+    </nav>
+    <nav class="characterbar" aria-label="咖啡屋角色筛选">
+      <button class="chip character" :class="{ on: speakerFilter === 'ALL' }" @click="speakerFilter = 'ALL'">
+        全部角色
+      </button>
+      <button
+        v-for="s in speakers"
+        :key="s.id"
+        class="chip character"
+        :class="{ on: speakerFilter === s.id }"
+        @click="speakerFilter = s.id"
+      >
+        <img :src="base + s.avatar" :alt="s.en" loading="lazy" />
+        {{ speakerLabel(s) }} <small>{{ s.count }}</small>
+      </button>
+    </nav>
+
+    <main class="content">
+      <section v-for="[brand, list] in grouped" :key="brand" :id="`brand-${brand}`" class="brandgroup">
+        <h2>
+          <img v-if="brandLogos[brand]" class="blogo" :src="base + 'logos/' + brandLogos[brand]" :alt="brand" loading="lazy" />
+          {{ brand }} <span>{{ list.length }}</span>
+        </h2>
+        <div class="grid">
+          <article
+            v-for="c in list"
+            :key="c.id"
+            class="card"
+            :class="{ empty: !visibleConversation(c).length, active: navigable[activeIndex]?.id === c.id }"
+            @click="openCar(c)"
+          >
+            <div class="car-media">
+              <img
+                v-if="c.image"
+                class="thumb"
+                :src="base + c.image"
+                :alt="c.nameEn"
+                loading="lazy"
+                decoding="async"
+                width="360"
+                height="180"
+              />
+              <div v-else class="thumb-placeholder" aria-hidden="true">
+                <span>GT7</span>
+                <b>{{ c.brand }}</b>
+              </div>
+            </div>
+            <div class="name">
+              <template v-if="lang !== 'en'">{{ c.nameZh }}</template>
+              <template v-if="lang === 'both'"><br /></template>
+              <template v-if="lang !== 'zh'">{{ c.nameEn }}</template>
+            </div>
+            <div class="meta">
+              <span class="year">{{ yearOf(c.nameEn) }}</span>
+              <span class="badges">
+                <span v-if="visibleConversation(c).length" class="badge has">对白 · {{ visibleConversation(c).length }}</span>
+                <span v-else class="badge none">无对白</span>
+                <span v-if="textCategoryCount(c)" class="badge text">资料 · {{ textCategoryCount(c) }}</span>
+              </span>
+            </div>
+          </article>
+        </div>
+      </section>
+      <p v-if="!grouped.length" class="nonefound">没有匹配的车辆。</p>
+
+      <section v-if="unmatched.length" class="unmatched">
+        <button class="toggle" @click="toggleUnmatched">
+          上一轮 253 条歧义 CarDetail（已按精确消息表解析，供人工复核）· 当前 {{ filteredUnmatched.length }} / {{ unmatched.length }}{{ showUnmatched ? ' ▲' : ' ▼' }}
+        </button>
+      </section>
+    </main>
+
+    <div v-if="showUnmatched" class="modal review-modal" @click.self="toggleUnmatched">
+      <div class="dialog review-dialog">
+        <header>
+          <div>
+            <h3>上一轮 253 条对白人工复核</h3>
+            <p>按 RT2 精确标签重新归属 · {{ legacyReviewStats.resolved }} / {{ legacyReviewStats.total }} 条已定位车辆</p>
+          </div>
+          <button class="close" @click="toggleUnmatched">✕</button>
+        </header>
+        <div class="list review-list">
+          <div class="review-intro">
+            <strong>逐条核对车辆归属与场景</strong>
+            <span>{{ legacyReviewStats.resolved }} / {{ legacyReviewStats.total }} 条已通过 RT2 精确消息标签定位到车辆。</span>
+            <span>全部记录保留在下方，可逐条检查原候选车、精确归属和场景 ID。</span>
+          </div>
+          <div v-for="d in filteredUnmatched" :key="d.id" class="entry">
+            <div class="speaker">
+              <img v-if="d.avatar" class="avatar photo" :src="base + d.avatar" :alt="d.speaker" loading="lazy" />
+              <span
+                v-else
+                class="avatar"
+                :style="{ background: avatarColor(d.speaker) }"
+              >{{ initials(d.speaker) }}</span>
+              <span class="speaker-copy">
+                <span class="who">{{ speakerName(d) }}</span>
+                <span class="role">{{ speakerRole(d) }}</span>
+              </span>
+              <span class="id">{{ d.id }}</span>
+            </div>
+            <div class="entry-meta">
+              <span>旧候选车：<b>{{ d.car || '未指定' }}</b></span>
+              <span>精确归属：<b>{{ d.resolvedCarNameEn || '未解析' }}</b> · {{ d.resolvedCarNameZh || '' }}</span>
+              <span>场景：<code>{{ d.sceneId || 'unknown' }}</code></span>
+            </div>
+            <div v-if="lang !== 'en'" class="cn">{{ d.zh }}</div>
+            <div v-if="lang !== 'zh'" class="en">{{ d.en }}</div>
+          </div>
+          <div class="review-actions">
+            <a :href="base + 'data/unmatched_dialogues.csv'" download>下载全部 {{ unmatched.length }} 条 CSV</a>
+            <a :href="base + 'data/unmatched_dialogues.md'" download>下载分组人工判定清单 MD</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div v-if="showCast" class="modal cast-modal" @click.self="showCast = false">
+      <div class="dialog cast-dialog">
+        <header>
+          <div>
+            <h3>GT 咖啡屋角色图鉴</h3>
+            <p>5 位核心/常驻角色 + 10 位真实汽车或时尚设计师，共 {{ cast.length }} 位</p>
+          </div>
+          <button class="close" @click="showCast = false">✕</button>
+        </header>
+        <div class="cast-grid">
+          <button
+            v-for="person in cast"
+            :key="person.id"
+            class="cast-card"
+            @click="filterBySpeaker(person)"
+          >
+            <img :src="base + person.avatar" :alt="person.en" />
+            <span class="cast-card-name">{{ speakerLabel(person) }}</span>
+            <span class="cast-card-role">{{ speakerRole(person) }}</span>
+            <span class="cast-card-count">
+              {{ person.count ? `${person.count} 条车辆对白` : '核心剧情角色' }}
+            </span>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div v-if="activeCar" class="modal" @click.self="closeCar">
+      <div class="dialog">
+        <header>
+          <div class="headmain">
+            <img v-if="activeCar.image" class="modalcar" :src="base + activeCar.image" :alt="activeCar.nameEn" />
+            <div>
+              <h3>{{ activeCar.nameZh }}</h3>
+              <p>{{ activeCar.nameEn }} · {{ activeCar.brand }}</p>
+              <p class="note">
+                咖啡屋 {{ tabHasContent(activeCar, 'cafe') ? '有' : '无' }}对白
+                · 品牌购物 {{ tabHasContent(activeCar, 'brandCentral') ? '有' : '无' }}
+                · 二手车 {{ tabHasContent(activeCar, 'usedCar') ? '有' : '无' }}
+                · 收藏馆 {{ tabHasContent(activeCar, 'collection') ? '有' : '无' }}
+              </p>
+            </div>
+          </div>
+          <div class="actions">
+            <button class="copy" @click="copyLink">{{ copyState }}</button>
+            <button class="close" @click="closeCar">✕</button>
+          </div>
+        </header>
+        <nav class="car-tabs" role="tablist" aria-label="车辆资料">
+          <button
+            v-for="tab in carTextTabs"
+            :key="tab.id"
+            role="tab"
+            :aria-selected="activeTab === tab.id"
+            :class="{ on: activeTab === tab.id, muted: !tabHasContent(activeCar, tab.id) }"
+            @click="setActiveTab(tab.id)"
+          >
+            {{ tabLabel(tab) }}
+          </button>
+        </nav>
+        <div v-if="activeTab === 'cafe'" class="dialogues cafe-dialogues" role="tabpanel">
+          <template v-if="cafeSceneGroups(activeCar).length">
+            <section
+              v-for="scene in cafeSceneGroups(activeCar)"
+              :key="scene.key"
+              class="cafe-scene"
+            >
+              <header class="scene-head">
+                <div>
+                  <h4>{{ sceneTitle(scene) }}</h4>
+                  <small>{{ scene.key }}</small>
+                </div>
+              </header>
+              <article
+                v-for="d in scene.visibleTurns"
+                :key="`${scene.key}-${d.id}`"
+                class="dialogue"
+              >
+                <div class="speaker">
+                  <img v-if="d.avatar" class="avatar photo" :src="base + d.avatar" :alt="d.speaker" loading="lazy" />
+                  <span v-else class="avatar" :style="{ background: avatarColor(d.speaker) }">
+                    {{ initials(d.speaker) }}
+                  </span>
+                  <span class="speaker-copy">
+                    <span class="who">{{ speakerName(d) }}</span>
+                    <span class="role">{{ speakerRole(d) }}</span>
+                  </span>
+                  <span class="id">{{ d.id }}</span>
+                </div>
+                <div v-if="lang !== 'en'" class="cn">{{ d.zh }}</div>
+                <div v-if="lang !== 'zh'" class="en">{{ d.en }}</div>
+              </article>
+            </section>
+          </template>
+          <template v-else>
+            <article v-for="d in activeCar.conversation" :key="d.id" class="dialogue">
+              <div class="speaker">
+                <img v-if="d.avatar" class="avatar photo" :src="base + d.avatar" :alt="d.speaker" loading="lazy" />
+                <span v-else class="avatar" :style="{ background: avatarColor(d.speaker) }">
+                  {{ initials(d.speaker) }}
+                </span>
+                <span class="speaker-copy">
+                  <span class="who">{{ speakerName(d) }}</span>
+                  <span class="role">{{ speakerRole(d) }}</span>
+                </span>
+                <span class="id">{{ d.id }}</span>
+              </div>
+              <div v-if="lang !== 'en'" class="cn">{{ d.zh }}</div>
+              <div v-if="lang !== 'zh'" class="en">{{ d.en }}</div>
+            </article>
+          </template>
+          <div v-if="!activeCar.conversation.length" class="no-dialogue">
+            <strong>没有找到这辆车的咖啡屋场景</strong>
+            <span>已按 RT2 消息键和 DMS 场景表核对，未借用相邻车辆对白。</span>
+          </div>
+        </div>
+        <div v-else class="text-panel" role="tabpanel">
+          <template v-if="activeText()">
+            <div class="text-source">
+              <span>{{ lang === 'zh' ? activeText().titleZh : activeText().titleEn }}</span>
+              <span>{{ activeText().carKey }}</span>
+              <span>{{ activeText().textId }}</span>
+            </div>
+            <div v-if="lang !== 'en'" class="text-copy zh-copy">
+              <h4>{{ activeText().titleZh }}</h4>
+              <p>{{ activeText().zh }}</p>
+            </div>
+            <div v-if="lang !== 'zh'" class="text-copy en-copy">
+              <h4>{{ activeText().titleEn }}</h4>
+              <p>{{ activeText().en }}</p>
+            </div>
+          </template>
+          <div v-else class="no-dialogue text-empty">
+            <strong>这辆车没有该商店的官方说明文本</strong>
+            <span>已检查 PS5 文本表，没有强行关联其他车辆的内容。</span>
+          </div>
+        </div>
+        <div class="keyhint">← → / ↑ ↓ 切换车辆 · 1–4 或 Tab 切换资料页签 · Esc 关闭</div>
+      </div>
+    </div>
+
+    <footer class="foot">
+      <a :href="base + 'data/cafe_dialogues.csv'" download>下载全部对白 CSV</a>
+      · <a :href="base + 'data/cafe_scene_dialogues.csv'" download>下载完整场景 CSV</a>
+      · <a :href="base + 'data/cafe_variants.csv'" download>下载全部初次/重复/获胜分支 CSV</a>
+      · <a :href="base + 'data/unmatched_dialogues.csv'" download>下载 253 条歧义复核 CSV</a>
+      · <a :href="base + 'data/unmatched_dialogues.md'" download>人工判定清单 MD</a>
+      · <a :href="base + 'data/car_texts.csv'" download>三类车辆说明 CSV</a>
+      · <a :href="base + 'data/car_text_orphans.csv'" download>未归属说明文本 CSV</a>
+      · 数据来源：Gran Turismo 7 (PS5, PPSA01317) 本地化文本 · 仅供研究使用
+      <div class="credits">Luca / Sarah 头像来自公开角色资料，其余常驻好友为站点绘制说明图。</div>
+      <div class="kbdhint">键盘：↑/↓/←/→ 浏览 · Enter 打开 · Esc 关闭 · / 搜索</div>
+    </footer>
+  </div>
+</template>

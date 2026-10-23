@@ -1,0 +1,5 @@
+rtext/common/us.rt2
+rtext/common/jp.rt2
+rtext/common/zh.rt2
+rtext/common/kr.rt2
+cars/bogus/bogus.mdl5

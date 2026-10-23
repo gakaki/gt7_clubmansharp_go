@@ -1,0 +1,12 @@
+name = "gt7-cafe-edge"
+main = "worker.js"
+compatibility_date = "2026-10-19"
+
+routes = [
+  { pattern = "gt7.gakaki.com", custom_domain = true }
+]
+
+[assets]
+directory = "./dist"
+binding = "ASSETS"
+not_found_handling = "single-page-application"

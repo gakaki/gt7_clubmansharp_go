@@ -1,0 +1,237 @@
+﻿category,textId,messageKey,en,zh,reason
+brandCentral,0x000088F6,Buddy_ContentCar_BrandCentralOwner_normal__1020695,Buddy_ContentCar_BrandCentralOwner_normal__1020695,Buddy_ContentCar_BrandCentralOwner_normal__1020695,RT2 label has no current DMSB vehicle row
+brandCentral,0x00009EF8,Buddy_ContentCar_BrandCentralOwner_normal__1020734,Buddy_ContentCar_BrandCentralOwner_normal__1020734,Buddy_ContentCar_BrandCentralOwner_normal__1020734,RT2 label has no current DMSB vehicle row
+brandCentral,0x00005050,Buddy_ContentCar_BrandCentralOwner_normal_r18_tdi_11_wr_1020375,"This is the 2011 model of Audi's R18 TDI prototype
+racing car.
+
+It was the overall winner in the 2011 24 Hours of Le Mans
+endurance race.
+
+This particular car was used by Audi Sport Team Joest,
+an Audi satellite team.
+
+It was driven to victory by the three-man team of Benoît
+Tréluyer, André Lotterer and Marcel Fässler.","这是2011款奥迪R18 TDI原型赛车。
+
+在2011年的勒芒24小时耐力赛中，
+
+我们眼前的这台车属于奥迪的卫星车队
+奥迪Sport Joest车队。
+
+这支由伯努瓦·戚路亚、安德烈·洛特勒和马塞尔-法斯勒
+组成的三人车队就是驾驶着这辆车夺得了当年的总冠军头衔。",RT2 label has no current DMSB vehicle row
+brandCentral,0x00004FFD,Buddy_ContentCar_BrandCentralOwner_normal_dmc12_stage1_81_1020292,"The DeLorean was and still is best known for being a time
+machine in the movie ""Back to the Future.""
+
+The car was built by DMC, founded by John Z. DeLorean,
+a former vice president at General Motors.
+
+This car was its first and only production model. Called the
+DMC-12, DeLorean oversaw the entire creation process.
+
+Financial woes forced DMC to close its doors after the car came
+out. but it's still around today under different ownership.
+
+The car you see here is the ""Series 2,"" a remake proposed
+by the new DMC.
+
+Its key feature is an improved 200ps engine.","这款德罗宁凭借电影《回到未来》而为大众熟识，在当时红
+极一时。
+
+打造这辆车的DMC公司由前通用汽车的副总裁
+约翰Z.德罗宁创立。
+
+DMC-12是他们的第一款，也是唯一一款量产型号，由德罗宁亲自
+参与并领导了整个开发过程。
+
+DMC在投产后只存在了短短不到两年的时间，多亏一家第
+三方公司出手相助，这个品牌才得以存续。
+
+这里的这辆德罗宁是“系列2”，是由新DMC公司提议开发的重
+制版，
+
+主打强化动力的200ps引擎。",RT2 label has no current DMSB vehicle row
+brandCentral,0x0000508C,Buddy_ContentCar_BrandCentralOwner_normal_s15_silvia_specr_aero_02_rm_1020435,"This original Gran Turismo Gr.4 race car
+is based on the S15 Silvia Spec-R.
+
+Its most distinctive feature is its strikingly wide body.
+
+About 170mm wider than the normal car's body, it
+comes with wide race tires.
+
+As the ""Touring Car"" name implies, this model was designed
+for the race track.
+
+Oh, and because the Silvia is also a popular drift car,
+the basic handling balance has been left intact.
+
+And, the handbrake is also still there,
+in case you wanted to break the rear tires loose.
+
+Whether you're looking for grip on the track or hoping to
+drift around corners, this car is always a joy to drive!","这辆原创的跑车浪漫旅组别4级别赛车基于
+S15 Silvia Spec-R开发。
+
+它最显著的特征就是那夺人眼球的宽体车身，
+
+比一般车宽了约170mm，所以可以容纳下宽大的赛车轮胎。
+
+顾名思义，这款“房车”是专为赛道设计的……
+
+不过，Silvia也是漂移爱好者们追捧的车型。
+
+事实上，为了兼顾漂移性能，这辆车甚至完整地保留了
+手刹的配置。
+
+不论是想要足够的赛道抓地力，还是追求漂移过弯时的
+爽快感，这辆车一定都能够让您称心如意！",RT2 label has no current DMSB vehicle row
+usedCar,0x000045DD,Buddy_ContentCar_UsedCarOwner_normal_dmc12_stage1_81_1000292,"The DeLorean DMC-12 became world famous after
+it appeared in the movie ""Back to the Future.""
+
+No one expected this car to be converted into a time machine,
+but its futuristic appearance made it the perfect choice.
+
+The car employed an RR layout, similar to that of the Porsche 911,
+but power from the V-6 was rated at only 130ps.
+
+Later versions would get an improved engine
+that delivered up to 200ps.
+
+While the production run of this unique sports car was short,
+it remains one of the most recognized American cars ever.","德罗宁是永恒的经典，
+备受世人推崇。
+
+它在电影《回到未来》中强势出镜，
+令许多电影发烧友一见倾心。
+
+采用与保时捷911相同的后置后驱布局，
+V6引擎在发售时原本只有130ps。
+
+之后的版本采用了经过改良的引擎，
+将动力提升至200ps。
+
+掌握这样强大的动力，
+为你带来乐趣无穷的驾驶体验！",RT2 label has no current DMSB vehicle row
+usedCar,0x0000450A,Buddy_ContentCar_UsedCarOwner_normal_impreza_wrx_sti6_99_1000081,"The STi Version VI marked the final iteration of the
+first-generation Impreza.
+
+Its turbocharged flat-4 engine was further refined,
+along with the crankshaft and other components.
+
+The body also received several updates, making it slimmer
+and more aerodynamic.
+
+With its lightweight body and strong turbocharged acceleration,
+this model represents the Impreza at its peak.","STi Version VI是初代翼豹的
+最终型号。
+
+不仅它搭载的平置四缸涡轮增压引擎被进一步优化，
+连曲轴和其他部件都得到了改进。
+
+它的车体也经过几处改造，变得更苗条，
+更具空气动力学特性。
+
+凭借其轻量化的车体和强大的涡轮增压加速性能，
+这款车型诠释出了翼豹的真谛。/",RT2 label has no current DMSB vehicle row
+collection,0x00008E7F,Buddy_ContentCar_Hagerty_normal_type_37a_28_1030440,"Bugatti is one of the world's top luxury car brands.
+
+Its roots began with the automobile company established by
+Ettore Bugatti, an engineer from a family of Italian artists.
+
+In addition to luxurious passenger cars, Bugatti was also
+known for sports and racing cars,
+
+with a history of victories in many races including the
+Monaco Grand Prix and Targa Florio.
+
+The Type 35 was Bugatti's most successful race car
+with countless victories.
+
+The near identical-looking Type 37 substituted a four-cylinder
+engine for the Type 35's inline eight.
+
+This Type 37A is a more powerful model equipped with
+a supercharger for the 4 cylinder engine.
+
+When fitted with the two-seat sports body, a Type 37 may be
+set up for racing or for exciting road use.
+
+This example is fitted with the alloy wheels /drums standard
+on a Type 35. G","布加迪是世界顶级的豪华汽车品牌之一，
+
+其源流始于埃多尔·布加迪建立的汽车公司，他是一位出身于意大
+利艺术家家庭的工程师。
+
+除了豪华乘用车之外，布加迪还以跑车和赛车而闻名于世，
+
+在包括摩纳哥大奖赛和塔格·佛罗热大赛在内的众多比赛
+中都创下过胜绩。
+
+35型可以说是布加迪最成功的赛车，为其斩获了无数场胜利。
+
+与35型外观几乎相同的Type 37用一台四缸引擎代替了原本
+的直列八缸引擎。
+
+这辆Type 37 37A车型是性能强化版本，为四缸引擎加装了机
+械增压器。
+
+使用双座运动车身的Type 37既可以调校为一台竞赛机器，
+也可以变为激动人心的公路用车。
+
+对了，这辆样车还配备了35型的标准合金车轮和刹车鼓�hp",RT2 label has no current DMSB vehicle row
+collection,0x00008EA0,Buddy_ContentCar_Hagerty_normal_delta_s4_rally_86_1030473,"Lancia of Italy is well known for its feats in
+rally racing...
+
+And the Lancia Delta S4 stands out as one of their
+best machines.
+
+The Delta S4 competed in the Group B category,
+the top class of rally racing of the 1980s.
+
+At the time, the Group B category only required 200 street
+cars to be produced to meet homologation requirements.
+
+Mainstream Group B machines combined midship turbo
+engines with four-wheel drive.
+
+However the Delta S4 took things a step further...
+
+Adding a supercharger to its turbocharged engine.
+
+Despite its remarkable debut win at the '86 World Rally
+Championships...
+
+The ultra-fast Delta S4 was involved in a fatal accident
+on the Tour de Corse.
+
+This marked the end of the Group B category.
+
+Considering everything, including its tragic history,
+the Delta S4 is a legend among Group B rally cars.�","来自意大利的蓝旗亚以其在拉力赛中的卓越成就而著称，
+
+而在品牌旗下的众多经典拉力赛车型中脱颖而出的
+蓝旗亚Delta S4，确实当得起终极拉力赛车的头衔。
+
+Delta S4参加的是20世纪80年代拉力赛的最高级别：B组别。
+
+在当时，B组别只需生产200辆公路车款就能满足赛事认
+证要求。
+
+主流的B组别车型大多将涡轮增压引擎安装在车身中部，
+并采用四轮驱动系统。
+
+Delta S4则在此基础上更进一步，
+
+同时为引擎安装了涡轮增压器和机械增压器。
+
+它在1986年的世界拉力锦标赛中首次亮相立即大获
+成功。
+
+令人遗憾的是，速度惊人的Delta S4在科西嘉岛拉力赛上
+发生了致命的事故，
+
+蓝旗亚车手亨利·托伊沃宁和副驾驶塞尔吉奥·克雷斯托都在事故中
+遇难，B组别比赛也就此终止。
+
+激进的配置与这段悲惨的历史，让Delta S4成为了B组别拉
+力赛车中�!�一个传奇。",RT2 label has no current DMSB vehicle row

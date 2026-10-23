@@ -1,0 +1,128 @@
+[
+ {
+  "path": "reports/named.txt",
+  "desc": "真实资源路径 → store 文件映射",
+  "exists": true,
+  "files": 1,
+  "bytes": 456173
+ },
+ {
+  "path": "reports/store_census_rust.csv",
+  "desc": "全库 95,339 文件类型普查",
+  "exists": true,
+  "files": 1,
+  "bytes": 9056854
+ },
+ {
+  "path": "reports/mdl5_index.json",
+  "desc": "8,149 个 MDL5 模型的头部与标识符",
+  "exists": true,
+  "files": 1,
+  "bytes": 64779851
+ },
+ {
+  "path": "reports/txs5_index.json",
+  "desc": "4,296 个直接 TXS5 的纹理描述符",
+  "exists": true,
+  "files": 1,
+  "bytes": 1240047
+ },
+ {
+  "path": "reports/txs5_index_idp0.json",
+  "desc": "14,983 个 IDP0 内嵌 TXS5 描述符",
+  "exists": true,
+  "files": 1,
+  "bytes": 2761215
+ },
+ {
+  "path": "extracted/text_decoded",
+  "desc": "19 语言本地化文本（JSON/CSV）",
+  "exists": true,
+  "files": 38,
+  "bytes": 238584953
+ },
+ {
+  "path": "extracted/textures",
+  "desc": "9,097 张 DDS 贴图（42.4 GB）",
+  "exists": true,
+  "files": 9097,
+  "bytes": 45523110708
+ },
+ {
+  "path": "extracted/idp0",
+  "desc": "14,983 个 IDP0 载荷（4.99 GB）",
+  "exists": true,
+  "files": 14983,
+  "bytes": 5362921472
+ },
+ {
+  "path": "extracted/audio",
+  "desc": "860 个 SNDZ 音频",
+  "exists": true,
+  "files": 860,
+  "bytes": 669038048
+ },
+ {
+  "path": "extracted/video",
+  "desc": "15 个 MP4/HEVC 影片",
+  "exists": true,
+  "files": 15,
+  "bytes": 5637742104
+ },
+ {
+  "path": "extracted/tracks/map4",
+  "desc": "85 条赛道中心线（点集 + 边表）",
+  "exists": true,
+  "files": 171,
+  "bytes": 12314529
+ },
+ {
+  "path": "extracted/tracks/preview",
+  "desc": "85 张赛道布局预览 PNG",
+  "exists": true,
+  "files": 95,
+  "bytes": 3631296
+ },
+ {
+  "path": "extracted/tracks/rada",
+  "desc": "392 个 RADA 分块（向量 + 弧长）",
+  "exists": true,
+  "files": 478,
+  "bytes": 14964568
+ },
+ {
+  "path": "extracted/by_kind",
+  "desc": "全库按类型硬链接归档（95,339）",
+  "exists": true,
+  "files": 95339,
+  "bytes": 302826430818
+ },
+ {
+  "path": "tree",
+  "desc": "12,354 个已命名资源的真实路径镜像",
+  "exists": true,
+  "files": 12354,
+  "bytes": 116860031606
+ },
+ {
+  "path": "rust/gt7re",
+  "desc": "Rust 并行解析器源码与二进制",
+  "exists": true,
+  "files": 1034,
+  "bytes": 240831166
+ },
+ {
+  "path": "report/FORMATS.md",
+  "desc": "格式手册",
+  "exists": true,
+  "files": 1,
+  "bytes": 7141
+ },
+ {
+  "path": "report/GT7_PS5_解包逆向_报告.md",
+  "desc": "总报告",
+  "exists": true,
+  "files": 1,
+  "bytes": 15671
+ }
+]

@@ -1,0 +1,49 @@
+# Raw game content and bulky recovery workspace
+/extracted/
+/repos/
+/tree/
+/tools/
+/venv/
+/keys/
+/catalog/
+/probe/
+/rust/out/
+*.ks.bin
+
+# Large generated indexes and screenshots
+/reports/candidates_templates.txt
+/reports/mdl5_index.json
+/reports/store_census.csv
+/reports/store_census_rust.csv
+/reports/research_rust.json
+/reports/txs5_index.json
+/reports/txs5_index_idp0.json
+/reports/txs5_index_ui.json
+/reports/txs5_catalog.csv
+/reports/mprj_strings.json
+/reports/*.png
+/reports/*.jpg
+
+# Frontend dependencies, build output and local browser profiles
+/site/node_modules/
+/site/dist/
+/site/.wrangler/
+/site/.edge-*/
+/site/.chrome-*/
+/site/*.zip
+/site/*.png
+/site/live_*.json
+/site/live_*.txt
+/site/verify_*.json
+
+# Required at runtime, but excluded from source control to avoid redistributing
+# bulk commercial game imagery.
+/site/public/cars/
+/site/public/logos/
+/site/public/avatars/
+
+# Tool caches
+__pycache__/
+*.py[cod]
+*.log
+/rust/gt7re/target/

@@ -1,0 +1,4062 @@
+[
+ {
+  "brand": "Abarth",
+  "id": "car1932",
+  "name": "1500 Biposto Bertone B.A.T 1 '52",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car1932.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr125.png"
+ },
+ {
+  "brand": "Abarth",
+  "id": "car1973",
+  "name": "Abarth 500 '09",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car1973.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr125.png"
+ },
+ {
+  "brand": "Abarth",
+  "id": "car3438",
+  "name": "Abarth 595 SS '70",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car3438.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr125.png"
+ },
+ {
+  "brand": "AFEELA",
+  "id": "car3579",
+  "name": "AFEELA 1 '26",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car3579.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr160.png"
+ },
+ {
+  "brand": "AFEELA",
+  "id": "car3546",
+  "name": "AFEELA Prototype 2024",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car3546.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr160.png"
+ },
+ {
+  "brand": "阿尔法·罗密欧",
+  "id": "car365",
+  "name": "155 2.5 V6 TI '93",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car365.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr3.png"
+ },
+ {
+  "brand": "阿尔法·罗密欧",
+  "id": "car2136",
+  "name": "4C '14",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car2136.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr3.png"
+ },
+ {
+  "brand": "阿尔法·罗密欧",
+  "id": "car3185",
+  "name": "4C Gr.3",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car3185.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr3.png"
+ },
+ {
+  "brand": "阿尔法·罗密欧",
+  "id": "car3299",
+  "name": "4C Gr.3 Road Car",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car3299.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr3.png"
+ },
+ {
+  "brand": "阿尔法·罗密欧",
+  "id": "car2166",
+  "name": "4C Gr.4",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car2166.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr3.png"
+ },
+ {
+  "brand": "阿尔法·罗密欧",
+  "id": "car3415",
+  "name": "8C 2900B Touring Berlinetta '38",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car3415.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr3.png"
+ },
+ {
+  "brand": "阿尔法·罗密欧",
+  "id": "car1578",
+  "name": "8C Competizione '08",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car1578.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr3.png"
+ },
+ {
+  "brand": "阿尔法·罗密欧",
+  "id": "car1645",
+  "name": "GIULIA TZ2 carrozzata da ZAGATO '65",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car1645.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr3.png"
+ },
+ {
+  "brand": "阿尔法·罗密欧",
+  "id": "car3411",
+  "name": "Giulia GTAm '20",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car3411.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr3.png"
+ },
+ {
+  "brand": "阿尔法·罗密欧",
+  "id": "car3530",
+  "name": "Giulia Sprint GT Veloce '67",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car3530.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr3.png"
+ },
+ {
+  "brand": "阿尔法·罗密欧",
+  "id": "car1933",
+  "name": "MiTo '09",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car1933.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr3.png"
+ },
+ {
+  "brand": "Alpine",
+  "id": "car3337",
+  "name": "A110 '17",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car3337.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr86.png"
+ },
+ {
+  "brand": "Alpine",
+  "id": "car1796",
+  "name": "A110 '72",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car1796.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr86.png"
+ },
+ {
+  "brand": "Alpine",
+  "id": "car3457",
+  "name": "A220 Race Car '68",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car3457.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr86.png"
+ },
+ {
+  "brand": "Alpine",
+  "id": "car2112",
+  "name": "Alpine VGT",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car2112.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr86.png"
+ },
+ {
+  "brand": "Alpine",
+  "id": "car3187",
+  "name": "Alpine VGT '17",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car3187.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr86.png"
+ },
+ {
+  "brand": "Alpine",
+  "id": "car2116",
+  "name": "Alpine VGT Race",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car2116.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr86.png"
+ },
+ {
+  "brand": "AMG",
+  "id": "car3388",
+  "name": "300 SEL 6.8 AMG '71",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car3388.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr153.png"
+ },
+ {
+  "brand": "AMG",
+  "id": "car2170",
+  "name": "A 45 AMG '13",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car2170.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr153.png"
+ },
+ {
+  "brand": "AMG",
+  "id": "car3458",
+  "name": "Mercedes-AMG C 63 S '15",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car3458.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr153.png"
+ },
+ {
+  "brand": "AMG",
+  "id": "car3485",
+  "name": "Mercedes-AMG GT Black Series '20",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car3485.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr153.png"
+ },
+ {
+  "brand": "AMG",
+  "id": "car3416",
+  "name": "Mercedes-AMG GT R '17",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car3416.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr153.png"
+ },
+ {
+  "brand": "AMG",
+  "id": "car2149",
+  "name": "Mercedes-AMG GT S '15",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car2149.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr153.png"
+ },
+ {
+  "brand": "AMG",
+  "id": "car3210",
+  "name": "Mercedes-AMG GT Safety Car",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car3210.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr153.png"
+ },
+ {
+  "brand": "AMG",
+  "id": "car3224",
+  "name": "Mercedes-AMG GT3 '16",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car3224.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr153.png"
+ },
+ {
+  "brand": "AMG",
+  "id": "car3531",
+  "name": "Mercedes-AMG GT3 '20",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car3531.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr153.png"
+ },
+ {
+  "brand": "AMG",
+  "id": "car2055",
+  "name": "Mercedes-Benz AMG VGT",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car2055.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr153.png"
+ },
+ {
+  "brand": "AMG",
+  "id": "car2076",
+  "name": "Mercedes-Benz AMG VGT Racing Series",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car2076.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr153.png"
+ },
+ {
+  "brand": "AMG",
+  "id": "car1507",
+  "name": "SLS AMG '10",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car1507.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr153.png"
+ },
+ {
+  "brand": "AMG",
+  "id": "car1797",
+  "name": "SLS AMG GT3 '11",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car1797.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr153.png"
+ },
+ {
+  "brand": "AMG",
+  "id": "car3192",
+  "name": "SLS AMG Gr.4",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car3192.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr153.png"
+ },
+ {
+  "brand": "Amuse",
+  "id": "car1549",
+  "name": "Amuse NISMO 380RS Super Leggera",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car1549.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr59.png"
+ },
+ {
+  "brand": "Amuse",
+  "id": "car1433",
+  "name": "Amuse S2000 GT1 Turbo",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car1433.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr59.png"
+ },
+ {
+  "brand": "阿斯顿·马丁",
+  "id": "car3343",
+  "name": "DB11 '16",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car3343.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr4.png"
+ },
+ {
+  "brand": "阿斯顿·马丁",
+  "id": "car3363",
+  "name": "DB3S '53",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car3363.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr4.png"
+ },
+ {
+  "brand": "阿斯顿·马丁",
+  "id": "car3445",
+  "name": "DB5 '64",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car3445.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr4.png"
+ },
+ {
+  "brand": "阿斯顿·马丁",
+  "id": "car3394",
+  "name": "DBR9 GT1 '10",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car3394.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr4.png"
+ },
+ {
+  "brand": "阿斯顿·马丁",
+  "id": "car2103",
+  "name": "DP-100 VGT",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car2103.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr4.png"
+ },
+ {
+  "brand": "阿斯顿·马丁",
+  "id": "car1898",
+  "name": "One-77 '11",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car1898.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr4.png"
+ },
+ {
+  "brand": "阿斯顿·马丁",
+  "id": "car2131",
+  "name": "V12 Vantage GT3 '12",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car2131.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr4.png"
+ },
+ {
+  "brand": "阿斯顿·马丁",
+  "id": "car2157",
+  "name": "V8 Vantage Gr.4",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car2157.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr4.png"
+ },
+ {
+  "brand": "阿斯顿·马丁",
+  "id": "car2175",
+  "name": "V8 Vantage S '15",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car2175.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr4.png"
+ },
+ {
+  "brand": "阿斯顿·马丁",
+  "id": "car3532",
+  "name": "Valkyrie '21",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car3532.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr4.png"
+ },
+ {
+  "brand": "阿斯顿·马丁",
+  "id": "car3447",
+  "name": "Vantage '18",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car3447.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr4.png"
+ },
+ {
+  "brand": "阿斯顿·马丁",
+  "id": "car3309",
+  "name": "Vulcan '16",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car3309.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr4.png"
+ },
+ {
+  "brand": "奥迪",
+  "id": "car3314",
+  "name": "Audi VGT",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car3314.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr5.png"
+ },
+ {
+  "brand": "奥迪",
+  "id": "car3351",
+  "name": "Audi e-tron VGT",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car3351.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr5.png"
+ },
+ {
+  "brand": "奥迪",
+  "id": "car3334",
+  "name": "R18 '16",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car3334.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr5.png"
+ },
+ {
+  "brand": "奥迪",
+  "id": "car1965",
+  "name": "R18 TDI '11",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car1965.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr5.png"
+ },
+ {
+  "brand": "奥迪",
+  "id": "car1365",
+  "name": "R8 4.2 '07",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car1365.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr5.png"
+ },
+ {
+  "brand": "奥迪",
+  "id": "car3412",
+  "name": "R8 Coupé V10 plus '16",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car3412.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr5.png"
+ },
+ {
+  "brand": "奥迪",
+  "id": "car2143",
+  "name": "R8 LMS '15",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car2143.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr5.png"
+ },
+ {
+  "brand": "奥迪",
+  "id": "car3405",
+  "name": "R8 LMS Evo '19",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car3405.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr5.png"
+ },
+ {
+  "brand": "奥迪",
+  "id": "car3523",
+  "name": "RS 5 Turbo DTM '19",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car3523.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr5.png"
+ },
+ {
+  "brand": "奥迪",
+  "id": "car1927",
+  "name": "Sport quattro S1 Pikes Peak '87",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car1927.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr5.png"
+ },
+ {
+  "brand": "奥迪",
+  "id": "car959",
+  "name": "TT Coupé 3.2 quattro '03",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car959.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr5.png"
+ },
+ {
+  "brand": "奥迪",
+  "id": "car3298",
+  "name": "TT Cup '16",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car3298.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr5.png"
+ },
+ {
+  "brand": "奥迪",
+  "id": "car1541",
+  "name": "TTS Coupé '09",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car1541.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr5.png"
+ },
+ {
+  "brand": "奥迪",
+  "id": "car2169",
+  "name": "TTS Coupé '14",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car2169.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr5.png"
+ },
+ {
+  "brand": "Autobianchi",
+  "id": "car3442",
+  "name": "A112 Abarth '85",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car3442.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr57.png"
+ },
+ {
+  "brand": "BAC",
+  "id": "car3409",
+  "name": "Mono '16",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car3409.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr144.png"
+ },
+ {
+  "brand": "宝马",
+  "id": "car3454",
+  "name": "3.0 CSL '71",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car3454.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr6.png"
+ },
+ {
+  "brand": "宝马",
+  "id": "car3422",
+  "name": "3.0 CSL '73",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car3422.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr6.png"
+ },
+ {
+  "brand": "宝马",
+  "id": "car2087",
+  "name": "BMW VGT",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car2087.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr6.png"
+ },
+ {
+  "brand": "宝马",
+  "id": "car3604",
+  "name": "M Hybrid V8 '25",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car3604.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr6.png"
+ },
+ {
+  "brand": "宝马",
+  "id": "car3483",
+  "name": "M2 Competition '18",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car3483.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr6.png"
+ },
+ {
+  "brand": "宝马",
+  "id": "car3389",
+  "name": "M3 '03",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car3389.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr6.png"
+ },
+ {
+  "brand": "宝马",
+  "id": "car1399",
+  "name": "M3 '07",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car1399.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr6.png"
+ },
+ {
+  "brand": "宝马",
+  "id": "car3453",
+  "name": "M3 '89",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car3453.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr6.png"
+ },
+ {
+  "brand": "宝马",
+  "id": "car3551",
+  "name": "M3 '97",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car3551.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr6.png"
+ },
+ {
+  "brand": "宝马",
+  "id": "car1904",
+  "name": "M3 GT '11",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car1904.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr6.png"
+ },
+ {
+  "brand": "宝马",
+  "id": "car3344",
+  "name": "M3 Sport Evolution '89",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car3344.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr6.png"
+ },
+ {
+  "brand": "宝马",
+  "id": "car2074",
+  "name": "M4 '14",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car2074.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr6.png"
+ },
+ {
+  "brand": "宝马",
+  "id": "car3245",
+  "name": "M4 Gr.4",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car3245.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr6.png"
+ },
+ {
+  "brand": "宝马",
+  "id": "car3209",
+  "name": "M4 Safety Car",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car3209.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr6.png"
+ },
+ {
+  "brand": "宝马",
+  "id": "car3218",
+  "name": "M6 GT3 Endurance Model '16",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car3218.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr6.png"
+ },
+ {
+  "brand": "宝马",
+  "id": "car3221",
+  "name": "M6 GT3 Sprint Model '16",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car3221.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr6.png"
+ },
+ {
+  "brand": "宝马",
+  "id": "car216",
+  "name": "McLaren F1 GTR Race Car '97",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car216.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr6.png"
+ },
+ {
+  "brand": "宝马",
+  "id": "car655",
+  "name": "Z4 3.0i '03",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car655.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr6.png"
+ },
+ {
+  "brand": "宝马",
+  "id": "car1902",
+  "name": "Z4 GT3 '11",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car1902.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr6.png"
+ },
+ {
+  "brand": "宝马",
+  "id": "car1893",
+  "name": "Z8 '01",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car1893.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr6.png"
+ },
+ {
+  "brand": "宝马",
+  "id": "car3266",
+  "name": "i3 '15",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car3266.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr6.png"
+ },
+ {
+  "brand": "布加迪",
+  "id": "car2134",
+  "name": "Bugatti VGT",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car2134.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr113.png"
+ },
+ {
+  "brand": "布加迪",
+  "id": "car2179",
+  "name": "Bugatti VGT (Gr.1)",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car2179.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr113.png"
+ },
+ {
+  "brand": "布加迪",
+  "id": "car3473",
+  "name": "Chiron '16",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car3473.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr113.png"
+ },
+ {
+  "brand": "布加迪",
+  "id": "car2049",
+  "name": "Veyron 16.4 '13",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car2049.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr113.png"
+ },
+ {
+  "brand": "布加迪",
+  "id": "car3246",
+  "name": "Veyron Gr.4",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car3246.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr113.png"
+ },
+ {
+  "brand": "BVLGARI",
+  "id": "car3541",
+  "name": "BVLGARI Aluminium VGT",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car3541.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr158.png"
+ },
+ {
+  "brand": "Caterham",
+  "id": "car3395",
+  "name": "Seven Superlight R500 '08",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car3395.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr80.png"
+ },
+ {
+  "brand": "Chaparral",
+  "id": "car1069",
+  "name": "2J '70",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car1069.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr93.png"
+ },
+ {
+  "brand": "Chaparral",
+  "id": "car2107",
+  "name": "Chaparral 2X VGT",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car2107.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr93.png"
+ },
+ {
+  "brand": "雪佛兰",
+  "id": "car3592",
+  "name": "Camaro 1969 Race-Mod",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car3592.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr7.png"
+ },
+ {
+  "brand": "雪佛兰",
+  "id": "car3217",
+  "name": "Camaro SS '16",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car3217.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr7.png"
+ },
+ {
+  "brand": "雪佛兰",
+  "id": "car31",
+  "name": "Camaro Z28 '69",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car31.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr7.png"
+ },
+ {
+  "brand": "雪佛兰",
+  "id": "car3387",
+  "name": "Camaro ZL1 1LE Package '18",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car3387.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr7.png"
+ },
+ {
+  "brand": "雪佛兰",
+  "id": "car36",
+  "name": "Chevelle SS 454 '70",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car36.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr7.png"
+ },
+ {
+  "brand": "雪佛兰",
+  "id": "car3464",
+  "name": "Corvette (C1) '58",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car3464.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr7.png"
+ },
+ {
+  "brand": "雪佛兰",
+  "id": "car818",
+  "name": "Corvette (C2) '63",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car818.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr7.png"
+ },
+ {
+  "brand": "雪佛兰",
+  "id": "car1916",
+  "name": "Corvette C7 '14",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car1916.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr7.png"
+ },
+ {
+  "brand": "雪佛兰",
+  "id": "car2183",
+  "name": "Corvette C7 Gr.3",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car2183.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr7.png"
+ },
+ {
+  "brand": "雪佛兰",
+  "id": "car3296",
+  "name": "Corvette C7 Gr.3 Road Car",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car3296.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr7.png"
+ },
+ {
+  "brand": "雪佛兰",
+  "id": "car3247",
+  "name": "Corvette C7 Gr.4",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car3247.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr7.png"
+ },
+ {
+  "brand": "雪佛兰",
+  "id": "car3449",
+  "name": "Corvette C7 ZR1 '19",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car3449.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr7.png"
+ },
+ {
+  "brand": "雪佛兰",
+  "id": "car3518",
+  "name": "Corvette C8 '20",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car3518.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr7.png"
+ },
+ {
+  "brand": "雪佛兰",
+  "id": "car3581",
+  "name": "Corvette CX Concept '25",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car3581.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr7.png"
+ },
+ {
+  "brand": "雪佛兰",
+  "id": "car3582",
+  "name": "Corvette CX.R VGT Concept",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car3582.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr7.png"
+ },
+ {
+  "brand": "雪佛兰",
+  "id": "car1542",
+  "name": "Corvette Convertible (C3) '69",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car1542.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr7.png"
+ },
+ {
+  "brand": "雪佛兰",
+  "id": "car41",
+  "name": "Corvette Stingray (C3) '69",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car41.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr7.png"
+ },
+ {
+  "brand": "雪佛兰",
+  "id": "car2059",
+  "name": "Corvette Stingray Racer Concept '59",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car2059.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr7.png"
+ },
+ {
+  "brand": "雪佛兰",
+  "id": "car3570",
+  "name": "Corvette Z06 (C5) '01",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car3570.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr7.png"
+ },
+ {
+  "brand": "雪佛兰",
+  "id": "car942",
+  "name": "Corvette ZR-1 (C4) '89",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car942.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr7.png"
+ },
+ {
+  "brand": "雪佛兰",
+  "id": "car1480",
+  "name": "Corvette ZR1 (C6) '09",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car1480.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr7.png"
+ },
+ {
+  "brand": "Chris Holstrom Concepts",
+  "id": "car3338",
+  "name": "CHC 1967 Chevy Nova",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car3338.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr147.png"
+ },
+ {
+  "brand": "雪铁龙",
+  "id": "car3653",
+  "name": "2 CV 6 Charleston '86",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car3653.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr9.png"
+ },
+ {
+  "brand": "雪铁龙",
+  "id": "car3573",
+  "name": "BX 19 TRS '87",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car3573.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr9.png"
+ },
+ {
+  "brand": "雪铁龙",
+  "id": "car3514",
+  "name": "DS 21 Pallas '70",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car3514.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr9.png"
+ },
+ {
+  "brand": "雪铁龙",
+  "id": "car3248",
+  "name": "GT by Citroën Gr.4",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car3248.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr9.png"
+ },
+ {
+  "brand": "雪铁龙",
+  "id": "car2190",
+  "name": "GT by Citroën Race Car (Gr.3)",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car2190.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr9.png"
+ },
+ {
+  "brand": "雪铁龙",
+  "id": "car1581",
+  "name": "GT by Citroën Road Car",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car1581.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr9.png"
+ },
+ {
+  "brand": "大发",
+  "id": "car3316",
+  "name": "COPEN RJ VGT",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car3316.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr10.png"
+ },
+ {
+  "brand": "大发",
+  "id": "car145",
+  "name": "Copen '02",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car145.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr10.png"
+ },
+ {
+  "brand": "De Tomaso",
+  "id": "car3437",
+  "name": "Mangusta '69",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car3437.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr140.png"
+ },
+ {
+  "brand": "De Tomaso",
+  "id": "car3341",
+  "name": "Pantera '71",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car3341.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr140.png"
+ },
+ {
+  "brand": "DMC",
+  "id": "car1027",
+  "name": "DeLorean S2 '04",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car1027.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr65.png"
+ },
+ {
+  "brand": "道奇",
+  "id": "car1543",
+  "name": "Challenger R/T '70",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car1543.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr11.png"
+ },
+ {
+  "brand": "道奇",
+  "id": "car3486",
+  "name": "Challenger SRT Demon '18",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car3486.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr11.png"
+ },
+ {
+  "brand": "道奇",
+  "id": "car3538",
+  "name": "Charger R/T 426 Hemi '68",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car3538.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr11.png"
+ },
+ {
+  "brand": "道奇",
+  "id": "car2152",
+  "name": "Charger SRT Hellcat '15",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car2152.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr11.png"
+ },
+ {
+  "brand": "道奇",
+  "id": "car3406",
+  "name": "Charger SRT Hellcat Safety Car",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car3406.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr11.png"
+ },
+ {
+  "brand": "道奇",
+  "id": "car2110",
+  "name": "SRT Tomahawk GTS-R VGT",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car2110.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr11.png"
+ },
+ {
+  "brand": "道奇",
+  "id": "car2111",
+  "name": "SRT Tomahawk S VGT",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car2111.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr11.png"
+ },
+ {
+  "brand": "道奇",
+  "id": "car3188",
+  "name": "SRT Tomahawk VGT (Gr.1)",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car3188.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr11.png"
+ },
+ {
+  "brand": "道奇",
+  "id": "car2108",
+  "name": "SRT Tomahawk X VGT",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car2108.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr11.png"
+ },
+ {
+  "brand": "道奇",
+  "id": "car3377",
+  "name": "Super Bee '70",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car3377.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr11.png"
+ },
+ {
+  "brand": "道奇",
+  "id": "car1373",
+  "name": "Viper GTS '02",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car1373.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr11.png"
+ },
+ {
+  "brand": "道奇",
+  "id": "car1956",
+  "name": "Viper GTS '13",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car1956.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr11.png"
+ },
+ {
+  "brand": "道奇",
+  "id": "car3249",
+  "name": "Viper Gr.4",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car3249.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr11.png"
+ },
+ {
+  "brand": "道奇",
+  "id": "car3223",
+  "name": "Viper SRT GT3-R '15",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car3223.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr11.png"
+ },
+ {
+  "brand": "道奇",
+  "id": "car1402",
+  "name": "Viper SRT10 Coupe '06",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car1402.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr11.png"
+ },
+ {
+  "brand": "DS汽车",
+  "id": "car2172",
+  "name": "DS 3 Racing '11",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car2172.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr154.png"
+ },
+ {
+  "brand": "Eckert's Rod & Custom",
+  "id": "car3346",
+  "name": "Mach Forty",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car3346.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr148.png"
+ },
+ {
+  "brand": "法拉利",
+  "id": "car1931",
+  "name": "250 GT Berlinetta passo corto '61",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car1931.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr110.png"
+ },
+ {
+  "brand": "法拉利",
+  "id": "car2010",
+  "name": "250 GTO '62",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car2010.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr110.png"
+ },
+ {
+  "brand": "法拉利",
+  "id": "car3588",
+  "name": "296 GT3 '23",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car3588.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr110.png"
+ },
+ {
+  "brand": "法拉利",
+  "id": "car3587",
+  "name": "296 GTB '22",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car3587.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr110.png"
+ },
+ {
+  "brand": "法拉利",
+  "id": "car3443",
+  "name": "308 GTB '75",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car3443.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr110.png"
+ },
+ {
+  "brand": "法拉利",
+  "id": "car1551",
+  "name": "330 P4 '67",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car1551.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr110.png"
+ },
+ {
+  "brand": "法拉利",
+  "id": "car2018",
+  "name": "365 GTB4 '71",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car2018.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr110.png"
+ },
+ {
+  "brand": "法拉利",
+  "id": "car1544",
+  "name": "430 Scuderia '07",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car1544.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr110.png"
+ },
+ {
+  "brand": "法拉利",
+  "id": "car1504",
+  "name": "458 Italia '09",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car1504.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr110.png"
+ },
+ {
+  "brand": "法拉利",
+  "id": "car2158",
+  "name": "458 Italia GT3 '13",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car2158.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr110.png"
+ },
+ {
+  "brand": "法拉利",
+  "id": "car3263",
+  "name": "458 Italia Gr.4",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car3263.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr110.png"
+ },
+ {
+  "brand": "法拉利",
+  "id": "car3605",
+  "name": "499P '23",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car3605.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr110.png"
+ },
+ {
+  "brand": "法拉利",
+  "id": "car2011",
+  "name": "500 Mondial Pinin Farina Coupe '54",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car2011.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr110.png"
+ },
+ {
+  "brand": "法拉利",
+  "id": "car1410",
+  "name": "512 BB '76",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car1410.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr110.png"
+ },
+ {
+  "brand": "法拉利",
+  "id": "car3470",
+  "name": "812 Superfast '17",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car3470.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr110.png"
+ },
+ {
+  "brand": "法拉利",
+  "id": "car1895",
+  "name": "Dino 246 GT '71",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car1895.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr110.png"
+ },
+ {
+  "brand": "法拉利",
+  "id": "car1474",
+  "name": "Enzo Ferrari '02",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car1474.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr110.png"
+ },
+ {
+  "brand": "法拉利",
+  "id": "car3267",
+  "name": "F12berlinetta '12",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car3267.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr110.png"
+ },
+ {
+  "brand": "法拉利",
+  "id": "car3654",
+  "name": "F355 Berlinetta '94",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car3654.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr110.png"
+ },
+ {
+  "brand": "法拉利",
+  "id": "car1409",
+  "name": "F40 '92",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car1409.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr110.png"
+ },
+ {
+  "brand": "法拉利",
+  "id": "car1378",
+  "name": "F430 '06",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car1378.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr110.png"
+ },
+ {
+  "brand": "法拉利",
+  "id": "car3362",
+  "name": "F50 '95",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car3362.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr110.png"
+ },
+ {
+  "brand": "法拉利",
+  "id": "car3469",
+  "name": "F8 Tributo '19",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car3469.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr110.png"
+ },
+ {
+  "brand": "法拉利",
+  "id": "car3433",
+  "name": "FXX K '14",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car3433.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr110.png"
+ },
+ {
+  "brand": "法拉利",
+  "id": "car3510",
+  "name": "Ferrari VGT",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car3510.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr110.png"
+ },
+ {
+  "brand": "法拉利",
+  "id": "car2017",
+  "name": "GTO '84",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car2017.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr110.png"
+ },
+ {
+  "brand": "法拉利",
+  "id": "car2162",
+  "name": "LaFerrari '13",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car2162.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr110.png"
+ },
+ {
+  "brand": "法拉利",
+  "id": "car3434",
+  "name": "Testarossa '91",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car3434.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr110.png"
+ },
+ {
+  "brand": "FIAT",
+  "id": "car1527",
+  "name": "500 1.2 8V Lounge SS '08",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car1527.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr12.png"
+ },
+ {
+  "brand": "FIAT",
+  "id": "car1523",
+  "name": "500 F '68",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car1523.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr12.png"
+ },
+ {
+  "brand": "FIAT",
+  "id": "car3575",
+  "name": "Panda 30 CL '85",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car3575.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr12.png"
+ },
+ {
+  "brand": "Ford",
+  "id": "car3555",
+  "name": "Escort RS Cosworth '92",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car3555.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr13.png"
+ },
+ {
+  "brand": "Ford",
+  "id": "car3336",
+  "name": "F-150 SVT Raptor '11",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car3336.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr13.png"
+ },
+ {
+  "brand": "Ford",
+  "id": "car3264",
+  "name": "Focus Gr.B Rally Car",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car3264.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr13.png"
+ },
+ {
+  "brand": "Ford",
+  "id": "car3420",
+  "name": "Focus RS '18",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car3420.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr13.png"
+ },
+ {
+  "brand": "Ford",
+  "id": "car2145",
+  "name": "Focus ST '15",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car2145.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr13.png"
+ },
+ {
+  "brand": "Ford",
+  "id": "car1426",
+  "name": "Ford GT '06",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car1426.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr13.png"
+ },
+ {
+  "brand": "Ford",
+  "id": "car3402",
+  "name": "Ford GT '17",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car3402.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr13.png"
+ },
+ {
+  "brand": "Ford",
+  "id": "car1040",
+  "name": "Ford GT LM Race Car Spec II",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car1040.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr13.png"
+ },
+ {
+  "brand": "Ford",
+  "id": "car1425",
+  "name": "Ford GT LM Spec II Test Car",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car1425.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr13.png"
+ },
+ {
+  "brand": "Ford",
+  "id": "car3436",
+  "name": "Ford GT Race Car '18",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car3436.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr13.png"
+ },
+ {
+  "brand": "Ford",
+  "id": "car3444",
+  "name": "Ford Roadster",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car3444.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr13.png"
+ },
+ {
+  "brand": "Ford",
+  "id": "car1935",
+  "name": "GT40 Mark I '66",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car1935.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr13.png"
+ },
+ {
+  "brand": "Ford",
+  "id": "car1565",
+  "name": "Mark IV Race Car '67",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car1565.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr13.png"
+ },
+ {
+  "brand": "Ford",
+  "id": "car3487",
+  "name": "Mustang Boss 429 '69",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car3487.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr13.png"
+ },
+ {
+  "brand": "Ford",
+  "id": "car2138",
+  "name": "Mustang GT '15",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car2138.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr13.png"
+ },
+ {
+  "brand": "Ford",
+  "id": "car2159",
+  "name": "Mustang Gr.3",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car2159.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr13.png"
+ },
+ {
+  "brand": "Ford",
+  "id": "car3300",
+  "name": "Mustang Gr.3 Road Car",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car3300.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr13.png"
+ },
+ {
+  "brand": "Ford",
+  "id": "car2164",
+  "name": "Mustang Gr.4",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car2164.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr13.png"
+ },
+ {
+  "brand": "Ford",
+  "id": "car3229",
+  "name": "Mustang Gr.B Rally Car",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car3229.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr13.png"
+ },
+ {
+  "brand": "Ford",
+  "id": "car1729",
+  "name": "Mustang Mach 1 '71",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car1729.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr13.png"
+ },
+ {
+  "brand": "Ford",
+  "id": "car3391",
+  "name": "Shelby GT350R '16",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car3391.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr13.png"
+ },
+ {
+  "brand": "Ford",
+  "id": "car3466",
+  "name": "Sierra RS 500 Cosworth '87",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car3466.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr13.png"
+ },
+ {
+  "brand": "Genesis",
+  "id": "car3500",
+  "name": "G70 3.3T AWD P.Package '22",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car3500.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr152.png"
+ },
+ {
+  "brand": "Genesis",
+  "id": "car3501",
+  "name": "G70 GR4",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car3501.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr152.png"
+ },
+ {
+  "brand": "Genesis",
+  "id": "car3502",
+  "name": "Genesis X GR3",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car3502.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr152.png"
+ },
+ {
+  "brand": "Genesis",
+  "id": "car3543",
+  "name": "Genesis X Gran Berlinetta VGT Concept",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car3543.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr152.png"
+ },
+ {
+  "brand": "Genesis",
+  "id": "car3544",
+  "name": "Genesis X Gran Racer VGT Concept",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car3544.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr152.png"
+ },
+ {
+  "brand": "跑车浪漫旅",
+  "id": "car3342",
+  "name": "F1500T-A",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car3342.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr33.png"
+ },
+ {
+  "brand": "跑车浪漫旅",
+  "id": "car3562",
+  "name": "F3500-A",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car3562.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr33.png"
+ },
+ {
+  "brand": "跑车浪漫旅",
+  "id": "car3589",
+  "name": "F3500-B",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car3589.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr33.png"
+ },
+ {
+  "brand": "跑车浪漫旅",
+  "id": "car2060",
+  "name": "Racing Kart 125 Shifter",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car2060.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr33.png"
+ },
+ {
+  "brand": "跑车浪漫旅",
+  "id": "car2078",
+  "name": "Red Bull X2014 Junior",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car2078.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr33.png"
+ },
+ {
+  "brand": "跑车浪漫旅",
+  "id": "car2077",
+  "name": "Red Bull X2014 Standard",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car2077.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr33.png"
+ },
+ {
+  "brand": "跑车浪漫旅",
+  "id": "car3374",
+  "name": "Red Bull X2019 Competition",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car3374.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr33.png"
+ },
+ {
+  "brand": "GReddy",
+  "id": "car3364",
+  "name": "GReddy Fugu Z",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car3364.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr149.png"
+ },
+ {
+  "brand": "Garage RCR",
+  "id": "car3526",
+  "name": "Garage RCR Civic",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car3526.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr157.png"
+ },
+ {
+  "brand": "Greening Auto Company",
+  "id": "car3522",
+  "name": "GAC Maverick",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car3522.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr156.png"
+ },
+ {
+  "brand": "本田",
+  "id": "car2156",
+  "name": "2&4 powered by RC213V",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car2156.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr15.png"
+ },
+ {
+  "brand": "本田",
+  "id": "car137",
+  "name": "Beat '91",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car137.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr15.png"
+ },
+ {
+  "brand": "本田",
+  "id": "car3572",
+  "name": "CR-V e:HEV EX・Black Edition '21",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car3572.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr15.png"
+ },
+ {
+  "brand": "本田",
+  "id": "car3563",
+  "name": "Civic Si Extra (EF) '87",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car3563.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr15.png"
+ },
+ {
+  "brand": "本田",
+  "id": "car683",
+  "name": "Civic Si Group A version '87",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car683.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr15.png"
+ },
+ {
+  "brand": "本田",
+  "id": "car37",
+  "name": "Civic SiR･II (EG) '93",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car37.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr15.png"
+ },
+ {
+  "brand": "本田",
+  "id": "car821",
+  "name": "Civic Type R (EK) '97",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car821.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr15.png"
+ },
+ {
+  "brand": "本田",
+  "id": "car204",
+  "name": "Civic Type R (EK) '98",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car204.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr15.png"
+ },
+ {
+  "brand": "本田",
+  "id": "car1689",
+  "name": "Civic Type R (EK) Touring Car",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car1689.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr15.png"
+ },
+ {
+  "brand": "本田",
+  "id": "car3214",
+  "name": "Civic Type R (FK2) '15",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car3214.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr15.png"
+ },
+ {
+  "brand": "本田",
+  "id": "car3536",
+  "name": "Civic Type R (FL5) '22",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car3536.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr15.png"
+ },
+ {
+  "brand": "本田",
+  "id": "car3467",
+  "name": "Civic Type R Limited Edition (FK8) '20",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car3467.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr15.png"
+ },
+ {
+  "brand": "本田",
+  "id": "car3370",
+  "name": "Fit Hybrid '14",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car3370.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr15.png"
+ },
+ {
+  "brand": "本田",
+  "id": "car2121",
+  "name": "Honda Sports VGT",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car2121.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr15.png"
+ },
+ {
+  "brand": "本田",
+  "id": "car688",
+  "name": "Integra Type R (DC2) '95",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car688.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr15.png"
+ },
+ {
+  "brand": "本田",
+  "id": "car203",
+  "name": "Integra Type R (DC2) '98",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car203.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr15.png"
+ },
+ {
+  "brand": "本田",
+  "id": "car3576",
+  "name": "N-ONE RS '22",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car3576.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr15.png"
+ },
+ {
+  "brand": "本田",
+  "id": "car3219",
+  "name": "NSX '17",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car3219.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr15.png"
+ },
+ {
+  "brand": "本田",
+  "id": "car3348",
+  "name": "NSX CONCEPT-GT '16",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car3348.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr15.png"
+ },
+ {
+  "brand": "本田",
+  "id": "car140",
+  "name": "NSX GT500 '00",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car140.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr15.png"
+ },
+ {
+  "brand": "本田",
+  "id": "car1510",
+  "name": "NSX GT500 '08",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car1510.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr15.png"
+ },
+ {
+  "brand": "本田",
+  "id": "car3235",
+  "name": "NSX Gr.3",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car3235.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr15.png"
+ },
+ {
+  "brand": "本田",
+  "id": "car3251",
+  "name": "NSX Gr.4",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car3251.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr15.png"
+ },
+ {
+  "brand": "本田",
+  "id": "car3239",
+  "name": "NSX Gr.B Rally Car",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car3239.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr15.png"
+ },
+ {
+  "brand": "本田",
+  "id": "car396",
+  "name": "NSX Type R '02",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car396.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr15.png"
+ },
+ {
+  "brand": "本田",
+  "id": "car293",
+  "name": "NSX Type R '92",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car293.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr15.png"
+ },
+ {
+  "brand": "本田",
+  "id": "car3525",
+  "name": "RA272 '65",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car3525.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr15.png"
+ },
+ {
+  "brand": "本田",
+  "id": "car514",
+  "name": "S2000 '99",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car514.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr15.png"
+ },
+ {
+  "brand": "本田",
+  "id": "car3357",
+  "name": "S660 '15",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car3357.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr15.png"
+ },
+ {
+  "brand": "本田",
+  "id": "car135",
+  "name": "S800 '66",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car135.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr15.png"
+ },
+ {
+  "brand": "本田",
+  "id": "car3655",
+  "name": "Step WGN Spada Premium Line '23",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car3655.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr15.png"
+ },
+ {
+  "brand": "Hyundai",
+  "id": "car3585",
+  "name": "ELANTRA N '23",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car3585.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr16.png"
+ },
+ {
+  "brand": "Hyundai",
+  "id": "car3590",
+  "name": "ELANTRA N TC '24",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car3590.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr16.png"
+ },
+ {
+  "brand": "Hyundai",
+  "id": "car2051",
+  "name": "Genesis Coupe 3.8 '13",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car2051.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr16.png"
+ },
+ {
+  "brand": "Hyundai",
+  "id": "car2160",
+  "name": "Genesis Gr.3",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car2160.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr16.png"
+ },
+ {
+  "brand": "Hyundai",
+  "id": "car2163",
+  "name": "Genesis Gr.4",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car2163.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr16.png"
+ },
+ {
+  "brand": "Hyundai",
+  "id": "car3234",
+  "name": "Genesis Gr.B Rally Car",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car3234.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr16.png"
+ },
+ {
+  "brand": "Hyundai",
+  "id": "car2135",
+  "name": "HYUNDAI N 2025 VGT",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car2135.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr16.png"
+ },
+ {
+  "brand": "Hyundai",
+  "id": "car2180",
+  "name": "HYUNDAI N 2025 VGT (Gr.1)",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car2180.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr16.png"
+ },
+ {
+  "brand": "Hyundai",
+  "id": "car3561",
+  "name": "IONIQ 5 N '24",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car3561.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr16.png"
+ },
+ {
+  "brand": "Hyundai",
+  "id": "car3610",
+  "name": "IONIQ 6 N '25",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car3610.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr16.png"
+ },
+ {
+  "brand": "英菲尼迪",
+  "id": "car2117",
+  "name": "INFINITI CONCEPT VGT",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car2117.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr49.png"
+ },
+ {
+  "brand": "Italdesign",
+  "id": "car2120",
+  "name": "Italdesign VGT Off-road Mode",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car2120.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr135.png"
+ },
+ {
+  "brand": "Italdesign",
+  "id": "car2119",
+  "name": "Italdesign VGT Street Mode",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car2119.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr135.png"
+ },
+ {
+  "brand": "捷豹",
+  "id": "car3376",
+  "name": "D-type '54",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car3376.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr17.png"
+ },
+ {
+  "brand": "捷豹",
+  "id": "car3361",
+  "name": "E-type Coupé '61",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car3361.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr17.png"
+ },
+ {
+  "brand": "捷豹",
+  "id": "car2184",
+  "name": "F-type Gr.3",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car2184.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr17.png"
+ },
+ {
+  "brand": "捷豹",
+  "id": "car3252",
+  "name": "F-type Gr.4",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car3252.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr17.png"
+ },
+ {
+  "brand": "捷豹",
+  "id": "car2146",
+  "name": "F-type R '14",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car2146.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr17.png"
+ },
+ {
+  "brand": "捷豹",
+  "id": "car3396",
+  "name": "Jaguar VGT Coupé",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car3396.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr17.png"
+ },
+ {
+  "brand": "捷豹",
+  "id": "car3479",
+  "name": "Jaguar VGT Roadster",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car3479.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr17.png"
+ },
+ {
+  "brand": "捷豹",
+  "id": "car3417",
+  "name": "Jaguar VGT SV",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car3417.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr17.png"
+ },
+ {
+  "brand": "捷豹",
+  "id": "car1553",
+  "name": "XJ13 '66",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car1553.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr17.png"
+ },
+ {
+  "brand": "捷豹",
+  "id": "car543",
+  "name": "XJ220 '92",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car543.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr17.png"
+ },
+ {
+  "brand": "捷豹",
+  "id": "car1067",
+  "name": "XJR-9 '88",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car1067.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr17.png"
+ },
+ {
+  "brand": "Jeep",
+  "id": "car3430",
+  "name": "Willys MB '45",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car3430.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr146.png"
+ },
+ {
+  "brand": "KTM",
+  "id": "car1907",
+  "name": "X-BOW R '12",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car1907.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr121.png"
+ },
+ {
+  "brand": "兰博基尼",
+  "id": "car1770",
+  "name": "Aventador LP 700-4 '11",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car1770.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr112.png"
+ },
+ {
+  "brand": "兰博基尼",
+  "id": "car3392",
+  "name": "Aventador LP 750-4 SV '15",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car3392.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr112.png"
+ },
+ {
+  "brand": "兰博基尼",
+  "id": "car1481",
+  "name": "Countach 25th Anniversary '88",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car1481.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr112.png"
+ },
+ {
+  "brand": "兰博基尼",
+  "id": "car1484",
+  "name": "Countach LP400 '74",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car1484.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr112.png"
+ },
+ {
+  "brand": "兰博基尼",
+  "id": "car1990",
+  "name": "Diablo GT '00",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car1990.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr112.png"
+ },
+ {
+  "brand": "兰博基尼",
+  "id": "car1506",
+  "name": "Gallardo LP 560-4 '08",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car1506.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr112.png"
+ },
+ {
+  "brand": "兰博基尼",
+  "id": "car2177",
+  "name": "Huracán GT3 '15",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car2177.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr112.png"
+ },
+ {
+  "brand": "兰博基尼",
+  "id": "car3253",
+  "name": "Huracán Gr.4",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car3253.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr112.png"
+ },
+ {
+  "brand": "兰博基尼",
+  "id": "car2171",
+  "name": "Huracán LP 610-4 '15",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car2171.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr112.png"
+ },
+ {
+  "brand": "兰博基尼",
+  "id": "car3414",
+  "name": "Lambo V12 VGT",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car3414.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr112.png"
+ },
+ {
+  "brand": "兰博基尼",
+  "id": "car1582",
+  "name": "Miura P400 Bertone Prototype '67",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car1582.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr112.png"
+ },
+ {
+  "brand": "兰博基尼",
+  "id": "car1545",
+  "name": "Murciélago LP 640 '09",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car1545.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr112.png"
+ },
+ {
+  "brand": "兰博基尼",
+  "id": "car3548",
+  "name": "Urus '18",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car3548.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr112.png"
+ },
+ {
+  "brand": "兰博基尼",
+  "id": "car2147",
+  "name": "Veneno '14",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car2147.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr112.png"
+ },
+ {
+  "brand": "Lancia",
+  "id": "car829",
+  "name": "Delta HF Integrale Evoluzione '91",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car829.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr18.png"
+ },
+ {
+  "brand": "Lancia",
+  "id": "car761",
+  "name": "Delta HF Integrale Rally Car '92",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car761.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr18.png"
+ },
+ {
+  "brand": "Lancia",
+  "id": "car533",
+  "name": "Stratos '73",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car533.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr18.png"
+ },
+ {
+  "brand": "雷克萨斯",
+  "id": "car3227",
+  "name": "LC500 '17",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car3227.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr50.png"
+ },
+ {
+  "brand": "雷克萨斯",
+  "id": "car2123",
+  "name": "LF-LC GT VGT",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car2123.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr50.png"
+ },
+ {
+  "brand": "雷克萨斯",
+  "id": "car1562",
+  "name": "LFA '10",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car1562.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr50.png"
+ },
+ {
+  "brand": "雷克萨斯",
+  "id": "car2139",
+  "name": "RC F '14",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car2139.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr50.png"
+ },
+ {
+  "brand": "雷克萨斯",
+  "id": "car3340",
+  "name": "RC F GT3 '17",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car3340.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr50.png"
+ },
+ {
+  "brand": "雷克萨斯",
+  "id": "car3228",
+  "name": "RC F GT3 prototype '16",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car3228.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr50.png"
+ },
+ {
+  "brand": "雷克萨斯",
+  "id": "car3349",
+  "name": "RC F GT500 '16",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car3349.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr50.png"
+ },
+ {
+  "brand": "雷克萨斯",
+  "id": "car3254",
+  "name": "RC F Gr.4",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car3254.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr50.png"
+ },
+ {
+  "brand": "雷克萨斯",
+  "id": "car1516",
+  "name": "SC430 GT500 '08",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car1516.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr50.png"
+ },
+ {
+  "brand": "Maserati",
+  "id": "car3489",
+  "name": "A6GCS/53 Spyder '54",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car3489.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr116.png"
+ },
+ {
+  "brand": "Maserati",
+  "id": "car1539",
+  "name": "GranTurismo S '08",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car1539.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr116.png"
+ },
+ {
+  "brand": "Maserati",
+  "id": "car3533",
+  "name": "MC20 '20",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car3533.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr116.png"
+ },
+ {
+  "brand": "Maserati",
+  "id": "car3421",
+  "name": "Merak SS '80",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car3421.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr116.png"
+ },
+ {
+  "brand": "马自达",
+  "id": "car296",
+  "name": "787B '91",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car296.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr21.png"
+ },
+ {
+  "brand": "马自达",
+  "id": "car3237",
+  "name": "Atenza Gr.3",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car3237.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr21.png"
+ },
+ {
+  "brand": "马自达",
+  "id": "car3306",
+  "name": "Atenza Gr.3 Road Car",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car3306.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr21.png"
+ },
+ {
+  "brand": "马自达",
+  "id": "car3256",
+  "name": "Atenza Gr.4",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car3256.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr21.png"
+ },
+ {
+  "brand": "马自达",
+  "id": "car2173",
+  "name": "Atenza Sedan XD L Package '15",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car2173.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr21.png"
+ },
+ {
+  "brand": "马自达",
+  "id": "car3566",
+  "name": "CX-30 X Smart Edition '21",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car3566.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr21.png"
+ },
+ {
+  "brand": "马自达",
+  "id": "car3383",
+  "name": "Demio XD Touring '15",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car3383.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr21.png"
+ },
+ {
+  "brand": "马自达",
+  "id": "car201",
+  "name": "Eunos Roadster (NA) '89",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car201.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr21.png"
+ },
+ {
+  "brand": "马自达",
+  "id": "car2118",
+  "name": "LM55 VGT",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car2118.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr21.png"
+ },
+ {
+  "brand": "马自达",
+  "id": "car2181",
+  "name": "LM55 VGT (Gr.1)",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car2181.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr21.png"
+ },
+ {
+  "brand": "马自达",
+  "id": "car3578",
+  "name": "MAZDA SPIRIT RACING ROADSTER 12R '25",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car3578.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr21.png"
+ },
+ {
+  "brand": "马自达",
+  "id": "car3521",
+  "name": "MAZDA3 '19",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car3521.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr21.png"
+ },
+ {
+  "brand": "马自达",
+  "id": "car3537",
+  "name": "MAZDA3 Gr.4",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car3537.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr21.png"
+ },
+ {
+  "brand": "马自达",
+  "id": "car374",
+  "name": "RX-7 GT-X (FC) '90",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car374.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr21.png"
+ },
+ {
+  "brand": "马自达",
+  "id": "car205",
+  "name": "RX-7 Spirit R Type A (FD) '02",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car205.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr21.png"
+ },
+ {
+  "brand": "马自达",
+  "id": "car3427",
+  "name": "RX-8 Spirit R '12",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car3427.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr21.png"
+ },
+ {
+  "brand": "马自达",
+  "id": "car3495",
+  "name": "RX-VISION '15",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car3495.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr21.png"
+ },
+ {
+  "brand": "马自达",
+  "id": "car3419",
+  "name": "RX-VISION GT3 CONCEPT",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car3419.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr21.png"
+ },
+ {
+  "brand": "马自达",
+  "id": "car3609",
+  "name": "RX-VISION GT3 EVO '26",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car3609.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr21.png"
+ },
+ {
+  "brand": "马自达",
+  "id": "car1975",
+  "name": "RX500 '70",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car1975.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr21.png"
+ },
+ {
+  "brand": "马自达",
+  "id": "car3512",
+  "name": "Roadster NR-A (ND) '22",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car3512.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr21.png"
+ },
+ {
+  "brand": "马自达",
+  "id": "car2148",
+  "name": "Roadster S (ND) '15",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car2148.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr21.png"
+ },
+ {
+  "brand": "马自达",
+  "id": "car1746",
+  "name": "Roadster Touring Car",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car1746.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr21.png"
+ },
+ {
+  "brand": "马自达",
+  "id": "car967",
+  "name": "ɛ̃fini RX-7 Type R (FD) '91",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car967.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr21.png"
+ },
+ {
+  "brand": "迈凯伦",
+  "id": "car2174",
+  "name": "650S '14",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car2174.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr117.png"
+ },
+ {
+  "brand": "迈凯伦",
+  "id": "car2182",
+  "name": "650S GT3 '15",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car2182.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr117.png"
+ },
+ {
+  "brand": "迈凯伦",
+  "id": "car3257",
+  "name": "650S Gr.4",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car3257.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr117.png"
+ },
+ {
+  "brand": "迈凯伦",
+  "id": "car1722",
+  "name": "MP4-12C '10",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car1722.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr117.png"
+ },
+ {
+  "brand": "迈凯伦",
+  "id": "car3475",
+  "name": "MP4/4 '88",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car3475.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr117.png"
+ },
+ {
+  "brand": "迈凯伦",
+  "id": "car1540",
+  "name": "McLaren F1 '94",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car1540.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr117.png"
+ },
+ {
+  "brand": "迈凯伦",
+  "id": "car1984",
+  "name": "McLaren F1 GTR - BMW '95",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car1984.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr117.png"
+ },
+ {
+  "brand": "迈凯伦",
+  "id": "car3360",
+  "name": "McLaren P1 GTR '16",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car3360.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr117.png"
+ },
+ {
+  "brand": "迈凯伦",
+  "id": "car3315",
+  "name": "McLaren VGT",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car3315.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr117.png"
+ },
+ {
+  "brand": "迈凯伦",
+  "id": "car3335",
+  "name": "McLaren VGT (Gr.1)",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car3335.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr117.png"
+ },
+ {
+  "brand": "梅赛德斯奔驰",
+  "id": "car575",
+  "name": "190 E 2.5-16 Evolution II '91",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car575.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr22.png"
+ },
+ {
+  "brand": "梅赛德斯奔驰",
+  "id": "car3441",
+  "name": "300 SL (W194) '52",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car3441.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr22.png"
+ },
+ {
+  "brand": "梅赛德斯奔驰",
+  "id": "car387",
+  "name": "300 SL Coupé '54",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car387.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr22.png"
+ },
+ {
+  "brand": "梅赛德斯奔驰",
+  "id": "car3397",
+  "name": "CLK-LM '98",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car3397.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr22.png"
+ },
+ {
+  "brand": "梅赛德斯奔驰",
+  "id": "car3428",
+  "name": "S Barker Tourer '29",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car3428.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr22.png"
+ },
+ {
+  "brand": "梅赛德斯奔驰",
+  "id": "car1528",
+  "name": "SLR McLaren '09",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car1528.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr22.png"
+ },
+ {
+  "brand": "梅赛德斯奔驰",
+  "id": "car998",
+  "name": "Sauber Mercedes C9 '89",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car998.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr22.png"
+ },
+ {
+  "brand": "梅赛德斯奔驰",
+  "id": "car3556",
+  "name": "Unimog Type 411 '62",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car3556.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr22.png"
+ },
+ {
+  "brand": "梅赛德斯奔驰",
+  "id": "car3557",
+  "name": "W 196 R '55",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car3557.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr22.png"
+ },
+ {
+  "brand": "Mine's",
+  "id": "car1427",
+  "name": "BNR34 GT-R N1 base",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car1427.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr163.png"
+ },
+ {
+  "brand": "MINI",
+  "id": "car2109",
+  "name": "MINI Clubman VGT",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car2109.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr51.png"
+ },
+ {
+  "brand": "MINI",
+  "id": "car1370",
+  "name": "MINI Cooper S '05",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car1370.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr51.png"
+ },
+ {
+  "brand": "MINI",
+  "id": "car3356",
+  "name": "Mini-Cooper 'S' '65",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car3356.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr51.png"
+ },
+ {
+  "brand": "三菱",
+  "id": "car2095",
+  "name": "Concept XR-PHEV EVOLUTION VGT",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car2095.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr25.png"
+ },
+ {
+  "brand": "三菱",
+  "id": "car51",
+  "name": "FTO GP Version R '97",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car51.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr25.png"
+ },
+ {
+  "brand": "三菱",
+  "id": "car3384",
+  "name": "GTO Twin Turbo '91",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car3384.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr25.png"
+ },
+ {
+  "brand": "三菱",
+  "id": "car2150",
+  "name": "Lancer Evolution Final '15",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car2150.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr25.png"
+ },
+ {
+  "brand": "三菱",
+  "id": "car2185",
+  "name": "Lancer Evolution Final Gr.3",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car2185.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr25.png"
+ },
+ {
+  "brand": "三菱",
+  "id": "car3258",
+  "name": "Lancer Evolution Final Gr.4",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car3258.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr25.png"
+ },
+ {
+  "brand": "三菱",
+  "id": "car3230",
+  "name": "Lancer Evolution Final Gr.B Rally Car",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car3230.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr25.png"
+ },
+ {
+  "brand": "三菱",
+  "id": "car3301",
+  "name": "Lancer Evolution Final Gr.B Road Car",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car3301.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr25.png"
+ },
+ {
+  "brand": "三菱",
+  "id": "car931",
+  "name": "Lancer Evolution III GSR '95",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car931.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr25.png"
+ },
+ {
+  "brand": "三菱",
+  "id": "car301",
+  "name": "Lancer Evolution IV GSR '96",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car301.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr25.png"
+ },
+ {
+  "brand": "三菱",
+  "id": "car3424",
+  "name": "Lancer Evolution IX MR GSR '06",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car3424.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr25.png"
+ },
+ {
+  "brand": "三菱",
+  "id": "car211",
+  "name": "Lancer Evolution V GSR '98",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car211.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr25.png"
+ },
+ {
+  "brand": "三菱",
+  "id": "car1508",
+  "name": "Lancer Evolution VI GSR T.M. SCP '99",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car1508.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr25.png"
+ },
+ {
+  "brand": "三菱",
+  "id": "car799",
+  "name": "Lancer Evolution VIII MR GSR '04",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car799.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr25.png"
+ },
+ {
+  "brand": "Nismo",
+  "id": "car3520",
+  "name": "400R '95",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car3520.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr155.png"
+ },
+ {
+  "brand": "Nismo",
+  "id": "car3569",
+  "name": "R34 GT-R Z-tune '05",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car3569.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr155.png"
+ },
+ {
+  "brand": "日产",
+  "id": "car24",
+  "name": "180SX Type X '96",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car24.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr28.png"
+ },
+ {
+  "brand": "日产",
+  "id": "car48",
+  "name": "Fairlady 240ZG (HS30) '71",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car48.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr28.png"
+ },
+ {
+  "brand": "日产",
+  "id": "car1458",
+  "name": "Fairlady Z (Z34) '08",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car1458.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr28.png"
+ },
+ {
+  "brand": "日产",
+  "id": "car709",
+  "name": "Fairlady Z 300ZX TT 2seater '89",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car709.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr28.png"
+ },
+ {
+  "brand": "日产",
+  "id": "car3429",
+  "name": "Fairlady Z 432 '69",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car3429.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr28.png"
+ },
+ {
+  "brand": "日产",
+  "id": "car1384",
+  "name": "Fairlady Z Version S (Z33) '07",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car1384.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr28.png"
+ },
+ {
+  "brand": "日产",
+  "id": "car2167",
+  "name": "GT-R '17",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car2167.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr28.png"
+ },
+ {
+  "brand": "日产",
+  "id": "car1466",
+  "name": "GT-R GT500 '08",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car1466.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr28.png"
+ },
+ {
+  "brand": "日产",
+  "id": "car485",
+  "name": "GT-R GT500 '99",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car485.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr28.png"
+ },
+ {
+  "brand": "日产",
+  "id": "car2161",
+  "name": "GT-R Gr.4",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car2161.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr28.png"
+ },
+ {
+  "brand": "日产",
+  "id": "car3241",
+  "name": "GT-R Gr.B Rally Car",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car3241.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr28.png"
+ },
+ {
+  "brand": "日产",
+  "id": "car2127",
+  "name": "GT-R LM NISMO '15",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car2127.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr28.png"
+ },
+ {
+  "brand": "日产",
+  "id": "car3345",
+  "name": "GT-R NISMO '17",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car3345.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr28.png"
+ },
+ {
+  "brand": "日产",
+  "id": "car1905",
+  "name": "GT-R NISMO GT3 '13",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car1905.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr28.png"
+ },
+ {
+  "brand": "日产",
+  "id": "car3450",
+  "name": "GT-R NISMO GT3 '18",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car3450.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr28.png"
+ },
+ {
+  "brand": "日产",
+  "id": "car3350",
+  "name": "GT-R NISMO GT500 '16",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car3350.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr28.png"
+ },
+ {
+  "brand": "日产",
+  "id": "car3553",
+  "name": "GT-R Premium edition T-spec '24",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car3553.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr28.png"
+ },
+ {
+  "brand": "日产",
+  "id": "car3225",
+  "name": "GT-R Safety Car",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car3225.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr28.png"
+ },
+ {
+  "brand": "日产",
+  "id": "car2142",
+  "name": "NISSAN CONCEPT 2020 VGT",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car2142.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr28.png"
+ },
+ {
+  "brand": "日产",
+  "id": "car3568",
+  "name": "Qashqai Tekna e-Power '22",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car3568.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr28.png"
+ },
+ {
+  "brand": "日产",
+  "id": "car3524",
+  "name": "R32 GT-R NISMO '90",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car3524.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr28.png"
+ },
+ {
+  "brand": "日产",
+  "id": "car773",
+  "name": "R32 GT-R V･spec II '94",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car773.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr28.png"
+ },
+ {
+  "brand": "日产",
+  "id": "car489",
+  "name": "R33 GT-R V･spec '97",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car489.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr28.png"
+ },
+ {
+  "brand": "日产",
+  "id": "car210",
+  "name": "R34 GT-R V･spec II Nür '02",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car210.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr28.png"
+ },
+ {
+  "brand": "日产",
+  "id": "car954",
+  "name": "R92CP '92",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car954.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr28.png"
+ },
+ {
+  "brand": "日产",
+  "id": "car104",
+  "name": "Sileighty '98",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car104.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr28.png"
+ },
+ {
+  "brand": "日产",
+  "id": "car78",
+  "name": "Silvia K's Aero (S14) '96",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car78.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr28.png"
+ },
+ {
+  "brand": "日产",
+  "id": "car1461",
+  "name": "Silvia K's Dia Selection (S13) '90",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car1461.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr28.png"
+ },
+ {
+  "brand": "日产",
+  "id": "car3513",
+  "name": "Silvia K's Type S (S14) '94",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car3513.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr28.png"
+ },
+ {
+  "brand": "日产",
+  "id": "car919",
+  "name": "Silvia Q's (S13) '88",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car919.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr28.png"
+ },
+ {
+  "brand": "日产",
+  "id": "car1448",
+  "name": "Silvia spec-R Aero (S15) '02",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car1448.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr28.png"
+ },
+ {
+  "brand": "日产",
+  "id": "car3477",
+  "name": "Silvia spec-R Aero (S15) Touring Car",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car3477.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr28.png"
+ },
+ {
+  "brand": "日产",
+  "id": "car836",
+  "name": "Skyline 2000GT-R (KPGC110) '73",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car836.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr28.png"
+ },
+ {
+  "brand": "日产",
+  "id": "car102",
+  "name": "Skyline GTS-R (R31) '87",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car102.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr28.png"
+ },
+ {
+  "brand": "日产",
+  "id": "car837",
+  "name": "Skyline Hard Top 2000GT-R (KPGC10) '70",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car837.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr28.png"
+ },
+ {
+  "brand": "日产",
+  "id": "car3493",
+  "name": "Skyline Super Silhouette '84",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car3493.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr28.png"
+ },
+ {
+  "brand": "日产",
+  "id": "car3504",
+  "name": "Z Performance '23",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car3504.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr28.png"
+ },
+ {
+  "brand": "Opel",
+  "id": "car3577",
+  "name": "Opel Corsa GSE VGT",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car3577.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr161.png"
+ },
+ {
+  "brand": "Pagani",
+  "id": "car2050",
+  "name": "Huayra '13",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car2050.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr30.png"
+ },
+ {
+  "brand": "Pagani",
+  "id": "car1536",
+  "name": "Zonda R '09",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car1536.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr30.png"
+ },
+ {
+  "brand": "标致",
+  "id": "car3574",
+  "name": "2008 Allure '21",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car3574.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr32.png"
+ },
+ {
+  "brand": "标致",
+  "id": "car3564",
+  "name": "205 GTI '88",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car3564.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr32.png"
+ },
+ {
+  "brand": "标致",
+  "id": "car105",
+  "name": "205 Turbo 16 Evolution 2 '86",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car105.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr32.png"
+ },
+ {
+  "brand": "标致",
+  "id": "car3215",
+  "name": "208 GTi by Peugeot Sport '14",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car3215.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr32.png"
+ },
+ {
+  "brand": "标致",
+  "id": "car1646",
+  "name": "908 HDi FAP '10",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car1646.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr32.png"
+ },
+ {
+  "brand": "标致",
+  "id": "car3606",
+  "name": "9X8 '25",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car3606.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr32.png"
+ },
+ {
+  "brand": "标致",
+  "id": "car3332",
+  "name": "L500R HYbrid VGT 2017",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car3332.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr32.png"
+ },
+ {
+  "brand": "标致",
+  "id": "car3333",
+  "name": "L750R HYbrid VGT 2017",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car3333.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr32.png"
+ },
+ {
+  "brand": "标致",
+  "id": "car2113",
+  "name": "PEUGEOT VGT",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car2113.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr32.png"
+ },
+ {
+  "brand": "标致",
+  "id": "car3183",
+  "name": "PEUGEOT VGT (Gr.3)",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car3183.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr32.png"
+ },
+ {
+  "brand": "标致",
+  "id": "car2176",
+  "name": "RCZ GT Line '15",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car2176.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr32.png"
+ },
+ {
+  "brand": "标致",
+  "id": "car3238",
+  "name": "RCZ Gr.3",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car3238.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr32.png"
+ },
+ {
+  "brand": "标致",
+  "id": "car3303",
+  "name": "RCZ Gr.3 Road Car",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car3303.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr32.png"
+ },
+ {
+  "brand": "标致",
+  "id": "car3259",
+  "name": "RCZ Gr.4",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car3259.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr32.png"
+ },
+ {
+  "brand": "标致",
+  "id": "car3242",
+  "name": "RCZ Gr.B Rally Car",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car3242.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr32.png"
+ },
+ {
+  "brand": "Plymouth",
+  "id": "car665",
+  "name": "Superbird '70",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car665.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr55.png"
+ },
+ {
+  "brand": "Plymouth",
+  "id": "car1900",
+  "name": "XNR Ghia Roadster '60",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car1900.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr55.png"
+ },
+ {
+  "brand": "Polestar",
+  "id": "car3586",
+  "name": "Polestar 5 Performance '26",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car3586.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr162.png"
+ },
+ {
+  "brand": "Pontiac",
+  "id": "car1985",
+  "name": "Firebird Trans Am '78",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car1985.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr52.png"
+ },
+ {
+  "brand": "Pontiac",
+  "id": "car3462",
+  "name": "GTO 'The Judge' '69",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car3462.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr52.png"
+ },
+ {
+  "brand": "Porsche",
+  "id": "car3375",
+  "name": "356 A/1500 GS Carrera '56",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car3375.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr136.png"
+ },
+ {
+  "brand": "Porsche",
+  "id": "car3365",
+  "name": "356 A/1500 GS GT Carrera Speedster '56",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car3365.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr136.png"
+ },
+ {
+  "brand": "Porsche",
+  "id": "car3509",
+  "name": "911 Carrera RS (901) '73",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car3509.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr136.png"
+ },
+ {
+  "brand": "Porsche",
+  "id": "car3431",
+  "name": "911 Carrera RS (964) '92",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car3431.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr136.png"
+ },
+ {
+  "brand": "Porsche",
+  "id": "car3439",
+  "name": "911 Carrera RS (993) '95",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car3439.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr136.png"
+ },
+ {
+  "brand": "Porsche",
+  "id": "car3404",
+  "name": "911 Carrera RS CS (993) '95",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car3404.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr136.png"
+ },
+ {
+  "brand": "Porsche",
+  "id": "car3400",
+  "name": "911 GT1 Strassenversion '97",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car3400.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr136.png"
+ },
+ {
+  "brand": "Porsche",
+  "id": "car3358",
+  "name": "911 GT3 (996) '01",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car3358.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr136.png"
+ },
+ {
+  "brand": "Porsche",
+  "id": "car3359",
+  "name": "911 GT3 (997) '09",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car3359.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr136.png"
+ },
+ {
+  "brand": "Porsche",
+  "id": "car3600",
+  "name": "911 GT3 R (992) '22",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car3600.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr136.png"
+ },
+ {
+  "brand": "Porsche",
+  "id": "car3268",
+  "name": "911 GT3 RS (991) '16",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car3268.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr136.png"
+ },
+ {
+  "brand": "Porsche",
+  "id": "car3539",
+  "name": "911 GT3 RS (992) '22",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car3539.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr136.png"
+ },
+ {
+  "brand": "Porsche",
+  "id": "car3311",
+  "name": "911 RSR (991) '17",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car3311.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr136.png"
+ },
+ {
+  "brand": "Porsche",
+  "id": "car3385",
+  "name": "911 Turbo (930) '81",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car3385.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr136.png"
+ },
+ {
+  "brand": "Porsche",
+  "id": "car3558",
+  "name": "911 Turbo S (992) '20",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car3558.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr136.png"
+ },
+ {
+  "brand": "Porsche",
+  "id": "car3440",
+  "name": "911 Turbo S Leichtbau (964) '93",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car3440.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr136.png"
+ },
+ {
+  "brand": "Porsche",
+  "id": "car3608",
+  "name": "911 Turbo S Safety Car (992)",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car3608.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr136.png"
+ },
+ {
+  "brand": "Porsche",
+  "id": "car3452",
+  "name": "917 LIVING LEGEND",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car3452.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr136.png"
+ },
+ {
+  "brand": "Porsche",
+  "id": "car3410",
+  "name": "917K '70",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car3410.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr136.png"
+ },
+ {
+  "brand": "Porsche",
+  "id": "car3459",
+  "name": "918 Spyder '13",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car3459.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr136.png"
+ },
+ {
+  "brand": "Porsche",
+  "id": "car3313",
+  "name": "919 Hybrid '16",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car3313.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr136.png"
+ },
+ {
+  "brand": "Porsche",
+  "id": "car3519",
+  "name": "959 '87",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car3519.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr136.png"
+ },
+ {
+  "brand": "Porsche",
+  "id": "car3373",
+  "name": "962 C '88",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car3373.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr136.png"
+ },
+ {
+  "brand": "Porsche",
+  "id": "car3607",
+  "name": "963 '24",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car3607.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr136.png"
+ },
+ {
+  "brand": "Porsche",
+  "id": "car3393",
+  "name": "Carrera GT '04",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car3393.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr136.png"
+ },
+ {
+  "brand": "Porsche",
+  "id": "car3490",
+  "name": "Carrera GTS (904) '64",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car3490.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr136.png"
+ },
+ {
+  "brand": "Porsche",
+  "id": "car3488",
+  "name": "Cayman GT4 '16",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car3488.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr136.png"
+ },
+ {
+  "brand": "Porsche",
+  "id": "car3310",
+  "name": "Cayman GT4 Clubsport '16",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car3310.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr136.png"
+ },
+ {
+  "brand": "Porsche",
+  "id": "car3560",
+  "name": "Mission X '23",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car3560.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr136.png"
+ },
+ {
+  "brand": "Porsche",
+  "id": "car3478",
+  "name": "Porsche VGT",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car3478.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr136.png"
+ },
+ {
+  "brand": "Porsche",
+  "id": "car3507",
+  "name": "Porsche VGT Spyder",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car3507.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr136.png"
+ },
+ {
+  "brand": "Porsche",
+  "id": "car3446",
+  "name": "Spyder type 550/1500RS '55",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car3446.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr136.png"
+ },
+ {
+  "brand": "Porsche",
+  "id": "car3390",
+  "name": "Taycan Turbo S '19",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car3390.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr136.png"
+ },
+ {
+  "brand": "Radical",
+  "id": "car3369",
+  "name": "SR3 SL '13",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car3369.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr141.png"
+ },
+ {
+  "brand": "Roadster Shop",
+  "id": "car3426",
+  "name": "Roadster Shop Rampage",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car3426.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr151.png"
+ },
+ {
+  "brand": "RE Amemiya",
+  "id": "car1431",
+  "name": "RE Amemiya FD3S RX-7",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car1431.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr87.png"
+ },
+ {
+  "brand": "雷诺",
+  "id": "car729",
+  "name": "Avantime 3.0 V6 24V '02",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car729.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr34.png"
+ },
+ {
+  "brand": "雷诺",
+  "id": "car3601",
+  "name": "Captur S Edition '21",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car3601.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr34.png"
+ },
+ {
+  "brand": "雷诺",
+  "id": "car3220",
+  "name": "Clio R.S. 220 Trophy '15",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car3220.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr34.png"
+ },
+ {
+  "brand": "雷诺",
+  "id": "car3353",
+  "name": "Clio R.S. 220 Trophy '16",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car3353.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr34.png"
+ },
+ {
+  "brand": "雷诺",
+  "id": "car334",
+  "name": "Clio V6 24V '00",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car334.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr34.png"
+ },
+ {
+  "brand": "雷诺",
+  "id": "car3591",
+  "name": "Espace F1 '95",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car3591.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr34.png"
+ },
+ {
+  "brand": "雷诺",
+  "id": "car3567",
+  "name": "Kangoo 1.4 '01",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car3567.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr34.png"
+ },
+ {
+  "brand": "雷诺",
+  "id": "car3260",
+  "name": "Mégane Gr.4",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car3260.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr34.png"
+ },
+ {
+  "brand": "雷诺",
+  "id": "car1987",
+  "name": "Mégane R.S. Trophy '11",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car1987.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr34.png"
+ },
+ {
+  "brand": "雷诺",
+  "id": "car3407",
+  "name": "Mégane R.S. Trophy Safety Car",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car3407.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr34.png"
+ },
+ {
+  "brand": "雷诺",
+  "id": "car1563",
+  "name": "Mégane Trophy '11",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car1563.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr34.png"
+ },
+ {
+  "brand": "雷诺",
+  "id": "car3216",
+  "name": "R.S.01 '16",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car3216.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr34.png"
+ },
+ {
+  "brand": "雷诺",
+  "id": "car2188",
+  "name": "R.S.01 GT3 '16",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car2188.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr34.png"
+ },
+ {
+  "brand": "雷诺",
+  "id": "car3547",
+  "name": "R4 GTL '85",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car3547.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr34.png"
+ },
+ {
+  "brand": "雷诺",
+  "id": "car173",
+  "name": "R5 Turbo '80",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car173.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr34.png"
+ },
+ {
+  "brand": "雷诺",
+  "id": "car1986",
+  "name": "R8 Gordini '66",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car1986.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr34.png"
+ },
+ {
+  "brand": "雷诺",
+  "id": "car3603",
+  "name": "Twingo '93",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car3603.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr34.png"
+ },
+ {
+  "brand": "RUF",
+  "id": "car3398",
+  "name": "CTR3 '07",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car3398.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr35.png"
+ },
+ {
+  "brand": "RUF",
+  "id": "car3468",
+  "name": "RGT 4.2 '16",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car3468.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr35.png"
+ },
+ {
+  "brand": "Shelby",
+  "id": "car315",
+  "name": "Cobra 427 '66",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car315.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr36.png"
+ },
+ {
+  "brand": "Shelby",
+  "id": "car1926",
+  "name": "Cobra Daytona Coupe '64",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car1926.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr36.png"
+ },
+ {
+  "brand": "Shelby",
+  "id": "car1925",
+  "name": "G.T.350 '65",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car1925.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr36.png"
+ },
+ {
+  "brand": "斯巴鲁",
+  "id": "car3339",
+  "name": "BRZ Drift Car '17",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car3339.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr38.png"
+ },
+ {
+  "brand": "斯巴鲁",
+  "id": "car3474",
+  "name": "BRZ GT300 '21",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car3474.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr38.png"
+ },
+ {
+  "brand": "斯巴鲁",
+  "id": "car3354",
+  "name": "BRZ S '15",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car3354.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr38.png"
+ },
+ {
+  "brand": "斯巴鲁",
+  "id": "car3506",
+  "name": "BRZ S '21",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car3506.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr38.png"
+ },
+ {
+  "brand": "斯巴鲁",
+  "id": "car3413",
+  "name": "BRZ STI Sport '18",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car3413.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr38.png"
+ },
+ {
+  "brand": "斯巴鲁",
+  "id": "car451",
+  "name": "Impreza 22B-STi '98",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car451.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr38.png"
+ },
+ {
+  "brand": "斯巴鲁",
+  "id": "car379",
+  "name": "Impreza Coupe WRX Type R STi Ver.VI '99",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car379.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr38.png"
+ },
+ {
+  "brand": "斯巴鲁",
+  "id": "car3550",
+  "name": "Impreza Rally Car '98",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car3550.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr38.png"
+ },
+ {
+  "brand": "斯巴鲁",
+  "id": "car3432",
+  "name": "Impreza Sedan WRX STi '04",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car3432.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr38.png"
+ },
+ {
+  "brand": "斯巴鲁",
+  "id": "car2099",
+  "name": "VIZIV GT VGT",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car2099.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr38.png"
+ },
+ {
+  "brand": "斯巴鲁",
+  "id": "car2186",
+  "name": "WRX Gr.3",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car2186.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr38.png"
+ },
+ {
+  "brand": "斯巴鲁",
+  "id": "car3261",
+  "name": "WRX Gr.4",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car3261.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr38.png"
+ },
+ {
+  "brand": "斯巴鲁",
+  "id": "car3232",
+  "name": "WRX Gr.B Rally Car",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car3232.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr38.png"
+ },
+ {
+  "brand": "斯巴鲁",
+  "id": "car3304",
+  "name": "WRX Gr.B Road Car",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car3304.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr38.png"
+ },
+ {
+  "brand": "斯巴鲁",
+  "id": "car3297",
+  "name": "WRX STI Isle of Man '16",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car3297.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr38.png"
+ },
+ {
+  "brand": "斯巴鲁",
+  "id": "car2153",
+  "name": "WRX STI Type S '14",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car2153.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr38.png"
+ },
+ {
+  "brand": "超级方程式",
+  "id": "car3372",
+  "name": "SF19 Super Formula / Honda '19",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car3372.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr143.png"
+ },
+ {
+  "brand": "超级方程式",
+  "id": "car3371",
+  "name": "SF19 Super Formula / Toyota '19",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car3371.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr143.png"
+ },
+ {
+  "brand": "超级方程式",
+  "id": "car3528",
+  "name": "SF23 Super Formula / Honda '23",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car3528.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr143.png"
+ },
+ {
+  "brand": "超级方程式",
+  "id": "car3529",
+  "name": "SF23 Super Formula / Toyota '23",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car3529.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr143.png"
+ },
+ {
+  "brand": "铃木",
+  "id": "car779",
+  "name": "Cappuccino '91",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car779.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr39.png"
+ },
+ {
+  "brand": "铃木",
+  "id": "car3571",
+  "name": "Carry KC '12",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car3571.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr39.png"
+ },
+ {
+  "brand": "铃木",
+  "id": "car3559",
+  "name": "Jimny Sierra JC '18",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car3559.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr39.png"
+ },
+ {
+  "brand": "铃木",
+  "id": "car3545",
+  "name": "Jimny XC '18",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car3545.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr39.png"
+ },
+ {
+  "brand": "铃木",
+  "id": "car3476",
+  "name": "SUZUKI VGT",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car3476.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr39.png"
+ },
+ {
+  "brand": "铃木",
+  "id": "car3508",
+  "name": "SUZUKI VGT (Gr.3)",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car3508.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr39.png"
+ },
+ {
+  "brand": "铃木",
+  "id": "car1385",
+  "name": "Swift Sport '07",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car1385.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr39.png"
+ },
+ {
+  "brand": "铃木",
+  "id": "car3456",
+  "name": "Swift Sport '17",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car3456.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr39.png"
+ },
+ {
+  "brand": "铃木",
+  "id": "car3480",
+  "name": "Swift Sport Gr.4",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car3480.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr39.png"
+ },
+ {
+  "brand": "铃木",
+  "id": "car808",
+  "name": "V6 Escudo Pikes Peak Special '98",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car808.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr39.png"
+ },
+ {
+  "brand": "Tesla",
+  "id": "car3540",
+  "name": "Model 3 Performance '23",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car3540.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr119.png"
+ },
+ {
+  "brand": "Tesla",
+  "id": "car1896",
+  "name": "Model S Signature Performance '12",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car1896.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr119.png"
+ },
+ {
+  "brand": "丰田",
+  "id": "car604",
+  "name": "2000GT '67",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car604.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr43.png"
+ },
+ {
+  "brand": "丰田",
+  "id": "car3222",
+  "name": "86 GRMN '16",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car3222.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr43.png"
+ },
+ {
+  "brand": "丰田",
+  "id": "car2154",
+  "name": "86 GT '15",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car2154.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr43.png"
+ },
+ {
+  "brand": "丰田",
+  "id": "car3295",
+  "name": "86 GT\"Limited\" '16",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car3295.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr43.png"
+ },
+ {
+  "brand": "丰田",
+  "id": "car3262",
+  "name": "86 Gr.4",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car3262.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr43.png"
+ },
+ {
+  "brand": "丰田",
+  "id": "car3265",
+  "name": "86 Gr.B Rally Car",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car3265.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr43.png"
+ },
+ {
+  "brand": "丰田",
+  "id": "car3494",
+  "name": "Alphard Executive Lounge '18",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car3494.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr43.png"
+ },
+ {
+  "brand": "丰田",
+  "id": "car2026",
+  "name": "Aqua S '11",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car2026.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr43.png"
+ },
+ {
+  "brand": "丰田",
+  "id": "car3565",
+  "name": "C-HR S '18",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car3565.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr43.png"
+ },
+ {
+  "brand": "丰田",
+  "id": "car3471",
+  "name": "Celica GT-FOUR (ST205) '94",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car3471.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr43.png"
+ },
+ {
+  "brand": "丰田",
+  "id": "car781",
+  "name": "Celica GT-FOUR Rally Car (ST205) '95",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car781.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr43.png"
+ },
+ {
+  "brand": "丰田",
+  "id": "car3612",
+  "name": "Chaser Tourer V '97",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car3612.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr43.png"
+ },
+ {
+  "brand": "丰田",
+  "id": "car63",
+  "name": "Corolla Levin 1600GT APEX (AE86) '83",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car63.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr43.png"
+ },
+ {
+  "brand": "丰田",
+  "id": "car3401",
+  "name": "Crown Athlete G '13",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car3401.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr43.png"
+ },
+ {
+  "brand": "丰田",
+  "id": "car3408",
+  "name": "Crown Athlete G Safety Car",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car3408.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr43.png"
+ },
+ {
+  "brand": "丰田",
+  "id": "car2080",
+  "name": "FT-1",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car2080.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr43.png"
+ },
+ {
+  "brand": "丰田",
+  "id": "car2106",
+  "name": "FT-1 VGT",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car2106.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr43.png"
+ },
+ {
+  "brand": "丰田",
+  "id": "car2187",
+  "name": "FT-1 VGT (Gr.3)",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car2187.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr43.png"
+ },
+ {
+  "brand": "丰田",
+  "id": "car3535",
+  "name": "GR Corolla MORIZO Edition '22",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car3535.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr43.png"
+ },
+ {
+  "brand": "丰田",
+  "id": "car3367",
+  "name": "GR Supra RZ '19",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car3367.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr43.png"
+ },
+ {
+  "brand": "丰田",
+  "id": "car3418",
+  "name": "GR Supra RZ '20",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car3418.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr43.png"
+ },
+ {
+  "brand": "丰田",
+  "id": "car3399",
+  "name": "GR Supra Race Car '19",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car3399.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr43.png"
+ },
+ {
+  "brand": "丰田",
+  "id": "car3352",
+  "name": "GR Supra Racing Concept '18",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car3352.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr43.png"
+ },
+ {
+  "brand": "丰田",
+  "id": "car3451",
+  "name": "GR Yaris RZ \"High performance\" '20",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car3451.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr43.png"
+ },
+ {
+  "brand": "丰田",
+  "id": "car3499",
+  "name": "GR010 HYBRID '21",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car3499.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr43.png"
+ },
+ {
+  "brand": "丰田",
+  "id": "car3481",
+  "name": "GR86 RZ '21",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car3481.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr43.png"
+ },
+ {
+  "brand": "丰田",
+  "id": "car116",
+  "name": "GT-One (TS020) '99",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car116.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr43.png"
+ },
+ {
+  "brand": "丰田",
+  "id": "car3554",
+  "name": "Hiace Van DX '16",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car3554.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr43.png"
+ },
+ {
+  "brand": "丰田",
+  "id": "car3534",
+  "name": "Himedic '21",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car3534.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr43.png"
+ },
+ {
+  "brand": "丰田",
+  "id": "car3584",
+  "name": "Land Cruiser FJ40V '74",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car3584.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr43.png"
+ },
+ {
+  "brand": "丰田",
+  "id": "car207",
+  "name": "MR2 GT-S '97",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car207.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr43.png"
+ },
+ {
+  "brand": "丰田",
+  "id": "car3611",
+  "name": "Mark II Tourer V '97",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car3611.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr43.png"
+ },
+ {
+  "brand": "丰田",
+  "id": "car1537",
+  "name": "Prius G '09",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car1537.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr43.png"
+ },
+ {
+  "brand": "丰田",
+  "id": "car3583",
+  "name": "RAV4 Adventure '20",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car3583.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr43.png"
+ },
+ {
+  "brand": "丰田",
+  "id": "car2144",
+  "name": "S-FR '15",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car2144.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr43.png"
+ },
+ {
+  "brand": "丰田",
+  "id": "car2178",
+  "name": "S-FR Racing Concept '16",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car2178.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr43.png"
+ },
+ {
+  "brand": "丰田",
+  "id": "car1044",
+  "name": "Sports 800 '65",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car1044.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr43.png"
+ },
+ {
+  "brand": "丰田",
+  "id": "car810",
+  "name": "Sprinter Trueno 1600GT APEX (AE86) '83",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car810.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr43.png"
+ },
+ {
+  "brand": "丰田",
+  "id": "car345",
+  "name": "Sprinter Trueno 1600GT APEX (S.Shigeno Version)",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car345.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr43.png"
+ },
+ {
+  "brand": "丰田",
+  "id": "car843",
+  "name": "Supra 3.0GT Turbo A '88",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car843.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr43.png"
+ },
+ {
+  "brand": "丰田",
+  "id": "car1470",
+  "name": "Supra GT500 '97",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car1470.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr43.png"
+ },
+ {
+  "brand": "丰田",
+  "id": "car82",
+  "name": "Supra RZ '97",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car82.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr43.png"
+ },
+ {
+  "brand": "丰田",
+  "id": "car2101",
+  "name": "TS030 Hybrid '12",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car2101.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr43.png"
+ },
+ {
+  "brand": "丰田",
+  "id": "car3312",
+  "name": "TS050 - Hybrid '16",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car3312.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr43.png"
+ },
+ {
+  "brand": "丰田",
+  "id": "car3368",
+  "name": "Tundra TRD Pro '19",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car3368.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr43.png"
+ },
+ {
+  "brand": "TVR",
+  "id": "car187",
+  "name": "Tuscan Speed 6 '00",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car187.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr44.png"
+ },
+ {
+  "brand": "大众",
+  "id": "car3305",
+  "name": "Beetle Gr.3",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car3305.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr46.png"
+ },
+ {
+  "brand": "大众",
+  "id": "car2098",
+  "name": "GTI Roadster VGT",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car2098.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr46.png"
+ },
+ {
+  "brand": "大众",
+  "id": "car2124",
+  "name": "GTI Supersport VGT",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car2124.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr46.png"
+ },
+ {
+  "brand": "大众",
+  "id": "car3403",
+  "name": "Golf I GTI '83",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car3403.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr46.png"
+ },
+ {
+  "brand": "大众",
+  "id": "car2141",
+  "name": "Golf VII GTI '14",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car2141.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr46.png"
+ },
+ {
+  "brand": "大众",
+  "id": "car3511",
+  "name": "ID.R '19",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car3511.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr46.png"
+ },
+ {
+  "brand": "大众",
+  "id": "car2155",
+  "name": "Polo GTI '14",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car2155.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr46.png"
+ },
+ {
+  "brand": "大众",
+  "id": "car1671",
+  "name": "Sambabus Typ 2 '62",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car1671.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr46.png"
+ },
+ {
+  "brand": "大众",
+  "id": "car3231",
+  "name": "Scirocco Gr.4",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car3231.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr46.png"
+ },
+ {
+  "brand": "大众",
+  "id": "car1773",
+  "name": "Scirocco R '10",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car1773.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr46.png"
+ },
+ {
+  "brand": "大众",
+  "id": "car1778",
+  "name": "Volkswagen 1200 '66",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car1778.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr46.png"
+ },
+ {
+  "brand": "大众",
+  "id": "car2192",
+  "name": "Volkswagen GTI VGT (Gr.3)",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car2192.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr46.png"
+ },
+ {
+  "brand": "Volvo",
+  "id": "car3549",
+  "name": "240 SE Estate '93",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car3549.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr69.png"
+ },
+ {
+  "brand": "Volvo",
+  "id": "car3482",
+  "name": "V40 T5 R-Design '13",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car3482.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr69.png"
+ },
+ {
+  "brand": "Wicked Fabrication",
+  "id": "car3423",
+  "name": "Wicked Fabrication GT 51",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car3423.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr150.png"
+ },
+ {
+  "brand": "Zagato",
+  "id": "car2122",
+  "name": "IsoRivolta Zagato VGT",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car2122.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr134.png"
+ },
+ {
+  "brand": "Škoda",
+  "id": "car3542",
+  "name": "Škoda VGT",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car3542.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr159.png"
+ },
+ {
+  "brand": "仰望",
+  "id": "car3602",
+  "name": "U9 '24",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car3602.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr165.png"
+ },
+ {
+  "brand": "小米",
+  "id": "car3599",
+  "name": "SU7 Ultra '25",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car3599.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr164.png"
+ },
+ {
+  "brand": "小米",
+  "id": "car3656",
+  "name": "Xiaomi VGT",
+  "thumb": "https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car3656.png",
+  "logo": "https://www.gran-turismo.com/common/dist/gt7/carlist/tuner_logos/light/tnr164.png"
+ }
+]
