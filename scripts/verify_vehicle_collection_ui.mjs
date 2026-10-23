@@ -123,6 +123,21 @@ const collection = await evaluate(
 )
 const keyboard = { brand, collection }
 
+await navigate(`${base}?lang=en&car=0x0000D1BB&tab=vehicleCollection`)
+const english = await evaluate(`(() => ({
+  title: document.querySelector('.dialog h3')?.textContent?.trim() || '',
+  panel: document.querySelector('.text-panel')?.innerText || '',
+}))()`)
+
+await navigate(`${base}?lang=en&car=0x00009D5B&tab=vehicleCollection`)
+const missingCollection = await evaluate(`(() => ({
+  title: document.querySelector('.dialog h3')?.textContent?.trim() || '',
+  panel: document.querySelector('.text-panel')?.innerText || '',
+  muted: [...document.querySelectorAll('.car-tabs button')]
+    .find((node) => node.textContent.includes('Car Collection'))
+    ?.classList.contains('muted') || false,
+}))()`)
+
 await navigate(`${base}?lang=both&car=0x00008200&tab=vehicleCollection`)
 const peugeot = await evaluate(`(() => ({
   title: document.querySelector('.dialog h3')?.textContent?.trim() || '',
@@ -167,6 +182,13 @@ const checks = {
     desktop.panel.includes('Long') &&
     desktop.panel.includes('0x0000CF1E') &&
     desktop.panel.includes('0x0000CF1F'),
+  englishHeadings: english.panel.includes('Catch copy') &&
+    english.panel.includes('Full description') &&
+    !english.panel.includes('一句话简介') &&
+    !english.panel.includes('车辆收藏正文'),
+  missingCollectionState: missingCollection.title.includes('2002 Turbo') &&
+    missingCollection.muted &&
+    missingCollection.panel.includes('No Car Collection entry is available'),
   keyboardTabs: keyboard.brand.includes('品牌购物') &&
     keyboard.collection.includes('车辆收藏'),
   peugeotCollection: peugeot.title.includes('205 Turbo 16 Evolution 2') &&
@@ -180,7 +202,16 @@ const checks = {
   mobileCollection: mobileBefore.tabs.length === 5 &&
     mobileBefore.panel.includes('智能手机巨头'),
 }
-const report = { desktop, keyboard, peugeot, mobileBefore, mobileAfter, checks }
+const report = {
+  desktop,
+  english,
+  missingCollection,
+  keyboard,
+  peugeot,
+  mobileBefore,
+  mobileAfter,
+  checks,
+}
 await fs.writeFile(
   path.join(outDir, 'vehicle-collection-ui.json'),
   JSON.stringify(report, null, 2),

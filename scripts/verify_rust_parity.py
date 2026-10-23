@@ -13,6 +13,11 @@ ROOT = Path(r"C:\gt7\gt7")
 REPORTS = ROOT / r"_re\reports"
 SITE_DATA = ROOT / r"_re\site\public\data\cars.json"
 
+# The native pipeline intentionally covers the three DMSB-backed dealer
+# description sources. Car Collection is a later site-only RT2 join and has
+# its own coverage checks in verify_site_data.py.
+RUST_TEXT_CATEGORIES = {"brandCentral", "usedCar", "collection"}
+
 
 def load(path: Path):
     return json.loads(path.read_text(encoding="utf-8"))
@@ -22,7 +27,7 @@ def car_signature(car: dict) -> tuple:
     return (
         car["id"],
         " ".join(car["nameEn"].split()),
-        tuple(sorted(car.get("texts", {}))),
+        tuple(sorted(RUST_TEXT_CATEGORIES & set(car.get("texts", {})))),
     )
 
 

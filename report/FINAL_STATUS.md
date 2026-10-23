@@ -81,9 +81,18 @@ images=582 speakers=14 car_texts=1215 text_cars=582 review=253
 verify_rust_parity.py:
 PASS cars=591 texts=634 scenes=1698 conversation=2620 review=253 avatars=19
 
+verify_vehicle_collection_ui.mjs (production):
+PASS five tabs, split Brand Central / Car Collection, EN/ZH/bilingual,
+Peugeot 205 + Xiaomi SU7 entries, empty-state labeling, 390px mobile layout,
+fixed previous/next bar and 1-5 keyboard tabs
+
 cargo test --release:
 9 passed, 0 failed
 ```
+
+The production Worker `gt7-cafe-edge` deployment
+`0816f9d8-1e49-40b9-84ce-4a6f34194359` serves
+<https://gt7.gakaki.com>.
 
 The native Rust `pipeline` command performs the baseline research path:
 GPB4 extraction from the original PS5 `PRPYS`, RT2/DMSB joins, all three

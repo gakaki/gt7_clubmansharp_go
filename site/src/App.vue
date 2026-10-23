@@ -388,6 +388,12 @@ function tabLabel(tab) {
   return `${label} · ${tabHasContent(activeCar.value, tab.id) ? '有' : '无'}`
 }
 
+function detailCopy(zh, en) {
+  if (lang.value === 'zh') return zh
+  if (lang.value === 'en') return en
+  return `${zh} · ${en}`
+}
+
 function textCategoryCount(car) {
   return carTextTabs.filter(
     (tab) => tab.id !== 'cafe' && tabHasContent(car, tab.id),
@@ -866,7 +872,9 @@ function yearOf(name) {
               <template v-else>
                 <span v-if="activeText().textIds?.catch">Catch {{ activeText().textIds.catch }}</span>
                 <span v-if="activeText().textIds?.long">Long {{ activeText().textIds.long }}</span>
-                <span v-if="activeText().officialId">官方车表 {{ activeText().officialId }}</span>
+                <span v-if="activeText().officialId">
+                  {{ detailCopy('官方车表', 'Official car list') }} {{ activeText().officialId }}
+                </span>
               </template>
             </div>
             <div v-if="activeOffer()" class="dealer-offer">
@@ -878,11 +886,20 @@ function yearOf(name) {
               <span v-if="activeOffer().isNew">{{ lang === 'zh' ? '新车' : 'New' }}</span>
             </div>
             <p v-if="activeTab === 'brandCentral'" class="text-source-note">
-              这是品牌购物页的车型介绍；车辆收藏的独立短简介与长正文位于“车辆收藏”页签。
+              <template v-if="lang === 'zh'">
+                这是品牌购物页的车型介绍；车辆收藏的独立短简介与长正文位于“车辆收藏”页签。
+              </template>
+              <template v-else-if="lang === 'en'">
+                This is the Brand Central description. The separate short and full Car Collection entries are under the “Car Collection” tab.
+              </template>
+              <template v-else>
+                这是品牌购物页的车型介绍；车辆收藏的独立短简介与长正文位于“车辆收藏”页签。
+                This is the Brand Central description. The separate short and full Car Collection entries are under the “Car Collection” tab.
+              </template>
             </p>
             <template v-if="activeTab === 'vehicleCollection'">
               <section class="collection-part">
-                <h4>一句话简介 · Catch</h4>
+                <h4>{{ detailCopy('一句话简介', 'Catch copy') }}</h4>
                 <div v-if="lang !== 'en'" class="text-copy zh-copy">
                   <p>{{ activeText().catch?.zh }}</p>
                 </div>
@@ -891,7 +908,7 @@ function yearOf(name) {
                 </div>
               </section>
               <section class="collection-part">
-                <h4>车辆收藏正文 · Full description</h4>
+                <h4>{{ detailCopy('车辆收藏正文', 'Full description') }}</h4>
                 <div v-if="lang !== 'en'" class="text-copy zh-copy">
                   <p>{{ activeText().long?.zh }}</p>
                 </div>
@@ -911,7 +928,7 @@ function yearOf(name) {
               </div>
             </template>
             <section v-if="activeText().variants?.length" class="text-variants">
-              <h4>补充介绍 · Additional description</h4>
+              <h4>{{ detailCopy('补充介绍', 'Additional description') }}</h4>
               <article
                 v-for="variant in activeText().variants"
                 :key="variant.textId"
@@ -933,13 +950,19 @@ function yearOf(name) {
           <div v-else class="no-dialogue text-empty">
             <strong>
               {{ activeTab === 'vehicleCollection'
-                ? '这辆车没有车辆收藏说明'
-                : '这辆车没有该商店的官方说明文本' }}
+                ? detailCopy('这辆车没有车辆收藏说明', 'No Car Collection entry is available for this car')
+                : detailCopy('这辆车没有该商店的官方说明文本', 'No official description is available for this source') }}
             </strong>
             <span>
               {{ activeTab === 'vehicleCollection'
-                ? '已检查 DescriptionCatch / DescriptionLong，没有借用其他车型的收藏正文。'
-                : '已检查 PS5 文本表，没有强行关联其他车辆的内容。' }}
+                ? detailCopy(
+                    '已检查 DescriptionCatch / DescriptionLong，没有借用其他车型的收藏正文。',
+                    'DescriptionCatch and DescriptionLong were checked; no other car’s entry was substituted.',
+                  )
+                : detailCopy(
+                    '已检查 PS5 文本表，没有强行关联其他车辆的内容。',
+                    'The PS5 text tables were checked; no text from another car was substituted.',
+                  ) }}
             </span>
           </div>
         </div>

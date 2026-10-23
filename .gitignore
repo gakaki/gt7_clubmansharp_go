@@ -46,6 +46,7 @@
 /site/live_*.json
 /site/live_*.txt
 /site/verify_*.json
+/site/vehicle-collection-ui.json
 
 # Tool caches
 __pycache__/
