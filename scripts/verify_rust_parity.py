@@ -21,7 +21,7 @@ def load(path: Path):
 def car_signature(car: dict) -> tuple:
     return (
         car["id"],
-        car["nameEn"].strip(),
+        " ".join(car["nameEn"].split()),
         tuple(sorted(car.get("texts", {}))),
     )
 

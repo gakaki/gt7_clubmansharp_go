@@ -1,7 +1,53 @@
 {
   "generatedFrom": "site/public/data",
   "policy": "remove U+FFFD only; never invent a missing glyph",
-  "removed": 0,
+  "removed": 2083,
   "controlCharactersRemoved": 0,
-  "files": []
+  "files": [
+    {
+      "path": "site/public/data/cafe_dialogues.csv",
+      "removed": 112,
+      "controlCharactersRemoved": 0
+    },
+    {
+      "path": "site/public/data/cafe_scene_dialogues.csv",
+      "removed": 114,
+      "controlCharactersRemoved": 0
+    },
+    {
+      "path": "site/public/data/cafe_variants.csv",
+      "removed": 440,
+      "controlCharactersRemoved": 0
+    },
+    {
+      "path": "site/public/data/car_text_orphans.csv",
+      "removed": 3,
+      "controlCharactersRemoved": 0
+    },
+    {
+      "path": "site/public/data/car_texts.csv",
+      "removed": 39,
+      "controlCharactersRemoved": 0
+    },
+    {
+      "path": "site/public/data/car_texts.json",
+      "removed": 42,
+      "controlCharactersRemoved": 0
+    },
+    {
+      "path": "site/public/data/cars.json",
+      "removed": 621,
+      "controlCharactersRemoved": 0
+    },
+    {
+      "path": "site/public/data/unmatched_dialogues.csv",
+      "removed": 356,
+      "controlCharactersRemoved": 0
+    },
+    {
+      "path": "site/public/data/unmatched_dialogues.md",
+      "removed": 356,
+      "controlCharactersRemoved": 0
+    }
+  ]
 }

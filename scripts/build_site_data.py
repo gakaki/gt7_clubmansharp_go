@@ -12,7 +12,7 @@ if hasattr(sys.stdout, "reconfigure"):
     sys.stdout.reconfigure(encoding="utf-8")
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 from textpick import load_best  # noqa: E402
-from car_texts import build_car_texts  # noqa: E402
+from car_texts import _clean_text, build_car_texts  # noqa: E402
 from cafe_exact import build_exact_cafe  # noqa: E402
 from export_unmatched_review import main as export_unmatched_review  # noqa: E402
 
@@ -944,6 +944,10 @@ def main() -> None:
     dealer_offers = attach_dealer_offers(cars, text_report)
 
     items = json.loads(CAFE.read_text(encoding="utf-8"))
+    for item in items:
+        for key in ("en", "zh"):
+            if item.get(key):
+                item[key] = _clean_text(item[key])
     previous_unmatched_ids = set()
     if OUT.is_file():
         try:
@@ -1084,7 +1088,9 @@ def main() -> None:
         ],
         "stats": {
             "cars": len(cars),
-            "withDialogue": sum(1 for c in cars if c["dialogues"]),
+            "withDialogue": sum(
+                1 for c in cars if c["dialogues"] or c["conversation"]
+            ),
             "dialogues": len(items),
             "mappedDialogues": mapped_dialogues,
             "conversationLines": unique_conversation_lines,

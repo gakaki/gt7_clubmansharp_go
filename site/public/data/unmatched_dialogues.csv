@@ -1,4 +1,4 @@
-﻿id,scene_id,candidate_car,speaker,speaker_zh,resolved_car_en,resolved_car_zh,resolution,scene_keys,en,zh
+id,scene_id,candidate_car,speaker,speaker_zh,resolved_car_en,resolved_car_zh,resolution,scene_keys,en,zh
 0x000071E9,Nakamura_001_db5_64_1st,,Shiro Nakamura,中村史郎,Aston Martin DB5 '64,Aston Martin DB5 '64,exact-rt2-label,Nakamura_001_db5_64_1st;Nakamura_001_db5_64_1st_Win;Nakamura_001_db5_64_Repeat_Win;Nakamura_001_db5_64_repeat,"The door section without a character line, and the
 simple side proportions are very classic.
 The covered headlights that were implemented from the DB5
@@ -11,7 +11,7 @@ This lassic aura and modern details form the character
 of the DB5.
 It's one of the most unique cars out of the DB series.
 You probably know that it's the car of choice for James Bond,
-appearing in numerous movies featuring the super spy. ","车门的部分没有特征明显的分界线，简洁的侧面也十分
+appearing in numerous movies featuring the super spy.","车门的部分没有特征明显的分界线，简洁的侧面也十分
 经典。
 从DB5开始引入的包覆式头灯在当时蔚然成风，体现了当
 时的潮流。
@@ -33,7 +33,7 @@ just looking at the stance and the wheels.
 The 17-inch wheels on the 964 were made from aluminum.
 On the 964 RS, they were visually the same, but were wider
 and made from lighter magnesium.
-Today, they fall into the ""unobtanium"" category!Z","这款964 RS版本是我最喜欢的车型之一。
+Today, they fall into the ""unobtanium"" category!","这款964 RS版本是我最喜欢的车型之一。
 为什么？因为它保留了911原汁原味的“Ur-911”型外形和风
 冷水平对置六缸发动机！
 它带来的纯粹感令我兴奋不已，比如说，它就没有添加
@@ -100,7 +100,7 @@ Incidentally, the fact that a race version was produced,
 seemingly out of the blue...
 ...is probably related to the fact that the design boss
 in Hiroshima is a race driver himsef.
-I really can't wait to hear that rotary engine roar!C","这是一辆让人热血沸腾的车！
+I really can't wait to hear that rotary engine roar!","这是一辆让人热血沸腾的车！
 当你从某个特定角度看它的时候，它的线条以一颗轮胎
 为始，以另一颗轮胎为终。它的座舱占据了大约车身的1/2。
 车辆肩线的高度完全由悬挂的行程决定……座舱后半部
@@ -153,7 +153,7 @@ The car's shape is simple, so the Castrol livery suits it well.
 The lights, which look too close together in the original model,
 are camouflaged and don't get in the way of the design.
 The A80 Supra had lots of tuning parts available for it, so
-it's no wonder it was so popular with the younger crowd.K","该怎么描述A80 Supra呢……
+it's no wonder it was so popular with the younger crowd.","该怎么描述A80 Supra呢……
 这是一款采用传统跑车比例的双门跑车，在日本车当中
 相当罕见。
 环绕式的挡风玻璃仿若一个倒置的温室。
@@ -270,7 +270,7 @@ increase the overall quality and uniformity of the design.","997这款车带回�
 这里有一个很好的例子，就是将转向灯与保险杠的进风
 口融为一体。
 这些改进本身可能很微小，但提高了设计的品质，还有助
-于提升车辆的整体性。H"
+于提升车辆的整体性。"
 0x000072A7,Matano_002_roadster_89_1st,,Tom Matano,俣野努,Mazda Eunos Roadster (NA Special Package) '89,Mazda Eunos Roadster (NA Special Package) '89,exact-rt2-label,Matano_002_roadster_89_1st;Matano_002_roadster_89_1st_Win;Matano_002_roadster_89_Repeat_Win;Matano_002_roadster_89_repeat,"You know, from the start, I wanted to give this Roadster
 a timeless design.
 It’s full of that sentiment that compels owners
@@ -397,7 +397,7 @@ This was the savior that revived this entire genre of cars.","这辆车是一面
 能让你感到人车融为一体、操控自如的敞篷轻量级跑车
 的市场
 在当时已几近消亡。
-这款车可以说是以一己之力挽救了所有同类车型的救星。s"
+这款车可以说是以一己之力挽救了所有同类车型的救星。"
 0x0000738C,EOM1_005_rx_vision_gt3_concept_20_1st,,Chris,克里斯,Mazda RX-VISION GT3 CONCEPT,MAZDA RX-VISION GT3 CONCEPT8,exact-rt2-label,EOM1_005_rx_vision_gt3_concept_20_1st;EOM1_005_rx_vision_gt3_concept_20_1st_Win;EOM1_005_rx_vision_gt3_concept_20_Repeat;EOM1_005_rx_vision_gt3_concept_20_Repeat_Win,"This car is based on the RX-VISION that was introduced at the
 2015 Tokyo Motor Show.
 It's powered by a 4-rotor engine, and you can immediately tell
@@ -437,14 +437,14 @@ the R32, by a full 21 seconds.
 It was a phrase that reflected the development effort
 that went into the R33 GT-R.
 I think stories like that are part of the
-magical nature of the R33 GT-R.","“缩短了21秒的浪漫”。
+magical nature of the R33 GT-R.","缩短了21秒的浪漫”。
 这是R33 Skyline GT-R广告口号。
 在纽博格林北侧赛道的一次计时赛中，
 R33 Skyline GT-R将前辈车型R32 GT-R的单圈成绩消掉了
 整整21秒。
 这条口号也反映出了日产为研发R33 GT-R所做的所有
 投入。
-我认为正是这样的故事让R33 GT-R这款车更有价值。1"
+我认为正是这样的故事让R33 GT-R这款车更有价值。"
 0x000073AA,EOM1_008_penzoil_gtr_99_1st,,Chris,克里斯,Nissan GT-R GT500 '99,Nissan GT-R GT500 '99,exact-rt2-label,EOM1_008_penzoil_gtr_99_1st;EOM1_008_penzoil_gtr_99_1st_Win;EOM1_008_penzoil_gtr_99_Repeat;EOM1_008_penzoil_gtr_99_Repeat_Win,"This is a truly historic car, and an extremely valuable one.
 Érik Comas became Driver Champion behind the wheel of
 a GT-R at the 1999 All Japan GT Championships.
@@ -540,7 +540,7 @@ a noticeable difference in handling.","AE86最吸引人的要素朴实无华，�
 但在现实里，大部分人会更青睐雷凌。
 原因在于车重的差异。
 配有固定头灯的雷凌要比Trueno轻。
-在这么轻的车头上多出的，会带来天差地别的影响。O"
+在这么轻的车头上多出的，会带来天差地别的影响。"
 0x000073E6,EOM1_014_castrol_toms_supra_97_1st,,Chris,克里斯,Toyota Supra GT500 '97,Toyota Supra GT500 '97,exact-rt2-label,EOM1_014_castrol_toms_supra_97_1st;EOM1_014_castrol_toms_supra_97_1st_Win;EOM1_014_castrol_toms_supra_97_Repeat;EOM1_014_castrol_toms_supra_97_Repeat_Win,"This is the 1997 winner of the All Japan GT Championships.
 It's a truly valuable race car indeed.
 It's also famed for being the first car to take the title from the
@@ -591,7 +591,7 @@ I suppose that’s because the engine is so large.-","知道吗，Viper这个词
 尽管我觉得这款车的前脸看上去还挺可爱的。
 可是当你坐进驾驶室里的时候绝对会大吃一惊，因为你
 很难看到这辆车的车头究竟在哪里……
-我猜这是因为它的引擎实在太大了！e"
+我猜这是因为它的引擎实在太大了！"
 0x0000741D,,,Stella,斯黛拉,Mazda RX-VISION GT3 CONCEPT,MAZDA RX-VISION GT3 CONCEPT8,exact-rt2-label,,"This car looks beautiful from every angle.
 It's a real work of art.
 I see, it’s a special Mazda concept car.
@@ -627,7 +627,7 @@ It probably makes you wanna drive faster!","你从某个角度看这辆车的时
 样美丽。
 嗯？安装在这个奇怪位置的仪表是怎么回事？
 哦哦，所以他们为涡轮增压表特意找了一个位置。
-像这样把仪表装在你面前，大概会让你想要开得更快吧！9"
+像这样把仪表装在你面前，大概会让你想要开得更快吧！"
 0x0000743B,,,Stella,斯黛拉,Porsche 911 GT3 (997) '09,Porsche 911 GT3 (997) '09,exact-rt2-label,,"A GT3 is basically like a race car, right?
 Or at least just as fast? That's what I heard.
 It looks like any other Porsche at first glance, but people
@@ -642,7 +642,7 @@ That’s seriously cool.","GT3其实是一辆赛车，是不是？还是说和�
 It’s sleek and looks really cool.
 So, the engine is in the back? It’s a two-seater and
 pretty tight inside.
-Wow, but it has a decent-sized trunk—not bad!e","这款车一眼看上去就是辆紧凑版超跑。
+Wow, but it has a decent-sized trunk—not bad!","这款车一眼看上去就是辆紧凑版超跑。
 流线型的车身非常的酷。
 所以发动机放在后面？这是部两座车，里面很紧凑。
 哇喔，但是后备箱还是挺大的，不错！"
@@ -722,7 +722,7 @@ It showed just how determined team manager, Kozo Watanabe was...
 在英国注册并通过了赛事认证，
 这才成功将这辆车送上了勒芒的起跑线。
 由此可见，这辆GT-R的研发主管渡边衡三
-让其参加勒芒24小时耐力赛的意愿是何等强烈！o"
+让其参加勒芒24小时耐力赛的意愿是何等强烈！"
 0x000074B6,RaceEnthusiast_005_penzoil_gtr_99_1st,,Jeremy,杰里米,Nissan GT-R GT500 '99,Nissan GT-R GT500 '99,exact-rt2-label,RaceEnthusiast_005_penzoil_gtr_99_1st;RaceEnthusiast_005_penzoil_gtr_99_1st_Cunsomized;RaceEnthusiast_005_penzoil_gtr_99_1st_Win;RaceEnthusiast_005_penzoil_gtr_99_1st_Win_Cunsomized;RaceEnthusiast_005_penzoil_gtr_99_Repeat;RaceEnthusiast_005_penzoil_gtr_99_Repeat_Cunsomized;RaceEnthusiast_005_penzoil_gtr_99_Repeat_Win;RaceEnthusiast_005_penzoil_gtr_99_Repeat_Win_Cunsomized,"Ah, Car No. 1, this one brings back memories.
 It’s the Pennzoil NISMO GT-R that competed
 in the 1999 All Japan GT Championship.
@@ -825,12 +825,12 @@ one of the most popular FR Japanese sports cars ever.
 Not only was it elegantly styled, it was one of the best
 handling machines around.
 Today, the popularity of these cars has not waned.
-In fact, some consider the S13 to be priceless!Q","这轻巧紧凑的车身与响应迅速的后轮驱动底盘相结合……
+In fact, some consider the S13 to be priceless!","这轻巧紧凑的车身与响应迅速的后轮驱动底盘相结合……
 加上强劲的1.8升直列四缸引擎，这台S13 Silvia
 简直是面面俱到的前置后驱跑车。
 不仅停放时姿态优雅，转弯时同样美得让人窒息。
 现如今，这款车确实非同寻常。
-老实说，S13本身就是无价之宝！9"
+老实说，S13本身就是无价之宝！"
 0x0000956A,EOM1_024__208_gti_ps_14_1st,,Chris,克里斯,Peugeot 208 GTi by Peugeot Sport '14,Peugeot 208 GTi by Peugeot Sport '14,exact-rt2-label,EOM1_024__208_gti_ps_14_1st;EOM1_024__208_gti_ps_14_1st_Win;EOM1_024__208_gti_ps_14_Repeat;EOM1_024__208_gti_ps_14_Repeat_Win,"While the standard 208 GTi was undeniably small
 and light, it did offer loads of fun to the driver.
 This Peugeot Sport-engineered version takes the driving
@@ -839,7 +839,7 @@ Its exquisite chassis is stable and responsive.
 On even extremely twisty mountain roads,
 the car was an absolute pleasure to drive.
 In fact, its amazing chassis is reason enough to add this car
-in your collection.K","虽然标准规格的208 GTi无疑是一款小而轻巧的车型，
+in your collection.","虽然标准规格的208 GTi无疑是一款小而轻巧的车型，
 驾驶起来却趣味无穷……
 这款标致运动精心设计的款式，更将驾驶体验
 带到了一个全新的高度。
@@ -923,7 +923,7 @@ expect their prices will increase with time.","哦，一辆宝马M系列的车�
 乍一看，好像只是些细微改动，但实则不然。
 呵呵！实际上这车型深藏不露……
 这款车的产量不多，所以价格
-只会不断往上涨。B"
+只会不断往上涨。"
 0x000095A6,EOM1_034_m3_coupe_07_1st,,Chris,克里斯,BMW M3 Coupé '07,BMW M3 Coupé '07,exact-rt2-label,EOM1_034_m3_coupe_07_1st;EOM1_034_m3_coupe_07_1st_Win;EOM1_034_m3_coupe_07_Repeat;EOM1_034_m3_coupe_07_Repeat_Win,"This E92 M3 is the fourth instalment in the BMW
 M3 series that began with the E30.
 Its pride is in its engine.
@@ -963,7 +963,7 @@ of how fast a truck can go.","福特的“F系列”车型是北美最流行的�
 猛禽不仅有宽车体、强化的悬挂系统，
 还有一台能输出以上的6.2升V8引擎。
 只要将这头野兽的本领发挥出来，
-您对于卡车能跑多快的认识一定会被击碎。t"
+您对于卡车能跑多快的认识一定会被击碎。"
 0x000095D0,EOM1_041_corvette_c7_14_1st,,Chris,克里斯,Chevrolet Corvette C7 Stingray '14,Chevrolet Corvette C7 Stingray '14,exact-rt2-label,EOM1_041_corvette_c7_14_1st;EOM1_041_corvette_c7_14_1st_Win;EOM1_041_corvette_c7_14_Repeat;EOM1_041_corvette_c7_14_Repeat_Win,"Here we have a seventh-generation Corvette,
 or ""C7"" for short.
 If I'm not mistaken, the C7 made its debut in 2013,
@@ -1057,7 +1057,7 @@ its value will continue to rise.","300 SL在上世纪五十年代亮相时
 这种设计让理想的重量分布成为了可能，
 从而改善了这辆车在直线和弯道上性能！
 作为300 SL的后继者，这辆车的价值
-肯定会水涨船高吧。Y"
+肯定会水涨船高吧。"
 0x000095F4,RaceEnthusiast_010_r34_gtr_v2_nur_02_1st,,Jeremy,杰里米,Nissan Skyline GT-R V･spec II Nür (R34) '02,Nissan Skyline GT-R V･spec II Nür (R34) '02,exact-rt2-label,RaceEnthusiast_010_r34_gtr_v2_nur_02_1st;RaceEnthusiast_010_r34_gtr_v2_nur_02_1st_Win;RaceEnthusiast_010_r34_gtr_v2_nur_02_Repeat;RaceEnthusiast_010_r34_gtr_v2_nur_02_Repeat_Win,"The fifth-generation Skyline GT-R went by the codename R34.
 The man responsible for its development was
 Kozo Watanabe.
@@ -1137,7 +1137,7 @@ its withdrawal from Le Mans the following year.","奥迪在1999年首次亮相�
 这让R18挤进了第三位，站上了领奖台，
 并达成了连续18年登上领奖台的记录。
 最终，由于奥迪宣布从那年的勒芒赛事中退出，
-他们的连胜纪录v就此终结。j"
+他们的连胜纪录v就此终结。"
 0x00009606,RaceEnthusiast_013__787b_91_1st,,Jeremy,杰里米,Mazda 787B '91,Mazda 787B '91,exact-rt2-label,RaceEnthusiast_013__787b_91_1st;RaceEnthusiast_013__787b_91_1st_Win;RaceEnthusiast_013__787b_91_Repeat;RaceEnthusiast_013__787b_91_Repeat_Win,"“Rotary engines are notorious for their poor fuel economy,
 making them ill-suited for endurance races.”
 At least, this is what people in the racing world had believed.
@@ -1154,7 +1154,7 @@ the final three stints...
 ...was so dehydrated after the race that he was unable
 to make the podium.
 As for the engine, when Mazda's engineers took it apart, they
-apparently saw that it could have gone another 500 km!L","“转子引擎的油耗高得吓人，所以不适合耐力赛。”
+apparently saw that it could have gone another 500 km!","转子引擎的油耗高得吓人，所以不适合耐力赛。”
 赛车界曾是这样看待转子引擎的。
 但是马自达的工程师们却不这么认为！
 他们努力的结晶便是将重点放在马力上，
@@ -1249,7 +1249,7 @@ Super GT锦标赛中连续获胜了两次。
 这意味着，这辆车在这个季度中仅以第三名完赛。
 他们没能上演帽子戏法，真是太可惜了！
 不过，松田次生和罗尼·昆塔雷利的老司机团队无疑是非常快的！
-他们俩现在8已步入四十，但却依然没有一丝慢下来的迹象！ "
+他们俩现在8已步入四十，但却依然没有一丝慢下来的迹象！"
 0x00009630,RaceEnthusiast_020_xjr9_race_88_1st,,Jeremy,杰里米,Jaguar XJR-9 '88,Jaguar XJR-9 '88,exact-rt2-label,RaceEnthusiast_020_xjr9_race_88_1st;RaceEnthusiast_020_xjr9_race_88_1st_Win;RaceEnthusiast_020_xjr9_race_88_Repeat;RaceEnthusiast_020_xjr9_race_88_Repeat_Win,"The 1988 24 Hours of Le Mans was one for the history books.
 Jaguar fans from the UK were showed up in force, with Union Jack
 flags waving all around the track.
@@ -1261,7 +1261,7 @@ It certainly put a smile on the legions of Britsh fans.
 But they first had to endure a stressful race.
 It wasn't until the end that Jaguar was able to put away
 the Porsche that was applying pressure all race.
-Just thinking of it now sends chill down my spine.V","1988年的勒芒24小时耐力赛相当不平凡。
+Just thinking of it now sends chill down my spine.","1988年的勒芒24小时耐力赛相当不平凡。
 那年，大批来自英国的捷豹车迷涌入赛场，
 赛道上的米字旗四处可见。
 我永远也忘不了那番景象！
@@ -1271,7 +1271,7 @@ Just thinking of it now sends chill down my spine.V","1988年的勒芒24小时�
 萨森赛车场那时热闹非凡！
 那场比赛非常激烈，获胜的捷豹到最后
 都一直面临着身后保时捷的压力！
-光是想想那场景就让我背脊发凉！0"
+光是想想那场景就让我背脊发凉！"
 0x00009636,RaceEnthusiast_021_stratos_73_1st,,Jeremy,杰里米,Lancia Stratos '73,Lancia Stratos '73,exact-rt2-label,RaceEnthusiast_021_stratos_73_1st;RaceEnthusiast_021_stratos_73_1st_Win;RaceEnthusiast_021_stratos_73_Repeat;RaceEnthusiast_021_stratos_73_Repeat_Win,"The Stratos, designed by Marcello Gandini...
 ...was created to accomplish just one goal.
 And what was that, you ask? To win rally races.
@@ -1342,7 +1342,7 @@ of a car they don't like.","雷诺是一家热爱竞技的公司。
 这是因为R5 Turbo的车尾比车头宽。
 听到经验丰富的专业人员也会遇到这类问题，真是很有
 意思！"
-0x0000964E,RaceEnthusiast_025_gtr_lm_nismo_15_1st,,Jeremy,杰里米,Nissan GT-R NISMO GT3 '13,Nissan GT-R NISMO GT3 '13,exact-rt2-label,RaceEnthusiast_025_gtr_lm_nismo_15_1st;RaceEnthusiast_025_gtr_lm_nismo_15_1st_Win;RaceEnthusiast_025_gtr_lm_nismo_15_Repeat;RaceEnthusiast_025_gtr_lm_nismo_15_Repeat_Win,"I was pretty surprised when I heard about Nissan's entry
+0x0000964E,RaceEnthusiast_025_gtr_lm_nismo_15_1st,,Jeremy,杰里米,Nissan GT-R LM NISMO '15,Nissan GT-R LM NISMO '15,exact-rt2-label,RaceEnthusiast_025_gtr_lm_nismo_15_1st;RaceEnthusiast_025_gtr_lm_nismo_15_1st_Win;RaceEnthusiast_025_gtr_lm_nismo_15_Repeat;RaceEnthusiast_025_gtr_lm_nismo_15_Repeat_Win,"I was pretty surprised when I heard about Nissan's entry
 in the 24 Hours of Le Mans in 2015.
 It was this GT-R LM NISMO.
 The designer, Ben Bowlby, insisted on an FF layout and
@@ -1446,7 +1446,7 @@ driver was Tojiro Ukiya.
 After that incident, however, he staged a stunning comeback,
 moving up through the field to win the race!
 There was something almos divine about the performance he
-displayed that day.<p scmd=""GTCafe_Top"" /p","这是一辆来自日本赛车运动早期的传奇汽车。
+displayed that day.","这是一辆来自日本赛车运动早期的传奇汽车。
 我听说过它是如何在新建成的铃鹿赛道上飞驰的！
 如果你要问我“丰田八”有史以来最精彩的比赛是哪一场……
 那一定是1965年7月在船桥赛道举行的那场比赛。
@@ -1548,7 +1548,7 @@ Porsche is there to win, after all.]","一贯以来，保时捷都是世界耐�
 但不得不说，中置布局确实改善了赛车的高速稳定性……
 而且，据说这样的重量分配调整极大地减少了轮胎摩损。
 从这个角度来看，这些改变是可以理解的。毕竟，
-保时捷就是为了赢得比赛而生的。p"
+保时捷就是为了赢得比赛而生的。"
 0x00009B57,RaceEnthusiast_041_v12_vantage_gt3_12_1st,,Jeremy,杰里米,Aston Martin V12 Vantage GT3 '12,Aston Martin V12 Vantage GT3 '12,exact-rt2-label,RaceEnthusiast_041_v12_vantage_gt3_12_1st;RaceEnthusiast_041_v12_vantage_gt3_12_1st_Win;RaceEnthusiast_041_v12_vantage_gt3_12_Repeat;RaceEnthusiast_041_v12_vantage_gt3_12_Repeat_Win,"The V12 Vantage GT3 made its first appearance
 in 2012 at the British GT Championships.
 The car was totally at home running races in its native
@@ -1601,7 +1601,7 @@ It was a truly incredible race to behold.","说到赛车设计，人们很自然
 那我告诉你一个事实，日本房车赛传奇车手荒圣治驾驶着它
 于2018年在狭窄的澳门大奖赛赛道上
 取得了一场辉煌的胜利……
-这是一场令人难以置信的比赛，精彩程度令人叹为观止！A"
+这是一场令人难以置信的比赛，精彩程度令人叹为观止！"
 0x00009B69,RaceEnthusiast_044_z4_gt3_11_1st,,Jeremy,杰里米,BMW Z4 GT3 '11,BMW Z4 GT3 '11,exact-rt2-label,RaceEnthusiast_044_z4_gt3_11_1st;RaceEnthusiast_044_z4_gt3_11_1st_Win;RaceEnthusiast_044_z4_gt3_11_Repeat;RaceEnthusiast_044_z4_gt3_11_Repeat_Win,"The one thing race enthusiasts love about BMW...
 ...is their long-standing commitment to developing
 customer race cars like this one here.
@@ -1639,7 +1639,7 @@ in Japnese GT races from 2004 to 2009.
 At the time, the All Japan Grand Touring Championship
 was evolving into the Super GT Series.
 The EPSON NSX competed in the latter half of the 2008
-season, where it came in 2nd place in ound 8 race.z","你知道吗？这款ESPON NSX居然还有一套全尺寸的纸模呢。
+season, where it came in 2nd place in ound 8 race.","你知道吗？这款ESPON NSX居然还有一套全尺寸的纸模呢。
 这是真的，是Epson委托日本纸模艺术家筱崎仁帮他们打造的。
 这个纸模全部由硬纸板做成，甚至连轮胎和其他的圆形
 部件也不例外。
@@ -1660,7 +1660,7 @@ But the SLS AMG GT3 changed all that.
 And its speed and reliability made it a formidable
 weapon for privateers the world over.
 The SLS AMG GT 3 has really competed in
-many, many GT races over the years.n","什么？你以为我不认识这辆车？
+many, many GT races over the years.","什么？你以为我不认识这辆车？
 开什么玩笑，这可是SLS AMG GT3啊！
 这是梅赛德斯-奔驰那漫长而传奇的历史当中的首款客制赛车！
 在那之前，大部分的私人车队都没机会入手
@@ -1740,7 +1740,7 @@ There were challenges on how to evolve the Z33's styling.
 If the Z33 represented a modern and more
 elegant design theme...
 ...then the Z34's look is one that's a more authentic of an
-FR sports car with added aggressiveness.2","从设计上看，Z34比Z33的外观更回归经典。
+FR sports car with added aggressiveness.","从设计上看，Z34比Z33的外观更回归经典。
 首先，轴距缩短了……
 显得车头相对更长。
 其车顶的形状以及最前面的车窗贴花……
@@ -1767,7 +1767,7 @@ In those terms...
 ...I think it's correct in saying that
 the Stratos is ""Bertone designed.""
 I would seriously love to add this car to my collection,
-but it has become too expensive.G","我完全被这辆车的环绕式座舱和其低矮车身的
+but it has become too expensive.","我完全被这辆车的环绕式座舱和其低矮车身的
 完美平衡给折服了。
 你仔细听，是不是几乎听不到它的排气声？
 我看过甘迪尼为这辆车创作的设计草图原稿。
@@ -1790,7 +1790,7 @@ more time to express the design in a different way.""
 The 2017 car has a very complete look to it, and
 I do like it myself.
 Also, regarding the interior,
-it has a modern design with depth and good textures.e","哦，这是2017年的车型，经历了第二次“小”改款。
+it has a modern design with depth and good textures.","哦，这是2017年的车型，经历了第二次“小”改款。
 前部车身的设计其实取自……
 我们在2005年东京车展上展出的GT-R 原型概念赛车。
 当时，我们觉得作为一款首次亮相的车型，
@@ -1990,7 +1990,7 @@ Somebody, anybody, gimme some of this magic on my own 5.","这真是太疯狂了
 Turbo 1的内饰采用了马里奥·贝里尼设计的超现代风格。
 就算走上巴黎的T台都不会显得格格不入！
 哦，天呐！我想我已经爱上了这辆疯狂的小“5”。
-事实上，我愿意接受它的一切！s"
+事实上，我愿意接受它的一切！"
 0x00009C9C,Harada_014_sileighty_xx_1st,,Hikonori Kagurazaka,神乐坂彦则,Nissan Sileighty '98,Nissan Sileighty '98,exact-rt2-label,Harada_014_sileighty_xx_1st;Harada_014_sileighty_xx_1st_Win;Harada_014_sileighty_xx_Repeat_Win;Harada_014_sileighty_xx_repeat,"Usually, when using the elements of
 an existing car to create a variant...
 ...you usually hit it with a completely design to differentiate
@@ -2044,7 +2044,7 @@ to this R32 GTR.","我过去常常开我朋友的PGC10 GT-R，所以对它非常
 此外……
 从这个型号开始，由传感器来控制车辆动力
 和其他高性能附加套件的时代揭开了序幕。
-这一切都足以证明这台R32 GT-R正是当代GT-R系列的鼻祖。l"
+这一切都足以证明这台R32 GT-R正是当代GT-R系列的鼻祖。"
 0x00009CBA,Matano_004_roadster_s_15_1st,,Tom Matano,俣野努,Mazda Roadster S (ND) '15,Mazda Roadster S (ND) '15,exact-rt2-label,Matano_004_roadster_s_15_1st;Matano_004_roadster_s_15_1st_Win;Matano_004_roadster_s_15_Repeat_Win;Matano_004_roadster_s_15_repeat,"I got a call one day from my protégé at Mazda Design asking
 for my thoughts on the design of the fourth-gen Miata.
 I told him that I wrote a scenario for the first three
@@ -2106,7 +2106,7 @@ direction, indeed.","有一天，我接到来自在马自达设计工作的一�
 我对他们说：“我是个藏不住事的人。
 万一明天我一不小心当众露7失望表情，你们打算怎么办？”
 他们这才让我看到了新车，你猜怎么着？
-第四代的设计方向走得很踏实。V"
+第四代的设计方向走得很踏实。"
 0x00009CC3,Matano_005_m4_14_1st,,Tom Matano,俣野努,BMW M4 Coupé '14,BMW M4 Coupé '14,exact-rt2-label,Matano_005_m4_14_1st;Matano_005_m4_14_1st_Win;Matano_005_m4_14_Repeat_Win;Matano_005_m4_14_repeat,"I have a soft spot for the M3.
 I was involved on the first E30 M3...
 ...while I was working on the beginning of the E36.
@@ -2141,7 +2141,7 @@ I loved that short stroke 5-speed shifter.
 It had a tight mechanical feel to it.
 However, it became notchy often.
 That’s why I wanted the Miata to have a short stroke shifter...
-...without the notchiness, of course.g","我正好有位朋友在这部车发售时买过一辆。
+...without the notchiness, of course.","我正好有位朋友在这部车发售时买过一辆。
 我记得当时我就被这台漂亮的引擎给打动了。
 它具备一台真正跑车的所有要素，
 只是在设计时按照轻型车的尺寸需要被按比例缩小了。
@@ -2150,7 +2150,7 @@ That’s why I wanted the Miata to have a short stroke shifter...
 它可以为你提供扎实、机械的手感……
 虽然确实时不时会出一些小毛病。
 是它帮助我下定决心为Miata配备了短行程变速箱……
-当然，我们的变速箱没有那些小毛病。K"
+当然，我们的变速箱没有那些小毛病。"
 0x00009CD5,Matano_007_rx8_spirit_r_12_1st,,Tom Matano,俣野努,Mazda RX-8 Spirit R '12,Mazda RX-8 Spirit R '12,exact-rt2-label,Matano_007_rx8_spirit_r_12_1st;Matano_007_rx8_spirit_r_12_1st_Win;Matano_007_rx8_spirit_r_12_Repeat_Win;Matano_007_rx8_spirit_r_12_repeat,"I was also involved with the design of the “FD.""
 I thought that this FR layout sports car at $30K range above
 the MX-5 would be the last model as the RX-7 as we knew it.
@@ -2196,7 +2196,7 @@ Dr. Wunibald Kamm, the person who came up with this, was a
 professor at the University of Stuttgart in the 1930s.
 Therein lies the reason why this particular design is called
 the ""Kamm Tail.""
-We also refer to it as ""Coda Tronca"" in Italian.K","采用这种设计的汽车后部就像被整齐地切掉一块。
+We also refer to it as ""Coda Tronca"" in Italian.","采用这种设计的汽车后部就像被整齐地切掉一块。
 卡姆式与流线型车身设计很接近，而且都以
 优秀的空气动力学效应闻名。
 这一设计是由斯图加特大学的乌尼巴尔·卡姆博士
@@ -2222,7 +2222,7 @@ from the 1960s...
 在此之后被应用到了大多数法拉利上。
 星形的五辐铝制车轮也是法拉利设计的重要标志。
 事实上，这种轮毂样式源于20世纪60年代设计……
-并在戴通纳比赛中投入使用的一台原型跑车。9"
+并在戴通纳比赛中投入使用的一台原型跑车。"
 0x00009CFD,Fabio_002_megane_renaultsport_11_1st,,Fabio Filippini,法比奥·菲利皮尼,Renault Sport Mégane R.S. Trophy '11,Renault Sport Mégane R.S. Trophy '11,exact-rt2-label,Fabio_002_megane_renaultsport_11_1st;Fabio_002_megane_renaultsport_11_1st_Win;Fabio_002_megane_renaultsport_11_Repeat_Win;Fabio_002_megane_renaultsport_11_repeat,"This is a car that I had a hand in
 styling when I was with Renault Design!
 When I designed
@@ -2378,7 +2378,7 @@ with the center-lock wheels.
 ...and the aero supported mirrors.
  I would sa the styling of the Carrera GT
 is truly timeless...
-...and a masterpiece of modern Porsche design!L","Carrera GT是永不过时的艺术品。
+...and a masterpiece of modern Porsche design!","Carrera GT是永不过时的艺术品。
 我认为它是保时捷现代设计中的杰作！
 你甚至很难想象这辆车已经问世这么多个年头了！
 从造型上，Carrera GT完全领先了它的时代……
@@ -2438,7 +2438,7 @@ The headlight, for example, is simply required
 to shine a light forward.
 Although seemingly unapproachable, this car knos its role.
 It’s a one-of-a-kind sidekick that requires a special love.
-These types of cars make life entertaining, don't you think?i","设计在工业产品制造中扮演的一个重要角色就是……
+These types of cars make life entertaining, don't you think?","设计在工业产品制造中扮演的一个重要角色就是……
 ……要通过视觉手段即时地传递
 第一眼可能看不出来的信息和潜台词。
 要立刻呈现产品的功能优点、理念、传统和
@@ -2493,7 +2493,7 @@ in the past.
 And now...
 ...the raw pureness of the spirit of the
 1973 Z shines brightly in the Fugu Z.
-Thank you, Sung Kang!c","我觉得Fugu Z是一辆充满魅力的车。
+Thank you, Sung Kang!","我觉得Fugu Z是一辆充满魅力的车。
 内饰经过了非常细致的精简，显得尤其炫酷。
 这款车只最低限度地安装了必要的改装件，
 与之相对的是几乎翻倍的动力输出。
@@ -2596,7 +2596,7 @@ In truth, a key thing about traditional GT-Rs is that they
 aren’t fastbacks, but are shaped by the C Pillar.
 At first glance, the R35 may look like a fastback...
 ...but you'll notice that when compared to the KPGC,
-the window line of the C-illar is set at the same angle.h","这辆初代GT-R是日本在1960年代
+the window line of the C-illar is set at the same angle.","这辆初代GT-R是日本在1960年代
 呈现给全世界的骄傲——一台双门跑车。
 久负盛名的“冲浪线条”是它的专属特色。
 当然，其他部位的设计也同样可圈可点。
@@ -2628,7 +2628,7 @@ In fact, when I was watching a GT race at Suzuka...
 ...I said to myself, ""The racecars painted in their
 sponsor colors all look the same.""　
 That's when I decided that the shape of
-the R35 GT-R's cabin must abolutely remain distinctive!n","虽然这样说感觉像是在自卖自夸……
+the R35 GT-R's cabin must abolutely remain distinctive!","虽然这样说感觉像是在自卖自夸……
 ……不过我坚信当你在Super GT系列赛中
 看到这辆GT-R时，你一定会觉得“哇，太酷了”。
 每年，我们都会将赛车交由NISMO进行改装……
@@ -2802,7 +2802,7 @@ It reflects a more human approach to design.
 It’s really quite wonderful!
 It’s a more emotional, artistic approach that
 embraces imperfections as character!
-And, if anything, the Z8 is full of character.P","这辆车让亨里克·菲斯克声名鹊起！
+And, if anything, the Z8 is full of character.","这辆车让亨里克·菲斯克声名鹊起！
 你可以说，它就是现代版的507了！
 我喜欢它的地方有很多。
 首先，我喜欢它把宝马感性的一面发挥到了极致。
@@ -2811,7 +2811,7 @@ And, if anything, the Z8 is full of character.P","这辆车让亨里克·菲斯�
 它有着极强的表现力！
 这是一种更感性、更艺术的设计方法，
 接纳不完美，并把它转化为车的个性！
-倒不如说，这台Z8全身上下都散发着强烈的个性！g"
+倒不如说，这台Z8全身上下都散发着强烈的个性！"
 0x00009FD7,Freeman_011_f150_svt_raptor_11_1st,,Freeman Thomas,弗里曼·托马斯,Ford F-150 SVT Raptor '11,Ford F-150 SVT Raptor '11,exact-rt2-label,Freeman_011_f150_svt_raptor_11_1st;Freeman_011_f150_svt_raptor_11_1st_Win;Freeman_011_f150_svt_raptor_11_Repeat_Win;Freeman_011_f150_svt_raptor_11_repeat,"The Raptor is an aggressive and capable beast.
 I love this truck!
 It has a solid overall design and possesses plenty of Ford’s
@@ -2830,7 +2830,7 @@ its aggressive character.=","猛禽的外形充盈着侵略性和力量感！
 极大的上坡角增大了车架前后部分与地面的空间，
 使其能够轻松搞定起伏坎坷的地形。
 另外，这辆初代猛禽搭载的可是一台V8引擎，
-无论是个性还是侵略性，都更上一层楼！L"
+无论是个性还是侵略性，都更上一层楼！"
 0x00009FE0,Freeman_012__911_carrera_rs_cs_95_1st,,Freeman Thomas,弗里曼·托马斯,Porsche 911 Carrera RS Clubsport (993) '95,Porsche 911 Carrera RS Clubsport (993) '95,exact-rt2-label,Freeman_012__911_carrera_rs_cs_95_1st;Freeman_012__911_carrera_rs_cs_95_1st_Win;Freeman_012__911_carrera_rs_cs_95_Repeat_Win;Freeman_012__911_carrera_rs_cs_95_repeat,"Unlike the 993 Carrera RS, the 993 RS Clubsport
 was built with racing as its sole purpose.
 It featured a distinctive rear wing with integrated air inlets.
@@ -2880,7 +2880,7 @@ Other characterstic elements are...
 ...the horizontal black groove...
 ...as well as the three round central exhausts and...
 ...the huge rear wing with the initials F40
-in bas-relief on the right side.W","如果说有哪辆车能完美代表法拉利的精神……
+in bas-relief on the right side.","如果说有哪辆车能完美代表法拉利的精神……
 ……那么非F40莫属。
 它是所有终极跑车的始祖，是车迷心目中的绝对神话。
 它在设计方面延续了宾尼法利纳的经典风格，
@@ -2955,7 +2955,7 @@ The result was a rear-engine, super-compact Cinquecento.
 Thanks to the intentionally flared wheel arches,
 the car appears to be in constant motion.
 The yawning hood lid is also qite appealing,
-not to mention functional.4","千万不要小看这款娇小的车型。它表现出了极高的
+not to mention functional.","千万不要小看这款娇小的车型。它表现出了极高的
 产品设计水平，
 甚至堪称永恒经典。
 难怪最新款的500也借鉴了它的设计。
@@ -2982,7 +2982,7 @@ On the hood is a protruding air scoop
 called the ""Shaker.""
 When it shakes, it declares the enormous power it possesses.
 If you include the optional rear spoiler, the Challenger R/T
-is a muscle car that's sure to catch anyone's eye.A","如果不仔细看，你会以为它是一辆普通的轿车。
+is a muscle car that's sure to catch anyone's eye.","如果不仔细看，你会以为它是一辆普通的轿车。
 但坐进驾驶舱之后，你就会明白这是一台速度机器。
 这个类别的车通常归类为“肌肉车”。
 这辆Challenger R/T很像梭鱼，只是尺寸小一号。
@@ -3061,7 +3061,7 @@ It shares the same backbone chassis technology as
 the original Vallelunga, with a Ford V-8 housed within.
 Access to the mid-mounted engine comes
 via a butterfly-type rear hatch.
-This detail is also particularly interesting and fun. I like it.n","这辆车最令人着迷之处全在于它的车身，
+This detail is also particularly interesting and fun. I like it.","这辆车最令人着迷之处全在于它的车身，
 这是由车身制造公司吉亚后来的首席设计师，
 当时才初出茅庐的乔盖托·乔治亚罗执笔设计的。
 它的外形如此简洁、仿佛是一笔而就，
@@ -3070,7 +3070,7 @@ This detail is also particularly interesting and fun. I like it.n","这辆车最
 它采用了与其原型瓦莱伦加相同的脊骨式车架技术，
 搭载福特V8引擎。
 掀开鸥翼式的后备箱盖，就可以看到这台中置引擎。
-这个细节特别有趣味。我很喜欢。P"
+这个细节特别有趣味。我很喜欢。"
 0x0000A1E5,Kodama_010_golf_1_gti_83_1st,,Hideo Kodama,儿玉英雄,Volkswagen Golf I GTI '83,Volkswagen Golf I GTI '83,exact-rt2-label,Kodama_010_golf_1_gti_83_1st;Kodama_010_golf_1_gti_83_1st_Win;Kodama_010_golf_1_gti_83_Repeat;Kodama_010_golf_1_gti_83_Repeat_Win,"And the high-performance version of that Golf I is the GTI.
 Considered wide at the time, its 175/70R13 tires were covered
  by a special black plastic lip.
@@ -3123,7 +3123,7 @@ is truly outstanding.
 That's why the car is still so popular.
 And here's an interesting fact:
 The area around the opening line of the rear hatch,
- was carried over to the Z33. u","自S30推出又过了两代之后，
+ was carried over to the Z33.","自S30推出又过了两代之后，
 这款新车终于重新找回了“Z”系列的特色。
 车身的起伏曲线十分克制，
 用于展现简洁而又大胆的设计主旨。
@@ -3288,7 +3288,7 @@ variant...
 It is in fact a one-make racer, powered by
 a midship 3.8L V6 courtesy of Nissan!
 It was originally built to compete in the popular Renault
-Sport Series, which takes place in Europe.g","在房车赛和拉力赛方面……
+Sport Series, which takes place in Europe.","在房车赛和拉力赛方面……
 一直以来代表雷诺出战的都是紧凑型的R5及其继任者Clio。
 像是世界拉力锦标赛组别B R5 Turbo和F2级别的Clio Williams！
 都是数一数二的好车！
@@ -3299,7 +3299,7 @@ Sport Series, which takes place in Europe.g","在房车赛和拉力赛方面…�
 但实际上这是一辆单一车种专用赛车，
 搭载与日产联合开发的中置3.8升V6引擎！
 另外，这台车原本打算参加的是在欧洲举办的高人气比赛
-——雷诺运AS|赛。z"
+——雷诺运AS|赛。"
 0x0000A2C2,RaceEnthusiast_058_dallara_sf19_honda_19_1st,,Jeremy,杰里米,Dallara SF19 Super Formula / Honda '19,Dallara SF19 Super Formula / Honda '19,exact-rt2-label,RaceEnthusiast_058_dallara_sf19_honda_19_1st;RaceEnthusiast_058_dallara_sf19_honda_19_1st_Win;RaceEnthusiast_058_dallara_sf19_honda_19_Repeat;RaceEnthusiast_058_dallara_sf19_honda_19_Repeat_Win,"This SF19 was built for Japan’s top formula racing series,
 the Super Formula Championship.
 The Super Formula is the preeminent formula racing event
@@ -3314,7 +3314,7 @@ It requires plenty of control and the utmost technique!
 This Honda-powered SF19 conjures up memories
 of Alex Palou’s record victory.
 Palou later went on to compete in the IndyCar series,
-a formula racing series held in the USA.2","这辆SF19是为日本顶尖的方程式系列赛
+a formula racing series held in the USA.","这辆SF19是为日本顶尖的方程式系列赛
 ——超级方程式锦标赛而开发的。
 放眼整个亚洲，超级方程式都是最卓越的方程式比赛……
 也被视为是仅次于F1的最快汽车赛事。
@@ -3341,7 +3341,7 @@ it’s small, light, and possesses great aerodynamics.
 Thanks to their F1 experience, the drivers were able
 to push the car to its limits.
 Nick Cassidy was the series champion when tis machine
-made its debut in 2019.g","哎呀，这不是SF19，专门为日本顶尖的方程式系列赛，
+made its debut in 2019.","哎呀，这不是SF19，专门为日本顶尖的方程式系列赛，
 超级方程式锦标赛而打造的赛车吗！
 突击小测验！你知道为SF19提供引擎的是哪个厂家吗？
 答案就是……丰田和本田！
@@ -3365,7 +3365,7 @@ Speking of Tajima-san...
 His impressive career includes six consecutive wins
 at the Pikes Peak International Hillclimb.
 Monster Sport has also built legendary hill climbers
-based on the Suzuki Cultus and Escudo.4","这是第二代的速翼特运动版啊！
+based on the Suzuki Cultus and Escudo.","这是第二代的速翼特运动版啊！
 因为基础规格够高，所以无需过多改装，
 就能直接参加比赛。
 事实上，它甚至作为青年拉力赛赛车参加了
@@ -3501,14 +3501,14 @@ proportions of an FR vehicle.
 However, the surface treatment is fresh and interesting.
 Even seeing it now, it's not bad at all.
 This is one of the cars that represented
-the change in flow of BMW design.j","这辆车的设计在尝试摆脱宝马之前的设计语言，带来革新。
+the change in flow of BMW design.","这辆车的设计在尝试摆脱宝马之前的设计语言，带来革新。
 它是由我从前的同学
 克里斯·班戈在宝马工作时所设计的……
 在设计师眼中，这些设计元素非常有趣，非常激动人心。
 此外，这辆M3开始从车身配比上与传统前置后驱车分道扬镳。
 其车身外观的处理也非常新颖有趣。
 即便从现在的眼光来看也丝毫不过时。
-可以说，这是一台反映了宝马设计思路演变的车。p"
+可以说，这是一台反映了宝马设计思路演变的车。"
 0x0000A7A4,Harada_022_veyron_16_4_13_1st,,Hikonori Kagurazaka,神乐坂彦则,Bugatti Veyron 16.4 '13,Bugatti Veyron 16.4 '13,exact-rt2-label,Harada_022_veyron_16_4_13_1st;Harada_022_veyron_16_4_13_1st_Win;Harada_022_veyron_16_4_13_Repeat_Win;Harada_022_veyron_16_4_13_repeat,"From its GP machines to the Royales, Bugatti pushed the
 automobile horizon in many directions in the pre-war era.
 Especially in regard to design, Jean Bugatti
@@ -3526,7 +3526,7 @@ harmony, flowing down to the rear of the car.
 The car's elegant lines are uninterrupted, running smoothly
 around its body—a joy to trace with your eyes.
 The styling expresses a euphoric art nouveau expression
-It makes me respect Jean Bugatti all the more.Y","从GP赛车再到皇家，布加迪在二战前
+It makes me respect Jean Bugatti all the more.","从GP赛车再到皇家，布加迪在二战前
 就将汽车的边界向各个方向大幅扩展。
 特别是在设计上，布加迪家族的让·布加迪……
 负责确保这家公司的所有汽车都拥有动感的本质和
@@ -3608,7 +3608,7 @@ They give the car its personality.
 And the resulting wide stance makes the car look stable,
 as well as possessing performance.
 They distinguish the base C coupe from the AMG version
-for those who have keen eyes.X","我非常喜爱德国产的紧凑型跑车。
+for those who have keen eyes.","我非常喜爱德国产的紧凑型跑车。
 这些车型都采用了宽胎，
 其宽度足有日本紧凑型车的两倍。
 宽胎正是这辆车最重要的组成部分之一。
@@ -3616,7 +3616,7 @@ for those who have keen eyes.X","我非常喜爱德国产的紧凑型跑车。
 而这种设计让车身显得又宽又低，看上去非常稳定，
 性能也同样卓越。
 在懂行的人眼里，这些特点让AMG版本与
-基础的C级双门跑车有了明显的区分。s"
+基础的C级双门跑车有了明显的区分。"
 0x0000A7EA,Matano_016_s660_15_1st,,Tom Matano,俣野努,Honda S660 '15,Honda S660 '15,exact-rt2-label,Matano_016_s660_15_1st;Matano_016_s660_15_1st_Win;Matano_016_s660_15_Repeat_Win;Matano_016_s660_15_repeat,"What a cute little car. It looks like a miniature
 supercar.
 There are no gimmicky surfaces or details.
@@ -3659,7 +3659,7 @@ And, the ZL1 Camaro has a wider track
 than other Camaros.
 Its dark hood, grille, headlamps, and full-width splitter
 give this car a wide, sinister appearance.
-With two-tone colors, it's all business. Period!R","这辆科迈罗ZL1的一切设计目的都是为了速度和力量，
+With two-tone colors, it's all business. Period!","这辆科迈罗ZL1的一切设计目的都是为了速度和力量，
 它简直就是一件安上了轮子的武器！
 从它的整体姿态到各种功能性的定风翼、尾翼和进气口，
 都在告诉你——这辆车完全是为赛道打造的！
@@ -3685,7 +3685,7 @@ available.","这辆C7 ZR1科尔维特是前置引擎科尔维特那强大性能
 ZR1同样还配备了巨大的进气口和出气口……
 用于引导气流，为车头和车尾的散热器提供风冷降温。
 许多人都很喜欢它的尾翼。
-不过我个人更喜欢配备尺寸更小的后扰流板。Q"
+不过我个人更喜欢配备尺寸更小的后扰流板。"
 0x0000A888,Ito_003__787b_91_1st,,Kunihisa Ito,伊藤邦久,Mazda 787B '91,Mazda 787B '91,exact-rt2-label,Ito_003__787b_91_1st;Ito_003__787b_91_1st_Win;Ito_003__787b_91_Repeat_Win;Ito_003__787b_91_repeat,"The number of cars participating in the 1991 Le Mans race
 was only 38, but among those was the new Peugeot 905.
 There were also perennial powerhouses like Mercedes-Benz,
@@ -4240,7 +4240,7 @@ The GT eventually received aluminum opening panels.
 And even the normal-looking wheels are specially
 constructed of steel and aluminum.
 As with all Porches, you really need to take a close look at
-each model to know all the variations.S","356 A/1500 GS GT Carrera Speedster是基于保时捷产品线中
+each model to know all the variations.","356 A/1500 GS GT Carrera Speedster是基于保时捷产品线中
 最简约的车型开发的……
 又将其推向了“无法企及”的境界！
 Speedster的外形沿袭了其他356A车型的设计，
@@ -4290,7 +4290,7 @@ The fan shroud and assembly were gogeous too!=","‘56 ‘GS’ Carrera Coupe是
 那是用来控制“Carrera”引擎独有的两个点火线圈的。
 只有当你打开后引擎盖时，才能发现真正的差别所在！
 你会发现，四凸轮轴“Carrera”引擎简直是一件美妙的艺术品！
-连风扇罩和总成打造得异常精美！K"
+连风扇罩和总成打造得异常精美！"
 0x0000B126,Freeman_023_mustang_gt_premium_fastback_15_1st,,Freeman Thomas,弗里曼·托马斯,Ford Mustang GT Premium Fastback '15,Ford Mustang GT Premium Fastback '15,exact-rt2-label,Freeman_023_mustang_gt_premium_fastback_15_1st;Freeman_023_mustang_gt_premium_fastback_15_1st_Win;Freeman_023_mustang_gt_premium_fastback_15_repeat;Freeman_023_mustang_gt_premium_fastback_15_repeat_Win,"The goal of J Mays and his team...
 ...was to make this car more of a European sports car
 while not losing its American pony-car heritage.
@@ -4309,7 +4309,7 @@ The rear-end took the three-bar iconic taillights
 to a new level.
 It had a sequential blinker inspired by the '67/'68 Shelby.
 And, did it ever look ean, especially with optional big
-wheels spaced-out to the edges!x","J·梅斯及其团队的目标……
+wheels spaced-out to the edges!","梅斯及其团队的目标……
 是使这款车更贴近一辆欧洲跑车，同时不失
 其美式小马车的传统。
 这确实是一个艰巨的任务！
@@ -4325,7 +4325,7 @@ wheels spaced-out to the edges!x","J·梅斯及其团队的目标……
 经典的三道杠式尾灯设计被提升到了一个新的高度……
 并采用了受到'67/'68 Shely启发的顺序闪灯效果。
 在选配了几乎占满全部轮拱的大尺寸轮圈之后，
-整车的姿态近乎完美，更显卓尔不凡！C"
+整车的姿态近乎完美，更显卓尔不凡！"
 0x0000B12F,Freeman_024_genesis_coupe_38_track_13_1st,,Freeman Thomas,弗里曼·托马斯,Hyundai Genesis Coupe 3.8 Track '13,Hyundai Genesis Coupe 3.8 Track '13,exact-rt2-label,Freeman_024_genesis_coupe_38_track_13_1st;Freeman_024_genesis_coupe_38_track_13_1st_Win;Freeman_024_genesis_coupe_38_track_13_repeat;Freeman_024_genesis_coupe_38_track_13_repeat_Win,"The Genesis Coupé was a true sports car with RWD
 and a 3.8-liter V-6.
 The exterior styling was inspired by its RWD proportions.
@@ -4353,7 +4353,7 @@ to create unexpected graphics.","捷尼赛思Coupe是一款真正的后驱跑车
 勾勒出准确的面部和造型表达。
 其内核是追求独特的个性和审美趣味。
 在某种程度上，它是素描这一经典画技的延伸……
-并加入了以毛笔笔触带来的、意想不到的视觉效果。n"
+并加入了以毛笔笔触带来的、意想不到的视觉效果。"
 0x0000B153,Ed_024_slr_mclaren_19wheel_09_1st,,Ed Welburn,埃德·韦伯恩,Mercedes-Benz SLR McLaren '09,Mercedes-Benz SLR McLaren '09,exact-rt2-label,Ed_024_slr_mclaren_19wheel_09_1st;Ed_024_slr_mclaren_19wheel_09_1st_Win;Ed_024_slr_mclaren_19wheel_09_repeat;Ed_024_slr_mclaren_19wheel_09_repeat_Win,"This car probably has the most dramatic profile
 of a modern front-engine sports car.
 The hood is long and low, and the cabin is placed well back
@@ -4361,7 +4361,7 @@ on the chassis, right over the rear wheels.
 One of my favorite design features is how the front fender
 vents are linked to the shape of the door opening.
 Overall, the SLR McLaren has the look of speed,
-grace, and elegance.x","在现代前置引擎跑车中，这款车可能是车身比例
+grace, and elegance.","在现代前置引擎跑车中，这款车可能是车身比例
 最吸睛的车型之一。
 它的引擎盖修长而低矮，车厢后移置于底盘后部，
 正好位于后轮上方。
@@ -4431,14 +4431,14 @@ the front spoiler and the rear diffuser.
 That said, Renault desired to maintain a ""family feeling""
 in the front and rear...
 ...so it adopted the style of the lights and grille
-of the production Mégane.c","R.S. 01是一款真正的中置引擎赛车，隶属于GT类别。
+of the production Mégane.","R.S. 01是一款真正的中置引擎赛车，隶属于GT类别。
 它专为赛道设计——底盘低、车身宽且功能强大。
 充满动感和肌肉感的外形也令它显得攻击性十足。
 硕大的碳纤维尾翼给人留下深刻的印象，前扰流器
 和后扩散器也同样引人注目。
 尽管如此，雷诺还是希望在车头和车尾的设计上
 保持“家族传承”……
-因此借鉴了量产版梅甘娜的车灯和进气格栅的设计风格。o"
+因此借鉴了量产版梅甘娜的车灯和进气格栅的设计风格。"
 0x0000B45C,Kodama_023_xj13_66_1st,,Hideo Kodama,儿玉英雄,Jaguar XJ13 '66,Jaguar XJ13 '66,exact-rt2-label,Kodama_023_xj13_66_1st;Kodama_023_xj13_66_1st_Win;Kodama_023_xj13_66_Repeat;Kodama_023_xj13_66_Repeat_Win,"After Jaguar took a break from racing in 1956, it continued
 to work on a successor to the D-Type.
 This was during the transition from a front-engine
@@ -4453,7 +4453,7 @@ with a V-12 mounted amidships.
 The XJ13.
 Designed by the famous Malcolm Sayer...
 ...the XJ13 never raced, but it surely served as
-inspiration for the nw legendary E-Type.u","在1956年短暂退出赛车运动后，捷豹继续投入D-Type
+inspiration for the nw legendary E-Type.","在1956年短暂退出赛车运动后，捷豹继续投入D-Type
 后续型号的研发。
 这款车诞生于从前置引擎向中置引擎布局过渡的过程中。
 在福特推出GT40的基础车型，
@@ -4465,7 +4465,7 @@ inspiration for the nw legendary E-Type.u","在1956年短暂退出赛车运动�
 XJ13。
 XJ13由著名的马尔科姆·塞尔所设计……
 尽管从未参加过任何比赛，但它无疑
-SE-Type的开发提供了大量的思路。4"
+SE-Type的开发提供了大量的思路。"
 0x0000B54F,Nakamura_025_huracan_lp610_4_15_1st,,Shiro Nakamura,中村史郎,Lamborghini Huracán LP 610-4 '15,Lamborghini Huracán LP 610-4 '15,exact-rt2-label,Nakamura_025_huracan_lp610_4_15_1st;Nakamura_025_huracan_lp610_4_15_1st_Win;Nakamura_025_huracan_lp610_4_15_repeat;Nakamura_025_huracan_lp610_4_15_repeat_Win,"If I’m not mistaken, this car was preceded by
 the more radical Gallardo.
 And yet the Huracán represented an evolution
@@ -4482,7 +4482,7 @@ It’s a car for connoisseurs.
 With new bumpers, air outlets,
 and overfenders...
 ...it’s practically a different car, and yet it’s
-incredibly sleek all the same.x","这辆400R是一辆“完全体”的车，而不仅仅是脱胎于R33的GT-R。
+incredibly sleek all the same.","这辆400R是一辆“完全体”的车，而不仅仅是脱胎于R33的GT-R。
 这是一辆为鉴赏家们设计的车。
 它采用了新的保险杠、出气口和轮眉……
 实际上可以算成一辆完全不同的车了。
@@ -4499,7 +4499,7 @@ separating the extractor into two parts.
 But the most characteristic elements
 are the Aero Bridges...
 Channelling the air from the hood towards the flanks,
-improving the overall aerodyamic efficiency.3","这辆F12是由宾尼法利纳和法拉利设计合作设计的，
+improving the overall aerodyamic efficiency.","这辆F12是由宾尼法利纳和法拉利设计合作设计的，
 荣获了2014年度的金圆规工业设计奖。
 如你所见，相比之前的599，它的设计发生了巨大的变化。
 它那雕塑般的形状非常的紧凑和“凝实”。
@@ -4538,7 +4538,7 @@ This ""23"" Window Sambabus has a fully-opening
 pull-back cloth sunroof...
 ...windows that go round to the back corners,
 and ""panorama"" windows on top.
-Its color palette greatly adds to its visual charm.R","大众的“Sambabus”是一款真正的设计代表作，它的设计语言
+Its color palette greatly adds to its visual charm.","大众的“Sambabus”是一款真正的设计代表作，它的设计语言
 充满奇思妙想，同时又惹人喜爱！
 不夸张地说，看到它你就会不由自主地露出微笑！
 它的车身可以用长方体盒子来概括，再加上特征鲜明
@@ -4635,8 +4635,7 @@ racing ""weapon.""","雷诺Clio RS是欧洲“超迷你”类型
 给人以双门跑车的观感。
 基于这种设计，再加上运动感十足的保险杠、空气动力学细节
 以及应用了18寸轮毂和红色卡钳的超低姿态车身……
-足以在视觉上将它充分改造成一款赛道小钢炮！
-j"
+足以在视觉上将它充分改造成一款赛道小钢炮！"
 0x0000B79B,Freeman_028__917_ll_14_1st,,Freeman Thomas,弗里曼·托马斯,Porsche 917 LIVING LEGEND,Porsche 917 LIVING LEGEND,exact-rt2-label,Freeman_028__917_ll_14_1st;Freeman_028__917_ll_14_1st_Win;Freeman_028__917_ll_14_repeat;Freeman_028__917_ll_14_repeat_Win,"This is the car every car designer dreams of doing!
 It’s gorgeous!
 Its influence is, of course, the 917!
@@ -4771,7 +4770,7 @@ RX-VISION还有另一个让人惊喜的地方——光影效果。
 为了达到这个效果，我得给它注入“生命感”。
 在思考怎么才能让它看起来更自然时……
 我开始实验光线在车身上的反射效果。
-就这样，RX-VISION活灵活现地呈现在了大家面前！X"
+就这样，RX-VISION活灵活现地呈现在了大家面前！"
 0x0000B89B,Maeda_004_mazda3_gt4m_xx_1st,,Ikuo Maeda,前田育男,MAZDA3 Gr.4,MAZDA3 Gr.4,exact-rt2-label,Maeda_004_mazda3_gt4m_xx_1st;Maeda_004_mazda3_gt4m_xx_1st_Win;Maeda_004_mazda3_gt4m_xx_repeat;Maeda_004_mazda3_gt4m_xx_repeat_Win,"In the Japanese Super Endurance Series,
 I myself race in the MAZDA3 race car.
 Lots of effort went into the MAZDA3 as a production model
@@ -4785,7 +4784,7 @@ Like how the rear tread sticks out like
 a proper Super Endurance race car.
 When you're overtaken by this car, I think you'll really notice
 how good it looks from the back...
-...so on the track, I'd appreciate if you would let me pass!y","我跟你讲，我在日本超级耐力系列赛中可是真开过这辆
+...so on the track, I'd appreciate if you would let me pass!","我跟你讲，我在日本超级耐力系列赛中可是真开过这辆
 马自达3赛车哦！
 马自达3本身是款普通的量产车型，不过我们设计的时候
 就已经考虑到了它未来可能会上赛道。
@@ -4882,7 +4881,7 @@ the ability of designers are truly tested.","阿特兹可以说是我的设计�
 到设计的魔力。
 尤其是轿车，看起来再普通不过，设计起来反而最难。
 所以，要评估一位设计师的水平，关键在于他能否为正
-统车型设计出经久不衰的作品。P"
+统车型设计出经久不衰的作品。"
 0x0000B8B6,Maeda_007_mazda_lm55_vision_gt_14_lmp_1st,,Ikuo Maeda,前田育男,Mazda LM55 Vision Gran Turismo (Gr.1),Mazda LM55 Vision Gran Turismo (Gr.1),exact-rt2-label,Maeda_007_mazda_lm55_vision_gt_14_lmp_1st;Maeda_007_mazda_lm55_vision_gt_14_lmp_1st_Win;Maeda_007_mazda_lm55_vision_gt_14_lmp_repeat;Maeda_007_mazda_lm55_vision_gt_14_lmp_repeat_Win,"This was a car that was produced with the concept:
 ""if Mazda was to compete in the top category of the Le Mans,
 what would be a great design.""
@@ -4950,7 +4949,7 @@ Mazda design was formed.","说起这款FD，那可得追溯到我20多岁的时�
 要我说，这个年代的FD和NA Roadster绝对是马自达
 历史上最杰出的两个设。
 当时马自达处理三维形状的能力确实是世界一流的。
-正好也赶上了马自达的设计理念刚开始成型的时候。C"
+正好也赶上了马自达的设计理念刚开始成型的时候。"
 0x0000B8C8,Maeda_009_rx8_spirit_r_12_1st,,Ikuo Maeda,前田育男,Mazda RX-8 Spirit R '12,Mazda RX-8 Spirit R '12,exact-rt2-label,Maeda_009_rx8_spirit_r_12_1st;Maeda_009_rx8_spirit_r_12_1st_Win;Maeda_009_rx8_spirit_r_12_repeat;Maeda_009_rx8_spirit_r_12_repeat_Win,"This is a car for which I was the Chief designer.
 I also owned this RX-8 for quite a while.
 Actually my children were born in the year
@@ -4971,7 +4970,7 @@ with this package and engine one day.
 There was a Mazda Fan Festa event the other day,
 at a circuit in Okayama.
 There were a lot of RX-8 owners there. I really appreciate the
-fact that they are taking great care of these cars even today.U","说起这款RX-8，我可是它的首席设计师。不仅如此，
+fact that they are taking great care of these cars even today.","说起这款RX-8，我可是它的首席设计师。不仅如此，
 我自己也有一辆RX-8，开了相当长一段时间。
 实际上，我家的双胞胎恰好就出生在RX-8发布的那一年。
 我生的是一对男孩，但在他们出生之前，我就打定主意
@@ -4989,13 +4988,13 @@ RX-8简直就是为带双胞胎量身定做的。
 就好了。
 前几天，我'冈山参加了个马自达车迷聚会……
 我看到好多人都是开着RX-8来的。这么多年过去了，这
-款车还是很有人气，真令人开心。C"
+款车还是很有人气，真令人开心。"
 0x0000B8EA,Nakamura_027_rx500_70_1st,,Shiro Nakamura,中村史郎,Mazda RX500 '70,Mazda RX500 '70,exact-rt2-label,Nakamura_027_rx500_70_1st;Nakamura_027_rx500_70_1st_Win;Nakamura_027_rx500_70_Repeat;Nakamura_027_rx500_70_Repeat_Win,"If you ask me, this car is less of a design study than it is
 a study in aerodynamics.
 The roofline runs straight across the body to the rear,
 where it abruptly cuts off in a coda tronca.
 This tells me that it may have been developed as a prototype
-for engineering purposes.X","依我看，这辆车更像是一项“空气动力学研究”
+for engineering purposes.","依我看，这辆车更像是一项“空气动力学研究”
 而非“设计研究”。
 车顶线条贯穿整车一直延伸到后部，
 突然以“断尾”的形式戛然而止。
@@ -5004,10 +5003,10 @@ for engineering purposes.X","依我看，这辆车更像是一项“空气动力
 0x0000B8EC,Nakamura_027_rx500_70_1st,,Sarah,莎拉·伊顿,Mazda RX500 '70,Mazda RX500 '70,exact-rt2-label,Nakamura_027_rx500_70_1st;Nakamura_027_rx500_70_1st_Win;Nakamura_027_rx500_70_Repeat;Nakamura_027_rx500_70_Repeat_Win,"That’s right, it refers to a truncated tail, or rear.
 What we call a ""Kamm Tail"" in English.
 The Kamm Tail is named after the German aerodynamicist
-Wunibald Kamm, who theorized the design in the 1930s.q","没错，它指的是尾部被截短。
+Wunibald Kamm, who theorized the design in the 1930s.","没错，它指的是尾部被截短。
 在英语中通常被称为“断尾”。
 这一术语源自于德国空气动力学家乌尼巴尔·卡姆，
-他在上世纪30年代提出了这种设计理念。E"
+他在上世纪30年代提出了这种设计理念。"
 0x0000B8ED,Nakamura_027_rx500_70_1st,,Sarah,莎拉·伊顿,Mazda RX500 '70,Mazda RX500 '70,exact-rt2-label,Nakamura_027_rx500_70_1st;Nakamura_027_rx500_70_1st_Win;Nakamura_027_rx500_70_Repeat;Nakamura_027_rx500_70_Repeat_Win,"Oh, it refers to a truncated tail, or rear.
 What we call a ""Kamm Tail"" in English.
 The Kamm Tail is named after the German aerodynamicist
@@ -5120,7 +5119,7 @@ That was in back in 1967!","你了解AMG的历史吗？
 他们从奥弗莱希特、梅尔赫和
 格罗萨斯帕赫三个名字中
 各取一个首字母，为公司起名为“AMG”。
-那是在1967年！2"
+那是在1967年！"
 0x0000BAE1,Kodama_027_db3s_53_1st,,Hideo Kodama,儿玉英雄,Aston Martin DB3S '53,Aston Martin DB3S '53,exact-rt2-label,Kodama_027_db3s_53_1st;Kodama_027_db3s_53_1st_Win;Kodama_027_db3s_53_Repeat;Kodama_027_db3s_53_Repeat_Win,"The DB3S is a smaller, lighter and more competitive version
 of the DB3, which lacked a fighting spirit.
 Although it retired after 222 laps at Le Mans in 1953...
@@ -5162,7 +5161,7 @@ And, its body is simply brimming with confidence.
 Indeed, it exudes the luxury that only a top-tier
 design studio can deliver.
 And the bright graphics contribute nicely to the overall
-look of the car.i","哇，这可真是一辆外观凶悍的甲壳虫啊！
+look of the car.","哇，这可真是一辆外观凶悍的甲壳虫啊！
 它的存在证明了平日的小可爱
 也具有赛场竞速的巨大潜力！
 请注意它极低的车身姿态，宽大的
@@ -5200,7 +5199,7 @@ but its ror is simply unforgettable!","我对这种类型的思域非常熟悉�
 风驰电掣的速度和充沛的动力。
 不过我的最爱还是Type R B-引擎。
 虽然动力不如K-引擎，但它的咆哮声绝对令人
-终生难忘！X"
+终生难忘！"
 0x0000BBC5,RaceEnthusiast_078_r31_skyline_gtsr_87_1st,,Jeremy,杰里米,Nissan Skyline GTS-R (R31) '87,Nissan Skyline GTS-R (R31) '87,exact-rt2-label,RaceEnthusiast_078_r31_skyline_gtsr_87_1st;RaceEnthusiast_078_r31_skyline_gtsr_87_1st_Win;RaceEnthusiast_078_r31_skyline_gtsr_87_Repeat;RaceEnthusiast_078_r31_skyline_gtsr_87_Repeat_Win,"This is one of my favorite Skylines—the R31, and a Group A
 homologation GTS-R!
 Who could forget its performance at the Japanese Touring Car
@@ -5221,7 +5220,7 @@ And the way it stood up to those mighty European cars...it was a sight to behold
 赢下了六场比赛中的半数！
 这是多么震撼人心的夺冠过程啊！
 更不必说它勇敢挑战那些强大欧洲赛车的英姿——
-真是太酷了！<p scmd=""GTCafe_Top"""
+真是太酷了！"
 0x0000BFD1,Kodama_028__911_carrera_rs_96_1st,,Hideo Kodama,儿玉英雄,Porsche 911 Carrera RS (993) '95,Porsche 911 Carrera RS (993) '95,exact-rt2-label,Kodama_028__911_carrera_rs_96_1st;Kodama_028__911_carrera_rs_96_1st_Win;Kodama_028__911_carrera_rs_96_Repeat;Kodama_028__911_carrera_rs_96_Repeat_Win,"You might say that Porsche is Volkswagen-inspired not only
 in the architecture of its cars but also in overall design…
 ...which some attribute to the genius of Erwin Komenda,
@@ -5245,7 +5244,7 @@ Unlike its super-car counterparts, the ""Babies""...
 ...are known for their sharper surfaces, tighter dimensions,
 and overall efficiency.
 The Gallardo is a great example, exhibiting no excess
-from any angle.","“宝贝兰博”系列的推出旨在拓宽兰博基尼品牌
+from any angle.","宝贝兰博”系列的推出旨在拓宽兰博基尼品牌
 的市场。
 与其超级跑车的兄弟相比，这些“小型”车型……
 以更锐利的车身线条、更紧凑的车身尺寸
@@ -5269,7 +5268,7 @@ take on much bigger competition.\","迄今为止，Cayman已经历了数次更�
 凭借其强大的气场、富有侵略性的外观
 和稳健的操控性能……
 它已经从一款休闲性能车升级为能够与更高级别对手
-竞争的真正赛道利器。k"
+竞争的真正赛道利器。"
 0x0000C005,Matano_023_integra_r_95_1st,,Tom Matano,俣野努,Honda Integra Type R (DC2) '95,Honda Integra Type R (DC2) '95,exact-rt2-label,Matano_023_integra_r_95_1st;Matano_023_integra_r_95_1st_Win;Matano_023_integra_r_95_Repeat;Matano_023_integra_r_95_Repeat_Win,"The Type R has the perfect balance of cosmetic and
 mechanical tuning.
 Its design is simply iconic.
@@ -5354,7 +5353,7 @@ its third consecutive WRC title.
 The Impreza WRC continued to evlve
 until the year 2000.
 It was a car that defined its era and hailed as an
-important part of WRC history.i","斯巴鲁——世界拉力锦标赛三冠王！
+important part of WRC history.","斯巴鲁——世界拉力锦标赛三冠王！
 我永远不会忘记1995年到1997年那段激动人心的时光。
 同样令我振奋不已的还有1997年翼豹世界拉力赛车的到来！
 世界拉力赛车是“世界拉力赛车”的缩写，也是当年引入的新规格……
@@ -5391,7 +5390,7 @@ it delivered outstanding results.","奥迪quattro是汽车设计史上的一个�
 可提供更大的可视范围。
 它的挡泥板宽大，轴距短，显得比例很不协调。
 然而，作为一款专为比赛设计的汽车，
-它以极其出色的成绩做出了回应。R"
+它以极其出色的成绩做出了回应。"
 0x0000C462,Matano_024_civic_r_97_1st,,Tom Matano,俣野努,Honda Civic Type R (EK) '97,Honda Civic Type R (EK) '97,exact-rt2-label,Matano_024_civic_r_97_1st;Matano_024_civic_r_97_1st_Win;Matano_024_civic_r_97_Repeat;Matano_024_civic_r_97_Repeat_Win,"This is the first Civic that wore the Type “R” designation.
 This model started the tradition that continues to this day.
 When compared to the latest Type “R” model,
@@ -5434,7 +5433,7 @@ and a NACA duct on the hood!
 The great stance is set up by the tires set out to the
 edges and special suspension.
 You'll also spot the big red Brembo brake calipers
-behind the glossy black wheels.2","Type R是一款风格激进的四门掀背轿跑车。
+behind the glossy black wheels.","Type R是一款风格激进的四门掀背轿跑车。
 这款车的特别之处
 在于它就像一部充满特效的动作电影！
 你会首先被巨大的尾翼吸引，
@@ -5473,7 +5472,7 @@ Just a few months later, it secured a class
 win at Le Mans...
 ...followed by yet another triumph in 2002.
 Beloved by many, the C5-R is still considered
-among the fastest GT cars in the world!c","这是一辆第五代科尔维特——
+among the fastest GT cars in the world!","这是一辆第五代科尔维特——
 尽管是一辆2001款的C5。
 对于科尔维特而言，这是载入史册的年份。
 基于C5打造的超级跑车“C5-R”
@@ -5555,14 +5554,14 @@ Today, it’s not uncommon to see four-digit names,
 but did you know that those are reserved for SUVs?
 This ""2008"" is a compact SUV.
 As is to be expected of a Peugeot, it's perky and nimble,
-just as it should be!9","标致的车可以从它们名字中的数字区分开来。
+just as it should be!","标致的车可以从它们名字中的数字区分开来。
 例如“205”或“306”，似乎所有车名都遵循着三位数命名格式。
 这一传统其实可追溯到1929年的“201”！
 如今，它旗下以四位数命名的车型并不少见，
 但你或许不知道这些是专门留给SUV的。
 这台“2008”就是一款紧凑型SUV。
 与其他标致车型相似，这台车活力十足，灵活敏捷，
-一切都恰到好处！Q"
+一切都恰到好处！"
 0x0000C915,CarLover_036_bx_19_trs_87_1st,,Stella,斯黛拉,Citroën BX 19 TRS '87,Citroën BX 19 TRS '87,exact-rt2-label,CarLover_036_bx_19_trs_87_1st;CarLover_036_bx_19_trs_87_1st_Win;CarLover_036_bx_19_trs_87_Repeat;CarLover_036_bx_19_trs_87_Repeat_Win,"When I hear the name Citroën, the first thing that comes
 to mind is this BX.
 Who could forget those straight lines, that boxy shape?
@@ -5573,7 +5572,7 @@ it was also a car rich in variation.
 Launched in 1982, it proved to be a lasting success,
 staying in production for over a decade.
 All told, around 2.3 million units were produced
-across the entire lineup!R","一听到雪铁龙，我首先想到的就是这款BX。
+across the entire lineup!","一听到雪铁龙，我首先想到的就是这款BX。
 有谁会不记得它那笔直的线条和方方正正的造型呢？
 而拥有如此独特外观的汽车，毫无疑问
 只会出自意大利设计公司博通之手！
@@ -5756,7 +5755,7 @@ and 6 cylinders.
 Combine the two and you get “296.""
 I’ve heard that Ferrari used a similar naming convention
 for several models between 1970 and 1990.
-I can’t say exactly how many, but I certainly plan to find out!G","296 GTB是法拉利最具标志性的GT3赛车。
+I can’t say exactly how many, but I certainly plan to find out!","296 GTB是法拉利最具标志性的GT3赛车。
 其命名取自引擎的核心参数。
 具体而言，该车搭载2.9升排量的6缸引擎。
 两者结合便构成了“296”的命名！

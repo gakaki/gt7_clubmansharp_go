@@ -3,6 +3,7 @@
 
 import csv
 import json
+import re
 from pathlib import Path
 
 ROOT = Path(r"C:\gt7\gt7\_re\site")
@@ -21,10 +22,13 @@ def main() -> None:
     dialogues = [d for car in cars for d in car["dialogues"]]
 
     assert len({d["id"] for d in dialogues}) == 444
-    assert len({d["id"] for car in cars for d in car["dialogues"]}) == 444
+    assert len(dialogues) == 444
     assert payload["stats"]["dialogues"] == 444
     assert payload["stats"]["unmatched"] == 0
     assert payload["stats"]["legacyReview"] == 253
+    assert payload["stats"]["withDialogue"] == sum(
+        bool(car["dialogues"] or car["conversation"]) for car in cars
+    ) == 332
     assert len(payload["unmatched"]) == 253
     assert all(row.get("resolved") for row in payload["unmatched"])
     assert payload["stats"]["mappedDialogues"] == 444
@@ -146,6 +150,28 @@ def main() -> None:
         len(scene_rows),
         payload["stats"]["conversationLines"],
     )
+    for car in cars:
+        by_scene = {}
+        for turn in car["conversation"]:
+            by_scene.setdefault(turn.get("sceneKey") or turn.get("sceneId"), []).append(
+                turn["sceneOrder"]
+            )
+        for scene_key, orders in by_scene.items():
+            assert orders == list(range(1, len(orders) + 1)), (
+                car["nameEn"],
+                scene_key,
+                orders,
+            )
+
+    dialogue_owners = {}
+    for car in cars:
+        for dialogue in car["dialogues"]:
+            dialogue_owners.setdefault(dialogue["id"], set()).add(car["nameEn"])
+    assert not {
+        dialogue_id: owners
+        for dialogue_id, owners in dialogue_owners.items()
+        if len(owners) > 1
+    }
 
     by_name = {car["nameEn"]: car for car in cars}
     assert len(cars) == 591
@@ -220,9 +246,24 @@ def main() -> None:
                 scene_key,
                 sorted(scene_owners[scene_key]),
             )
-    assert sum(bool(car["dialogues"]) for car in cars) == 329
+    assert sum(bool(car["dialogues"]) for car in cars) == 328
+    assert not by_name["Nissan GT-R NISMO GT3 '13"]["dialogues"]
+    assert {
+        dialogue["id"]
+        for dialogue in by_name["Nissan GT-R LM NISMO '15"]["dialogues"]
+    } >= {"0x0000964E"}
     assert sum(bool(car["conversation"]) for car in cars) == exact_report["stats"]["carsWithConversation"]
     assert "cafeScenes" not in cars[0]
+
+    for path in (ROOT / "public" / "data").rglob("*"):
+        if not path.is_file() or path.suffix.lower() not in {
+            ".csv", ".json", ".md", ".html", ".js", ".css",
+        }:
+            continue
+        text = path.read_text(encoding="utf-8-sig")
+        assert "\ufffd" not in text, path
+        assert not re.search(r"[\x00-\x08\x0b\x0c\x0e-\x1f\x7f]", text), path
+        assert not re.search(r"<p\s+scmd=|<sseq\b|nmsgid=", text), path
 
     print(
         "PASS "

@@ -196,6 +196,14 @@ def _parse_dms(path: Path):
 def _clean_text(value: str) -> str:
     value = value.replace("\r\n", "\n").replace("\r", "\n")
     value = value.replace("\ufeff", "")
+    # Style-bearing paragraph tags are real paragraph breaks. Convert them
+    # before the generic tag stripper, which would otherwise remove them.
+    value = re.sub(
+        r"<p\s+scmd=\"[^\"]*\"\s*/?>",
+        "\n",
+        value,
+        flags=re.IGNORECASE,
+    )
     value = re.sub(r"<p\s*/?>", "\n", value, flags=re.IGNORECASE)
     value = re.sub(r"<br\s*/?>", "\n", value, flags=re.IGNORECASE)
     # The localisation payload uses ordinary tags for paragraphs, but also
@@ -205,6 +213,15 @@ def _clean_text(value: str) -> str:
         r"</?[A-Za-z][A-Za-z0-9_-]*(?:\s[^>]*)?>",
         "",
         value,
+    )
+    # A damaged RT2 candidate can leave a truncated paragraph command such as
+    # ``<p scmd="GTCafe_Top"`` plus a few bytes. Drop only the damaged line so
+    # any subsequent paragraphs are retained.
+    value = re.sub(
+        r"<p\b[^>\n]*(?:\n|$)",
+        "\n",
+        value,
+        flags=re.IGNORECASE,
     )
     value = re.sub(r"<([^<>/]+)>", r"\1", value)
     value = re.sub(r"[\x00-\x08\x0b-\x1f\x7f]", "", value)

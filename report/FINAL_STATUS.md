@@ -73,7 +73,7 @@ so the research tree does not misrepresent partial formats as complete.
 
 ```text
 verify_site_data.py:
-PASS cars=591 with_dialogue=329 dialogues=444 scene_lines=2620 mapped=444
+PASS cars=591 with_dialogue=332 dialogues=444 scene_lines=2620 mapped=444
 images=582 speakers=14 car_texts=634 text_cars=581 review=253
 
 verify_rust_parity.py:

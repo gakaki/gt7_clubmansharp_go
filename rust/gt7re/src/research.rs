@@ -199,6 +199,16 @@ fn clean_text(value: &str) -> String {
     while let Some(start) = rest.find('<') {
         out.push_str(&rest[..start]);
         let Some(rel_end) = rest[start + 1..].find('>') else {
+            let malformed = rest[start + 1..].trim_start().to_ascii_lowercase();
+            if malformed.starts_with("p ") || malformed.starts_with("p/") {
+                if let Some(newline) = rest[start..].find('\n') {
+                    out.push('\n');
+                    rest = rest[start + newline + 1..].to_string();
+                } else {
+                    rest.clear();
+                }
+                break;
+            }
             out.push_str(&rest[start..]);
             rest.clear();
             break;
@@ -206,7 +216,11 @@ fn clean_text(value: &str) -> String {
         let end = start + 1 + rel_end;
         let inner = rest[start + 1..end].trim();
         let lower = inner.to_ascii_lowercase();
-        if lower == "p" || lower == "p/" || lower.starts_with("br") {
+        if lower == "p"
+            || lower == "p/"
+            || lower.starts_with("p ")
+            || lower.starts_with("br")
+        {
             out.push('\n');
         } else if inner
             .chars()
@@ -304,7 +318,7 @@ fn orphan_text_id(message_key: &str) -> Option<u32> {
 
 fn canonical_car_name(id: &str) -> Option<&'static str> {
     Some(match id {
-        "0x0000428B" => "Alfa Romeo GIULIA TZ2  carrozzata da ZAGATO '65",
+        "0x0000428B" => "Alfa Romeo GIULIA TZ2 carrozzata da ZAGATO '65",
         "0x0000761E" => "BMW M4 Gr.4",
         "0x0000761D" => "BMW M4 Safety Car",
         "0x0000AB4D" => "Dallara SF23 Super Formula / Honda '23",
@@ -473,6 +487,7 @@ fn explicit_car_ids(car_key: &str) -> &'static [&'static str] {
 }
 
 const DETAIL_TEXT_OVERRIDES: &[(&str, &[&str], &str)] = &[
+    ("0x0000964E", &["0x00006F52"], "Jeremy"),
     ("0x0000D6DE", &["0x0000D4C8"], "Stella"),
     ("0x0000D6D2", &["0x0000D4C6"], "Chris"),
     ("0x0000D6D8", &["0x0000D4C7"], "Jeremy"),

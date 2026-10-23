@@ -893,7 +893,7 @@ function yearOf(name) {
       · <a :href="base + 'data/dealer_offers.csv'" download>当前车商报价 CSV</a>
       · <a :href="base + 'data/car_text_orphans.csv'" download>未归属说明文本 CSV</a>
       · 数据来源：Gran Turismo 7 (PS5, PPSA01317) 本地化文本 · 仅供研究使用
-      <div class="credits">Luca / Sarah 头像来自公开角色资料，其余常驻好友为站点绘制说明图。</div>
+      <div class="credits">19 张角色头像均由本机 PS5 IDP0/TXS5 面部图集解码；站点未使用共享占位头像。</div>
       <div class="kbdhint">键盘：↑/↓/←/→ 浏览 · Enter 打开 · Esc 关闭 · / 搜索</div>
     </footer>
   </div>

@@ -376,7 +376,7 @@ These are the 253 records that could not be safely assigned by the previous heur
 > 这让R18挤进了第三位，站上了领奖台，
 > 并达成了连续18年登上领奖台的记录。
 > 最终，由于奥迪宣布从那年的勒芒赛事中退出，
-> 他们的连胜纪录v就此终结。j
+> 他们的连胜纪录v就此终结。
 
 ### Audi R18 TDI '11 · Audi R18 TDI '11
 
@@ -564,7 +564,7 @@ These are the 253 records that could not be safely assigned by the previous heur
 > 可提供更大的可视范围。
 > 它的挡泥板宽大，轴距短，显得比例很不协调。
 > 然而，作为一款专为比赛设计的汽车，
-> 它以极其出色的成绩做出了回应。R
+> 它以极其出色的成绩做出了回应。
 
 ### BMW M3 Coupé '07 · BMW M3 Coupé '07
 
@@ -626,7 +626,7 @@ These are the 253 records that could not be safely assigned by the previous heur
 > However, the surface treatment is fresh and interesting.
 > Even seeing it now, it's not bad at all.
 > This is one of the cars that represented
-> the change in flow of BMW design.j
+> the change in flow of BMW design.
 
 **中文**
 
@@ -637,7 +637,7 @@ These are the 253 records that could not be safely assigned by the previous heur
 > 此外，这辆M3开始从车身配比上与传统前置后驱车分道扬镳。
 > 其车身外观的处理也非常新颖有趣。
 > 即便从现在的眼光来看也丝毫不过时。
-> 可以说，这是一台反映了宝马设计思路演变的车。p
+> 可以说，这是一台反映了宝马设计思路演变的车。
 
 ### BMW M3 Sport Evolution '89 · BMW M3 Sport Evolution '89
 
@@ -672,7 +672,7 @@ These are the 253 records that could not be safely assigned by the previous heur
 > 乍一看，好像只是些细微改动，但实则不然。
 > 呵呵！实际上这车型深藏不露……
 > 这款车的产量不多，所以价格
-> 只会不断往上涨。B
+> 只会不断往上涨。
 
 #### `0x00009E78`
 
@@ -793,7 +793,7 @@ These are the 253 records that could not be safely assigned by the previous heur
 > 那我告诉你一个事实，日本房车赛传奇车手荒圣治驾驶着它
 > 于2018年在狭窄的澳门大奖赛赛道上
 > 取得了一场辉煌的胜利……
-> 这是一场令人难以置信的比赛，精彩程度令人叹为观止！A
+> 这是一场令人难以置信的比赛，精彩程度令人叹为观止！
 
 ### BMW Z4 GT3 '11 · BMW Z4 GT3 '11
 
@@ -856,7 +856,7 @@ These are the 253 records that could not be safely assigned by the previous heur
 > It’s really quite wonderful!
 > It’s a more emotional, artistic approach that
 > embraces imperfections as character!
-> And, if anything, the Z8 is full of character.P
+> And, if anything, the Z8 is full of character.
 
 **中文**
 
@@ -869,7 +869,7 @@ These are the 253 records that could not be safely assigned by the previous heur
 > 它有着极强的表现力！
 > 这是一种更感性、更艺术的设计方法，
 > 接纳不完美，并把它转化为车的个性！
-> 倒不如说，这台Z8全身上下都散发着强烈的个性！g
+> 倒不如说，这台Z8全身上下都散发着强烈的个性！
 
 ### BMW i3 '15 · BMW i3 '15
 
@@ -986,7 +986,7 @@ These are the 253 records that could not be safely assigned by the previous heur
 > The car's elegant lines are uninterrupted, running smoothly
 > around its body—a joy to trace with your eyes.
 > The styling expresses a euphoric art nouveau expression
-> It makes me respect Jean Bugatti all the more.Y
+> It makes me respect Jean Bugatti all the more.
 
 **中文**
 
@@ -1197,7 +1197,7 @@ These are the 253 records that could not be safely assigned by the previous heur
 > than other Camaros.
 > Its dark hood, grille, headlamps, and full-width splitter
 > give this car a wide, sinister appearance.
-> With two-tone colors, it's all business. Period!R
+> With two-tone colors, it's all business. Period!
 
 **中文**
 
@@ -1349,7 +1349,7 @@ These are the 253 records that could not be safely assigned by the previous heur
 > ZR1同样还配备了巨大的进气口和出气口……
 > 用于引导气流，为车头和车尾的散热器提供风冷降温。
 > 许多人都很喜欢它的尾翼。
-> 不过我个人更喜欢配备尺寸更小的后扰流板。Q
+> 不过我个人更喜欢配备尺寸更小的后扰流板。
 
 ### Chevrolet Corvette Sting Ray Sport Coupe (C2) '63 · Chevrolet Corvette Sting Ray Sport Coupe (C2) '63
 
@@ -1455,7 +1455,7 @@ These are the 253 records that could not be safely assigned by the previous heur
 > win at Le Mans...
 > ...followed by yet another triumph in 2002.
 > Beloved by many, the C5-R is still considered
-> among the fastest GT cars in the world!c
+> among the fastest GT cars in the world!
 
 **中文**
 
@@ -1558,7 +1558,7 @@ These are the 253 records that could not be safely assigned by the previous heur
 > Launched in 1982, it proved to be a lasting success,
 > staying in production for over a decade.
 > All told, around 2.3 million units were produced
-> across the entire lineup!R
+> across the entire lineup!
 
 **中文**
 
@@ -1639,7 +1639,7 @@ These are the 253 records that could not be safely assigned by the previous heur
 > This Honda-powered SF19 conjures up memories
 > of Alex Palou’s record victory.
 > Palou later went on to compete in the IndyCar series,
-> a formula racing series held in the USA.2
+> a formula racing series held in the USA.
 
 **中文**
 
@@ -1683,7 +1683,7 @@ These are the 253 records that could not be safely assigned by the previous heur
 > Thanks to their F1 experience, the drivers were able
 > to push the car to its limits.
 > Nick Cassidy was the series champion when tis machine
-> made its debut in 2019.g
+> made its debut in 2019.
 
 **中文**
 
@@ -1817,7 +1817,7 @@ These are the 253 records that could not be safely assigned by the previous heur
 > the original Vallelunga, with a Ford V-8 housed within.
 > Access to the mid-mounted engine comes
 > via a butterfly-type rear hatch.
-> This detail is also particularly interesting and fun. I like it.n
+> This detail is also particularly interesting and fun. I like it.
 
 **中文**
 
@@ -1830,7 +1830,7 @@ These are the 253 records that could not be safely assigned by the previous heur
 > 它采用了与其原型瓦莱伦加相同的脊骨式车架技术，
 > 搭载福特V8引擎。
 > 掀开鸥翼式的后备箱盖，就可以看到这台中置引擎。
-> 这个细节特别有趣味。我很喜欢。P
+> 这个细节特别有趣味。我很喜欢。
 
 ### Dodge Challenger R/T '70 · Dodge Challenger R/T '70
 
@@ -1857,7 +1857,7 @@ These are the 253 records that could not be safely assigned by the previous heur
 > called the "Shaker."
 > When it shakes, it declares the enormous power it possesses.
 > If you include the optional rear spoiler, the Challenger R/T
-> is a muscle car that's sure to catch anyone's eye.A
+> is a muscle car that's sure to catch anyone's eye.
 
 **中文**
 
@@ -2010,7 +2010,7 @@ These are the 253 records that could not be safely assigned by the previous heur
 > 尽管我觉得这款车的前脸看上去还挺可爱的。
 > 可是当你坐进驾驶室里的时候绝对会大吃一惊，因为你
 > 很难看到这辆车的车头究竟在哪里……
-> 我猜这是因为它的引擎实在太大了！e
+> 我猜这是因为它的引擎实在太大了！
 
 ### Enzo Ferrari '02 · Enzo Ferrari '02
 
@@ -2077,7 +2077,7 @@ These are the 253 records that could not be safely assigned by the previous heur
 > Thanks to the intentionally flared wheel arches,
 > the car appears to be in constant motion.
 > The yawning hood lid is also qite appealing,
-> not to mention functional.4
+> not to mention functional.
 
 **中文**
 
@@ -2162,7 +2162,7 @@ These are the 253 records that could not be safely assigned by the previous heur
 > Combine the two and you get “296."
 > I’ve heard that Ferrari used a similar naming convention
 > for several models between 1970 and 1990.
-> I can’t say exactly how many, but I certainly plan to find out!G
+> I can’t say exactly how many, but I certainly plan to find out!
 
 **中文**
 
@@ -2312,7 +2312,7 @@ These are the 253 records that could not be safely assigned by the previous heur
 > professor at the University of Stuttgart in the 1930s.
 > Therein lies the reason why this particular design is called
 > the "Kamm Tail."
-> We also refer to it as "Coda Tronca" in Italian.K
+> We also refer to it as "Coda Tronca" in Italian.
 
 **中文**
 
@@ -2357,7 +2357,7 @@ These are the 253 records that could not be safely assigned by the previous heur
 > 在此之后被应用到了大多数法拉利上。
 > 星形的五辐铝制车轮也是法拉利设计的重要标志。
 > 事实上，这种轮毂样式源于20世纪60年代设计……
-> 并在戴通纳比赛中投入使用的一台原型跑车。9
+> 并在戴通纳比赛中投入使用的一台原型跑车。
 
 ### Ferrari 430 Scuderia '07 · Ferrari 430 Scuderia '07
 
@@ -2547,7 +2547,7 @@ These are the 253 records that could not be safely assigned by the previous heur
 > But the most characteristic elements
 > are the Aero Bridges...
 > Channelling the air from the hood towards the flanks,
-> improving the overall aerodyamic efficiency.3
+> improving the overall aerodyamic efficiency.
 
 **中文**
 
@@ -2595,7 +2595,7 @@ These are the 253 records that could not be safely assigned by the previous heur
 > ...the horizontal black groove...
 > ...as well as the three round central exhausts and...
 > ...the huge rear wing with the initials F40
-> in bas-relief on the right side.W
+> in bas-relief on the right side.
 
 **中文**
 
@@ -2761,7 +2761,7 @@ These are the 253 records that could not be safely assigned by the previous heur
 > 猛禽不仅有宽车体、强化的悬挂系统，
 > 还有一台能输出以上的6.2升V8引擎。
 > 只要将这头野兽的本领发挥出来，
-> 您对于卡车能跑多快的认识一定会被击碎。t
+> 您对于卡车能跑多快的认识一定会被击碎。
 
 #### `0x00009FD7`
 
@@ -2795,7 +2795,7 @@ These are the 253 records that could not be safely assigned by the previous heur
 > 极大的上坡角增大了车架前后部分与地面的空间，
 > 使其能够轻松搞定起伏坎坷的地形。
 > 另外，这辆初代猛禽搭载的可是一台V8引擎，
-> 无论是个性还是侵略性，都更上一层楼！L
+> 无论是个性还是侵略性，都更上一层楼！
 
 ### Ford GT '06 · Ford GT '06
 
@@ -2868,11 +2868,11 @@ These are the 253 records that could not be safely assigned by the previous heur
 > to a new level.
 > It had a sequential blinker inspired by the '67/'68 Shelby.
 > And, did it ever look ean, especially with optional big
-> wheels spaced-out to the edges!x
+> wheels spaced-out to the edges!
 
 **中文**
 
-> J·梅斯及其团队的目标……
+> 梅斯及其团队的目标……
 > 是使这款车更贴近一辆欧洲跑车，同时不失
 > 其美式小马车的传统。
 > 这确实是一个艰巨的任务！
@@ -2888,7 +2888,7 @@ These are the 253 records that could not be safely assigned by the previous heur
 > 经典的三道杠式尾灯设计被提升到了一个新的高度……
 > 并采用了受到'67/'68 Shely启发的顺序闪灯效果。
 > 在选配了几乎占满全部轮拱的大尺寸轮圈之后，
-> 整车的姿态近乎完美，更显卓尔不凡！C
+> 整车的姿态近乎完美，更显卓尔不凡！
 
 ### GReddy Fugu Z · GReddy Fugu Z
 
@@ -2920,7 +2920,7 @@ These are the 253 records that could not be safely assigned by the previous heur
 > And now...
 > ...the raw pureness of the spirit of the
 > 1973 Z shines brightly in the Fugu Z.
-> Thank you, Sung Kang!c
+> Thank you, Sung Kang!
 
 **中文**
 
@@ -3013,7 +3013,7 @@ These are the 253 records that could not be safely assigned by the previous heur
 > 风驰电掣的速度和充沛的动力。
 > 不过我的最爱还是Type R B-引擎。
 > 虽然动力不如K-引擎，但它的咆哮声绝对令人
-> 终生难忘！X
+> 终生难忘！
 
 ### Honda Civic Type R (EK) '97 · Honda Civic Type R (EK) '97
 
@@ -3066,7 +3066,7 @@ These are the 253 records that could not be safely assigned by the previous heur
 > The great stance is set up by the tires set out to the
 > edges and special suspension.
 > You'll also spot the big red Brembo brake calipers
-> behind the glossy black wheels.2
+> behind the glossy black wheels.
 
 **中文**
 
@@ -3218,7 +3218,7 @@ These are the 253 records that could not be safely assigned by the previous heur
 > At the time, the All Japan Grand Touring Championship
 > was evolving into the Super GT Series.
 > The EPSON NSX competed in the latter half of the 2008
-> season, where it came in 2nd place in ound 8 race.z
+> season, where it came in 2nd place in ound 8 race.
 
 **中文**
 
@@ -3398,7 +3398,7 @@ These are the 253 records that could not be safely assigned by the previous heur
 > It had a tight mechanical feel to it.
 > However, it became notchy often.
 > That’s why I wanted the Miata to have a short stroke shifter...
-> ...without the notchiness, of course.g
+> ...without the notchiness, of course.
 
 **中文**
 
@@ -3411,7 +3411,7 @@ These are the 253 records that could not be safely assigned by the previous heur
 > 它可以为你提供扎实、机械的手感……
 > 虽然确实时不时会出一些小毛病。
 > 是它帮助我下定决心为Miata配备了短行程变速箱……
-> 当然，我们的变速箱没有那些小毛病。K
+> 当然，我们的变速箱没有那些小毛病。
 
 #### `0x0000A8F5`
 
@@ -3550,7 +3550,7 @@ These are the 253 records that could not be safely assigned by the previous heur
 > 勾勒出准确的面部和造型表达。
 > 其内核是追求独特的个性和审美趣味。
 > 在某种程度上，它是素描这一经典画技的延伸……
-> 并加入了以毛笔笔触带来的、意想不到的视觉效果。n
+> 并加入了以毛笔笔触带来的、意想不到的视觉效果。
 
 ### Jaguar E-type Coupé '61 · Jaguar E-type Coupé '61
 
@@ -3610,7 +3610,7 @@ These are the 253 records that could not be safely assigned by the previous heur
 > The XJ13.
 > Designed by the famous Malcolm Sayer...
 > ...the XJ13 never raced, but it surely served as
-> inspiration for the nw legendary E-Type.u
+> inspiration for the nw legendary E-Type.
 
 **中文**
 
@@ -3626,7 +3626,7 @@ These are the 253 records that could not be safely assigned by the previous heur
 > XJ13。
 > XJ13由著名的马尔科姆·塞尔所设计……
 > 尽管从未参加过任何比赛，但它无疑
-> SE-Type的开发提供了大量的思路。4
+> SE-Type的开发提供了大量的思路。
 
 ### Jaguar XJR-9 '88 · Jaguar XJR-9 '88
 
@@ -3651,7 +3651,7 @@ These are the 253 records that could not be safely assigned by the previous heur
 > But they first had to endure a stressful race.
 > It wasn't until the end that Jaguar was able to put away
 > the Porsche that was applying pressure all race.
-> Just thinking of it now sends chill down my spine.V
+> Just thinking of it now sends chill down my spine.
 
 **中文**
 
@@ -3665,7 +3665,7 @@ These are the 253 records that could not be safely assigned by the previous heur
 > 萨森赛车场那时热闹非凡！
 > 那场比赛非常激烈，获胜的捷豹到最后
 > 都一直面临着身后保时捷的压力！
-> 光是想想那场景就让我背脊发凉！0
+> 光是想想那场景就让我背脊发凉！
 
 ### Jeep Willys MB '45 · Jeep Willys MB '45
 
@@ -3804,7 +3804,7 @@ These are the 253 records that could not be safely assigned by the previous heur
 
 **中文**
 
-> “宝贝兰博”系列的推出旨在拓宽兰博基尼品牌
+> 宝贝兰博”系列的推出旨在拓宽兰博基尼品牌
 > 的市场。
 > 与其超级跑车的兄弟相比，这些“小型”车型……
 > 以更锐利的车身线条、更紧凑的车身尺寸
@@ -3973,7 +3973,7 @@ These are the 253 records that could not be safely assigned by the previous heur
 > ...I think it's correct in saying that
 > the Stratos is "Bertone designed."
 > I would seriously love to add this car to my collection,
-> but it has become too expensive.G
+> but it has become too expensive.
 
 **中文**
 
@@ -4085,7 +4085,7 @@ These are the 253 records that could not be safely assigned by the previous heur
 > a proper Super Endurance race car.
 > When you're overtaken by this car, I think you'll really notice
 > how good it looks from the back...
-> ...so on the track, I'd appreciate if you would let me pass!y
+> ...so on the track, I'd appreciate if you would let me pass!
 
 **中文**
 
@@ -4285,11 +4285,11 @@ These are the 253 records that could not be safely assigned by the previous heur
 > ...was so dehydrated after the race that he was unable
 > to make the podium.
 > As for the engine, when Mazda's engineers took it apart, they
-> apparently saw that it could have gone another 500 km!L
+> apparently saw that it could have gone another 500 km!
 
 **中文**
 
-> “转子引擎的油耗高得吓人，所以不适合耐力赛。”
+> 转子引擎的油耗高得吓人，所以不适合耐力赛。”
 > 赛车界曾是这样看待转子引擎的。
 > 但是马自达的工程师们却不这么认为！
 > 他们努力的结晶便是将重点放在马力上，
@@ -4422,7 +4422,7 @@ These are the 253 records that could not be safely assigned by the previous heur
 > 到设计的魔力。
 > 尤其是轿车，看起来再普通不过，设计起来反而最难。
 > 所以，要评估一位设计师的水平，关键在于他能否为正
-> 统车型设计出经久不衰的作品。P
+> 统车型设计出经久不衰的作品。
 
 #### `0x0000C46E`
 
@@ -4627,7 +4627,7 @@ These are the 253 records that could not be safely assigned by the previous heur
 > 能让你感到人车融为一体、操控自如的敞篷轻量级跑车
 > 的市场
 > 在当时已几近消亡。
-> 这款车可以说是以一己之力挽救了所有同类车型的救星。s
+> 这款车可以说是以一己之力挽救了所有同类车型的救星。
 
 ### Mazda LM55 Vision Gran Turismo (Gr.1) · Mazda LM55 Vision Gran Turismo (Gr.1)
 
@@ -4729,7 +4729,7 @@ These are the 253 records that could not be safely assigned by the previous heur
 > 要我说，这个年代的FD和NA Roadster绝对是马自达
 > 历史上最杰出的两个设。
 > 当时马自达处理三维形状的能力确实是世界一流的。
-> 正好也赶上了马自达的设计理念刚开始成型的时候。C
+> 正好也赶上了马自达的设计理念刚开始成型的时候。
 
 ### Mazda RX-8 Spirit R '12 · Mazda RX-8 Spirit R '12
 
@@ -4800,7 +4800,7 @@ These are the 253 records that could not be safely assigned by the previous heur
 > There was a Mazda Fan Festa event the other day,
 > at a circuit in Okayama.
 > There were a lot of RX-8 owners there. I really appreciate the
-> fact that they are taking great care of these cars even today.U
+> fact that they are taking great care of these cars even today.
 
 **中文**
 
@@ -4822,7 +4822,7 @@ These are the 253 records that could not be safely assigned by the previous heur
 > 就好了。
 > 前几天，我'冈山参加了个马自达车迷聚会……
 > 我看到好多人都是开着RX-8来的。这么多年过去了，这
-> 款车还是很有人气，真令人开心。C
+> 款车还是很有人气，真令人开心。
 
 ### Mazda RX-VISION '15 · Mazda RX-VISION '15
 
@@ -4902,7 +4902,7 @@ These are the 253 records that could not be safely assigned by the previous heur
 > 为了达到这个效果，我得给它注入“生命感”。
 > 在思考怎么才能让它看起来更自然时……
 > 我开始实验光线在车身上的反射效果。
-> 就这样，RX-VISION活灵活现地呈现在了大家面前！X
+> 就这样，RX-VISION活灵活现地呈现在了大家面前！
 
 ### Mazda RX-VISION GT3 CONCEPT · MAZDA RX-VISION GT3 CONCEPT8
 
@@ -4933,7 +4933,7 @@ These are the 253 records that could not be safely assigned by the previous heur
 > seemingly out of the blue...
 > ...is probably related to the fact that the design boss
 > in Hiroshima is a race driver himsef.
-> I really can't wait to hear that rotary engine roar!C
+> I really can't wait to hear that rotary engine roar!
 
 **中文**
 
@@ -5033,7 +5033,7 @@ These are the 253 records that could not be safely assigned by the previous heur
 > The roofline runs straight across the body to the rear,
 > where it abruptly cuts off in a coda tronca.
 > This tells me that it may have been developed as a prototype
-> for engineering purposes.X
+> for engineering purposes.
 
 **中文**
 
@@ -5057,14 +5057,14 @@ These are the 253 records that could not be safely assigned by the previous heur
 > That’s right, it refers to a truncated tail, or rear.
 > What we call a "Kamm Tail" in English.
 > The Kamm Tail is named after the German aerodynamicist
-> Wunibald Kamm, who theorized the design in the 1930s.q
+> Wunibald Kamm, who theorized the design in the 1930s.
 
 **中文**
 
 > 没错，它指的是尾部被截短。
 > 在英语中通常被称为“断尾”。
 > 这一术语源自于德国空气动力学家乌尼巴尔·卡姆，
-> 他在上世纪30年代提出了这种设计理念。E
+> 他在上世纪30年代提出了这种设计理念。
 
 #### `0x0000B8ED`
 
@@ -5165,7 +5165,7 @@ These are the 253 records that could not be safely assigned by the previous heur
 > 我对他们说：“我是个藏不住事的人。
 > 万一明天我一不小心当众露7失望表情，你们打算怎么办？”
 > 他们这才让我看到了新车，你猜怎么着？
-> 第四代的设计方向走得很踏实。V
+> 第四代的设计方向走得很踏实。
 
 ### Mercedes-AMG C 63 S '15 · Mercedes-AMG C 63 S '15
 
@@ -5188,7 +5188,7 @@ These are the 253 records that could not be safely assigned by the previous heur
 > And the resulting wide stance makes the car look stable,
 > as well as possessing performance.
 > They distinguish the base C coupe from the AMG version
-> for those who have keen eyes.X
+> for those who have keen eyes.
 
 **中文**
 
@@ -5200,7 +5200,7 @@ These are the 253 records that could not be safely assigned by the previous heur
 > 而这种设计让车身显得又宽又低，看上去非常稳定，
 > 性能也同样卓越。
 > 在懂行的人眼里，这些特点让AMG版本与
-> 基础的C级双门跑车有了明显的区分。s
+> 基础的C级双门跑车有了明显的区分。
 
 ### Mercedes-AMG GT S '15 · Mercedes-AMG GT S '15
 
@@ -5243,7 +5243,7 @@ These are the 253 records that could not be safely assigned by the previous heur
 > 他们从奥弗莱希特、梅尔赫和
 > 格罗萨斯帕赫三个名字中
 > 各取一个首字母，为公司起名为“AMG”。
-> 那是在1967年！2
+> 那是在1967年！
 
 ### Mercedes-AMG GT3 '16 · Mercedes-AMG GT3 '16
 
@@ -5537,7 +5537,7 @@ These are the 253 records that could not be safely assigned by the previous heur
 > One of my favorite design features is how the front fender
 > vents are linked to the shape of the door opening.
 > Overall, the SLR McLaren has the look of speed,
-> grace, and elegance.x
+> grace, and elegance.
 
 **中文**
 
@@ -5592,7 +5592,7 @@ These are the 253 records that could not be safely assigned by the previous heur
 > 这种设计让理想的重量分布成为了可能，
 > 从而改善了这辆车在直线和弯道上性能！
 > 作为300 SL的后继者，这辆车的价值
-> 肯定会水涨船高吧。Y
+> 肯定会水涨船高吧。
 
 ### Mercedes-Benz SLS AMG GT3 '11 · Mercedes-Benz SLS AMG GT3 '11
 
@@ -5616,7 +5616,7 @@ These are the 253 records that could not be safely assigned by the previous heur
 > And its speed and reliability made it a formidable
 > weapon for privateers the world over.
 > The SLS AMG GT 3 has really competed in
-> many, many GT races over the years.n
+> many, many GT races over the years.
 
 **中文**
 
@@ -5940,7 +5940,7 @@ These are the 253 records that could not be safely assigned by the previous heur
 > With new bumpers, air outlets,
 > and overfenders...
 > ...it’s practically a different car, and yet it’s
-> incredibly sleek all the same.x
+> incredibly sleek all the same.
 
 **中文**
 
@@ -6129,7 +6129,7 @@ These are the 253 records that could not be safely assigned by the previous heur
 > If the Z33 represented a modern and more
 > elegant design theme...
 > ...then the Z34's look is one that's a more authentic of an
-> FR sports car with added aggressiveness.2
+> FR sports car with added aggressiveness.
 
 **中文**
 
@@ -6175,7 +6175,7 @@ These are the 253 records that could not be safely assigned by the previous heur
 > That's why the car is still so popular.
 > And here's an interesting fact:
 > The area around the opening line of the rear hatch,
-> was carried over to the Z33. u
+> was carried over to the Z33.
 
 **中文**
 
@@ -6328,7 +6328,7 @@ These are the 253 records that could not be safely assigned by the previous heur
 > ...I said to myself, "The racecars painted in their
 > sponsor colors all look the same."　
 > That's when I decided that the shape of
-> the R35 GT-R's cabin must abolutely remain distinctive!n
+> the R35 GT-R's cabin must abolutely remain distinctive!
 
 **中文**
 
@@ -6414,6 +6414,44 @@ These are the 253 records that could not be safely assigned by the previous heur
 > 23作为号码的……
 > 没错，就是1998年的这辆Pennzoil！.
 
+### Nissan GT-R LM NISMO '15 · Nissan GT-R LM NISMO '15
+
+#### `0x0000964E`
+
+- Speaker: **Jeremy** (杰里米)
+- Legacy candidate: `unresolved`
+- Exact car key: `gtr_nismo_gt3_13`
+- Exact resolution: `exact-rt2-label`
+- Conversation scene keys: `RaceEnthusiast_025_gtr_lm_nismo_15_1st; RaceEnthusiast_025_gtr_lm_nismo_15_1st_Win; RaceEnthusiast_025_gtr_lm_nismo_15_Repeat; RaceEnthusiast_025_gtr_lm_nismo_15_Repeat_Win`
+
+**English**
+
+> I was pretty surprised when I heard about Nissan's entry
+> in the 24 Hours of Le Mans in 2015.
+> It was this GT-R LM NISMO.
+> The designer, Ben Bowlby, insisted on an FF layout and
+> focused on the car's aerodynamics.
+> Unfortunately, these innovations didn't pay off.
+> In qualifying, the car was 20 seconds slower than its
+> fastest rival.
+> Then, in the race itself, two of three cars retired, meaning
+> only one was able to make it to the finish line.
+> But this car didn't complete enough laps, so in the end
+> it was DNFed (Did Not Finish)!$
+
+**中文**
+
+> 听说日产要在2015年参加勒芒比赛时，我非常惊讶！
+> 在这辆GT-R LM NISMO上，
+> 设计师本·鲍尔比选择了前置前驱布局，并在空气动力学
+> 方面下了很大功夫。
+> 不幸的是，这些创新并没有得到回报。
+> 在排位赛中，该车比第一名慢了足有20秒。
+> 雪上加霜的是，参加正赛的三辆车中有两辆不得不退赛，
+> 这意味着只有一辆车最终到达了终点。
+> 而且，就连这位通过终点线的车手也因为没有完成足够
+> 的圈数而被判定为未完成比赛！
+
 ### Nissan GT-R NISMO (R32) '90 · Nissan GT-R NISMO (R32) '90
 
 #### `0x0000ADC3`
@@ -6452,44 +6490,6 @@ These are the 253 records that could not be safely assigned by the previous heur
 > 这些在比赛中积累的宝贵经验成为了NISMO设计的基石。
 > 只要了解NISMO在这台GT-R中倾注的努力，你就知道
 > 它是一台不折不扣的传奇！
-
-### Nissan GT-R NISMO GT3 '13 · Nissan GT-R NISMO GT3 '13
-
-#### `0x0000964E`
-
-- Speaker: **Jeremy** (杰里米)
-- Legacy candidate: `unresolved`
-- Exact car key: `gtr_nismo_gt3_13`
-- Exact resolution: `exact-rt2-label`
-- Conversation scene keys: `RaceEnthusiast_025_gtr_lm_nismo_15_1st; RaceEnthusiast_025_gtr_lm_nismo_15_1st_Win; RaceEnthusiast_025_gtr_lm_nismo_15_Repeat; RaceEnthusiast_025_gtr_lm_nismo_15_Repeat_Win`
-
-**English**
-
-> I was pretty surprised when I heard about Nissan's entry
-> in the 24 Hours of Le Mans in 2015.
-> It was this GT-R LM NISMO.
-> The designer, Ben Bowlby, insisted on an FF layout and
-> focused on the car's aerodynamics.
-> Unfortunately, these innovations didn't pay off.
-> In qualifying, the car was 20 seconds slower than its
-> fastest rival.
-> Then, in the race itself, two of three cars retired, meaning
-> only one was able to make it to the finish line.
-> But this car didn't complete enough laps, so in the end
-> it was DNFed (Did Not Finish)!$
-
-**中文**
-
-> 听说日产要在2015年参加勒芒比赛时，我非常惊讶！
-> 在这辆GT-R LM NISMO上，
-> 设计师本·鲍尔比选择了前置前驱布局，并在空气动力学
-> 方面下了很大功夫。
-> 不幸的是，这些创新并没有得到回报。
-> 在排位赛中，该车比第一名慢了足有20秒。
-> 雪上加霜的是，参加正赛的三辆车中有两辆不得不退赛，
-> 这意味着只有一辆车最终到达了终点。
-> 而且，就连这位通过终点线的车手也因为没有完成足够
-> 的圈数而被判定为未完成比赛！
 
 ### Nissan GT-R NISMO GT500 '16 · Nissan GT-R NISMO GT500 '16
 
@@ -6563,7 +6563,7 @@ These are the 253 records that could not be safely assigned by the previous heur
 > The 2017 car has a very complete look to it, and
 > I do like it myself.
 > Also, regarding the interior,
-> it has a modern design with depth and good textures.e
+> it has a modern design with depth and good textures.
 
 **中文**
 
@@ -6641,7 +6641,7 @@ These are the 253 records that could not be safely assigned by the previous heur
 > Not only was it elegantly styled, it was one of the best
 > handling machines around.
 > Today, the popularity of these cars has not waned.
-> In fact, some consider the S13 to be priceless!Q
+> In fact, some consider the S13 to be priceless!
 
 **中文**
 
@@ -6650,7 +6650,7 @@ These are the 253 records that could not be safely assigned by the previous heur
 > 简直是面面俱到的前置后驱跑车。
 > 不仅停放时姿态优雅，转弯时同样美得让人窒息。
 > 现如今，这款车确实非同寻常。
-> 老实说，S13本身就是无价之宝！9
+> 老实说，S13本身就是无价之宝！
 
 ### Nissan Silvia spec-R Aero (S15) '02 · Nissan Silvia spec-R Aero (S15) '02
 
@@ -6705,7 +6705,7 @@ These are the 253 records that could not be safely assigned by the previous heur
 > 样美丽。
 > 嗯？安装在这个奇怪位置的仪表是怎么回事？
 > 哦哦，所以他们为涡轮增压表特意找了一个位置。
-> 像这样把仪表装在你面前，大概会让你想要开得更快吧！9
+> 像这样把仪表装在你面前，大概会让你想要开得更快吧！
 
 ### Nissan Skyline 2000GT-R (KPGC110) '73 · Nissan Skyline 2000GT-R (KPGC110) '73
 
@@ -6828,14 +6828,14 @@ These are the 253 records that could not be safely assigned by the previous heur
 
 **中文**
 
-> “缩短了21秒的浪漫”。
+> 缩短了21秒的浪漫”。
 > 这是R33 Skyline GT-R广告口号。
 > 在纽博格林北侧赛道的一次计时赛中，
 > R33 Skyline GT-R将前辈车型R32 GT-R的单圈成绩消掉了
 > 整整21秒。
 > 这条口号也反映出了日产为研发R33 GT-R所做的所有
 > 投入。
-> 我认为正是这样的故事让R33 GT-R这款车更有价值。1
+> 我认为正是这样的故事让R33 GT-R这款车更有价值。
 
 #### `0x000074AC`
 
@@ -6866,7 +6866,7 @@ These are the 253 records that could not be safely assigned by the previous heur
 > 在英国注册并通过了赛事认证，
 > 这才成功将这辆车送上了勒芒的起跑线。
 > 由此可见，这辆GT-R的研发主管渡边衡三
-> 让其参加勒芒24小时耐力赛的意愿是何等强烈！o
+> 让其参加勒芒24小时耐力赛的意愿是何等强烈！
 
 ### Nissan Skyline GT-R V･spec II (R32) '94 · Nissan Skyline GT-R V･spec II (R32) '94
 
@@ -6910,7 +6910,7 @@ These are the 253 records that could not be safely assigned by the previous heur
 > 此外……
 > 从这个型号开始，由传感器来控制车辆动力
 > 和其他高性能附加套件的时代揭开了序幕。
-> 这一切都足以证明这台R32 GT-R正是当代GT-R系列的鼻祖。l
+> 这一切都足以证明这台R32 GT-R正是当代GT-R系列的鼻祖。
 
 ### Nissan Skyline GT-R V･spec II Nür (R34) '02 · Nissan Skyline GT-R V･spec II Nür (R34) '02
 
@@ -7041,7 +7041,7 @@ These are the 253 records that could not be safely assigned by the previous heur
 > 赢下了六场比赛中的半数！
 > 这是多么震撼人心的夺冠过程啊！
 > 更不必说它勇敢挑战那些强大欧洲赛车的英姿——
-> 真是太酷了！<p scmd="GTCafe_Top"
+> 真是太酷了！
 
 ### Nissan Skyline Hard Top 2000GT-R (KPGC10) '70 · Nissan Skyline Hard Top 2000GT-R (KPGC10) '70
 
@@ -7070,7 +7070,7 @@ These are the 253 records that could not be safely assigned by the previous heur
 > aren’t fastbacks, but are shaped by the C Pillar.
 > At first glance, the R35 may look like a fastback...
 > ...but you'll notice that when compared to the KPGC,
-> the window line of the C-illar is set at the same angle.h
+> the window line of the C-illar is set at the same angle.
 
 **中文**
 
@@ -7155,7 +7155,7 @@ These are the 253 records that could not be safely assigned by the previous heur
 > On even extremely twisty mountain roads,
 > the car was an absolute pleasure to drive.
 > In fact, its amazing chassis is reason enough to add this car
-> in your collection.K
+> in your collection.
 
 **中文**
 
@@ -7190,7 +7190,7 @@ These are the 253 records that could not be safely assigned by the previous heur
 > but did you know that those are reserved for SUVs?
 > This "2008" is a compact SUV.
 > As is to be expected of a Peugeot, it's perky and nimble,
-> just as it should be!9
+> just as it should be!
 
 **中文**
 
@@ -7201,7 +7201,7 @@ These are the 253 records that could not be safely assigned by the previous heur
 > 但你或许不知道这些是专门留给SUV的。
 > 这台“2008”就是一款紧凑型SUV。
 > 与其他标致车型相似，这台车活力十足，灵活敏捷，
-> 一切都恰到好处！Q
+> 一切都恰到好处！
 
 ### Plymouth Superbird '70 · Plymouth Superbird '70
 
@@ -7293,7 +7293,7 @@ These are the 253 records that could not be safely assigned by the previous heur
 > 那是用来控制“Carrera”引擎独有的两个点火线圈的。
 > 只有当你打开后引擎盖时，才能发现真正的差别所在！
 > 你会发现，四凸轮轴“Carrera”引擎简直是一件美妙的艺术品！
-> 连风扇罩和总成打造得异常精美！K
+> 连风扇罩和总成打造得异常精美！
 
 ### Porsche 356 A/1500 GS GT Carrera Speedster '56 · Porsche 356 A/1500 GS GT Carrera Speedster '56
 
@@ -7326,7 +7326,7 @@ These are the 253 records that could not be safely assigned by the previous heur
 > And even the normal-looking wheels are specially
 > constructed of steel and aluminum.
 > As with all Porches, you really need to take a close look at
-> each model to know all the variations.S
+> each model to know all the variations.
 
 **中文**
 
@@ -7374,7 +7374,7 @@ These are the 253 records that could not be safely assigned by the previous heur
 > The 17-inch wheels on the 964 were made from aluminum.
 > On the 964 RS, they were visually the same, but were wider
 > and made from lighter magnesium.
-> Today, they fall into the "unobtanium" category!Z
+> Today, they fall into the "unobtanium" category!
 
 **中文**
 
@@ -7655,7 +7655,7 @@ These are the 253 records that could not be safely assigned by the previous heur
 > 这里有一个很好的例子，就是将转向灯与保险杠的进风
 > 口融为一体。
 > 这些改进本身可能很微小，但提高了设计的品质，还有助
-> 于提升车辆的整体性。H
+> 于提升车辆的整体性。
 
 #### `0x000073BE`
 
@@ -7761,7 +7761,7 @@ These are the 253 records that could not be safely assigned by the previous heur
 > 但不得不说，中置布局确实改善了赛车的高速稳定性……
 > 而且，据说这样的重量分配调整极大地减少了轮胎摩损。
 > 从这个角度来看，这些改变是可以理解的。毕竟，
-> 保时捷就是为了赢得比赛而生的。p
+> 保时捷就是为了赢得比赛而生的。
 
 #### `0x0000AA07`
 
@@ -8119,7 +8119,7 @@ These are the 253 records that could not be safely assigned by the previous heur
 > ...and the aero supported mirrors.
 > I would sa the styling of the Carrera GT
 > is truly timeless...
-> ...and a masterpiece of modern Porsche design!L
+> ...and a masterpiece of modern Porsche design!
 
 **中文**
 
@@ -8176,7 +8176,7 @@ These are the 253 records that could not be safely assigned by the previous heur
 > 凭借其强大的气场、富有侵略性的外观
 > 和稳健的操控性能……
 > 它已经从一款休闲性能车升级为能够与更高级别对手
-> 竞争的真正赛道利器。k
+> 竞争的真正赛道利器。
 
 ### Porsche Taycan Turbo S '19 · Porsche Taycan Turbo S '19
 
@@ -8244,7 +8244,7 @@ These are the 253 records that could not be safely assigned by the previous heur
 > to shine a light forward.
 > Although seemingly unapproachable, this car knos its role.
 > It’s a one-of-a-kind sidekick that requires a special love.
-> These types of cars make life entertaining, don't you think?i
+> These types of cars make life entertaining, don't you think?
 
 **中文**
 
@@ -8476,7 +8476,7 @@ These are the 253 records that could not be safely assigned by the previous heur
 > Turbo 1的内饰采用了马里奥·贝里尼设计的超现代风格。
 > 就算走上巴黎的T台都不会显得格格不入！
 > 哦，天呐！我想我已经爱上了这辆疯狂的小“5”。
-> 事实上，我愿意接受它的一切！s
+> 事实上，我愿意接受它的一切！
 
 ### Renault R8 Gordini '66 · Renault R8 Gordini '66
 
@@ -8558,7 +8558,6 @@ These are the 253 records that could not be safely assigned by the previous heur
 > 基于这种设计，再加上运动感十足的保险杠、空气动力学细节
 > 以及应用了18寸轮毂和红色卡钳的超低姿态车身……
 > 足以在视觉上将它充分改造成一款赛道小钢炮！
-> j
 
 ### Renault Sport Clio V6 24V '00 · Renault Sport Clio V6 24V '00
 
@@ -8664,7 +8663,7 @@ These are the 253 records that could not be safely assigned by the previous heur
 > It is in fact a one-make racer, powered by
 > a midship 3.8L V6 courtesy of Nissan!
 > It was originally built to compete in the popular Renault
-> Sport Series, which takes place in Europe.g
+> Sport Series, which takes place in Europe.
 
 **中文**
 
@@ -8679,7 +8678,7 @@ These are the 253 records that could not be safely assigned by the previous heur
 > 但实际上这是一辆单一车种专用赛车，
 > 搭载与日产联合开发的中置3.8升V6引擎！
 > 另外，这台车原本打算参加的是在欧洲举办的高人气比赛
-> ——雷诺运AS|赛。z
+> ——雷诺运AS|赛。
 
 ### Renault Sport R.S.01 '16 · Renault Sport R.S.01 '16
 
@@ -8703,7 +8702,7 @@ These are the 253 records that could not be safely assigned by the previous heur
 > That said, Renault desired to maintain a "family feeling"
 > in the front and rear...
 > ...so it adopted the style of the lights and grille
-> of the production Mégane.c
+> of the production Mégane.
 
 **中文**
 
@@ -8714,7 +8713,7 @@ These are the 253 records that could not be safely assigned by the previous heur
 > 和后扩散器也同样引人注目。
 > 尽管如此，雷诺还是希望在车头和车尾的设计上
 > 保持“家族传承”……
-> 因此借鉴了量产版梅甘娜的车灯和进气格栅的设计风格。o
+> 因此借鉴了量产版梅甘娜的车灯和进气格栅的设计风格。
 
 ### Sauber Mercedes C9 '89 · Sauber Mercedes C9 '89
 
@@ -8794,7 +8793,7 @@ These are the 253 records that could not be safely assigned by the previous heur
 > The Impreza WRC continued to evlve
 > until the year 2000.
 > It was a car that defined its era and hailed as an
-> important part of WRC history.i
+> important part of WRC history.
 
 **中文**
 
@@ -8883,7 +8882,7 @@ These are the 253 records that could not be safely assigned by the previous heur
 > His impressive career includes six consecutive wins
 > at the Pikes Peak International Hillclimb.
 > Monster Sport has also built legendary hill climbers
-> based on the Suzuki Cultus and Escudo.4
+> based on the Suzuki Cultus and Escudo.
 
 **中文**
 
@@ -9128,7 +9127,7 @@ These are the 253 records that could not be safely assigned by the previous heur
 > 但在现实里，大部分人会更青睐雷凌。
 > 原因在于车重的差异。
 > 配有固定头灯的雷凌要比Trueno轻。
-> 在这么轻的车头上多出的，会带来天差地别的影响。O
+> 在这么轻的车头上多出的，会带来天差地别的影响。
 
 ### Toyota GR Supra Race Car '19 · Toyota GR Supra Race Car '19
 
@@ -9393,7 +9392,7 @@ These are the 253 records that could not be safely assigned by the previous heur
 > It’s sleek and looks really cool.
 > So, the engine is in the back? It’s a two-seater and
 > pretty tight inside.
-> Wow, but it has a decent-sized trunk—not bad!e
+> Wow, but it has a decent-sized trunk—not bad!
 
 **中文**
 
@@ -9458,7 +9457,7 @@ These are the 253 records that could not be safely assigned by the previous heur
 > After that incident, however, he staged a stunning comeback,
 > moving up through the field to win the race!
 > There was something almos divine about the performance he
-> displayed that day.<p scmd="GTCafe_Top" /p
+> displayed that day.
 
 **中文**
 
@@ -9569,7 +9568,7 @@ These are the 253 records that could not be safely assigned by the previous heur
 > The lights, which look too close together in the original model,
 > are camouflaged and don't get in the way of the design.
 > The A80 Supra had lots of tuning parts available for it, so
-> it's no wonder it was so popular with the younger crowd.K
+> it's no wonder it was so popular with the younger crowd.
 
 **中文**
 
@@ -9838,7 +9837,7 @@ These are the 253 records that could not be safely assigned by the previous heur
 > Indeed, it exudes the luxury that only a top-tier
 > design studio can deliver.
 > And the bright graphics contribute nicely to the overall
-> look of the car.i
+> look of the car.
 
 **中文**
 
@@ -9947,7 +9946,7 @@ These are the 253 records that could not be safely assigned by the previous heur
 > pull-back cloth sunroof...
 > ...windows that go round to the back corners,
 > and "panorama" windows on top.
-> Its color palette greatly adds to its visual charm.R
+> Its color palette greatly adds to its visual charm.
 
 **中文**
 

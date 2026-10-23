@@ -60,6 +60,7 @@ SPEAKER_TOKENS = {
 }
 
 DETAIL_TEXT_CAR_OVERRIDES = {
+    "0x0000964E": "Nissan GT-R LM NISMO '15",
     "0x0000D6DE": "Hyundai IONIQ 6 N '25",
     "0x0000D6D2": "Toyota Mark II Tourer V '97",
     "0x0000D6D8": "Toyota Chaser Tourer V '97",
@@ -415,8 +416,11 @@ def build_exact_cafe(cars: list[dict], legacy_items: list[dict] | None = None) -
             message["carKey"], display, cars, by_name, by_core
         )
         override_name = DETAIL_TEXT_CAR_OVERRIDES.get(message["id"])
-        if override_name and not resolved:
-            resolved = by_name.get(_norm(override_name), [])
+        override_cars = (
+            by_name.get(_norm(override_name), []) if override_name else []
+        )
+        if override_cars:
+            resolved = override_cars
             method = "car-detail-text-id-override"
             confidence = 1.0
         row = {
