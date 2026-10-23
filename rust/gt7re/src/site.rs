@@ -16,6 +16,8 @@ use std::path::{Path, PathBuf};
 use std::sync::atomic::{AtomicU64, Ordering as AtomicOrdering};
 use std::sync::OnceLock;
 
+use crate::garage;
+
 type TextKey = (String, String);
 type TextCandidates = HashMap<TextKey, Vec<((isize, isize, usize), String)>>;
 static WRITE_SEQUENCE: AtomicU64 = AtomicU64::new(0);
@@ -80,6 +82,7 @@ pub struct Options {
     pub official_cars: PathBuf,
     pub official_descriptions: PathBuf,
     pub collection_fallback: PathBuf,
+    pub dmsb_dir: PathBuf,
     pub text_dirs: Vec<PathBuf>,
     pub site_data: PathBuf,
     pub report_dir: PathBuf,
@@ -93,6 +96,7 @@ impl Default for Options {
             official_cars: root.join("reports/official_cars.json"),
             official_descriptions: root.join("reports/official_car_descriptions.json"),
             collection_fallback: root.join("reports/vehicle_collection_texts.json"),
+            dmsb_dir: root.join("extracted/dms_prpys/dmsdata"),
             text_dirs: vec![
                 root.join("extracted/text_pooled"),
                 root.join("extracted/text_decoded"),
@@ -826,6 +830,7 @@ pub fn build(options: &Options) -> Result<Value> {
     );
     let us = us?;
     let zh = zh?;
+    let garage_catalog = garage::Catalog::load(&options.dmsb_dir)?;
     eprintln!(
         "site: loaded {} English / {} Chinese text rows",
         us.len(),
@@ -1098,6 +1103,8 @@ pub fn build(options: &Options) -> Result<Value> {
             &fallback_by_id,
         );
     });
+    garage_catalog.enrich(&mut cars_value);
+    let garage_details = garage::report(&cars_value);
 
     let brands = {
         let mut counts: BTreeMap<String, usize> = BTreeMap::new();
@@ -1357,6 +1364,7 @@ pub fn build(options: &Options) -> Result<Value> {
             {"id": "collection", "titleZh": "收藏馆", "titleEn": "Hagerty Collection"}
         ],
         "carTextStats": text_stats.clone(),
+        "garageDetails": garage_details.get("counts").cloned().unwrap_or_else(|| json!({})),
         "dealerOffers": research.get("dealerOffers").cloned().unwrap_or_else(|| json!([])),
         "speakers": speakers,
         "cast": cast,
@@ -1378,6 +1386,14 @@ pub fn build(options: &Options) -> Result<Value> {
     let serialized = serde_json::to_vec(&payload)?;
     let cars_path = options.site_data.join("cars.json");
     atomic_write(&cars_path, &serialized)?;
+    atomic_write(
+        &options.site_data.join("garage_details.json"),
+        &serde_json::to_vec_pretty(&garage_details)?,
+    )?;
+    atomic_write(
+        &options.report_dir.join("garage_details.json"),
+        &serde_json::to_vec_pretty(&garage_details)?,
+    )?;
     let dialogue_translations = collect_dialogue_translations(&research);
     let translation_dir = options.site_data.join("dialogue_translations");
     fs::create_dir_all(&translation_dir)?;

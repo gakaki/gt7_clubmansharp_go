@@ -11,6 +11,7 @@ pub mod avatar;
 pub mod census;
 pub mod discover;
 pub mod extract;
+pub mod garage;
 pub mod gpb;
 pub mod gpb4;
 pub mod idp0;

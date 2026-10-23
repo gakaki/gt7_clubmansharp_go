@@ -66,6 +66,7 @@ fn check_clean(value: &Value, path: &str) -> Result<()> {
 
 pub fn run(options: &Options) -> Result<Value> {
     let cars = load(&options.data_dir.join("cars.json"))?;
+    let garage = load(&options.data_dir.join("garage_details.json"))?;
     let menu = load(&options.data_dir.join("menu_books.json"))?;
     let research = load(&options.research)?;
     if research.get("cars").and_then(Value::as_array).map(Vec::len) != Some(591) {
@@ -84,6 +85,24 @@ pub fn run(options: &Options) -> Result<Value> {
         .collect::<HashSet<_>>();
     if ids.len() != car_rows.len() {
         bail!("duplicate car ids detected");
+    }
+    let garage_counts = garage.get("counts").context("garage_details.json.counts")?;
+    if garage_counts
+        .get("withSpecifications")
+        .and_then(Value::as_u64)
+        != Some(580)
+    {
+        bail!("garage_details.json specification count mismatch");
+    }
+    if garage_counts
+        .get("withVehicleTypes")
+        .and_then(Value::as_u64)
+        != Some(576)
+    {
+        bail!("garage_details.json vehicle-type count mismatch");
+    }
+    if garage.get("cars").and_then(Value::as_array).map(Vec::len) != Some(580) {
+        bail!("garage_details.json car record count mismatch");
     }
     let languages = cars
         .get("languages")
@@ -272,6 +291,7 @@ pub fn run(options: &Options) -> Result<Value> {
     }
 
     check_clean(&cars, "cars.json")?;
+    check_clean(&garage, "garage_details.json")?;
     check_clean(&menu, "menu_books.json")?;
 
     // Verify every public CSV parses and has a stable header. This catches
@@ -325,6 +345,8 @@ pub fn run(options: &Options) -> Result<Value> {
         "carTextEntries": text_count,
         "vehicleCollectionCars": collection,
         "garageSpecCars": spec_cars,
+        "garageVehicleTypeCars": garage_counts.get("withVehicleTypes").cloned().unwrap_or(Value::Null),
+        "garageCountryCars": garage_counts.get("withCountry").cloned().unwrap_or(Value::Null),
         "dealerOffers": dealer.len(),
         "menuBooks": 108,
         "extraMenus": 57,

@@ -456,6 +456,28 @@ button { font-family: inherit; cursor: pointer; }
   font-size: 20px;
   line-height: 1.2;
 }
+.class-pp {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 9px;
+}
+.class-pp strong,
+.class-pp span {
+  border-radius: 999px;
+  padding: 4px 9px;
+  font-size: 11px;
+}
+.class-pp strong {
+  background: #17171c;
+  color: #fff;
+}
+.class-pp span {
+  border: 1px solid #dfe2e8;
+  background: #fff;
+  color: #42434b;
+  font-weight: 700;
+}
 .specs-heading p {
   max-width: 700px;
   margin: 7px 0 0;
@@ -474,6 +496,62 @@ button { font-family: inherit; cursor: pointer; }
   text-decoration: none;
 }
 .spec-source-link:hover { border-color: #b9bdc6; color: var(--text); }
+.garage-taxonomy {
+  display: grid;
+  grid-template-columns: minmax(160px, .7fr) minmax(0, 2fr);
+  gap: 8px;
+  margin-bottom: 10px;
+}
+.garage-country,
+.vehicle-types {
+  min-width: 0;
+  padding: 10px 12px;
+  border: 1px solid #e5e6eb;
+  border-radius: 10px;
+  background: #fbfbfd;
+}
+.garage-country {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: center;
+  gap: 2px 8px;
+}
+.garage-country small,
+.vehicle-types > small {
+  grid-column: 1 / -1;
+  color: #858791;
+  font-size: 8px;
+  font-weight: 750;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+}
+.garage-country b {
+  min-width: 0;
+  font-size: 13px;
+  overflow-wrap: anywhere;
+}
+.garage-country > span {
+  border-radius: 999px;
+  padding: 3px 6px;
+  background: #eceef2;
+  color: #777984;
+  font-size: 8px;
+  font-weight: 800;
+}
+.vehicle-types > div {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+  margin-top: 7px;
+}
+.vehicle-type-tag {
+  border-radius: 999px;
+  padding: 4px 8px;
+  background: #eef2f7;
+  color: #42546b;
+  font-size: 10px;
+  font-weight: 650;
+}
 .specs-grid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -811,6 +889,10 @@ button { font-family: inherit; cursor: pointer; }
   .specs-heading h4 { font-size: 18px; }
   .specs-heading p { font-size: 11px; }
   .spec-source-link { padding: 6px 10px; }
+  .garage-taxonomy { grid-template-columns: minmax(0, 1fr); gap: 6px; }
+  .garage-country,
+  .vehicle-types { padding: 9px 10px; }
+  .vehicle-type-tag { font-size: 9px; }
   .specs-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 6px;

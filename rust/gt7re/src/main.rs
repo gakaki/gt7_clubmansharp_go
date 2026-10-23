@@ -311,6 +311,8 @@ enum Cmd {
             default_value = r"C:\gt7\gt7\_re\reports\vehicle_collection_texts.json"
         )]
         collection_fallback: PathBuf,
+        #[arg(long, default_value = r"C:\gt7\gt7\_re\extracted\dms_prpys\dmsdata")]
+        dmsb_dir: PathBuf,
         #[arg(long, default_value = r"C:\gt7\gt7\_re\site\public\data")]
         data_dir: PathBuf,
         #[arg(long, default_value = r"C:\gt7\gt7\_re\reports")]
@@ -820,6 +822,7 @@ fn run() -> Result<()> {
                 site_data: data_dir.clone(),
                 report_dir: reports.clone(),
                 research: research_json.clone(),
+                dmsb_dir: dmsb_dir.clone(),
                 ..site::Options::default()
             };
             let site_result = site::build(&site_options);
@@ -931,6 +934,7 @@ fn run() -> Result<()> {
             official_cars,
             official_descriptions,
             collection_fallback,
+            dmsb_dir,
             data_dir,
             report_dir,
         } => {
@@ -939,6 +943,7 @@ fn run() -> Result<()> {
                 official_cars,
                 official_descriptions,
                 collection_fallback,
+                dmsb_dir,
                 site_data: data_dir,
                 report_dir,
                 ..site::Options::default()

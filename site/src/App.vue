@@ -654,6 +654,21 @@ function compactSpecValue(key) {
 function specLabel(field) {
   return detailCopy(field.labelZh, field.labelEn)
 }
+function garageCountryName(country) {
+  if (!country) return ''
+  return lang.value === 'zh'
+    ? country.nameZh
+    : lang.value === 'both'
+      ? `${country.nameZh} · ${country.nameEn}`
+      : country.nameEn
+}
+function vehicleTypeTag(type) {
+  return lang.value === 'zh'
+    ? type.tagZh
+    : lang.value === 'both'
+      ? `${type.tagZh} · ${type.tagEn}`
+      : type.tagEn
+}
 function activeSpecsSourceUrl() {
   const specs = activeCar.value?.specs
   if (!specs) return ''
@@ -1191,6 +1206,10 @@ function yearOf(name) {
               <div>
                 <span class="specs-eyebrow">{{ detailCopy('官方车库数据', 'Official garage data') }}</span>
                 <h4>{{ detailCopy('车辆规格', 'Vehicle specifications') }}</h4>
+                <div class="class-pp">
+                  <strong>{{ specValue('zh', 'carClass') || specValue('en', 'carClass') || '—' }}</strong>
+                  <span>{{ specValue('zh', 'performancePoint') || specValue('en', 'performancePoint') }}</span>
+                </div>
                 <p>
                   {{ detailCopy(
                     '动力、底盘尺寸与性能点来自 Gran Turismo 7 官方车表，中英文单位分别保留。',
@@ -1207,6 +1226,25 @@ function yearOf(name) {
               >
                 {{ detailCopy('查看官方车表', 'Official car entry') }} ↗
               </a>
+            </div>
+            <div class="garage-taxonomy">
+              <div v-if="activeCar.garageDetails?.country" class="garage-country">
+                <small>{{ detailCopy('品牌国家', 'Brand country') }}</small>
+                <b>{{ garageCountryName(activeCar.garageDetails.country) }}</b>
+                <span>{{ activeCar.garageDetails.country.code.toUpperCase() }}</span>
+              </div>
+              <div v-if="activeCar.garageDetails?.vehicleTypes?.length" class="vehicle-types">
+                <small>{{ detailCopy('车辆类型', 'Vehicle type') }}</small>
+                <div>
+                  <span
+                    v-for="type in activeCar.garageDetails.vehicleTypes"
+                    :key="type.id"
+                    class="vehicle-type-tag"
+                  >
+                    {{ vehicleTypeTag(type) }}
+                  </span>
+                </div>
+              </div>
             </div>
             <section class="specs-grid" aria-label="车辆详细规格">
               <article
@@ -1230,6 +1268,12 @@ function yearOf(name) {
               {{ detailCopy(
                 '该特别版未单独列入官方车表，此处显示其明确对应基础车型的机械规格。',
                 'This special variant is not listed separately in the official car list; the mechanical specifications shown here belong to its explicitly mapped base car.',
+              ) }}
+            </p>
+            <p v-if="!activeCar.garageDetails?.vehicleTypes?.length" class="spec-note">
+              {{ detailCopy(
+                '这辆车存在于当前官方车表，但本机游戏版本的 CarType.dmsb 中没有对应的车辆类型行。',
+                'This car exists in the current official list, but the local game build has no matching CarType.dmsb row.',
               ) }}
             </p>
             <div class="specs-meta">
@@ -1390,6 +1434,7 @@ function yearOf(name) {
       · <a :href="base + 'data/car_texts.csv'" download>品牌购物/二手车/收藏馆说明 CSV</a>
       · <a :href="base + 'data/vehicle_collection_texts.csv'" download>车辆收藏中英文 CSV</a>
       · <a :href="base + 'data/garage_specs.csv'" download>车库规格中英文 CSV</a>
+      · <a :href="base + 'data/garage_details.json'" download>车库与收藏管理 JSON</a>
       · <a :href="base + 'data/dealer_offers.csv'" download>当前车商报价 CSV</a>
       · <a :href="base + 'data/car_text_orphans.csv'" download>未归属说明文本 CSV</a>
       · 数据来源：Gran Turismo 7 (PS5, PPSA01317) 本地化文本 · 仅供研究使用

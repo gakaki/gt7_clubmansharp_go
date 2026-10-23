@@ -96,6 +96,17 @@ const filterExpected = await evaluate(`(async () => {
     cafe: data.cars.filter((car) => car.conversation?.length || car.dialogues?.length).length,
   }
 })()`)
+const garagePayload = await evaluate(`(async () => {
+  const response = await fetch('/data/garage_details.json')
+  const data = await response.json()
+  const peugeot = data.cars.find((car) => car.id === '0x00008200')
+  return {
+    ok: response.ok,
+    counts: data.counts,
+    peugeotTypes: peugeot?.garage?.vehicleTypes?.map((type) => type.nameEn) || [],
+    peugeotCountry: peugeot?.garage?.country?.code || '',
+  }
+})()`)
 const filterObserved = {}
 for (const [index, id] of ['all', 'brandCentral', 'usedCar', 'vehicleCollection', 'cafe'].entries()) {
   await evaluate(`document.querySelectorAll('.seg button')[${index}]?.click()`)
@@ -308,6 +319,9 @@ const checks = {
     garageDesktop.panel.includes('1526 HP') &&
     garageDesktop.panel.includes('5203 lbs.') &&
     garageDesktop.panel.includes('4WD') &&
+    garageDesktop.panel.includes('中国') &&
+    garageDesktop.panel.includes('#公路车') &&
+    garageDesktop.panel.includes('#电动车') &&
     garageDesktop.cards === 11 &&
     garageDesktop.headerSpecs.includes('681.42'),
   garageEnglishHeadings: garageEnglish.panel.includes('PERFORMANCE POINTS') &&
@@ -338,7 +352,16 @@ const checks = {
     garagePeugeot.panel.includes('455 PS') &&
     garagePeugeot.panel.includes('910 公斤') &&
     garagePeugeot.panel.includes('四驱') &&
+    garagePeugeot.panel.includes('法国') &&
+    garagePeugeot.panel.includes('#赛车') &&
+    garagePeugeot.panel.includes('#WRC世界拉力锦标赛') &&
+    garagePeugeot.panel.includes('#中置引擎') &&
     garagePeugeot.cards === 11,
+  garageJson: garagePayload.ok &&
+    garagePayload.counts.withSpecifications === 580 &&
+    garagePayload.counts.withVehicleTypes === 576 &&
+    garagePayload.peugeotCountry === 'fr' &&
+    garagePayload.peugeotTypes.join(',') === 'Racing Car,WRC,Midship',
   variantGarageAlias: garageVariant.title.includes('Mangusta') &&
     garageVariant.panel.includes('PP 461.13') &&
     garageVariant.panel.includes('305 PS') &&
@@ -360,6 +383,7 @@ const checks = {
 }
 const report = {
   filterExpected,
+  garagePayload,
   filterObserved,
   filterLabels,
   mobileFilters,
