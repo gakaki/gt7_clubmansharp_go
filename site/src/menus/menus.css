@@ -529,6 +529,12 @@ button:disabled {
   }
 }
 
+@media (min-width: 1024px) {
+  .menu-mobile-nav {
+    display: none;
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   *,
   *::before,

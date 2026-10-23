@@ -1,0 +1,96 @@
+{
+  "desktop": {
+    "cards": 108,
+    "covers": 74,
+    "missingCoverCards": [
+      "2",
+      "4",
+      "6",
+      "8",
+      "9",
+      "12",
+      "13",
+      "16",
+      "17",
+      "20",
+      "21",
+      "24",
+      "25",
+      "28",
+      "29",
+      "30",
+      "33",
+      "36",
+      "39",
+      "40",
+      "41",
+      "42",
+      "43",
+      "44",
+      "45",
+      "46",
+      "47",
+      "48",
+      "49",
+      "50",
+      "51",
+      "COVER SOURCE FOUND",
+      "COVER SOURCE FOUND",
+      "COVER SOURCE FOUND"
+    ],
+    "online57Cover": true,
+    "loadedVisibleCovers": 4,
+    "navDisplay": "none",
+    "hasReplacementGlyph": false,
+    "online57": true,
+    "width": 1425,
+    "viewport": 1440
+  },
+  "dialog": {
+    "open": true,
+    "heading": "EM52\nEXTRA MENU\nCC082\n收藏：Hyundai N · Collection: Hyundai N\n中\nEN\n双\nIN-GAME COVER\nEXTRA MENU\nEM 52 / CC082\nHyundai N\n\nHyundai N\n\n收藏：Hyundai N\nCollection: Hyundai N\nHyundai\n3\nCARS\n58\nCOLLECTOR\nEM\nTYPE\nOverview\nCars & makes\nGame text\nSources\nMENU BOOK DESCRIPTION\n收藏几辆以字母“N”标志为傲的Hyundai高性能系列车型。\nCollect some high-performance Hyundai cars significantly marked by the letter 'N.'\nREWARD\n\n5★ 轮盘奖券\n5★ Roulette Ticket\n\nCOLLECTION REQUIREMENT\n\n收集：Hyundai IONIQ 5 N '24、Hyundai ELANTRA N '23、HYUNDAI N 2025 Vision Gran Turismo\nCollect: Hyundai IONIQ 5 N '24, Hyundai ELANTRA N '23, HYUNDAI N 2025 Vision Gran Turismo\n\nPrevious\nHyundai N\n103 / 108\nNext",
+    "languageButtons": 3,
+    "coverLoaded": true
+  },
+  "stepped": {
+    "url": "?book=extra-053&lang=both",
+    "heading": "EM53\nEXTRA MENU\nCC083\n收藏：肌肉车 · Collection: Muscle Cars\n中\nEN\n双\nIN-GAME COVER\nEXTRA MENU\nEM 53 / CC083\n肌肉车\n\nMuscle Cars\n\n收藏：肌肉车\nCollection: Muscle Cars\nChevrolet\nDodge\nPontiac\n3\nCARS\n55\nCOLLECTOR\nEM\nTYPE\nOverview\nCars & makes\nGame text\nSources\nMENU BOOK DESCRIPTION\n来收集几辆纯正的美国赛车吧，它们是这个自由与勇气之国的典范。\nCollect some American-born cars that capture the raw power, big engines, and bold spirit of the open road.\nREWARD\n\n5★ 轮盘奖券\n5★ Roulette Ticket\n\nCOLLECTION REQUIREMENT\n\n收集：Chevrolet Chevelle SS 454 Sport Cou"
+  },
+  "autoplay": {
+    "url": "?book=extra-057&lang=zh",
+    "heading": "EM57\n追加菜单 / 收藏菜单\nCC115\n收藏：勒芒冠军赛车\n中\nEN\n双\n游戏内封面\n1.72 新增\n追加菜单 / 收藏菜单\nEM 57 / CC115\n勒芒冠军赛车\n收藏：勒芒冠军赛车\nFerrari\nFord\nMcLaren\n3\n车辆\n90\n收藏等级\nEM\n分类\n概览\n车辆与厂商\n游戏文字\n数据来源\n菜单书说明\n收集指定三款勒芒冠军赛车，完成这本追加菜单。\n完成奖励\n\n6★ 轮盘奖券\n\n收藏条件\n\n收集：Ferrari 499"
+  },
+  "fixedBefore": {
+    "top": 770,
+    "bottom": 834,
+    "display": "flex",
+    "text": "上一菜单\nEM 52\nHyundai N\n下一菜单"
+  },
+  "fixedAfter": {
+    "top": 770,
+    "bottom": 834,
+    "width": 390,
+    "scrollWidth": 390,
+    "hasReplacementGlyph": false
+  },
+  "missingHref": [],
+  "checks": {
+    "desktopCount": true,
+    "desktopCovers": true,
+    "desktopNoMobileNav": true,
+    "desktopNoMojibakeBox": true,
+    "online57Present": true,
+    "dialogOpened": true,
+    "dialogHyundai": true,
+    "dialogLanguageControls": true,
+    "dialogCoverLoaded": true,
+    "keyboardTargetStepped": true,
+    "autoplayAdvanced": true,
+    "mobileNavVisible": true,
+    "mobileNavKeepsLastViewed": true,
+    "mobileNavFixed": true,
+    "mobileNoOverflow": true,
+    "mobileNoMojibakeBox": true,
+    "brokenCoverImages": true
+  }
+}

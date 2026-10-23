@@ -18,8 +18,7 @@ import {
   Users,
   X,
 } from 'lucide-react'
-import { clsx } from 'clsx'
-import { twMerge } from 'tailwind-merge'
+import { cn } from './lib/utils'
 import './menus.css'
 
 const BASE = import.meta.env.BASE_URL
@@ -30,10 +29,6 @@ const CATEGORY_FILTERS = [
   ['bonus', '奖励 40–51', 'Bonus'],
   ['extra', '追加收藏', 'Extra'],
 ]
-
-function cn(...values) {
-  return twMerge(clsx(values))
-}
 
 function normalize(value = '') {
   return value
@@ -102,11 +97,37 @@ function CategoryBadge({ record, lang }) {
 
 function CoverArtwork({ record, lang, large = false, eager = false }) {
   const cars = record.cars?.slice(0, 3) || []
+  if (record.cover) {
+    return (
+      <div className="menu-cover relative isolate aspect-video overflow-hidden rounded-[22px] border border-white/10 bg-[#090d14]">
+        <img
+          src={`${BASE}${record.cover}`}
+          alt={record.collectionNameEn}
+          className="absolute inset-0 h-full w-full object-cover"
+          loading={eager ? 'eager' : 'lazy'}
+          fetchPriority={eager ? 'high' : 'auto'}
+          decoding="async"
+        />
+        <div className="absolute inset-0 bg-gradient-to-t from-black/15 to-transparent" />
+        <div className="absolute top-4 right-4 left-4 flex items-center justify-between gap-2">
+          <span className="rounded-full border border-white/20 bg-black/60 px-2.5 py-1 text-[9px] font-semibold tracking-[0.12em] text-white/75 uppercase backdrop-blur">
+            {lang === 'zh' ? '\u6e38\u620f\u5185\u5c01\u9762' : 'In-game cover'}
+          </span>
+          {String(record.runtime || '').startsWith('online') && (
+            <span className="rounded-full border border-amber-200/25 bg-amber-300/15 px-2.5 py-1 text-[9px] font-semibold tracking-[0.1em] text-amber-50 uppercase backdrop-blur">
+              {lang === 'zh' ? '1.72 \u65b0\u589e' : '1.72 new'}
+            </span>
+          )}
+        </div>
+      </div>
+    )
+  }
+
   return (
     <div
       className={cn(
         'menu-cover relative isolate overflow-hidden rounded-[22px] border border-white/10 bg-[#090d14]',
-        large ? 'aspect-[4/3]' : 'aspect-[4/3]',
+        'aspect-video',
       )}
     >
       <div className="menu-cover-rays" aria-hidden="true" />
@@ -148,7 +169,7 @@ function CoverArtwork({ record, lang, large = false, eager = false }) {
       <div className="absolute inset-y-3 left-3 w-px bg-white/15" />
       <div className="absolute top-4 right-4 flex items-center gap-2">
         <span className="rounded-full border border-white/15 bg-black/55 px-2.5 py-1 text-[9px] font-semibold tracking-[0.12em] text-white/65 uppercase backdrop-blur">
-          {record.coverStatus === 'present'
+          {record.coverStatus === 'container-only'
             ? lang === 'zh'
               ? '封面源已找到'
               : 'Cover source found'
@@ -238,6 +259,7 @@ function MenuBookDialog({
   onStep,
   playing,
   onPlayChange,
+  onLangChange,
 }) {
   const [tab, setTab] = useState('overview')
   const index = records.findIndex((item) => item.id === record?.id)
@@ -278,6 +300,22 @@ function MenuBookDialog({
                 </div>
               </div>
               <div className="flex shrink-0 items-center gap-2">
+                <div className="menu-language-switch" role="group" aria-label="Language">
+                  {[
+                    ['zh', '\u4e2d'],
+                    ['en', 'EN'],
+                    ['both', '\u53cc'],
+                  ].map(([value, label]) => (
+                    <button
+                      key={value}
+                      type="button"
+                      data-active={lang === value}
+                      onClick={() => onLangChange(value)}
+                    >
+                      {label}
+                    </button>
+                  ))}
+                </div>
                 <button
                   type="button"
                   className="menu-icon-button"
@@ -312,9 +350,12 @@ function MenuBookDialog({
                       {record.collectionNameEn}
                     </p>
                   )}
-                  <p className="mt-3 max-w-2xl text-sm leading-6 text-white/55">
-                    {lang === 'zh' ? record.titleZh : record.titleEn}
-                  </p>
+                  <DisplayText
+                    lang={lang}
+                    zh={record.titleZh}
+                    en={record.titleEn}
+                    className="mt-3 block max-w-2xl text-sm leading-6 text-white/55"
+                  />
                   <div className="mt-5 flex flex-wrap gap-2">
                     {record.manufacturers.length ? (
                       record.manufacturers.map((brand) => (
@@ -545,6 +586,7 @@ export default function MenuBooksApp() {
   const [brandLetter, setBrandLetter] = useState('ALL')
   const [query, setQuery] = useState('')
   const [activeId, setActiveId] = useState(null)
+  const [lastViewedId, setLastViewedId] = useState(null)
   const [playing, setPlaying] = useState(false)
   const searchRef = useRef(null)
 
@@ -557,7 +599,10 @@ export default function MenuBooksApp() {
       .then((payload) => {
         setData(payload)
         const requested = findRequestedRecord(payload.records)
-        if (requested) setActiveId(requested.id)
+        if (requested) {
+          setActiveId(requested.id)
+          setLastViewedId(requested.id)
+        }
       })
       .catch((reason) => setError(reason.message || String(reason)))
   }, [])
@@ -628,6 +673,7 @@ export default function MenuBooksApp() {
 
   function openRecord(record) {
     setActiveId(record.id)
+    setLastViewedId(record.id)
     rememberBook(record)
   }
 
@@ -638,8 +684,9 @@ export default function MenuBooksApp() {
 
   function step(delta) {
     if (!records.length) return
-    const index = active
-      ? records.findIndex((record) => record.id === active.id)
+    const anchor = active || records.find((record) => record.id === lastViewedId)
+    const index = anchor
+      ? records.findIndex((record) => record.id === anchor.id)
       : -1
     const nextIndex =
       index < 0
@@ -659,9 +706,20 @@ export default function MenuBooksApp() {
 
   useEffect(() => {
     if (!playing || !active) return undefined
-    if (document.visibilityState === 'hidden') return undefined
-    const timer = window.setInterval(() => step(1), 5200)
-    return () => window.clearInterval(timer)
+    let timer
+    const syncTimer = () => {
+      window.clearInterval(timer)
+      timer = undefined
+      if (document.visibilityState === 'visible') {
+        timer = window.setInterval(() => step(1), 5200)
+      }
+    }
+    syncTimer()
+    document.addEventListener('visibilitychange', syncTimer)
+    return () => {
+      document.removeEventListener('visibilitychange', syncTimer)
+      window.clearInterval(timer)
+    }
   }, [playing, activeId, records.length])
 
   useEffect(() => {
@@ -688,21 +746,32 @@ export default function MenuBooksApp() {
         changePlaying(!playing)
         return
       }
-      if (!active) return
       if (['ArrowRight', 'ArrowDown', 'PageDown'].includes(event.key)) {
         event.preventDefault()
         step(1)
       } else if (['ArrowLeft', 'ArrowUp', 'PageUp'].includes(event.key)) {
         event.preventDefault()
         step(-1)
+      } else if (!active && event.key === 'Enter') {
+        event.preventDefault()
+        if (records[0]) openRecord(records[0])
       }
     }
     window.addEventListener('keydown', onKeyDown)
     return () => window.removeEventListener('keydown', onKeyDown)
   }, [active, records, playing])
 
-  const counts = data?.counts || {}
-  const current = active || records[activeIndex]
+  const counts = {
+    ...(data?.counts || {}),
+    withCoverContainer:
+      data?.counts?.withAnyCover ??
+      data?.counts?.withDisplayCover ??
+      data?.counts?.withCoverContainer,
+  }
+  const current =
+    active ||
+    records.find((record) => record.id === lastViewedId) ||
+    records[activeIndex]
 
   return (
     <div className="min-h-screen bg-[#05070b] text-white selection:bg-cyan-300/25">
@@ -891,14 +960,18 @@ export default function MenuBooksApp() {
             </div>
           ) : (
             <div className="mt-4 grid gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
-              {filtered.map((record) => (
+              {filtered.map((record, index) => (
                 <button
                   key={record.id}
                   type="button"
                   className="menu-book-card group text-left"
                   onClick={() => openRecord(record)}
                 >
-                  <CoverArtwork record={record} lang={lang} />
+                  <CoverArtwork
+                    record={record}
+                    lang={lang}
+                    eager={index < 4}
+                  />
                   <div className="p-4">
                     <div className="flex items-start justify-between gap-2">
                       <div className="min-w-0">
@@ -999,6 +1072,7 @@ export default function MenuBooksApp() {
           onStep={step}
           playing={playing}
           onPlayChange={changePlaying}
+          onLangChange={setLang}
         />
       )}
 

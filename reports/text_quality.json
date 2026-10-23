@@ -1,0 +1,7 @@
+{
+  "generatedFrom": "site/public/data",
+  "policy": "remove U+FFFD only; never invent a missing glyph",
+  "removed": 0,
+  "controlCharactersRemoved": 0,
+  "files": []
+}

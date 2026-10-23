@@ -20,6 +20,26 @@ const showUnmatched = ref(false)
 const showCast = ref(false)
 const activeTab = ref('cafe')
 
+// A few RT2 source strings contain undecodable glyph slots. Never expose the
+// U+FFFD replacement box in the research UI; keep the surrounding sentence
+// intact while omitting only the unknown code point.
+function sanitizeGlyphs(value) {
+  if (typeof value === 'string') {
+    return value
+      .replace(/\uFFFD+/g, '')
+      .replace(/[\x00-\x08\x0B\x0C\x0E-\x1F\x7F]/g, '')
+      .replace(/[ \t]{2,}/g, ' ')
+      .replace(/ +\n/g, '\n')
+  }
+  if (Array.isArray(value)) return value.map(sanitizeGlyphs)
+  if (value && typeof value === 'object') {
+    return Object.fromEntries(
+      Object.entries(value).map(([key, item]) => [key, sanitizeGlyphs(item)]),
+    )
+  }
+  return value
+}
+
 const carTextTabs = [
   { id: 'cafe', labelZh: '咖啡屋对话', labelEn: 'Cafe dialogue' },
   { id: 'brandCentral', labelZh: '品牌购物 / 车库', labelEn: 'Brand Central / Garage' },
@@ -58,7 +78,7 @@ watch(searchInput, (v) => {
 
 onMounted(async () => {
   const res = await fetch(`${import.meta.env.BASE_URL}data/cars.json`)
-  data.value = await res.json()
+  data.value = sanitizeGlyphs(await res.json())
   const params = new URLSearchParams(location.search)
   const wanted = params.get('car')
   if (wanted) {

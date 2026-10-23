@@ -244,7 +244,10 @@ fn core_name(value: &str) -> String {
 }
 
 fn normalize_car_name(value: &str, known: &HashSet<String>) -> String {
-    let mut name = clean_text(value);
+    let mut name = clean_text(value)
+        .split_whitespace()
+        .collect::<Vec<_>>()
+        .join(" ");
     if let Some(pos) = name.rfind('\'') {
         let tail = &name[pos + 1..];
         if tail.len() >= 2 && tail.as_bytes()[..2].iter().all(u8::is_ascii_digit) {
@@ -1749,6 +1752,13 @@ mod tests {
                 &known
             ),
             "Suzuki Swift Sport KATANA Edition Gr.4"
+        );
+        assert_eq!(
+            normalize_car_name(
+                "Alfa Romeo GIULIA TZ2  carrozzata da ZAGATO '65",
+                &known
+            ),
+            "Alfa Romeo GIULIA TZ2 carrozzata da ZAGATO '65"
         );
     }
 

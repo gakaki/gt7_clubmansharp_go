@@ -3680,7 +3680,7 @@ corners with high top-speeds on straights.%","这辆原创跑车浪漫旅Gr.4级
 
 拥有扎实的弯道操控和超高的直道极速，是一辆各方面
 性能都非常均衡的赛车。"
-brandCentral,0x00004FE9,1020272,lancer_evo_final_gt4m_xx,Lancer Evolution Final Edition    Gr.4,0x000053EF,exact-display-name,1.0,"The Lancer Evolution Final Edition served as the foundation
+brandCentral,0x00004FE9,1020272,lancer_evo_final_gt4m_xx,Lancer Evolution Final Edition Gr.4,0x000053EF,exact-display-name,1.0,"The Lancer Evolution Final Edition served as the foundation
 for this Gran Turismo-exclusive Gr.4 race car.
 
 The Lancer's electronically-controlled 4WD system is retained,
@@ -3689,7 +3689,7 @@ Gr.4级别赛车的基础车型。
 
 它保留了Lancer独有的电子控制四驱系统，其灵敏而犀利的
 过弯性能令人叹为观止。"
-brandCentral,0x00004FEA,1020273,lancer_evo_final_gt3m_xx,Lancer Evolution Final Edition    Gr.3,0x000053F0,exact-display-name,1.0,"For this original Gran Turismo Gr.3 vehicle, the Lancer
+brandCentral,0x00004FEA,1020273,lancer_evo_final_gt3m_xx,Lancer Evolution Final Edition Gr.3,0x000053F0,exact-display-name,1.0,"For this original Gran Turismo Gr.3 vehicle, the Lancer
 Evolution Final Edition was used as a base.
 
 Within the fenders are numerous plates that are designed
@@ -4707,7 +4707,7 @@ Under its hood was a custom-tuned turbocharged 4.4-liter V-8.","这是一辆GT3�
 它以最顶级的稳定性和优越的操控性傲视群雄，
 
 并配备了一台定制调校的4.4升 V8涡轮增压引擎。"
-brandCentral,0x00005027,1020334,lancer_evo_final_gtbm_xx,Lancer Evolution Final Edition    Gr.B Rally Car,0x000053F1,exact-display-name,1.0,"This Gran Turismo-exclusive Gr.B rally car is based on
+brandCentral,0x00005027,1020334,lancer_evo_final_gtbm_xx,Lancer Evolution Final Edition Gr.B Rally Car,0x000053F1,exact-display-name,1.0,"This Gran Turismo-exclusive Gr.B rally car is based on
 the Mitsubishi Lancer Evolution Final Edition.
 
 The color scheme pays tribute to the Mitsubishi
@@ -5132,7 +5132,7 @@ Ford Mustang Gr.3级别赛车。
 
 这是一辆性能强大的前置后驱车，也是所有漂移爱好者
 的上上之选。"
-brandCentral,0x00005041,1020360,lancer_evo_final_gtbm_road_xx,Lancer Evolution Final Edition    Gr.B Road Car,0x000053F2,exact-display-name,1.0,"This N-class road car was designed as a homologated
+brandCentral,0x00005041,1020360,lancer_evo_final_gtbm_road_xx,Lancer Evolution Final Edition Gr.B Road Car,0x000053F2,exact-display-name,1.0,"This N-class road car was designed as a homologated
 version of the Mitsubishi Lancer Evolution Gr.B.
 
 The weight is evenly distributed between front and rear, and
@@ -6103,7 +6103,7 @@ rivaling those of the V-12-powered Enzo Ferrari!","430 Scuderia堪称征服赛�
 
 其惊人的速度令人瞠目结舌——它在赛道上创下的单圈
 记录甚至能与搭载V12引擎的顶级超跑Enzo Ferrari比肩！"
-brandCentral,0x00005081,1020424,gallardo_lp560_4_08,Gallardo LP 560-4  '08,0x0000BCEE,exact-display-name,1.0,"The Gallardo series occupies a very important place
+brandCentral,0x00005081,1020424,gallardo_lp560_4_08,Gallardo LP 560-4 '08,0x0000BCEE,exact-display-name,1.0,"The Gallardo series occupies a very important place
 in Lamborghini’s history.
 
 Up to the late-1980s, Lamborghini’s lineup included
@@ -6405,7 +6405,7 @@ This engine alone was capable of producing 612ps.
 Add to that one electric motor powering the rear wheels,
 and two electric motors powering the front wheels.
 
-Combine�, the engine and the motors delivered more
+Combine, the engine and the motors delivered more
 than 800ps.
 
 The car could also be driven by its electric motors
@@ -6440,7 +6440,7 @@ alone, effectively turning it into a pure EV!","918 Spyder是保时捷开发的�
 
 加在一起共可输出超过800ps的动力。
 
-另外，它还�以设置电机单独供能，
+另外，它还以设置电机单独供能，
 化身为一辆真正的纯电动车！"
 brandCentral,0x000050A6,1020461,challenger_srt_demon_18,SRT Challenger Demon '18,0x0000A3F3,fuzzy-name,1.1761,"The Challenger SRT Demon is Dodge’s most menacing
 muscle car, no doubt about it.
@@ -8257,7 +8257,7 @@ Panoramic View Monitor全景监控系统让驾驶员能从俯视角度
 观察车辆周围，在泊车或行驶在崎岖路面上时尤为实用。
 
 Toyota RAV4能够轻松应对城市与野外出行，
-助你随心所欲，自由驰����t"
+助你随心所欲，自由驰t"
 brandCentral,0x00009EF6,1020732,c_hr_s_18,C-HR S '18,0x0000C300,exact-display-name,1.0,"Have you ever heard of a ""crossover SUV?"" It combines the
 ruggedness of an SUV with the sleekness of a coupe.
 
@@ -8293,7 +8293,7 @@ C-HR不负Toyota期望，一经推出，就在全球市场创造了佳绩。
 
 这款独特的跨界车不仅实用性强，还具备运动基因，其原型车
 曾征战过纽博格林24小时耐力赛！"
-brandCentral,0x00009EF7,1020733,crv_ehev_ex_b_21,CR-V  e HEV EX BLACK EDITION  ’21,0x0000C52B,fuzzy-name,1.0531,"Everyone appreciates a sport utility vehicle that combines
+brandCentral,0x00009EF7,1020733,crv_ehev_ex_b_21,CR-V e HEV EX BLACK EDITION ’21,0x0000C52B,fuzzy-name,1.0531,"Everyone appreciates a sport utility vehicle that combines
 commanding visibility with dependable off-road capability.
 
 Enter the Honda CR-V, which was introduced in 1995. Featured
@@ -8528,7 +8528,7 @@ VGT, it is in fact more powerful than the LMH!","这辆车叫做法拉利Vision 
 
 由于国际汽联的规则并不适用于VGT，
 因此，它事实上比LMH还要动力强劲！"
-brandCentral,0x0000AAF3,1020745,mercedes_amg_gt3_evo_19, Mercedes-AMG GT3  (2020),0x0000AB4E,dms-car-key-override,1.0,"The AMG GT3 is a popular race car that has competed
+brandCentral,0x0000AAF3,1020745,mercedes_amg_gt3_evo_19, Mercedes-AMG GT3 (2020),0x0000AB4E,dms-car-key-override,1.0,"The AMG GT3 is a popular race car that has competed
 in GT3 races all over the world.
 
 This is an update to the original model that made its debut
@@ -8907,7 +8907,7 @@ everyday driving into something truly extraordinary.","艾菲拉品牌致力于�
 全靠一颗拥有800万亿次计算次数/秒算力的强大电子控制器单元。
 
 艾菲拉1提供“Origin”和“Signature”两个版本，
-这是一台能够化平凡为“非凡”的座驾�hp"
+这是一台能够化平凡为“非凡”的座驾hp"
 brandCentral,0x0000CAED,1020758,corvette_cx_25,Corvette CX Concept,0x0000CB05,fuzzy-name,1.2768,"The Chevrolet Corvette is, without a doubt, an icon
 of American sports car design.
 
@@ -9581,7 +9581,7 @@ was designed to meet Le Mans Daytona h regulations.
 It carries elements of Porsche’s road car design in its exterior,
 with a chassis produced by Multimatic Inc.
 
-Power comes from a  twin-turbo 4.6-liter V-8 hybrid engine,
+Power comes from a twin-turbo 4.6-liter V-8 hybrid engine,
 a unit with roots in the legendary 918 Spyder.
 
 In 2023, Porsche joined forces with Team Penske,
@@ -10342,7 +10342,7 @@ Jack Sears for several years.
 Since 1999 it's been owned by former Microsoft President
 and chief operating officer, John Shirley.
 
-The price of this particular car takes this long stor�ed
+The price of this particular car takes this long stored
 history into account.","250 GTO是最后一代混合了公路车与赛车特性的法拉利之一。
 
 它可能不是最稀有的法拉利，也不是外观最动人的，
@@ -10370,7 +10370,7 @@ history into account.","250 GTO是最后一代混合了公路车与赛车特性�
 1999年起，它进入了前微软总裁和首席运营官约翰·雪利的收藏。
 
 显而易见，这台车的售价已经把它漫长且精彩的经历都
-换�,进去了……"
+换,进去了……"
 collection,0x00008D0E,1030071,xj13_66,XJ13 '66,0x0000765E,exact-display-name,1.0,"Jaguar played a huge part in the history of the
 24 Hours of Le Mans,
 
@@ -11842,7 +11842,7 @@ The company also began worldwide production under license,
 which meant that anyone could produce a Jeep.
 
 This would prove to be an absolutely decisive factor in the
-growth of the Jeep brand we kn�w and love today.","Jeep无疑是世界上知名度最高
+growth of the Jeep brand we knw and love today.","Jeep无疑是世界上知名度最高
 且最受喜爱的品牌之一。
 
 该公司拥有丰富且悠久的历史……
@@ -12380,7 +12380,7 @@ the Leichtbau from base 911s.
 
 And, the large rear spoiler stood as a unique carbon element.
 
-The driving experience was nothing s�ort of exquisite, reminding
+The driving experience was nothing sort of exquisite, reminding
 us that the finest sports cars are often defined by lightness.","关于保时捷911的传奇故事数不胜数，但即便在911系列中，
 这款911 Turbo S Leichtbau也是特别罕见的车型。
 
@@ -12410,7 +12410,7 @@ Leichtbau车型的标志性特征。
 
 此外，此车专属的碳纤维部件还有一块超大后扰流板。
 
-这辆车的驾驶感毫无�*问极为出众。
+这辆车的驾驶感毫无*问极为出众。
 它完美印证了跑车轻量化的意义。"
 collection,0x00008E76,1030431,nismo400r_95,400R (1995),0x0000B2D9,fuzzy-name,1.05,"The Nismo 400R was long considered the ultimate GT-R.
 
@@ -12470,7 +12470,7 @@ difficult Skyline GT-R models to find.","NISMO 400R是GT-R产品谱系的终极�
 当然，它的价格也充分说明了什么叫一分钱一分货，
 贵到可以买下3台全新的Skyline GT-R R33。
 
-400R�#�当时最昂贵的日本汽车之一，
+400R#当时最昂贵的日本汽车之一，
 而且日产宣称总共只生产了44辆400R。
 
 由于产量稀少，现如今，它已经是最难找到的Skyline GT-R了。/"
@@ -12501,7 +12501,7 @@ found to have illegal turbo restrictors.
 The resulting penalties stripped the drivers of points and
 the works team was banned from the WRC for one year.
 
-You could say it's a car with h�story.
+You could say it's a car with hstory.
 
 For rally fans, the combination of the classic Castrol livery and
 the aggressive design makes this an all-time Group A classic.","赛利卡是丰田最流行的双门跑车，同时也是
@@ -12533,7 +12533,7 @@ GT-Four持续销售了三代，其中不仅有官方车队用车，
 所以说，这是一辆“有故事”的车。
 
 对于拉力赛车迷而言，经典的Castrol涂装与充满攻击性
-的造^��组合在一起，使其成为了一辆跨越时间的A组别经典。"
+的造^组合在一起，使其成为了一辆跨越时间的A组别经典。"
 collection,0x00008E81,1030442,corvette_c1_58,Corvette Roadster C1 '58,0x0000AF02,fuzzy-name,1.1068,"The Chevrolet Corvette is undoubtedly one of the world’s
 most famous sports cars.
 
@@ -12596,7 +12596,7 @@ great Luigi Musso for the 1954 season.
 Musso contested ten races in 1954, and came away with three
 overall wins and five class victories,
 
-becoming the Italian 2000cc champion.�p/>
+becoming the Italian 2000cc champion.p/>
 A6GCS 2078 was sold to Argentina, where it was raced with mixed
 results in 1955. It returned to Italy in 1986.
 
@@ -12627,7 +12627,7 @@ This car won the Gran Turismo Trophy at the
 它是一台玛莎拉蒂厂队赛车，
 并由杰出车手路易吉·穆索驾驶，出战1954赛季。
 
-穆索驾驶着这辆赛车^�车在1954年参加了十场比赛，就带回了
+穆索驾驶着这辆赛车^车在1954年参加了十场比赛，就带回了
 三个总冠军和五个组别冠军，
 
 成为了意大利2000cc级别毫无争议的冠军。
@@ -12806,7 +12806,7 @@ And because of this, not only did this GT-R
 have a short lifespan...
 
 It never had a chance to prove itself in racing,
-which was an important part of the Skyl�ne mystique.
+which was an important part of the Skylne mystique.
 
 As a result, this model is considered the unicorn of GT-Rs
 and is highly prized by collectors around the world.","1973年发售的Skyline GT-R由于产量极少，
@@ -12838,7 +12838,7 @@ Kenmeri GT-R准确的车型代码是“KPGC110”，
 这也正是这台Skyline的神秘感来源。
 
 因此，这个车型被视作GT-R中的独角兽，
-并�
+并
 获了全世界的收藏家们的高度评价。"
 collection,0x00008EAB,1030484,roadrunner_superbird_70,Superbird '70,0x000084CE,exact-display-name,1.0,"If you call yourself a racing fan, then you're no doubt
 familiar with NASCAR.
@@ -12871,7 +12871,7 @@ skyrocket, making it inaccessible to the masses.
 
 As a result, the Superbird was discontinued after two years.
 
-Regardles�, it's remembered as a legendary muscle car.","只要是对赛车感兴趣的人，肯定
+Regardles, it's remembered as a legendary muscle car.","只要是对赛车感兴趣的人，肯定
 都听说过美国的纳斯卡赛车系列赛。
 
 这是一项超高速系列赛，使用车辆
@@ -13051,7 +13051,7 @@ DS是一辆中型四门轿车，但前半部分线条却十分犀利，
 都通过一套专利的液压系统来控制。
 
 我们这里看到的这一辆DS是后期车型，可以从中
-看到�b革命性的设计变革。
+看到b革命性的设计变革。
 
 它还拥有自适应头灯，能随车辆转向而变化
 ——这是一个超前于时代的点子！"
@@ -13181,7 +13181,7 @@ recording 13 pole positions and eight victories.","这辆迈凯伦MP4/4 Honda是
 其中车号为12号的MP4/4就是由埃尔顿·塞纳所驾驶。
 
 在1988赛季，塞纳拿下了13次杆位和8个分站冠军，
-并最终摘下了车手总�=�军的桂冠。"
+并最终摘下了车手总=军的桂冠。"
 collection,0x00008ECF,1030520,chevelle_ss_454_ls6_70,Chevelle SS 454 Sport Coupe '70,0x00009D56,exact-display-name,1.0,"The 1970 Chevrolet Chevelle SS was Chevrolet's mid-size
 muscle car.
 
@@ -13314,7 +13314,7 @@ This is one car that any serious collector must have.","如果你在寻找一款
 AMG梅赛德斯-奔驰厂队在1991年和1992年
 连续两个赛季拿到了车厂冠军头衔。
 
-作为赛事认证车型，�90 E Evo II的合法上路版本
+作为赛事认证车型，90 E Evo II的合法上路版本
 仅生产了502辆。
 
 不用我多说，这是一辆所有真正的收藏家
@@ -13347,7 +13347,7 @@ Jaguar XJ13 race car prototype of the 1960s...
 prototype in a style befitting a modern road car of the 1990s.
 
 The construction of the engine and chassis meanwhile,
-were based on Jaguar's�already successful Group C cars.
+were based on Jaguar'salready successful Group C cars.
 
 It featured a 542ps twin-turbo V-6 engine
 mounted centrally in the aluminum monocoque shell.
@@ -13380,7 +13380,7 @@ set a goal of a 220-mph (354km/h) top speed.","捷豹XJ220可以说是捷豹历�
 它结合了经典中置引擎原型车那优雅的外形和符合九十年代
 现代公路车的风格设计。
 
-而与此同时，其引擎�)�底盘部分又是基于捷豹
+而与此同时，其引擎)底盘部分又是基于捷豹
 大获成功的C组别车型所打造。
 
 它采用了一部中置的542ps功率V6双涡轮增压引擎
@@ -13504,7 +13504,7 @@ B组别拉力赛车通常采用传统四轮驱动。
 
 保时捷959厂队在赛事中取得了惊人的成绩，包揽了前两名。
 
-保时捷959证]��了四驱跑车的潜力，
+保时捷959证]了四驱跑车的潜力，
 是保时捷历史上最重要的里程碑之一。"
 collection,0x00008EFE,1030567,impreza_wrc_98,Impreza WRC Car '98,0x0000BCF1,fuzzy-name,1.0754,"The World Rally Championship represents the pinnacle
 of rally racing.
@@ -13572,7 +13572,7 @@ the Subaru rally team in 1998.","拉力赛有着100多年的悠久历史。
 
 眼前这辆车是1998年的版本。
 
-正是这辆车，在科林·��克雷的驾驶下，为斯巴鲁拉力
+正是这辆车，在科林·克雷的驾驶下，为斯巴鲁拉力
 车队摘下了第三个冠军头衔。"
 collection,0x00008F0C,1030581,charger_rt_426_hemi_68,Charger RT 427 HEMI '68,0x0000B2D6,fuzzy-name,1.2133,"Even if you weren't around to experience the muscle car boom
 that dominated the American automotive scene in the 1960s...
@@ -13704,7 +13704,7 @@ RS4动力单元……
 阿兰·普罗斯特亲自执驾！
 
 这款不走寻常路的多用途汽车，
-在赛道上也是风驰电掣�hp"
+在赛道上也是风驰电掣hp"
 collection,0x00008F58,1030657,w196r_monopost_55,"Mercedes-Benz W 196 R ""Monoposto"" '55",0x0000C19F,dms-car-key-override,1.0,"The name ""W 196"" evokes a special reverence among
 Mercedes-Benz enthusiasts.
 
@@ -13767,7 +13767,7 @@ automotive history with its unmatched design and performance.","对梅赛德斯-
 名为“W 196 S”的它同样名声显赫，是运动跑车领域
 的翘楚。
 
-它的正式名称是“300 SLR”，^��样在汽车发展史上
+它的正式名称是“300 SLR”，^样在汽车发展史上
 留下了不可磨灭的印记。"
 collection,0x00008F5F,1030664,mangusta_69_cd,Mangusta (Christian Dior),0x00009D62,exact-display-name,1.0,"The De Tomaso Mangusta is an iconic 1960s sports car.
 
@@ -13853,7 +13853,7 @@ the Castrol MUGEN NSX took home the series championship.
 Today, the original NSX has become a consummate collector
 car, an icon of Japanese automobiles
 
-And this car rep�esents the model's legacy as a
+And this car repesents the model's legacy as a
 timeless, persistent race machine.","卡斯特罗无限NSX参加了全日本GT锦标赛2000赛季……
 
 并成为了赢得日本顶级房车赛冠军的第一款
@@ -13943,7 +13943,7 @@ GT车型风格的车身设计。
 
 在首次亮相的1998年，它以第9名的总成绩完赛。
 
-在1999��，丰田又派出由片山右京、铃木利男
+在1999，丰田又派出由片山右京、铃木利男
 和土屋圭市组成的车手阵容
 
 重回勒芒，并依靠他们的3号赛车拿到了第二名的好成绩。
@@ -16728,7 +16728,7 @@ that really took its special concept to heart.","430 Scuderia是追求驾驶乐�
 
 而430 Scuderia则是一款真正意义上的公路赛车，它将
 这一特殊理念贯彻到了极致。"
-usedCar,0x00004661,1000424,gallardo_lp560_4_08,Gallardo LP 560-4  '08,0x0000BCEE,exact-display-name,1.0,"The Gallardo was the first car by Lamborghini
+usedCar,0x00004661,1000424,gallardo_lp560_4_08,Gallardo LP 560-4 '08,0x0000BCEE,exact-display-name,1.0,"The Gallardo was the first car by Lamborghini
 to be powered by a V-10 engine.
 
 While Lambos were generally known for having V-12s under their
@@ -16766,7 +16766,7 @@ Mitsubishi’s high-performance MR badge.
 Thanks to its 4G63 turbocharged inline-4, this rally-inspired
 machine accelerated like a sports car.
 
-The Lancer Evolution VIII marked a major leap from  the
+The Lancer Evolution VIII marked a major leap from the
 previous model, thanks to its Super AYC torque control system.
 
 Over any driving surface, the sedan was fast and easy to control.

@@ -24,9 +24,10 @@ limitations are recorded in `report/FINAL_STATUS.md`.
 | Legacy 253 ambiguity review | 253 / 253 resolved |
 | Strongly-typed subtitle speakers | 14 |
 | Real decoded character portraits | 19 |
-| Cafe Menu Books | 105 (39 main + 12 bonus + 54 Extra) |
-| Menu-Book cars mapped to names/makes | 222 / 222 |
-| Menu-Book cover containers resolved | 74 |
+| Cafe Menu Books | 108 (39 main + 12 bonus + 57 Extra) |
+| Menu-Book cars mapped to names/makes | 231 / 231 |
+| Menu-Book covers located (screenshot or container) | 77 |
+| Browser-ready Menu-Book covers | 74 |
 
 The vehicle descriptions cover three independent game sources:
 
@@ -38,13 +39,14 @@ Each car page exposes four tabs: GT Cafe, Brand Central, Used Cars and Hagerty
 Collection. Chinese, English and bilingual modes are available.
 
 The Cafe Menu Book archive at <https://gt7.gakaki.com/menus_cafe> adds all
-105 main, bonus and Extra menus. It includes collection names, cars,
+108 main, bonus and Extra menus. It includes collection names, cars,
 manufacturers, rewards, collector levels, EN/ZH text, search, manufacturer
 filters, keyboard navigation, autoplay and a viewport-fixed mobile
-previous/next bar. The 74 collection-cover JXL containers are resolved from
-the PS5 content store; the public page reconstructs their layouts from game
-car imagery because the retail codestream is not accepted by public JXL
-decoders.
+previous/next bar. The original PS5 collection-cover containers are resolved
+from the local content store, while 74 public menu screenshots provide the
+visible WebP covers. The remaining collection covers use the game car imagery
+as a layout reconstruction because the retail JXL codestream is not accepted
+by public decoders.
 
 ## Main directories
 
@@ -71,7 +73,10 @@ python scripts\build_site_data.py
 python scripts\verify_site_data.py
 python scripts\verify_avatars.py
 python scripts\verify_rust_parity.py
+python scripts\fetch_menu_covers.py
 python scripts\build_menu_books.py
+python scripts\sanitize_site_text.py
+python scripts\verify_menu_books.py
 cd site
 npm install
 npm run build

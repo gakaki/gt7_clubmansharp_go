@@ -1,0 +1,54 @@
+{
+  "base": "https://gt7.gakaki.com/",
+  "overview": {
+    "title": "GT7 咖啡屋对话库 · Gran Turismo 7 Café Dialogues",
+    "cards": 591,
+    "brands": 79,
+    "cast": 15,
+    "text": "GT\n咖啡屋对话库\n\nGRAN TURISMO 7 · GT CAFÉ DIALOGUES\n\n菜单书档案\n中文\nEnglish\n双语\n591\n收录车辆\n329\n有咖啡屋对白\n444\nCarDetail 对白\n634\n车辆说明\n79\n品牌\n15\n咖啡屋角色\n253\n上一轮歧义复核\n\n444 条 CarDetail 已定位到车辆 · 重建完整场景 2620 行对白 · 581 辆车已有品牌购物/二手车/收藏馆说明\n\n卢卡 · Luca\nGT Café owner\n莎拉·伊顿 · Sarah Eaton\nMain guide and race engineer\n斯黛拉 · Stella\nCafé regular · compact cars\n克里斯 · Chris\nCafé regular · road-car appraisal\n杰里米 · Jeremy\nCafé regular · motorsport history\n弗里曼·托马斯 · Freeman Thomas\nFormer Ford design director; Porsche, Audi\n中村史郎 · Shiro Nakamura\nFormer Nissan Chief Creative Officer\n儿玉英雄 · Hideo Kodama\nFormer Opel designer\n法比奥·菲利皮尼 · Fabio Filippini\nFormer Pininfarina design director\n埃德·韦伯恩 · Ed Welburn\nFormer GM global design vice president\n俣野努 · Tom Matano\nMazda designer; MX-5 design contributor\n神乐坂彦则 · Hikonori Kagurazaka\nHigh-performance car designer\n伊藤邦久 · Kunihisa Ito\nGM, Opel and Ford designer\n前田育男 · Ikuo Maeda\nFormer Mazda design lead; Kodo design\n金·琼斯 · Kim Jones\nFashion designer; Dior Men artistic director\n查看全部 15 位角色\n全部\n有对白\n无对白\n全部品牌\nA\nB\nC\nD\nE\nF\nG\nH\nI\nJ\nK\nL\nM\nN\nO\nP\nR\nS\nT\nV\nW\nX\nY\nŠ\n全部角色\n莎拉·伊顿 · Sarah Eaton\n1036\n杰里米 · Jeremy\n361\n克里斯 · Chris\n220\n法比奥·菲利皮尼 · Fabio Filippini\n171\n弗里曼·托马斯 · Freeman Thomas\n170\n埃德·韦伯恩 · Ed Welbu"
+  },
+  "car": {
+    "modal": true,
+    "title": "Xiaomi SU7 Ultra '25",
+    "tabs": [
+      {
+        "text": "咖啡屋对话 · Cafe dialogue · 0",
+        "muted": true
+      },
+      {
+        "text": "品牌购物 / 车库 · Brand Central / Garage · 有",
+        "muted": false
+      },
+      {
+        "text": "二手车 · Used Cars · 无",
+        "muted": true
+      },
+      {
+        "text": "收藏馆 · Hagerty Collection · 无",
+        "muted": true
+      }
+    ],
+    "hasXiaomi": true,
+    "hasTextId": true,
+    "width": 1425
+  },
+  "brandPanel": {
+    "text": "Brand Central Advisor\nBrand Central vehicle advisor\nBrand Central\nsu7_ultra_24\n0x0000CF2F\n\n此段车辆介绍同时用于车库展示；若游戏数据库为同一车型保存了多条版本，会列在正文后的“补充介绍”中。\n\n品牌购物\n\n以智能手机制造商闻名的小米，在2024年春季凭借\n创纪录的SU7强势进军电动车领域。\n\nSU7 Ultra高性能版本以7分04.957秒的成绩\n征服纽博格林北环赛道。\n\n车身采用创新的CTB一体化电池技术，\n实现电池与底盘的无缝融合。\n\n搭载三电机系统（一前两后），最大功率达1548ps！\n\n众多空气动力学组件与轻量化碳纤维板材\n共同创造高达285kg的极致下压力。\n\n悬挂系统集成空气弹簧与自适应减震器，\n配合扭矩矢量分配系统显著提升操控表现。\n\n随着汽车业务加入小米生态，\nSU7 Ultra必将担当品牌旗舰重任。\n\nBrand Central\n\nPerhaps best known as a smartphone maker, Xiaomi arrived\non the EV scene in spring 2024 with its record-setting SU7.\n\nThe SU7 Ultra is a high-performance model that ran the\nNürburgring Nordschleife with a time of 7:04:957.\n\nIts body employs innovative Gigacasting technology\nthat seamlessly integrates the battery and chassis.\n\nPowered by three electric motors (one in front and two at rear),\nit delivers a maximum output of 1548ps!\n\nA host of aerodynamic components and lightweight carbon-fiber\npanels help it achieve a maximum downforce of 285kg.\n\nThe suspension combines air springs and adaptive dampers with\ntorque-vectoring control for greatly enhanced handling.\n\nWith automobiles now part of Xiaomi’s expanding ecosystem,\nthe SU7 Ultra is poised to stand as its flagship model.",
+    "images": [
+      {
+        "src": "/avatars/extracted/brand-central-advisor.png?v=20261023c",
+        "naturalWidth": 192
+      }
+    ]
+  },
+  "review": {
+    "modal": true,
+    "entries": 253,
+    "text": "GT\n咖啡屋对话库\n\nGRAN TURISMO 7 · GT CAFÉ DIALOGUES\n\n菜单书档案\n中文\nEnglish\n双语\n591\n收录车辆\n329\n有咖啡屋对白\n444\nCarDetail 对白\n634\n车辆说明\n79\n品牌\n15\n咖啡屋角色\n253\n上一轮歧义复核\n\n444 条 CarDetail 已定位到车辆 · 重建完整场景 2620 行对白 · 581 辆车已有品牌购物/二手车/收藏馆说明\n\n卢卡 · Luca\nGT Café owner\n莎拉·伊顿 · Sarah Eaton\nMain guide and race engineer\n斯黛拉 · Stella\nCafé regular · compact cars\n克里斯 · Chris\nCafé regular · road-car appraisal\n杰里米 · Jeremy\nCafé regular · motorsport history\n弗里曼·托马斯 · Freeman Thomas\nFormer Ford design director; Porsche, Audi\n中村史郎 · Shiro Nakamura\nFormer Nissan Chief Creative Officer\n儿玉英雄 · Hideo Kodama\nFormer Opel designer\n法比奥·菲利皮尼 · Fabio Filippini\nFormer Pininfarina design director\n埃德·韦伯恩 · Ed Welburn\nFormer GM global design vice president\n俣野努 · Tom Matano\nMazda designer; MX-5 design contributor\n神乐坂彦则 · Hikonori Kagurazaka\nHigh-performance car designer\n伊藤邦久 · Kunihisa Ito\nGM, Opel and Ford designer\n前田育男 · Ikuo Maeda\nFormer Mazda design lead; Kodo design\n金·琼斯 · Kim Jones\nFashion designer; Dior Men artistic director\n查看全部 15 位角色\n全部\n有对白\n无对白\n全部品牌\nA\nB\nC\nD\nE\nF\nG\nH\nI\nJ\nK\nL\nM\nN\nO\nP\nR\nS\nT\nV\nW\nX\nY\nŠ\n全部角色\n莎拉·伊顿 · Sarah Eaton\n1036\n杰里米 · Jeremy\n361\n克里斯 · Chris\n220\n法比奥·菲利皮尼 · Fabio Filippini\n171\n弗里曼·托马斯 · Freeman Thomas\n170\n埃德·韦伯恩 · Ed Welburn\n136\n儿玉英雄 · Hideo Kodama\n136\n中村史郎 · Shiro Nakamura\n136\n神乐坂彦则 · Hikonori Kagurazaka\n135\n斯黛拉 · Stella\n127\n俣野努 · Tom Matano\n119\n伊藤邦久 · Kunihisa Ito\n66\n前田育男 · Ikuo Maeda\n56\n金·琼斯 · Kim Jones\n4\n ABARTH 2\nAbarth 1500 Biposto Bertone B.A.T 1 '52\nAbarth 1500 Biposto Bertone B.A.T 1 '52\n'52\n对白 · 7\n资料 · 1\nAbarth 500 '09\nAbarth 500 '09\n'09\n对白 · 24\n资料 · 2\n AFEELA 2\nAFEELA 1 '26\nAFEELA 1 '26\n'26\n无对白\n资料 · 1\nAFEELA Prototype 2024\nAFEELA Prototype 2024\n无对白\n资料 · 1\n ALFA ROMEO 11\nAlfa Romeo 155 2.5 V6 TI '93\nAlfa Romeo 155 2.5 V6 TI '93\n'93\n对白 · 4\n资料 · 1\nAlfa Romeo 4C Gr.3\nAlfa Romeo 4C Gr.3\n无对白\n资料 · 1\nAlfa Romeo 4C Gr.3 Road Car8\nAlfa Romeo 4C Gr.3 Road Car\n无对白\n资料 · 1\nAlfa Romeo 4C Gr.4\nAlfa Romeo 4C Gr.4\n无对白\n资料 · 1\nAlfa Romeo 4C Launch Edition '14\nAlfa Romeo 4C Launch Edition '14\n'14\n对白 · 4\n资料 · 1\nAlfa R"
+  },
+  "checks": {
+    "overview": true,
+    "xiaomi": true,
+    "review": true
+  }
+}

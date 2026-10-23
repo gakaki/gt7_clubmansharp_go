@@ -424,6 +424,75 @@ BONUS_REWARDS = {
     51: ("4★ Roulette Ticket", "4★ 轮盘奖券"),
 }
 
+EXTRA_WEB_SUPPLEMENTS = {
+    55: {
+        "internalCode": "CC113",
+        "collectionNameEn": "High-Performance EVs",
+        "collectionNameZh": "高性能电动车",
+        "descriptionEn": (
+            "Collect the three specified high-performance electric vehicles "
+            "to complete this Extra Menu."
+        ),
+        "descriptionZh": "收集指定三款高性能电动车，完成这本追加菜单。",
+        "rewardEn": "5★ Roulette Ticket",
+        "rewardZh": "5★ 轮盘奖券",
+        "collectorLevel": 70,
+        "cars": [
+            "Polestar 5 Performance '26",
+            "Xiaomi SU7 Ultra '25",
+            "Yangwang U9 '24",
+        ],
+        "sourceUrl": (
+            "https://www.skymac.org/GT7-Cafe/"
+            "Menu-113-Collection-Vehicules-electriques-hautes-performances.htm"
+        ),
+    },
+    56: {
+        "internalCode": "CC114",
+        "collectionNameEn": "Tuned GT-Rs",
+        "collectionNameZh": "改装 GT-R",
+        "descriptionEn": (
+            "Collect the three specified specially tuned Nissan GT-R models "
+            "to complete this Extra Menu."
+        ),
+        "descriptionZh": "收集指定三款经过特别改装的Nissan GT-R，完成这本追加菜单。",
+        "rewardEn": "6★ Roulette Ticket",
+        "rewardZh": "6★ 轮盘奖券",
+        "collectorLevel": 80,
+        "cars": [
+            "NISMO 400R '95",
+            "NISMO R34 GT-R Z-tune '05",
+            "Mine's BNR34 GT-R N1 base",
+        ],
+        "sourceUrl": (
+            "https://www.skymac.org/GT7-Cafe/"
+            "Menu-114-Collection-GT-R-preparees.htm"
+        ),
+    },
+    57: {
+        "internalCode": "CC115",
+        "collectionNameEn": "Le Mans Winners",
+        "collectionNameZh": "勒芒冠军赛车",
+        "descriptionEn": (
+            "Collect the three specified Le Mans-winning race cars to "
+            "complete this Extra Menu."
+        ),
+        "descriptionZh": "收集指定三款勒芒冠军赛车，完成这本追加菜单。",
+        "rewardEn": "6★ Roulette Ticket",
+        "rewardZh": "6★ 轮盘奖券",
+        "collectorLevel": 90,
+        "cars": [
+            "Ferrari 499P '23",
+            "McLaren F1 GTR - BMW '95",
+            "Ford Mark IV Race Car '67",
+        ],
+        "sourceUrl": (
+            "https://www.skymac.org/GT7-Cafe/"
+            "Menu-115-Collection-Championnes-du-Mans.htm"
+        ),
+    },
+}
+
 
 def _norm(value: str) -> str:
     value = unicodedata.normalize("NFKD", value)
@@ -925,6 +994,7 @@ def build() -> dict:
             "coverRel": cover_rel,
             "coverThumbRel": thumb_rel,
             "coverStatus": cover_status,
+            "coverContainerStatus": cover_status,
             "cover": "",
             "thumbnail": "",
             "storyEn": description_en,
@@ -1027,6 +1097,7 @@ def build() -> dict:
             "coverRel": cover_rel,
             "coverThumbRel": thumb_rel,
             "coverStatus": cover_status,
+            "coverContainerStatus": cover_status,
             "cover": "",
             "thumbnail": "",
             "storyEn": story["storyEn"] if story else description_en,
@@ -1048,6 +1119,82 @@ def build() -> dict:
             },
         })
 
+    for order, supplement in EXTRA_WEB_SUPPLEMENTS.items():
+        car_entries = add_car_names(
+            supplement["cars"],
+            f"extra-web-supplement:{order}",
+        )
+        title_en = f"Collection: {supplement['collectionNameEn']}"
+        title_zh = f"收藏：{supplement['collectionNameZh']}"
+        records.append({
+            "id": f"extra-{order:03d}",
+            "category": "extra",
+            "runtime": "online-1.72",
+            "categoryZh": "追加菜单 / 收藏菜单",
+            "categoryEn": "Extra Menu",
+            "number": order,
+            "displayNumber": f"EM {order}",
+            "internalCode": supplement["internalCode"],
+            "titleEn": title_en,
+            "titleZh": title_zh,
+            "collectionNameEn": supplement["collectionNameEn"],
+            "collectionNameZh": supplement["collectionNameZh"],
+            "descriptionEn": supplement["descriptionEn"],
+            "descriptionZh": supplement["descriptionZh"],
+            "requirementsEn": "Collect: " + ", ".join(
+                car["nameEn"] for car in car_entries
+            ),
+            "requirementsZh": "收集：" + "、".join(
+                car["nameZh"] for car in car_entries
+            ),
+            "rewardEn": supplement["rewardEn"],
+            "rewardZh": supplement["rewardZh"],
+            "collectorLevel": supplement["collectorLevel"],
+            "cars": car_entries,
+            "manufacturers": sorted({car["brand"] for car in car_entries}),
+            "coverAsset": "",
+            "coverThumbAsset": "",
+            "coverRel": "",
+            "coverThumbRel": "",
+            "coverStatus": "web-supplement",
+            "coverContainerStatus": "missing",
+            "cover": "",
+            "thumbnail": "",
+            "storyEn": supplement["descriptionEn"],
+            "storyZh": supplement["descriptionZh"],
+            "sources": {
+                "webSupplement": supplement["sourceUrl"],
+                "spec": "Spec IV / 1.72",
+                "carList": "guide car list + local cars.json",
+                "reward": "official 1.72 update / GTPlanet",
+                "collectorLevel": "official 1.72 update",
+                "cover": "public guide screenshot",
+            },
+        })
+
+    cover_manifest_path = DATA_DIR / "menu_cover_sources.json"
+    if cover_manifest_path.is_file():
+        cover_manifest = json.loads(
+            cover_manifest_path.read_text(encoding="utf-8")
+        )
+        screenshots = {
+            entry["recordId"]: entry
+            for entry in cover_manifest.get("entries", [])
+        }
+        for record in records:
+            screenshot = screenshots.get(record["id"])
+            if screenshot:
+                record["cover"] = screenshot["cover"]
+                record["coverStatus"] = "screenshot"
+                record["coverSourcePage"] = screenshot["pageUrl"]
+                record["coverScreenshot"] = screenshot["pictureUrl"]
+                record["sources"]["coverPage"] = screenshot["pageUrl"]
+                record["sources"]["coverScreenshot"] = screenshot["pictureUrl"]
+            elif record["coverStatus"] == "present":
+                record["coverStatus"] = "container-only"
+            else:
+                record["coverStatus"] = "missing"
+
     records.sort(
         key=lambda item: (
             {"main": 0, "bonus": 1, "extra": 2}[item["category"]],
@@ -1056,7 +1203,7 @@ def build() -> dict:
     )
     payload = {
         "generatedFrom": "GT7 PS5 DMSB + RT2 + local content store",
-        "gameVersion": "1.710.000",
+        "gameVersion": "1.710.000 local + 1.72 web supplement",
         "counts": {
             "total": len(records),
             "main": sum(item["category"] == "main" for item in records),
@@ -1064,8 +1211,18 @@ def build() -> dict:
             "extra": sum(item["category"] == "extra" for item in records),
             "withCars": sum(bool(item["cars"]) for item in records),
             "withCoverContainer": sum(
-                item["coverStatus"] == "present" for item in records
+                item.get("coverContainerStatus") == "present"
+                for item in records
             ),
+            "withScreenshot": sum(
+                item["coverStatus"] == "screenshot" for item in records
+            ),
+            "withAnyCover": sum(
+                item["coverStatus"] in {"screenshot", "container-only"}
+                or bool(item.get("cover"))
+                for item in records
+            ),
+            "withDisplayCover": sum(bool(item.get("cover")) for item in records),
             "resolvedCars": sum(
                 car.get("matchMethod") != "unresolved"
                 for item in records

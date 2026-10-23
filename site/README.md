@@ -1,7 +1,7 @@
 # GT7 Research Browser
 
-Vue 3 + Vite static research browser for Gran Turismo 7 PS5 data recovered
-from the local game installation. The public deployment is
+Vue 3 + React/Base UI + Tailwind + Vite static research browser for Gran
+Turismo 7 PS5 data recovered from the local game installation. The public deployment is
 <https://gt7.gakaki.com>.
 
 ## Features
@@ -28,7 +28,7 @@ from the local game installation. The public deployment is
   content-visibility rendering.
 - A viewport-fixed mobile previous/next car bar that follows the complete
   filtered car order across brands and keeps the shared URL in sync.
-- A Café Menu Book archive with all 105 menus, 222 mapped car entries and
+- A Café Menu Book archive with all 108 menus, 231 mapped car entries and
   their manufacturers, rewards, collector levels and bilingual game text.
 - Base UI dialogs/tabs/switch with Tailwind and shadcn-style tokens for the
   Menu Book page, including autoplay and fixed mobile previous/next controls.
@@ -44,8 +44,8 @@ from the local game installation. The public deployment is
   <https://gt7.gakaki.com/?cast=all&lang=both>
 - Cafe Menu Book archive:
   <https://gt7.gakaki.com/menus_cafe?lang=both>
-- Hyundai N Extra Menu No. 52:
-  <https://gt7.gakaki.com/menus_cafe?book=extra-052&lang=both>
+- Le Mans Winners Extra Menu No. 57:
+  <https://gt7.gakaki.com/menus_cafe?book=extra-057&lang=both>
 - Data downloads: `public/data/`
 
 ## Local build
@@ -53,7 +53,10 @@ from the local game installation. The public deployment is
 ```powershell
 python ..\scripts\build_site_data.py
 python ..\scripts\verify_site_data.py
+python ..\scripts\fetch_menu_covers.py
 python ..\scripts\build_menu_books.py
+python ..\scripts\sanitize_site_text.py
+python ..\scripts\verify_menu_books.py
 npm install
 npm run build
 npm run preview
@@ -84,7 +87,7 @@ The production Worker is `gt7-cafe-edge` and serves the custom domain
 - `public/data/cafe_scene_dialogues.csv`: 2,620 scene lines.
 - `public/data/unmatched_dialogues.csv`: the legacy 253-record review.
 - `public/data/unmatched_dialogues.md`: the same review grouped by resolved car.
-- `public/data/menu_books.json`: 105 main/bonus/Extra menus with local source
+- `public/data/menu_books.json`: 108 main/bonus/Extra menus with local source
   IDs, car/manufacturer mappings, EN/ZH text and cover-container paths.
 - `public/data/menu_books.csv`: the same dataset in a spreadsheet-friendly
   format.
