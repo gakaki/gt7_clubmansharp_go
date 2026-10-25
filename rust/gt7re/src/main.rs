@@ -308,6 +308,11 @@ enum Cmd {
         official_descriptions: PathBuf,
         #[arg(
             long,
+            default_value = r"C:\gt7\gt7\_re\reports\official_car_gallery.json"
+        )]
+        official_gallery: PathBuf,
+        #[arg(
+            long,
             default_value = r"C:\gt7\gt7\_re\reports\vehicle_collection_texts.json"
         )]
         collection_fallback: PathBuf,
@@ -450,6 +455,29 @@ enum OfficialCmd {
         cars_out: PathBuf,
         #[arg(long, default_value = r"C:\gt7\gt7\_re\site\public\logos")]
         logos_out: PathBuf,
+    },
+    /// Download four official car shots in parallel and convert them to JPEG XL
+    Gallery {
+        #[arg(
+            long,
+            default_value = r"C:\gt7\gt7\_re\reports\official_car_descriptions.json"
+        )]
+        descriptions: PathBuf,
+        #[arg(long, default_value = r"C:\gt7\gt7\_re\site\public")]
+        out: PathBuf,
+        #[arg(
+            long,
+            default_value = r"C:\gt7\gt7\_re\reports\official_car_gallery.json"
+        )]
+        index: PathBuf,
+        #[arg(long)]
+        proxy: Option<String>,
+        #[arg(long)]
+        refresh: bool,
+        #[arg(long, default_value_t = 16)]
+        threads: usize,
+        #[arg(long)]
+        limit: Option<usize>,
     },
     /// Crop whitespace around downloaded brand logos
     TrimLogos {
@@ -814,6 +842,15 @@ fn run() -> Result<()> {
                     &reports.join("official_car_descriptions.json"),
                     proxy.as_deref(),
                 )?;
+                official::gallery(
+                    &reports.join("official_car_descriptions.json"),
+                    &site_dir.join("public"),
+                    &reports.join("official_car_gallery.json"),
+                    proxy.as_deref(),
+                    true,
+                    16,
+                    None,
+                )?;
             }
             research::build(&research::Options {
                 rt2_dir: rt2_dir.clone(),
@@ -942,6 +979,7 @@ fn run() -> Result<()> {
             research,
             official_cars,
             official_descriptions,
+            official_gallery,
             collection_fallback,
             dmsb_dir,
             data_dir,
@@ -951,6 +989,7 @@ fn run() -> Result<()> {
                 research,
                 official_cars,
                 official_descriptions,
+                official_gallery,
                 collection_fallback,
                 dmsb_dir,
                 site_data: data_dir,
@@ -1051,6 +1090,23 @@ fn run() -> Result<()> {
                 cars_out,
                 logos_out,
             } => official::images(&source, &cars_out, &logos_out)?,
+            OfficialCmd::Gallery {
+                descriptions,
+                out,
+                index,
+                proxy,
+                refresh,
+                threads,
+                limit,
+            } => official::gallery(
+                &descriptions,
+                &out,
+                &index,
+                proxy.as_deref(),
+                refresh,
+                threads,
+                limit,
+            )?,
             OfficialCmd::TrimLogos { dir } => official::trim_logos(&dir)?,
             OfficialCmd::MenuCovers {
                 out,

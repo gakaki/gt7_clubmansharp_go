@@ -6,6 +6,7 @@
 use anyhow::{anyhow, bail, Context, Result};
 use image::imageops::FilterType;
 use image::GenericImageView;
+use jxl_encoder::{LossyConfig, PixelLayout};
 use rayon::prelude::*;
 use regex::Regex;
 use serde_json::{json, Value};
@@ -199,6 +200,234 @@ pub fn descriptions(out: &Path, proxy: Option<&str>) -> Result<()> {
     }
     fs::write(out, serde_json::to_vec_pretty(&payload)?)?;
     println!("official descriptions: {} -> {}", ids.len(), out.display());
+    Ok(())
+}
+
+#[derive(Clone, Debug)]
+struct GalleryJob {
+    official_id: String,
+    name_en: String,
+    name_zh: String,
+    shot_name: String,
+    module_url: String,
+    jxl_path: PathBuf,
+    jxl_rel: String,
+}
+
+fn write_atomic(path: &Path, data: &[u8]) -> Result<()> {
+    if let Some(parent) = path.parent() {
+        fs::create_dir_all(parent)?;
+    }
+    let temporary = path.with_extension(format!("{}.tmp", std::process::id()));
+    fs::write(&temporary, data)?;
+    if path.exists() {
+        fs::remove_file(path)?;
+    }
+    fs::rename(&temporary, path)?;
+    Ok(())
+}
+
+fn shot_priority(name: &str) -> u8 {
+    if name.contains("_1_01.") {
+        0
+    } else if name.contains("_1_02.") {
+        1
+    } else if name.contains("_2_01.") {
+        2
+    } else if name.contains("_2_02.") {
+        3
+    } else {
+        4
+    }
+}
+
+fn discover_gallery_jobs(
+    agent: &ureq::Agent,
+    descriptions: &Path,
+    out: &Path,
+) -> Result<Vec<GalleryJob>> {
+    let payload: Value = serde_json::from_slice(
+        &fs::read(descriptions).with_context(|| descriptions.display().to_string())?,
+    )?;
+    let cars = payload
+        .get("cars")
+        .and_then(Value::as_array)
+        .context("official descriptions.cars")?;
+    let page = fetch_text(agent, &format!("{GT_BASE}/cn/gt7/carlist"))?;
+    let app_pattern = Regex::new(r#"src="(/common/dist/gt7/carlist/assets/index-[^"]+\.js)""#)
+        .expect("gallery app regex");
+    let app_path = capture(&app_pattern, &page, "gallery app")?;
+    let app_js = fetch_text(agent, &format!("{GT_BASE}{app_path}"))?;
+    let asset_root = app_path.rsplit_once('/').map(|value| value.0).unwrap_or("");
+    let mapping = Regex::new(
+        r#"images/car_shots/4k/(car\d+_\d+_\d+\.jpg)":\(\)=>H\(\(\)=>import\(`\./([^`]+\.js)`\)"#,
+    )
+    .expect("gallery asset regex");
+    let mut modules: HashMap<String, String> = HashMap::new();
+    for item in mapping.captures_iter(&app_js) {
+        modules.insert(item[1].to_string(), item[2].to_string());
+    }
+    if modules.is_empty() {
+        bail!("official gallery asset map is empty");
+    }
+    let jobs = cars
+        .iter()
+        .flat_map(|car| {
+            let official_id = car.get("id").and_then(Value::as_str).unwrap_or("");
+            let name_en = car.get("nameEn").and_then(Value::as_str).unwrap_or("");
+            let name_zh = car.get("nameZh").and_then(Value::as_str).unwrap_or("");
+            let prefix = format!("{official_id}_");
+            let mut names = modules
+                .keys()
+                .filter(|name| name.starts_with(&prefix))
+                .cloned()
+                .collect::<Vec<_>>();
+            names.sort_by(|a, b| {
+                shot_priority(a)
+                    .cmp(&shot_priority(b))
+                    .then_with(|| a.cmp(b))
+            });
+            names
+                .into_iter()
+                .take(4)
+                .map(|shot_name| {
+                    let stem = shot_name.trim_end_matches(".jpg");
+                    let jxl_rel = format!("official/{official_id}/{stem}.jxl");
+                    GalleryJob {
+                        official_id: official_id.to_string(),
+                        name_en: name_en.to_string(),
+                        name_zh: name_zh.to_string(),
+                        module_url: format!(
+                            "{GT_BASE}{asset_root}/{}",
+                            modules.get(&shot_name).cloned().unwrap_or_default()
+                        ),
+                        shot_name,
+                        jxl_path: out.join(&jxl_rel),
+                        jxl_rel,
+                    }
+                })
+                .collect::<Vec<_>>()
+        })
+        .collect::<Vec<_>>();
+    if jobs.is_empty() {
+        bail!("official gallery has no downloadable car shots");
+    }
+    Ok(jobs)
+}
+
+fn convert_gallery_job(agent: &ureq::Agent, job: &GalleryJob, refresh: bool) -> Result<Value> {
+    if !refresh && job.jxl_path.is_file() && fs::metadata(&job.jxl_path)?.len() > 16 {
+        return Ok(json!({
+            "name": job.shot_name,
+            "jxl": job.jxl_rel,
+            "width": 3840,
+            "height": 2160,
+            "jxlBytes": fs::metadata(&job.jxl_path)?.len(),
+        }));
+    }
+    let module = fetch_text(agent, &job.module_url)?;
+    let image_url = Regex::new(r#"var e=`([^`]+)`;export"#)
+        .expect("gallery image url regex")
+        .captures(&module)
+        .map(|capture| capture[1].to_string())
+        .context("official gallery image URL")?;
+    let image_url = if image_url.starts_with("http") {
+        image_url
+    } else {
+        format!("{GT_BASE}{image_url}")
+    };
+    let bytes = fetch_bytes(agent, &image_url)?;
+    let image = image::load_from_memory(&bytes).context("decode official car shot")?;
+    let rgb = image.to_rgb8();
+    let width = rgb.width();
+    let height = rgb.height();
+    let jxl = LossyConfig::new(1.0)
+        .with_effort(1)
+        .encode(rgb.as_raw(), width, height, PixelLayout::Rgb8)
+        .map_err(|error| anyhow!("JPEG XL encode failed: {error}"))?;
+    write_atomic(&job.jxl_path, &jxl)?;
+    Ok(json!({
+        "name": job.shot_name,
+        "jxl": job.jxl_rel,
+        "width": width,
+        "height": height,
+        "jxlBytes": jxl.len(),
+        "sourceUrl": image_url,
+    }))
+}
+
+pub fn gallery(
+    descriptions: &Path,
+    out: &Path,
+    index: &Path,
+    proxy: Option<&str>,
+    refresh: bool,
+    threads: usize,
+    limit: Option<usize>,
+) -> Result<()> {
+    let agent = Arc::new(agent(proxy)?);
+    let mut jobs = discover_gallery_jobs(&agent, descriptions, out)?;
+    if let Some(limit) = limit {
+        jobs.truncate(limit);
+    }
+    let total = jobs.len();
+    let completed = std::sync::atomic::AtomicUsize::new(0);
+    let pool = rayon::ThreadPoolBuilder::new()
+        .num_threads(threads.max(1))
+        .build()?;
+    let results = pool.install(|| {
+        jobs.par_iter()
+            .map(|job| {
+                let result = convert_gallery_job(&agent, job, refresh);
+                let done = completed.fetch_add(1, std::sync::atomic::Ordering::Relaxed) + 1;
+                if done % 25 == 0 || done == total {
+                    eprintln!("official gallery: {done}/{total}");
+                }
+                (job, result)
+            })
+            .collect::<Vec<_>>()
+    });
+    let mut by_car: BTreeMap<String, (String, String, Vec<Value>)> = BTreeMap::new();
+    let mut errors = Vec::new();
+    for (job, result) in results {
+        match result {
+            Ok(value) => by_car
+                .entry(job.official_id.clone())
+                .or_insert_with(|| (job.name_en.clone(), job.name_zh.clone(), Vec::new()))
+                .2
+                .push(value),
+            Err(error) => errors.push(json!({
+                "officialId": job.official_id,
+                "shot": job.shot_name,
+                "error": error.to_string(),
+            })),
+        }
+    }
+    let cars = by_car
+        .into_iter()
+        .map(|(official_id, (name_en, name_zh, images))| {
+            json!({
+                "officialId": official_id,
+                "nameEn": name_en,
+                "nameZh": name_zh,
+                "images": images,
+            })
+        })
+        .collect::<Vec<_>>();
+    let payload = json!({
+        "generatedFrom": "official GT7 car-list four-shot gallery",
+        "count": cars.len(),
+        "images": cars.iter().flat_map(|car| car.get("images").and_then(Value::as_array).into_iter().flatten()).count(),
+        "errors": errors,
+        "cars": cars,
+    });
+    write_atomic(index, &serde_json::to_vec_pretty(&payload)?)?;
+    println!(
+        "official gallery: {} cars / {} images -> {}",
+        payload["count"],
+        payload["images"],
+        index.display()
+    );
     Ok(())
 }
 

@@ -22,7 +22,6 @@ import { cn } from './lib/utils'
 import './menus.css'
 
 const BASE = import.meta.env.BASE_URL
-const CATEGORY_ORDER = ['main', 'bonus', 'extra']
 const CATEGORY_FILTERS = [
   ['all', '全部', 'All'],
   ['main', '主线 1–39', 'Main'],
@@ -95,7 +94,7 @@ function CategoryBadge({ record, lang }) {
   )
 }
 
-function CoverArtwork({ record, lang, large = false, eager = false }) {
+function CoverArtwork({ record, lang, eager = false }) {
   const cars = record.cars?.slice(0, 3) || []
   if (record.cover) {
     return (
@@ -263,8 +262,6 @@ function MenuBookDialog({
 }) {
   const [tab, setTab] = useState('overview')
   const index = records.findIndex((item) => item.id === record?.id)
-  const previous = index > 0 ? records[index - 1] : records[records.length - 1]
-  const next = index >= 0 ? records[(index + 1) % records.length] : records[0]
 
   useEffect(() => {
     if (open) setTab('overview')
@@ -786,7 +783,7 @@ export default function MenuBooksApp() {
   }, [active, records, playing])
 
   const counts = {
-    ...(data?.counts || {}),
+    ...data?.counts,
     withCoverContainer:
       data?.counts?.withAnyCover ??
       data?.counts?.withDisplayCover ??

@@ -17,6 +17,7 @@ use std::sync::atomic::{AtomicU64, Ordering as AtomicOrdering};
 use std::sync::OnceLock;
 
 use crate::garage;
+use crate::rt2::{self, Rt2File};
 
 type TextKey = (String, String);
 type TextCandidates = HashMap<TextKey, Vec<((isize, isize, usize), String)>>;
@@ -81,6 +82,7 @@ pub struct Options {
     pub research: PathBuf,
     pub official_cars: PathBuf,
     pub official_descriptions: PathBuf,
+    pub official_gallery: PathBuf,
     pub collection_fallback: PathBuf,
     pub dmsb_dir: PathBuf,
     pub text_dirs: Vec<PathBuf>,
@@ -95,6 +97,7 @@ impl Default for Options {
             research: root.join("reports/research_rust.json"),
             official_cars: root.join("reports/official_cars.json"),
             official_descriptions: root.join("reports/official_car_descriptions.json"),
+            official_gallery: root.join("reports/official_car_gallery.json"),
             collection_fallback: root.join("reports/vehicle_collection_texts.json"),
             dmsb_dir: root.join("extracted/dms_prpys/dmsdata"),
             text_dirs: vec![
@@ -438,6 +441,48 @@ fn load_json(path: &Path) -> Result<Value> {
     serde_json::from_slice(&data).with_context(|| path.display().to_string())
 }
 
+fn load_collection_game_texts(collection_report: &Path) -> Result<HashMap<TextKey, String>> {
+    let report = load_json(collection_report)?;
+    let stem = report
+        .pointer("/sources/0/english")
+        .and_then(Value::as_str)
+        .unwrap_or("L_O_PWIJL");
+    let root = collection_report
+        .parent()
+        .and_then(Path::parent)
+        .context("collection report has no extraction root")?;
+    let raw_path = root
+        .join("extracted/descriptions_raw")
+        .join(format!("{stem}.rt2"));
+    let key_path = root
+        .join("keys/rt2_description")
+        .join(format!("{stem}.rt2.ks.bin"));
+    if raw_path.is_file() && key_path.is_file() {
+        let rt = Rt2File::parse(&raw_path)?;
+        let key = fs::read(&key_path).with_context(|| key_path.display().to_string())?;
+        return Ok(rt2::decode(&rt, &key)
+            .into_iter()
+            .filter(|entry| !entry.text.is_empty())
+            .map(|entry| ((entry.section, format!("0x{:08X}", entry.id)), entry.text))
+            .collect());
+    }
+
+    // Keep site builds usable when only the decoded cache is present.
+    let decoded_path = root
+        .join("extracted/descriptions_decoded")
+        .join(format!("{stem}.json"));
+    let decoded = load_json(&decoded_path)?;
+    let mut texts = HashMap::new();
+    for (section, entries) in decoded.as_object().into_iter().flatten() {
+        for (id, text) in entries.as_object().into_iter().flatten() {
+            if let Some(text) = text.as_str().filter(|text| !text.trim().is_empty()) {
+                texts.insert((section.clone(), id.clone()), clean_text(text));
+            }
+        }
+    }
+    Ok(texts)
+}
+
 fn official_key(name: &str) -> String {
     norm_words(name).join(" ")
 }
@@ -622,7 +667,9 @@ fn attach_collection(
     official_descriptions: &[Value],
     official_by_name: &HashMap<String, &Value>,
     official_by_id: &HashMap<String, &Value>,
+    official_gallery: &HashMap<String, Value>,
     fallback_by_id: &HashMap<String, Value>,
+    game_texts: &HashMap<TextKey, String>,
 ) {
     let object = car.as_object_mut().expect("car object");
     let id = object
@@ -683,7 +730,33 @@ fn attach_collection(
             );
         }
     }
-    let collection = if let Some(record) = record {
+    let detail_record = record.or_else(|| {
+        spec_alias_id
+            .and_then(|id| official_by_id.get(id).copied())
+    });
+    if let Some(record) = detail_record {
+        let official_id = record.get("id").and_then(Value::as_str).unwrap_or("");
+        object.insert(
+            "officialDetails".into(),
+            json!({
+                "officialId": official_id,
+                "nameEn": record.get("nameEn").cloned().unwrap_or(json!("")),
+                "nameZh": record.get("nameZh").cloned().unwrap_or(json!("")),
+                "heroEn": clean_text(record.get("heroEn").and_then(Value::as_str).unwrap_or("")),
+                "heroZh": clean_text(record.get("heroZh").and_then(Value::as_str).unwrap_or("")),
+                "descriptionEn": clean_text(record.get("descEn").and_then(Value::as_str).unwrap_or("")),
+                "descriptionZh": clean_text(record.get("descZh").and_then(Value::as_str).unwrap_or("")),
+                "sourceUrlEn": record.get("sourceUrlEn").cloned().unwrap_or(json!("")),
+                "sourceUrlZh": record.get("sourceUrlZh").cloned().unwrap_or(json!("")),
+                "images": official_gallery
+                    .get(official_id)
+                    .and_then(|item| item.get("images"))
+                    .cloned()
+                    .unwrap_or(json!([])),
+            }),
+        );
+    }
+    let mut collection = if let Some(record) = record {
         let fallback = fallback_by_id.get(&id);
         let car_key = fallback
             .and_then(|value| value.get("carKey"))
@@ -739,12 +812,107 @@ fn attach_collection(
     } else {
         return;
     };
+    apply_game_collection_texts(&mut collection, game_texts);
     object
         .entry("texts")
         .or_insert_with(|| json!({}))
         .as_object_mut()
         .expect("texts object")
         .insert("vehicleCollection".into(), collection);
+}
+
+fn apply_game_collection_texts(
+    collection: &mut Value,
+    game_texts: &HashMap<TextKey, String>,
+) {
+    let Some(object) = collection.as_object_mut() else {
+        return;
+    };
+    let catch_id = object
+        .get("catch")
+        .and_then(Value::as_object)
+        .and_then(|catch| catch.get("textId"))
+        .and_then(Value::as_str)
+        .unwrap_or("")
+        .to_string();
+    let long_id = object
+        .get("long")
+        .and_then(Value::as_object)
+        .and_then(|long| long.get("textId"))
+        .and_then(Value::as_str)
+        .unwrap_or("")
+        .to_string();
+    let game_copy = |section: &str, id: &str| {
+        if id.is_empty() {
+            return None;
+        }
+        game_texts
+            .get(&(section.to_string(), id.to_string()))
+            .map(|text| clean_text(text))
+            .filter(|text| !text.is_empty())
+    };
+    let game_catch = game_copy("DescriptionCatch", &catch_id);
+    let game_long = game_copy("DescriptionLong", &long_id);
+    if let Some(text) = &game_catch {
+        if let Some(catch) = object.get_mut("catch").and_then(Value::as_object_mut) {
+            catch.insert("en".into(), json!(text));
+            catch.insert("sourceEn".into(), json!("rt2-description-catch"));
+        }
+    }
+    if let Some(text) = &game_long {
+        if let Some(long) = object.get_mut("long").and_then(Value::as_object_mut) {
+            long.insert("en".into(), json!(text));
+            long.insert("sourceEn".into(), json!("rt2-description-long"));
+        }
+    }
+    let catch_en = game_catch.or_else(|| {
+        object
+            .get("catch")
+            .and_then(Value::as_object)
+            .and_then(|catch| catch.get("en"))
+            .and_then(Value::as_str)
+            .map(str::to_string)
+    });
+    let long_en = game_long.or_else(|| {
+        object
+            .get("long")
+            .and_then(Value::as_object)
+            .and_then(|long| long.get("en"))
+            .and_then(Value::as_str)
+            .map(str::to_string)
+    });
+    let has_game_long = object
+        .get("long")
+        .and_then(Value::as_object)
+        .and_then(|long| long.get("sourceEn"))
+        .and_then(Value::as_str)
+        == Some("rt2-description-long");
+    object.insert(
+        "en".into(),
+        json!(
+            [catch_en, long_en]
+                .into_iter()
+                .flatten()
+                .filter(|text| !text.is_empty())
+                .collect::<Vec<_>>()
+                .join("\n\n")
+        ),
+    );
+    object.insert(
+        "translationSource".into(),
+        json!("rt2-game-english+official-gt7-carlist-zh"),
+    );
+    object.insert(
+        "sourceBreakdown".into(),
+        json!({
+            "en": if has_game_long {
+                "rt2-description-long"
+            } else {
+                "official-gt7-carlist"
+            },
+            "zh": "official-gt7-carlist",
+        }),
+    );
 }
 
 fn write_csv(path: &Path, headers: &[&str], rows: impl Iterator<Item = Vec<String>>) -> Result<()> {
@@ -844,6 +1012,7 @@ pub fn build(options: &Options) -> Result<Value> {
     } else {
         HashMap::new()
     };
+    let collection_game_texts = load_collection_game_texts(&options.collection_fallback)?;
 
     let (us, zh) = rayon::join(
         || load_text_candidates(&options.text_dirs, &["us", "gb"]),
@@ -891,6 +1060,22 @@ pub fn build(options: &Options) -> Result<Value> {
         .iter()
         .filter_map(|item| Some((item.get("id").and_then(Value::as_str)?.to_string(), item)))
         .collect();
+    let official_gallery = if options.official_gallery.is_file() {
+        load_json(&options.official_gallery)?
+            .get("cars")
+            .and_then(Value::as_array)
+            .map(|items| {
+                items
+                    .iter()
+                    .filter_map(|item| {
+                        Some((item.get("officialId")?.as_str()?.to_string(), item.clone()))
+                    })
+                    .collect::<HashMap<_, _>>()
+            })
+            .unwrap_or_default()
+    } else {
+        HashMap::new()
+    };
 
     let text_entries = research
         .get("textEntries")
@@ -1058,7 +1243,9 @@ pub fn build(options: &Options) -> Result<Value> {
             &official_descriptions,
             &official_by_name,
             &official_by_id,
+            &official_gallery,
             &fallback_by_id,
+            &collection_game_texts,
         );
     });
     eprintln!("site: joined cars and metadata");
@@ -1123,7 +1310,9 @@ pub fn build(options: &Options) -> Result<Value> {
             &official_descriptions,
             &official_by_name,
             &official_by_id,
+            &official_gallery,
             &fallback_by_id,
+            &collection_game_texts,
         );
     });
     garage_catalog.enrich(&mut cars_value);
@@ -1344,6 +1533,22 @@ pub fn build(options: &Options) -> Result<Value> {
         .and_then(Value::as_u64)
         .unwrap_or(634);
     let total_mapped_entries = dealer_text_entries + vehicle_collection_entries;
+    let game_long_cars = cars_value
+        .iter()
+        .filter(|car| {
+            car.pointer("/texts/vehicleCollection/long/sourceEn")
+                .and_then(Value::as_str)
+                == Some("rt2-description-long")
+        })
+        .count();
+    let game_long_chars = cars_value
+        .iter()
+        .filter_map(|car| {
+            car.pointer("/texts/vehicleCollection/long/en")
+                .and_then(Value::as_str)
+        })
+        .map(|text| text.chars().count())
+        .sum::<usize>();
     let mut text_stats = json!({
         "entries": total_mapped_entries,
         "mappedEntries": total_mapped_entries,
@@ -1358,6 +1563,10 @@ pub fn build(options: &Options) -> Result<Value> {
             "matchedCars": collection_cars,
             "matchedEntries": collection_entries,
             "carsWithBilingualCollection": collection_cars,
+            "carsWithGameLongEnglish": game_long_cars,
+            "gameLongEnglishChars": game_long_chars,
+            "gameLongSource": "PS5 DescriptionLong RT2",
+            "chineseDisplaySource": "official GT7 car list (readable localization)",
         }
     });
     if let Some(object) = text_stats.as_object_mut() {

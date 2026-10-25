@@ -142,6 +142,23 @@ impl RgbaImage {
         }
         output
     }
+
+    fn apply_circle_mask(&mut self, radius: f32) {
+        let center_x = self.width as f32 / 2.0;
+        let center_y = self.height as f32 / 2.0;
+        let feather = 1.25;
+        for y in 0..self.height {
+            for x in 0..self.width {
+                let dx = x as f32 + 0.5 - center_x;
+                let dy = y as f32 + 0.5 - center_y;
+                let distance = (dx * dx + dy * dy).sqrt();
+                let coverage = ((radius + feather - distance) / feather).clamp(0.0, 1.0);
+                let offset = ((y as usize * self.width as usize) + x as usize) * 4;
+                let alpha = self.pixels[offset + 3] as f32 * coverage;
+                self.pixels[offset + 3] = alpha.round().clamp(0.0, 255.0) as u8;
+            }
+        }
+    }
 }
 
 /// All Cafe members plus the three text/dealer owners whose portraits use the
@@ -478,10 +495,13 @@ fn extract_one(
     // Keep a safe transparent margin inside the 192px portrait. The web UI
     // masks this image with a circle; without padding the circle cuts through
     // the hair and chin because the source face reaches all four edges.
-    let portrait = atlas
+    let mut portrait = atlas
         .crop(84, 0, 64, 64)
-        .resize_bilinear(168, 168)
-        .pad_centered(192, 192, 12, 8);
+        .resize_bilinear(136, 136)
+        .pad_centered(192, 192, 28, 28);
+    // Pre-mask the portrait so browser border-radius can never cut into the
+    // face. The 136px source square sits inside the 94px-radius safe circle.
+    portrait.apply_circle_mask(94.0);
     let portrait_path = portrait_dir.join(format!("{}.png", spec.key));
     save_png(&portrait, &portrait_path)?;
 

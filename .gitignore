@@ -40,6 +40,8 @@
 # Frontend dependencies, build output and local browser profiles
 /site/node_modules/
 /site/dist/
+/site/.void/
+/site/.void-wrangler.jsonc
 /site/.wrangler/
 /site/.edge-*/
 /site/.chrome-*/
@@ -50,6 +52,7 @@
 /site/verify_*.json
 /site/vehicle-collection-ui.json
 /site/run-*/
+/site/public/official/
 
 # Tool caches
 __pycache__/

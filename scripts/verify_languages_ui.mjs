@@ -54,6 +54,9 @@ await new Promise((resolve, reject) => {
 const cdp = new Cdp(ws)
 await cdp.call('Page.enable')
 await cdp.call('Runtime.enable')
+await cdp.call('Network.enable')
+await cdp.call('Network.setCacheDisabled', { cacheDisabled: true })
+await cdp.call('Network.clearBrowserCache')
 await cdp.call('Emulation.setDeviceMetricsOverride', {
   width: 1440,
   height: 1200,

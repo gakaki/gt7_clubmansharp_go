@@ -6,7 +6,11 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "preview": "vite preview"
+    "check:tsrs": "tsrs-wasm -p . --noEmit",
+    "check:oxc": "oxlint src --deny-warnings",
+    "check": "npm run check:tsrs && npm run check:oxc",
+    "preview": "vite preview",
+    "deploy:void": "void deploy --platform cloudflare --project gt7-cafe-edge"
   },
   "dependencies": {
     "@base-ui/react": "^1.9.0",
@@ -17,11 +21,18 @@
     "react": "^19.3.1",
     "react-dom": "^19.3.1",
     "tailwind-merge": "^3.7.0",
-    "tailwindcss": "^4.3.3",
-    "vue": "latest"
+    "tailwindcss": "^4.3.3"
   },
   "devDependencies": {
-    "@vitejs/plugin-vue": "latest",
-    "vite": "latest"
+    "@tsrs/wasm": "^0.18.0-ts7.1.0-dev.20260929",
+    "@types/react": "^19.3.0",
+    "@types/react-dom": "^19.3.0",
+    "oxc-transform-react": "^0.152.0",
+    "oxfmt": "^0.74.0",
+    "oxlint": "^1.89.0",
+    "tsrs": "^0.18.0-ts7.1.0-dev.20260929",
+    "typescript": "^7.0.2",
+    "vite": "latest",
+    "void": "^1.2.1"
   }
 }

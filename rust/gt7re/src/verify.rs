@@ -6,6 +6,7 @@ use regex::Regex;
 use serde_json::Value;
 use std::collections::HashSet;
 use std::fs;
+use std::io::Read;
 use std::path::{Path, PathBuf};
 
 #[derive(Debug)]
@@ -68,6 +69,7 @@ fn check_clean(value: &Value, path: &str) -> Result<()> {
 pub fn run(options: &Options) -> Result<Value> {
     let cars = load(&options.data_dir.join("cars.json"))?;
     let garage = load(&options.data_dir.join("garage_details.json"))?;
+    let gallery = load(&options.reports_dir.join("official_car_gallery.json"))?;
     let menu = load(&options.data_dir.join("menu_books.json"))?;
     let research = load(&options.research)?;
     if research.get("cars").and_then(Value::as_array).map(Vec::len) != Some(591) {
@@ -120,7 +122,10 @@ pub fn run(options: &Options) -> Result<Value> {
         .into_iter()
         .collect();
     let mut collection = 0usize;
+    let mut game_long_cars = 0usize;
+    let mut game_long_chars = 0usize;
     let mut spec_cars = 0usize;
+    let mut official_cars = 0usize;
     let mut text_count = 0usize;
     let mut dialogue_cars = 0usize;
     let mut dialogue_lines = HashSet::new();
@@ -169,6 +174,16 @@ pub fn run(options: &Options) -> Result<Value> {
                 {
                     bail!("{id}: incomplete bilingual vehicleCollection");
                 }
+                if text.pointer("/long/sourceEn").and_then(Value::as_str)
+                    == Some("rt2-description-long")
+                {
+                    game_long_cars += 1;
+                    game_long_chars += text
+                        .pointer("/long/en")
+                        .and_then(Value::as_str)
+                        .map(|value| value.chars().count())
+                        .unwrap_or(0);
+                }
             }
         }
         if let Some(specs) = car.get("specs") {
@@ -193,6 +208,9 @@ pub fn run(options: &Options) -> Result<Value> {
                 }
             }
             spec_cars += 1;
+        }
+        if car.get("officialDetails").is_some() {
+            official_cars += 1;
         }
         if car
             .get("dialogues")
@@ -245,8 +263,21 @@ pub fn run(options: &Options) -> Result<Value> {
     if collection != 580 {
         bail!("expected 580 Car Collection cars, got {collection}");
     }
+    if game_long_cars < 576 {
+        bail!("expected at least 576 game RT2 long descriptions, got {game_long_cars}");
+    }
+    if game_long_chars / game_long_cars < 900 {
+        bail!(
+            "game RT2 long descriptions look truncated: {} chars across {} cars",
+            game_long_chars,
+            game_long_cars
+        );
+    }
     if spec_cars != 580 {
         bail!("expected 580 cars with garage specifications, got {spec_cars}");
+    }
+    if official_cars != 580 {
+        bail!("expected 580 cars with official car-list details, got {official_cars}");
     }
     if dialogue_cars != 332 {
         bail!("expected 332 cars with cafe content, got {dialogue_cars}");
@@ -289,6 +320,51 @@ pub fn run(options: &Options) -> Result<Value> {
         .context("dealerOffers")?;
     if dealer.len() != 65 {
         bail!("expected 65 dealer offers, got {}", dealer.len());
+    }
+    let gallery_rows = gallery
+        .get("cars")
+        .and_then(Value::as_array)
+        .context("official_car_gallery.json cars")?;
+    if gallery_rows.len() != 580 {
+        bail!(
+            "expected 580 official gallery cars, got {}",
+            gallery_rows.len()
+        );
+    }
+    let public_root = options
+        .data_dir
+        .parent()
+        .context("site public root for official gallery")?;
+    let mut gallery_images = 0usize;
+    for car in gallery_rows {
+        for image in car
+            .get("images")
+            .and_then(Value::as_array)
+            .into_iter()
+            .flatten()
+        {
+            gallery_images += 1;
+            if image.get("width").and_then(Value::as_u64) != Some(3840)
+                || image.get("height").and_then(Value::as_u64) != Some(2160)
+            {
+                bail!("official gallery image is not 4K");
+            }
+            let rel = image.get("jxl").and_then(Value::as_str).unwrap_or("");
+            if !rel.ends_with(".jxl") {
+                bail!("invalid official JPEG XL path: {rel}");
+            }
+            let path = public_root.join(rel);
+            let mut file = fs::File::open(&path)
+                .with_context(|| format!("missing image {}", path.display()))?;
+            let mut signature = [0u8; 2];
+            file.read_exact(&mut signature)?;
+            if signature != [0xff, 0x0a] {
+                bail!("invalid JPEG XL signature: {}", path.display());
+            }
+        }
+    }
+    if gallery_images != 2306 {
+        bail!("expected 2306 official gallery images, got {gallery_images}");
     }
 
     let menu_counts = menu
@@ -413,7 +489,11 @@ pub fn run(options: &Options) -> Result<Value> {
         "translationCells": translation_cells,
         "carTextEntries": text_count,
         "vehicleCollectionCars": collection,
+        "vehicleCollectionGameLongCars": game_long_cars,
+        "vehicleCollectionGameLongChars": game_long_chars,
         "garageSpecCars": spec_cars,
+        "officialCarPages": official_cars,
+        "officialGalleryImages": gallery_images,
         "garageVehicleTypeCars": garage_counts.get("withVehicleTypes").cloned().unwrap_or(Value::Null),
         "garageCountryCars": garage_counts.get("withCountry").cloned().unwrap_or(Value::Null),
         "dealerOffers": dealer.len(),

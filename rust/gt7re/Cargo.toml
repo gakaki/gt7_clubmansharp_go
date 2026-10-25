@@ -21,6 +21,7 @@ regex = "1"
 sha2 = "0.10"
 ureq = { version = "3", features = ["gzip", "json"] }
 image = { version = "0.25", default-features = false, features = ["jpeg", "png", "webp"] }
+jxl-encoder = { version = "0.3.1", default-features = false, features = ["std"] }
 zip = { version = "2", default-features = false, features = ["deflate"] }
 
 [profile.release]
