@@ -61,10 +61,3 @@ __pycache__/
 *.log
 /rust/gt7re/target/
 
-# Compose Multiplatform client
-/apps/gt7-compose/.gradle/
-/apps/gt7-compose/.kotlin/
-/apps/gt7-compose/build/
-/apps/gt7-compose/composeApp/build/
-/apps/gt7-compose/local.properties
-/apps/gt7-compose/artifacts/
