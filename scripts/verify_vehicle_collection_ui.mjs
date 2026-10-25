@@ -530,6 +530,29 @@ const garageMissing = await evaluate(`(() => ({
 }))()`)
 
 await cdp.call('Emulation.setDeviceMetricsOverride', {
+  width: 764,
+  height: 900,
+  deviceScaleFactor: 1,
+  mobile: false,
+})
+await navigate(`${base}?lang=both&l1=zh&l2=us&car=0x00006F48&tab=official`)
+const mediumOfficial = await evaluate(`(() => {
+  const title = document.querySelector('.dialog-title')
+  const header = document.querySelector('.dialog header')
+  const layout = document.querySelector('.official-layout')
+  return {
+    title: title?.textContent?.trim() || '',
+    titleWidth: title?.getBoundingClientRect().width || 0,
+    titleHeight: title?.getBoundingClientRect().height || 0,
+    headerDirection: header ? getComputedStyle(header).flexDirection : '',
+    columns: layout ? getComputedStyle(layout).gridTemplateColumns.split(' ').length : 0,
+    bodyWidth: document.documentElement.scrollWidth,
+    viewportWidth: document.documentElement.clientWidth,
+  }
+})()`)
+await screenshot('official-tab-medium.png')
+
+await cdp.call('Emulation.setDeviceMetricsOverride', {
   width: 390,
   height: 844,
   deviceScaleFactor: 2,
@@ -763,6 +786,12 @@ const checks = {
   missingGarageState: garageMissing.title.includes('F1 W08') &&
     garageMissing.muted &&
     garageMissing.panel.includes('这辆车没有官方车库规格'),
+  mediumOfficialLayout: mediumOfficial.title.includes('180SX') &&
+    mediumOfficial.titleWidth >= 180 &&
+    mediumOfficial.titleHeight < 90 &&
+    mediumOfficial.headerDirection === 'column' &&
+    mediumOfficial.columns === 1 &&
+    mediumOfficial.bodyWidth <= mediumOfficial.viewportWidth,
   fiveSourceFilters: filterLabels.length === 5 &&
     filterLabels.some((label) => label.includes('品牌店')) &&
     filterLabels.some((label) => label.includes('二手车')) &&
@@ -802,6 +831,7 @@ const report = {
   garagePeugeot,
   garageVariant,
   garageMissing,
+  mediumOfficial,
   mobileBefore,
   cafeMobile,
   officialMobile,

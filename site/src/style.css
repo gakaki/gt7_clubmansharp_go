@@ -1722,6 +1722,37 @@ body {
   .mirror-slideshow-controls { bottom: 10px; gap: 6px; padding: 7px; }
   .mirror-slideshow-controls > div button { min-width: 23px; }
 }
+@media (min-width: 721px) and (max-width: 900px) {
+  .dialog header {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 12px;
+  }
+  .headmain {
+    display: grid;
+    grid-template-columns: 150px minmax(0, 1fr);
+    align-items: start;
+  }
+  .headmain.no-car-image { grid-template-columns: minmax(0, 1fr); }
+  .modalcar {
+    width: 150px;
+    height: 84px;
+  }
+  .detail-controls {
+    width: 100%;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  .detail-lang {
+    min-width: 0;
+    flex: 1 1 420px;
+  }
+  .detail-lang select {
+    min-width: 0;
+    flex: 1 1 0;
+  }
+  .actions { margin-left: auto; }
+}
 @media (max-width: 600px) {
   .topbar { padding-inline: 12px; }
   .topbar .menu-archive-link { display: none; }
