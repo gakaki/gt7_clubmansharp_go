@@ -31,5 +31,6 @@ pub mod tools;
 pub mod txs5;
 pub mod udp;
 pub mod verify;
+pub mod zh_collection;
 
 pub use store::Store;

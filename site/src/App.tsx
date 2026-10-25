@@ -1992,8 +1992,8 @@ function TextPanel({
             <h4>{detailCopy('车辆收藏正文（游戏 RT2）', 'Car Collection text (game RT2)')}</h4>
             <p className="collection-source-note">
               {detailCopy(
-                '英文为 PS5 DescriptionLong 游戏原文；中文保留官方车表可读译文。',
-                'English is the full PS5 DescriptionLong game text; Chinese uses the readable official car-list localization.',
+                '中英文均来自游戏 Car Collection 的 DescriptionLong；中文由简体与繁体 RT2 双版本交叉恢复。',
+                'Both languages come from the game Car Collection DescriptionLong; Chinese is reconstructed across the Simplified and Traditional RT2 tables.',
               )}
             </p>
             {showZh && (

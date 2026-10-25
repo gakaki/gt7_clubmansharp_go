@@ -18,6 +18,7 @@ use std::sync::OnceLock;
 
 use crate::garage;
 use crate::rt2::{self, Rt2File};
+use crate::zh_collection;
 
 type TextKey = (String, String);
 type TextCandidates = HashMap<TextKey, Vec<((isize, isize, usize), String)>>;
@@ -441,7 +442,12 @@ fn load_json(path: &Path) -> Result<Value> {
     serde_json::from_slice(&data).with_context(|| path.display().to_string())
 }
 
-fn load_collection_game_texts(collection_report: &Path) -> Result<HashMap<TextKey, String>> {
+struct CollectionGameCopy {
+    en: HashMap<TextKey, String>,
+    zh: HashMap<TextKey, String>,
+}
+
+fn load_collection_game_texts(collection_report: &Path) -> Result<CollectionGameCopy> {
     let report = load_json(collection_report)?;
     let stem = report
         .pointer("/sources/0/english")
@@ -457,30 +463,35 @@ fn load_collection_game_texts(collection_report: &Path) -> Result<HashMap<TextKe
     let key_path = root
         .join("keys/rt2_description")
         .join(format!("{stem}.rt2.ks.bin"));
-    if raw_path.is_file() && key_path.is_file() {
+    let en = if raw_path.is_file() && key_path.is_file() {
         let rt = Rt2File::parse(&raw_path)?;
         let key = fs::read(&key_path).with_context(|| key_path.display().to_string())?;
-        return Ok(rt2::decode(&rt, &key)
+        rt2::decode(&rt, &key)
             .into_iter()
             .filter(|entry| !entry.text.is_empty())
             .map(|entry| ((entry.section, format!("0x{:08X}", entry.id)), entry.text))
-            .collect());
-    }
-
-    // Keep site builds usable when only the decoded cache is present.
-    let decoded_path = root
-        .join("extracted/descriptions_decoded")
-        .join(format!("{stem}.json"));
-    let decoded = load_json(&decoded_path)?;
-    let mut texts = HashMap::new();
-    for (section, entries) in decoded.as_object().into_iter().flatten() {
-        for (id, text) in entries.as_object().into_iter().flatten() {
-            if let Some(text) = text.as_str().filter(|text| !text.trim().is_empty()) {
-                texts.insert((section.clone(), id.clone()), clean_text(text));
+            .collect()
+    } else {
+        // Keep site builds usable when only the decoded cache is present.
+        let decoded_path = root
+            .join("extracted/descriptions_decoded")
+            .join(format!("{stem}.json"));
+        let decoded = load_json(&decoded_path)?;
+        let mut texts = HashMap::new();
+        for (section, entries) in decoded.as_object().into_iter().flatten() {
+            for (id, text) in entries.as_object().into_iter().flatten() {
+                if let Some(text) = text.as_str().filter(|text| !text.trim().is_empty()) {
+                    texts.insert((section.clone(), id.clone()), clean_text(text));
+                }
             }
         }
-    }
-    Ok(texts)
+        texts
+    };
+    let zh = zh_collection::load(root).unwrap_or_else(|error| {
+        eprintln!("site: Chinese Car Collection recovery unavailable: {error:#}");
+        HashMap::new()
+    });
+    Ok(CollectionGameCopy { en, zh })
 }
 
 fn official_key(name: &str) -> String {
@@ -669,7 +680,7 @@ fn attach_collection(
     official_by_id: &HashMap<String, &Value>,
     official_gallery: &HashMap<String, Value>,
     fallback_by_id: &HashMap<String, Value>,
-    game_texts: &HashMap<TextKey, String>,
+    game_texts: &CollectionGameCopy,
 ) {
     let object = car.as_object_mut().expect("car object");
     let id = object
@@ -823,7 +834,7 @@ fn attach_collection(
 
 fn apply_game_collection_texts(
     collection: &mut Value,
-    game_texts: &HashMap<TextKey, String>,
+    game_texts: &CollectionGameCopy,
 ) {
     let Some(object) = collection.as_object_mut() else {
         return;
@@ -842,17 +853,18 @@ fn apply_game_collection_texts(
         .and_then(Value::as_str)
         .unwrap_or("")
         .to_string();
-    let game_copy = |section: &str, id: &str| {
+    let game_copy = |texts: &HashMap<TextKey, String>, section: &str, id: &str| {
         if id.is_empty() {
             return None;
         }
-        game_texts
+        texts
             .get(&(section.to_string(), id.to_string()))
             .map(|text| clean_text(text))
             .filter(|text| !text.is_empty())
     };
-    let game_catch = game_copy("DescriptionCatch", &catch_id);
-    let game_long = game_copy("DescriptionLong", &long_id);
+    let game_catch = game_copy(&game_texts.en, "DescriptionCatch", &catch_id);
+    let game_long = game_copy(&game_texts.en, "DescriptionLong", &long_id);
+    let game_long_zh = game_copy(&game_texts.zh, "DescriptionLong", &long_id);
     if let Some(text) = &game_catch {
         if let Some(catch) = object.get_mut("catch").and_then(Value::as_object_mut) {
             catch.insert("en".into(), json!(text));
@@ -863,6 +875,12 @@ fn apply_game_collection_texts(
         if let Some(long) = object.get_mut("long").and_then(Value::as_object_mut) {
             long.insert("en".into(), json!(text));
             long.insert("sourceEn".into(), json!("rt2-description-long"));
+        }
+    }
+    if let Some(text) = &game_long_zh {
+        if let Some(long) = object.get_mut("long").and_then(Value::as_object_mut) {
+            long.insert("zh".into(), json!(text));
+            long.insert("sourceZh".into(), json!("rt2-description-zh-merged"));
         }
     }
     let catch_en = game_catch.or_else(|| {
@@ -878,6 +896,21 @@ fn apply_game_collection_texts(
             .get("long")
             .and_then(Value::as_object)
             .and_then(|long| long.get("en"))
+            .and_then(Value::as_str)
+            .map(str::to_string)
+    });
+    let has_game_zh = game_long_zh.is_some();
+    let catch_zh = object
+        .get("catch")
+        .and_then(Value::as_object)
+        .and_then(|catch| catch.get("zh"))
+        .and_then(Value::as_str)
+        .map(str::to_string);
+    let long_zh = game_long_zh.or_else(|| {
+        object
+            .get("long")
+            .and_then(Value::as_object)
+            .and_then(|long| long.get("zh"))
             .and_then(Value::as_str)
             .map(str::to_string)
     });
@@ -899,8 +932,19 @@ fn apply_game_collection_texts(
         ),
     );
     object.insert(
+        "zh".into(),
+        json!(
+            [catch_zh, long_zh]
+                .into_iter()
+                .flatten()
+                .filter(|text| !text.is_empty())
+                .collect::<Vec<_>>()
+                .join("\n\n")
+        ),
+    );
+    object.insert(
         "translationSource".into(),
-        json!("rt2-game-english+official-gt7-carlist-zh"),
+        json!("rt2-game-english+rt2-game-zh-merged"),
     );
     object.insert(
         "sourceBreakdown".into(),
@@ -910,7 +954,11 @@ fn apply_game_collection_texts(
             } else {
                 "official-gt7-carlist"
             },
-            "zh": "official-gt7-carlist",
+            "zh": if has_game_zh {
+                "rt2-description-zh-merged"
+            } else {
+                "official-gt7-carlist"
+            },
         }),
     );
 }
@@ -1541,6 +1589,27 @@ pub fn build(options: &Options) -> Result<Value> {
                 == Some("rt2-description-long")
         })
         .count();
+    let game_long_zh_cars = cars_value
+        .iter()
+        .filter(|car| {
+            car.pointer("/texts/vehicleCollection/long/sourceZh")
+                .and_then(Value::as_str)
+                == Some("rt2-description-zh-merged")
+        })
+        .count();
+    let game_long_zh_chars = cars_value
+        .iter()
+        .filter(|car| {
+            car.pointer("/texts/vehicleCollection/long/sourceZh")
+                .and_then(Value::as_str)
+                == Some("rt2-description-zh-merged")
+        })
+        .filter_map(|car| {
+            car.pointer("/texts/vehicleCollection/long/zh")
+                .and_then(Value::as_str)
+        })
+        .map(|text| text.chars().count())
+        .sum::<usize>();
     let game_long_chars = cars_value
         .iter()
         .filter_map(|car| {
@@ -1565,8 +1634,10 @@ pub fn build(options: &Options) -> Result<Value> {
             "carsWithBilingualCollection": collection_cars,
             "carsWithGameLongEnglish": game_long_cars,
             "gameLongEnglishChars": game_long_chars,
+            "carsWithGameLongChinese": game_long_zh_cars,
+            "gameLongChineseChars": game_long_zh_chars,
             "gameLongSource": "PS5 DescriptionLong RT2",
-            "chineseDisplaySource": "official GT7 car list (readable localization)",
+            "chineseDisplaySource": "PS5 Simplified/Traditional RT2 cross-recovery",
         }
     });
     if let Some(object) = text_stats.as_object_mut() {

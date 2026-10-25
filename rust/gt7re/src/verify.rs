@@ -124,6 +124,8 @@ pub fn run(options: &Options) -> Result<Value> {
     let mut collection = 0usize;
     let mut game_long_cars = 0usize;
     let mut game_long_chars = 0usize;
+    let mut game_long_zh_cars = 0usize;
+    let mut game_long_zh_chars = 0usize;
     let mut spec_cars = 0usize;
     let mut official_cars = 0usize;
     let mut text_count = 0usize;
@@ -180,6 +182,16 @@ pub fn run(options: &Options) -> Result<Value> {
                     game_long_cars += 1;
                     game_long_chars += text
                         .pointer("/long/en")
+                        .and_then(Value::as_str)
+                        .map(|value| value.chars().count())
+                        .unwrap_or(0);
+                }
+                if text.pointer("/long/sourceZh").and_then(Value::as_str)
+                    == Some("rt2-description-zh-merged")
+                {
+                    game_long_zh_cars += 1;
+                    game_long_zh_chars += text
+                        .pointer("/long/zh")
                         .and_then(Value::as_str)
                         .map(|value| value.chars().count())
                         .unwrap_or(0);
@@ -271,6 +283,18 @@ pub fn run(options: &Options) -> Result<Value> {
             "game RT2 long descriptions look truncated: {} chars across {} cars",
             game_long_chars,
             game_long_cars
+        );
+    }
+    if game_long_zh_cars < 576 {
+        bail!(
+            "expected at least 576 game Chinese long descriptions, got {game_long_zh_cars}"
+        );
+    }
+    if game_long_zh_chars / game_long_zh_cars < 300 {
+        bail!(
+            "game Chinese long descriptions look truncated: {} chars across {} cars",
+            game_long_zh_chars,
+            game_long_zh_cars
         );
     }
     if spec_cars != 580 {
@@ -491,6 +515,8 @@ pub fn run(options: &Options) -> Result<Value> {
         "vehicleCollectionCars": collection,
         "vehicleCollectionGameLongCars": game_long_cars,
         "vehicleCollectionGameLongChars": game_long_chars,
+        "vehicleCollectionGameLongChineseCars": game_long_zh_cars,
+        "vehicleCollectionGameLongChineseChars": game_long_zh_chars,
         "garageSpecCars": spec_cars,
         "officialCarPages": official_cars,
         "officialGalleryImages": gallery_images,
