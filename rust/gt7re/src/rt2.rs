@@ -271,6 +271,26 @@ fn first_model() -> [f32; 256] {
 pub fn recover_keystream(payloads: &[(usize, u32, &[u8])], maxlen: usize) -> Vec<u8> {
     let model = text_model();
     let first = first_model();
+    recover_keystream_with_models(payloads, maxlen, &model, &first)
+}
+
+pub fn recover_keystream_with_counts(
+    payloads: &[(usize, u32, &[u8])],
+    maxlen: usize,
+    counts: &[u64; 256],
+    first_counts: &[u64; 256],
+) -> Vec<u8> {
+    let model = counts.map(|count| ((count + 1) as f32).ln());
+    let first = first_counts.map(|count| ((count + 1) as f32).ln());
+    recover_keystream_with_models(payloads, maxlen, &model, &first)
+}
+
+fn recover_keystream_with_models(
+    payloads: &[(usize, u32, &[u8])],
+    maxlen: usize,
+    model: &[f32; 256],
+    first: &[f32; 256],
+) -> Vec<u8> {
     (0..maxlen)
         .into_par_iter()
         .map(|pos| {
@@ -283,7 +303,7 @@ pub fn recover_keystream(payloads: &[(usize, u32, &[u8])], maxlen: usize) -> Vec
                     term += 1;
                 }
             }
-            let m = if pos == 0 { &first } else { &model };
+            let m = if pos == 0 { first } else { model };
             let mut best_k = 0u8;
             let mut best = f32::NEG_INFINITY;
             for k in 0..256usize {

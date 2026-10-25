@@ -11,7 +11,13 @@ import { Dialog } from '@base-ui/react/dialog'
 import { Tabs } from '@base-ui/react/tabs'
 import { Maximize2, Minimize2, Move, Pause, Play, X } from 'lucide-react'
 import { Button } from '@/components/ui/button'
-import type { Car, CarText, CarsPayload, DialogueTurn } from '@/types'
+import type {
+  Car,
+  CarText,
+  CarsPayload,
+  DialogueTurn,
+  VehicleCollectionLanguageTable,
+} from '@/types'
 
 const base = import.meta.env.BASE_URL
 const avatarVersion = '20261024-portrait-circle-safe'
@@ -301,6 +307,9 @@ export default function App() {
   const [dialogueTranslations, setDialogueTranslations] = useState<
     Record<string, Record<string, string>>
   >({})
+  const [vehicleCollectionI18n, setVehicleCollectionI18n] = useState<
+    Record<string, VehicleCollectionLanguageTable>
+  >({})
   const [loadingLanguages, setLoadingLanguages] = useState<string[]>([])
   const loadingLanguagesRef = useRef(new Set<string>())
   const [languageErrors, setLanguageErrors] = useState<string[]>([])
@@ -397,7 +406,7 @@ export default function App() {
     async (code: string) => {
       if (
         !code ||
-        dialogueTranslations[code] ||
+        (dialogueTranslations[code] && vehicleCollectionI18n[code]) ||
         loadingLanguagesRef.current.has(code)
       ) {
         return
@@ -406,10 +415,19 @@ export default function App() {
       setLoadingLanguages([...loadingLanguagesRef.current])
       try {
         const dir = data?.dialogueTranslationDir || 'data/dialogue_translations'
-        const response = await fetch(`${base}${dir}/${code}.json`, { cache: 'no-cache' })
+        const [response, collectionResponse] = await Promise.all([
+          fetch(`${base}${dir}/${code}.json`, { cache: 'no-cache' }),
+          fetch(`${base}data/vehicle_collection_i18n/${code}.json`, {
+            cache: 'no-cache',
+          }),
+        ])
         if (!response.ok) throw new Error(`HTTP ${response.status}`)
         const translation = (await response.json()) as Record<string, string>
         setDialogueTranslations((current) => ({ ...current, [code]: translation }))
+        if (collectionResponse.ok) {
+          const collection = (await collectionResponse.json()) as VehicleCollectionLanguageTable
+          setVehicleCollectionI18n((current) => ({ ...current, [code]: collection }))
+        }
       } catch (error) {
         console.error(`Unable to load dialogue language ${code}`, error)
         setLanguageErrors((current) =>
@@ -420,7 +438,11 @@ export default function App() {
         setLoadingLanguages([...loadingLanguagesRef.current])
       }
     },
-    [data?.dialogueTranslationDir, dialogueTranslations],
+    [
+      data?.dialogueTranslationDir,
+      dialogueTranslations,
+      vehicleCollectionI18n,
+    ],
   )
 
   useEffect(() => {
@@ -1821,6 +1843,11 @@ export default function App() {
                             showEn={showEnContent}
                             detailCopy={detailCopy}
                             offer={activeOfferFor(tabId)}
+                            collectionCopies={
+                              tabId === 'vehicleCollection'
+                                ? collectionCopiesFor(activeTextFor(tabId)!)
+                                : []
+                            }
                           />
                         ) : (
                           <div className="no-dialogue text-empty">
@@ -1875,6 +1902,22 @@ export default function App() {
     </div>
   )
 
+  function collectionCopiesFor(text: CarText) {
+    return activeLocales.map((code) => {
+      const table = vehicleCollectionI18n[code]
+      return {
+        code,
+        label: languageName(code),
+        catch: text.textIds?.catch
+          ? table?.DescriptionCatch?.[text.textIds.catch]
+          : undefined,
+        long: text.textIds?.long
+          ? table?.DescriptionLong?.[text.textIds.long]
+          : undefined,
+      }
+    })
+  }
+
   function activeTextFor(tabId: TabId): CarText | null {
     if (!activeCar) return null
     return (activeCar.texts?.[tabId] as CarText | undefined) || null
@@ -1894,6 +1937,7 @@ function TextPanel({
   showEn,
   detailCopy,
   offer,
+  collectionCopies,
 }: {
   tabId: TabId
   text: CarText
@@ -1903,6 +1947,12 @@ function TextPanel({
   showEn: boolean
   detailCopy: (zh: string, en: string) => string
   offer: Record<string, unknown> | null
+  collectionCopies: Array<{
+    code: string
+    label: string
+    catch?: string
+    long?: string
+  }>
 }) {
   const merchant = textMerchants[tabId]
   const officialZh = [
@@ -1977,16 +2027,29 @@ function TextPanel({
         <>
           <section className="collection-part">
             <h4>{detailCopy('一句话简介', 'Catch copy')}</h4>
-            {showZh && (
-              <div className="text-copy zh-copy">
-                <p>{text.catch?.zh}</p>
-              </div>
-            )}
-            {showEn && (
-              <div className="text-copy en-copy">
-                <p>{text.catch?.en}</p>
-              </div>
-            )}
+            {collectionCopies.some((copy) => copy.catch)
+              ? collectionCopies
+                  .filter((copy) => copy.catch)
+                  .map((copy) => (
+                    <div className="text-copy" key={`${copy.code}-catch`}>
+                      <h4>{copy.label}</h4>
+                      <p>{copy.catch}</p>
+                    </div>
+                  ))
+              : (
+                  <>
+                    {showZh && (
+                      <div className="text-copy zh-copy">
+                        <p>{text.catch?.zh}</p>
+                      </div>
+                    )}
+                    {showEn && (
+                      <div className="text-copy en-copy">
+                        <p>{text.catch?.en}</p>
+                      </div>
+                    )}
+                  </>
+                )}
           </section>
           <section className="collection-part collection-main-copy">
             <h4>{detailCopy('车辆收藏正文（游戏 RT2）', 'Car Collection text (game RT2)')}</h4>
@@ -1996,16 +2059,29 @@ function TextPanel({
                 'Both languages come from the game Car Collection DescriptionLong; Chinese is reconstructed across the Simplified and Traditional RT2 tables.',
               )}
             </p>
-            {showZh && (
-              <div className="text-copy zh-copy">
-                <p>{text.long?.zh || text.zh}</p>
-              </div>
-            )}
-            {showEn && (
-              <div className="text-copy en-copy">
-                <p>{text.long?.en || text.en}</p>
-              </div>
-            )}
+            {collectionCopies.some((copy) => copy.long)
+              ? collectionCopies
+                  .filter((copy) => copy.long)
+                  .map((copy) => (
+                    <div className="text-copy" key={`${copy.code}-long`}>
+                      <h4>{copy.label}</h4>
+                      <p>{copy.long}</p>
+                    </div>
+                  ))
+              : (
+                  <>
+                    {showZh && (
+                      <div className="text-copy zh-copy">
+                        <p>{text.long?.zh || text.zh}</p>
+                      </div>
+                    )}
+                    {showEn && (
+                      <div className="text-copy en-copy">
+                        <p>{text.long?.en || text.en}</p>
+                      </div>
+                    )}
+                  </>
+                )}
           </section>
           {car.officialDetails && (
             <section className="collection-part official-extension">

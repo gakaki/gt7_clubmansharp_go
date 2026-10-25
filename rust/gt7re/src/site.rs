@@ -18,7 +18,7 @@ use std::sync::OnceLock;
 
 use crate::garage;
 use crate::rt2::{self, Rt2File};
-use crate::zh_collection;
+use crate::vehicle_i18n::{self, LanguageTable};
 
 type TextKey = (String, String);
 type TextCandidates = HashMap<TextKey, Vec<((isize, isize, usize), String)>>;
@@ -447,7 +447,30 @@ struct CollectionGameCopy {
     zh: HashMap<TextKey, String>,
 }
 
-fn load_collection_game_texts(collection_report: &Path) -> Result<CollectionGameCopy> {
+fn language_copy(
+    tables: &BTreeMap<String, LanguageTable>,
+    code: &str,
+) -> HashMap<TextKey, String> {
+    let Some(table) = tables.get(code) else {
+        return HashMap::new();
+    };
+    table
+        .catch
+        .iter()
+        .map(|(id, text)| (("DescriptionCatch".to_string(), id.clone()), text.clone()))
+        .chain(
+            table
+                .long
+                .iter()
+                .map(|(id, text)| (("DescriptionLong".to_string(), id.clone()), text.clone())),
+        )
+        .collect()
+}
+
+fn load_collection_game_texts(
+    collection_report: &Path,
+    tables: &BTreeMap<String, LanguageTable>,
+) -> Result<CollectionGameCopy> {
     let report = load_json(collection_report)?;
     let stem = report
         .pointer("/sources/0/english")
@@ -463,7 +486,9 @@ fn load_collection_game_texts(collection_report: &Path) -> Result<CollectionGame
     let key_path = root
         .join("keys/rt2_description")
         .join(format!("{stem}.rt2.ks.bin"));
-    let en = if raw_path.is_file() && key_path.is_file() {
+    let en = if !language_copy(tables, "us").is_empty() {
+        language_copy(tables, "us")
+    } else if raw_path.is_file() && key_path.is_file() {
         let rt = Rt2File::parse(&raw_path)?;
         let key = fs::read(&key_path).with_context(|| key_path.display().to_string())?;
         rt2::decode(&rt, &key)
@@ -487,10 +512,7 @@ fn load_collection_game_texts(collection_report: &Path) -> Result<CollectionGame
         }
         texts
     };
-    let zh = zh_collection::load(root).unwrap_or_else(|error| {
-        eprintln!("site: Chinese Car Collection recovery unavailable: {error:#}");
-        HashMap::new()
-    });
+    let zh = language_copy(tables, "cn");
     Ok(CollectionGameCopy { en, zh })
 }
 
@@ -1060,7 +1082,56 @@ pub fn build(options: &Options) -> Result<Value> {
     } else {
         HashMap::new()
     };
-    let collection_game_texts = load_collection_game_texts(&options.collection_fallback)?;
+    let repo_root = options
+        .collection_fallback
+        .parent()
+        .and_then(Path::parent)
+        .context("collection report has no extraction root")?;
+    let (vehicle_i18n_tables, vehicle_i18n_audit) = vehicle_i18n::build(repo_root)?;
+    vehicle_i18n::write_language_files(
+        repo_root,
+        &options.site_data.join("vehicle_collection_i18n"),
+        &vehicle_i18n_tables,
+    )?;
+    let audit_json = serde_json::to_vec_pretty(&vehicle_i18n_audit)?;
+    atomic_write(
+        &options
+            .site_data
+            .join("vehicle_collection_language_audit.json"),
+        &audit_json,
+    )?;
+    atomic_write(
+        &options
+            .report_dir
+            .join("vehicle_collection_language_audit.json"),
+        &audit_json,
+    )?;
+    vehicle_i18n::write_audit_csv(
+        &options
+            .report_dir
+            .join("vehicle_collection_language_audit.csv"),
+        &vehicle_i18n_audit,
+    )?;
+    vehicle_i18n::write_audit_csv(
+        &options
+            .site_data
+            .join("vehicle_collection_language_audit.csv"),
+        &vehicle_i18n_audit,
+    )?;
+    vehicle_i18n::write_residual_csv(
+        &options
+            .report_dir
+            .join("vehicle_collection_language_residuals.csv"),
+        &vehicle_i18n_audit,
+    )?;
+    vehicle_i18n::write_residual_csv(
+        &options
+            .site_data
+            .join("vehicle_collection_language_residuals.csv"),
+        &vehicle_i18n_audit,
+    )?;
+    let collection_game_texts =
+        load_collection_game_texts(&options.collection_fallback, &vehicle_i18n_tables)?;
 
     let (us, zh) = rayon::join(
         || load_text_candidates(&options.text_dirs, &["us", "gb"]),

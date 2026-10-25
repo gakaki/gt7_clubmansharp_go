@@ -31,6 +31,6 @@ pub mod tools;
 pub mod txs5;
 pub mod udp;
 pub mod verify;
-pub mod zh_collection;
+pub mod vehicle_i18n;
 
 pub use store::Store;

@@ -343,6 +343,12 @@ const peugeot = await evaluate(`(() => ({
   title: document.querySelector('.dialog-title')?.textContent?.trim() || '',
   panel: document.querySelector('.text-panel')?.innerText || '',
 }))()`)
+
+await navigate(`${base}?lang=jp&l1=jp&car=0x00008200&tab=vehicleCollection`)
+const japaneseCollection = await evaluate(`(() => ({
+  title: document.querySelector('.dialog-title')?.textContent?.trim() || '',
+  panel: document.querySelector('.collection-main-copy')?.innerText || '',
+}))()`)
 await screenshot('vehicle-collection-peugeot.png')
 
 await navigate(`${base}?lang=zh&l1=zh&car=0x00008200&tab=garageSpecs`)
@@ -528,6 +534,10 @@ const checks = {
     peugeot.panel.includes('B组别') &&
     peugeot.panel.includes('0x00007F7E') &&
     peugeot.panel.includes('0x00007F7F'),
+  japaneseCollection: japaneseCollection.title.includes('205 Turbo 16 Evolution 2') &&
+    japaneseCollection.panel.includes('世界ラリー選手権') &&
+    japaneseCollection.panel.includes('グループBマシン') &&
+    !japaneseCollection.panel.includes('The 205 Turbo 16, a Group B car'),
   mobileNoOverflow: mobileBefore.bodyWidth <= mobileBefore.viewportWidth,
   mobileFixedNav: mobileBefore.fixedNav === 'fixed',
   mobileSwitchedCar: mobileBefore.title !== mobileAfter.title,
@@ -600,6 +610,7 @@ const report = {
   missingCollection,
   keyboard,
   peugeot,
+  japaneseCollection,
   garagePeugeot,
   garageVariant,
   garageMissing,

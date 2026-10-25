@@ -96,3 +96,10 @@ export interface CarsPayload {
   dialogueTranslationDir?: string
   [key: string]: unknown
 }
+
+export interface VehicleCollectionLanguageTable {
+  code: string
+  sourceFile: string
+  DescriptionCatch: Record<string, string>
+  DescriptionLong: Record<string, string>
+}

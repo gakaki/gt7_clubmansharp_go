@@ -70,6 +70,8 @@ pub fn run(options: &Options) -> Result<Value> {
     let cars = load(&options.data_dir.join("cars.json"))?;
     let garage = load(&options.data_dir.join("garage_details.json"))?;
     let gallery = load(&options.reports_dir.join("official_car_gallery.json"))?;
+    let description_audit =
+        load(&options.reports_dir.join("vehicle_collection_language_audit.json"))?;
     let menu = load(&options.data_dir.join("menu_books.json"))?;
     let research = load(&options.research)?;
     if research.get("cars").and_then(Value::as_array).map(Vec::len) != Some(591) {
@@ -118,6 +120,94 @@ pub fn run(options: &Options) -> Result<Value> {
         .iter()
         .filter_map(|item| item.get("id")?.as_str())
         .collect::<HashSet<_>>();
+    let description_languages = description_audit
+        .get("languages")
+        .and_then(Value::as_array)
+        .context("vehicle_collection_language_audit.json.languages")?;
+    if description_languages.len() != 19 {
+        bail!(
+            "expected 19 Car Collection description languages, got {}",
+            description_languages.len()
+        );
+    }
+    let mut description_residual_entries = 0usize;
+    for language in description_languages {
+        let code = language
+            .get("code")
+            .and_then(Value::as_str)
+            .unwrap_or("");
+        if !language_ids.contains(code) {
+            bail!("unknown Car Collection description language {code}");
+        }
+        if language.get("catchEntries").and_then(Value::as_u64) != Some(580)
+            || language.get("longEntries").and_then(Value::as_u64) != Some(580)
+        {
+            bail!("{code}: incomplete Car Collection description coverage");
+        }
+        if language.get("missingCatchIds").and_then(Value::as_u64) != Some(0)
+            || language.get("missingLongIds").and_then(Value::as_u64) != Some(0)
+        {
+            bail!("{code}: Car Collection text-id mismatch");
+        }
+        description_residual_entries += language
+            .get("affectedEntries")
+            .and_then(Value::as_u64)
+            .unwrap_or(0) as usize;
+    }
+    for code in &language_ids {
+        let path = options
+            .data_dir
+            .join("vehicle_collection_i18n")
+            .join(format!("{code}.json"));
+        let table = load(&path)?;
+        let catch = table
+            .get("DescriptionCatch")
+            .and_then(Value::as_object)
+            .with_context(|| format!("{code}: DescriptionCatch"))?;
+        let long = table
+            .get("DescriptionLong")
+            .and_then(Value::as_object)
+            .with_context(|| format!("{code}: DescriptionLong"))?;
+        if catch.len() != 580 || long.len() != 580 {
+            bail!(
+                "{code}: expected 580 catch/long descriptions, got {}/{}",
+                catch.len(),
+                long.len()
+            );
+        }
+        let sample = long
+            .values()
+            .filter_map(Value::as_str)
+            .take(12)
+            .collect::<Vec<_>>()
+            .join(" ");
+        if sample.chars().count() < 100 {
+            bail!("{code}: Car Collection sample is unexpectedly short");
+        }
+        let total = sample.chars().filter(|ch| !ch.is_whitespace()).count().max(1);
+        let ratio = |predicate: fn(char) -> bool| {
+            sample.chars().filter(|ch| predicate(*ch)).count() as f64 / total as f64
+        };
+        let passed = match *code {
+            "ar" => ratio(|ch| ('\u{0600}'..='\u{06FF}').contains(&ch)) > 0.25,
+            "cn" | "zh" | "tw" => {
+                ratio(|ch| ('\u{3400}'..='\u{9FFF}').contains(&ch)) > 0.25
+            }
+            "jp" => {
+                ratio(|ch| {
+                    ('\u{3040}'..='\u{30FF}').contains(&ch)
+                        || ('\u{4E00}'..='\u{9FFF}').contains(&ch)
+                }) > 0.25
+            }
+            "kr" => ratio(|ch| ('\u{AC00}'..='\u{D7AF}').contains(&ch)) > 0.25,
+            "ru" => ratio(|ch| ('\u{0400}'..='\u{04FF}').contains(&ch)) > 0.25,
+            "th" => ratio(|ch| ('\u{0E00}'..='\u{0E7F}').contains(&ch)) > 0.25,
+            _ => ratio(|ch| ch.is_ascii_alphabetic()) > 0.3,
+        };
+        if !passed {
+            bail!("{code}: Car Collection text failed script-language validation");
+        }
+    }
     let allowed: HashSet<&str> = ["brandCentral", "vehicleCollection", "usedCar", "collection"]
         .into_iter()
         .collect();
@@ -510,6 +600,9 @@ pub fn run(options: &Options) -> Result<Value> {
         "dialogues": 444,
         "conversationLines": dialogue_lines.len(),
         "languages": language_hits.len(),
+        "descriptionLanguages": description_languages.len(),
+        "descriptionLanguageScriptChecks": 19,
+        "descriptionLanguagesWithResidualGlyphs": description_residual_entries,
         "translationCells": translation_cells,
         "carTextEntries": text_count,
         "vehicleCollectionCars": collection,
