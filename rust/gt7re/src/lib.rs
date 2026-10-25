@@ -19,6 +19,7 @@ pub mod jxl;
 pub mod map4;
 pub mod mdl5;
 pub mod menu;
+pub mod mirror;
 pub mod official;
 pub mod packed;
 pub mod rada;

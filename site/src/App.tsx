@@ -11,16 +11,39 @@ import { Dialog } from '@base-ui/react/dialog'
 import { Tabs } from '@base-ui/react/tabs'
 import { Maximize2, Minimize2, Move, Pause, Play, X } from 'lucide-react'
 import { Button } from '@/components/ui/button'
+import {
+  MirrorFullscreen,
+  type MirrorSlideCar,
+  type SlideshowPosition,
+} from '@/components/MirrorFullscreen'
 import type {
   Car,
   CarText,
   CarsPayload,
   DialogueTurn,
+  MirrorCatalog,
+  MirrorCar,
   VehicleCollectionLanguageTable,
 } from '@/types'
 
 const base = import.meta.env.BASE_URL
 const avatarVersion = '20261024-portrait-circle-safe'
+
+function assetUrl(path: string) {
+  return path.startsWith('/') ? path : `${base}${path}`
+}
+
+function readSlideshowPosition(): SlideshowPosition | null {
+  try {
+    const value = JSON.parse(localStorage.getItem('gt7.carlist.lastSlideshowPosition') || 'null')
+    if (typeof value?.carId === 'string' && Number.isInteger(value?.imageIndex)) {
+      return value as SlideshowPosition
+    }
+  } catch {
+    // Ignore a stale position and start from the selected car.
+  }
+  return null
+}
 
 const languageOptions = [
   { id: 'ar', native: 'العربية', english: 'Arabic', zh: '阿拉伯语', rtl: true },
@@ -28,6 +51,7 @@ const languageOptions = [
   { id: 'cz', native: 'Čeština', english: 'Czech', zh: '捷克语' },
   { id: 'de', native: 'Deutsch', english: 'German', zh: '德语' },
   { id: 'es', native: 'Español', english: 'Spanish', zh: '西班牙语' },
+  { id: 'ms', native: 'Español latinoamericano', english: 'Spanish (Latin America)', zh: '拉美西班牙语' },
   { id: 'fr', native: 'Français', english: 'French', zh: '法语' },
   { id: 'gb', native: 'English (UK)', english: 'English (UK)', zh: '英语（英国）' },
   { id: 'it', native: 'Italiano', english: 'Italian', zh: '意大利语' },
@@ -36,9 +60,11 @@ const languageOptions = [
   { id: 'nl', native: 'Nederlands', english: 'Dutch', zh: '荷兰语' },
   { id: 'pl', native: 'Polski', english: 'Polish', zh: '波兰语' },
   { id: 'pt', native: 'Português', english: 'Portuguese', zh: '葡萄牙语' },
+  { id: 'bp', native: 'Português brasileiro', english: 'Portuguese (Brazil)', zh: '巴西葡萄牙语' },
   { id: 'ru', native: 'Русский', english: 'Russian', zh: '俄语' },
   { id: 'th', native: 'ไทย', english: 'Thai', zh: '泰语' },
   { id: 'tr', native: 'Türkçe', english: 'Turkish', zh: '土耳其语' },
+  { id: 'el', native: 'Ελληνικά', english: 'Greek', zh: '希腊语' },
   { id: 'tw', native: '繁體中文', english: 'Chinese (Traditional)', zh: '繁体中文' },
   { id: 'us', native: 'English (US)', english: 'English (US)', zh: '英语（美国）' },
   { id: 'zh', native: '中文（简体）', english: 'Chinese', zh: '中文' },
@@ -120,9 +146,33 @@ const textMerchants: Record<
 
 type LocaleCode = (typeof languageOptions)[number]['id']
 type TabId = (typeof carTextTabs)[number]['id']
+type GroupMode = 'brand' | 'country' | 'drive' | 'power' | 'weight'
+
+const POWER_THRESHOLDS = [1600, 1300, 1100, 1000, 900, 800, 700, 600, 500, 400, 300, 200, 100, 0]
+const WEIGHT_THRESHOLDS = [2300, 2000, 1800, 1700, 1600, 1500, 1400, 1300, 1200, 1000, 900, 800, 700, 600, 500, 0]
+
+function numericSpec(value: unknown): number | null {
+  const parsed = Number(String(value ?? '').replace(/[^\d.-]/g, ''))
+  return Number.isFinite(parsed) ? parsed : null
+}
+
+function groupMetric(car: Car, mode: GroupMode): number | null {
+  if (mode === 'power') {
+    return numericSpec(car.specs?.zh?.power_v ?? car.specs?.en?.power_v ?? car.specs?.zh?.power ?? car.specs?.en?.power)
+  }
+  return numericSpec(car.specs?.zh?.weight_v ?? car.specs?.en?.weight_v ?? car.specs?.zh?.weight ?? car.specs?.en?.weight)
+}
+
+function thresholdIndex(value: number | null, thresholds: number[]): number {
+  if (value === null) return thresholds.length
+  const index = thresholds.findIndex((threshold) => value >= threshold)
+  return index < 0 ? thresholds.length : index
+}
 
 function storedNumber(key: string, fallback: number, min: number, max: number) {
-  const value = Number(localStorage.getItem(key))
+  const stored = localStorage.getItem(key)
+  if (stored === null || stored === '') return fallback
+  const value = Number(stored)
   return Number.isFinite(value) ? Math.min(max, Math.max(min, value)) : fallback
 }
 
@@ -310,12 +360,16 @@ export default function App() {
   const [vehicleCollectionI18n, setVehicleCollectionI18n] = useState<
     Record<string, VehicleCollectionLanguageTable>
   >({})
+  const [mirrorCatalogs, setMirrorCatalogs] = useState<
+    Record<string, MirrorCatalog>
+  >({})
   const [loadingLanguages, setLoadingLanguages] = useState<string[]>([])
   const loadingLanguagesRef = useRef(new Set<string>())
   const [languageErrors, setLanguageErrors] = useState<string[]>([])
   const [searchInput, setSearchInput] = useState('')
   const [query, setQuery] = useState('')
   const [brandFilter, setBrandFilter] = useState('ALL')
+  const [groupMode, setGroupMode] = useState<GroupMode>('brand')
   const [speakerFilter, setSpeakerFilter] = useState('ALL')
   const [sourceFilter, setSourceFilter] = useState('all')
   const [activeCarId, setActiveCarId] = useState<string | null>(null)
@@ -328,7 +382,12 @@ export default function App() {
     localStorage.getItem('gt7cafe.official.autoplay') === '1',
   )
   const [officialSpeed, setOfficialSpeedState] = useState(
-    storedNumber('gt7cafe.official.speed', 1, 1, 10),
+    storedNumber(
+      'gt7.carlist.slideshowSpeed',
+      storedNumber('gt7cafe.official.speed', 6, 1, 10),
+      1,
+      10,
+    ),
   )
   const [officialTextSize, setOfficialTextSizeState] = useState(
     storedNumber('gt7cafe.official.textSize', 22, 12, 42),
@@ -340,6 +399,15 @@ export default function App() {
     storedNumber('gt7cafe.official.textY', 76, 8, 92),
   )
   const [officialFullscreen, setOfficialFullscreen] = useState(false)
+  const [mirrorFullscreenOpen, setMirrorFullscreenOpen] = useState(false)
+  const [slideshowPosition, setSlideshowPosition] = useState<SlideshowPosition | null>(
+    readSlideshowPosition,
+  )
+  const [mirrorStart, setMirrorStart] = useState<SlideshowPosition>(() => {
+    const stored = readSlideshowPosition()
+    return stored || { carId: '', imageIndex: 0 }
+  })
+  const slideshowOrderRef = useRef<string[]>([])
   const [officialCaptionDragging, setOfficialCaptionDragging] = useState(false)
   const [officialImageError, setOfficialImageError] = useState(false)
   const officialStageRef = useRef<HTMLElement | null>(null)
@@ -406,7 +474,9 @@ export default function App() {
     async (code: string) => {
       if (
         !code ||
-        (dialogueTranslations[code] && vehicleCollectionI18n[code]) ||
+        (dialogueTranslations[code] &&
+          vehicleCollectionI18n[code] &&
+          mirrorCatalogs[code]) ||
         loadingLanguagesRef.current.has(code)
       ) {
         return
@@ -415,18 +485,42 @@ export default function App() {
       setLoadingLanguages([...loadingLanguagesRef.current])
       try {
         const dir = data?.dialogueTranslationDir || 'data/dialogue_translations'
-        const [response, collectionResponse] = await Promise.all([
+        const mirrorCode = code === 'zh' ? 'cn' : code
+        const [response, collectionResponse, mirrorResponse] = await Promise.all([
           fetch(`${base}${dir}/${code}.json`, { cache: 'no-cache' }),
           fetch(`${base}data/vehicle_collection_i18n/${code}.json`, {
             cache: 'no-cache',
           }),
+          fetch(`${base}data/mirror/cars.${mirrorCode}.json`, {
+            cache: 'no-cache',
+          }),
         ])
-        if (!response.ok) throw new Error(`HTTP ${response.status}`)
-        const translation = (await response.json()) as Record<string, string>
-        setDialogueTranslations((current) => ({ ...current, [code]: translation }))
+        if (response.ok) {
+          const translation = (await response.json()) as Record<string, string>
+          setDialogueTranslations((current) => ({ ...current, [code]: translation }))
+        } else {
+          setDialogueTranslations((current) => ({
+            ...current,
+            [code]: current[code] || {},
+          }))
+        }
         if (collectionResponse.ok) {
           const collection = (await collectionResponse.json()) as VehicleCollectionLanguageTable
           setVehicleCollectionI18n((current) => ({ ...current, [code]: collection }))
+        } else {
+          setVehicleCollectionI18n((current) => ({
+            ...current,
+            [code]: current[code] || {
+              code,
+              sourceFile: '',
+              DescriptionCatch: {},
+              DescriptionLong: {},
+            },
+          }))
+        }
+        if (mirrorResponse.ok) {
+          const mirror = (await mirrorResponse.json()) as MirrorCatalog
+          setMirrorCatalogs((current) => ({ ...current, [code]: mirror }))
         }
       } catch (error) {
         console.error(`Unable to load dialogue language ${code}`, error)
@@ -441,6 +535,7 @@ export default function App() {
     [
       data?.dialogueTranslationDir,
       dialogueTranslations,
+      mirrorCatalogs,
       vehicleCollectionI18n,
     ],
   )
@@ -577,22 +672,79 @@ export default function App() {
   }, [brandFilter, cars, query, sourceFilter, speakerFilter])
 
   const grouped = useMemo(() => {
-    const map = new Map<string, Car[]>()
+    const groups = new Map<string, { key: string; label: string; cars: Car[] }>()
+    const collator = new Intl.Collator('en', { sensitivity: 'base' })
     for (const car of filtered) {
-      const list = map.get(car.brand) || []
-      list.push(car)
-      map.set(car.brand, list)
+      let key = ''
+      let label = ''
+      if (groupMode === 'brand') {
+        key = car.brand
+        label = car.brand
+      } else if (groupMode === 'country') {
+        key = car.garageDetails?.country?.code || 'other'
+        label =
+          (uiLang === 'zh'
+            ? car.garageDetails?.country?.nameZh
+            : car.garageDetails?.country?.nameEn) || detailCopy('其他', 'Other')
+      } else if (groupMode === 'drive') {
+        const drive =
+          (uiLang === 'zh' ? car.specs?.zh?.driveTrain : car.specs?.en?.driveTrain) ||
+          car.specs?.en?.driveTrain ||
+          detailCopy('其他', 'Other')
+        key = String(drive)
+        label = String(drive)
+      } else {
+        const thresholds = groupMode === 'power' ? POWER_THRESHOLDS : WEIGHT_THRESHOLDS
+        const index = thresholdIndex(groupMetric(car, groupMode), thresholds)
+        const lower = thresholds[index]
+        const upper = index > 0 ? thresholds[index - 1] : null
+        key = String(index)
+        const unit = groupMode === 'power' ? 'PS' : detailCopy('公斤', 'kg')
+        label =
+          lower === undefined
+            ? detailCopy('其他', 'Other')
+            : `${lower.toLocaleString('en-US')} - ${upper === null ? '' : (upper - 1).toLocaleString('en-US')}${unit}`
+      }
+      const group = groups.get(key) || { key, label, cars: [] }
+      group.cars.push(car)
+      groups.set(key, group)
     }
-    return [...map.entries()]
-  }, [filtered])
+    const values = [...groups.values()]
+    if (groupMode === 'brand' || groupMode === 'country') {
+      values.sort((left, right) => collator.compare(left.label, right.label))
+    } else if (groupMode === 'drive') {
+      const order = ['FF', 'FR', '4WD', 'MR', 'RR']
+      values.sort((left, right) => {
+        const li = order.indexOf(left.key)
+        const ri = order.indexOf(right.key)
+        return (li < 0 ? 99 : li) - (ri < 0 ? 99 : ri) || collator.compare(left.label, right.label)
+      })
+    } else {
+      values.sort((left, right) => Number(left.key) - Number(right.key))
+    }
+    for (const group of values) {
+      group.cars.sort((left, right) =>
+        collator.compare(
+          uiLang === 'zh' ? left.nameZh : left.nameEn,
+          uiLang === 'zh' ? right.nameZh : right.nameEn,
+        ),
+      )
+    }
+    return values
+  }, [detailCopy, filtered, groupMode, uiLang])
 
-  const activeIndex = activeCar ? filtered.findIndex((car) => car.id === activeCar.id) : -1
-  const navCar = activeCar || filtered[Math.max(0, activeIndex)] || null
+  const sortedFiltered = useMemo(
+    () => grouped.flatMap((group) => group.cars),
+    [grouped],
+  )
+
+  const activeIndex = activeCar ? sortedFiltered.findIndex((car) => car.id === activeCar.id) : -1
+  const navCar = activeCar || sortedFiltered[Math.max(0, activeIndex)] || null
   const navPosition = activeCar ? activeIndex + 1 : 0
   const shortcutStateRef = useRef({
     activeCar,
     activeTab,
-    filtered,
+    filtered: sortedFiltered,
     navCar,
     showCast,
     showUnmatched,
@@ -600,13 +752,57 @@ export default function App() {
   shortcutStateRef.current = {
     activeCar,
     activeTab,
-    filtered,
+    filtered: sortedFiltered,
     navCar,
     showCast,
     showUnmatched,
   }
   const officialImages = activeCar?.officialDetails?.images || []
-  const currentOfficialImage = officialImages[officialSlideIndex] || null
+  const officialMirrorCopies = activeCar ? mirrorCopiesFor(activeCar) : []
+  const mirrorImagePaths = officialMirrorCopies.flatMap(
+    (copy) => copy.record?.images || [],
+  )
+  const officialImagePaths = (
+    mirrorImagePaths.length
+      ? mirrorImagePaths
+      : officialImages.map((image) => image.jxl)
+  ).filter((value, index, values) => values.indexOf(value) === index)
+  const currentOfficialImage = officialImagePaths[officialSlideIndex] || null
+  const mirrorSlideCars = useMemo<MirrorSlideCar[]>(
+    () =>
+      sortedFiltered.map((car) => {
+        const record = mirrorCarFor(car, primaryLang)
+        const images = (
+          record?.images?.length
+            ? record.images
+            : (car.officialDetails?.images || []).map((image) => image.jxl)
+        ).map(assetUrl)
+        const logo = record?.logo
+          ? assetUrl(record.logo)
+          : car.brandLogo
+            ? `${base}logos/${car.brandLogo}`
+            : ''
+        return {
+          id: car.id,
+          brand: record?.brand || car.brand,
+          model: record?.model || displayName(car),
+          logo,
+          images,
+          hero: record?.hero || car.officialDetails?.heroZh || car.officialDetails?.heroEn || '',
+          description:
+            record?.description ||
+            car.officialDetails?.descriptionZh ||
+            car.officialDetails?.descriptionEn ||
+            '',
+          carClass: record?.car_class || String(car.specs?.zh?.carClass || car.specs?.en?.carClass || ''),
+          performancePoint:
+            record?.performance_point ||
+            String(car.specs?.zh?.performancePoint || car.specs?.en?.performancePoint || ''),
+          specs: record?.specs || [],
+        }
+      }),
+    [mirrorCatalogs, primaryLang, sortedFiltered, uiLang],
+  )
   const officialCaptionStyle: CSSProperties = {
     left: `${officialTextX}%`,
     top: `${officialTextY}%`,
@@ -789,20 +985,20 @@ export default function App() {
 
   useEffect(() => {
     setOfficialImageError(false)
-  }, [currentOfficialImage?.jxl])
+  }, [currentOfficialImage])
 
   useEffect(() => {
     const timer = window.setInterval(() => {
       if (
         officialAutoplay &&
         activeTab === 'official' &&
-        officialImages.length > 1
+        officialImagePaths.length > 1
       ) {
-        setOfficialSlideIndex((index) => (index + 1) % officialImages.length)
+        setOfficialSlideIndex((index) => (index + 1) % officialImagePaths.length)
       }
     }, Math.round(5200 / officialSpeed))
     return () => window.clearInterval(timer)
-  }, [activeTab, officialAutoplay, officialImages.length, officialSpeed])
+  }, [activeTab, officialAutoplay, officialImagePaths.length, officialSpeed])
 
   useEffect(() => {
     const onFullscreen = () => {
@@ -818,9 +1014,10 @@ export default function App() {
   }
 
   function setOfficialSpeed(value: number) {
-    const next = Math.min(10, Math.max(1, Number(value) || 1))
+    const next = Math.min(10, Math.max(1, Math.trunc(Number(value) || 6)))
     setOfficialSpeedState(next)
     localStorage.setItem('gt7cafe.official.speed', String(next))
+    localStorage.setItem('gt7.carlist.slideshowSpeed', String(next))
   }
 
   function setOfficialTextSize(value: number) {
@@ -842,9 +1039,9 @@ export default function App() {
   }
 
   function moveOfficialSlide(delta: number) {
-    if (!officialImages.length) return
+    if (!officialImagePaths.length) return
     setOfficialSlideIndex(
-      (index) => (index + delta + officialImages.length) % officialImages.length,
+      (index) => (index + delta + officialImagePaths.length) % officialImagePaths.length,
     )
   }
 
@@ -860,13 +1057,56 @@ export default function App() {
   }
 
   async function toggleOfficialFullscreen() {
-    if (!officialStageRef.current) return
-    if (document.fullscreenElement === officialStageRef.current) {
-      await document.exitFullscreen()
-      return
-    }
-    await officialStageRef.current.requestFullscreen()
+    if (!activeCar) return
+    const imageIndex =
+      slideshowPosition?.carId === activeCar.id
+        ? slideshowPosition.imageIndex
+        : officialSlideIndex
+    setOfficialSlideIndex(imageIndex)
+    setMirrorStart({ carId: activeCar.id, imageIndex })
+    setOfficialFullscreen(false)
+    setMirrorFullscreenOpen(true)
     if (!officialAutoplay) setOfficialAutoplay(true)
+  }
+
+  function openCatalogSlideshow() {
+    const orderedCarIds = mirrorSlideCars.map((car) => car.id)
+    if (!orderedCarIds.length) return
+    const previousOrder = slideshowOrderRef.current
+    const orderChanged =
+      orderedCarIds.length !== previousOrder.length ||
+      orderedCarIds.some((carId, index) => carId !== previousOrder[index])
+    slideshowOrderRef.current = orderedCarIds
+    const resumeId =
+      !orderChanged &&
+      slideshowPosition?.carId &&
+      orderedCarIds.includes(slideshowPosition.carId)
+        ? slideshowPosition.carId
+        : orderedCarIds[0]
+    const imageIndex =
+      !orderChanged && resumeId === slideshowPosition?.carId
+        ? slideshowPosition.imageIndex
+        : 0
+    setMirrorStart({ carId: resumeId, imageIndex })
+    setMirrorFullscreenOpen(true)
+    if (!officialAutoplay) setOfficialAutoplay(true)
+  }
+
+  function closeMirrorFullscreen(position: SlideshowPosition) {
+    setMirrorFullscreenOpen(false)
+    setSlideshowPosition(position)
+    setMirrorStart(position)
+    localStorage.setItem('gt7.carlist.lastSlideshowPosition', JSON.stringify(position))
+    const car = cars.find((item) => item.id === position.carId)
+    if (car) {
+      setOfficialSlideIndex(position.imageIndex)
+      setActiveCarId(car.id)
+      setCarParam(car.id)
+      setTab(activeTab)
+    }
+    if (document.fullscreenElement) {
+      document.exitFullscreen().catch(() => {})
+    }
   }
 
   function specValue(locale: 'zh' | 'en', key: string) {
@@ -969,7 +1209,12 @@ export default function App() {
     <div className="app">
       <header className="topbar">
         <div className="brand">
-          <span className="gt">GT</span>
+          <span className="gt">
+            <img
+              src="/common/dist/gt7/carlist/assets/logo_gtcom-kY3Al7KV.svg"
+              alt="Gran Turismo"
+            />
+          </span>
           <div className="titles">
             <h1>咖啡屋对话库</h1>
             <p>Gran Turismo 7 · GT Café Dialogues</p>
@@ -1054,6 +1299,30 @@ export default function App() {
         </div>
       </div>
 
+      <section className="catalog-hero" aria-label="Gran Turismo 7">
+        <button
+          type="button"
+          className="catalog-slideshow-launch"
+          onClick={openCatalogSlideshow}
+          disabled={!mirrorSlideCars.length}
+        >
+          <span aria-hidden="true">▶</span>
+          {detailCopy('全屏幻灯片', 'Fullscreen slideshow')}
+          <small>
+            {mirrorSlideCars.reduce((total, car) => total + car.images.length, 0)}{' '}
+            {detailCopy('张', 'images')}
+          </small>
+        </button>
+        <img
+          src="/common/dist/gt7/carlist/assets/logo_gt7-BQSHSLc9.png"
+          alt="Gran Turismo 7 The Real Driving Simulator"
+        />
+        <p>
+          <b>{cars.length}</b>
+          <span>{detailCopy('截至 2026 年 10 月', 'as of October 2026')}</span>
+        </p>
+      </section>
+
       <nav className="brandbar">
         <button
           className={`chip ${brandFilter === 'ALL' ? 'on' : ''}`}
@@ -1079,6 +1348,26 @@ export default function App() {
         ))}
       </nav>
 
+      <nav className="group-tabs" aria-label={detailCopy('车辆排序与分组', 'Vehicle grouping')}>
+        {([
+          ['brand', detailCopy('按厂商', 'By Manufacturer')],
+          ['country', detailCopy('按国家/地区', 'By Country/Region')],
+          ['drive', detailCopy('按驱动形式', 'By Drivetrain')],
+          ['power', detailCopy('按马力', 'By Power')],
+          ['weight', detailCopy('按车重', 'By Weight')],
+        ] as Array<[GroupMode, string]>).map(([mode, label]) => (
+          <button
+            key={mode}
+            type="button"
+            className={groupMode === mode ? 'on' : ''}
+            aria-pressed={groupMode === mode}
+            onClick={() => setGroupMode(mode)}
+          >
+            {label}
+          </button>
+        ))}
+      </nav>
+
       <nav className="characterbar" aria-label="咖啡屋角色筛选">
         <button
           className={`chip character ${speakerFilter === 'ALL' ? 'on' : ''}`}
@@ -1099,23 +1388,24 @@ export default function App() {
       </nav>
 
       <main className="content">
-        {grouped.map(([brand, list]) => (
-          <section key={brand} id={`brand-${brand}`} className="brandgroup">
+        {grouped.map((group) => (
+          <section key={group.key} id={`group-${group.key}`} className="brandgroup">
             <h2>
-              {brandLogos[brand] && (
+              {groupMode === 'brand' && brandLogos[group.key] && (
                 <img
                   className="blogo"
-                  src={`${base}logos/${brandLogos[brand]}`}
-                  alt={brand}
+                  src={`${base}logos/${brandLogos[group.key]}`}
+                  alt={group.label}
                   loading="lazy"
                 />
               )}
-              {brand} <span>{list.length}</span>
+              {group.label} <span>{group.cars.length}</span>
             </h2>
             <div className="grid">
-              {list.map((car) => (
+              {group.cars.map((car) => (
                 <article
                   key={car.id}
+                  data-car-id={car.id}
                   className={`card ${visibleConversation(car).length ? '' : 'empty'} ${
                     activeCar?.id === car.id ? 'active' : ''
                   }`}
@@ -1422,7 +1712,7 @@ export default function App() {
                           <div className="official-stage-media">
                             {currentOfficialImage && !officialImageError ? (
                               <img
-                                src={`${base}${currentOfficialImage.jxl}`}
+                                src={assetUrl(currentOfficialImage)}
                                 alt={`${displayName(activeCar)} ${officialSlideIndex + 1}`}
                                 loading="eager"
                                 decoding="async"
@@ -1439,9 +1729,9 @@ export default function App() {
                               </div>
                             )}
                           </div>
-                          {officialImages.length > 0 && (
+                          {officialImagePaths.length > 0 && (
                             <div className="official-image-count">
-                              4K · {officialSlideIndex + 1} / {officialImages.length}
+                              4K · {officialSlideIndex + 1} / {officialImagePaths.length}
                             </div>
                           )}
                           <button
@@ -1452,7 +1742,7 @@ export default function App() {
                           >
                             {officialFullscreen ? <Minimize2 size={18} /> : <Maximize2 size={18} />}
                           </button>
-                          {officialImages.length > 1 && (
+                          {officialImagePaths.length > 1 && (
                             <>
                               <button
                                 type="button"
@@ -1471,9 +1761,9 @@ export default function App() {
                                 ›
                               </button>
                               <div className="official-dots">
-                                {officialImages.map((image, index) => (
+                                {officialImagePaths.map((image, index) => (
                                   <button
-                                    key={image.jxl}
+                                    key={image}
                                     type="button"
                                     className={index === officialSlideIndex ? 'on' : ''}
                                     onClick={() => setOfficialSlideIndex(index)}
@@ -1582,6 +1872,27 @@ export default function App() {
                               <p className="en">{activeCar.officialDetails.descriptionEn}</p>
                             )}
                           </div>
+                          {officialMirrorCopies.some(
+                            (copy) => copy.record?.hero || copy.record?.description,
+                          ) && (
+                            <section className="gt7-website-intro">
+                              <h4>{detailCopy('GT7网站介绍', 'GT7 website introduction')}</h4>
+                              {officialMirrorCopies.map(
+                                (copy) =>
+                                  copy.record && (
+                                    <article key={`mirror-${copy.code}`}>
+                                      <h5>{copy.label}</h5>
+                                      {copy.record.hero && (
+                                        <p className="official-hero">{copy.record.hero}</p>
+                                      )}
+                                      {copy.record.description && (
+                                        <p>{copy.record.description}</p>
+                                      )}
+                                    </article>
+                                  ),
+                              )}
+                            </section>
+                          )}
                           <div className="official-controls">
                             <div className="official-control-row">
                               <button
@@ -1624,15 +1935,15 @@ export default function App() {
                               </button>
                             </div>
                             <div className="official-thumbnails">
-                              {officialImages.map((image, index) => (
+                              {officialImagePaths.map((image, index) => (
                                 <button
-                                  key={`thumb-${image.jxl}`}
+                                  key={`thumb-${image}`}
                                   type="button"
                                   className={index === officialSlideIndex ? 'on' : ''}
                                   onClick={() => setOfficialSlideIndex(index)}
                                 >
                                   <img
-                                    src={`${base}${image.jxl}`}
+                                    src={assetUrl(image)}
                                     alt={`${displayName(activeCar)} ${index + 1}`}
                                     loading="lazy"
                                   />
@@ -1883,6 +2194,18 @@ export default function App() {
         </Dialog.Portal>
       </Dialog.Root>
 
+      {mirrorFullscreenOpen && mirrorSlideCars.length > 0 && (
+        <MirrorFullscreen
+          cars={mirrorSlideCars}
+          initialCarId={mirrorStart.carId}
+          initialImageIndex={mirrorStart.imageIndex}
+          speed={officialSpeed}
+          chinese={showZhContent}
+          onSpeedChange={setOfficialSpeed}
+          onClose={closeMirrorFullscreen}
+        />
+      )}
+
       <footer className="foot">
         <a href={`${base}data/cafe_dialogues.csv`} download>下载全部对白 CSV</a>
         {' · '}
@@ -1916,6 +2239,33 @@ export default function App() {
           : undefined,
       }
     })
+  }
+
+  function mirrorCarFor(car: Car, code: string): MirrorCar | null {
+    const catalog = mirrorCatalogs[code]
+    if (!catalog) return null
+    const officialId = car.officialId || car.officialDetails?.officialId
+    if (officialId) {
+      const exact = catalog.cars.find((item) => item.id === officialId)
+      if (exact) return exact
+    }
+    const normalize = (value: string) =>
+      value.toLowerCase().replace(/[^a-z0-9]+/g, '')
+    const name = normalize(car.nameEn)
+    return (
+      catalog.cars.find(
+        (item) =>
+          normalize(item.name_long) === name || normalize(item.model) === name,
+      ) || null
+    )
+  }
+
+  function mirrorCopiesFor(car: Car) {
+    return activeLocales.map((code) => ({
+      code,
+      label: languageName(code),
+      record: mirrorCarFor(car, code),
+    }))
   }
 
   function activeTextFor(tabId: TabId): CarText | null {

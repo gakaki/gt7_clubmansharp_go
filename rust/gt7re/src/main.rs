@@ -11,6 +11,7 @@ use gt7re::jxl;
 use gt7re::map4;
 use gt7re::mdl5;
 use gt7re::menu;
+use gt7re::mirror;
 use gt7re::official;
 use gt7re::packed;
 use gt7re::rada;
@@ -172,6 +173,19 @@ enum Cmd {
     Official {
         #[command(subcommand)]
         cmd: OfficialCmd,
+    },
+    /// Mirror the public car-list catalogue, descriptions and 4K assets
+    MirrorSync {
+        #[arg(long, default_value = "https://gt7-carlist.gakaki.com")]
+        base: String,
+        #[arg(long, default_value = r"C:\gt7\gt7\_re\site\public")]
+        site: PathBuf,
+        #[arg(long)]
+        proxy: Option<String>,
+        #[arg(long, default_value_t = 16)]
+        threads: usize,
+        #[arg(long)]
+        refresh: bool,
     },
     /// Split a census CSV into per-type catalog lists
     Catalog {
@@ -1114,6 +1128,22 @@ fn run() -> Result<()> {
                 proxy,
             } => official::menu_covers(&out, &manifest, proxy.as_deref())?,
         },
+        Cmd::MirrorSync {
+            base,
+            site,
+            proxy,
+            threads,
+            refresh,
+        } => {
+            let report = mirror::sync(
+                &base,
+                &site,
+                proxy.as_deref(),
+                refresh,
+                threads,
+            )?;
+            println!("{}", serde_json::to_string_pretty(&report)?);
+        }
         Cmd::Catalog { csv, out } => {
             let rows = census::read_catalog(&csv)?;
             let summary = census::write_catalog(&rows, &out)?;

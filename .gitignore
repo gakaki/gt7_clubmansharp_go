@@ -53,6 +53,7 @@
 /site/vehicle-collection-ui.json
 /site/run-*/
 /site/public/official/
+/site/public/common/
 
 # Tool caches
 __pycache__/

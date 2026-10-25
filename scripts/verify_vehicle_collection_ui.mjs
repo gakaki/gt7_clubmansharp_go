@@ -94,10 +94,13 @@ async function screenshot(name) {
 }
 
 async function clickSelector(selector) {
-  const point = await evaluate(`(() => {
+  const point = await evaluate(`(async () => {
     const node = document.querySelector(${JSON.stringify(selector)})
-    const rect = node?.getBoundingClientRect()
-    return rect ? { x: rect.left + rect.width / 2, y: rect.top + rect.height / 2 } : null
+    if (!node) return null
+    node.scrollIntoView({ block: 'center', inline: 'center' })
+    await new Promise((resolve) => requestAnimationFrame(() => requestAnimationFrame(resolve)))
+    const rect = node.getBoundingClientRect()
+    return { x: rect.left + rect.width / 2, y: rect.top + rect.height / 2 }
   })()`)
   if (!point) throw new Error(`Missing click target: ${selector}`)
   await cdp.call('Input.dispatchMouseEvent', {
@@ -116,12 +119,78 @@ async function clickSelector(selector) {
   })
 }
 
+async function dragSelector(selector, deltaX, deltaY) {
+  const point = await evaluate(`(async () => {
+    const node = document.querySelector(${JSON.stringify(selector)})
+    if (!node) return null
+    node.scrollIntoView({ block: 'center', inline: 'center' })
+    await new Promise((resolve) => requestAnimationFrame(() => requestAnimationFrame(resolve)))
+    const rect = node.getBoundingClientRect()
+    return { x: rect.left + rect.width / 2, y: rect.top + rect.height / 2 }
+  })()`)
+  if (!point) throw new Error(`Missing drag target: ${selector}`)
+  await cdp.call('Input.dispatchMouseEvent', {
+    type: 'mousePressed',
+    x: point.x,
+    y: point.y,
+    button: 'left',
+    buttons: 1,
+    clickCount: 1,
+  })
+  await cdp.call('Input.dispatchMouseEvent', {
+    type: 'mouseMoved',
+    x: point.x + deltaX,
+    y: point.y + deltaY,
+    button: 'left',
+    buttons: 1,
+  })
+  await cdp.call('Input.dispatchMouseEvent', {
+    type: 'mouseReleased',
+    x: point.x + deltaX,
+    y: point.y + deltaY,
+    button: 'left',
+    buttons: 0,
+    clickCount: 1,
+  })
+}
+
 await cdp.call('Emulation.setDeviceMetricsOverride', {
   width: 1440,
   height: 1200,
   deviceScaleFactor: 1,
   mobile: false,
 })
+await navigate(`${base}?lang=zh&l1=zh`)
+await evaluate(`(() => {
+  for (const key of [
+    'gt7cafe.official.autoplay',
+    'gt7cafe.official.speed',
+    'gt7cafe.official.textSize',
+    'gt7cafe.official.textX',
+    'gt7cafe.official.textY',
+    'gt7.carlist.slideshowSpeed',
+    'gt7.carlist.lastSlideshowPosition',
+    'gt7.carlist.fullscreenInfoTextScale',
+    'gt7.carlist.fullscreenInfoOffset',
+  ]) localStorage.removeItem(key)
+})()`)
+await evaluate(`document.querySelector('.catalog-slideshow-launch')?.click()`)
+await sleep(700)
+const scalePreferenceTest = await evaluate(`(async () => {
+  const button = [...document.querySelectorAll('.mirror-info-tools button')]
+    .find((node) => node.textContent?.trim() === 'A+')
+  if (!button) return null
+  button.click()
+  await new Promise((resolve) => setTimeout(resolve, 100))
+  button.click()
+  await new Promise((resolve) => setTimeout(resolve, 100))
+  return {
+    scale: localStorage.getItem('gt7.carlist.fullscreenInfoTextScale'),
+    font: document.querySelector('.mirror-info-copy')?.getAttribute('style') || '',
+  }
+})()`)
+await evaluate(`document.querySelector('.mirror-slideshow-close')?.click()`)
+await sleep(300)
 await navigate(`${base}?lang=zh&l1=zh`)
 const filterExpected = await evaluate(`(async () => {
   const data = await (await fetch('/data/cars.json')).json()
@@ -152,6 +221,29 @@ for (const [index, id] of ['all', 'brandCentral', 'usedCar', 'vehicleCollection'
 }
 const filterLabels = await evaluate(`[...document.querySelectorAll('.seg button')].map((node) => node.textContent.trim())`)
 await screenshot('main-source-filters.png')
+
+await evaluate(`document.querySelector('.seg button:first-child')?.click()`)
+await sleep(250)
+const groupLabels = await evaluate(
+  `[...document.querySelectorAll('.group-tabs button')].map((node) => node.textContent.trim())`,
+)
+const sortModes = []
+for (let index = 0; index < 5; index += 1) {
+  await evaluate(`document.querySelectorAll('.group-tabs button')[${index}]?.click()`)
+  await sleep(250)
+  sortModes.push(
+    await evaluate(`(() => ({
+      label: document.querySelectorAll('.group-tabs button')[${index}]?.textContent?.trim() || '',
+      heading: document.querySelector('.brandgroup h2')?.innerText?.trim() || '',
+      ids: [...document.querySelectorAll('[data-car-id]')]
+        .slice(0, 6)
+        .map((node) => node.getAttribute('data-car-id')),
+      groups: document.querySelectorAll('.brandgroup').length,
+    }))()`),
+  )
+}
+await evaluate(`document.querySelector('.group-tabs button:first-child')?.click()`)
+await sleep(250)
 
 await navigate(`${base}?lang=zh&l1=zh&car=0x00006F59&tab=cafe`)
 const cafeDesktop = await evaluate(`(() => {
@@ -206,46 +298,109 @@ await evaluate(`(() => {
   if (ranges.length < 2) {
     throw new Error('official controls missing; tabs=' + document.querySelectorAll('.car-tabs button').length + ', text=' + document.body.innerText.slice(0, 300) + ', html=' + document.body.innerHTML.slice(0, 300))
   }
-  ranges[0].value = '7'
+  const setValue = Object.getOwnPropertyDescriptor(HTMLInputElement.prototype, 'value').set
+  setValue.call(ranges[0], '7')
   ranges[0].dispatchEvent(new Event('input', { bubbles: true }))
-  ranges[1].value = '29'
+  ranges[0].dispatchEvent(new Event('change', { bubbles: true }))
+  setValue.call(ranges[1], '29')
   ranges[1].dispatchEvent(new Event('input', { bubbles: true }))
+  ranges[1].dispatchEvent(new Event('change', { bubbles: true }))
 })()`)
-await clickSelector('.official-fullscreen-button')
-await sleep(700)
-await evaluate(`document.querySelector('.official-position-buttons button:nth-child(4)')?.click()`)
-await evaluate(`(() => {
-  const ranges = document.querySelectorAll('.official-fullscreen-controls input[type=range]')
-  ranges[0].value = '10'
-  ranges[0].dispatchEvent(new Event('input', { bubbles: true }))
-})()`)
-await sleep(700)
+await evaluate(`document.querySelector('.official-fullscreen-cta')?.click()`)
+await sleep(900)
+await dragSelector('.mirror-info-tools button:first-of-type', 120, -48)
+await sleep(120)
+await evaluate(`document.querySelector('.mirror-slideshow-controls > div button:nth-child(10)')?.click()`)
+await sleep(250)
 const officialFullscreen = await evaluate(`(() => {
-  const caption = document.querySelector('.official-caption')
+  const overlay = document.querySelector('.mirror-slideshow')
+  const image = document.querySelector('.mirror-slideshow-image')
+  const info = document.querySelector('.mirror-slideshow-info > div')
+  const copy = document.querySelector('.mirror-info-copy')
   return {
-    active: document.fullscreenElement === document.querySelector('.official-stage'),
-    captionDisplay: getComputedStyle(caption).display,
-    controlsDisplay: getComputedStyle(document.querySelector('.official-fullscreen-controls')).display,
-    slide: document.querySelector('.official-image-count')?.textContent?.trim() || '',
-    position: caption?.getAttribute('style') || '',
-    autoplay: localStorage.getItem('gt7cafe.official.autoplay'),
+    active: Boolean(overlay),
+    imageSrc: image?.getAttribute('src') || '',
+    imageWidth: image?.naturalWidth || 0,
+    imageHeight: image?.naturalHeight || 0,
+    title: document.querySelector('.mirror-slideshow-info h2')?.textContent?.trim() || '',
+    intro: copy?.innerText || '',
+    slide: document.querySelector('.mirror-slideshow-controls > span')?.textContent?.trim() || '',
+    infoTransform: info?.getAttribute('style') || '',
+    infoFontSize: copy?.getAttribute('style') || '',
+    speed: localStorage.getItem('gt7.carlist.slideshowSpeed'),
+    textScale: localStorage.getItem('gt7.carlist.fullscreenInfoTextScale'),
+    offset: localStorage.getItem('gt7.carlist.fullscreenInfoOffset'),
+    speedPressed: document.querySelector('.mirror-slideshow-controls button[aria-pressed="true"]')
+      ?.textContent?.trim() || '',
+    bodyOverflow: document.body.style.overflow,
   }
 })()`)
 await screenshot('official-tab-fullscreen.png')
-await evaluate(`document.exitFullscreen?.()`)
-await sleep(250)
+await clickSelector('.mirror-slideshow-close')
+await sleep(500)
 await navigate(`${base}?lang=both&l1=zh&l2=us&car=0x00006F48&tab=official`)
+await evaluate(`document.querySelector('.official-fullscreen-cta')?.click()`)
+await sleep(700)
 const officialPersisted = await evaluate(`(() => {
   const ranges = document.querySelectorAll('.official-controls input[type=range]')
   const caption = document.querySelector('.official-caption')
+  const info = document.querySelector('.mirror-slideshow-info > div')
+  const copy = document.querySelector('.mirror-info-copy')
   return {
     speed: ranges[0]?.value || '',
     textSize: ranges[1]?.value || '',
     captionStyle: caption?.getAttribute('style') || '',
     autoplay: localStorage.getItem('gt7cafe.official.autoplay'),
+    storedSpeed: localStorage.getItem('gt7.carlist.slideshowSpeed'),
+    storedScale: localStorage.getItem('gt7.carlist.fullscreenInfoTextScale'),
+    storedOffset: localStorage.getItem('gt7.carlist.fullscreenInfoOffset'),
+    infoTransform: info?.getAttribute('style') || '',
+    infoFontSize: copy?.getAttribute('style') || '',
+    overlayActive: Boolean(document.querySelector('.mirror-slideshow')),
   }
 })()`)
+await clickSelector('.mirror-slideshow-close')
+await sleep(300)
 await screenshot('official-tab-desktop.png')
+
+await navigate(`${base}?lang=both&l1=zh&l2=us`)
+const slideshowLauncher = await evaluate(`(() => {
+  const button = document.querySelector('.catalog-slideshow-launch')
+  return {
+    exists: Boolean(button),
+    label: button?.textContent?.replace(/\\s+/g, ' ').trim() || '',
+    disabled: button?.disabled || false,
+  }
+})()`)
+await clickSelector('.catalog-slideshow-launch')
+await sleep(700)
+await clickSelector('.mirror-slideshow-controls > button:nth-child(2)')
+const catalogSlideshowFirst = await evaluate(`(() => ({
+  active: Boolean(document.querySelector('.mirror-slideshow')),
+  title: document.querySelector('.mirror-slideshow-info h2')?.textContent?.trim() || '',
+  counter: document.querySelector('.mirror-slideshow-controls > span')?.textContent?.trim() || '',
+  image: document.querySelector('.mirror-slideshow-image')?.getAttribute('src') || '',
+}))()`)
+await clickSelector('.mirror-slideshow-controls > button:nth-child(3)')
+await clickSelector('.mirror-slideshow-controls > button:nth-child(3)')
+const catalogSlideshowAdvanced = await evaluate(`(() => ({
+  title: document.querySelector('.mirror-slideshow-info h2')?.textContent?.trim() || '',
+  counter: document.querySelector('.mirror-slideshow-controls > span')?.textContent?.trim() || '',
+}))()`)
+await clickSelector('.mirror-slideshow-controls > div button:nth-child(1)')
+await clickSelector('.mirror-slideshow-close')
+await sleep(400)
+await evaluate(`document.querySelector('.dialog .close')?.click()`)
+await sleep(200)
+await clickSelector('.catalog-slideshow-launch')
+await sleep(600)
+await clickSelector('.mirror-slideshow-controls > button:nth-child(2)')
+const catalogSlideshowResumed = await evaluate(`(() => ({
+  title: document.querySelector('.mirror-slideshow-info h2')?.textContent?.trim() || '',
+  counter: document.querySelector('.mirror-slideshow-controls > span')?.textContent?.trim() || '',
+}))()`)
+await clickSelector('.mirror-slideshow-close')
+await sleep(250)
 
 await navigate(`${base}?lang=both&l1=zh&l2=us&car=0x0000D1BB&tab=vehicleCollection`)
 const desktop = await evaluate(`(() => {
@@ -452,6 +607,7 @@ const mobileAfter = await evaluate(`(() => ({
   tab: document.querySelector('.car-tabs button.on')?.textContent?.trim() || '',
   panel: document.querySelector('.text-panel')?.innerText || '',
 }))()`)
+const persistedFullscreenOffset = JSON.parse(officialPersisted.storedOffset || '{}')
 
 const checks = {
   sevenTabs: desktop.tabs.length === 7 &&
@@ -460,25 +616,50 @@ const checks = {
   officialGallery: officialDesktop.tab.includes('官方车表') &&
     officialDesktop.tabCount === 7 &&
     officialDesktop.slides === 4 &&
-    officialDesktop.image?.src?.endsWith('.jxl') &&
+    officialDesktop.image?.src?.endsWith('.avif') &&
     officialDesktop.image.width === 3840 &&
     officialDesktop.image.height === 2160 &&
+    officialDesktop.intro.includes('官方车表介绍') &&
+    officialDesktop.intro.includes('GT7网站介绍') &&
     officialDesktop.intro.includes('1989年3月') &&
     officialDesktop.intro.includes('The 180SX arrived in March 1989') &&
     !officialDesktop.intro.includes('jpg'),
   officialFullscreen: officialFullscreen.active &&
-    officialFullscreen.captionDisplay === 'block' &&
-    officialFullscreen.controlsDisplay === 'flex' &&
-    /^4K · [1-4] \/ 4$/.test(officialFullscreen.slide) &&
-    officialFullscreen.position.includes('left: 76%') &&
-    officialFullscreen.position.includes('top: 78%') &&
-    officialFullscreen.autoplay === '1',
+    officialFullscreen.imageSrc.endsWith('.avif') &&
+    officialFullscreen.imageWidth === 3840 &&
+    officialFullscreen.imageHeight === 2160 &&
+    officialFullscreen.title.includes('180SX') &&
+    officialFullscreen.intro.includes('1989年3月') &&
+    /^图片 [1-9][0-9]* \/ [1-9][0-9]*$/.test(officialFullscreen.slide) &&
+    officialFullscreen.speed === '10' &&
+    officialFullscreen.textScale === '1.2' &&
+    officialFullscreen.speedPressed === '10×' &&
+    officialFullscreen.bodyOverflow === 'hidden',
   officialSettingsPersisted: officialPersisted.speed === '10' &&
     officialPersisted.textSize === '29' &&
-    officialPersisted.captionStyle.includes('left: 76%') &&
-    officialPersisted.captionStyle.includes('top: 78%') &&
     officialPersisted.captionStyle.includes('font-size: 29px') &&
-    officialPersisted.autoplay === '1',
+    officialPersisted.autoplay === '1' &&
+    scalePreferenceTest?.scale === '1.2' &&
+    scalePreferenceTest.font.includes('19.2px') &&
+    officialPersisted.storedSpeed === '10' &&
+    officialPersisted.storedScale === '1.2' &&
+    Math.abs(persistedFullscreenOffset.x) >= 50 &&
+    Math.abs(persistedFullscreenOffset.y) >= 20 &&
+    officialPersisted.infoTransform.includes('translate3d') &&
+    officialPersisted.infoFontSize.includes('19.2px') &&
+    officialPersisted.overlayActive,
+  fiveSortModes: groupLabels.length === 5 &&
+    sortModes.every((mode) => mode.label && mode.groups > 0 && mode.ids.length > 0) &&
+    new Set(sortModes.map((mode) => mode.ids.join(','))).size >= 3,
+  catalogSlideshowLauncher: slideshowLauncher.exists &&
+    !slideshowLauncher.disabled &&
+    slideshowLauncher.label.includes('全屏幻灯片') &&
+    catalogSlideshowFirst.active &&
+    catalogSlideshowFirst.title.length > 0 &&
+    catalogSlideshowFirst.image.endsWith('.avif') &&
+    catalogSlideshowAdvanced.counter !== catalogSlideshowFirst.counter &&
+    catalogSlideshowResumed.title === catalogSlideshowAdvanced.title &&
+    catalogSlideshowResumed.counter === catalogSlideshowAdvanced.counter,
   splitLabels: desktop.tabs.some((text) => text.includes('品牌购物')) &&
     desktop.tabs.some((text) => text.includes('车辆收藏')) &&
     desktop.tabs.some((text) => text.includes('车库数据')) &&
@@ -598,12 +779,19 @@ const report = {
   garagePayload,
   filterObserved,
   filterLabels,
+  groupLabels,
+  sortModes,
+  scalePreferenceTest,
   mobileFilters,
   desktop,
   cafeDesktop,
   officialDesktop,
   officialFullscreen,
   officialPersisted,
+  slideshowLauncher,
+  catalogSlideshowFirst,
+  catalogSlideshowAdvanced,
+  catalogSlideshowResumed,
   garageDesktop,
   english,
   garageEnglish,

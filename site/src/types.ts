@@ -103,3 +103,30 @@ export interface VehicleCollectionLanguageTable {
   DescriptionCatch: Record<string, string>
   DescriptionLong: Record<string, string>
 }
+
+export interface MirrorCar {
+  id: string
+  brand: string
+  model: string
+  name_long: string
+  logo: string
+  thumbnail: string
+  country: string
+  drive_train: string
+  power: string
+  power_value: number | null
+  weight_value: number | null
+  description: string
+  hero: string
+  car_class: string
+  performance_point: string
+  specs: Array<{ label: string; value: string }>
+  images: string[]
+}
+
+export interface MirrorCatalog {
+  locale: string
+  car_count: number
+  image_count: number
+  cars: MirrorCar[]
+}
