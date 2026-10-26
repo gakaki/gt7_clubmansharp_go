@@ -3,9 +3,6 @@ const STATIC_FILE =
 
 export default {
   async fetch(request, env) {
-    const response = await env.ASSETS.fetch(request)
-    if (response.status !== 404) return response
-
     const url = new URL(request.url)
     if (
       (request.method === 'GET' || request.method === 'HEAD') &&
@@ -13,6 +10,9 @@ export default {
     ) {
       return env.ASSETS.fetch(new URL('/index.html', url), request)
     }
+
+    const response = await env.ASSETS.fetch(request)
+    if (response.status !== 404) return response
 
     return new Response('Not found', {
       status: 404,
