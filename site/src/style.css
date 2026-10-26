@@ -1831,6 +1831,27 @@ body {
 .mirror-info-scale-hint { display: none; }
 
 @media (max-width: 900px) {
+  .topbar {
+    gap: 8px;
+    padding-inline: 16px;
+  }
+  .topbar .language-picker {
+    min-width: 0;
+  }
+  .topbar .language-picker select {
+    width: 66px;
+    max-width: 112px;
+    min-width: 0;
+    flex: 1 1 0;
+  }
+  .topbar .language-picker .bilingual-toggle {
+    min-width: 0;
+    padding-inline: 8px;
+    white-space: nowrap;
+  }
+  .topbar .menu-archive-link {
+    padding-inline: 10px;
+  }
   .grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
   .toolbar { top: 55px; padding: 10px 16px; flex-wrap: wrap; }
   .group-tabs { justify-content: flex-start; padding-inline: 16px; }
@@ -1860,14 +1881,17 @@ body {
   }
   .detail-controls {
     width: 100%;
+    min-width: 0;
     flex-wrap: wrap;
     justify-content: space-between;
   }
   .detail-lang {
+    max-width: 100%;
     min-width: 0;
-    flex: 1 1 420px;
+    flex: 1 1 100%;
   }
   .detail-lang select {
+    width: 0;
     min-width: 0;
     flex: 1 1 0;
   }

@@ -297,11 +297,14 @@ const imageFormatAudit = await evaluate(`(async () => {
     sample,
   }
 })()`)
-const catalogCounts = await evaluate(`(() => ({
+const catalogCounts = await evaluate(`(async () => ({
   hero: document.querySelector('.catalog-hero p')?.innerText || '',
   summary: document.querySelector('.summary')?.innerText || '',
   cacheStatus: document.querySelector('.image-cache-status')?.textContent?.trim() || '',
-  serviceWorker: Boolean(navigator.serviceWorker?.controller),
+  serviceWorker: await Promise.race([
+    navigator.serviceWorker.ready.then((registration) => Boolean(registration.active)),
+    new Promise((resolve) => setTimeout(() => resolve(false), 2000)),
+  ]),
   brandHeadings: [...document.querySelectorAll('.brandgroup h2')]
     .map((node) => node.textContent.replace(/\\s+/g, ' ').trim()),
 }))()`)
@@ -790,7 +793,7 @@ const checks = {
     fullscreenCarAfter !== fullscreenCarBefore,
   officialSettingsPersisted: officialPersisted.speed === '10' &&
     officialPersisted.textSize === '29' &&
-    officialPersisted.captionStyle.includes('font-size: 29px') &&
+    officialPersisted.captionStyle.includes('font-size: calc(29px * var(--ui-font-scale))') &&
     officialPersisted.autoplay === '1' &&
     scalePreferenceTest?.scale === '1.2' &&
     scalePreferenceTest.font.includes('19.2px') &&
