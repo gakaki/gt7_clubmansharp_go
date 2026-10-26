@@ -937,6 +937,9 @@ const checks = {
     catalogCounts.hero.includes(`官方车表 ${filterExpected.officialPage}`) &&
     catalogCounts.hero.includes(`隐藏车型 ${filterExpected.hidden}`) &&
     catalogCounts.serviceWorker,
+  imageDownloaderStarts:
+    catalogCounts.cacheStatus === '图片已离线' ||
+    /\/\s*[\d,]{3,}/.test(catalogCounts.cacheStatus),
   allLocalImagesJxl: imageFormatAudit.total > 0 &&
     imageFormatAudit.nonJxl.length === 0 &&
     imageFormatAudit.mirrorFormat === 'jxl' &&

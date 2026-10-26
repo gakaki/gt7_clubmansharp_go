@@ -86,6 +86,19 @@ function isSupported() {
   )
 }
 
+function registerImageServiceWorker() {
+  if (!('serviceWorker' in navigator)) return
+  void navigator.serviceWorker
+    .register('/sw.js', {
+      scope: '/',
+      updateViaCache: 'none',
+    })
+    .then(() => navigator.serviceWorker.ready)
+    .catch((reason: unknown) => {
+      console.warn('Unable to activate GT7 offline image worker', reason)
+    })
+}
+
 async function refreshStorageEstimate() {
   if (typeof navigator.storage === 'undefined') return
   const persistRequest = navigator.storage.persist?.()
@@ -249,12 +262,8 @@ export function startImageDownload(
       })
       return
     }
-    await refreshStorageEstimate()
-    await navigator.serviceWorker.register('/sw.js', {
-      scope: '/',
-      updateViaCache: 'none',
-    })
-    await navigator.serviceWorker.ready
+    registerImageServiceWorker()
+    void refreshStorageEstimate()
     const manifest = await loadImageManifest(catalog, mirrors, controller.signal)
     await downloadManifest(manifest, controller)
   })
