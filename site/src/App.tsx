@@ -159,6 +159,7 @@ function sanitizeGlyphs<T>(value: T): T {
       })
       .join('')
     return withoutControls
+      .replace(/[《》<>]/g, '')
       .replace(/[ \t]{2,}/g, ' ')
       .replace(/ +\n/g, '\n') as T
   }
@@ -697,7 +698,9 @@ export default function App() {
           }),
         ])
         if (response.ok) {
-          const translation = (await response.json()) as Record<string, string>
+          const translation = sanitizeGlyphs(
+            (await response.json()) as Record<string, string>,
+          )
           setDialogueTranslations((current) => ({ ...current, [code]: translation }))
         } else {
           setDialogueTranslations((current) => ({
@@ -706,7 +709,9 @@ export default function App() {
           }))
         }
         if (collectionResponse.ok) {
-          const collection = (await collectionResponse.json()) as VehicleCollectionLanguageTable
+          const collection = sanitizeGlyphs(
+            (await collectionResponse.json()) as VehicleCollectionLanguageTable,
+          )
           setVehicleCollectionI18n((current) => ({ ...current, [code]: collection }))
         } else {
           setVehicleCollectionI18n((current) => ({
@@ -720,7 +725,9 @@ export default function App() {
           }))
         }
         if (mirrorResponse.ok) {
-          const mirror = (await mirrorResponse.json()) as MirrorCatalog
+          const mirror = sanitizeGlyphs(
+            (await mirrorResponse.json()) as MirrorCatalog,
+          )
           setMirrorCatalogs((current) => ({ ...current, [code]: mirror }))
         }
       } catch (error) {

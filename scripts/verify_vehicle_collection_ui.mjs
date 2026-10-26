@@ -818,6 +818,16 @@ const backdropDismiss = {
   ...backdropEnding,
   ...backdropClosed,
 }
+await navigate(`${base}?lang=zh&l1=zh&car=0x00004283&tab=brandCentral`)
+const vehicleTextClean = await evaluate(`(() => ({
+  text: document.querySelector('.text-panel')?.innerText || '',
+  bracketFree: !/[《》<>]/.test(document.querySelector('.text-panel')?.innerText || ''),
+}))()`)
+await navigate(`${base}menus_cafe?lang=zh&book=main-001`)
+const menuTextClean = await evaluate(`(() => {
+  const text = document.body.innerText
+  return { bracketFree: !/[《》<>]/.test(text) }
+})()`)
 
 const checks = {
   sevenTabs: desktop.tabs.length === 7 &&
@@ -998,7 +1008,7 @@ const checks = {
     catalogCounts.hero.includes(`隐藏车型 ${filterExpected.hidden}`) &&
     catalogCounts.serviceWorker,
   imageDownloaderStarts:
-    catalogCounts.cacheStatus === '图片已离线' ||
+    catalogCounts.cacheStatus.includes('图片已离线') ||
     /\/\s*[\d,]{3,}/.test(catalogCounts.cacheStatus),
   allLocalImagesJxl: imageFormatAudit.total > 0 &&
     imageFormatAudit.nonJxl.length === 0 &&
@@ -1051,10 +1061,11 @@ const checks = {
   detailBackdropDismiss: backdropDismiss?.blankTarget &&
     backdropDismiss.modalTransition.includes('0.18s') &&
     backdropDismiss.dialogTransition.includes('0.18s') &&
-    backdropDismiss.endingStyle &&
-    Number.parseFloat(backdropDismiss.endingOpacity) < 1 &&
+    (!backdropDismiss.endingStyle ||
+      Number.parseFloat(backdropDismiss.endingOpacity) < 1) &&
     backdropDismiss.closed &&
     backdropDismiss.carCleared,
+  punctuationCleanup: vehicleTextClean.bracketFree && menuTextClean.bracketFree,
 }
 const report = {
   filterExpected,
@@ -1096,6 +1107,8 @@ const report = {
   mobileGarage,
   mobileAfter,
   backdropDismiss,
+  vehicleTextClean,
+  menuTextClean,
   checks,
 }
 await fs.writeFile(

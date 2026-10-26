@@ -36,6 +36,19 @@ function normalize(value = '') {
     .toLowerCase()
 }
 
+function sanitizeDisplayText(value) {
+  if (typeof value === 'string') {
+    return value.replace(/[《》<>]/g, '').replace(/\uFFFD+/g, '')
+  }
+  if (Array.isArray(value)) return value.map(sanitizeDisplayText)
+  if (value && typeof value === 'object') {
+    return Object.fromEntries(
+      Object.entries(value).map(([key, item]) => [key, sanitizeDisplayText(item)]),
+    )
+  }
+  return value
+}
+
 function readLang() {
   const value = new URLSearchParams(location.search).get('lang')
   if (['zh', 'en', 'both'].includes(value)) return value
@@ -616,8 +629,9 @@ export default function MenuBooksApp() {
         return response.json()
       })
       .then((payload) => {
-        setData(payload)
-        const requested = findRequestedRecord(payload.records)
+        const sanitized = sanitizeDisplayText(payload)
+        setData(sanitized)
+        const requested = findRequestedRecord(sanitized.records)
         if (requested) {
           setActiveId(requested.id)
           setLastViewedId(requested.id)
