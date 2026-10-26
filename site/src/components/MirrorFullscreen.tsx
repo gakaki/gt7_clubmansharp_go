@@ -243,7 +243,12 @@ export function MirrorFullscreen({
 
   return (
     <section className="mirror-slideshow" aria-label={text('GT7 全屏车图', 'GT7 fullscreen gallery')}>
-      <img className="mirror-slideshow-image" src={slide.src} alt={`${slide.car.brand} ${slide.car.model}`} />
+      <img
+        className="mirror-slideshow-image"
+        src={slide.src}
+        alt={`${slide.car.brand} ${slide.car.model}`}
+        onDoubleClick={close}
+      />
       <aside className="mirror-slideshow-info">
         <div ref={infoRef} style={{ transform: `translate3d(${offset.x}px, ${offset.y}px, 0)` }}>
           <header>

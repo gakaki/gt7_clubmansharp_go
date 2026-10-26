@@ -892,13 +892,35 @@ const checks = {
     const enXiaomi = english.brandHeadings.filter((name) =>
       /Xiaomi|小米/.test(name),
     )
+    const countFor = (headings, label) => {
+      const heading = headings.find((name) => name.startsWith(`${label} `))
+      const match = heading?.match(/(\d+)\s*$/)
+      return match ? Number(match[1]) : -1
+    }
     return zhXiaomi.length === 1 &&
       zhXiaomi[0].includes('小米') &&
       !zhXiaomi[0].includes('Xiaomi') &&
       enXiaomi.length === 1 &&
       enXiaomi[0].includes('Xiaomi') &&
       !enXiaomi[0].includes('小米') &&
-      catalogCounts.brandHeadings.filter((name) => /Afeela|AFEELA/.test(name)).length === 1
+      catalogCounts.brandHeadings.filter((name) => /Afeela|AFEELA/.test(name)).length === 1 &&
+      countFor(catalogCounts.brandHeadings, 'Abarth') === 3 &&
+      countFor(catalogCounts.brandHeadings, 'AMG') === 17 &&
+      countFor(catalogCounts.brandHeadings, '梅赛德斯奔驰') === 10 &&
+      countFor(catalogCounts.brandHeadings, '宝马') === 22 &&
+      countFor(catalogCounts.brandHeadings, '马自达') === 26 &&
+      countFor(catalogCounts.brandHeadings, '丰田') === 47 &&
+      countFor(catalogCounts.brandHeadings, '大众') === 13 &&
+      countFor(catalogCounts.brandHeadings, 'Chaparral') === 2 &&
+      countFor(english.brandHeadings, 'Abarth') === 3 &&
+      countFor(english.brandHeadings, 'AMG') === 17 &&
+      countFor(english.brandHeadings, 'Mercedes-Benz') === 10 &&
+      countFor(english.brandHeadings, 'BMW') === 22 &&
+      countFor(english.brandHeadings, 'Mazda') === 26 &&
+      countFor(english.brandHeadings, 'Toyota') === 47 &&
+      countFor(english.brandHeadings, 'Volkswagen') === 13 &&
+      !english.brandHeadings.some((name) => /^Mercedes-AMG \d+$/.test(name)) &&
+      countFor(english.brandHeadings, 'Chaparral') === 2
   })(),
   officialOnlyCars: officialOnlySearch.count === 1 &&
     officialOnlySearch.names.some((name) => name.includes('Xiaomi Vision Gran Turismo')) &&

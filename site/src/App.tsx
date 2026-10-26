@@ -201,15 +201,50 @@ function officialIdFor(car: Car) {
   return car.officialId || car.officialDetails?.officialId || null
 }
 
+function identityLabel(value: string | null | undefined) {
+  return String(value || '')
+    .normalize('NFKC')
+    .toLowerCase()
+    .replace(/[^\p{L}\p{N}]+/gu, '')
+}
+
 function manufacturerIdFor(car: Car, officialCatalog?: MirrorCatalog) {
+  const officialId = officialIdFor(car)
+  const officialMatch = officialId
+    ? officialCatalog?.cars.find((record) => record.id === officialId)
+    : undefined
+  if (officialMatch?.manufacturer_id) return officialMatch.manufacturer_id
+
   const localId =
     car.specs?.en?.manufacturerId ||
     car.specs?.zh?.manufacturerId ||
     car.specs?.manufacturerId
   if (localId) return String(localId)
-  const officialId = officialIdFor(car)
-  return officialCatalog?.cars.find((record) => record.id === officialId)
-    ?.manufacturer_id
+
+  const localNames = [car.brand, car.nameEn, car.nameZh]
+    .map(identityLabel)
+    .filter(Boolean)
+  if (!officialCatalog?.cars.length || !localNames.length) return undefined
+
+  const candidates = new Map<string, number>()
+  for (const record of officialCatalog.cars) {
+    if (!record.manufacturer_id) continue
+    const officialBrand = identityLabel(record.brand || '')
+    const officialName = identityLabel(record.name_long || record.model || '')
+    const matches = localNames.some(
+      (localName) =>
+        localName === officialBrand ||
+        (localName.length >= 3 && officialName.startsWith(localName)) ||
+        (officialBrand.length >= 2 && localName.startsWith(officialBrand)),
+    )
+    if (matches) {
+      candidates.set(
+        record.manufacturer_id,
+        (candidates.get(record.manufacturer_id) || 0) + 1,
+      )
+    }
+  }
+  return [...candidates.entries()].sort((left, right) => right[1] - left[1])[0]?.[0]
 }
 
 function carFromOfficialMirror(record: MirrorCar, code: string): Car {
@@ -551,8 +586,6 @@ export default function App() {
   const activeCar = cars.find((car) => car.id === activeCarId) || null
   const manufacturerId = (car: Car) =>
     manufacturerIdFor(car, primaryMirrorCatalog)
-  const brandKeyFor = (car: Car) =>
-    manufacturerId(car) || car.brand.trim().toLowerCase()
   const localizedBrandFor = (car: Car, code: string) => {
     const id = manufacturerId(car)
     if (id) {
@@ -575,6 +608,10 @@ export default function App() {
             primaryLang
         : primaryLang,
     )
+  const brandKeyFor = (car: Car) =>
+    identityLabel(displayBrand(car)) ||
+    manufacturerId(car) ||
+    car.id
   const detailCopy = useCallback(
     (zh: string, en: string) => {
       if (uiLang === 'zh') return zh
@@ -2069,14 +2106,6 @@ export default function App() {
                               4K · {officialSlideIndex + 1} / {officialImagePaths.length}
                             </div>
                           )}
-                          <button
-                            type="button"
-                            className="official-fullscreen-button"
-                            onClick={toggleOfficialFullscreen}
-                            aria-label={officialFullscreen ? '退出全屏' : '全屏播放'}
-                          >
-                            {officialFullscreen ? <Minimize2 size={18} /> : <Maximize2 size={18} />}
-                          </button>
                           {officialImagePaths.length > 1 && (
                             <>
                               <button

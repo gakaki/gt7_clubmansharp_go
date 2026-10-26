@@ -1885,3 +1885,125 @@ body {
   .mirror-slideshow-controls > div { display: none; }
   .mirror-key-hint { display: none; }
 }
+
+@media (min-width: 901px) {
+  .modal {
+    padding: 20px 24px;
+  }
+  .dialog {
+    width: min(1380px, calc(100vw - 48px));
+    max-height: calc(100vh - 40px);
+  }
+  .dialog header {
+    min-height: 72px;
+    padding: 16px 24px;
+    gap: 20px;
+  }
+  .headmain { gap: 20px; }
+  .modalcar {
+    width: 190px;
+    height: 100px;
+  }
+  .dialog-title {
+    font-size: 26px;
+  }
+  .dialog header p {
+    font-size: 15px;
+  }
+  .dialog header .note {
+    font-size: 13px;
+  }
+  .head-specs {
+    gap: 7px;
+    margin-top: 11px;
+  }
+  .head-specs small { font-size: 10px; }
+  .head-specs b { font-size: 13px; }
+  .car-tabs {
+    padding: 0 24px;
+  }
+  .car-tabs button {
+    min-height: 56px;
+    padding: 12px 18px;
+    font-size: 14px;
+  }
+  .official-panel,
+  .text-panel,
+  .dialogues,
+  .garage-specs-panel {
+    height: clamp(560px, 72dvh, 900px);
+    padding: 28px 30px 36px;
+  }
+  .official-layout {
+    grid-template-columns: minmax(0, 2fr) minmax(380px, .9fr);
+    gap: 24px;
+  }
+  .official-copy {
+    gap: 18px;
+    padding: 24px;
+  }
+  .official-copy h4 { font-size: 28px; }
+  .official-kicker { font-size: 11px; }
+  .official-hero {
+    margin-top: 10px;
+    font-size: 16px;
+    line-height: 1.65;
+  }
+  .official-description p {
+    font-size: 15px;
+    line-height: 1.78;
+  }
+  .official-description p.en {
+    font-size: 14px;
+  }
+  .gt7-website-intro > h4 { font-size: 16px; }
+  .gt7-website-intro h5 { font-size: 12px; }
+  .gt7-website-intro p {
+    font-size: 15px;
+    line-height: 1.85;
+  }
+  .official-inline-controls {
+    gap: 12px 18px;
+    padding: 14px 16px;
+  }
+  .official-inline-controls label {
+    min-width: 220px;
+    gap: 10px;
+    font-size: 12px;
+  }
+  .official-inline-controls b {
+    min-width: 42px;
+    font-size: 12px;
+  }
+  .official-inline-controls .official-play-toggle,
+  .official-inline-fullscreen {
+    min-height: 40px;
+    padding: 9px 14px;
+    font-size: 13px;
+  }
+  .text-copy p {
+    font-size: 17px;
+    line-height: 1.82;
+  }
+  .text-copy.en-copy p {
+    font-size: 16px;
+    line-height: 1.78;
+  }
+  .specs-grid {
+    gap: 12px;
+  }
+  .spec-card {
+    min-height: 112px;
+    gap: 10px;
+    padding: 15px 16px;
+  }
+  .spec-card > small { font-size: 11px; }
+  .spec-value b { font-size: 17px; }
+  .spec-value.en b { font-size: 14px; }
+  .spec-locale { font-size: 9px; }
+  .spec-note { font-size: 13px; }
+  .keyhint {
+    padding: 13px 24px 18px;
+    font-size: 12px;
+  }
+}
