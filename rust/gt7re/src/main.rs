@@ -8,6 +8,7 @@ use gt7re::gpb;
 use gt7re::gpb4;
 use gt7re::idp0;
 use gt7re::jxl;
+use gt7re::logos;
 use gt7re::map4;
 use gt7re::mdl5;
 use gt7re::menu;
@@ -186,6 +187,21 @@ enum Cmd {
         threads: usize,
         #[arg(long)]
         refresh: bool,
+    },
+    /// Download, convert and rewrite every brand/tuner logo as lossless JPEG XL
+    LogosJxl {
+        #[arg(long, default_value = "https://gt7-carlist.gakaki.com")]
+        base: String,
+        #[arg(long, default_value = r"C:\gt7\gt7\_re\site\public")]
+        site: PathBuf,
+        #[arg(long)]
+        proxy: Option<String>,
+        #[arg(long, default_value_t = 16)]
+        threads: usize,
+        #[arg(long)]
+        refresh: bool,
+        #[arg(long)]
+        keep_png: bool,
     },
     /// Split a census CSV into per-type catalog lists
     Catalog {
@@ -1141,6 +1157,24 @@ fn run() -> Result<()> {
                 proxy.as_deref(),
                 refresh,
                 threads,
+            )?;
+            println!("{}", serde_json::to_string_pretty(&report)?);
+        }
+        Cmd::LogosJxl {
+            base,
+            site,
+            proxy,
+            threads,
+            refresh,
+            keep_png,
+        } => {
+            let report = logos::convert(
+                &site,
+                &base,
+                proxy.as_deref(),
+                threads,
+                refresh,
+                keep_png,
             )?;
             println!("{}", serde_json::to_string_pretty(&report)?);
         }

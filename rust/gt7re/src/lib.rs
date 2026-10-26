@@ -16,6 +16,7 @@ pub mod gpb;
 pub mod gpb4;
 pub mod idp0;
 pub mod jxl;
+pub mod logos;
 pub mod map4;
 pub mod mdl5;
 pub mod menu;
