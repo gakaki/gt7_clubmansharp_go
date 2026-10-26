@@ -10,7 +10,7 @@
   --accent: #d6001c;
   --ok: #0a7d4b;
   --radius: 10px;
-  --ui-font-scale: 1.2;
+  --ui-font-scale: 1.4;
 }
 
 * { box-sizing: border-box; }
@@ -20,7 +20,7 @@ html { font-size: calc(16px * var(--ui-font-scale)); }
 body { overflow-x: hidden; }
 
 @media (max-width: 900px) {
-  :root { --ui-font-scale: 1.15; }
+  :root { --ui-font-scale: 1.3; }
 }
 
 .boot-screen {
