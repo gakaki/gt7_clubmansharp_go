@@ -175,6 +175,15 @@ function isChineseLocale(code: string) {
   return ['zh', 'cn', 'tw'].includes(code)
 }
 
+function sameIntroText(left?: string, right?: string) {
+  const normalize = (value?: string) =>
+    String(value || '')
+      .normalize('NFKC')
+      .replace(/\s+/g, '')
+      .trim()
+  return Boolean(left && right && normalize(left) === normalize(right))
+}
+
 const mirrorSpecKeys: Record<string, string> = {
   displacement: 'displacement',
   排气量: 'displacement',
@@ -980,6 +989,26 @@ export default function App() {
   }
   const officialImages = activeCar?.officialDetails?.images || []
   const officialMirrorCopies = activeCar ? mirrorCopiesFor(activeCar) : []
+  const visibleOfficialMirrorCopies = officialMirrorCopies.map((copy) => {
+    if (!copy.record || !activeCar?.officialDetails) return { ...copy, hero: '', description: '' }
+    const chinese = isChineseLocale(copy.code)
+    const officialHero = chinese
+      ? activeCar.officialDetails.heroZh
+      : activeCar.officialDetails.heroEn
+    const officialDescription = chinese
+      ? activeCar.officialDetails.descriptionZh
+      : activeCar.officialDetails.descriptionEn
+    return {
+      ...copy,
+      hero: sameIntroText(copy.record.hero, officialHero) ? '' : copy.record.hero,
+      description: sameIntroText(copy.record.description, officialDescription)
+        ? ''
+        : copy.record.description,
+    }
+  })
+  const hasDistinctMirrorIntro = visibleOfficialMirrorCopies.some(
+    (copy) => copy.hero || copy.description,
+  )
   const mirrorImagePaths = officialMirrorCopies.flatMap(
     (copy) => copy.record?.images || [],
   )
@@ -2269,21 +2298,19 @@ export default function App() {
                               <p className="en">{activeCar.officialDetails.descriptionEn}</p>
                             )}
                           </div>
-                          {officialMirrorCopies.some(
-                            (copy) => copy.record?.hero || copy.record?.description,
-                          ) && (
+                          {hasDistinctMirrorIntro && (
                             <section className="gt7-website-intro">
                               <h4>{detailCopy('GT7网站介绍', 'GT7 website introduction')}</h4>
-                              {officialMirrorCopies.map(
+                              {visibleOfficialMirrorCopies.map(
                                 (copy) =>
-                                  copy.record && (
+                                  (copy.hero || copy.description) && (
                                     <article key={`mirror-${copy.code}`}>
                                       {bilingual && <h5>{copy.label}</h5>}
-                                      {copy.record.hero && (
-                                        <p className="official-hero">{copy.record.hero}</p>
+                                      {copy.hero && (
+                                        <p className="official-hero">{copy.hero}</p>
                                       )}
-                                      {copy.record.description && (
-                                        <p>{copy.record.description}</p>
+                                      {copy.description && (
+                                        <p>{copy.description}</p>
                                       )}
                                     </article>
                                   ),

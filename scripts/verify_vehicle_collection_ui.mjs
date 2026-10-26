@@ -770,7 +770,7 @@ const checks = {
     officialDesktop.image.width === 3840 &&
     officialDesktop.image.height === 2160 &&
     officialDesktop.intro.includes('官方车表介绍') &&
-    officialDesktop.intro.includes('GT7网站介绍') &&
+    !officialDesktop.intro.includes('GT7网站介绍') &&
     officialDesktop.intro.includes('1989年3月') &&
     officialDesktop.intro.includes('The 180SX arrived in March 1989') &&
     !officialDesktop.intro.includes('jpg'),
