@@ -253,6 +253,8 @@ const catalogCounts = await evaluate(`(() => ({
   summary: document.querySelector('.summary')?.innerText || '',
   cacheStatus: document.querySelector('.image-cache-status')?.textContent?.trim() || '',
   serviceWorker: Boolean(navigator.serviceWorker?.controller),
+  brandHeadings: [...document.querySelectorAll('.brandgroup h2')]
+    .map((node) => node.textContent.replace(/\\s+/g, ' ').trim()),
 }))()`)
 const filterObserved = {}
 for (const [index, id] of ['all', 'brandCentral', 'usedCar', 'vehicleCollection', 'cafe', 'hidden'].entries()) {
@@ -545,6 +547,8 @@ await navigate(`${base}?lang=en&l1=us&l2=zh&car=0x0000D1BB&tab=vehicleCollection
 const english = await evaluate(`(() => ({
   title: document.querySelector('.dialog-title')?.textContent?.trim() || '',
   panel: document.querySelector('.text-panel')?.innerText || '',
+  brandHeadings: [...document.querySelectorAll('.brandgroup h2')]
+    .map((node) => node.textContent.replace(/\\s+/g, ' ').trim()),
 }))()`)
 
 await navigate(`${base}?lang=en&l1=us&l2=zh&car=0x0000D1BB&tab=garageSpecs`)
@@ -881,6 +885,21 @@ const checks = {
     catalogCounts.hero.includes(`官方车表 ${filterExpected.officialPage}`) &&
     catalogCounts.hero.includes(`隐藏车型 ${filterExpected.hidden}`) &&
     catalogCounts.serviceWorker,
+  localizedBrandIdentity: (() => {
+    const zhXiaomi = catalogCounts.brandHeadings.filter((name) =>
+      /Xiaomi|小米/.test(name),
+    )
+    const enXiaomi = english.brandHeadings.filter((name) =>
+      /Xiaomi|小米/.test(name),
+    )
+    return zhXiaomi.length === 1 &&
+      zhXiaomi[0].includes('小米') &&
+      !zhXiaomi[0].includes('Xiaomi') &&
+      enXiaomi.length === 1 &&
+      enXiaomi[0].includes('Xiaomi') &&
+      !enXiaomi[0].includes('小米') &&
+      catalogCounts.brandHeadings.filter((name) => /Afeela|AFEELA/.test(name)).length === 1
+  })(),
   officialOnlyCars: officialOnlySearch.count === 1 &&
     officialOnlySearch.names.some((name) => name.includes('Xiaomi Vision Gran Turismo')) &&
     officialOnlySearch.ids.includes('official:car3656'),

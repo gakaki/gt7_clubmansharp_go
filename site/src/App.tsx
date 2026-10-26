@@ -201,9 +201,21 @@ function officialIdFor(car: Car) {
   return car.officialId || car.officialDetails?.officialId || null
 }
 
+function manufacturerIdFor(car: Car, officialCatalog?: MirrorCatalog) {
+  const localId =
+    car.specs?.en?.manufacturerId ||
+    car.specs?.zh?.manufacturerId ||
+    car.specs?.manufacturerId
+  if (localId) return String(localId)
+  const officialId = officialIdFor(car)
+  return officialCatalog?.cars.find((record) => record.id === officialId)
+    ?.manufacturer_id
+}
+
 function carFromOfficialMirror(record: MirrorCar, code: string): Car {
   const specValues: Record<string, string | number> = {
     id: record.id,
+    manufacturerId: record.manufacturer_id || '',
     carClass: record.car_class,
     performancePoint: record.performance_point,
     power: record.power,
@@ -511,6 +523,17 @@ export default function App() {
   const primaryMirrorCatalog =
     mirrorCatalogs[primaryLang] ||
     mirrorCatalogs[primaryLang === 'zh' ? 'cn' : primaryLang]
+  const brandNamesByManufacturer = useMemo(() => {
+    const names: Record<string, Record<string, string>> = {}
+    for (const [code, catalog] of Object.entries(mirrorCatalogs)) {
+      for (const record of catalog?.cars || []) {
+        if (!record.manufacturer_id || !record.brand) continue
+        names[record.manufacturer_id] ||= {}
+        names[record.manufacturer_id][code] = record.brand
+      }
+    }
+    return names
+  }, [mirrorCatalogs])
   const mergedCatalog = useMemo(
     () => mergeOfficialCars(sourceCars, primaryMirrorCatalog, primaryLang),
     [primaryLang, primaryMirrorCatalog, sourceCars],
@@ -521,12 +544,37 @@ export default function App() {
     [cars],
   )
   const officialPageCount = primaryMirrorCatalog?.car_count || 580
-  const activeCar = cars.find((car) => car.id === activeCarId) || null
   const activeLocales = bilingual ? [primaryLang, secondaryLang] : [primaryLang]
   const showZhContent = activeLocales.some(isChineseLocale)
   const showEnContent = activeLocales.some((code) => !isChineseLocale(code))
   const uiLang = showZhContent ? (bilingual ? 'both' : 'zh') : 'en'
-
+  const activeCar = cars.find((car) => car.id === activeCarId) || null
+  const manufacturerId = (car: Car) =>
+    manufacturerIdFor(car, primaryMirrorCatalog)
+  const brandKeyFor = (car: Car) =>
+    manufacturerId(car) || car.brand.trim().toLowerCase()
+  const localizedBrandFor = (car: Car, code: string) => {
+    const id = manufacturerId(car)
+    if (id) {
+      const names = brandNamesByManufacturer[id]
+      if (names?.[code]) return names[code]
+      if (isChineseLocale(code)) {
+        const chineseName = names?.zh || names?.cn || names?.tw
+        if (chineseName) return chineseName
+      }
+      const first = names ? Object.values(names)[0] : ''
+      if (first) return first
+    }
+    return car.brand
+  }
+  const displayBrand = (car: Car) =>
+    localizedBrandFor(
+      car,
+      showZhContent
+        ? ['zh', 'cn', 'tw'].find((code) => activeLocales.includes(code as LocaleCode)) ||
+            primaryLang
+        : primaryLang,
+    )
   const detailCopy = useCallback(
     (zh: string, en: string) => {
       if (uiLang === 'zh') return zh
@@ -733,25 +781,35 @@ export default function App() {
   }
 
   const brands = useMemo(() => {
-    const counts = new Map<string, number>()
-    for (const car of cars) counts.set(car.brand, (counts.get(car.brand) || 0) + 1)
-    return [...counts.entries()]
-      .sort(([a], [b]) => a.localeCompare(b, 'en'))
-      .map(([name, count]) => ({ name, count }))
-  }, [cars])
+    const counts = new Map<string, { key: string; name: string; count: number }>()
+    for (const car of cars) {
+      const key = brandKeyFor(car)
+      const current = counts.get(key) || {
+        key,
+        name: displayBrand(car),
+        count: 0,
+      }
+      current.count += 1
+      counts.set(key, current)
+    }
+    return [...counts.values()].sort((a, b) =>
+      a.name.localeCompare(b.name, 'en'),
+    )
+  }, [bilingual, cars, mirrorCatalogs, primaryLang, secondaryLang])
 
   const brandLogos = useMemo(() => {
     const logos: Record<string, string> = {}
     for (const car of cars) {
-      if (car.brandLogo && !logos[car.brand]) logos[car.brand] = car.brandLogo
+      const key = brandKeyFor(car)
+      if (car.brandLogo && !logos[key]) logos[key] = car.brandLogo
     }
     return logos
-  }, [cars])
+  }, [bilingual, cars, mirrorCatalogs, primaryLang, secondaryLang])
 
   const filtered = useMemo(() => {
     const needle = query.trim().toLowerCase()
     return cars.filter((car) => {
-      if (brandFilter !== 'ALL' && car.brand !== brandFilter) return false
+      if (brandFilter !== 'ALL' && brandKeyFor(car) !== brandFilter) return false
       const conversation = visibleConversation(car)
       if (sourceFilter === 'cafe' && !conversation.length) return false
       if (sourceFilter === 'hidden' && officialIdFor(car)) return false
@@ -765,7 +823,7 @@ export default function App() {
       }
       if (speakerFilter !== 'ALL' && !conversation.length) return false
       if (!needle) return true
-      if (`${car.nameEn} ${car.nameZh} ${car.brand}`.toLowerCase().includes(needle)) {
+      if (`${car.nameEn} ${car.nameZh} ${car.brand} ${displayBrand(car)}`.toLowerCase().includes(needle)) {
         return true
       }
       if (
@@ -783,7 +841,17 @@ export default function App() {
           .includes(needle),
       )
     })
-  }, [brandFilter, cars, query, sourceFilter, speakerFilter])
+  }, [
+    bilingual,
+    brandFilter,
+    cars,
+    mirrorCatalogs,
+    primaryLang,
+    query,
+    secondaryLang,
+    sourceFilter,
+    speakerFilter,
+  ])
 
   const grouped = useMemo(() => {
     const groups = new Map<string, { key: string; label: string; cars: Car[] }>()
@@ -792,8 +860,8 @@ export default function App() {
       let key = ''
       let label = ''
       if (groupMode === 'brand') {
-        key = car.brand
-        label = car.brand
+        key = brandKeyFor(car)
+        label = displayBrand(car)
       } else if (groupMode === 'country') {
         key = car.garageDetails?.country?.code || 'other'
         label =
@@ -900,7 +968,7 @@ export default function App() {
             : ''
         return {
           id: car.id,
-          brand: record?.brand || car.brand,
+          brand: record?.brand || displayBrand(car),
           model: record?.model || displayName(car),
           logo,
           images,
@@ -1614,7 +1682,7 @@ export default function App() {
                     ) : (
                       <div className="thumb-placeholder" aria-hidden="true">
                         <span>GT7</span>
-                        <b>{car.brand}</b>
+                        <b>{displayBrand(car)}</b>
                       </div>
                     )}
                   </div>
@@ -1688,7 +1756,7 @@ export default function App() {
           className="mobile-car-current"
           onClick={() => (activeCar ? closeCar() : navCar && openCar(navCar))}
         >
-          <small>{navCar?.brand || detailCopy('选择车辆', 'Select car')}</small>
+          <small>{navCar ? displayBrand(navCar) : detailCopy('选择车辆', 'Select car')}</small>
           <b>
             {navCar
               ? displayName(navCar)
@@ -1869,8 +1937,8 @@ export default function App() {
                       </Dialog.Title>
                       <p>
                         {showZhContent
-                          ? `${activeCar.nameEn} · ${activeCar.brand}`
-                          : activeCar.brand}
+                          ? `${activeCar.nameEn} · ${displayBrand(activeCar)}`
+                          : displayBrand(activeCar)}
                       </p>
                       {activeCar.specs && (
                         <div className="head-specs" aria-label="车辆核心规格">
@@ -2031,7 +2099,7 @@ export default function App() {
                           )}
                           <div className="official-caption" style={officialCaptionStyle}>
                             <span>
-                              {activeCar.brand} · {activeCar.officialDetails.officialId}
+                              {displayBrand(activeCar)} · {activeCar.officialDetails.officialId}
                             </span>
                             <h3>{displayName(activeCar)}</h3>
                             {showZhContent && <p>{activeCar.officialDetails.heroZh}</p>}
