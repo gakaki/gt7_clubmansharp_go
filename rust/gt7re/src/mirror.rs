@@ -11,8 +11,8 @@ use std::sync::atomic::{AtomicUsize, Ordering};
 use std::time::Duration;
 
 pub const LOCALES: &[&str] = &[
-    "us", "gb", "de", "fr", "it", "nl", "es", "ms", "pt", "bp", "pl", "ru", "cz", "tr",
-    "el", "ar", "cn", "tw", "jp", "kr", "th",
+    "us", "gb", "de", "fr", "it", "nl", "es", "ms", "pt", "bp", "pl", "ru", "cz", "tr", "el", "ar",
+    "cn", "tw", "jp", "kr", "th",
 ];
 
 fn agent(proxy: Option<&str>) -> Result<ureq::Agent> {
@@ -100,13 +100,19 @@ pub fn sync(
     for locale in LOCALES {
         let url = format!("{base}/common/dist/gt7/carlist/data/cars.{locale}.json");
         match fetch(&agent, &url).and_then(|bytes| {
-            let value: Value = serde_json::from_slice(&bytes)?;
+            let mut value: Value = serde_json::from_slice(&bytes)?;
+            crate::web_images::normalize_mirror_catalog(site, &mut value)?;
             add_referenced_assets(&value, &mut assets);
-            atomic_write(&data_dir.join(format!("cars.{locale}.json")), &bytes)?;
+            atomic_write(
+                &data_dir.join(format!("cars.{locale}.json")),
+                &serde_json::to_vec_pretty(&value)?,
+            )?;
             Ok(value)
         }) {
             Ok(_) => {}
-            Err(error) => catalog_errors.push(json!({"locale": locale, "error": error.to_string()})),
+            Err(error) => {
+                catalog_errors.push(json!({"locale": locale, "error": error.to_string()}))
+            }
         }
     }
 

@@ -1,6 +1,6 @@
 import type { CarsPayload, MirrorCatalog } from './types'
 
-export const IMAGE_CACHE_NAME = 'gt7-catalog-images-v1'
+export const IMAGE_CACHE_NAME = 'gt7-catalog-images-v2'
 export const IMAGE_MANIFEST_URL = '/data/image-manifest.json'
 
 export type ImageAsset = {

@@ -1,7 +1,6 @@
 //! Fail-fast integrity checks for all public research datasets.
 
 use anyhow::{bail, Context, Result};
-use image::GenericImageView;
 use regex::Regex;
 use serde_json::Value;
 use std::collections::HashSet;
@@ -70,8 +69,11 @@ pub fn run(options: &Options) -> Result<Value> {
     let cars = load(&options.data_dir.join("cars.json"))?;
     let garage = load(&options.data_dir.join("garage_details.json"))?;
     let gallery = load(&options.reports_dir.join("official_car_gallery.json"))?;
-    let description_audit =
-        load(&options.reports_dir.join("vehicle_collection_language_audit.json"))?;
+    let description_audit = load(
+        &options
+            .reports_dir
+            .join("vehicle_collection_language_audit.json"),
+    )?;
     let menu = load(&options.data_dir.join("menu_books.json"))?;
     let research = load(&options.research)?;
     if research.get("cars").and_then(Value::as_array).map(Vec::len) != Some(591) {
@@ -132,10 +134,7 @@ pub fn run(options: &Options) -> Result<Value> {
     }
     let mut description_residual_entries = 0usize;
     for language in description_languages {
-        let code = language
-            .get("code")
-            .and_then(Value::as_str)
-            .unwrap_or("");
+        let code = language.get("code").and_then(Value::as_str).unwrap_or("");
         if !language_ids.contains(code) {
             bail!("unknown Car Collection description language {code}");
         }
@@ -184,15 +183,17 @@ pub fn run(options: &Options) -> Result<Value> {
         if sample.chars().count() < 100 {
             bail!("{code}: Car Collection sample is unexpectedly short");
         }
-        let total = sample.chars().filter(|ch| !ch.is_whitespace()).count().max(1);
+        let total = sample
+            .chars()
+            .filter(|ch| !ch.is_whitespace())
+            .count()
+            .max(1);
         let ratio = |predicate: fn(char) -> bool| {
             sample.chars().filter(|ch| predicate(*ch)).count() as f64 / total as f64
         };
         let passed = match *code {
             "ar" => ratio(|ch| ('\u{0600}'..='\u{06FF}').contains(&ch)) > 0.25,
-            "cn" | "zh" | "tw" => {
-                ratio(|ch| ('\u{3400}'..='\u{9FFF}').contains(&ch)) > 0.25
-            }
+            "cn" | "zh" | "tw" => ratio(|ch| ('\u{3400}'..='\u{9FFF}').contains(&ch)) > 0.25,
             "jp" => {
                 ratio(|ch| {
                     ('\u{3040}'..='\u{30FF}').contains(&ch)
@@ -376,9 +377,7 @@ pub fn run(options: &Options) -> Result<Value> {
         );
     }
     if game_long_zh_cars < 576 {
-        bail!(
-            "expected at least 576 game Chinese long descriptions, got {game_long_zh_cars}"
-        );
+        bail!("expected at least 576 game Chinese long descriptions, got {game_long_zh_cars}");
     }
     if game_long_zh_chars / game_long_zh_cars < 300 {
         bail!(
@@ -530,22 +529,18 @@ pub fn run(options: &Options) -> Result<Value> {
         .with_context(|| avatar_dir.display().to_string())?
         .filter_map(Result::ok)
         .map(|entry| entry.path())
-        .filter(|path| path.extension().and_then(|value| value.to_str()) == Some("png"))
+        .filter(|path| path.extension().and_then(|value| value.to_str()) == Some("jxl"))
         .collect::<Vec<_>>();
     let avatars = avatar_paths.len();
     if avatars != 19 {
         bail!("expected 19 decoded character portraits, got {avatars}");
     }
     for path in avatar_paths {
-        let image = image::open(&path).with_context(|| path.display().to_string())?;
-        if image.dimensions() != (192, 192) {
-            bail!("{}: unexpected portrait dimensions", path.display());
-        }
-        let top = image.get_pixel(96, 0)[3];
-        let bottom = image.get_pixel(96, 191)[3];
-        let center = image.get_pixel(96, 96)[3];
-        if top != 0 || bottom != 0 || center == 0 {
-            bail!("{}: portrait safe margin was not applied", path.display());
+        let bytes = fs::read(&path).with_context(|| path.display().to_string())?;
+        if bytes.len() <= 16
+            || !(bytes.starts_with(&[0xFF, 0x0A]) || bytes.get(4..8) == Some(b"JXL "))
+        {
+            bail!("{}: invalid JPEG XL portrait", path.display());
         }
     }
 

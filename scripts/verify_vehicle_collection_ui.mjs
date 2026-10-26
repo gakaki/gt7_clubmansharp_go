@@ -248,6 +248,55 @@ const garagePayload = await evaluate(`(async () => {
     peugeotCountry: peugeot?.garage?.country?.code || '',
   }
 })()`)
+const imageFormatAudit = await evaluate(`(async () => {
+  const [cars, menu, mirror] = await Promise.all([
+    fetch('/data/cars.json').then((response) => response.json()),
+    fetch('/data/menu_books.json').then((response) => response.json()),
+    fetch('/data/mirror/cars.cn.json').then((response) => response.json()),
+  ])
+  const localPaths = []
+  const collect = (path) => {
+    if (typeof path === 'string' && path && !/^https?:/i.test(path)) localPaths.push(path)
+  }
+  for (const car of cars.cars || []) {
+    collect(car.image)
+    for (const turn of [...(car.dialogue || []), ...(car.conversation || [])]) {
+      collect(turn.avatar)
+    }
+  }
+  for (const person of cars.cast || []) collect(person.avatar)
+  for (const record of menu.records || []) {
+    collect(record.cover)
+    for (const car of record.cars || []) collect(car.image)
+  }
+  for (const car of mirror.cars || []) {
+    collect(car.thumbnail)
+    collect(car.country_flag)
+    for (const image of car.images || []) collect(image)
+  }
+  const load = (path) => new Promise((resolve) => {
+    const image = new Image()
+    image.onload = () => resolve({ path, width: image.naturalWidth, height: image.naturalHeight })
+    image.onerror = () => resolve({ path, width: 0, height: 0 })
+    image.src = path
+  })
+  const sample = await Promise.all([
+    load(cars.cars.find((car) => car.image)?.image),
+    load(cars.cast?.find((person) => person.avatar)?.avatar),
+    load(menu.records.find((record) => record.cover)?.cover),
+  ])
+  return {
+    total: localPaths.length,
+    nonJxl: localPaths.filter((path) => !path.endsWith('.jxl')),
+    mirrorFormat: mirror.image_format,
+    mirrorNonJxl: (mirror.cars || []).flatMap((car) => [
+      car.thumbnail,
+      car.country_flag,
+      ...(car.images || []),
+    ]).filter((path) => path && !path.endsWith('.jxl')),
+    sample,
+  }
+})()`)
 const catalogCounts = await evaluate(`(() => ({
   hero: document.querySelector('.catalog-hero p')?.innerText || '',
   summary: document.querySelector('.summary')?.innerText || '',
@@ -717,7 +766,7 @@ const checks = {
     officialDesktop.thumbnails === 0 &&
     officialDesktop.inlineControls &&
     officialDesktop.visualWidth > officialDesktop.copyWidth &&
-    officialDesktop.image?.src?.endsWith('.avif') &&
+    officialDesktop.image?.src?.endsWith('.jxl') &&
     officialDesktop.image.width === 3840 &&
     officialDesktop.image.height === 2160 &&
     officialDesktop.intro.includes('官方车表介绍') &&
@@ -726,7 +775,7 @@ const checks = {
     officialDesktop.intro.includes('The 180SX arrived in March 1989') &&
     !officialDesktop.intro.includes('jpg'),
   officialFullscreen: officialFullscreen.active &&
-    officialFullscreen.imageSrc.endsWith('.avif') &&
+    officialFullscreen.imageSrc.endsWith('.jxl') &&
     officialFullscreen.imageWidth === 3840 &&
     officialFullscreen.imageHeight === 2160 &&
     officialFullscreen.title.includes('180SX') &&
@@ -760,7 +809,7 @@ const checks = {
     slideshowLauncher.label.includes('全屏幻灯片') &&
     catalogSlideshowFirst.active &&
     catalogSlideshowFirst.title.length > 0 &&
-    catalogSlideshowFirst.image.endsWith('.avif') &&
+    catalogSlideshowFirst.image.endsWith('.jxl') &&
     catalogSlideshowAdvanced.counter !== catalogSlideshowFirst.counter &&
     catalogSlideshowResumed.title === catalogSlideshowAdvanced.title &&
     catalogSlideshowResumed.counter === catalogSlideshowAdvanced.counter,
@@ -885,6 +934,11 @@ const checks = {
     catalogCounts.hero.includes(`官方车表 ${filterExpected.officialPage}`) &&
     catalogCounts.hero.includes(`隐藏车型 ${filterExpected.hidden}`) &&
     catalogCounts.serviceWorker,
+  allLocalImagesJxl: imageFormatAudit.total > 0 &&
+    imageFormatAudit.nonJxl.length === 0 &&
+    imageFormatAudit.mirrorFormat === 'jxl' &&
+    imageFormatAudit.mirrorNonJxl.length === 0 &&
+    imageFormatAudit.sample.every((image) => image.width > 0 && image.height > 0),
   localizedBrandIdentity: (() => {
     const zhXiaomi = catalogCounts.brandHeadings.filter((name) =>
       /Xiaomi|小米/.test(name),
@@ -932,6 +986,7 @@ const checks = {
 const report = {
   filterExpected,
   garagePayload,
+  imageFormatAudit,
   filterObserved,
   filterLabels,
   catalogCounts,

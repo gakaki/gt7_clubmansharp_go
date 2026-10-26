@@ -88,11 +88,7 @@ fn normalize_reference(key: &str, value: &str) -> Option<String> {
     }
 }
 
-fn collect_logo_references(
-    value: &Value,
-    key: &str,
-    references: &mut BTreeMap<String, String>,
-) {
+fn collect_logo_references(value: &Value, key: &str, references: &mut BTreeMap<String, String>) {
     match value {
         Value::Object(map) => {
             for (child_key, child) in map {
@@ -182,20 +178,15 @@ fn convert_one(site: &Path, relative: &str, refresh: bool) -> Result<Option<(u64
     }
     let before = fs::metadata(&source)?.len();
     let bytes = fs::read(&source)?;
-    let image = image::load_from_memory(&bytes)
-        .with_context(|| format!("decode {}", source.display()))?;
+    let image =
+        image::load_from_memory(&bytes).with_context(|| format!("decode {}", source.display()))?;
     let (width, height) = image.dimensions();
     if width == 0 || height == 0 {
         bail!("empty logo image: {}", source.display());
     }
     let rgba = image.to_rgba8();
     let encoded = LosslessConfig::new()
-        .encode(
-            rgba.as_raw(),
-            width,
-            height,
-            PixelLayout::Rgba8,
-        )
+        .encode(rgba.as_raw(), width, height, PixelLayout::Rgba8)
         .map_err(|error| anyhow!("JPEG XL encode failed for {}: {error}", source.display()))?;
     if encoded.is_empty() {
         bail!("empty JPEG XL output: {}", output.display());
@@ -205,30 +196,22 @@ fn convert_one(site: &Path, relative: &str, refresh: bool) -> Result<Option<(u64
     Ok(Some((before, after)))
 }
 
-fn rewrite_json_files(
-    files: &[PathBuf],
-    replacements: &BTreeMap<String, String>,
-) -> Result<usize> {
+fn rewrite_json_files(files: &[PathBuf], replacements: &BTreeMap<String, String>) -> Result<usize> {
     let mut changed = 0usize;
     for path in files {
-        let source = fs::read_to_string(path)
-            .with_context(|| format!("read {}", path.display()))?;
+        let source =
+            fs::read_to_string(path).with_context(|| format!("read {}", path.display()))?;
         let mut rewritten = source.clone();
         for (before, after) in replacements {
             rewritten = rewritten.replace(&format!("\"{before}\""), &format!("\"{after}\""));
             if before.contains('/') {
-                rewritten = rewritten.replace(
-                    &format!("\"/{before}\""),
-                    &format!("\"/{after}\""),
-                );
+                rewritten = rewritten.replace(&format!("\"/{before}\""), &format!("\"/{after}\""));
             }
             if before.starts_with("logos/") {
                 let filename = before.trim_start_matches("logos/");
                 let next_name = after.trim_start_matches("logos/");
-                rewritten = rewritten.replace(
-                    &format!("\"{filename}\""),
-                    &format!("\"{next_name}\""),
-                );
+                rewritten =
+                    rewritten.replace(&format!("\"{filename}\""), &format!("\"{next_name}\""));
             }
         }
         if rewritten != source {
@@ -258,7 +241,10 @@ pub fn convert(
     }
     add_existing_logo_files(site, &mut references);
     if references.is_empty() {
-        bail!("no logo references or logo files found under {}", site.display());
+        bail!(
+            "no logo references or logo files found under {}",
+            site.display()
+        );
     }
 
     let agent = Arc::new(agent(proxy)?);
@@ -313,7 +299,10 @@ pub fn convert(
             })
             .collect::<Vec<_>>()
     });
-    let converted = conversions.iter().filter(|result| matches!(result, Ok(Some(_)))).count();
+    let converted = conversions
+        .iter()
+        .filter(|result| matches!(result, Ok(Some(_))))
+        .count();
     let converted_bytes: (u64, u64) = conversions
         .iter()
         .filter_map(|result| result.as_ref().ok().and_then(|value| *value))
@@ -351,7 +340,10 @@ pub fn convert(
         }
     }
     if !missing_outputs.is_empty() {
-        bail!("missing JPEG XL logo outputs: {}", missing_outputs.join(", "));
+        bail!(
+            "missing JPEG XL logo outputs: {}",
+            missing_outputs.join(", ")
+        );
     }
     let changed_json_files = rewrite_json_files(&json_files, &replacements)?;
 
@@ -360,8 +352,7 @@ pub fn convert(
         for relative in references.keys() {
             let source = site_path(site, &png_reference(relative));
             if source.is_file() {
-                fs::remove_file(&source)
-                    .with_context(|| format!("remove {}", source.display()))?;
+                fs::remove_file(&source).with_context(|| format!("remove {}", source.display()))?;
                 removed_png += 1;
             }
         }

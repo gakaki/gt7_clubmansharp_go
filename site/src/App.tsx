@@ -32,7 +32,7 @@ import type {
 } from '@/types'
 
 const base = import.meta.env.BASE_URL
-const avatarVersion = '20261024-portrait-circle-safe'
+const avatarVersion = '20261026-jpeg-xl'
 
 function assetUrl(path: string) {
   return path.startsWith('/') ? path : `${base}${path}`
@@ -1027,7 +1027,7 @@ export default function App() {
   const officialCaptionStyle: CSSProperties = {
     left: `${officialTextX}%`,
     top: `${officialTextY}%`,
-    fontSize: `${officialTextSize}px`,
+    fontSize: `calc(${officialTextSize}px * var(--ui-font-scale))`,
   }
 
   function tabHasContent(car: Car | null | undefined, tabId: TabId) {
@@ -1601,7 +1601,7 @@ export default function App() {
           </small>
         </button>
         <img
-          src="/common/dist/gt7/carlist/assets/logo_gt7-BQSHSLc9.png"
+          src="/common/dist/gt7/carlist/assets/logo_gt7-BQSHSLc9.jxl"
           alt="Gran Turismo 7 The Real Driving Simulator"
         />
         <p>

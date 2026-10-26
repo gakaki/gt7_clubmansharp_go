@@ -124,7 +124,10 @@ fn decode_candidate(root: &Path, code: &str, source: &str) -> Result<Candidate> 
     let mut entry_replacements = HashMap::new();
     let mut entry_controls = HashMap::new();
     for entry in decoded {
-        if !matches!(entry.section.as_str(), "DescriptionCatch" | "DescriptionLong") {
+        if !matches!(
+            entry.section.as_str(),
+            "DescriptionCatch" | "DescriptionLong"
+        ) {
             continue;
         }
         let values = entry.text.chars().collect::<Vec<_>>();
@@ -141,9 +144,7 @@ fn decode_candidate(root: &Path, code: &str, source: &str) -> Result<Candidate> 
         bad_entries += usize::from(replacements > 0);
         let entry_control_count = values
             .iter()
-            .filter(|value| {
-                value.is_control() && !matches!(**value, '\n' | '\r' | '\t')
-            })
+            .filter(|value| value.is_control() && !matches!(**value, '\n' | '\r' | '\t'))
             .count();
         controls += entry_control_count;
         if entry.section == "DescriptionLong" {
@@ -197,11 +198,7 @@ fn combine(mut candidates: Vec<Candidate>) -> Candidate {
                 combined.entry_replacements.insert(key.clone(), replacement);
                 combined.entry_controls.insert(
                     key.clone(),
-                    alternative
-                        .entry_controls
-                        .get(&key)
-                        .copied()
-                        .unwrap_or(0),
+                    alternative.entry_controls.get(&key).copied().unwrap_or(0),
                 );
             }
         }
@@ -308,8 +305,12 @@ pub fn build(root: &Path) -> Result<(BTreeMap<String, LanguageTable>, Value)> {
         let Some(table) = tables.get(code) else {
             continue;
         };
-        let missing_catch = reference_catch.difference(&table.catch.keys().cloned().collect()).count();
-        let missing_long = reference_long.difference(&table.long.keys().cloned().collect()).count();
+        let missing_catch = reference_catch
+            .difference(&table.catch.keys().cloned().collect())
+            .count();
+        let missing_long = reference_long
+            .difference(&table.long.keys().cloned().collect())
+            .count();
         audit["missingCatchIds"] = json!(missing_catch);
         audit["missingLongIds"] = json!(missing_long);
         if missing_catch != 0 || missing_long != 0 {
@@ -352,7 +353,9 @@ pub fn write_residual_csv(path: &Path, report: &Value) -> Result<()> {
             row.get("source").and_then(Value::as_str).unwrap_or(""),
             row.get("section").and_then(Value::as_str).unwrap_or(""),
             row.get("textId").and_then(Value::as_str).unwrap_or(""),
-            &row.get("replacements").map(Value::to_string).unwrap_or_default(),
+            &row.get("replacements")
+                .map(Value::to_string)
+                .unwrap_or_default(),
             row.get("excerpt").and_then(Value::as_str).unwrap_or(""),
         ])?;
     }
@@ -360,7 +363,11 @@ pub fn write_residual_csv(path: &Path, report: &Value) -> Result<()> {
     Ok(())
 }
 
-pub fn write_language_files(root: &Path, output: &Path, tables: &BTreeMap<String, LanguageTable>) -> Result<Vec<String>> {
+pub fn write_language_files(
+    root: &Path,
+    output: &Path,
+    tables: &BTreeMap<String, LanguageTable>,
+) -> Result<Vec<String>> {
     fs::create_dir_all(output)?;
     let mut written = Vec::new();
     for (code, table) in tables {
@@ -409,20 +416,30 @@ pub fn write_audit_csv(path: &Path, report: &Value) -> Result<()> {
         writer.write_record([
             row.get("code").and_then(Value::as_str).unwrap_or(""),
             row.get("source").and_then(Value::as_str).unwrap_or(""),
-            &row.get("catchEntries").map(Value::to_string).unwrap_or_default(),
-            &row.get("longEntries").map(Value::to_string).unwrap_or_default(),
-            &row.get("missingCatchIds").map(Value::to_string).unwrap_or_default(),
-            &row.get("missingLongIds").map(Value::to_string).unwrap_or_default(),
-            &row
-                .get("internalReplacements")
+            &row.get("catchEntries")
                 .map(Value::to_string)
                 .unwrap_or_default(),
-            &row.get("affectedEntries").map(Value::to_string).unwrap_or_default(),
-            &row
-                .get("controlCharacters")
+            &row.get("longEntries")
                 .map(Value::to_string)
                 .unwrap_or_default(),
-            &row.get("longCharacters").map(Value::to_string).unwrap_or_default(),
+            &row.get("missingCatchIds")
+                .map(Value::to_string)
+                .unwrap_or_default(),
+            &row.get("missingLongIds")
+                .map(Value::to_string)
+                .unwrap_or_default(),
+            &row.get("internalReplacements")
+                .map(Value::to_string)
+                .unwrap_or_default(),
+            &row.get("affectedEntries")
+                .map(Value::to_string)
+                .unwrap_or_default(),
+            &row.get("controlCharacters")
+                .map(Value::to_string)
+                .unwrap_or_default(),
+            &row.get("longCharacters")
+                .map(Value::to_string)
+                .unwrap_or_default(),
             row.get("status").and_then(Value::as_str).unwrap_or(""),
         ])?;
     }

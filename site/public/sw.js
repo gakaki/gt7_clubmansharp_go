@@ -1,4 +1,4 @@
-const IMAGE_CACHE_NAME = 'gt7-catalog-images-v1'
+const IMAGE_CACHE_NAME = 'gt7-catalog-images-v2'
 const MEDIA_PREFIXES = [
   '/common/',
   '/cars/',

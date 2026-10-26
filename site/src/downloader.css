@@ -13,9 +13,9 @@
   justify-content: space-between;
   gap: 18px;
 }
-.image-downloader-heading h2 { margin: 3px 0 6px; font-size: 24px; }
-.image-downloader-heading p { margin: 0; color: #676873; font-size: 12px; line-height: 1.7; }
-.download-eyebrow { color: #777; font-size: 9px; font-weight: 800; letter-spacing: .12em; }
+.image-downloader-heading h2 { margin: 3px 0 6px; font-size: calc(24px * var(--ui-font-scale)); }
+.image-downloader-heading p { margin: 0; color: #676873; font-size: calc(12px * var(--ui-font-scale)); line-height: 1.7; }
+.download-eyebrow { color: #777; font-size: calc(9px * var(--ui-font-scale)); font-weight: 800; letter-spacing: .12em; }
 .image-downloader-heading button,
 .image-downloader-actions button,
 .image-cache-status {
@@ -24,7 +24,7 @@
   background: #fff;
   color: #1a1a1d;
   padding: 8px 12px;
-  font-size: 11px;
+  font-size: calc(11px * var(--ui-font-scale));
   font-weight: 700;
 }
 .image-cache-status {
@@ -39,7 +39,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  font-size: 12px;
+  font-size: calc(12px * var(--ui-font-scale));
 }
 .image-downloader-status span { font-variant-numeric: tabular-nums; }
 .image-downloader-progress {
@@ -67,19 +67,19 @@
   background: #f3f3f6;
   padding: 9px 10px;
   color: #777883;
-  font-size: 9px;
+  font-size: calc(9px * var(--ui-font-scale));
 }
-.image-downloader-stats b { color: #1b1b1f; font-size: 14px; font-variant-numeric: tabular-nums; }
+.image-downloader-stats b { color: #1b1b1f; font-size: calc(14px * var(--ui-font-scale)); font-variant-numeric: tabular-nums; }
 .image-downloader-current {
   display: grid;
   gap: 5px;
   margin: 0;
   color: #777883;
-  font-size: 9px;
+  font-size: calc(9px * var(--ui-font-scale));
 }
-.image-downloader-current code { overflow-wrap: anywhere; color: #34343a; font-size: 10px; }
-.image-downloader-storage { margin: 0; color: #777883; font-size: 10px; }
-.image-downloader-error { margin: 0; border-radius: 8px; background: #fff2f3; color: #a52c39; padding: 9px 11px; font-size: 11px; }
+.image-downloader-current code { overflow-wrap: anywhere; color: #34343a; font-size: calc(10px * var(--ui-font-scale)); }
+.image-downloader-storage { margin: 0; color: #777883; font-size: calc(10px * var(--ui-font-scale)); }
+.image-downloader-error { margin: 0; border-radius: 8px; background: #fff2f3; color: #a52c39; padding: 9px 11px; font-size: calc(11px * var(--ui-font-scale)); }
 .image-downloader-actions { display: flex; flex-wrap: wrap; gap: 8px; }
 @media (max-width: 600px) {
   .image-downloader-panel { padding: 15px; }

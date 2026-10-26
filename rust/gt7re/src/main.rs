@@ -25,6 +25,7 @@ use gt7re::tools;
 use gt7re::txs5;
 use gt7re::udp;
 use gt7re::verify;
+use gt7re::web_images;
 use rayon::prelude::*;
 use std::collections::HashSet;
 use std::fs;
@@ -202,6 +203,17 @@ enum Cmd {
         refresh: bool,
         #[arg(long)]
         keep_png: bool,
+    },
+    /// Convert web PNG/WebP assets and mirror catalogs to JPEG XL
+    WebImagesJxl {
+        #[arg(long, default_value = r"C:\gt7\gt7\_re\site\public")]
+        site: PathBuf,
+        #[arg(long, default_value_t = 16)]
+        threads: usize,
+        #[arg(long)]
+        keep_sources: bool,
+        #[arg(long)]
+        refresh: bool,
     },
     /// Split a census CSV into per-type catalog lists
     Catalog {
@@ -969,6 +981,7 @@ fn run() -> Result<()> {
             avatar_result?;
             jxl_result?;
             sndz_result?;
+            web_images::convert(&site_dir.join("public"), 16, false, false)?;
             let verified = verify::run(&verify::Options {
                 data_dir: data_dir.clone(),
                 reports_dir: reports.clone(),
@@ -1151,13 +1164,7 @@ fn run() -> Result<()> {
             threads,
             refresh,
         } => {
-            let report = mirror::sync(
-                &base,
-                &site,
-                proxy.as_deref(),
-                refresh,
-                threads,
-            )?;
+            let report = mirror::sync(&base, &site, proxy.as_deref(), refresh, threads)?;
             println!("{}", serde_json::to_string_pretty(&report)?);
         }
         Cmd::LogosJxl {
@@ -1168,14 +1175,17 @@ fn run() -> Result<()> {
             refresh,
             keep_png,
         } => {
-            let report = logos::convert(
-                &site,
-                &base,
-                proxy.as_deref(),
-                threads,
-                refresh,
-                keep_png,
-            )?;
+            let report =
+                logos::convert(&site, &base, proxy.as_deref(), threads, refresh, keep_png)?;
+            println!("{}", serde_json::to_string_pretty(&report)?);
+        }
+        Cmd::WebImagesJxl {
+            site,
+            threads,
+            keep_sources,
+            refresh,
+        } => {
+            let report = web_images::convert(&site, threads, keep_sources, refresh)?;
             println!("{}", serde_json::to_string_pretty(&report)?);
         }
         Cmd::Catalog { csv, out } => {

@@ -279,7 +279,10 @@ export function MirrorFullscreen({
             </button>
           </div>
           {showInfo && (
-            <div className="mirror-info-copy" style={{ fontSize: `${16 * textScale}px` }}>
+            <div
+              className="mirror-info-copy"
+              style={{ fontSize: `calc(${16 * textScale}px * var(--ui-font-scale))` }}
+            >
               {slide.car.hero && <h3>{slide.car.hero}</h3>}
               {slide.car.description && <p>{slide.car.description}</p>}
               <div className="mirror-info-meta">

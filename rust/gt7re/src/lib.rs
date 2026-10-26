@@ -32,7 +32,8 @@ pub mod store;
 pub mod tools;
 pub mod txs5;
 pub mod udp;
-pub mod verify;
 pub mod vehicle_i18n;
+pub mod verify;
+pub mod web_images;
 
 pub use store::Store;

@@ -447,10 +447,7 @@ struct CollectionGameCopy {
     zh: HashMap<TextKey, String>,
 }
 
-fn language_copy(
-    tables: &BTreeMap<String, LanguageTable>,
-    code: &str,
-) -> HashMap<TextKey, String> {
+fn language_copy(tables: &BTreeMap<String, LanguageTable>, code: &str) -> HashMap<TextKey, String> {
     let Some(table) = tables.get(code) else {
         return HashMap::new();
     };
@@ -763,10 +760,8 @@ fn attach_collection(
             );
         }
     }
-    let detail_record = record.or_else(|| {
-        spec_alias_id
-            .and_then(|id| official_by_id.get(id).copied())
-    });
+    let detail_record =
+        record.or_else(|| spec_alias_id.and_then(|id| official_by_id.get(id).copied()));
     if let Some(record) = detail_record {
         let official_id = record.get("id").and_then(Value::as_str).unwrap_or("");
         object.insert(
@@ -854,10 +849,7 @@ fn attach_collection(
         .insert("vehicleCollection".into(), collection);
 }
 
-fn apply_game_collection_texts(
-    collection: &mut Value,
-    game_texts: &CollectionGameCopy,
-) {
+fn apply_game_collection_texts(collection: &mut Value, game_texts: &CollectionGameCopy) {
     let Some(object) = collection.as_object_mut() else {
         return;
     };
@@ -944,25 +936,21 @@ fn apply_game_collection_texts(
         == Some("rt2-description-long");
     object.insert(
         "en".into(),
-        json!(
-            [catch_en, long_en]
-                .into_iter()
-                .flatten()
-                .filter(|text| !text.is_empty())
-                .collect::<Vec<_>>()
-                .join("\n\n")
-        ),
+        json!([catch_en, long_en]
+            .into_iter()
+            .flatten()
+            .filter(|text| !text.is_empty())
+            .collect::<Vec<_>>()
+            .join("\n\n")),
     );
     object.insert(
         "zh".into(),
-        json!(
-            [catch_zh, long_zh]
-                .into_iter()
-                .flatten()
-                .filter(|text| !text.is_empty())
-                .collect::<Vec<_>>()
-                .join("\n\n")
-        ),
+        json!([catch_zh, long_zh]
+            .into_iter()
+            .flatten()
+            .filter(|text| !text.is_empty())
+            .collect::<Vec<_>>()
+            .join("\n\n")),
     );
     object.insert(
         "translationSource".into(),
