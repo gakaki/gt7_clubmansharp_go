@@ -1989,6 +1989,9 @@ export default function App() {
           <Dialog.Popup
             className="modal"
             initialFocus={() => officialStageRef.current}
+            onClick={(event) => {
+              if (event.target === event.currentTarget) closeCar()
+            }}
           >
             {activeCar && (
               <div className="dialog">

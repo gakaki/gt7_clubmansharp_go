@@ -758,6 +758,66 @@ const mobileAfter = await evaluate(`(() => ({
   panel: document.querySelector('.text-panel')?.innerText || '',
 }))()`)
 const persistedFullscreenOffset = JSON.parse(officialPersisted.storedOffset || '{}')
+await cdp.call('Emulation.setDeviceMetricsOverride', {
+  width: 1440,
+  height: 1000,
+  deviceScaleFactor: 1,
+  mobile: false,
+})
+await navigate(`${base}?lang=zh&l1=zh&car=0x000075DF&tab=official`)
+const backdropProbe = await evaluate(`(() => {
+  const modal = document.querySelector('.modal')
+  const dialog = modal?.querySelector('.dialog')
+  if (!modal || !dialog) return null
+  const modalRect = modal.getBoundingClientRect()
+  const dialogRect = dialog.getBoundingClientRect()
+  const x = dialogRect.left > modalRect.left + 20
+    ? (modalRect.left + dialogRect.left) / 2
+    : modalRect.left + 8
+  const y = Math.min(modalRect.top + 24, modalRect.bottom - 8)
+  const blankTarget = document.elementFromPoint(x, y)
+  const modalStyle = getComputedStyle(modal)
+  const dialogStyle = getComputedStyle(dialog)
+  return {
+    x,
+    y,
+    blankTarget: blankTarget === modal,
+    modalTransition: modalStyle.transitionDuration,
+    dialogTransition: dialogStyle.transitionDuration,
+  }
+})()`)
+await cdp.call('Input.dispatchMouseEvent', {
+  type: 'mousePressed',
+  x: backdropProbe?.x || 8,
+  y: backdropProbe?.y || 20,
+  button: 'left',
+  clickCount: 1,
+})
+await cdp.call('Input.dispatchMouseEvent', {
+  type: 'mouseReleased',
+  x: backdropProbe?.x || 8,
+  y: backdropProbe?.y || 20,
+  button: 'left',
+  clickCount: 1,
+})
+await sleep(30)
+const backdropEnding = await evaluate(`(() => {
+  const modal = document.querySelector('.modal')
+  return {
+    endingStyle: Boolean(modal?.hasAttribute('data-ending-style')),
+    endingOpacity: modal ? getComputedStyle(modal).opacity : '',
+  }
+})()`)
+await sleep(220)
+const backdropClosed = await evaluate(`({
+  closed: !document.querySelector('.modal'),
+  carCleared: !new URL(location.href).searchParams.has('car'),
+})`)
+const backdropDismiss = {
+  ...backdropProbe,
+  ...backdropEnding,
+  ...backdropClosed,
+}
 
 const checks = {
   sevenTabs: desktop.tabs.length === 7 &&
@@ -988,6 +1048,13 @@ const checks = {
   mobileFilterStrip: mobileFilters.buttons === 6 &&
     mobileFilters.bodyWidth <= mobileFilters.viewportWidth &&
     mobileFilters.scrollWidth >= mobileFilters.clientWidth,
+  detailBackdropDismiss: backdropDismiss?.blankTarget &&
+    backdropDismiss.modalTransition.includes('0.18s') &&
+    backdropDismiss.dialogTransition.includes('0.18s') &&
+    backdropDismiss.endingStyle &&
+    Number.parseFloat(backdropDismiss.endingOpacity) < 1 &&
+    backdropDismiss.closed &&
+    backdropDismiss.carCleared,
 }
 const report = {
   filterExpected,
@@ -1028,6 +1095,7 @@ const report = {
   officialMobile,
   mobileGarage,
   mobileAfter,
+  backdropDismiss,
   checks,
 }
 await fs.writeFile(

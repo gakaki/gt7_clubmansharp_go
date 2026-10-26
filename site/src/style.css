@@ -389,6 +389,7 @@ button { font-family: inherit; cursor: pointer; }
   padding: 40px 16px;
   overflow-y: auto;
   scrollbar-gutter: stable;
+  transition: opacity 180ms ease;
 }
 .dialog {
   width: min(1100px, 100%);
@@ -396,6 +397,7 @@ button { font-family: inherit; cursor: pointer; }
   border-radius: 14px;
   box-shadow: 0 24px 80px rgba(0, 0, 0, 0.25);
   overflow: hidden;
+  transition: opacity 180ms ease, transform 180ms cubic-bezier(.22, 1, .36, 1);
 }
 .dialog header {
   display: flex; justify-content: space-between; align-items: flex-start;
@@ -584,6 +586,18 @@ button { font-family: inherit; cursor: pointer; }
   z-index: 49;
   background: rgba(15, 15, 20, 0.42);
   backdrop-filter: blur(4px);
+  transition: opacity 180ms ease;
+}
+.modal[data-starting-style],
+.modal[data-ending-style],
+.car-dialog-backdrop[data-starting-style],
+.car-dialog-backdrop[data-ending-style] {
+  opacity: 0;
+}
+.modal[data-starting-style] .dialog,
+.modal[data-ending-style] .dialog {
+  opacity: 0;
+  transform: translateY(10px) scale(.99);
 }
 .official-stage-media,
 .official-stage-media img {
@@ -1862,6 +1876,14 @@ body {
   .mirror-slideshow-info header h2 { font-size: calc(22px * var(--ui-font-scale)); }
   .mirror-slideshow-controls { bottom: 10px; gap: 6px; padding: 7px; }
   .mirror-slideshow-controls > div button { min-width: 23px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .modal,
+  .dialog,
+  .car-dialog-backdrop {
+    transition-duration: 0.01ms;
+  }
 }
 @media (min-width: 721px) and (max-width: 900px) {
   .dialog header {
