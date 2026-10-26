@@ -1,6 +1,8 @@
 name = "gt7-cafe-edge"
 main = "worker.js"
 compatibility_date = "2026-10-19"
+workers_dev = false
+preview_urls = false
 
 routes = [
   { pattern = "gt7.gakaki.com", custom_domain = true }

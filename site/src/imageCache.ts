@@ -87,6 +87,16 @@ function collectMirrorImages(mirrors: Record<string, MirrorCatalog>) {
   return paths
 }
 
+function downloadPriority(path: string) {
+  if (path.startsWith('/official/')) return 0
+  if (path.startsWith('/common/dist/gt7/carlist/assets/')) return 1
+  if (path.startsWith('/cars/')) return 2
+  if (path.startsWith('/common/')) return 3
+  if (path.startsWith('/logos/')) return 4
+  if (path.startsWith('/avatars/')) return 5
+  return 6
+}
+
 async function collectMenuBookCovers(signal: AbortSignal) {
   const paths = new Set<string>()
   try {
@@ -119,7 +129,11 @@ export async function imageManifestFromCatalogs(
   for (const path of collectMirrorImages(mirrors)) paths.add(path)
   for (const path of await collectMenuBookCovers(signal)) paths.add(path)
   const assets = [...paths]
-    .sort((left, right) => left.localeCompare(right))
+    .sort(
+      (left, right) =>
+        downloadPriority(left) - downloadPriority(right) ||
+        left.localeCompare(right),
+    )
     .map((path) => ({ path, bytes: 0 }))
   if (!assets.length) throw new Error('No local images were found for offline caching')
   return {

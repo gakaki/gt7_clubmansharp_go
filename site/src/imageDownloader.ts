@@ -39,6 +39,8 @@ export type ImageDownloaderSnapshot = {
 }
 
 export const DOWNLOAD_CONCURRENCY = 24
+const DOWNLOAD_ATTEMPTS = 3
+const DOWNLOAD_TIMEOUT_MS = 20_000
 
 const EMPTY_STATS: ImageDownloaderStats = {
   total: 0,
@@ -97,6 +99,57 @@ function registerImageServiceWorker() {
     .catch((reason: unknown) => {
       console.warn('Unable to activate GT7 offline image worker', reason)
     })
+}
+
+function delay(milliseconds: number) {
+  return new Promise((resolve) => window.setTimeout(resolve, milliseconds))
+}
+
+async function cacheAsset(
+  cache: Cache,
+  asset: ImageAsset,
+  parentSignal: AbortSignal,
+) {
+  let lastError: unknown = null
+  for (let attempt = 0; attempt < DOWNLOAD_ATTEMPTS; attempt += 1) {
+    const requestController = new AbortController()
+    const abortRequest = () => requestController.abort()
+    parentSignal.addEventListener('abort', abortRequest, { once: true })
+    const timeout = window.setTimeout(
+      () =>
+        requestController.abort(
+          new DOMException('Image request timed out', 'TimeoutError'),
+        ),
+      DOWNLOAD_TIMEOUT_MS,
+    )
+    try {
+      const response = await fetch(asset.path, {
+        cache: 'no-store',
+        headers: { 'X-GT7-Direct-Download': '1' },
+        signal: requestController.signal,
+      })
+      if (!response.ok) throw new Error(`${response.status} ${asset.path}`)
+      const contentLength = Number(response.headers.get('content-length'))
+      await cache.put(asset.path, response)
+      return (
+        Number.isFinite(contentLength) && contentLength > 0
+          ? contentLength
+          : asset.bytes
+      )
+    } catch (reason) {
+      if (parentSignal.aborted) throw reason
+      lastError = reason
+      if (attempt + 1 < DOWNLOAD_ATTEMPTS) {
+        await delay(400 * 2 ** attempt)
+      }
+    } finally {
+      window.clearTimeout(timeout)
+      parentSignal.removeEventListener('abort', abortRequest)
+    }
+  }
+  throw lastError instanceof Error
+    ? lastError
+    : new Error(`Unable to cache ${asset.path}`)
 }
 
 async function refreshStorageEstimate() {
@@ -177,26 +230,10 @@ async function downloadManifest(
         networkStarted = true
         publish({ phase: 'downloading' })
       }
-      const response = await fetch(asset.path, {
-        cache: 'no-store',
-        headers: { 'X-GT7-Direct-Download': '1' },
-        signal: controller.signal,
-      })
-      if (!response.ok) throw new Error(`${response.status} ${asset.path}`)
-      const contentLength = Number(response.headers.get('content-length'))
-      await cache.put(asset.path, response)
-      receivedBytes =
-        Number.isFinite(contentLength) && contentLength > 0
-          ? contentLength
-          : asset.bytes
+      receivedBytes = await cacheAsset(cache, asset, controller.signal)
       outcome = 'downloaded'
-    } catch (reason) {
-      if (
-        controller.signal.aborted ||
-        (reason instanceof DOMException && reason.name === 'AbortError')
-      ) {
-        return
-      }
+    } catch {
+      if (controller.signal.aborted) return
       failedThisRun += 1
     } finally {
       if (!controller.signal.aborted) {
