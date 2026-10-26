@@ -16,6 +16,11 @@ import {
   type MirrorSlideCar,
   type SlideshowPosition,
 } from '@/components/MirrorFullscreen'
+import {
+  ImageCacheStatus,
+  ImageDownloader,
+} from '@/components/ImageDownloader'
+import { ensureAutoImageDownload } from '@/imageDownloader'
 import type {
   Car,
   CarText,
@@ -109,40 +114,8 @@ const sourceFilters = [
   { id: 'usedCar', labelZh: '二手车', labelEn: 'Used Cars' },
   { id: 'vehicleCollection', labelZh: '车辆收藏', labelEn: 'Car Collection' },
   { id: 'cafe', labelZh: '咖啡屋对白', labelEn: 'Cafe dialogue' },
+  { id: 'hidden', labelZh: '隐藏车型', labelEn: 'Hidden cars' },
 ]
-
-const textMerchants: Record<
-  string,
-  { nameZh: string; nameEn: string; roleZh: string; roleEn: string; avatar?: string }
-> = {
-  brandCentral: {
-    nameZh: '品牌中心顾问',
-    nameEn: 'Brand Central Advisor',
-    roleZh: '品牌中心车辆顾问',
-    roleEn: 'Brand Central vehicle advisor',
-    avatar: 'avatars/extracted/brand-central-advisor.png',
-  },
-  vehicleCollection: {
-    nameZh: '车辆收藏',
-    nameEn: 'Car Collection',
-    roleZh: 'PS5 RT2 × 官方车表说明',
-    roleEn: 'PS5 RT2 × official car-list entry',
-  },
-  usedCar: {
-    nameZh: '二手车商',
-    nameEn: 'Used Car Dealer',
-    roleZh: '二手车商',
-    roleEn: 'Used car dealer',
-    avatar: 'avatars/extracted/used-car-owner.png',
-  },
-  collection: {
-    nameZh: '麦基尔·哈格蒂',
-    nameEn: 'McKeel Hagerty',
-    roleZh: 'Hagerty 收藏馆',
-    roleEn: 'Hagerty Collection',
-    avatar: 'avatars/extracted/hagerty.png',
-  },
-}
 
 type LocaleCode = (typeof languageOptions)[number]['id']
 type TabId = (typeof carTextTabs)[number]['id']
@@ -200,6 +173,126 @@ function sanitizeGlyphs<T>(value: T): T {
 
 function isChineseLocale(code: string) {
   return ['zh', 'cn', 'tw'].includes(code)
+}
+
+const mirrorSpecKeys: Record<string, string> = {
+  displacement: 'displacement',
+  排气量: 'displacement',
+  'drive train': 'driveTrain',
+  drivetrain: 'driveTrain',
+  '传动系统': 'driveTrain',
+  'max power': 'maxPower',
+  '最大马力': 'maxPower',
+  'max torque': 'maxTorque',
+  '最大扭矩': 'maxTorque',
+  weight: 'weight',
+  车重: 'weight',
+  aspiration: 'aspirationLong',
+  进气形式: 'aspirationLong',
+  length: 'length',
+  全长: 'length',
+  width: 'width',
+  全宽: 'width',
+  height: 'height',
+  全高: 'height',
+}
+
+function officialIdFor(car: Car) {
+  return car.officialId || car.officialDetails?.officialId || null
+}
+
+function carFromOfficialMirror(record: MirrorCar, code: string): Car {
+  const specValues: Record<string, string | number> = {
+    id: record.id,
+    carClass: record.car_class,
+    performancePoint: record.performance_point,
+    power: record.power,
+    power_v: record.power_value ?? '',
+    driveTrain: record.drive_train,
+    weight_v: record.weight_value ?? '',
+    nameLong: record.name_long,
+    nameShort: record.model,
+  }
+  for (const spec of record.specs || []) {
+    const normalizedLabel = spec.label.trim().toLowerCase()
+    const key =
+      mirrorSpecKeys[normalizedLabel] ||
+      mirrorSpecKeys[spec.label.trim()]
+    if (key && !specValues[key]) specValues[key] = spec.value
+  }
+  const countryName = record.country || ''
+  const chinese = isChineseLocale(code)
+  return {
+    id: `official:${record.id}`,
+    officialId: record.id,
+    brand: record.brand || 'Gran Turismo',
+    brandLogo: undefined,
+    image: record.thumbnail?.replace(/^\//, ''),
+    nameEn: record.name_long || record.model,
+    nameZh: record.name_long || record.model,
+    specs: {
+      en: { ...specValues },
+      zh: { ...specValues },
+      officialId: record.id,
+      source: 'official-car-list-mirror',
+      match: 'official-only',
+    },
+    officialDetails: {
+      officialId: record.id,
+      heroEn: chinese ? record.hero : record.hero,
+      heroZh: record.hero,
+      descriptionEn: record.description,
+      descriptionZh: record.description,
+      sourceUrlEn: `https://www.gran-turismo.com/us/gt7/carlist/id/${record.id}`,
+      sourceUrlZh: `https://www.gran-turismo.com/cn/gt7/carlist/id/${record.id}`,
+      images: record.images.map((image) => ({ jxl: image })),
+    },
+    garageDetails: {
+      country: {
+        code: record.country_id,
+        nameEn: chinese ? countryName : countryName,
+        nameZh: countryName,
+      },
+      vehicleTypes: record.car_class
+        ? [{ tagEn: `#${record.car_class}`, tagZh: `#${record.car_class}` }]
+        : [],
+    },
+    source: 'official-only',
+  } as Car
+}
+
+function mergeOfficialCars(
+  localCars: Car[],
+  officialCatalog: MirrorCatalog | undefined,
+  code: string,
+) {
+  if (!officialCatalog?.cars?.length) return { cars: localCars, officialOnly: 0 }
+  const normalizeName = (value: string) =>
+    value.toLowerCase().replace(/[^a-z0-9]+/g, '')
+  const officialIds = new Set(
+    localCars.map(officialIdFor).filter((id): id is string => Boolean(id)),
+  )
+  const localNames = localCars.flatMap((car) => [
+    normalizeName(car.nameEn),
+    normalizeName(car.nameZh),
+  ])
+  const additions = officialCatalog.cars
+    .filter((record) => {
+      if (officialIds.has(record.id)) return false
+      const fullName = normalizeName(record.name_long)
+      const modelName = normalizeName(record.model)
+      return !localNames.some(
+        (localName) =>
+          localName === fullName ||
+          localName === modelName ||
+          (modelName.length > 4 && localName.endsWith(modelName)),
+      )
+    })
+    .map((record) => carFromOfficialMirror(record, code))
+  return {
+    cars: additions.length ? [...localCars, ...additions] : localCars,
+    officialOnly: additions.length,
+  }
 }
 
 function languageMeta(code: string): {
@@ -292,7 +385,7 @@ function LanguagePicker({
         aria-pressed={bilingual}
         onClick={onBilingual}
       >
-        双语
+        双语 · Bilingual
       </button>
       {bilingual && (
         <select
@@ -376,6 +469,7 @@ export default function App() {
   const [activeTab, setActiveTab] = useState<TabId>('official')
   const [showUnmatched, setShowUnmatched] = useState(false)
   const [showCast, setShowCast] = useState(false)
+  const [showImageDownloader, setShowImageDownloader] = useState(false)
   const [copyState, setCopyState] = useState('复制链接')
   const [officialSlideIndex, setOfficialSlideIndex] = useState(0)
   const [officialAutoplay, setOfficialAutoplayState] = useState(
@@ -413,7 +507,20 @@ export default function App() {
   const officialStageRef = useRef<HTMLElement | null>(null)
   const tabListRef = useRef<HTMLDivElement | null>(null)
 
-  const cars = data?.cars || []
+  const sourceCars = useMemo(() => data?.cars || [], [data])
+  const primaryMirrorCatalog =
+    mirrorCatalogs[primaryLang] ||
+    mirrorCatalogs[primaryLang === 'zh' ? 'cn' : primaryLang]
+  const mergedCatalog = useMemo(
+    () => mergeOfficialCars(sourceCars, primaryMirrorCatalog, primaryLang),
+    [primaryLang, primaryMirrorCatalog, sourceCars],
+  )
+  const cars = mergedCatalog.cars
+  const hiddenCars = useMemo(
+    () => cars.filter((car) => !officialIdFor(car)),
+    [cars],
+  )
+  const officialPageCount = primaryMirrorCatalog?.car_count || 580
   const activeCar = cars.find((car) => car.id === activeCarId) || null
   const activeLocales = bilingual ? [primaryLang, secondaryLang] : [primaryLang]
   const showZhContent = activeLocales.some(isChineseLocale)
@@ -544,6 +651,11 @@ export default function App() {
     for (const code of activeLocales) void ensureLanguage(code)
   }, [activeLocales, ensureLanguage])
 
+  useEffect(() => {
+    if (!data || !primaryMirrorCatalog) return
+    void ensureAutoImageDownload(data, mirrorCatalogs)
+  }, [data, mirrorCatalogs, primaryMirrorCatalog])
+
   const syncLanguageSettings = useCallback(
     (nextPrimary = primaryLang, nextSecondary = secondaryLang, nextBilingual = bilingual) => {
       localStorage.setItem('gt7cafe.primaryLang', nextPrimary)
@@ -642,9 +754,11 @@ export default function App() {
       if (brandFilter !== 'ALL' && car.brand !== brandFilter) return false
       const conversation = visibleConversation(car)
       if (sourceFilter === 'cafe' && !conversation.length) return false
+      if (sourceFilter === 'hidden' && officialIdFor(car)) return false
       if (
         sourceFilter !== 'all' &&
         sourceFilter !== 'cafe' &&
+        sourceFilter !== 'hidden' &&
         !car.texts?.[sourceFilter]
       ) {
         return false
@@ -748,6 +862,7 @@ export default function App() {
     navCar,
     showCast,
     showUnmatched,
+    overlayOpen: mirrorFullscreenOpen,
   })
   shortcutStateRef.current = {
     activeCar,
@@ -756,6 +871,7 @@ export default function App() {
     navCar,
     showCast,
     showUnmatched,
+    overlayOpen: mirrorFullscreenOpen,
   }
   const officialImages = activeCar?.officialDetails?.images || []
   const officialMirrorCopies = activeCar ? mirrorCopiesFor(activeCar) : []
@@ -841,9 +957,13 @@ export default function App() {
     if (!activeCar) return label
     if (tab.id === 'cafe') {
       const count = activeCar.conversation?.length || 0
-      return count ? `${label} · ${count}` : `${label} · 无`
+      return count
+        ? `${label} · ${count}`
+        : `${label} · ${detailCopy('无', 'None')}`
     }
-    return tabHasContent(activeCar, tab.id) ? label : `${label} · 无`
+    return tabHasContent(activeCar, tab.id)
+      ? label
+      : `${label} · ${detailCopy('无', 'None')}`
   }
 
   function setTab(tabId: TabId) {
@@ -932,6 +1052,7 @@ export default function App() {
         }
         return
       }
+      if (shortcut.overlayOpen) return
       if (event.key === 'Escape') {
         if (shortcut.showUnmatched) setShowUnmatched(false)
         else if (shortcut.showCast) setShowCast(false)
@@ -946,10 +1067,17 @@ export default function App() {
         if (event.key === 'ArrowLeft') moveOfficialSlide(-1)
         return
       }
-      if (['ArrowDown', 'ArrowRight'].includes(event.key)) {
+      if (
+        shortcut.activeCar &&
+        shortcut.activeTab === 'official' &&
+        ['ArrowLeft', 'ArrowRight'].includes(event.key)
+      ) {
+        event.preventDefault()
+        moveOfficialSlide(event.key === 'ArrowRight' ? 1 : -1)
+      } else if (event.key === 'ArrowDown') {
         event.preventDefault()
         move(1)
-      } else if (['ArrowUp', 'ArrowLeft'].includes(event.key)) {
+      } else if (event.key === 'ArrowUp') {
         event.preventDefault()
         move(-1)
       } else if (shortcut.activeCar && event.key === 'Tab') {
@@ -988,17 +1116,24 @@ export default function App() {
   }, [currentOfficialImage])
 
   useEffect(() => {
-    const timer = window.setInterval(() => {
-      if (
-        officialAutoplay &&
-        activeTab === 'official' &&
-        officialImagePaths.length > 1
-      ) {
-        setOfficialSlideIndex((index) => (index + 1) % officialImagePaths.length)
-      }
+    if (
+      !officialAutoplay ||
+      activeTab !== 'official' ||
+      officialImagePaths.length < 2
+    ) {
+      return
+    }
+    const timer = window.setTimeout(() => {
+      setOfficialSlideIndex((index) => (index + 1) % officialImagePaths.length)
     }, Math.round(5200 / officialSpeed))
-    return () => window.clearInterval(timer)
-  }, [activeTab, officialAutoplay, officialImagePaths.length, officialSpeed])
+    return () => window.clearTimeout(timer)
+  }, [
+    activeTab,
+    officialAutoplay,
+    officialImagePaths.length,
+    officialSlideIndex,
+    officialSpeed,
+  ])
 
   useEffect(() => {
     const onFullscreen = () => {
@@ -1200,7 +1335,7 @@ export default function App() {
     return (
       <div className="boot-screen">
         <span>GT</span>
-        <b>正在载入车辆、对话与车库资料…</b>
+        <b>{detailCopy('正在载入车辆、对话与车库资料…', 'Loading cars, dialogue and garage data…')}</b>
       </div>
     )
   }
@@ -1216,12 +1351,13 @@ export default function App() {
             />
           </span>
           <div className="titles">
-            <h1>咖啡屋对话库</h1>
+            <h1>{detailCopy('咖啡屋对话库', 'Café dialogue archive')}</h1>
             <p>Gran Turismo 7 · GT Café Dialogues</p>
           </div>
         </div>
+        <ImageCacheStatus onOpen={() => setShowImageDownloader(true)} />
         <a className="menu-archive-link" href="/menus_cafe">
-          菜单书档案
+          {detailCopy('菜单书档案', 'Menu books')}
         </a>
         <LanguagePicker
           primary={primaryLang}
@@ -1234,36 +1370,74 @@ export default function App() {
       </header>
 
       <section className="summary">
-        <div className="stat"><b>{data.stats?.cars || cars.length}</b><span>收录车辆</span></div>
-        <div className="stat"><b>{data.stats?.withDialogue || 0}</b><span>有咖啡屋对白</span></div>
-        <div className="stat"><b>{data.stats?.dialogues || 0}</b><span>CarDetail 对白</span></div>
-        <div className="stat"><b>{data.carTextStats?.mappedEntries || 0}</b><span>车辆说明</span></div>
-        <div className="stat"><b>{brands.length}</b><span>品牌</span></div>
-        <div className="stat"><b>{data.cast?.length || 0}</b><span>咖啡屋角色</span></div>
+        <div className="stat">
+          <b>{cars.length}</b>
+          <span>{detailCopy('车辆总库', 'All cars')}</span>
+        </div>
+        <div className="stat">
+          <b>{officialPageCount} / {hiddenCars.length}</b>
+          <span>{detailCopy('官方 / 隐藏', 'Official / hidden')}</span>
+        </div>
+        <div className="stat">
+          <b>{data.stats?.withDialogue || 0}</b>
+          <span>{detailCopy('有咖啡屋对白', 'Cars with café dialogue')}</span>
+        </div>
+        <div className="stat">
+          <b>{data.stats?.dialogues || 0}</b>
+          <span>{detailCopy('CarDetail 对白', 'CarDetail turns')}</span>
+        </div>
+        <div className="stat">
+          <b>{data.carTextStats?.mappedEntries || 0}</b>
+          <span>{detailCopy('车辆说明', 'Vehicle descriptions')}</span>
+        </div>
+        <div className="stat">
+          <b>{brands.length}</b>
+          <span>{detailCopy('品牌', 'Manufacturers')}</span>
+        </div>
+        <div className="stat">
+          <b>{data.cast?.length || 0}</b>
+          <span>{detailCopy('咖啡屋角色', 'Café characters')}</span>
+        </div>
         <button className="stat review-stat" type="button" onClick={() => setShowUnmatched(true)}>
           <b>{unmatched.length}</b>
-          <span>上一轮歧义复核</span>
+          <span>{detailCopy('上一轮歧义复核', 'Prior ambiguity review')}</span>
         </button>
       </section>
 
       <p className="summary-note">
-        {data.stats?.mappedDialogues || 0} 条 CarDetail 已定位 · 重建完整场景{' '}
-        {data.stats?.conversationLines || 0} 行对白 ·{' '}
-        {data.carTextStats?.carsWithAnyText || 0} 辆车具品牌购物、车辆收藏、二手车或收藏馆说明
+        {detailCopy(
+          `${data.stats?.mappedDialogues || 0} 条 CarDetail 已定位 · 重建完整场景 ${data.stats?.conversationLines || 0} 行对白 · ${data.carTextStats?.carsWithAnyText || 0} 辆车具品牌购物、车辆收藏、二手车或收藏馆说明`,
+          `${data.stats?.mappedDialogues || 0} CarDetail entries mapped · ${data.stats?.conversationLines || 0} reconstructed scene lines · ${data.carTextStats?.carsWithAnyText || 0} cars with Brand Central, Car Collection, Used Cars or Hagerty text`,
+        )}
       </p>
 
-      <section className="castbar" aria-label="咖啡屋主要角色">
+      <section className="castbar" aria-label={detailCopy('咖啡屋主要角色', 'Main café characters')}>
         {(data.cast || []).slice(0, 8).map((person: any) => (
           <div key={person.id} className="cast-person">
             <img src={avatarUrl(person.avatar)} alt={person.en} loading="eager" />
             <span>
-              <b>{uiLang === 'zh' ? person.zh : person.en}</b>
-              <small>{uiLang === 'zh' ? person.roleZh : person.roleEn}</small>
+              <b>
+                {uiLang === 'zh'
+                  ? person.zh
+                  : uiLang === 'both'
+                    ? `${person.zh} · ${person.en}`
+                    : person.en}
+              </b>
+              <small>
+                {uiLang === 'zh'
+                  ? person.roleZh
+                  : uiLang === 'both'
+                    ? `${person.roleZh} · ${person.roleEn}`
+                    : person.roleEn}
+              </small>
             </span>
           </div>
         ))}
         <button className="cast-all" type="button" onClick={() => setShowCast(true)}>
-          查看全部 {data.cast?.length || 0} 位角色
+          {detailCopy(
+            `查看全部 ${data.cast?.length || 0} 位角色`,
+            `View all ${data.cast?.length || 0} characters`,
+          )}
         </button>
       </section>
 
@@ -1273,9 +1447,16 @@ export default function App() {
           type="search"
           value={searchInput}
           onChange={(event) => setSearchInput(event.target.value)}
-          placeholder="搜索车型 / 对话 / 车辆说明…（按 / 聚焦）"
+          placeholder={detailCopy(
+            '搜索车型 / 对话 / 车辆说明…（按 / 聚焦）',
+            'Search cars / dialogue / descriptions… (press /)',
+          )}
         />
-        <div className="seg" role="group" aria-label="车辆资料筛选">
+        <div
+          className="seg"
+          role="group"
+          aria-label={detailCopy('车辆资料筛选', 'Vehicle data filters')}
+        >
           {sourceFilters.map((filter) => (
             <button
               key={filter.id}
@@ -1294,6 +1475,7 @@ export default function App() {
                 : uiLang === 'both'
                   ? `${filter.labelZh} · ${filter.labelEn}`
                   : filter.labelEn}
+              {filter.id === 'hidden' ? ` · ${hiddenCars.length}` : ''}
             </button>
           ))}
         </div>
@@ -1319,6 +1501,8 @@ export default function App() {
         />
         <p>
           <b>{cars.length}</b>
+          <span>{detailCopy(`官方车表 ${officialPageCount}`, `Official ${officialPageCount}`)}</span>
+          <span>{detailCopy(`隐藏车型 ${hiddenCars.length}`, `Hidden ${hiddenCars.length}`)}</span>
           <span>{detailCopy('截至 2026 年 10 月', 'as of October 2026')}</span>
         </p>
       </section>
@@ -1328,7 +1512,7 @@ export default function App() {
           className={`chip ${brandFilter === 'ALL' ? 'on' : ''}`}
           onClick={() => setBrandFilter('ALL')}
         >
-          全部品牌
+          {detailCopy('全部品牌', 'All manufacturers')}
         </button>
         {letters.map((letter) => (
           <button
@@ -1373,7 +1557,7 @@ export default function App() {
           className={`chip character ${speakerFilter === 'ALL' ? 'on' : ''}`}
           onClick={() => setSpeakerFilter('ALL')}
         >
-          全部角色
+          {detailCopy('全部角色', 'All characters')}
         </button>
         {(data.speakers || []).map((speaker: any) => (
           <button
@@ -1382,7 +1566,12 @@ export default function App() {
             onClick={() => setSpeakerFilter(speaker.id)}
           >
             <img src={avatarUrl(speaker.avatar)} alt={speaker.en} loading="lazy" />
-            {uiLang === 'zh' ? speaker.zh : speaker.en} <small>{speaker.count}</small>
+            {uiLang === 'zh'
+              ? speaker.zh
+              : uiLang === 'both'
+                ? `${speaker.zh} · ${speaker.en}`
+                : speaker.en}{' '}
+            <small>{speaker.count}</small>
           </button>
         ))}
       </nav>
@@ -1442,10 +1631,12 @@ export default function App() {
                     <span className="badges">
                       {visibleConversation(car).length ? (
                         <span className="badge has">
-                          对话 · {visibleConversation(car).length}
+                          {detailCopy('对话', 'Dialogue')} · {visibleConversation(car).length}
                         </span>
                       ) : (
-                        <span className="badge none">无对话</span>
+                        <span className="badge none">
+                          {detailCopy('无对话', 'No dialogue')}
+                        </span>
                       )}
                       {carTextTabs.filter(
                         (tab) =>
@@ -1454,7 +1645,7 @@ export default function App() {
                           tabHasContent(car, tab.id),
                       ).length > 0 && (
                         <span className="badge text">
-                          资料 ·{' '}
+                          {detailCopy('资料', 'Data')} ·{' '}
                           {
                             carTextTabs.filter(
                               (tab) =>
@@ -1472,36 +1663,47 @@ export default function App() {
             </div>
           </section>
         ))}
-        {!grouped.length && <p className="nonefound">没有匹配的车辆。</p>}
+        {!grouped.length && (
+          <p className="nonefound">
+            {detailCopy('没有匹配的车辆。', 'No matching cars.')}
+          </p>
+        )}
       </main>
 
-      <nav className="mobile-car-nav" aria-label="上一辆车和下一辆车">
+      <nav
+        className="mobile-car-nav"
+        aria-label={detailCopy('上一辆车和下一辆车', 'Previous and next car')}
+      >
         <button
           type="button"
           className="mobile-car-step"
-          aria-label="上一辆车"
+          aria-label={detailCopy('上一辆车', 'Previous car')}
           disabled={!filtered.length}
           onClick={() => move(-1, true)}
         >
-          <strong>‹</strong><span>上一辆</span>
+          <strong>‹</strong><span>{detailCopy('上一辆', 'Previous')}</span>
         </button>
         <button
           type="button"
           className="mobile-car-current"
           onClick={() => (activeCar ? closeCar() : navCar && openCar(navCar))}
         >
-          <small>{navCar?.brand || '选择车辆'}</small>
-          <b>{navCar ? displayName(navCar) : '浏览全部车型'}</b>
+          <small>{navCar?.brand || detailCopy('选择车辆', 'Select car')}</small>
+          <b>
+            {navCar
+              ? displayName(navCar)
+              : detailCopy('浏览全部车型', 'Browse all cars')}
+          </b>
           <span aria-live="polite">{navPosition} / {filtered.length}</span>
         </button>
         <button
           type="button"
           className="mobile-car-step"
-          aria-label="下一辆车"
+          aria-label={detailCopy('下一辆车', 'Next car')}
           disabled={!filtered.length}
           onClick={() => move(1, true)}
         >
-          <strong>›</strong><span>下一辆</span>
+          <strong>›</strong><span>{detailCopy('下一辆', 'Next')}</span>
         </button>
       </nav>
 
@@ -1512,10 +1714,20 @@ export default function App() {
             <div className="dialog cast-dialog">
               <header>
                 <div>
-                  <Dialog.Title className="dialog-title">GT 咖啡屋角色图鉴</Dialog.Title>
-                  <p>全部真实咖啡屋角色与设计师头像，共 {data.cast?.length || 0} 位</p>
+                  <Dialog.Title className="dialog-title">
+                    {detailCopy('GT 咖啡屋角色图鉴', 'GT Café character archive')}
+                  </Dialog.Title>
+                  <p>
+                    {detailCopy(
+                      `全部真实咖啡屋角色与设计师头像，共 ${data.cast?.length || 0} 位`,
+                      `All real café characters and designer portraits, ${data.cast?.length || 0} total`,
+                    )}
+                  </p>
                 </div>
-                <Dialog.Close className="close" aria-label="关闭">
+                <Dialog.Close
+                  className="close"
+                  aria-label={detailCopy('关闭', 'Close')}
+                >
                   <X size={18} />
                 </Dialog.Close>
               </header>
@@ -1531,13 +1743,26 @@ export default function App() {
                   >
                     <img className="avatar-portrait" src={avatarUrl(person.avatar)} alt={person.en} />
                     <span className="cast-card-name">
-                      {uiLang === 'zh' ? person.zh : person.en}
+                      {uiLang === 'zh'
+                        ? person.zh
+                        : uiLang === 'both'
+                          ? `${person.zh} · ${person.en}`
+                          : person.en}
                     </span>
                     <span className="cast-card-role">
-                      {uiLang === 'zh' ? person.roleZh : person.roleEn}
+                      {uiLang === 'zh'
+                        ? person.roleZh
+                        : uiLang === 'both'
+                          ? `${person.roleZh} · ${person.roleEn}`
+                          : person.roleEn}
                     </span>
                     <span className="cast-card-count">
-                      {person.count ? `${person.count} 条车辆对白` : '核心剧情角色'}
+                      {person.count
+                        ? detailCopy(
+                            `${person.count} 条车辆对白`,
+                            `${person.count} vehicle dialogue turns`,
+                          )
+                        : detailCopy('核心剧情角色', 'Core story character')}
                     </span>
                   </button>
                 ))}
@@ -1555,11 +1780,16 @@ export default function App() {
               <header>
                 <div>
                   <Dialog.Title className="dialog-title">
-                    上一轮歧义对白人工复核
+                    {detailCopy('上一轮歧义对白人工复核', 'Prior ambiguous dialogue review')}
                   </Dialog.Title>
-                  <p>保留精确 RT2 标签、候选车与最终归属，供人工复核</p>
+                  <p>
+                    {detailCopy(
+                      '保留精确 RT2 标签、候选车与最终归属，供人工复核',
+                      'Exact RT2 labels, candidate cars and final assignments retained for manual review',
+                    )}
+                  </p>
                 </div>
-                <Dialog.Close className="close" aria-label="关闭">
+                <Dialog.Close className="close" aria-label={detailCopy('关闭', 'Close')}>
                   <X size={18} />
                 </Dialog.Close>
               </header>
@@ -1599,6 +1829,21 @@ export default function App() {
         </Dialog.Portal>
       </Dialog.Root>
 
+      <Dialog.Root open={showImageDownloader} onOpenChange={setShowImageDownloader}>
+        <Dialog.Portal>
+          <Dialog.Backdrop className="car-dialog-backdrop" />
+          <Dialog.Popup className="modal">
+            <div className="dialog downloader-dialog">
+              <ImageDownloader
+                catalog={data}
+                mirrors={mirrorCatalogs}
+                onBack={() => setShowImageDownloader(false)}
+              />
+            </div>
+          </Dialog.Popup>
+        </Dialog.Portal>
+      </Dialog.Root>
+
       <Dialog.Root
         open={Boolean(activeCar)}
         onOpenChange={(open) => {
@@ -1607,7 +1852,10 @@ export default function App() {
       >
         <Dialog.Portal>
           <Dialog.Backdrop className="car-dialog-backdrop" />
-          <Dialog.Popup className="modal">
+          <Dialog.Popup
+            className="modal"
+            initialFocus={() => officialStageRef.current}
+          >
             {activeCar && (
               <div className="dialog">
                 <header>
@@ -1635,10 +1883,16 @@ export default function App() {
                         </div>
                       )}
                       <p className="note">
-                        资料可用：
+                        {detailCopy('资料可用：', 'Available data: ')}
                         {carTextTabs
                           .filter((tab) => tabHasContent(activeCar, tab.id))
-                          .map((tab) => (uiLang === 'zh' ? tab.labelZh : tab.labelEn))
+                          .map((tab) =>
+                            uiLang === 'zh'
+                              ? tab.labelZh
+                              : uiLang === 'both'
+                                ? `${tab.labelZh} · ${tab.labelEn}`
+                                : tab.labelEn,
+                          )
                           .join(' · ')}
                       </p>
                     </div>
@@ -1667,7 +1921,11 @@ export default function App() {
                           }
                         }}
                       >
-                        {copyState}
+                        {copyState === '已复制'
+                          ? detailCopy('已复制', 'Copied')
+                          : copyState === '复制失败'
+                            ? detailCopy('复制失败', 'Copy failed')
+                            : detailCopy('复制链接', 'Copy link')}
                       </Button>
                       <Dialog.Close className="close" aria-label="关闭">
                         <X size={18} />
@@ -1703,12 +1961,21 @@ export default function App() {
                   <Tabs.Panel value="official" className="official-panel">
                     {activeCar.officialDetails ? (
                       <div className="official-layout">
-                        <section
-                          ref={(node) => {
-                            officialStageRef.current = node
-                          }}
-                          className={`official-stage ${officialFullscreen ? 'is-fullscreen' : ''}`}
-                        >
+                        <div className="official-visual-pane">
+                          <section
+                            ref={(node) => {
+                              officialStageRef.current = node
+                            }}
+                            className={`official-stage ${officialFullscreen ? 'is-fullscreen' : ''}`}
+                            tabIndex={0}
+                            onPointerDown={() => {
+                              officialStageRef.current?.focus({ preventScroll: true })
+                            }}
+                            onDoubleClick={(event) => {
+                              if ((event.target as HTMLElement).closest('button')) return
+                              void toggleOfficialFullscreen()
+                            }}
+                          >
                           <div className="official-stage-media">
                             {currentOfficialImage && !officialImageError ? (
                               <img
@@ -1760,17 +2027,6 @@ export default function App() {
                               >
                                 ›
                               </button>
-                              <div className="official-dots">
-                                {officialImagePaths.map((image, index) => (
-                                  <button
-                                    key={image}
-                                    type="button"
-                                    className={index === officialSlideIndex ? 'on' : ''}
-                                    onClick={() => setOfficialSlideIndex(index)}
-                                    aria-label={`第 ${index + 1} 张`}
-                                  />
-                                ))}
-                              </div>
                             </>
                           )}
                           <div className="official-caption" style={officialCaptionStyle}>
@@ -1852,7 +2108,51 @@ export default function App() {
                               {officialFullscreen ? <Minimize2 size={16} /> : <Maximize2 size={16} />}
                             </button>
                           </div>
-                        </section>
+                          </section>
+                          <div className="official-inline-controls" aria-label={detailCopy('幻灯片控制', 'Slideshow controls')}>
+                            <button
+                              type="button"
+                              className={`official-play-toggle ${officialAutoplay ? 'on' : ''}`}
+                              onClick={() => setOfficialAutoplay(!officialAutoplay)}
+                            >
+                              {officialAutoplay
+                                ? detailCopy('暂停幻灯片', 'Pause slideshow')
+                                : detailCopy('播放幻灯片', 'Play slideshow')}
+                            </button>
+                            <label>
+                              <span>{detailCopy('播放速度', 'Speed')}</span>
+                              <input
+                                type="range"
+                                min="1"
+                                max="10"
+                                step="1"
+                                value={officialSpeed}
+                                onChange={(event) => setOfficialSpeed(Number(event.target.value))}
+                              />
+                              <b>{officialSpeed}×</b>
+                            </label>
+                            <label>
+                              <span>{detailCopy('文字大小', 'Text size')}</span>
+                              <input
+                                type="range"
+                                min="12"
+                                max="42"
+                                step="1"
+                                value={officialTextSize}
+                                onChange={(event) => setOfficialTextSize(Number(event.target.value))}
+                              />
+                              <b>{officialTextSize}px</b>
+                            </label>
+                            <button
+                              type="button"
+                              className="official-inline-fullscreen"
+                              onClick={toggleOfficialFullscreen}
+                            >
+                              <Maximize2 size={15} />
+                              {detailCopy('全屏播放', 'Fullscreen')}
+                            </button>
+                          </div>
+                        </div>
                         <aside className="official-copy">
                           <div className="official-copy-head">
                             <span className="official-kicker">
@@ -1881,7 +2181,7 @@ export default function App() {
                                 (copy) =>
                                   copy.record && (
                                     <article key={`mirror-${copy.code}`}>
-                                      <h5>{copy.label}</h5>
+                                      {bilingual && <h5>{copy.label}</h5>}
                                       {copy.record.hero && (
                                         <p className="official-hero">{copy.record.hero}</p>
                                       )}
@@ -1893,64 +2193,6 @@ export default function App() {
                               )}
                             </section>
                           )}
-                          <div className="official-controls">
-                            <div className="official-control-row">
-                              <button
-                                type="button"
-                                className={`official-play-toggle ${officialAutoplay ? 'on' : ''}`}
-                                onClick={() => setOfficialAutoplay(!officialAutoplay)}
-                              >
-                                {officialAutoplay
-                                  ? detailCopy('暂停幻灯片', 'Pause slideshow')
-                                  : detailCopy('自动播放', 'Autoplay')}
-                              </button>
-                              <label className="official-speed">
-                                <span>{detailCopy('播放速度', 'Speed')}</span>
-                                <input
-                                  type="range"
-                                  min="1"
-                                  max="10"
-                                  step="1"
-                                  value={officialSpeed}
-                                  onChange={(event) => setOfficialSpeed(Number(event.target.value))}
-                                />
-                                <b>{officialSpeed}×</b>
-                              </label>
-                            </div>
-                            <div className="official-control-row">
-                              <label className="official-speed">
-                                <span>{detailCopy('文字大小', 'Text size')}</span>
-                                <input
-                                  type="range"
-                                  min="12"
-                                  max="42"
-                                  step="1"
-                                  value={officialTextSize}
-                                  onChange={(event) => setOfficialTextSize(Number(event.target.value))}
-                                />
-                                <b>{officialTextSize}px</b>
-                              </label>
-                              <button type="button" className="official-fullscreen-cta" onClick={toggleOfficialFullscreen}>
-                                {detailCopy('全屏播放', 'Fullscreen')}
-                              </button>
-                            </div>
-                            <div className="official-thumbnails">
-                              {officialImagePaths.map((image, index) => (
-                                <button
-                                  key={`thumb-${image}`}
-                                  type="button"
-                                  className={index === officialSlideIndex ? 'on' : ''}
-                                  onClick={() => setOfficialSlideIndex(index)}
-                                >
-                                  <img
-                                    src={assetUrl(image)}
-                                    alt={`${displayName(activeCar)} ${index + 1}`}
-                                    loading="lazy"
-                                  />
-                                </button>
-                              ))}
-                            </div>
-                          </div>
                           <a
                             className="official-source-link"
                             href={
@@ -1967,8 +2209,18 @@ export default function App() {
                       </div>
                     ) : (
                       <div className="no-dialogue text-empty">
-                        <strong>这辆车没有官方车表介绍</strong>
-                        <span>仅收录当前官方车表中存在的车型。</span>
+                        <strong>
+                          {detailCopy(
+                            '这辆车没有官方车表介绍',
+                            'No official car-list introduction is available',
+                          )}
+                        </strong>
+                        <span>
+                          {detailCopy(
+                            '仅收录当前官方车表中存在的车型。',
+                            'Only cars present in the current official car list are included here.',
+                          )}
+                        </span>
                       </div>
                     )}
                   </Tabs.Panel>
@@ -2026,8 +2278,18 @@ export default function App() {
                       ))
                     ) : (
                       <div className="no-dialogue">
-                        <strong>没有找到这辆车的咖啡屋场景</strong>
-                        <span>已按 RT2 消息键和 DMS 场景表核对，未借用相邻车辆对白。</span>
+                        <strong>
+                          {detailCopy(
+                            '没有找到这辆车的咖啡屋场景',
+                            'No café scene was found for this car',
+                          )}
+                        </strong>
+                        <span>
+                          {detailCopy(
+                            '已按 RT2 消息键和 DMS 场景表核对，未借用相邻车辆对白。',
+                            'RT2 message keys and DMS scene tables were checked; no neighbouring-car dialogue was substituted.',
+                          )}
+                        </span>
                       </div>
                     )}
                   </Tabs.Panel>
@@ -2103,7 +2365,11 @@ export default function App() {
                               <small>{detailCopy(field.labelZh, field.labelEn)}</small>
                               {showZhContent && (
                                 <div className="spec-value">
-                                  {bilingual && <span className="spec-locale">中文</span>}
+                            {bilingual && (
+                              <span className="spec-locale">
+                                {languageName(activeLocales.find(isChineseLocale) || 'zh')}
+                              </span>
+                            )}
                                   <b>{specValue('zh', field.key) || '—'}</b>
                                 </div>
                               )}
@@ -2135,8 +2401,18 @@ export default function App() {
                       </>
                     ) : (
                       <div className="no-dialogue text-empty">
-                        <strong>这辆车没有官方车库规格</strong>
-                        <span>已按官方车辆 ID、完整车型名称和明确变体别名核对，没有借用其他车辆数据。</span>
+                        <strong>
+                          {detailCopy(
+                            '这辆车没有官方车库规格',
+                            'No official garage specifications are available',
+                          )}
+                        </strong>
+                        <span>
+                          {detailCopy(
+                            '已按官方车辆 ID、完整车型名称和明确变体别名核对，没有借用其他车辆数据。',
+                            'Official vehicle IDs, full model names and explicit variant aliases were checked; no data from another car was substituted.',
+                          )}
+                        </span>
                       </div>
                     )}
                   </Tabs.Panel>
@@ -2148,8 +2424,6 @@ export default function App() {
                           <TextPanel
                             tabId={tabId}
                             text={activeTextFor(tabId)!}
-                            car={activeCar}
-                            uiLang={uiLang}
                             showZh={showZhContent}
                             showEn={showEnContent}
                             detailCopy={detailCopy}
@@ -2186,7 +2460,10 @@ export default function App() {
                   )}
                 </Tabs.Root>
                 <div className="keyhint">
-                  ← ↑ ↓ → 切换车辆 · 1–7 或 Tab 切换资料页 · Esc 关闭
+                  {detailCopy(
+                    '← → 切换图片 · ↑ ↓ 切换车辆 · 1–7 或 Tab 切换资料页 · Esc 关闭',
+                    '← → Change image · ↑ ↓ Change car · 1–7 or Tab switch tab · Esc close',
+                  )}
                 </div>
               </div>
             )}
@@ -2207,19 +2484,34 @@ export default function App() {
       )}
 
       <footer className="foot">
-        <a href={`${base}data/cafe_dialogues.csv`} download>下载全部对白 CSV</a>
+        <a href={`${base}data/cafe_dialogues.csv`} download>
+          {detailCopy('下载全部对白 CSV', 'Download all dialogue CSV')}
+        </a>
         {' · '}
-        <a href={`${base}data/cafe_scene_dialogues.csv`} download>下载完整场景 CSV</a>
+        <a href={`${base}data/cafe_scene_dialogues.csv`} download>
+          {detailCopy('下载完整场景 CSV', 'Download scene dialogue CSV')}
+        </a>
         {' · '}
-        <a href={`${base}data/vehicle_collection_texts.csv`} download>车辆收藏中英文本 CSV</a>
+        <a href={`${base}data/vehicle_collection_texts.csv`} download>
+          {detailCopy('车辆收藏中英文本 CSV', 'Car Collection text CSV')}
+        </a>
         {' · '}
-        <a href={`${base}data/garage_specs.csv`} download>车库规格 CSV</a>
+        <a href={`${base}data/garage_specs.csv`} download>
+          {detailCopy('车库规格 CSV', 'Garage specifications CSV')}
+        </a>
         {' · '}
-        <a href={`${base}data/garage_details.json`} download>车库与收藏管理 JSON</a>
+        <a href={`${base}data/garage_details.json`} download>
+          {detailCopy('车库与收藏管理 JSON', 'Garage and collection JSON')}
+        </a>
         {' · '}
-        <a href={`${base}data/menu_books.json`} download>菜单书 JSON</a>
+        <a href={`${base}data/menu_books.json`} download>
+          {detailCopy('菜单书 JSON', 'Menu books JSON')}
+        </a>
         <div className="credits">
-          数据从本机 PS5 GT7 资源解包；头像来自 IDP0/TXS5 面部图集，未使用占位头像。
+          {detailCopy(
+            '数据从本机 PS5 GT7 资源解包；头像来自 IDP0/TXS5 面部图集，未使用占位头像。',
+            'Data was extracted from the local PS5 GT7 resources; portraits come from IDP0/TXS5 face atlases without placeholder avatars.',
+          )}
         </div>
       </footer>
     </div>
@@ -2281,8 +2573,6 @@ export default function App() {
 function TextPanel({
   tabId,
   text,
-  car,
-  uiLang,
   showZh,
   showEn,
   detailCopy,
@@ -2291,8 +2581,6 @@ function TextPanel({
 }: {
   tabId: TabId
   text: CarText
-  car: Car
-  uiLang: 'zh' | 'en' | 'both'
   showZh: boolean
   showEn: boolean
   detailCopy: (zh: string, en: string) => string
@@ -2304,162 +2592,53 @@ function TextPanel({
     long?: string
   }>
 }) {
-  const merchant = textMerchants[tabId]
-  const officialZh = [
-    car.officialDetails?.heroZh,
-    car.officialDetails?.descriptionZh,
-  ]
-    .filter(Boolean)
-    .join('\n\n')
-    .trim()
-  const officialEn = [
-    car.officialDetails?.heroEn,
-    car.officialDetails?.descriptionEn,
-  ]
-    .filter(Boolean)
-    .join('\n\n')
-    .trim()
-  const title =
-    uiLang === 'zh'
-      ? text.titleZh
-      : uiLang === 'both'
-        ? `${text.titleZh} · ${text.titleEn}`
-        : text.titleEn
-
   return (
     <>
-      {merchant && (
-        <div className="text-merchant">
-          {merchant.avatar && (
-            <img className="avatar-portrait" src={avatarUrl(merchant.avatar)} alt={merchant.nameEn} loading="eager" />
-          )}
-          <span>
-            <b>
-              {uiLang === 'zh'
-                ? merchant.nameZh
-                : uiLang === 'both'
-                  ? `${merchant.nameZh} · ${merchant.nameEn}`
-                  : merchant.nameEn}
-            </b>
-            <small>
-              {uiLang === 'zh'
-                ? merchant.roleZh
-                : uiLang === 'both'
-                  ? `${merchant.roleZh} · ${merchant.roleEn}`
-                  : merchant.roleEn}
-            </small>
-          </span>
-        </div>
-      )}
-      <div className="text-source">
-        <span>{title}</span>
-        {text.carKey && <span>{text.carKey}</span>}
-        {tabId === 'vehicleCollection' ? (
-          <>
-            {text.textIds?.catch && <span>Catch {text.textIds.catch}</span>}
-            {text.textIds?.long && <span>Long {text.textIds.long}</span>}
-            {text.officialId && <span>{detailCopy('官方车表', 'Official car list')} {text.officialId}</span>}
-          </>
-        ) : (
-          text.textId && <span>{text.textId}</span>
-        )}
-      </div>
       {offer && (
         <div className="dealer-offer">
           <strong>Cr. {Number(offer.price || 0).toLocaleString('zh-CN')}</strong>
           {Number(offer.discountPrice || 0) > 0 && (
-            <span>优惠 Cr. {Number(offer.discountPrice).toLocaleString('zh-CN')}</span>
+            <span>
+              {detailCopy('优惠', 'Discount')} Cr. {Number(offer.discountPrice).toLocaleString('zh-CN')}
+            </span>
           )}
-          <span>稀有度 {String(offer.rarity || '')}</span>
+          <span>{detailCopy('稀有度', 'Rarity')} {String(offer.rarity || '')}</span>
         </div>
       )}
       {tabId === 'vehicleCollection' ? (
-        <>
-          <section className="collection-part">
-            <h4>{detailCopy('一句话简介', 'Catch copy')}</h4>
-            {collectionCopies.some((copy) => copy.catch)
-              ? collectionCopies
-                  .filter((copy) => copy.catch)
-                  .map((copy) => (
-                    <div className="text-copy" key={`${copy.code}-catch`}>
-                      <h4>{copy.label}</h4>
-                      <p>{copy.catch}</p>
+        <section className="collection-part collection-main-copy">
+          {collectionCopies.some((copy) => copy.long)
+            ? collectionCopies
+                .filter((copy) => copy.long)
+                .map((copy) => (
+                  <div className="text-copy" key={`${copy.code}-long`}>
+                    <p>{copy.long}</p>
+                  </div>
+                ))
+            : (
+                <>
+                  {showZh && (
+                    <div className="text-copy zh-copy">
+                      <p>{text.long?.zh || text.zh}</p>
                     </div>
-                  ))
-              : (
-                  <>
-                    {showZh && (
-                      <div className="text-copy zh-copy">
-                        <p>{text.catch?.zh}</p>
-                      </div>
-                    )}
-                    {showEn && (
-                      <div className="text-copy en-copy">
-                        <p>{text.catch?.en}</p>
-                      </div>
-                    )}
-                  </>
-                )}
-          </section>
-          <section className="collection-part collection-main-copy">
-            <h4>{detailCopy('车辆收藏正文（游戏 RT2）', 'Car Collection text (game RT2)')}</h4>
-            <p className="collection-source-note">
-              {detailCopy(
-                '中英文均来自游戏 Car Collection 的 DescriptionLong；中文由简体与繁体 RT2 双版本交叉恢复。',
-                'Both languages come from the game Car Collection DescriptionLong; Chinese is reconstructed across the Simplified and Traditional RT2 tables.',
-              )}
-            </p>
-            {collectionCopies.some((copy) => copy.long)
-              ? collectionCopies
-                  .filter((copy) => copy.long)
-                  .map((copy) => (
-                    <div className="text-copy" key={`${copy.code}-long`}>
-                      <h4>{copy.label}</h4>
-                      <p>{copy.long}</p>
+                  )}
+                  {showEn && (
+                    <div className="text-copy en-copy">
+                      <p>{text.long?.en || text.en}</p>
                     </div>
-                  ))
-              : (
-                  <>
-                    {showZh && (
-                      <div className="text-copy zh-copy">
-                        <p>{text.long?.zh || text.zh}</p>
-                      </div>
-                    )}
-                    {showEn && (
-                      <div className="text-copy en-copy">
-                        <p>{text.long?.en || text.en}</p>
-                      </div>
-                    )}
-                  </>
-                )}
-          </section>
-          {car.officialDetails && (
-            <section className="collection-part official-extension">
-              <h4>{detailCopy('官方车表简介（短版）', 'Official car-list overview (short)')}</h4>
-              {showZh && (
-                <div className="text-copy zh-copy">
-                  <p>{officialZh}</p>
-                </div>
+                  )}
+                </>
               )}
-              {showEn && (
-                <div className="text-copy en-copy">
-                  <p>{officialEn}</p>
-                </div>
-              )}
-            </section>
-          )}
-        </>
+        </section>
       ) : (
         <>
           {showZh && (
             <div className="text-copy zh-copy">
-              <h4>{text.titleZh}</h4>
               <p>{text.zh}</p>
             </div>
           )}
           {showEn && (
             <div className="text-copy en-copy">
-              <h4>{text.titleEn}</h4>
               <p>{text.en}</p>
             </div>
           )}
@@ -2470,10 +2649,6 @@ function TextPanel({
           <h4>{detailCopy('补充介绍', 'Additional description')}</h4>
           {(text.variants as CarText[]).map((variant) => (
             <article key={String(variant.textId || variant.carKey || variant.sourceName)} className="text-variant">
-              <div className="text-source">
-                <span>{String(variant.textId || '')}</span>
-                <span>{String(variant.carKey || variant.sourceName || '')}</span>
-              </div>
               {showZh && (
                 <div className="text-copy zh-copy">
                   <p>{variant.zh}</p>

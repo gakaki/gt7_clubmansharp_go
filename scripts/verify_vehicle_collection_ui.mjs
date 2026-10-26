@@ -81,7 +81,20 @@ async function evaluate(expression) {
 
 async function navigate(url) {
   await cdp.call('Page.navigate', { url })
-  await sleep(2800)
+  const wantsCarDetail = new URL(url).searchParams.has('car')
+  await sleep(700)
+  for (let attempt = 0; attempt < 30; attempt += 1) {
+    const ready = await evaluate(`(() => ({
+      complete: document.readyState === 'complete',
+      loaded: ${wantsCarDetail}
+        ? Boolean(document.querySelector('.dialog'))
+        : Boolean(document.querySelector('.catalog-hero')),
+      booting: Boolean(document.querySelector('.boot-screen')),
+    }))()`)
+    if (ready.complete && ready.loaded && !ready.booting) return
+    await sleep(250)
+  }
+  await sleep(500)
 }
 
 async function screenshot(name) {
@@ -193,13 +206,35 @@ await evaluate(`document.querySelector('.mirror-slideshow-close')?.click()`)
 await sleep(300)
 await navigate(`${base}?lang=zh&l1=zh`)
 const filterExpected = await evaluate(`(async () => {
-  const data = await (await fetch('/data/cars.json')).json()
+  const [data, mirror] = await Promise.all([
+    fetch('/data/cars.json').then((response) => response.json()),
+    fetch('/data/mirror/cars.cn.json').then((response) => response.json()),
+  ])
+  const officialIds = new Set(mirror.cars.map((car) => car.id))
+  const localOfficialIds = new Set(
+    data.cars
+      .map((car) => car.officialId || car.officialDetails?.officialId)
+      .filter(Boolean),
+  )
+  const normalize = (value) => String(value || '').toLowerCase().replace(/[^a-z0-9]+/g, '')
+  const localNames = data.cars.flatMap((car) => [normalize(car.nameEn), normalize(car.nameZh)])
+  const officialOnly = mirror.cars.filter((record) => {
+    if (localOfficialIds.has(record.id)) return false
+    const fullName = normalize(record.name_long)
+    const modelName = normalize(record.model)
+    return !localNames.some((name) =>
+      name === fullName || name === modelName || (modelName.length > 4 && name.endsWith(modelName))
+    )
+  }).length
   return {
-    all: data.cars.length,
+    all: data.cars.length + officialOnly,
     brandCentral: data.cars.filter((car) => car.texts?.brandCentral).length,
     usedCar: data.cars.filter((car) => car.texts?.usedCar).length,
     vehicleCollection: data.cars.filter((car) => car.texts?.vehicleCollection).length,
     cafe: data.cars.filter((car) => car.conversation?.length || car.dialogues?.length).length,
+    hidden: data.cars.filter((car) => !officialIds.has(car.officialId || car.officialDetails?.officialId)).length,
+    officialPage: mirror.car_count,
+    officialOnly,
   }
 })()`)
 const garagePayload = await evaluate(`(async () => {
@@ -213,8 +248,14 @@ const garagePayload = await evaluate(`(async () => {
     peugeotCountry: peugeot?.garage?.country?.code || '',
   }
 })()`)
+const catalogCounts = await evaluate(`(() => ({
+  hero: document.querySelector('.catalog-hero p')?.innerText || '',
+  summary: document.querySelector('.summary')?.innerText || '',
+  cacheStatus: document.querySelector('.image-cache-status')?.textContent?.trim() || '',
+  serviceWorker: Boolean(navigator.serviceWorker?.controller),
+}))()`)
 const filterObserved = {}
-for (const [index, id] of ['all', 'brandCentral', 'usedCar', 'vehicleCollection', 'cafe'].entries()) {
+for (const [index, id] of ['all', 'brandCentral', 'usedCar', 'vehicleCollection', 'cafe', 'hidden'].entries()) {
   await evaluate(`document.querySelectorAll('.seg button')[${index}]?.click()`)
   await sleep(250)
   filterObserved[id] = await evaluate(`document.querySelectorAll('.card').length`)
@@ -244,6 +285,25 @@ for (let index = 0; index < 5; index += 1) {
 }
 await evaluate(`document.querySelector('.group-tabs button:first-child')?.click()`)
 await sleep(250)
+await evaluate(`(() => {
+  const input = document.querySelector('.search')
+  const setter = Object.getOwnPropertyDescriptor(HTMLInputElement.prototype, 'value').set
+  setter.call(input, 'Xiaomi Vision Gran Turismo')
+  input.dispatchEvent(new Event('input', { bubbles: true }))
+})()`)
+await sleep(500)
+const officialOnlySearch = await evaluate(`(() => ({
+  count: document.querySelectorAll('[data-car-id]').length,
+  names: [...document.querySelectorAll('.card .name')].map((node) => node.textContent.trim()),
+  ids: [...document.querySelectorAll('[data-car-id]')].map((node) => node.dataset.carId),
+}))()`)
+await evaluate(`(() => {
+  const input = document.querySelector('.search')
+  const setter = Object.getOwnPropertyDescriptor(HTMLInputElement.prototype, 'value').set
+  setter.call(input, '')
+  input.dispatchEvent(new Event('input', { bubbles: true }))
+})()`)
+await sleep(300)
 
 await navigate(`${base}?lang=zh&l1=zh&car=0x00006F59&tab=cafe`)
 const cafeDesktop = await evaluate(`(() => {
@@ -278,7 +338,11 @@ await navigate(`${base}?lang=both&l1=zh&l2=us&car=0x00006F48&tab=official`)
 const officialDesktop = await evaluate(`(() => ({
   title: document.querySelector('.dialog-title')?.textContent?.trim() || '',
   tab: document.querySelector('.car-tabs button.on')?.textContent?.trim() || '',
-  slides: document.querySelectorAll('.official-thumbnails button').length,
+  slides: document.querySelector('.official-image-count')?.textContent?.trim() || '',
+  thumbnails: document.querySelectorAll('.official-thumbnails').length,
+  inlineControls: Boolean(document.querySelector('.official-visual-pane .official-inline-controls')),
+  visualWidth: Math.round(document.querySelector('.official-visual-pane')?.getBoundingClientRect().width || 0),
+  copyWidth: Math.round(document.querySelector('.official-copy')?.getBoundingClientRect().width || 0),
   tabCount: document.querySelectorAll('.car-tabs button').length,
   image: (() => {
     const node = document.querySelector('.official-stage-media img')
@@ -294,7 +358,7 @@ if (!officialDesktop.tab) {
   console.log(JSON.stringify(cdp.events.slice(-5), null, 2))
 }
 await evaluate(`(() => {
-  const ranges = document.querySelectorAll('.official-controls input[type=range]')
+  const ranges = document.querySelectorAll('.official-inline-controls input[type=range]')
   if (ranges.length < 2) {
     throw new Error('official controls missing; tabs=' + document.querySelectorAll('.car-tabs button').length + ', text=' + document.body.innerText.slice(0, 300) + ', html=' + document.body.innerHTML.slice(0, 300))
   }
@@ -306,7 +370,7 @@ await evaluate(`(() => {
   ranges[1].dispatchEvent(new Event('input', { bubbles: true }))
   ranges[1].dispatchEvent(new Event('change', { bubbles: true }))
 })()`)
-await evaluate(`document.querySelector('.official-fullscreen-cta')?.click()`)
+await evaluate(`document.querySelector('.official-stage-media img')?.dispatchEvent(new MouseEvent('dblclick', { bubbles: true }))`)
 await sleep(900)
 await dragSelector('.mirror-info-tools button:first-of-type', 120, -48)
 await sleep(120)
@@ -324,7 +388,7 @@ const officialFullscreen = await evaluate(`(() => {
     imageHeight: image?.naturalHeight || 0,
     title: document.querySelector('.mirror-slideshow-info h2')?.textContent?.trim() || '',
     intro: copy?.innerText || '',
-    slide: document.querySelector('.mirror-slideshow-controls > span')?.textContent?.trim() || '',
+    slide: document.querySelector('.mirror-image-counter')?.textContent?.trim() || '',
     infoTransform: info?.getAttribute('style') || '',
     infoFontSize: copy?.getAttribute('style') || '',
     speed: localStorage.getItem('gt7.carlist.slideshowSpeed'),
@@ -335,14 +399,20 @@ const officialFullscreen = await evaluate(`(() => {
     bodyOverflow: document.body.style.overflow,
   }
 })()`)
+const fullscreenCarBefore = officialFullscreen.title
+await evaluate(`window.dispatchEvent(new KeyboardEvent('keydown', { key: 'ArrowDown', code: 'ArrowDown', bubbles: true }))`)
+await sleep(250)
+const fullscreenCarAfter = await evaluate(
+  `document.querySelector('.mirror-slideshow-info h2')?.textContent?.trim() || ''`,
+)
 await screenshot('official-tab-fullscreen.png')
 await clickSelector('.mirror-slideshow-close')
 await sleep(500)
 await navigate(`${base}?lang=both&l1=zh&l2=us&car=0x00006F48&tab=official`)
-await evaluate(`document.querySelector('.official-fullscreen-cta')?.click()`)
+await evaluate(`document.querySelector('.official-inline-fullscreen')?.click()`)
 await sleep(700)
 const officialPersisted = await evaluate(`(() => {
-  const ranges = document.querySelectorAll('.official-controls input[type=range]')
+  const ranges = document.querySelectorAll('.official-inline-controls input[type=range]')
   const caption = document.querySelector('.official-caption')
   const info = document.querySelector('.mirror-slideshow-info > div')
   const copy = document.querySelector('.mirror-info-copy')
@@ -378,14 +448,14 @@ await clickSelector('.mirror-slideshow-controls > button:nth-child(2)')
 const catalogSlideshowFirst = await evaluate(`(() => ({
   active: Boolean(document.querySelector('.mirror-slideshow')),
   title: document.querySelector('.mirror-slideshow-info h2')?.textContent?.trim() || '',
-  counter: document.querySelector('.mirror-slideshow-controls > span')?.textContent?.trim() || '',
+  counter: document.querySelector('.mirror-image-counter')?.textContent?.trim() || '',
   image: document.querySelector('.mirror-slideshow-image')?.getAttribute('src') || '',
 }))()`)
 await clickSelector('.mirror-slideshow-controls > button:nth-child(3)')
 await clickSelector('.mirror-slideshow-controls > button:nth-child(3)')
 const catalogSlideshowAdvanced = await evaluate(`(() => ({
   title: document.querySelector('.mirror-slideshow-info h2')?.textContent?.trim() || '',
-  counter: document.querySelector('.mirror-slideshow-controls > span')?.textContent?.trim() || '',
+  counter: document.querySelector('.mirror-image-counter')?.textContent?.trim() || '',
 }))()`)
 await clickSelector('.mirror-slideshow-controls > div button:nth-child(1)')
 await clickSelector('.mirror-slideshow-close')
@@ -397,7 +467,7 @@ await sleep(600)
 await clickSelector('.mirror-slideshow-controls > button:nth-child(2)')
 const catalogSlideshowResumed = await evaluate(`(() => ({
   title: document.querySelector('.mirror-slideshow-info h2')?.textContent?.trim() || '',
-  counter: document.querySelector('.mirror-slideshow-controls > span')?.textContent?.trim() || '',
+  counter: document.querySelector('.mirror-image-counter')?.textContent?.trim() || '',
 }))()`)
 await clickSelector('.mirror-slideshow-close')
 await sleep(250)
@@ -514,6 +584,7 @@ const garagePeugeot = await evaluate(`(() => ({
 }))()`)
 
 await navigate(`${base}?lang=zh&l1=zh&car=0x00009D62&tab=garageSpecs`)
+await sleep(1000)
 const garageVariant = await evaluate(`(() => ({
   title: document.querySelector('.dialog-title')?.textContent?.trim() || '',
   panel: document.querySelector('.garage-specs-panel')?.innerText || '',
@@ -598,7 +669,7 @@ const officialMobile = await evaluate(`(() => {
   const image = document.querySelector('.official-stage-media img')
   return {
     tabs: document.querySelectorAll('.car-tabs button').length,
-    slides: document.querySelectorAll('.official-thumbnails button').length,
+    imageCount: document.querySelector('.official-image-count')?.textContent?.trim() || '',
     loaded: image ? image.naturalWidth > 0 : false,
     bodyWidth: document.documentElement.scrollWidth,
     viewportWidth: document.documentElement.clientWidth,
@@ -638,7 +709,10 @@ const checks = {
     desktop.tabs.some((text) => text.includes('车库数据')),
   officialGallery: officialDesktop.tab.includes('官方车表') &&
     officialDesktop.tabCount === 7 &&
-    officialDesktop.slides === 4 &&
+    /^4K · [1-4] \/ 4$/.test(officialDesktop.slides) &&
+    officialDesktop.thumbnails === 0 &&
+    officialDesktop.inlineControls &&
+    officialDesktop.visualWidth > officialDesktop.copyWidth &&
     officialDesktop.image?.src?.endsWith('.avif') &&
     officialDesktop.image.width === 3840 &&
     officialDesktop.image.height === 2160 &&
@@ -658,6 +732,9 @@ const checks = {
     officialFullscreen.textScale === '1.2' &&
     officialFullscreen.speedPressed === '10×' &&
     officialFullscreen.bodyOverflow === 'hidden',
+  fullscreenCarNavigation: fullscreenCarBefore.includes('180SX') &&
+    fullscreenCarAfter.length > 0 &&
+    fullscreenCarAfter !== fullscreenCarBefore,
   officialSettingsPersisted: officialPersisted.speed === '10' &&
     officialPersisted.textSize === '29' &&
     officialPersisted.captionStyle.includes('font-size: 29px') &&
@@ -688,15 +765,17 @@ const checks = {
     desktop.tabs.some((text) => text.includes('车库数据')) &&
     !desktop.tabs.some((text) => text.includes('品牌购物 / 车库')),
   xiaomiBilingual: desktop.title.includes('SU7') &&
-    desktop.panel.includes('智能手机巨头') &&
-    desktop.panel.includes('smartphone giant'),
-  collectionPayload: desktop.panel.includes('Catch') &&
-    desktop.panel.includes('Long') &&
-    desktop.panel.includes('0x0000CF1E') &&
-    desktop.panel.includes('0x0000CF1F'),
-  englishHeadings: english.panel.includes('Catch copy') &&
-    english.panel.includes('Car Collection text (game RT2)') &&
-    english.panel.includes('Official car-list overview (short)') &&
+    desktop.panel.includes('小米已在全球智能设备领域') &&
+    desktop.panel.includes('Xiaomi has achieved global success'),
+  collectionPayload: desktop.panel.includes('小米已在全球智能设备领域') &&
+    !desktop.panel.includes('Catch') &&
+    !desktop.panel.includes('Long 0x') &&
+    !desktop.panel.includes('PS5 RT2') &&
+    !desktop.panel.includes('一句话简介') &&
+    !desktop.panel.includes('DescriptionLong'),
+  englishHeadings: !english.panel.includes('Catch copy') &&
+    !english.panel.includes('Car Collection text (game RT2)') &&
+    !english.panel.includes('Official car-list overview (short)') &&
     !english.panel.includes('一句话简介') &&
     !english.panel.includes('车辆收藏正文') &&
     english.panel.includes('three-motor all-wheel-drive system'),
@@ -732,12 +811,10 @@ const checks = {
     !garageEnglish.panel.includes('最大功率 / 转速') &&
     garageEnglish.tabs.length === 7,
   peugeotCollection: peugeot.title.includes('205 Turbo 16 Evolution 2') &&
-    peugeot.panel.includes('Group B racing world by storm') &&
     peugeot.panel.includes('entirely different animal') &&
-    peugeot.panel.includes('官方车表简介（短版）') &&
     peugeot.panel.includes('B组别') &&
-    peugeot.panel.includes('0x00007F7E') &&
-    peugeot.panel.includes('0x00007F7F'),
+    !peugeot.panel.includes('0x00007F7E') &&
+    !peugeot.panel.includes('PS5 RT2'),
   japaneseCollection: japaneseCollection.title.includes('205 Turbo 16 Evolution 2') &&
     japaneseCollection.panel.includes('世界ラリー選手権') &&
     japaneseCollection.panel.includes('グループBマシン') &&
@@ -746,7 +823,7 @@ const checks = {
   mobileFixedNav: mobileBefore.fixedNav === 'fixed',
   mobileSwitchedCar: mobileBefore.title !== mobileAfter.title,
   mobileCollection: mobileBefore.tabs.length === 7 &&
-    mobileBefore.panel.includes('智能手机巨头'),
+    mobileBefore.panel.includes('小米已在全球智能设备领域'),
   mobileGarage: mobileGarage.title.includes('SU7') &&
     mobileGarage.tabs.length === 7 &&
     mobileGarage.cards === 11 &&
@@ -759,7 +836,7 @@ const checks = {
     cafeMobile.fixedNav === 'fixed' &&
     cafeMobile.bodyWidth <= cafeMobile.viewportWidth,
   officialMobileLayout: officialMobile.tabs === 7 &&
-    officialMobile.slides === 4 &&
+    /^4K · [1-4] \/ 4$/.test(officialMobile.imageCount) &&
     officialMobile.loaded &&
     officialMobile.fixedNav === 'fixed' &&
     officialMobile.bodyWidth <= officialMobile.viewportWidth,
@@ -792,14 +869,22 @@ const checks = {
     mediumOfficial.headerDirection === 'column' &&
     mediumOfficial.columns === 1 &&
     mediumOfficial.bodyWidth <= mediumOfficial.viewportWidth,
-  fiveSourceFilters: filterLabels.length === 5 &&
+  sixSourceFilters: filterLabels.length === 6 &&
     filterLabels.some((label) => label.includes('品牌店')) &&
     filterLabels.some((label) => label.includes('二手车')) &&
     filterLabels.some((label) => label.includes('车辆收藏')) &&
-    filterLabels.some((label) => label.includes('咖啡屋对白')),
-  sourceFilterCounts: Object.entries(filterExpected)
-    .every(([id, count]) => filterObserved[id] === count),
-  mobileFilterStrip: mobileFilters.buttons === 5 &&
+    filterLabels.some((label) => label.includes('咖啡屋对白')) &&
+    filterLabels.some((label) => label.includes('隐藏车型') && label.includes('11')),
+  sourceFilterCounts: ['all', 'brandCentral', 'usedCar', 'vehicleCollection', 'cafe', 'hidden']
+    .every((id) => filterObserved[id] === filterExpected[id]),
+  officialCounts: catalogCounts.hero.includes(String(filterExpected.all)) &&
+    catalogCounts.hero.includes(`官方车表 ${filterExpected.officialPage}`) &&
+    catalogCounts.hero.includes(`隐藏车型 ${filterExpected.hidden}`) &&
+    catalogCounts.serviceWorker,
+  officialOnlyCars: officialOnlySearch.count === 1 &&
+    officialOnlySearch.names.some((name) => name.includes('Xiaomi Vision Gran Turismo')) &&
+    officialOnlySearch.ids.includes('official:car3656'),
+  mobileFilterStrip: mobileFilters.buttons === 6 &&
     mobileFilters.bodyWidth <= mobileFilters.viewportWidth &&
     mobileFilters.scrollWidth >= mobileFilters.clientWidth,
 }
@@ -808,6 +893,8 @@ const report = {
   garagePayload,
   filterObserved,
   filterLabels,
+  catalogCounts,
+  officialOnlySearch,
   groupLabels,
   sortModes,
   scalePreferenceTest,
@@ -816,6 +903,8 @@ const report = {
   cafeDesktop,
   officialDesktop,
   officialFullscreen,
+  fullscreenCarBefore,
+  fullscreenCarAfter,
   officialPersisted,
   slideshowLauncher,
   catalogSlideshowFirst,

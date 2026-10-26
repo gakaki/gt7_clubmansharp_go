@@ -140,6 +140,20 @@ export function MirrorFullscreen({
     }
   }, [index, slides])
 
+  const moveCar = (delta: number) => {
+    if (!slide || cars.length < 2) return
+    const carIndex = cars.findIndex((car) => car.id === slide.car.id)
+    if (carIndex < 0) return
+    const nextCarIndex = (carIndex + delta + cars.length) % cars.length
+    const nextCar = cars[nextCarIndex]
+    if (!nextCar.images.length) return
+    const imageIndex = Math.min(slide.imageIndex, nextCar.images.length - 1)
+    const nextIndex =
+      cars.slice(0, nextCarIndex).reduce((total, car) => total + car.images.length, 0) +
+      imageIndex
+    setIndex(nextIndex)
+  }
+
   useEffect(() => {
     const onKey = (event: KeyboardEvent) => {
       const target = event.target
@@ -159,6 +173,12 @@ export function MirrorFullscreen({
       } else if (event.key === 'ArrowRight') {
         event.preventDefault()
         setIndex((current) => (current + 1) % slides.length)
+      } else if (event.key === 'ArrowUp') {
+        event.preventDefault()
+        moveCar(-1)
+      } else if (event.key === 'ArrowDown') {
+        event.preventDefault()
+        moveCar(1)
       } else if (event.key === ' ') {
         event.preventDefault()
         setPlaying((current) => !current)
@@ -169,7 +189,7 @@ export function MirrorFullscreen({
     }
     window.addEventListener('keydown', onKey)
     return () => window.removeEventListener('keydown', onKey)
-  }, [close, onSpeedChange, slides.length])
+  }, [cars, close, onSpeedChange, slide, slides.length])
 
   const persistScale = (value: number) => {
     const next = Math.round(Math.min(1.6, Math.max(0.8, value)) * 10) / 10
@@ -282,8 +302,9 @@ export function MirrorFullscreen({
           {playing ? text('暂停', 'Pause') : text('播放', 'Play')}
         </button>
         <button type="button" onClick={() => setIndex((index + 1) % slides.length)}>→</button>
-        <span>{text('图片', 'Image')} {index + 1} / {slides.length}</span>
-        <span>{text('速度', 'Speed')} {speed}×</span>
+        <span className="mirror-key-hint">{text('← → 图片 · ↑ ↓ 车辆', '← → image · ↑ ↓ car')}</span>
+        <span className="mirror-image-counter">{text('图片', 'Image')} {index + 1} / {slides.length}</span>
+        <span className="mirror-speed-label">{text('速度', 'Speed')} {speed}×</span>
         <div>
           {SPEEDS.map((value) => (
             <button

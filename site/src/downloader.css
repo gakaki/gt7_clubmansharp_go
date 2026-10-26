@@ -1,0 +1,88 @@
+.image-downloader-panel {
+  display: grid;
+  gap: 14px;
+  padding: 22px;
+  border: 1px solid var(--line, #ddd);
+  border-radius: 14px;
+  background: #fff;
+  color: #1a1a1d;
+}
+.image-downloader-heading {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 18px;
+}
+.image-downloader-heading h2 { margin: 3px 0 6px; font-size: 24px; }
+.image-downloader-heading p { margin: 0; color: #676873; font-size: 12px; line-height: 1.7; }
+.download-eyebrow { color: #777; font-size: 9px; font-weight: 800; letter-spacing: .12em; }
+.image-downloader-heading button,
+.image-downloader-actions button,
+.image-cache-status {
+  border: 1px solid #d8d8de;
+  border-radius: 8px;
+  background: #fff;
+  color: #1a1a1d;
+  padding: 8px 12px;
+  font-size: 11px;
+  font-weight: 700;
+}
+.image-cache-status {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  border-color: rgba(255,255,255,.35);
+  background: #050505;
+  color: #fff;
+}
+.image-downloader-status {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 12px;
+}
+.image-downloader-status span { font-variant-numeric: tabular-nums; }
+.image-downloader-progress {
+  height: 9px;
+  overflow: hidden;
+  border-radius: 999px;
+  background: #e9e9ed;
+}
+.image-downloader-progress span {
+  display: block;
+  height: 100%;
+  border-radius: inherit;
+  background: #17171c;
+  transition: width .15s linear;
+}
+.image-downloader-stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(110px, 1fr));
+  gap: 8px;
+}
+.image-downloader-stats span {
+  display: grid;
+  gap: 3px;
+  border-radius: 8px;
+  background: #f3f3f6;
+  padding: 9px 10px;
+  color: #777883;
+  font-size: 9px;
+}
+.image-downloader-stats b { color: #1b1b1f; font-size: 14px; font-variant-numeric: tabular-nums; }
+.image-downloader-current {
+  display: grid;
+  gap: 5px;
+  margin: 0;
+  color: #777883;
+  font-size: 9px;
+}
+.image-downloader-current code { overflow-wrap: anywhere; color: #34343a; font-size: 10px; }
+.image-downloader-storage { margin: 0; color: #777883; font-size: 10px; }
+.image-downloader-error { margin: 0; border-radius: 8px; background: #fff2f3; color: #a52c39; padding: 9px 11px; font-size: 11px; }
+.image-downloader-actions { display: flex; flex-wrap: wrap; gap: 8px; }
+@media (max-width: 600px) {
+  .image-downloader-panel { padding: 15px; }
+  .image-downloader-heading { flex-direction: column; }
+  .image-downloader-stats { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}

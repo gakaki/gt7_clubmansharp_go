@@ -109,9 +109,12 @@ export interface MirrorCar {
   brand: string
   model: string
   name_long: string
+  manufacturer_id?: string
   logo: string
   thumbnail: string
   country: string
+  country_id?: string
+  country_flag?: string
   drive_train: string
   power: string
   power_value: number | null
