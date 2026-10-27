@@ -408,6 +408,16 @@ const officialDesktop = await evaluate(`(() => ({
   })(),
   intro: document.querySelector('.official-copy')?.innerText || '',
 }))()`)
+const officialKeyboardBefore = await evaluate(
+  `document.querySelector('.official-image-count')?.textContent?.trim() || ''`,
+)
+await evaluate(
+  `window.dispatchEvent(new KeyboardEvent('keydown', { key: 'ArrowRight', code: 'ArrowRight', bubbles: true }))`,
+)
+await sleep(180)
+const officialKeyboardAfter = await evaluate(
+  `document.querySelector('.official-image-count')?.textContent?.trim() || ''`,
+)
 if (!officialDesktop.tab) {
   console.log(JSON.stringify(cdp.events.slice(-5), null, 2))
 }
@@ -847,6 +857,9 @@ const checks = {
     officialDesktop.intro.includes('1989年3月') &&
     officialDesktop.intro.includes('The 180SX arrived in March 1989') &&
     !officialDesktop.intro.includes('jpg'),
+  officialKeyboardSlides:
+    officialKeyboardBefore !== officialKeyboardAfter &&
+    /^4K · [1-4] \/ [1-4]$/.test(officialKeyboardAfter),
   officialFullscreen: officialFullscreen.active &&
     officialFullscreen.imageSrc.endsWith('.jxl') &&
     officialFullscreen.imageWidth === 3840 &&
@@ -1082,6 +1095,8 @@ const report = {
   desktop,
   cafeDesktop,
   officialDesktop,
+  officialKeyboardBefore,
+  officialKeyboardAfter,
   officialFullscreen,
   fullscreenCarBefore,
   fullscreenCarAfter,

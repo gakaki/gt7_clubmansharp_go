@@ -562,6 +562,7 @@ export default function App() {
   const [officialCaptionDragging, setOfficialCaptionDragging] = useState(false)
   const [officialImageError, setOfficialImageError] = useState(false)
   const officialStageRef = useRef<HTMLElement | null>(null)
+  const moveOfficialSlideRef = useRef<(delta: number) => void>(() => {})
   const tabListRef = useRef<HTMLDivElement | null>(null)
 
   const sourceCars = useMemo(() => data?.cars || [], [data])
@@ -1204,8 +1205,11 @@ export default function App() {
         officialStageRef.current &&
         document.fullscreenElement === officialStageRef.current
       ) {
-        if (event.key === 'ArrowRight') moveOfficialSlide(1)
-        if (event.key === 'ArrowLeft') moveOfficialSlide(-1)
+        if (event.key === 'ArrowRight') moveOfficialSlideRef.current(1)
+        if (event.key === 'ArrowLeft') moveOfficialSlideRef.current(-1)
+        if (['ArrowLeft', 'ArrowRight'].includes(event.key)) {
+          event.preventDefault()
+        }
         return
       }
       if (
@@ -1214,7 +1218,7 @@ export default function App() {
         ['ArrowLeft', 'ArrowRight'].includes(event.key)
       ) {
         event.preventDefault()
-        moveOfficialSlide(event.key === 'ArrowRight' ? 1 : -1)
+        moveOfficialSlideRef.current(event.key === 'ArrowRight' ? 1 : -1)
       } else if (event.key === 'ArrowDown') {
         event.preventDefault()
         move(1)
@@ -1320,6 +1324,7 @@ export default function App() {
       (index) => (index + delta + officialImagePaths.length) % officialImagePaths.length,
     )
   }
+  moveOfficialSlideRef.current = moveOfficialSlide
 
   function updateOfficialCaptionFromPointer(event: ReactPointerEvent<HTMLDivElement>) {
     if (!officialCaptionDragging || !officialStageRef.current) return
